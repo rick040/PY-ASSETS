@@ -126,7 +126,10 @@ def _linelabel(d, x, y_base, label, rule_len, variable="label"):
                    "centred on the card; the tagline is live text so it can be a variable. Card number and plate fields are blank in print (input fields only).")
 def _(ctx):
     return dict(
-        reference={"front": ctx.reference("evoluon", 1, variant="front"), "back": ctx.reference("evoluon", 2, variant="back")},
+        reference={"front": ctx.reference("evoluon", 1, variant="front"),
+                   # regroup() would put the white tagline into the 5 percent watermark group (its centre lies inside); add it on top instead
+                   "back": ctx.reference("evoluon", 2, variant="back", skip_text=lambda t: t.startswith("The other"),
+                                         extra=printsrc.source("evoluon").texts(2, printsrc.box_mm(30, 30, 63, 35.5)))},
         template={"front": _card_front(ctx), "back": _card_back(ctx)},
         omitted=[],
         copy_corrections=[],
@@ -172,8 +175,7 @@ def _card_back(ctx):
 @application("py-app-form-bewijs-inlevering", "Bewijs van inlevering toegangsmiddel", "form", trim_mm=(148, 105), bleed_mm=3.0,
              source=[("inleveren", [1])], status="rebuilt",
              notes="The file is named A5 but the page is 148 x 105 mm (A6 landscape). No bleed in the source; the template has 3 mm bleed (white). "
-                   "Open question for the owner: the running text spells the brand 'ParkingYou' (capital Y) while the logo and the handbook write 'parkingyou' / 'ParkingYou' "
-                   "inconsistently; kept as in the source, not changed. "
+                   "Open question for the owner: the running text spells the brand 'ParkingYou' (capital P and Y) while the logo is set 'parkingyou'; kept as in the source, not changed. "
                    "Reflow: with the word 'toegangsmiddel' whole, line 2 no longer fits in the text width, so paragraph 1 is set in three lines (leading 1.2 x 4.59 mm = 5.5 mm, "
                    "as in the source) and the gap to paragraph 2 is 8.0 mm instead of 11.0 mm so the lower block (Naam klant, signature box) stays where it is in the source. "
                    "The beeldmerk bottom right is the beeldmerk without wordmark (py-atom-logo-beeldmerk-color at 0.348x, 12.6 x 15.1 mm).")

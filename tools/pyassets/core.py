@@ -1088,6 +1088,10 @@ def regroup(src: "Source", pno: int, items: list):
     Paths carry `gop` from Source.paths; live texts are assigned to a group when their centre lies in the
     group rectangle. Consecutive members of one group become one Group (z-order of the first member)."""
     rects = {g: (op, r) for g, op, r in src.group_rects(pno)}
+    # live text carries no group information: it joins only a text-only group (a group without path members), the smallest one
+    # whose rectangle holds its centre. A text over a tinted shape (watermark, field) therefore stays outside the tint.
+    with_paths = {it.gop[-1][0] for it in items if isinstance(it, Path) and getattr(it, "gop", ())}
+    text_groups = {g: v for g, v in rects.items() if g not in with_paths}
     out: list = []
     cur: dict = {}
     for it in items:
@@ -1099,9 +1103,12 @@ def regroup(src: "Source", pno: int, items: list):
                 op *= o
         elif isinstance(it, Text):
             cx, cy = (it.box[0] + it.box[2]) / 2, (it.box[1] + it.box[3]) / 2
-            for g, (o, r) in rects.items():
-                if r.x0 <= cx <= r.x1 and r.y0 <= cy <= r.y1:
-                    gid, op = g, o
+            best = None
+            for g, (o, r) in text_groups.items():
+                if r.x0 <= cx <= r.x1 and r.y0 <= cy <= r.y1 and (best is None or r.width * r.height < best[2]):
+                    best = (g, o, r.width * r.height)
+            if best:
+                gid, op = best[0], best[1]
         if gid is None:
             out.append(it)
             continue
