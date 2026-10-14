@@ -1,0 +1,81 @@
+{
+ "id": "py-app-sticker-waarschuwing-diefstal",
+ "name_nl": "Waarschuwingssticker diefstal",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-waarschuwing-diefstal",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg"
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/StickerDiefstalARtisDruk.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     140,
+     280
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   140,
+   280
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   146.0,
+   286.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 4.2,
+   "note": "Proposal: the source has no cut contour. Corner radius 4.2 mm is the radius seen on the footer bar (4.23 mm); to be confirmed by the owner."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "heading-nl": "Let op!",
+   "body-nl-1": "Auto op slot en",
+   "body-nl-2": "geen waardevolle",
+   "body-nl-3": "spullen achterlaten",
+   "heading-en": "Please note!",
+   "body-en-1": "Lock your car and",
+   "body-en-2": "remove all of your",
+   "body-en-3": "valuables",
+   "callout-text": "Verdachte situatie? Bel",
+   "phone-number": "0900-8844"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-comp-text-bilingual-nl-en",
+  "py-comp-bar-footer-callout",
+  "py-atom-icon-car-lock"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "Page 2 of StickerDiefstalARtisDruk.pdf: empty (a 1 mm art box in a corner), not part of the reference.",
+  "The footer bar part that lies below the page (4.3 mm): the reference shows the page only, as a viewer does."
+ ],
+ "copy_corrections": [],
+ "notes": "White sticker, no background fill: only the footer bar runs into the bottom bleed (template: to the bleed edge, 3 mm; the source overshoots 4.3 mm). All text is navy token #1A3580 (source drifted blue CMYK 100/86.3/21.5/3.5), Ubuntu, centred, leading 1.2: headings Bold 21.17 mm, body Regular 14.11 mm with bold keywords 'op slot', 'geen waardevolle spullen', 'Lock', 'remove'. Divider navy 1 pt, 127.5 mm. Footer text white 7.76 mm: callout Regular, phone number Bold. The padlock stays light aqua (#68CBDA as sampled, no token). Original copy kept, no spelling errors found. Variables: headings, body lines (bold runs), callout text, phone number. The cut contour is a proposal (no contour in the source)."
+}

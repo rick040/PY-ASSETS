@@ -14,7 +14,7 @@ NOT_BUILT = {
 
 def main():
     m = json.load(open(os.path.join(ROOT, "elements.json"), encoding="utf8"))
-    els = m["elements"]
+    els = [e for e in m["elements"] if e.get("origin") != "print"]  # handbook build only; print additions are in docs/print-build-notes.md
     inv = build_all.parse_inventory()
     built = {e["id"] for e in els}
     lv = collections.Counter(e["level"] for e in els)

@@ -1,0 +1,84 @@
+{
+ "id": "py-app-form-bewijs-inlevering",
+ "name_nl": "Bewijs van inlevering toegangsmiddel",
+ "type": "form",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-form-bewijs-inlevering",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg"
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/Inleveren_Abbonementborg_A5.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     148,
+     105
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   148,
+   105
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   154.0,
+   111.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "title": "Bewijs van inlevering / toegangsmiddel",
+   "body-1": "ParkingYou bevestigt hierbij de ontvangst van het toegangsmiddel dat hoort bij het abonnement van onderstaande klant.",
+   "body-2": "De bijbehorende borg wordt, na verwerking, teruggestort conform de geldende voorwaarden.",
+   "customer-name-label": "Naam klant:",
+   "line-length": "83.5 mm",
+   "signature-label": "Handtekening klant"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-field-date-segmented",
+  "py-comp-field-line-label",
+  "py-comp-field-signature-box",
+  "py-atom-logo-beeldmerk-color"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [
+  {
+   "original": "toegangs-/middel (manual hyphenation across two lines)",
+   "corrected": "toegangsmiddel (word whole, paragraph reflowed to three lines)"
+  },
+  {
+   "original": "Datum  (trailing space)",
+   "corrected": "Datum (no trailing space, right aligned to the end of the date field)"
+  },
+  {
+   "original": "Naam klant: ______ (typed underscores)",
+   "corrected": "Naam klant: plus a drawn navy rule of the same length (py-comp-field-line-label)"
+  }
+ ],
+ "notes": "The file is named A5 but the page is 148 x 105 mm (A6 landscape). No bleed in the source; the template has 3 mm bleed (white). Open question for the owner: the running text spells the brand 'ParkingYou' (capital Y) while the logo and the handbook write 'parkingyou' / 'ParkingYou' inconsistently; kept as in the source, not changed. Reflow: with the word 'toegangsmiddel' whole, line 2 no longer fits in the text width, so paragraph 1 is set in three lines (leading 1.2 x 4.59 mm = 5.5 mm, as in the source) and the gap to paragraph 2 is 8.0 mm instead of 11.0 mm so the lower block (Naam klant, signature box) stays where it is in the source. The beeldmerk bottom right is the beeldmerk without wordmark (py-atom-logo-beeldmerk-color at 0.348x, 12.6 x 15.1 mm)."
+}

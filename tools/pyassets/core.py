@@ -336,6 +336,29 @@ class Raw(Item):
         return self.xml
 
 
+@dataclass
+class Group(Item):
+    """Transparency group (opacity applies to the group as a whole, like in the source PDF)."""
+
+    items: list = field(default_factory=list)
+    opacity: float = 1.0
+    gid: str = ""
+    tag: str = ""
+
+    @property
+    def bbox(self):  # type: ignore[override]
+        bs = [it.bbox for it in self.items if it.bbox != (0, 0, 0, 0)]
+        if not bs:
+            return (0, 0, 0, 0)
+        return (min(b[0] for b in bs), min(b[1] for b in bs), max(b[2] for b in bs), max(b[3] for b in bs))
+
+    def svg(self, tf, defs):
+        a = f' id="{self.gid}"' if self.gid else ""
+        if self.opacity < 0.999:
+            a += f' opacity="{fmt(self.opacity)}"'
+        return f"<g{a}>" + "".join(it.svg(tf, defs) for it in self.items) + "</g>"
+
+
 # ---------------------------------------------------------------- source
 class Source:
     def __init__(self, path: str):
@@ -343,6 +366,7 @@ class Source:
         self.doc = pymupdf.open(path)
         self._dr: dict[int, list] = {}
         self._clips: dict[int, list] = {}
+        self._grects: dict[int, list] = {}
         self._tx: dict[int, list] = {}
         self._fonts: dict = {}
 
@@ -358,10 +382,21 @@ class Source:
             out = []
             clips = []
             stack: list = []  # (level, scissor)
+            gstack: list = []  # (level, gid, opacity, rect) of transparency groups with opacity < 1
+            grects: list = []
             for i, d in enumerate(self.page(pno).get_drawings(extended=True)):
                 lvl = d.get("level", 0)
                 while stack and stack[-1][0] >= lvl:
                     stack.pop()
+                while gstack and gstack[-1][0] >= lvl:
+                    gstack.pop()
+                if d["type"] == "group":
+                    op = d.get("opacity")
+                    if op is not None and op < 0.999:
+                        gid = f"g{pno}-{i}"
+                        gstack.append((lvl, gid, float(op), d["rect"]))
+                        grects.append((gid, float(op), d["rect"]))
+                    continue
                 if d["type"] == "clip":
                     stack.append((lvl, d["scissor"]))
                     d["seq"] = i
@@ -371,6 +406,7 @@ class Source:
                     continue
                 d["seq"] = i
                 d["clipped"] = False
+                d["gop"] = tuple((g[1], g[2]) for g in gstack)
                 if stack:
                     sc = pymupdf.Rect(stack[0][1])
                     for _, r in stack[1:]:
@@ -385,7 +421,13 @@ class Source:
                 out.append(d)
             self._dr[pno] = out
             self._clips[pno] = clips
+            self._grects[pno] = grects
         return self._dr[pno]
+
+    def group_rects(self, pno: int):
+        """Transparency groups with opacity below 1 as (gid, opacity, rect)."""
+        self.drawings(pno)
+        return self._grects[pno]
 
     def clips(self, pno: int, bbox, min_size=6.0, tol=1.5):
         """Clip paths inside bbox as Path items. InDesign exports every gradient fill as
@@ -480,6 +522,7 @@ class Source:
             )
             p.seq = d.get("seq", 0)  # type: ignore[attr-defined]
             p.clipped = d.get("clipped", False)  # type: ignore[attr-defined]
+            p.gop = d.get("gop", ())  # type: ignore[attr-defined]
             if skip and skip(p):
                 continue
             out.append(p)
@@ -736,7 +779,15 @@ class Element:
 
     def colors(self):
         cs = set()
-        for it in self.items:
+
+        def flat(items):
+            for it in items:
+                if isinstance(it, Group):
+                    yield from flat(it.items)
+                else:
+                    yield it
+
+        for it in flat(self.items):
             if isinstance(it, Path):
                 for c in (it.fill, it.stroke):
                     if isinstance(c, str):
@@ -793,6 +844,8 @@ def affine(items, sx=1.0, sy=None, tx=0.0, ty=0.0):
             if isinstance(c.fill, Gradient):
                 g = c.fill
                 c.fill = Gradient(g.x1 * sx + tx, g.y1 * sy + ty, g.x2 * sx + tx, g.y2 * sy + ty, g.stops)
+        elif isinstance(c, Group):
+            c.items = affine(c.items, sx, sy, tx, ty)
         elif isinstance(c, Text):
             c.x, c.y = c.x * sx + tx, c.y * sy + ty
             c.size *= (abs(sx) + abs(sy)) / 2
@@ -830,6 +883,8 @@ def paint(items, fill: Paint):
         if isinstance(c, Path):
             c.fill = fill
             c.stroke = None
+        elif isinstance(c, Group):
+            c.items = paint(c.items, fill)
         out.append(c)
     return out
 
@@ -996,4 +1051,62 @@ def cutout(items, hole="#FFFFFF"):
                     out[out.index(o)] = new
                 continue
         out.append(it)
+    return out
+
+
+# ---------------------------------------------------------------- print support
+# Blues, aquas and black that the print files draw slightly off the 1.3 values (see docs/print-phase1-inventory.md).
+# Applied only when library elements are built from print files (library atoms and components);
+# reference reproductions keep the source colours.
+PRINT_NORMALISE = {
+    "#0B3D8A": "#1A3580", "#1F4383": "#1A3580", "#1C4695": "#1A3580", "#204382": "#1A3580",
+    "#174797": "#1A3580", "#27397E": "#1A3580",
+    "#24BFCD": "#32B9CD", "#24BDCD": "#32B9CD", "#23BDCD": "#32B9CD", "#31BBCD": "#32B9CD",
+    "#000000": "#1D1D1B",
+}
+
+
+class normalised:
+    """Context manager: apply extra colour normalisation (e.g. PRINT_NORMALISE) while building elements."""
+
+    def __init__(self, extra):
+        self.extra = extra
+
+    def __enter__(self):
+        self._saved = dict(COLOR_NORMALISE)
+        COLOR_NORMALISE.update(self.extra)
+        return self
+
+    def __exit__(self, *a):
+        COLOR_NORMALISE.clear()
+        COLOR_NORMALISE.update(self._saved)
+
+
+def regroup(src: "Source", pno: int, items: list):
+    """Wrap items that sat inside a transparency group (opacity < 1) of the source in Group items.
+
+    Paths carry `gop` from Source.paths; live texts are assigned to a group when their centre lies in the
+    group rectangle. Consecutive members of one group become one Group (z-order of the first member)."""
+    rects = {g: (op, r) for g, op, r in src.group_rects(pno)}
+    out: list = []
+    cur: dict = {}
+    for it in items:
+        gid = None
+        if isinstance(it, Path) and getattr(it, "gop", ()):
+            gid = it.gop[-1][0]
+            op = 1.0
+            for _, o in it.gop:
+                op *= o
+        elif isinstance(it, Text):
+            cx, cy = (it.box[0] + it.box[2]) / 2, (it.box[1] + it.box[3]) / 2
+            for g, (o, r) in rects.items():
+                if r.x0 <= cx <= r.x1 and r.y0 <= cy <= r.y1:
+                    gid, op = g, o
+        if gid is None:
+            out.append(it)
+            continue
+        if gid not in cur:
+            cur[gid] = Group(items=[], opacity=op, gid="")
+            out.append(cur[gid])
+        cur[gid].items.append(it)
     return out

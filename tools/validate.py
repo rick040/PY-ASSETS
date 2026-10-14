@@ -27,6 +27,7 @@ def main():
 
     man = json.load(open(os.path.join(root, "elements.json"), encoding="utf8"))
     man_ids = {e["id"] for e in man["elements"]}
+    pdf_ids = {e["id"] for e in man["elements"] if e.get("origin") != "print"}  # print additions have their own overview and validator
     svg_files = sorted(glob.glob(os.path.join(root, "svg", "*", "*.svg")))
     svg_ids = {os.path.basename(f)[:-4] for f in svg_files}
 
@@ -97,14 +98,14 @@ def main():
             for m in ID_RE.findall(t):
                 ids_pdf[m] += 1
         # label count: every ID appears as a label on its own page (plus once in the index lists)
-        missing = sorted(man_ids - set(ids_pdf))
+        missing = sorted(pdf_ids - set(ids_pdf))
         unknown = sorted(set(ids_pdf) - man_ids)
         for i in missing:
             errs.append(f"PDF has no label for {i}")
         for i in unknown:
             errs.append(f"PDF label {i} not in manifest")
         for i, c in ids_pdf.items():
-            if i in man_ids and c < 2:
+            if i in pdf_ids and c < 2:
                 warns.append(f"{i}: found {c}x in PDF (expected label plus index entry)")
         for p in d:
             if p.rect.width < 1190 or p.rect.width > 1191 or p.rect.height < 841 or p.rect.height > 842:

@@ -1,0 +1,61 @@
+{
+ "id": "py-app-brand-background-tagline",
+ "name_nl": "Merkachtergrond met tagline",
+ "type": "brand-background",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-brand-background-tagline",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg"
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/Naamloos-7.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC, sRGB)",
+    "trim_mm": [
+     148,
+     105
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   148,
+   105
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   154.0,
+   111.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "tagline-text": "The other way of parking"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-type-ubuntu-regular",
+  "py-comp-tagline-lockup",
+  "py-atom-logo-horizontal-white"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Template is built in the official PY-Blauw (CMYK 100/83/0/17, #1A3580). The source is RGB only (#1A3680)."
+}

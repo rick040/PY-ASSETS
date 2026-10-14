@@ -1,6 +1,6 @@
 # PM-137 Phase 1: print applications inventory
 
-Status: Phase 1 only. Nothing is built yet. Waiting for approval.
+Status: Phase 1 (approved). Correction found during Phase 2: the card back watermark is aqua at 5 percent, not 10 percent. Decisions taken after review are in `docs/print-rules.md` and `docs/print-build-notes.md`.
 Sources: 10 PDF files in `source/print/` (11 pages). All were rendered to PNG and looked at. Measurements come from the PDF content (PyMuPDF), the QR code was decoded from a render.
 Library state at the start: 204 elements (23 tok, 91 atom, 45 comp, 45 prod), `tokens.json`, `elements.json`.
 Rule labels: every rule below is "observed in print". None of them is an official handbook rule.
@@ -10,7 +10,7 @@ Rule labels: every rule below is "observed in print". None of them is an officia
 | # | File | Pages | Trim (mm) | Bleed | Colour | Fonts | Vector or raster | Notes |
 |---|---|---|---|---|---|---|---|---|
 | 1 | `15728501-1.pdf` (title "UitritBord copy") | 1 | 800 x 250 | 10 mm all round, BleedBox set | CMYK, PDF/X-4, output intent FOGRA39 | none, all text outlined | vector, 0 images | Spot colour `ThruCut` (alternate 0/85/0/0) on a 1 pt cut contour 799.6 x 249.6 mm, inset 0.2 mm. Pill has elliptical ends (rx 133.3, ry 125 mm). Enfocus preflight metadata present. |
-| 2 | `EvoluonPasjes.pdf` | 2 (front, back) | 85 x 55 | none set (TrimBox = BleedBox = MediaBox), art overshoots 3 to 20 mm | CMYK | Ubuntu, Ubuntu Bold (subset, embedded); wordmark outlined | vector, 0 images | Transparency used for tints: aqua at 10 percent (fields, back watermark). |
+| 2 | `EvoluonPasjes.pdf` | 2 (front, back) | 85 x 55 | none set (TrimBox = BleedBox = MediaBox), art overshoots 3 to 20 mm | CMYK | Ubuntu, Ubuntu Bold (subset, embedded); wordmark outlined | vector, 0 images | Transparency used for tints: aqua at 10 percent (input fields), aqua at 5 percent (back watermark). |
 | 3 | `InfoPylonBordGoed.pdf` | 1 | 600 x 840 | none set, blue overshoots 3 mm | CMYK | Ubuntu BoldItalic, MediumItalic (price only); all other text outlined | vector, 0 images | Blue panel is 714 mm high, the lower 126 mm is white paper. Art box 600 x 821.9. |
 | 4 | `LaadKabel.pdf` | 1 | 250 x 300 | 3 mm, BleedBox set | CMYK | Ubuntu, Ubuntu Bold (live) | vector, 0 images | A full-page grey rectangle (25/18/20/2) sits under the blue one, hidden but present. No cut contour. |
 | 5 | `StickerDiefstalARtisDruk.pdf` | 2 | 140 x 280 | none set, footer overshoots 4.3 mm at the bottom only | CMYK | Ubuntu, Bold, Medium (live) | vector, 0 images | Page 2 is empty (tiny 1 mm art box in a corner). No cut contour in the file. |
@@ -153,7 +153,7 @@ Reuse first: an element is only new when no library element has the same shape. 
 | ID | Dutch name | Level | Found in | Why it is new | Third-party |
 |---|---|---|---|---|---|
 | `py-atom-text-tagline` | Tagline "The other way of parking" | atom | card back, background | Not in the library. Ubuntu Regular, tracking about +60/1000 em, size 0.158 x beeldmerk height | no |
-| `py-atom-logo-beeldmerk-watermark` | Beeldmerk watermerk | atom (variant of beeldmerk) | card back | Same shape as `py-atom-logo-beeldmerk-color`, aqua at 10 percent on navy | no |
+| `py-atom-logo-beeldmerk-watermark` | Beeldmerk watermerk | atom (variant of beeldmerk) | card back | Same shape as `py-atom-logo-beeldmerk-color`, aqua at 5 percent on navy | no |
 | `py-atom-field-input-rounded` | Invoerveld afgerond | atom | card front | 44.7 x 8.3 mm, radius 1.29 mm, aqua at 10 percent | no |
 | `py-atom-field-date-segmented` | Datumveld in drie delen | atom | form | 3 outlined segments (2, 2, 4 digits), chamfered corners | no |
 | `py-comp-field-signature-box` | Handtekeningvak | comp | form | Navy at 5 percent box with label bottom left | no |
@@ -269,8 +269,8 @@ Maestro, Mastercard, VISA, V PAY (payment), ParkBee, MyWay, Mobian and an uniden
 4. **Type scale.** Stickers: heading 60 pt, body 40 pt (1.5 ratio). Maashaven: bars 60 pt, rows 50 pt, terms 35 pt. LaadKabel: both languages at 60.9 pt.
 5. **Bilingual pattern.** NL first, divider, EN below. NL and EN use the same size and the same bold pattern. Divider: white 0.7 mm at 68 percent of the width (LaadKabel), navy 0.35 mm at 91 percent (diefstal).
 6. **Tagline.** "The other way of parking" in Ubuntu Regular, tracking about +60/1000 em, size 0.158 x the height of the beeldmerk, left edge aligned with the left of the wordmark, white. The lockup is centred on both axes of the format (card back and A6 background, both measured). The wordmark width is 2.55 x the beeldmerk height in every horizontal lockup except the Maashaven location lockup (2.10).
-7. **Beeldmerk as image.** Cropped: card front uses the beeldmerk at 1.51x, bleeding off left, top and bottom. Watermark: the same size and shape in aqua at 10 percent on navy, centred on the card back.
-8. **Tints are transparency.** Aqua at 10 percent for input fields, navy at 5 percent for the signature box. Not flat spot tints.
+7. **Beeldmerk as image.** Cropped: card front uses the beeldmerk at 1.51x, bleeding off left, top and bottom. Watermark: the same size and shape in aqua at 5 percent on navy, centred on the card back.
+8. **Tints are transparency.** Aqua at 10 percent for input fields, aqua at 5 percent for the watermark, navy at 5 percent for the signature box. Not flat spot tints.
 9. **Light aqua on navy.** CMYK 54/0/14/0 for icons on navy (plug, padlock, chevron).
 10. **Corner radii.** QR plate 11.95 mm on 118.6 (10 percent), partner badge 7.94 on 36 (22 percent), input field 1.29 on 8.3 (15.5 percent), sticker footer 4.23 mm on the top corners only, GLOW pill full round (radius = half the height), Uitrit pill elliptical ends (rx 133.3, ry 125).
 11. **Margins.** Maashaven: text starts at 14.8 mm (3.7 percent of the width), bars run edge to edge. GLOW: pills 28.3 mm from both sides (9.5 percent), bottom margin 20.6 mm, pill pitch 51.7 mm for a 43.1 mm pill (gap 8.6 mm). Card front: right margin 3.5 mm, wordmark 8.6 mm from the left.
