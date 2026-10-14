@@ -239,7 +239,7 @@ Other drift: the card front uses the wordmark without the beeldmerk; the tagline
 
 1. Maashaven: "zijn **na de lezen** op" should be "na te lezen op" (the handbook says "na te lezen").
 2. Maashaven: "uit de **wegverkeerswet**" should be "wegenverkeerswet" (the handbook has it right).
-3. Hofplein: "per dag**\***" has an asterisk but no footnote anywhere on the panel.
+3. Hofplein: "per dag\*" has an asterisk but no footnote anywhere on the panel.
 4. Hofplein: the URL is split inside the domain ("voordelig" / "parkeren.nl").
 5. Form: "toegangs-" / "middel" is a manual hyphen at a line end; "Naam klant: ______" is typed underscores instead of a rule; "Datum " has a trailing space.
 6. Form: file name says A5, the page is 148 x 105 mm (A6 landscape); file name also has the typos "Abbonemenetborg".
