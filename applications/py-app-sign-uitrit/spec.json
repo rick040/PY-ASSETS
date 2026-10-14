@@ -1,0 +1,73 @@
+{
+ "id": "py-app-sign-uitrit",
+ "name_nl": "Uitritbord",
+ "type": "sign",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sign-uitrit",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg"
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/15728501-1.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK (PDF/X-4, FOGRA39), spot ThruCut",
+    "trim_mm": [
+     800,
+     250
+    ],
+    "bleed_box_set": true
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   800,
+   250
+  ],
+  "bleed_mm": 10.0,
+  "size_with_bleed_mm": [
+   820.0,
+   270.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": null,
+   "ends": "elliptical, rx 133.3 mm, ry 125 mm",
+   "note": "source contour 799.6 x 249.6 mm, magenta 1 pt stroke on the spot ThruCut"
+  }
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "destination-word": "Uit"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-picto-car",
+  "py-comp-route-module-separator-uitrit",
+  "py-atom-arrow-up-circle"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "the second and third navy shapes below the sign (bleed shapes) are kept; nothing omitted. The cut contour is kept as group cut-contour in the reference."
+ ],
+ "copy_corrections": [],
+ "notes": "800 x 250 mm trim, 10 mm bleed (page 820 x 270). Navy stadium with elliptical ends (rx 133.3, ry 125 mm); the template draws one navy shape into the bleed (rx 143.3, ry 135 mm, the 10 mm offset of the trim shape; the source bleed shape is 820 x 273.5 mm and sticks 1.7 mm out of the page). Cut contour: ThruCut, 1 pt magenta stroke, 0.2 mm inside the trim, elliptical ends (the source contour is the stroke path, kept in the reference as group cut-contour). Library check: py-atom-picto-car matches the print car (same proportion, scale 6.79) and py-atom-arrow-up-circle matches the print circle and arrow (scale 1.268, arrow share 0.706). The library arc py-comp-route-module-separator has the same shape but would print with a 5.3 mm stroke instead of 3.0 mm, so the print arc is extracted as the variant py-comp-route-module-separator-uitrit (py-atom-shape-separator-arc is the handbook illustration in grey and navy, not the aqua arc). Uit is live Ubuntu Bold 167.84 mm, white (fitted by overlay, width and height agree). Blue in the source is CMYK 100/92.5/19.2/5.9 (the most drifted blue), aqua CMYK 67.8/3.1/19.2/0; the template uses the tokens #1A3580 and #32B9CD."
+}

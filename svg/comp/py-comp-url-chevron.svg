@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="221.657mm" height="71.229mm" viewBox="0 0 221.657 71.229">
+<title>py-comp-url-chevron: URL met chevron</title>
+<g id="py-comp-url-chevron"><g transform="translate(-43.497 -44.755)"><text x="43.12" y="74.01" font-family="Ubuntu" font-size="37.7" font-weight="bold" fill="#FFFFFF" data-variable="url-line-1" xml:space="preserve">voordelig</text><text x="41.5" y="109.62" font-family="Ubuntu Light" font-size="34.4" fill="#FFFFFF" data-variable="url-line-2" xml:space="preserve">parkeren.nl</text><path transform="translate(0 0)" d="M242.484 58.259L235.601 65.133C235.431 65.303 235.431 65.579 235.601 65.75L249.984 80.114C250.154 80.283 250.154 80.56 249.984 80.731L235.601 95.094C235.431 95.264 235.431 95.541 235.601 95.711L242.484 102.584C242.655 102.755 242.931 102.755 243.102 102.584L264.985 80.731C265.154 80.56 265.154 80.283 264.985 80.114L243.102 58.259C242.931 58.088 242.655 58.088 242.484 58.259" fill="#69CADA" id="chevron"/></g></g>
+</svg>
