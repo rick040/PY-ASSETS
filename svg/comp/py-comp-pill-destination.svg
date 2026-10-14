@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240.412mm" height="43.071mm" viewBox="0 0 240.412 43.071">
+<title>py-comp-pill-destination: Bestemmingspil</title>
+<g id="py-comp-pill-destination"><g transform="translate(0 0)"><g id="py-comp-pill-destination" data-state="active" data-arrow="left"><rect x="0" y="0" width="240.412" height="43.071" rx="21.535" ry="21.535" fill="#FFFFFF" id="pill"/><rect x="4.25" y="2.615" width="37.84" height="37.84" rx="18.92" ry="18.92" fill="#1A3580" id="disc"/><path transform="translate(0 0)" d="M36.974 18.227L36.974 24.844L19.754 24.844L19.754 30.989L9.487 21.536L19.754 12.082L19.754 18.227L36.974 18.227" fill="#FFFFFF" id="arrow"/><text x="139.573" y="30.99" font-family="Ubuntu" font-size="26.458" font-weight="bold" text-anchor="middle" fill="#1A3580" data-variable="label" xml:space="preserve">Philips stadion</text></g></g></g>
+</svg>

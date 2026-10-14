@@ -1,0 +1,126 @@
+{
+ "id": "py-app-event-sign-glow",
+ "name_nl": "Evenementbord Parkeren GLOW",
+ "type": "event-sign",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-event-sign-glow-route",
+   "variant": "route",
+   "reference": "reference-route.svg",
+   "template": "template-route.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-symbol-p-plain",
+    "py-atom-mark-glow",
+    "py-comp-pill-destination",
+    "py-comp-pill-list-destinations",
+    "py-atom-icon-location-pin"
+   ]
+  },
+  {
+   "id": "py-app-event-sign-glow-bestemming",
+   "variant": "bestemming",
+   "reference": "reference-bestemming.svg",
+   "template": "template-bestemming.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-symbol-p-plain",
+    "py-atom-mark-glow",
+    "py-atom-icon-location-pin",
+    "py-comp-pill-destination",
+    "py-comp-pill-list-destinations"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/Tekengebied_1.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     297,
+     420
+    ],
+    "bleed_box_set": false
+   },
+   {
+    "file": "source/print/Tekengebied_4_kopie_4.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     297,
+     420
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   297,
+   420
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   303.0,
+   426.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "route": {
+   "background-colour": "#1A3580",
+   "destination-1": "Philips stadion",
+   "arrow-1": "left",
+   "state-1": "active",
+   "destination-2": "DLL",
+   "arrow-2": "up",
+   "state-2": "active",
+   "destination-3": "TD-gebouw",
+   "arrow-3": "up",
+   "state-3": "active"
+  },
+  "bestemming": {
+   "background-colour": "#1A3580",
+   "destination-1": "Philips stadion",
+   "arrow-1": "left",
+   "state-1": "inactive",
+   "destination-2": "Evoluon",
+   "arrow-2": "pin",
+   "state-2": "active",
+   "destination-3": "TD-gebouw",
+   "arrow-3": "left",
+   "state-3": "inactive"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-symbol-p-plain",
+  "py-atom-mark-glow",
+  "py-comp-pill-destination",
+  "py-comp-pill-list-destinations",
+  "py-atom-icon-location-pin"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "route (Tekengebied_1): 1 off-page copy of the navy beeldmerk shape (x 256 to 653 mm, y 408 to 887 mm, blue on blue, partly on the page)",
+  "bestemming (Tekengebied_4_kopie_4): 4 off-page copies of the navy beeldmerk shape (x -352 to 653 mm, y -19 to 887 mm, blue on blue, partly on the page)"
+ ],
+ "copy_corrections": [],
+ "notes": "A3 297 x 420 mm, no bleed in the source (background is exactly the trim), template adds 3 mm bleed. Navy background is the token #1A3580 (the source GLOW blue is CMYK 100/84.4/5.5/0.4, viewer #174797). White P is py-atom-symbol-p-plain scaled from 91.7 to 173.44 mm; Parkeren is Ubuntu Bold 35.28 mm. GLOW is the third party mark (reference only, source the official file). Pills: route = three active pills (Philips stadion arrow left, DLL arrow up, TD-gebouw arrow up); bestemming = Evoluon active with pin, Philips stadion and TD-gebouw inactive (25 percent, arrow left in print). Print arrows differ from the library arrows, see py-comp-pill-destination. Source details: the DLL label has a trailing space in the file (DLL and a space), label centres are set by eye per pill, pill pitch measured 51.61 and 51.41 mm (template uses 51.5). Variables: destination-N, arrow-N (left, up, pin), state-N (active, inactive)."
+}

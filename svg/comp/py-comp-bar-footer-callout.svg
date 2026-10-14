@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="140.008mm" height="27.742mm" viewBox="0 0 140.008 27.742">
+<title>py-comp-bar-footer-callout: Voetbalk melding</title>
+<g id="py-comp-bar-footer-callout"><path d="M135.774 0L4.233 0C1.905 0 0 1.905 0 4.233L0 23.508C0 25.837 1.905 27.742 4.233 27.742L135.774 27.742C138.103 27.742 140.008 25.837 140.008 23.508L140.008 4.233C140.008 1.905 138.103 0 135.774 0" fill="#1A3580"/><text x="9.728" y="14.705" font-family="Ubuntu" font-size="7.761" fill="#FFFFFF" xml:space="preserve">Verdachte situatie? Bel</text><text x="90.491" y="14.705" font-family="Ubuntu" font-size="7.761" font-weight="bold" fill="#FFFFFF" xml:space="preserve"> 0900-8844</text></g>
+</svg>

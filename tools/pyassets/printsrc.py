@@ -1,0 +1,91 @@
+"""The ten print source PDFs (source/print/) with their production data, plus the reference reproduction builder.
+
+Coordinates in the source are PDF points from the top left of the MediaBox (PyMuPDF convention); 1 pt = 25.4/72 mm.
+`trim_off` is where the trim corner sits inside the page (mm); `bleed_set` says whether the PDF defines a BleedBox.
+"""
+from __future__ import annotations
+
+import os
+
+from .core import (PT_MM, Defs, Element, Path, Source, TF, Text, fmt, regroup, _esc)
+from .registry import crop
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+DIR = os.path.join(ROOT, "source", "print")
+
+# key -> production data (all measured from the PDFs, see docs/print-phase1-inventory.md)
+SOURCES = {
+    "uitrit": dict(file="15728501-1.pdf", pages=1, page_mm=(820, 270), trim_mm=(800, 250), trim_off=(10, 10), bleed_set=True, cs="CMYK (PDF/X-4, FOGRA39), spot ThruCut"),
+    "evoluon": dict(file="EvoluonPasjes.pdf", pages=2, page_mm=(85, 55), trim_mm=(85, 55), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "hofplein": dict(file="InfoPylonBordGoed.pdf", pages=1, page_mm=(600, 840), trim_mm=(600, 840), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "laadkabel": dict(file="LaadKabel.pdf", pages=1, page_mm=(256, 306), trim_mm=(250, 300), trim_off=(3, 3), bleed_set=True, cs="CMYK"),
+    "diefstal": dict(file="StickerDiefstalARtisDruk.pdf", pages=2, page_mm=(140, 280), trim_mm=(140, 280), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "maashaven": dict(file="Maashaven.pdf", pages=1, page_mm=(406, 1006), trim_mm=(400, 1000), trim_off=(3, 3), bleed_set=True, cs="CMYK"),
+    "glow1": dict(file="Tekengebied_1.pdf", pages=1, page_mm=(297, 420), trim_mm=(297, 420), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "glow4": dict(file="Tekengebied_4_kopie_4.pdf", pages=1, page_mm=(297, 420), trim_mm=(297, 420), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "tagline": dict(file="Naamloos-7.pdf", pages=1, page_mm=(148, 105), trim_mm=(148, 105), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC, sRGB)"),
+    "inleveren": dict(file="Inleveren_Abbonementborg_A5.pdf", pages=1, page_mm=(148, 105), trim_mm=(148, 105), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+}
+_CACHE: dict = {}
+
+
+def mm2pt(v):
+    return v / PT_MM
+
+
+def source(key: str) -> Source:
+    if key not in _CACHE:
+        _CACHE[key] = Source(os.path.join(DIR, SOURCES[key]["file"]))
+    return _CACHE[key]
+
+
+def page_pt(key):
+    w, h = SOURCES[key]["page_mm"]
+    return mm2pt(w), mm2pt(h)
+
+
+def box_mm(x0, y0, x1, y1):
+    """Rectangle in mm (page coordinates, origin top left of the MediaBox) to source points, for crop()."""
+    return (mm2pt(x0), mm2pt(y0), mm2pt(x1), mm2pt(y1))
+
+
+def reference_items(key, pno=1, omit=None, outline_fonts=(), extra=(), skip_text=None):
+    """All visible vectors and live text of one page, in paint order, source colours (no normalisation).
+    Paths that lie completely outside the page are dropped. `omit(path)` drops more (hidden underlays, leftovers)."""
+    src = source(key)
+    W, H = page_pt(key)
+
+    def skip(p):
+        b = p.box
+        if b[2] < 0 or b[0] > W or b[3] < 0 or b[1] > H:
+            return True
+        return bool(omit and omit(p))
+
+    items = crop(src, pno, (-W, -H, 2 * W, 2 * H), partial=True, skip=skip, outline_fonts=outline_fonts, skip_text=skip_text)
+    items = regroup(src, pno, items) + list(extra)
+    return items
+
+
+def reference_svg(app_id, key, pno=1, variant="", omit=None, outline_fonts=(), extra=(), skip_text=None, title=None):
+    """Faithful reproduction of one source page. viewBox = the whole page (MediaBox, bleed included), mm.
+    A hidden group `trim-guide` carries the trim box. Colours are the source colours (sRGB as a viewer shows the CMYK)."""
+    info = SOURCES[key]
+    items = reference_items(key, pno, omit, outline_fonts, extra, skip_text)
+    el = Element(id=app_id, name_nl="", level="app", category="reference", page=pno, items=items)
+    tf = TF(0.0, 0.0, PT_MM, 0.0, 0.0)
+    defs = Defs(prefix=f"{app_id}{('-' + variant) if variant else ''}-ref-")
+    body = el.body(tf, defs)
+    W, H = info["page_mm"]
+    tx, ty = info["trim_off"]
+    tw, th = info["trim_mm"]
+    d = "<defs>" + "".join(defs.items) + "</defs>" if defs.items else ""
+    gid = f"{app_id}-reference" + (f"-{variant}" if variant else "")
+    t = title or f"{app_id}{(' ' + variant) if variant else ''}: reference reproduction of {info['file']} page {pno}"
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{fmt(W)}mm" height="{fmt(H)}mm" viewBox="0 0 {fmt(W)} {fmt(H)}">\n'
+        f"<title>{_esc(t)}</title>\n{d}"
+        f'<g id="{gid}" data-role="reference">{body}</g>\n'
+        f'<g id="trim-guide" visibility="hidden"><rect x="{fmt(tx)}" y="{fmt(ty)}" width="{fmt(tw)}" height="{fmt(th)}" fill="none" stroke="#00A0E0" stroke-width="0.2"/></g>\n'
+        "</svg>\n"
+    )

@@ -1,0 +1,99 @@
+{
+ "id": "py-app-card-abonnement-evoluon",
+ "name_nl": "Abonnementskaart Evoluon",
+ "type": "card",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-card-abonnement-evoluon-front",
+   "variant": "front",
+   "reference": "reference-front.svg",
+   "template": "template-front.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color",
+    "py-atom-field-input-rounded",
+    "py-comp-field-block-label-input"
+   ]
+  },
+  {
+   "id": "py-app-card-abonnement-evoluon-back",
+   "variant": "back",
+   "reference": "reference-back.svg",
+   "template": "template-back.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-tagline-lockup-reverse",
+    "py-atom-logo-beeldmerk-watermark",
+    "py-atom-logo-horizontal-reverse"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/EvoluonPasjes.pdf",
+    "pages": [
+     1,
+     2
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     85,
+     55
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   85,
+   55
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   91.0,
+   61.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "front": {
+   "location-name": "Evoluon",
+   "field-label-1": "Abonnementsnummer:",
+   "field-label-2": "Kenteken:"
+  },
+  "back": {
+   "tagline-text": "The other way of parking"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-logo-beeldmerk-color",
+  "py-atom-logo-wordmark-color",
+  "py-atom-field-input-rounded",
+  "py-comp-field-block-label-input",
+  "py-comp-tagline-lockup-reverse",
+  "py-atom-logo-beeldmerk-watermark",
+  "py-atom-logo-horizontal-reverse"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Source has no bleed box (art overshoots the page by 3 to 20 mm); templates are built with 3 mm bleed. Front: the beeldmerk at 1.508x (54.3 x 65.5 mm) runs 20.7 mm off the left, 10.0 mm off the top and 0.5 mm off the bottom; the part beyond the 3 mm bleed lies outside the template viewBox. Back: the source background overshoots the trim only 0.2 mm at the bottom and 3.3 mm at the top; the template runs the navy into 3 mm all round. The watermark is 5 percent (the Phase 1 document said 10 percent). The back lockup is the reverse lockup (white bubble, aqua dot) at 0.511x of the A6 lockup, centred on the card; the tagline is live text so it can be a variable. Card number and plate fields are blank in print (input fields only)."
+}

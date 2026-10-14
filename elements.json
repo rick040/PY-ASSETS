@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 204,
+ "count": 247,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -835,6 +835,64 @@
    "svg": "svg/atom/py-atom-arrow-up-plain.svg"
   },
   {
+   "id": "py-atom-badge-round-navy",
+   "name_nl": "Ronde badge navy",
+   "level": "atom",
+   "category": "badge",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 36.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Container only: 36 mm disc in navy (the Maashaven print draws the payment badges in the token blue 100/83/0/17). The mark goes on top (see py-comp-pyloon-payment-row-badges).",
+   "svg": "svg/atom/py-atom-badge-round-navy.svg"
+  },
+  {
+   "id": "py-atom-badge-square-navy",
+   "name_nl": "Vierkante badge navy",
+   "level": "atom",
+   "category": "badge",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 36.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Container only: 36 mm square with corner radius 7.94 mm (22 percent), navy. The mark goes on top.",
+   "svg": "svg/atom/py-atom-badge-square-navy.svg"
+  },
+  {
    "id": "py-atom-display-volvrij-vrij",
    "name_nl": "VOL/VRIJ display, VRIJ",
    "level": "atom",
@@ -1138,6 +1196,64 @@
    "svg": "svg/atom/py-atom-escape-route.svg"
   },
   {
+   "id": "py-atom-field-date-segmented",
+   "name_nl": "Datumveld in segmenten",
+   "level": "atom",
+   "category": "field",
+   "source_page": 1,
+   "source_file": "Inleveren_Abbonementborg_A5.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 39.2,
+    "height": 7.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Three outlined date segments for dd, mm and jjjj (2, 2 and 4 digits), 39.2 x 7.3 mm, chamfered corners with notches between the digit cells, navy stroke 0.75 pt, no fill. Three stroked paths taken from the source as they are.",
+   "svg": "svg/atom/py-atom-field-date-segmented.svg"
+  },
+  {
+   "id": "py-atom-field-input-rounded",
+   "name_nl": "Invulveld afgerond",
+   "level": "atom",
+   "category": "field",
+   "source_page": 1,
+   "source_file": "EvoluonPasjes.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 44.7,
+    "height": 8.3,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Aqua input field, 44.7 x 8.3 mm, corner radius 1.29 mm (15.5 percent of the height), aqua at 10 percent opacity (a transparency group in the source, kept as a group with opacity 0.1). Observed in print, not an official rule. Aqua on white looks pale; place on white paper.",
+   "svg": "svg/atom/py-atom-field-input-rounded.svg"
+  },
+  {
    "id": "py-atom-figure-bags-cheer",
    "name_nl": "figuur 7",
    "level": "atom",
@@ -1363,6 +1479,127 @@
    "svg": "svg/atom/py-atom-figure-wave.svg"
   },
   {
+   "id": "py-atom-icon-car-lock",
+   "name_nl": "Auto met slot",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "StickerDiefstalARtisDruk.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 46.2,
+    "height": 32.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-obs-aqua-licht",
+     "hex": "#68CBDA"
+    }
+   ],
+   "variables": [
+    "colour car",
+    "colour lock"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Car part (navy, normalised to the token #1A3580) plus padlock (light aqua CMYK 54/0/14/0, viewer #68CBDA as sampled, no token). The white gaps in the car are holes in a compound path, not white shapes: it works on any background where navy is visible. 46.2 x 32.0 mm on the sticker.",
+   "svg": "svg/atom/py-atom-icon-car-lock.svg"
+  },
+  {
+   "id": "py-atom-icon-location-pin",
+   "name_nl": "Locatiepin",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "Tekengebied_4_kopie_4.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 21.3,
+    "height": 29.8,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "White location pin in the active Evoluon pill (Tekengebied_4_kopie_4 p1), one path with the round hole. White on transparent: view on a dark background. Printed size 21.3 x 29.8 mm.",
+   "svg": "svg/atom/py-atom-icon-location-pin.svg"
+  },
+  {
+   "id": "py-atom-icon-plug-ring",
+   "name_nl": "Stekker in open ring",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "LaadKabel.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 103.8,
+    "height": 97.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-obs-aqua-licht",
+     "hex": "#68CBDB"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Plug in an open ring, three paths in light aqua (CMYK 54/0/14/0, viewer #68CBDB). Colour kept as sampled: light aqua has no token. Drawn for navy; the sticker uses it at 103.8 x 97.4 mm. Not the green EV sign.",
+   "svg": "svg/atom/py-atom-icon-plug-ring.svg"
+  },
+  {
+   "id": "py-atom-line-divider",
+   "name_nl": "Scheidingslijn",
+   "level": "atom",
+   "category": "line",
+   "source_page": 1,
+   "source_file": "LaadKabel.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 171.3,
+    "height": 0.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour",
+    "stroke width",
+    "length"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Stroked hairline as printed on the laadkabel sticker: white, 2 pt (0.706 mm), 170.6 mm long, flat caps. The diefstal sticker repeats the pattern in navy at 1 pt (0.353 mm), 127.5 mm: templates recolour and rescale it. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-line-divider.svg"
+  },
+  {
    "id": "py-atom-logo-beeldmerk-black",
    "name_nl": "Beeldmerk black",
    "level": "atom",
@@ -1451,6 +1688,36 @@
    "tags": [],
    "notes": "Source page 12 (top right of the aanrijroute lichtbak). White bubble, navy ring, aqua dot. Not defined in 1.4. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/atom/py-atom-logo-beeldmerk-reverse.svg"
+  },
+  {
+   "id": "py-atom-logo-beeldmerk-watermark",
+   "name_nl": "Beeldmerk watermerk (aqua 5 procent)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 2,
+   "source_file": "EvoluonPasjes.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 54.3,
+    "height": 65.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "colour",
+    "opacity"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Beeldmerk shape in aqua at 5 percent opacity (group opacity 0.05, measured on the card back; the Phase 1 document said 10 percent by mistake), 54.3 x 65.5 mm. Same outline as py-atom-logo-beeldmerk-color (scale 1.508) but as a closed silhouette without the ring cut out, extracted as its own variant because it carries the tint. Place on PY-Blauw. Aqua on transparent: nearly invisible on white.",
+   "svg": "svg/atom/py-atom-logo-beeldmerk-watermark.svg"
   },
   {
    "id": "py-atom-logo-beeldmerk-white",
@@ -1813,6 +2080,159 @@
    "svg": "svg/atom/py-atom-logo-wordmark-white.svg"
   },
   {
+   "id": "py-atom-mark-glow",
+   "name_nl": "GLOW merk",
+   "level": "atom",
+   "category": "mark",
+   "source_page": 1,
+   "source_file": "Tekengebied_1.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 126.8,
+    "height": 24.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Third party mark of the event GLOW: outlined wordmark (101.4 x 24.1 mm) plus the white square (22.8 mm), taken as is from Tekengebied_1 p1. Reference only, source the official file. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-mark-glow.svg"
+  },
+  {
+   "id": "py-atom-partner-easypark",
+   "name_nl": "EasyPark",
+   "level": "atom",
+   "category": "partner",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 17.7,
+    "height": 22.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "The e mark in the partner row is EasyPark (confirmed by the owner). White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-partner-easypark.svg"
+  },
+  {
+   "id": "py-atom-partner-mobian",
+   "name_nl": "Mobian",
+   "level": "atom",
+   "category": "partner",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 25.5,
+    "height": 26.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "The word MOBIAN is live ArialMT in the source and is outlined here. White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-partner-mobian.svg"
+  },
+  {
+   "id": "py-atom-partner-myway",
+   "name_nl": "MyWay",
+   "level": "atom",
+   "category": "partner",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 25.1,
+    "height": 19.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-partner-myway.svg"
+  },
+  {
+   "id": "py-atom-partner-parkbee",
+   "name_nl": "ParkBee",
+   "level": "atom",
+   "category": "partner",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 30.4,
+    "height": 6.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-partner-parkbee.svg"
+  },
+  {
    "id": "py-atom-pattern-hoogtebalk-bands",
    "name_nl": "hoogtebalk rode banden",
    "level": "atom",
@@ -1919,6 +2339,37 @@
    "svg": "svg/atom/py-atom-payment-maestro.svg"
   },
   {
+   "id": "py-atom-payment-maestro-badge",
+   "name_nl": "Maestro (witte badgeversie)",
+   "level": "atom",
+   "category": "payment",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 25.4,
+    "height": 15.3,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Older wordmark version, differs from the library colour mark py-atom-payment-maestro. White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-payment-maestro-badge.svg"
+  },
+  {
    "id": "py-atom-payment-mastercard",
    "name_nl": "Mastercard",
    "level": "atom",
@@ -1961,6 +2412,37 @@
    "svg": "svg/atom/py-atom-payment-mastercard.svg"
   },
   {
+   "id": "py-atom-payment-mastercard-badge",
+   "name_nl": "Mastercard (witte badgeversie)",
+   "level": "atom",
+   "category": "payment",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 14.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Older wordmark version, differs from the library colour mark py-atom-payment-mastercard. White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-payment-mastercard-badge.svg"
+  },
+  {
    "id": "py-atom-payment-pin-hand",
    "name_nl": "hand met pas",
    "level": "atom",
@@ -1993,6 +2475,68 @@
    ],
    "notes": "",
    "svg": "svg/atom/py-atom-payment-pin-hand.svg"
+  },
+  {
+   "id": "py-atom-payment-visa",
+   "name_nl": "VISA",
+   "level": "atom",
+   "category": "payment",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 28.4,
+    "height": 9.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-payment-visa.svg"
+  },
+  {
+   "id": "py-atom-payment-vpay",
+   "name_nl": "V PAY",
+   "level": "atom",
+   "category": "payment",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 16.1,
+    "height": 24.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-payment-vpay.svg"
   },
   {
    "id": "py-atom-picto-accessible",
@@ -3156,6 +3700,63 @@
    "svg": "svg/atom/py-atom-sticker-trash.svg"
   },
   {
+   "id": "py-atom-symbol-p-garage-outline",
+   "name_nl": "P in garageomtrek",
+   "level": "atom",
+   "category": "symbol",
+   "source_page": 1,
+   "source_file": "InfoPylonBordGoed.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 101.8,
+    "height": 94.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outline house (garage) with the letter P, two paths, navy (normalised from the print blue to #1A3580). Extracted from InfoPylonBordGoed p1 next to Parking Hofplein, 101.8 x 94.5 mm. Differs from py-atom-symbol-p-roof. Navy: view on a light background.",
+   "svg": "svg/atom/py-atom-symbol-p-garage-outline.svg"
+  },
+  {
+   "id": "py-atom-symbol-p-plain",
+   "name_nl": "P (plat, live tekst)",
+   "level": "atom",
+   "category": "symbol",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 48.5,
+    "height": 64.3,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour",
+    "size"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Plain bold P as live Ubuntu Bold text (white on navy), 91.7 mm as on the Maashaven header; GLOW uses it at 173.4 mm. Not the P with roof (py-atom-symbol-p-roof). White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-symbol-p-plain.svg"
+  },
+  {
    "id": "py-atom-symbol-p-roof",
    "name_nl": "P met dak",
    "level": "atom",
@@ -3455,6 +4056,70 @@
    "tags": [],
    "notes": "Outlined letters 'maximale doorrijhoogte 2,1m' (outlines in the source, kept as outlines). Clean sample at the bottom of p22, 1000 mm wide.",
    "svg": "svg/atom/py-atom-text-hoogtebalk-lettering.svg"
+  },
+  {
+   "id": "py-atom-text-tagline",
+   "name_nl": "Tagline The other way of parking",
+   "level": "atom",
+   "category": "text",
+   "source_page": 1,
+   "source_file": "Naamloos-7.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 57.6,
+    "height": 4.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour",
+    "text"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Live Ubuntu Regular, tracking about +60/1000 em (measured on both print files), white on navy. Size 4.58 mm is the size on the A6 background; observed ratio 0.158 x the beeldmerk height. Observed in print, not an official rule.",
+   "svg": "svg/atom/py-atom-text-tagline.svg"
+  },
+  {
+   "id": "py-comp-bar-footer-callout",
+   "name_nl": "Voetbalk melding",
+   "level": "comp",
+   "category": "bar",
+   "source_page": 1,
+   "source_file": "StickerDiefstalARtisDruk.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 140.0,
+    "height": 27.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "callout text",
+    "phone number"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy bar 140 x 27.7 mm, radius 4.23 mm on all four corners as drawn in the source; the bottom corners start at the page bottom (4.3 mm below the trim), so on the sticker only the top corners show and the visible part is 23.4 mm high. The application template draws the bar with square bottom corners running to the bleed edge. Live text white 7.76 mm: 'Verdachte situatie? Bel' Ubuntu Regular, '0900-8844' Ubuntu Bold.",
+   "svg": "svg/comp/py-comp-bar-footer-callout.svg"
   },
   {
    "id": "py-comp-bord-arrow-plate",
@@ -3831,6 +4496,138 @@
    "svg": "svg/comp/py-comp-face-voetganger-staand.svg"
   },
   {
+   "id": "py-comp-field-block-label-input",
+   "name_nl": "Veldblok label met invulveld",
+   "level": "comp",
+   "category": "field",
+   "source_page": 1,
+   "source_file": "EvoluonPasjes.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 44.8,
+    "height": 12.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "label"
+   ],
+   "built_from": [
+    "py-atom-field-input-rounded"
+   ],
+   "tags": [],
+   "notes": "Label in live Ubuntu Regular 2.82 mm (navy) above the input field atom (py-atom-field-input-rounded). Distances as on the card front: label baseline 1.7 mm above the field top, field left edge 0.05 mm right of the text origin. Rebuilt: composed from the atom plus live text.",
+   "svg": "svg/comp/py-comp-field-block-label-input.svg"
+  },
+  {
+   "id": "py-comp-field-line-label",
+   "name_nl": "Label met lijn",
+   "level": "comp",
+   "category": "field",
+   "source_page": 1,
+   "source_file": "Inleveren_Abbonementborg_A5.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 108.9,
+    "height": 4.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "label",
+    "line-length"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Label as live Ubuntu Regular 4.59 mm plus a drawn navy rule (0.36 mm, the thickness of the underscore glyph) in place of the typed underscores of the source ('Naam klant: ____'). Rule starts 1.06 mm after the label and is 83.5 mm long, ending where the underscores ended (117.4 mm on the form). Set the rule length per use (line length).",
+   "svg": "svg/comp/py-comp-field-line-label.svg"
+  },
+  {
+   "id": "py-comp-field-signature-box",
+   "name_nl": "Handtekeningvak",
+   "level": "comp",
+   "category": "field",
+   "source_page": 1,
+   "source_file": "Inleveren_Abbonementborg_A5.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 109.5,
+    "height": 32.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "label"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Box 109.5 x 32 mm, navy at 5 percent opacity (transparency in the source), label 'Handtekening klant' as live Ubuntu Regular 3.53 mm navy at the bottom left (2.43 mm from the left edge, baseline 3.1 mm above the bottom). Rebuilt: rect plus live text.",
+   "svg": "svg/comp/py-comp-field-signature-box.svg"
+  },
+  {
+   "id": "py-comp-headline-two-colour",
+   "name_nl": "Kop in twee kleuren",
+   "level": "comp",
+   "category": "headline",
+   "source_page": 1,
+   "source_file": "InfoPylonBordGoed.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 473.2,
+    "height": 463.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "headline-1",
+    "headline-2",
+    "headline-3-keyword",
+    "headline-3-punctuation",
+    "headline-4",
+    "headline-5-keyword"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Headline Midden in de stad parkeren, voor een prikkie in five lines: white Ubuntu Regular lines and aqua Ubuntu Bold keywords (parkeren, prikkie), the comma after parkeren white. REBUILT: outlined in the source, rebuilt as live text. Fitted by overlay: size 106.25 mm for all lines (ink height of the M is 73.6 mm = 0.693 em; the 78.1 mm of the brief is the height of the i with dot), line pitch 90.4 mm, left origin 42.2 mm. Segments are variables (headline-N, keyword segments headline-N-keyword are the aqua ones). White and aqua on transparent: view on navy.",
+   "svg": "svg/comp/py-comp-headline-two-colour.svg"
+  },
+  {
    "id": "py-comp-hoogtebalk-bar",
    "name_nl": "hoogtebalk",
    "level": "comp",
@@ -3903,6 +4700,38 @@
    "tags": [],
    "notes": "Generic name field: live text in Ubuntu Bold, white (here 'Fellenoord' from p14, 25 pt at 1:10). Replace the text with the location name. Aqua variant is the same slot with fill #32B9CD.",
    "svg": "svg/comp/py-comp-location-name-slot.svg"
+  },
+  {
+   "id": "py-comp-lockup-location-garage",
+   "name_nl": "Garagelockup",
+   "level": "comp",
+   "category": "lockup",
+   "source_page": 1,
+   "source_file": "InfoPylonBordGoed.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 330.6,
+    "height": 94.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "location-line-1",
+    "location-line-2"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-garage-outline"
+   ],
+   "tags": [],
+   "notes": "Garage symbol (py-atom-symbol-p-garage-outline) plus the two line bold navy name. REBUILT: the name is outlined in the source, rebuilt as live Ubuntu Bold 46.7 mm (fitted by overlay: widths 46.5 and 46.8 mm, ink height 46.7 mm), baselines 46.7 mm apart. Symbol 101.8 mm wide, name starts 140 mm right of the symbol edge. Navy: view on a light background.",
+   "svg": "svg/comp/py-comp-lockup-location-garage.svg"
   },
   {
    "id": "py-comp-overview-level-header",
@@ -4014,6 +4843,84 @@
    "tags": [],
    "notes": "White pill, navy level circle, aqua icons. The level digit is an outlined glyph in the source. Scale 1:5. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/comp/py-comp-overview-level-row-outlined.svg"
+  },
+  {
+   "id": "py-comp-pill-destination",
+   "name_nl": "Bestemmingspil",
+   "level": "comp",
+   "category": "pill",
+   "source_page": 1,
+   "source_file": "Tekengebied_4_kopie_4.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 240.4,
+    "height": 43.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "label",
+    "arrow-direction",
+    "state"
+   ],
+   "built_from": [
+    "py-atom-icon-location-pin"
+   ],
+   "tags": [],
+   "notes": "GLOW destination pill, active state: white stadium pill 240.4 x 43.1 mm (radius = half the height), navy disc 37.8 mm (4.25 mm from the left edge), white arrow or pin in the disc, bold navy label (Ubuntu Bold 26.46 mm, live text). Pill and disc are rebuilt with rx, the label is live text. The arrow is NOT the library py-atom-arrow-left-plain or py-atom-arrow-up-plain: the print arrow is a seven point block arrow 27.5 x 18.9 mm (head 10.3 mm deep, shaft 6.6 mm wide), the library arrow is a chevron arrow of 1:1 proportion. The print arrows (left, up) are the source paths, shifted into the pill. The pin is the atom py-atom-icon-location-pin. Shown here: label Philips stadion with arrow left. Arrow directions: left, up, pin. Inactive state: the same pill group at 25 percent opacity (print: whole group in a transparency group at 25 percent), applied in the template (variable: state). Labels are centred by eye in print (centre 131.5 to 139.6 mm from the pill edge, Philips stadion moved right); the label centre is part of the observed layout. White on transparent: view on a navy background.",
+   "svg": "svg/comp/py-comp-pill-destination.svg"
+  },
+  {
+   "id": "py-comp-pill-list-destinations",
+   "name_nl": "Bestemmingslijst",
+   "level": "comp",
+   "category": "pill",
+   "source_page": 1,
+   "source_file": "Tekengebied_1.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 240.4,
+    "height": 146.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "destination-1",
+    "arrow-1",
+    "destination-2",
+    "arrow-2",
+    "destination-3",
+    "arrow-3"
+   ],
+   "built_from": [
+    "py-comp-pill-destination",
+    "py-atom-icon-location-pin"
+   ],
+   "tags": [],
+   "notes": "Three destination pills under each other, pitch 51.5 mm (measured 51.61 and 51.41, the brief says 51.7; gap 8.4 mm). Same drawing as py-comp-pill-destination (shared construction, the labels are live text per pill, so the pill SVG itself is not placed three times). Route variant shown: Philips stadion (arrow left), DLL (arrow up), TD-gebouw (arrow up), all active. White on transparent: view on a navy background.",
+   "svg": "svg/comp/py-comp-pill-list-destinations.svg"
   },
   {
    "id": "py-comp-portal-display-slot",
@@ -4366,6 +5273,42 @@
    "svg": "svg/comp/py-comp-portal-p-block.svg"
   },
   {
+   "id": "py-comp-price-bubble-corner",
+   "name_nl": "Prijsbel in de hoek",
+   "level": "comp",
+   "category": "bubble",
+   "source_page": 1,
+   "source_file": "InfoPylonBordGoed.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 243.1,
+    "height": 235.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "price",
+    "price-decimals",
+    "unit",
+    "footnote-mark"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "White circle (radius 141 mm) cropped by the top right corner (shape includes the 3 mm bleed), with the price rotated 21.8 degrees clockwise: live Ubuntu Bold Italic 115.18 mm for the euro and the 7, live Ubuntu Medium Italic 62 mm for the decimals. REBUILT: the text per dag and the asterisk are outlined in the source, rebuilt as live text. Measured by fitting the glyphs: per dag is upright Ubuntu Regular 34.17 mm (not Medium Italic as in the brief: only upright Regular fits the outlines in width and height), the asterisk is 11.8 mm raised 14.1 mm. In the source the white circle is a hole in the navy field (paper), here it is drawn as a white shape. Open point: the asterisk has no footnote anywhere on the panel (kept as in the source, variable footnote mark). Navy text on white.",
+   "svg": "svg/comp/py-comp-price-bubble-corner.svg"
+  },
+  {
    "id": "py-comp-price-strip-110x400",
    "name_nl": "deelfolie 110x400",
    "level": "comp",
@@ -4573,6 +5516,119 @@
    "svg": "svg/comp/py-comp-pyloon-header-band.svg"
   },
   {
+   "id": "py-comp-pyloon-header-band-plain",
+   "name_nl": "Kopband zonder dak",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 406.0,
+    "height": 118.8,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#1A3781"
+    },
+    {
+     "token": null,
+     "hex": "#1B3B84"
+    },
+    {
+     "token": null,
+     "hex": "#1C4288"
+    },
+    {
+     "token": null,
+     "hex": "#1E4C8D"
+    },
+    {
+     "token": null,
+     "hex": "#205894"
+    },
+    {
+     "token": null,
+     "hex": "#23679D"
+    },
+    {
+     "token": null,
+     "hex": "#2678A7"
+    },
+    {
+     "token": null,
+     "hex": "#2A8BB2"
+    },
+    {
+     "token": null,
+     "hex": "#2EA1BF"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-gradient-verloop",
+    "py-tok-color-blauw",
+    "py-atom-symbol-p-plain"
+   ],
+   "tags": [],
+   "notes": "Navy header with the plain P (py-atom-symbol-p-plain, white 91.72 mm) and a convex curved lower edge with the thin blauw to aqua gradient edge. 406 mm wide and 118.8 mm high: it includes the 3 mm bleed at the left, right and top (the trim starts at x 3, y 3 inside this element; place it at -3, -3 relative to the trim corner). 115.9 mm of navy ends 2.9 mm above the lowest point of the edge. The edge is a Sh0 shading in the source (the clip path is the exact outline, the navy ellipse is cut to the page). Rebuilt: the shading becomes a real vector gradient with the exact axis and exponential curve of the PDF (horizontal, aqua at the left, navy at the right) written in the token colours of py-tok-gradient-verloop (#1A3580 to #32B9CD); the navy shape is an ellipse cut to the page, the P is a library atom. Handbook band: py-comp-pyloon-header-band (225 mm, with roof).",
+   "svg": "svg/comp/py-comp-pyloon-header-band-plain.svg"
+  },
+  {
+   "id": "py-comp-pyloon-location-lockup-stacked",
+   "name_nl": "Locatielockup gestapeld",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 269.3,
+    "height": 70.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "location-name"
+   ],
+   "built_from": [
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color",
+    "py-tok-color-blauw",
+    "py-tok-type-ubuntu-bold"
+   ],
+   "tags": [],
+   "notes": "Beeldmerk and parkingyou wordmark with the location name stacked below the wordmark (Ubuntu Bold 38.46 mm navy, live text). The logo paths are taken from the print as drawn: the beeldmerk is the shape of py-atom-logo-beeldmerk-color at 1.474x (53.1 x 64.0 mm) and the wordmark the shape of py-atom-logo-wordmark-color at 2.072x (134.2 mm wide). Proportion drift: wordmark width is 2.10 x the beeldmerk height here, 2.55 x in the library horizontal logo (py-atom-logo-horizontal-color), so the wordmark is about 18 percent smaller relative to the beeldmerk. Not the library logo: do not replace by it without a decision. Rebuilt: logo paths as drawn plus live name text.",
+   "svg": "svg/comp/py-comp-pyloon-location-lockup-stacked.svg"
+  },
+  {
    "id": "py-comp-pyloon-location-name-slot",
    "name_nl": "locatienaam pyloon",
    "level": "comp",
@@ -4649,6 +5705,43 @@
    "svg": "svg/comp/py-comp-pyloon-opening-hours.svg"
   },
   {
+   "id": "py-comp-pyloon-opening-hours-multirow",
+   "name_nl": "Openingstijden meerdere rijen",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 363.0,
+    "height": 59.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [
+    "day-1",
+    "hours-1",
+    "day-2",
+    "hours-2",
+    "day-3",
+    "hours-3"
+   ],
+   "built_from": [
+    "py-tok-color-zwart",
+    "py-tok-type-ubuntu-medium"
+   ],
+   "tags": [],
+   "notes": "Variant of py-comp-pyloon-opening-hours (which stays untouched): three day rows without the subscriber note. Live Ubuntu Medium 17.64 mm in black token #1D1D1B (the print uses rich black, drift), row pitch 21.17 mm (1.2 x size). Real columns: day left aligned, hours right aligned (text-anchor end at the right edge); the print aligns them with runs of spaces, which break when a text changes. Rebuilt for that reason.",
+   "svg": "svg/comp/py-comp-pyloon-opening-hours-multirow.svg"
+  },
+  {
    "id": "py-comp-pyloon-payment-row",
    "name_nl": "betaalmogelijkheden rij",
    "level": "comp",
@@ -4706,6 +5799,51 @@
    "tags": [],
    "notes": "",
    "svg": "svg/comp/py-comp-pyloon-payment-row.svg"
+  },
+  {
+   "id": "py-comp-pyloon-payment-row-badges",
+   "name_nl": "Betaalrij met badges",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 362.9,
+    "height": 36.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "badges"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-atom-badge-round-navy",
+    "py-atom-payment-maestro-badge",
+    "py-atom-payment-mastercard-badge",
+    "py-atom-payment-visa",
+    "py-atom-payment-vpay",
+    "py-atom-badge-square-navy",
+    "py-atom-partner-easypark",
+    "py-atom-partner-parkbee",
+    "py-atom-partner-myway",
+    "py-atom-partner-mobian"
+   ],
+   "tags": [],
+   "notes": "Variant of py-comp-pyloon-payment-row (which stays untouched): four round payment badges (Maestro, MasterCard, VISA, V PAY), a divider (navy line 0.32 mm, 28.4 mm high) and four square partner badges (EasyPark, ParkBee, MyWay, Mobian), 36 mm each, pitch 44.2 mm round and 43.9 mm square. Composed from py-atom-badge-round-navy, py-atom-badge-square-navy and the third party reference atoms (which stay reference only: source the official files). Each badge is a group badge-<name> with data-badge, remove a group to change which badges show. Rebuilt: composed.",
+   "svg": "svg/comp/py-comp-pyloon-payment-row-badges.svg"
   },
   {
    "id": "py-comp-pyloon-section-bar-algemene-voorwaarden",
@@ -4878,6 +6016,51 @@
    "svg": "svg/comp/py-comp-pyloon-section-bar-tarieven.svg"
   },
   {
+   "id": "py-comp-pyloon-tariff-rows",
+   "name_nl": "Tariefrijen",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 362.7,
+    "height": 80.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [
+    "label-1",
+    "price-1",
+    "label-2",
+    "price-2",
+    "label-3",
+    "price-3",
+    "label-4",
+    "price-4",
+    "highlighted-row"
+   ],
+   "built_from": [
+    "py-tok-color-zwart",
+    "py-tok-color-blauw",
+    "py-tok-type-ubuntu-medium"
+   ],
+   "tags": [],
+   "notes": "Label left, price right, same style and columns as py-comp-pyloon-opening-hours-multirow. Four rows as printed: Per 60 minuten 8,00, Dagtarief 50,00, Verloren kaart 50,00, Dagtarief met reservering 25,00 (highlighted in navy). Each row is a group tariff-row-N with data-highlighted. Rebuilt for real columns (the print uses runs of spaces).",
+   "svg": "svg/comp/py-comp-pyloon-tariff-rows.svg"
+  },
+  {
    "id": "py-comp-pyloon-terms",
    "name_nl": "algemene voorwaarden blok",
    "level": "comp",
@@ -4921,6 +6104,44 @@
    "tags": [],
    "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/comp/py-comp-pyloon-terms.svg"
+  },
+  {
+   "id": "py-comp-qr-reserveer",
+   "name_nl": "Reserveer QR blok",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 331.8,
+    "height": 118.6,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "qr-target"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold"
+   ],
+   "tags": [],
+   "notes": "Block 'Reserveer je parkeerplaats voordelig online': slogan in live Ubuntu 22.93 mm navy ('Reserveer' bold, ' je' regular), bracket arc to the right of the text (stroke 1.94 mm, navy) and the QR plate (navy rounded square 118.6 mm, radius 11.95 mm) with the QR modules in white (group qr-modules, data-variable qr-target). Sample QR: https://parkingyou.nl/nl/locaties/rotterdam/parking-maashaven/id=129. The modules are a clip path in the source (about 2800 segments), taken with Source.clips and filled white: an inverted QR (white on navy), which some older scanners fail to read. The arc is extracted, not the library atom: py-atom-shape-bracket-arc has the same curve (mirrored, scale about 2.1, stroke 0.906 mm x 2.1 = 1.9 mm) but is one object with its slogan text 'Voordelig parkeren zonder gedoe?', so it cannot be placed alone. Rebuilt: live text, clip path as fill, composed.",
+   "svg": "svg/comp/py-comp-qr-reserveer.svg"
   },
   {
    "id": "py-comp-route-back-noentry",
@@ -5071,6 +6292,33 @@
    "tags": [],
    "notes": "Aqua separator arc between two modules, taken from the 1000 mm board. Stroke only, to be placed on navy.",
    "svg": "svg/comp/py-comp-route-module-separator.svg"
+  },
+  {
+   "id": "py-comp-route-module-separator-uitrit",
+   "name_nl": "Scheidingsboog uitrit (dunne lijn)",
+   "level": "comp",
+   "category": "route-module",
+   "source_page": 1,
+   "source_file": "15728501-1.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 45.7,
+    "height": 216.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Aqua separator arc as printed on the uitrit sign: stroke 3.0 mm, chord 215.5 mm, depth 44.6 mm. Extracted as a variant: the shape is the same as py-comp-route-module-separator (depth to chord ratio 0.207), but at the size of the uitrit sign the library arc would have a stroke of 5.3 mm instead of 3.0 mm. Stroke only, to be placed on navy.",
+   "svg": "svg/comp/py-comp-route-module-separator-uitrit.svg"
   },
   {
    "id": "py-comp-route-module-text",
@@ -5248,6 +6496,53 @@
    "svg": "svg/comp/py-comp-rvv-cluster-pyloon.svg"
   },
   {
+   "id": "py-comp-section-bar",
+   "name_nl": "Sectiebalk (titel variabel)",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 35.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "fill",
+    "title"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-gradient-verloop"
+   ],
+   "tags": [],
+   "notes": "One generic bar, 400 x 35.15 mm, navy token #1A3580 (solid in the print), title live Ubuntu Bold 21.17 mm white, baseline 25.79 mm below the top, left edge at 11.79 mm from the trim edge (14.79 mm on the page, which includes the 3 mm bleed). The print draws the bar 415.8 mm wide so that it runs through the bleed; templates extend it into the bleed. Variable fill: solid (default) or verloop: set the bar fill to url(#py-comp-section-bar-verloop), a horizontal blauw to aqua gradient defined in this file (py-tok-gradient-verloop). The five title bound gradient bars py-comp-pyloon-section-bar-* stay unchanged.",
+   "svg": "svg/comp/py-comp-section-bar.svg"
+  },
+  {
    "id": "py-comp-section-wrap-strip",
    "name_nl": "Kolomband sectie",
    "level": "comp",
@@ -5294,6 +6589,144 @@
    "tags": [],
    "notes": "Vertical gradient strip rebuilt from the clip path of the source shading, three '1A' tags as drawn (live text). Width is variable (depends on column diameter), the drawn example is about 2000 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/comp/py-comp-section-wrap-strip.svg"
+  },
+  {
+   "id": "py-comp-tagline-lockup",
+   "name_nl": "Taglinelockup (wit)",
+   "level": "comp",
+   "category": "lockup",
+   "source_page": 1,
+   "source_file": "Naamloos-7.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 104.9,
+    "height": 28.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "background colour",
+    "tagline text"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-white",
+    "py-atom-text-tagline"
+   ],
+   "tags": [],
+   "notes": "Library logo py-atom-logo-horizontal-white (white dot) at scale 1 plus the tagline atom, positions measured on Naamloos-7. White on navy; place on PY-Blauw. Centred on the format in print (observed).",
+   "svg": "svg/comp/py-comp-tagline-lockup.svg"
+  },
+  {
+   "id": "py-comp-tagline-lockup-reverse",
+   "name_nl": "Taglinelockup (omgekeerd, aqua stip)",
+   "level": "comp",
+   "category": "lockup",
+   "source_page": 2,
+   "source_file": "EvoluonPasjes.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 104.9,
+    "height": 28.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "background colour",
+    "tagline text"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-reverse",
+    "py-atom-text-tagline"
+   ],
+   "tags": [],
+   "notes": "Same lockup with py-atom-logo-horizontal-reverse (white bubble, navy ring, aqua dot) as used on the card back (EvoluonPasjes p2). Geometry follows the A6 lockup; the card back uses it at 0.511x. Two reverse logos are in use in print (white dot versus aqua dot).",
+   "svg": "svg/comp/py-comp-tagline-lockup-reverse.svg"
+  },
+  {
+   "id": "py-comp-text-bilingual-nl-en",
+   "name_nl": "Tweetalig tekstblok NL EN",
+   "level": "comp",
+   "category": "text",
+   "source_page": 1,
+   "source_file": "LaadKabel.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 197.0,
+    "height": 130.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "nl text",
+    "en text"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Live text and divider of the laadkabel sticker as one block, white, cropped without icon and logo. Ubuntu 21.47 mm (60.9 pt), leading 1.2, centred. NL: 'Kabel terughangen' bold, 'na gebruik' regular. Divider. EN: 'Return cable' bold plus ' to' regular, 'hook after use.' regular. Same weight pattern in both languages (key phrase bold, supporting words regular). Text is start anchored at the printed positions; templates re-centre it. White on transparent: view on a dark background.",
+   "svg": "svg/comp/py-comp-text-bilingual-nl-en.svg"
+  },
+  {
+   "id": "py-comp-url-chevron",
+   "name_nl": "URL met chevron",
+   "level": "comp",
+   "category": "url",
+   "source_page": 1,
+   "source_file": "InfoPylonBordGoed.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 221.7,
+    "height": 71.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-obs-aqua-licht",
+     "hex": "#69CADA"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "url-line-1",
+    "url-line-2"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Two line URL in white plus the light aqua chevron (viewer #69CADA, CMYK 54/0/14/0, no token, kept as sampled). The chevron is the source path. REBUILT: both lines are outlined in the source, rebuilt as live text. Fitted by overlay with the outlines: line 1 Ubuntu Bold 37.7 mm, line 2 Ubuntu Light 34.4 mm (Regular does not fit: the width and the height of the glyphs agree only for Light; Light is otherwise not used in print). The URL is split inside the domain as in the source (voordelig / parkeren.nl), open point. White and light aqua on transparent: view on navy.",
+   "svg": "svg/comp/py-comp-url-chevron.svg"
   },
   {
    "id": "py-comp-walk-route-figure-block",
@@ -7314,6 +8747,130 @@
    "svg": "svg/prod/py-prod-pyloon-laag-front.svg"
   },
   {
+   "id": "py-prod-pyloon-laag-front-qr",
+   "name_nl": "Informatiepyloon voorzijde met reservering-QR (printpaneel 400 x 1000)",
+   "level": "prod",
+   "category": "pyloon",
+   "source_page": 1,
+   "source_file": "Maashaven.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 1000.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#1A3781"
+    },
+    {
+     "token": null,
+     "hex": "#1B3B84"
+    },
+    {
+     "token": null,
+     "hex": "#1C4288"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": null,
+     "hex": "#1E4C8D"
+    },
+    {
+     "token": null,
+     "hex": "#205894"
+    },
+    {
+     "token": null,
+     "hex": "#23679D"
+    },
+    {
+     "token": null,
+     "hex": "#2678A7"
+    },
+    {
+     "token": null,
+     "hex": "#2A8BB2"
+    },
+    {
+     "token": null,
+     "hex": "#2EA1BF"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location-name",
+    "fill-openingstijden",
+    "title-openingstijden",
+    "fill-tarieven",
+    "title-tarieven",
+    "fill-betalingsmogelijkheden",
+    "title-betalingsmogelijkheden",
+    "fill-calamiteiten",
+    "title-calamiteiten",
+    "fill-algemene-voorwaarden",
+    "title-algemene-voorwaarden",
+    "day-1",
+    "hours-1",
+    "day-2",
+    "hours-2",
+    "day-3",
+    "hours-3",
+    "label-1",
+    "price-1",
+    "label-2",
+    "price-2",
+    "label-3",
+    "price-3",
+    "label-4",
+    "price-4",
+    "highlighted-row",
+    "badges",
+    "qr-target",
+    "phone",
+    "terms-url"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-color-zwart",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-pyloon-header-band-plain",
+    "py-comp-pyloon-location-lockup-stacked",
+    "py-comp-section-bar",
+    "py-comp-pyloon-opening-hours-multirow",
+    "py-comp-pyloon-tariff-rows",
+    "py-comp-pyloon-payment-row-badges",
+    "py-comp-qr-reserveer"
+   ],
+   "tags": [],
+   "notes": "Print variant of py-prod-pyloon-laag-front, owner request: the 400 x 1000 mm panel of the Maashaven print (trim size, no bleed here), composed with the same function as the application template. Differences from the handbook front: plain P header 116 mm, solid navy bars (py-comp-section-bar, the five py-comp-pyloon-section-bar-* are not used), stacked location lockup, three opening hour rows without the subscriber note, tariffs per 60 minutes with Verloren kaart, 8 payment and partner badges, the reserve block with QR, no RVV signs. Calamiteiten and terms are live text built here: py-comp-pyloon-emergency (15.9 mm, number in black medium) and py-comp-pyloon-terms (9.9 mm, rewrapped, with RVV signs, URL with /nl/) do not match the print, they stay untouched. The copy is corrected (na te lezen op, wegenverkeerswet); the print has 'na de lezen' and 'wegverkeerswet'. Terms URL as in the print: www.parkingyou.nl/algemene-voorwaarden. The header comp is 406 x 118.8 mm (3 mm bleed included) and overhangs the trim by 3 mm at the left, top and right. Example values: Maashaven.",
+   "svg": "svg/prod/py-prod-pyloon-laag-front-qr.svg"
+  },
+  {
    "id": "py-prod-routebord-auto-1000-front",
    "name_nl": "4.1 Autoroutebord 1000",
    "level": "prod",
@@ -7911,5 +9468,17 @@
    "notes": "Wandbord plate (300 mm high; width variable, 3300 mm as drawn) with display and RVV cluster, plus two hoogtebalken. Brick wall, dark wall gradient, dimension and call-out lines are left out. Plate vector paths are taken from the source; the P block and right navy edge (discs clipped by the plate) and the verloop crescent (clip and shading in the source) are rebuilt. The hoogtebalken (red bands and gaffelsets are raster in the source) are rebuilt as vectors. Scale from the 300 mm plate height; the hoogtebalken are drawn schematically in the handbook (2500 x 90 mm per its call-out) and are not at plate scale. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/prod/py-prod-wandbord.svg"
   }
+ ],
+ "print_sources": [
+  "15728501-1.pdf",
+  "EvoluonPasjes.pdf",
+  "InfoPylonBordGoed.pdf",
+  "Inleveren_Abbonementborg_A5.pdf",
+  "LaadKabel.pdf",
+  "Maashaven.pdf",
+  "Naamloos-7.pdf",
+  "StickerDiefstalARtisDruk.pdf",
+  "Tekengebied_1.pdf",
+  "Tekengebied_4_kopie_4.pdf"
  ]
 }

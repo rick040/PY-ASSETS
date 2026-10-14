@@ -1,0 +1,126 @@
+{
+ "id": "py-app-panel-pyloon-maashaven",
+ "name_nl": "Informatiepaneel pyloon Maashaven",
+ "type": "panel",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-panel-pyloon-maashaven",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-color-zwart",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-pyloon-header-band-plain",
+    "py-comp-pyloon-location-lockup-stacked",
+    "py-comp-section-bar",
+    "py-comp-pyloon-opening-hours-multirow",
+    "py-comp-pyloon-tariff-rows",
+    "py-comp-pyloon-payment-row-badges",
+    "py-comp-qr-reserveer"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/Maashaven.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     400,
+     1000
+    ],
+    "bleed_box_set": true
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   400,
+   1000
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   406.0,
+   1006.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "location-name": "Maashaven",
+   "fill-openingstijden": "#1A3580",
+   "title-openingstijden": "Openingstijden",
+   "fill-tarieven": "#1A3580",
+   "title-tarieven": "Tarieven",
+   "fill-betalingsmogelijkheden": "#1A3580",
+   "title-betalingsmogelijkheden": "Betalingsmogelijkheden",
+   "fill-calamiteiten": "#1A3580",
+   "title-calamiteiten": "Calamiteiten",
+   "fill-algemene-voorwaarden": "#1A3580",
+   "title-algemene-voorwaarden": "Algemene voorwaarden",
+   "day-1": "Maandag t/m vrijdag",
+   "hours-1": "07:00 - 23:00 uur",
+   "day-2": "Zaterdag",
+   "hours-2": "09:00 - 18:00 uur",
+   "day-3": "Zondag",
+   "hours-3": "09:00 - 17:00 uur",
+   "label-1": "Per 60 minuten",
+   "price-1": "€ 8,00",
+   "label-2": "Dagtarief",
+   "price-2": "€ 50,00",
+   "label-3": "Verloren kaart",
+   "price-3": "€ 50,00",
+   "label-4": "Dagtarief met reservering",
+   "price-4": "€ 25,00",
+   "highlighted-row": "4",
+   "badges": "maestro-badge, mastercard-badge, visa, vpay, easypark, parkbee, myway, mobian",
+   "qr-target": "https://parkingyou.nl/nl/locaties/rotterdam/parking-maashaven/id=129",
+   "phone": "085 4011647",
+   "terms-url": "www.parkingyou.nl/algemene-voorwaarden"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-color-zwart",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-bold",
+  "py-comp-pyloon-header-band-plain",
+  "py-comp-pyloon-location-lockup-stacked",
+  "py-comp-section-bar",
+  "py-comp-pyloon-opening-hours-multirow",
+  "py-comp-pyloon-tariff-rows",
+  "py-comp-pyloon-payment-row-badges",
+  "py-comp-qr-reserveer"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "White 115 mm square at x 237.3 to 352.1, y 881.0 to 995.8 (page mm): white on white, unused.",
+  "White 115.3 mm rectangle at y 613.9 (page mm) that the source clips to the QR modules: replaced by the clip path itself (the modules), so the QR is drawn as vector modules.",
+  "Navy header ellipse (it extends 700 mm beyond the page): re-added cut to the page."
+ ],
+ "copy_corrections": [
+  {
+   "original": "De algemene voorwaarden zijn na de lezen op:",
+   "corrected": "De algemene voorwaarden zijn na te lezen op:"
+  },
+  {
+   "original": "uit de wegverkeerswet",
+   "corrected": "uit de wegenverkeerswet"
+  }
+ ],
+ "notes": "Print panel 400 x 1000 mm with 3 mm bleed (page 406 x 1006). Reference: faithful reproduction in source colours (drifted blues #1F4383 for header, bars, text and QR plate; token blue #0B3D8A in the badges; rich black as #000000), ArialMT (MOBIAN) outlined, the header edge shading rebuilt as vector gradient with the exact axis and curve of the PDF, QR modules from the clip path. Template: token colours only (#1A3580 all blues, #1D1D1B text), live Ubuntu text, every variable has data-variable (title-<bar>, day-N, hours-N, label-N, price-N, location-name, phone, terms-url), QR as placeholder group inside the navy plate (variable qr-target, example https://parkingyou.nl/nl/locaties/rotterdam/parking-maashaven/id=129). Bars run through the bleed; header band comp includes its own bleed. OPEN: terms URL. The print has www.parkingyou.nl/algemene-voorwaarden, the handbook (3.6) www.parkingyou.nl/nl/algemene-voorwaarden; the print value is kept as the variable value, the owner decides which one is correct. Positions: page mm minus 3 mm trim offset (the Phase 1 note 'text starts at 14.8 mm' is the page coordinate: 11.8 mm from the trim edge). The inverted QR (white on navy) may fail on some scanners; the sample decodes with zxing. Layout fact: bars 35.15 mm high, rows pitch 21.17 mm (1.2 x 17.64 mm)."
+}

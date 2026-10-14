@@ -22,8 +22,39 @@ def element(id: str, name_nl: str, level: str, category: str, page, **meta):
     return deco
 
 
+class DocElement:
+    """Element made by the composer (compose.Doc): same attributes the manifest needs as Element."""
+
+    def __init__(self, doc, meta):
+        for k, v in meta.items():
+            setattr(self, k, v)
+        self.doc = doc
+        self.built_from = list(doc.built_from) or list(meta.get("built_from") or [])
+        self.variables = list(doc.variables) or list(meta.get("variables") or [])
+        self.normalised = {}
+        self.items = []
+        self.mm_per_pt = 1.0
+        self.true_scale = meta.get("true_scale", False)
+        self.dims_mm = meta.get("dims_mm")
+        self.tags = tuple(meta.get("tags") or ())
+        self.notes = meta.get("notes", "")
+        self.status = meta.get("status", "rebuilt")
+
+    def size_mm(self):
+        return self.doc.size()
+
+    def svg(self):
+        return self.doc.svg()
+
+    def colors(self):
+        import re
+
+        return sorted({c.upper() for c in re.findall(r'(?:fill|stroke|stop-color)="(#[0-9A-Fa-f]{6})"', self.doc.svg())})
+
+
 def build(src: Source, id: str) -> Element:
     meta = dict(META[id])
+    srcname = meta.pop("src", None)
     before = dict(NORMALISE_LOG)
     res = BUILDERS[id](src)
     if isinstance(res, tuple):
@@ -31,12 +62,17 @@ def build(src: Source, id: str) -> Element:
         meta.update(extra)
     else:
         items = res
+    if hasattr(items, "boxes"):  # compose.Doc
+        el = DocElement(items, meta)
+        el.src = srcname
+        return el
     if re.match(r"^py-atom-(picto|figure)-", id):
         items = cutout(items)  # single-colour masters: white gap paths become real holes
     after = NORMALISE_LOG
     norm = {k: after[k] - before.get(k, 0) for k in after if after[k] - before.get(k, 0) > 0}
     meta.setdefault("notes", "")
     el = Element(items=items, **meta)
+    el.src = srcname
     el.normalised = norm  # {source colour: path count} replaced by the 1.3 brand value
     return el
 

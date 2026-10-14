@@ -1,0 +1,86 @@
+{
+ "id": "py-app-sticker-instructie-laadkabel",
+ "name_nl": "Instructiesticker laadkabel",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-instructie-laadkabel",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-text-bilingual-nl-en",
+    "py-atom-line-divider",
+    "py-atom-icon-plug-ring",
+    "py-atom-logo-horizontal-white"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/LaadKabel.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     250,
+     300
+    ],
+    "bleed_box_set": true
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   250,
+   300
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   256.0,
+   306.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 4.2,
+   "note": "Proposal: the source has no cut contour. Corner radius 4.2 mm is borrowed from the diefstal footer bar (4.23 mm); to be confirmed by the owner."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "nl-text-1": "Kabel terughangen",
+   "nl-text-2": "na gebruik",
+   "en-text-1": "Return cable to",
+   "en-text-2": "hook after use."
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-comp-text-bilingual-nl-en",
+  "py-atom-line-divider",
+  "py-atom-icon-plug-ring",
+  "py-atom-logo-horizontal-white"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "Hidden full-page grey underlay (CMYK 25/18/20/2, viewer #BDBFBF, 256 x 306 mm) under the blue background; not PY-Grijs, a leftover."
+ ],
+ "copy_corrections": [],
+ "notes": "Layout measured on LaadKabel.pdf: navy background into the 3 mm bleed, plug icon (light aqua, kept as sampled #68CBDB, no token), NL/EN text Ubuntu 21.47 mm white leading 1.2 centred, white divider 0.706 mm x 170.6 mm, library logo py-atom-logo-horizontal-white scaled by height (beeldmerk 11.1 mm, logo about 40 mm wide) centred at the bottom. The source blue is CMYK 100/85.9/6.6/0 (drift); the template uses the token blue. Variables: NL text lines and EN text lines as live text (the bold phrases are runs). The cut contour is a proposal: no contour in the source, radius 4.2 mm taken from the diefstal footer."
+}

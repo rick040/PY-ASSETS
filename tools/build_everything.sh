@@ -5,6 +5,11 @@ python3 -I tools/build_all.py --src source/handbook.pdf
 python3 -I tools/build_overview.py --src source/handbook.pdf --svg-dir overview/pages-svg
 python3 -I tools/build_notes.py
 python3 -I tools/validate.py
+# PM-137 print additions (needs source/print/*.pdf)
+python3 -I tools/build_print.py
+python3 -I tools/build_toepassingen.py --svg-dir overview/toepassingen-pages-svg
+python3 -I tools/validate_print.py
+python3 -I tools/build_print_notes.py
 python3 -I - <<'PY'
 import os, zipfile
 os.makedirs("dist", exist_ok=True)
@@ -12,6 +17,9 @@ with zipfile.ZipFile("dist/parkingyou-brand-assets.zip", "w", zipfile.ZIP_DEFLAT
     for root, _, files in os.walk("svg"):
         for f in sorted(files):
             p = os.path.join(root, f); z.write(p, p)
-    for f in ("tokens.json", "elements.json", "README.md"):
+    for root, _, files in os.walk("applications"):
+        for f in sorted(files):
+            p = os.path.join(root, f); z.write(p, p)
+    for f in ("tokens.json", "elements.json", "applications.json", "README.md", "docs/print-rules.md"):
         z.write(f, f)
 PY
