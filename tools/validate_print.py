@@ -153,6 +153,11 @@ def main():
         for v in sp["variants"]:
             vid = v["id"]
             variant_ids.append(vid)
+            for b in v.get("built_from", []):
+                if b not in els:
+                    errs.append(f"{vid} built_from unknown ID {b}")
+                if b not in sp["built_from"]:
+                    errs.append(f"{vid}: variant built_from {b} missing in the application built_from")
             if not APP_RE.match(vid):
                 errs.append(f"bad variant ID {vid}")
             for kind in ("reference", "template"):
@@ -182,7 +187,8 @@ def main():
                     ew, eh = tr[0] + 2 * bl, tr[1] + 2 * bl
                     if abs(w - ew) > 0.01 or abs(h - eh) > 0.01:
                         errs.append(f"{vid}: template size {w:g} x {h:g} mm, expected trim + 2 x bleed = {ew:g} x {eh:g}")
-                    bad = hexes(s) - BRAND_HEX - OBSERVED_OK - CUT_PH
+                    # gradient stops are interpolations of the token gradient (and its #097BAE middle stop); only fill and stroke are checked
+                    bad = {h.upper() for h in re.findall(r'(?:fill|stroke)="(#[0-9A-Fa-f]{6})"', s)} - BRAND_HEX - OBSERVED_OK - CUT_PH
                     # functional colours of third-party marks inside templates are allowed only if listed in built_from third-party elements
                     if bad:
                         tp = any("third-party" in els[b]["tags"] for b in sp["built_from"] if b in els)
@@ -193,7 +199,7 @@ def main():
                         errs.append(f"{vid}: spec has a cut contour but the template has no cut-contour group")
                     vk = sp["variables"].get(v["variant"] or "default", {})
                     for name in vk:
-                        if f'data-variable="{name}"' not in s and f'data-placeholder' not in s:
+                        if not re.search(r'data-variable[\w-]*="%s"' % re.escape(name), s) and 'data-placeholder' not in s:
                             errs.append(f"{vid}: variable {name} not marked in template")
                     if not vk:
                         errs.append(f"{vid}: template has no variables")

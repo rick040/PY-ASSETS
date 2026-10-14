@@ -8,7 +8,16 @@
    "id": "py-app-sticker-waarschuwing-diefstal",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-text-bilingual-nl-en",
+    "py-comp-bar-footer-callout",
+    "py-atom-icon-car-lock"
+   ]
   }
  ],
  "source": {

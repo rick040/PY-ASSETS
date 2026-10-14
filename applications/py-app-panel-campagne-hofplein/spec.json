@@ -8,7 +8,22 @@
    "id": "py-app-panel-campagne-hofplein",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-light",
+    "py-tok-type-ubuntu-bold-italic",
+    "py-tok-type-ubuntu-medium-italic",
+    "py-comp-url-chevron",
+    "py-comp-price-bubble-corner",
+    "py-comp-headline-two-colour",
+    "py-comp-lockup-location-garage",
+    "py-atom-symbol-p-garage-outline"
+   ]
   }
  ],
  "source": {
@@ -79,5 +94,5 @@
  "tags": [],
  "omitted": [],
  "copy_corrections": [],
- "notes": "Navy field 600 x 714.3 mm (runs 3 mm into the bleed at top, left and right), the lower 125.7 mm is white paper (no ink) with the garage lockup. The white price circle is a hole in the navy field in the source (paper shows through); the template draws it as a white shape. Reference keeps all outlines as extracted paths (headline, url, per dag, name); only the price is live text, rotated 21.8 degrees. Template: headline, url, price, unit and name are live Ubuntu text with data-variable. OPEN POINT (copy): the asterisk after per dag has no footnote anywhere on the panel; kept as in the source (variable footnote-mark). OPEN POINT (copy): the URL is split inside the domain (voordelig / parkeren.nl), kept as in the source. Fitted fonts (measured by overlay with the outlines): headline Ubuntu Regular/Bold 106.25 mm, URL line 1 Bold 37.7 mm, URL line 2 Light 34.4 mm, per dag Italic Regular 33.96 mm, name Bold 46.7 mm. The Light weight and the Italic Regular (instead of Medium Italic) differ from the brief and from the observed rule that Light is not used: owner to confirm. Blue in the source is CMYK 100/83/0/17 (equal to the token), light aqua chevron kept as sampled #69CADA."
+ "notes": "Navy field 600 x 714.3 mm (runs 3 mm into the bleed at top, left and right), the lower 125.7 mm is white paper (no ink) with the garage lockup. The white price circle is a hole in the navy field in the source (paper shows through); the template draws it as a white shape. Reference keeps all outlines as extracted paths (headline, url, per dag, name); only the price is live text, rotated 21.8 degrees. Template: headline, url, price, unit and name are live Ubuntu text with data-variable. OPEN POINT (copy): the asterisk after per dag has no footnote anywhere on the panel; kept as in the source (variable footnote-mark). OPEN POINT (copy): the URL is split inside the domain (voordelig / parkeren.nl), kept as in the source. Fitted fonts (measured by overlay with the outlines): headline Ubuntu Regular/Bold 106.25 mm, URL line 1 Bold 37.7 mm, URL line 2 Light 34.4 mm, per dag upright Regular 34.17 mm, name Bold 46.7 mm. The Light weight and the upright Regular (instead of Medium Italic) differ from the brief and from the observed rule that Light is not used: owner to confirm. Blue in the source is CMYK 100/83/0/17 (equal to the token), light aqua chevron kept as sampled #69CADA."
 }

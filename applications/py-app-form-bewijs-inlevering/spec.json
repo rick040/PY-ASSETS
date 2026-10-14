@@ -8,7 +8,19 @@
    "id": "py-app-form-bewijs-inlevering",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-field-date-segmented",
+    "py-comp-field-line-label",
+    "py-comp-field-signature-box",
+    "py-atom-logo-beeldmerk-color"
+   ]
   }
  ],
  "source": {

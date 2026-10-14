@@ -7,6 +7,7 @@ outlines to the ink box of the outlined source glyphs (width and height agree wi
 """
 import math
 
+import re
 from pyassets import printsrc
 from pyassets.apps import application
 from pyassets.compose import Doc
@@ -76,6 +77,10 @@ PIN_REL = (40.298 - PILL_X0, 312.024 - PILL_TOPS[1])
 def _pill(d, x, y, label, kind="left", state="active", var=None, gid="py-comp-pill-destination"):
     """GLOW destination pill with its top left at (x, y). kind: left, up (print arrows) or pin. state: active or inactive (25 percent)."""
     attrs = {"data_state": state, "data_arrow": kind}
+    mm = re.search(r"-(\d+)$", var or "")
+    if mm:  # the arrow and state variables of this pill (variable names arrow-N, state-N)
+        attrs["data_variable_arrow"] = f"arrow-{mm.group(1)}"
+        attrs["data_variable_state"] = f"state-{mm.group(1)}"
     if state == "inactive":
         attrs["opacity"] = 0.25
     with d.group(gid, **attrs):
@@ -416,7 +421,7 @@ def _(ctx):
     d.guides(*UIT_TRIM)
     return dict(
         reference={"": ref}, template={"": d},
-        omitted=["the second and third navy shapes below the sign (bleed shapes) are kept; nothing omitted. The cut contour is kept as group cut-contour in the reference."],
+        omitted=[],
         copy_corrections=[],
         notes=("800 x 250 mm trim, 10 mm bleed (page 820 x 270). Navy stadium with elliptical ends (rx 133.3, ry 125 mm); the template draws one navy shape into the bleed "
                "(rx 143.3, ry 135 mm, the 10 mm offset of the trim shape; the source bleed shape is 820 x 273.5 mm and sticks 1.7 mm out of the page). "

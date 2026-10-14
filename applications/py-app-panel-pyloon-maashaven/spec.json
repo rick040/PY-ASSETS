@@ -8,7 +8,22 @@
    "id": "py-app-panel-pyloon-maashaven",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-color-zwart",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-pyloon-header-band-plain",
+    "py-comp-pyloon-location-lockup-stacked",
+    "py-comp-section-bar",
+    "py-comp-pyloon-opening-hours-multirow",
+    "py-comp-pyloon-tariff-rows",
+    "py-comp-pyloon-payment-row-badges",
+    "py-comp-qr-reserveer"
+   ]
   }
  ],
  "source": {

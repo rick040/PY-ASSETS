@@ -8,7 +8,13 @@
    "id": "py-app-brand-background-tagline",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-tagline-lockup",
+    "py-atom-logo-horizontal-white"
+   ]
   }
  ],
  "source": {

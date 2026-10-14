@@ -183,6 +183,7 @@ def build_apps(only):
         files = {"reference": {}, "template": {}}
         built = []
         variables = {}
+        vbf = {}
         for v in variants:
             sfx = f"-{v}" if v else ""
             ref = res["reference"][v]
@@ -194,6 +195,7 @@ def build_apps(only):
             open(os.path.join(d, fn_t), "w", encoding="utf8").write(tsvg)
             files["reference"][v or "default"] = fn_r
             files["template"][v or "default"] = fn_t
+            vbf[v or "default"] = list(getattr(tpl, "built_from", []))
             if hasattr(tpl, "built_from"):
                 for b in tpl.built_from:
                     if b not in built:
@@ -211,7 +213,8 @@ def build_apps(only):
         spec = {
             "id": id_, "name_nl": meta["name_nl"], "type": meta["type"], "origin": "print",
             "variants": [{"id": id_ + (f"-{v}" if v else ""), "variant": v or None,
-                          "reference": files["reference"][v or "default"], "template": files["template"][v or "default"]} for v in variants],
+                          "reference": files["reference"][v or "default"], "template": files["template"][v or "default"],
+                          "built_from": vbf.get(v or "default", [])} for v in variants],
             "source": {"files": [{"file": "source/print/" + printsrc.SOURCES[k]["file"], "pages": pg,
                                   "colour_space": printsrc.SOURCES[k]["cs"], "trim_mm": list(printsrc.SOURCES[k]["trim_mm"]),
                                   "bleed_box_set": printsrc.SOURCES[k]["bleed_set"]} for k, pg in srcs]},

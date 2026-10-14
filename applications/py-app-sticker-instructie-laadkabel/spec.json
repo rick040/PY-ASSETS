@@ -8,7 +8,17 @@
    "id": "py-app-sticker-instructie-laadkabel",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-text-bilingual-nl-en",
+    "py-atom-line-divider",
+    "py-atom-icon-plug-ring",
+    "py-atom-logo-horizontal-white"
+   ]
   }
  ],
  "source": {

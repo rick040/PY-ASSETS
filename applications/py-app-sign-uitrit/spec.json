@@ -8,7 +8,16 @@
    "id": "py-app-sign-uitrit",
    "variant": null,
    "reference": "reference.svg",
-   "template": "template.svg"
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-picto-car",
+    "py-comp-route-module-separator-uitrit",
+    "py-atom-arrow-up-circle"
+   ]
   }
  ],
  "source": {
@@ -65,9 +74,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
- "omitted": [
-  "the second and third navy shapes below the sign (bleed shapes) are kept; nothing omitted. The cut contour is kept as group cut-contour in the reference."
- ],
+ "omitted": [],
  "copy_corrections": [],
  "notes": "800 x 250 mm trim, 10 mm bleed (page 820 x 270). Navy stadium with elliptical ends (rx 133.3, ry 125 mm); the template draws one navy shape into the bleed (rx 143.3, ry 135 mm, the 10 mm offset of the trim shape; the source bleed shape is 820 x 273.5 mm and sticks 1.7 mm out of the page). Cut contour: ThruCut, 1 pt magenta stroke, 0.2 mm inside the trim, elliptical ends (the source contour is the stroke path, kept in the reference as group cut-contour). Library check: py-atom-picto-car matches the print car (same proportion, scale 6.79) and py-atom-arrow-up-circle matches the print circle and arrow (scale 1.268, arrow share 0.706). The library arc py-comp-route-module-separator has the same shape but would print with a 5.3 mm stroke instead of 3.0 mm, so the print arc is extracted as the variant py-comp-route-module-separator-uitrit (py-atom-shape-separator-arc is the handbook illustration in grey and navy, not the aqua arc). Uit is live Ubuntu Bold 167.84 mm, white (fitted by overlay, width and height agree). Blue in the source is CMYK 100/92.5/19.2/5.9 (the most drifted blue), aqua CMYK 67.8/3.1/19.2/0; the template uses the tokens #1A3580 and #32B9CD."
 }

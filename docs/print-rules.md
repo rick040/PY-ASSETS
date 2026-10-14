@@ -91,7 +91,7 @@ Venue and destination names (Evoluon, Philips stadion, TD-gebouw, DLL, Parking H
 
 ## 6. Observed rules
 
-1. **Typeface.** Ubuntu only. Regular, Medium and Bold in use. Italic only for the price numerals on the campaign panel. Light is not used.
+1. **Typeface.** Ubuntu only. Regular, Medium and Bold in use. Italic only for the price numerals on the campaign panel. Light appears once, in the second URL line ("parkeren.nl") of the campaign panel.
 2. **Weight pattern.** A key phrase is bold, the supporting words regular, inside one line ("Kabel terughangen" bold, "na gebruik" regular). Titles stack a regular and a bold line ("Abonnement" / "Evoluon").
 3. **Leading.** 1.2 x the font size for body and headings (stickers, Maashaven). Stacked card titles are tighter: 0.94 (card) and 1.03 (form).
 4. **Type scale.** Stickers: heading 60 pt, body 40 pt (ratio 1.5). Maashaven: bars 60 pt, rows 50 pt, terms 35 pt. LaadKabel: both languages 60.9 pt.
@@ -101,9 +101,9 @@ Venue and destination names (Evoluon, Philips stadion, TD-gebouw, DLL, Parking H
 8. **Tints are transparency.** Aqua at 10 percent for input fields, aqua at 5 percent for the watermark, navy at 5 percent for the signature box. Not flat spot tints.
 9. **Light aqua on navy.** CMYK 54/0/14/0 for icons on navy (plug, padlock, chevron). Not a token.
 10. **Corner radii.** QR plate 11.95 mm on 118.6 (10 percent), partner badge 7.94 on 36 (22 percent), input field 1.29 on 8.3 (15.5 percent), sticker footer bar 4.23 mm on all four corners (the bottom ones lie below the trim in the source), GLOW pill full round, uitrit pill elliptical ends (rx 133.3, ry 125).
-11. **Margins.** Maashaven: text starts 11.8 mm from the trim edge (2.95 percent of the width; 14.8 mm in page coordinates with the 3 mm bleed), bars run edge to edge and through the bleed. GLOW: pills 28.3 mm from both sides (9.5 percent), bottom margin 20.6 mm, pill pitch 51.7 mm for a 43.1 mm pill (gap 8.6 mm). Card front: right margin 3.5 mm, wordmark 8.6 mm from the left.
+11. **Margins.** Maashaven: text starts 11.8 mm from the trim edge (2.95 percent of the width; 14.8 mm in page coordinates with the 3 mm bleed), bars run edge to edge and through the bleed. GLOW: pills 28.3 mm from both sides (9.5 percent), bottom margin 20.6 mm, pill pitch 51.4 to 51.6 mm for a 43.1 mm pill (gap about 8.4 mm; the template uses 51.5). Card front: right margin 3.5 mm, wordmark 8.6 mm from the left.
 12. **GLOW pill anatomy.** Disc diameter 87.7 percent of the pill height, ring inset 4.2 mm, label 26.46 mm bold, centred in the space right of the disc. Inactive pill: the whole group at 25 percent opacity.
 13. **Date field.** Three segments 9.7 + 9.7 + 19.5 mm wide, 7.1 mm high, 0.26 mm stroke, label "Datum" right aligned under it.
 14. **Header curve.** The pyloon header ends in a convex curve with a thin blue to aqua gradient edge.
-15. **Headline on the campaign panel.** Cap height 78.1 mm, line pitch 90.4 mm, left margin 8.2 percent of the width, keywords aqua bold.
+15. **Headline on the campaign panel.** Font size about 106 mm (cap height of the M 73.6 mm; the 78.1 mm first measured is the i with its dot), line pitch 90.4 mm, left margin 8.2 percent of the width, keywords aqua bold. "per dag" is upright Ubuntu Regular, not italic.
 16. **Cut contour.** Uitrit contour 0.2 mm inside the trim, 1 pt, spot ThruCut. Used as the model for the sticker contours (corner radius proposed, not observed).

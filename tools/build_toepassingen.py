@@ -40,6 +40,55 @@ def colors_of(s):
     return {c.upper() for c in re.findall(r'(?:fill|stroke|stop-color)="(#[0-9A-Fa-f]{6})"', s)}
 
 
+_SPILL: dict = {}
+
+
+def spill(path, pad=80.0):
+    """How far artwork reaches beyond its own viewBox (mm): (left, top, right, bottom). Measured from a render, so the overview can leave room
+    instead of clipping (no clipping masks in the PDF)."""
+    if path in _SPILL:
+        return _SPILL[path]
+    import io
+
+    import numpy as np
+    from PIL import Image
+
+    w, h, defs, body, raw = read_svg(path)
+    if w * h > 4e5:
+        px_mm = 1.0
+    else:
+        px_mm = 3.0
+    big = re.sub(r'width="[^"]*mm" height="[^"]*mm" viewBox="[^"]*"',
+                 f'width="{(w + 2 * pad) * px_mm:.0f}" height="{(h + 2 * pad) * px_mm:.0f}" viewBox="{-pad} {-pad} {w + 2 * pad} {h + 2 * pad}"', raw, count=1)
+    png = cairosvg.svg2png(bytestring=big.encode())
+    a = np.array(Image.open(io.BytesIO(png)).convert("RGBA"))[:, :, 3] > 8
+    ys, xs = np.where(a)
+    if len(xs) == 0:
+        res = (0.0, 0.0, 0.0, 0.0)
+    else:
+        x0, x1, y0, y1 = xs.min() / px_mm - pad, (xs.max() + 1) / px_mm - pad, ys.min() / px_mm - pad, (ys.max() + 1) / px_mm - pad
+        res = (max(0.0, -x0), max(0.0, -y0), max(0.0, x1 - w), max(0.0, y1 - h))
+        res = tuple(0.0 if v < 0.6 else v for v in res)
+    _SPILL[path] = res
+    return res
+
+
+def needs_tile(path):
+    """True when most of the artwork is white (invisible on the white page): render on transparent and count the white share."""
+    import io
+
+    import numpy as np
+    from PIL import Image
+
+    png = cairosvg.svg2png(url=path, output_width=240)
+    im = np.array(Image.open(io.BytesIO(png)).convert("RGBA"))
+    ink = im[:, :, 3] > 8
+    if ink.sum() == 0:
+        return False
+    white = ink & (im[:, :, 0] > 245) & (im[:, :, 1] > 245) & (im[:, :, 2] > 245)
+    return white.sum() / ink.sum() > 0.25
+
+
 class Pg:
     def __init__(self, section, title, sub=""):
         self.section, self.title, self.sub = section, title, sub
@@ -112,27 +161,30 @@ def app_pages(apps, els, root):
             top, bot = 36.0, 244.0  # artwork band
             ex_x0, ex_x1 = 302.0, PW - MX  # exploded column
             gap = 8.0
-            wide = max(rw, tw_) > 1.25 * max(rh, th_)
+            rs, ts = spill(ref), spill(tpl)  # (left, top, right, bottom) overshoot in mm
+            rW, rH = rw + rs[0] + rs[2], rh + rs[1] + rs[3]
+            tW, tH = tw_ + ts[0] + ts[2], th_ + ts[1] + ts[3]
+            wide = max(rW, tW) > 1.25 * max(rH, tH)
             if wide:
                 aw, ah = ex_x0 - MX - 6, (bot - top - 16) / 2
-                k = fit(max(rw, tw_), max(rh, th_), aw, ah - 8)
-                y1 = top + 4
-                pg.embed(ref, MX, y1, k, f"{vid}-reference")
-                lh = pg.label(MX + rw * k / 2, y1 + rh * k + 1.5, vid, "Origineel (referentie)", 150)
-                y2 = y1 + rh * k + lh + 10
-                pg.embed(tpl, MX, y2, k, f"{vid}-template")
-                pg.label(MX + tw_ * k / 2, y2 + th_ * k + 1.5, vid, "Template (tokenkleuren, met bleed)", 150)
+                k = fit(max(rW, tW), max(rH, tH), aw, ah - 8)
+                y1 = top + 4 + rs[1] * k
+                pg.embed(ref, MX + rs[0] * k, y1, k, f"{vid}-reference")
+                lh = pg.label(MX + rs[0] * k + rw * k / 2, y1 + rh * k + rs[3] * k + 1.5, vid, "Origineel (referentie)", 150)
+                y2 = y1 + rh * k + rs[3] * k + lh + 10 + ts[1] * k
+                pg.embed(tpl, MX + ts[0] * k, y2, k, f"{vid}-template")
+                pg.label(MX + ts[0] * k + tw_ * k / 2, y2 + th_ * k + ts[3] * k + 1.5, vid, "Template (tokenkleuren, met bleed)", 150)
             else:
                 aw = (ex_x0 - MX - gap - 6) / 2
-                k = fit(max(rw, tw_), max(rh, th_), aw, bot - top - 20)
-                pg.embed(ref, MX, top + 4, k, f"{vid}-reference")
-                pg.label(MX + rw * k / 2, top + 4 + rh * k + 1.5, vid, "Origineel (referentie)", max(aw, 60))
+                k = fit(max(rW, tW), max(rH, tH), aw, bot - top - 20)
+                pg.embed(ref, MX + rs[0] * k, top + 4 + rs[1] * k, k, f"{vid}-reference")
+                pg.label(MX + rs[0] * k + rw * k / 2, top + 4 + (rs[1] + rh + rs[3]) * k + 1.5, vid, "Origineel (referentie)", max(aw, 60))
                 x2 = MX + aw + gap
-                pg.embed(tpl, x2, top + 4, k, f"{vid}-template")
-                pg.label(x2 + tw_ * k / 2, top + 4 + th_ * k + 1.5, vid, "Template (tokenkleuren, met bleed)", max(aw, 60))
+                pg.embed(tpl, x2 + ts[0] * k, top + 4 + ts[1] * k, k, f"{vid}-template")
+                pg.label(x2 + ts[0] * k + tw_ * k / 2, top + 4 + (ts[1] + th_ + ts[3]) * k + 1.5, vid, "Template (tokenkleuren, met bleed)", max(aw, 60))
             # exploded column
             pg.body.append(group(text(ex_x0, top + 3, "Opgebouwd uit", FS7, BRAND["blauw"], weight=700), "head-exploded"))
-            bf = [b for b in spec["built_from"] if b in els]
+            bf = [b for b in (v.get("built_from") or spec["built_from"]) if b in els]
             n = max(len(bf), 1)
             cols = 3 if n > 6 else 2
             rows_ = -(-n // cols)
@@ -144,7 +196,7 @@ def app_pages(apps, els, root):
                 p = os.path.join(root, els[b]["svg"])
                 w, h = read_svg(p)[:2]
                 kk = min((cw - 8) / w, (ch - 14) / h, 1.0)
-                white = colors_of(open(p, encoding="utf8").read()) <= {"#FFFFFF"}
+                white = needs_tile(p)
                 pg.embed(p, bx + (cw - 8 - w * kk) / 2, by, kk, f"{vid}-built-{b}", tile=white, frame=False)
                 pg.label(bx + (cw - 8) / 2, by + h * kk + 1.2, b, "", cw - 6)
             # spec block
@@ -161,7 +213,7 @@ def app_pages(apps, els, root):
             for c in spec.get("copy_corrections", []):
                 lines.append(("t", f"Tekstcorrectie in template: \"{c['original']}\" wordt \"{c['corrected']}\" (referentie houdt het origineel)."))
             if spec.get("notes"):
-                lines.append(("t", str(spec["notes"])[:420]))
+                lines.append(("t", str(spec["notes"])[:1100]))
             pg.block(MX, bot + 6, PW - 2 * MX, lines, f"spec-{vid}")
             pages.append((pg, f"{vid}"))
             pg.ids += [vid] + bf
@@ -192,7 +244,7 @@ def element_pages(new_els, root):
                 w, h = read_svg(p)[:2]
                 lab_h = 4 * FS7 * 1.28 + FS7
                 kk = min((cw - 10) / w, (ch - lab_h - 8) / h)
-                white = colors_of(open(p, encoding="utf8").read()) <= {"#FFFFFF"}
+                white = needs_tile(p)
                 pg.embed(p, x0 + (cw - 10 - w * kk) / 2, y0, kk, e["id"], tile=white, frame=False)
                 name = e["name_nl"] + (" [third-party]" if "third-party" in e["tags"] else "") + (" [rebuilt]" if e["status"] == "rebuilt" else "") + f"  {e['dimensions_mm']['width']:g} x {e['dimensions_mm']['height']:g} mm"
                 pg.label(x0 + (cw - 10) / 2, y0 + h * kk + 3, e["id"], name, cw - 12)

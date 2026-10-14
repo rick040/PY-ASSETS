@@ -8,13 +8,32 @@
    "id": "py-app-card-abonnement-evoluon-front",
    "variant": "front",
    "reference": "reference-front.svg",
-   "template": "template-front.svg"
+   "template": "template-front.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color",
+    "py-atom-field-input-rounded",
+    "py-comp-field-block-label-input"
+   ]
   },
   {
    "id": "py-app-card-abonnement-evoluon-back",
    "variant": "back",
    "reference": "reference-back.svg",
-   "template": "template-back.svg"
+   "template": "template-back.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-tagline-lockup-reverse",
+    "py-atom-logo-beeldmerk-watermark",
+    "py-atom-logo-horizontal-reverse"
+   ]
   }
  ],
  "source": {

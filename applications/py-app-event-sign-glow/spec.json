@@ -8,13 +8,33 @@
    "id": "py-app-event-sign-glow-route",
    "variant": "route",
    "reference": "reference-route.svg",
-   "template": "template-route.svg"
+   "template": "template-route.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-symbol-p-plain",
+    "py-atom-mark-glow",
+    "py-comp-pill-destination",
+    "py-comp-pill-list-destinations",
+    "py-atom-icon-location-pin"
+   ]
   },
   {
    "id": "py-app-event-sign-glow-bestemming",
    "variant": "bestemming",
    "reference": "reference-bestemming.svg",
-   "template": "template-bestemming.svg"
+   "template": "template-bestemming.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-symbol-p-plain",
+    "py-atom-mark-glow",
+    "py-atom-icon-location-pin",
+    "py-comp-pill-destination",
+    "py-comp-pill-list-destinations"
+   ]
   }
  ],
  "source": {

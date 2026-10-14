@@ -280,9 +280,11 @@ class Doc:
 
     def placeholder(self, pid, x0, y0, x1, y1, label, variable=None, example=None):
         """Clearly marked placeholder group (dashed magenta outline plus label), e.g. for the QR code."""
+        sw = max(0.4, (y1 - y0) / 60)
+        size = max(3.0, min((y1 - y0) / 4, 30.0))
         with self.group(f"placeholder-{pid}", data_placeholder=pid):
-            self.rect(x0, y0, x1, y1, fill="none", stroke=PH_COLOR, sw=0.4, dash="2 1.5")
-            self.text((x0 + x1) / 2, (y0 + y1) / 2 + 1.5, label, size=min(5.0, (y1 - y0) / 3), fill=PH_COLOR, weight=700, anchor="middle")
+            self.rect(x0, y0, x1, y1, fill="none", stroke=PH_COLOR, sw=sw, dash=f"{fmt(sw * 5)} {fmt(sw * 3.5)}")
+            self.text((x0 + x1) / 2, (y0 + y1) / 2 + size * 0.35, label, size=size, fill=PH_COLOR, weight=700, anchor="middle")
         if variable:
             self.variables[variable] = example if example is not None else label
 
