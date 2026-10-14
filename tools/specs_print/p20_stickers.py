@@ -4,6 +4,7 @@ New atoms: plug in open ring, car with padlock, divider line. New comps: bilingu
 """
 from pyassets import printsrc
 from pyassets.apps import application
+from pyassets.core import rect_item
 from pyassets.registry import crop, element
 
 NAVY = "#1A3580"   # py-tok-color-blauw
@@ -61,13 +62,15 @@ def _(src):
                "Same weight pattern in both languages (key phrase bold, supporting words regular). Text is start anchored at the printed positions; "
                "templates re-centre it. White on transparent: view on a dark background.")
 def _(src):
-    return crop(src, 1, printsrc.box_mm(20, 130, 236, 270), texts=True)
+    # invisible 1 mm margin so the ink box (advance based) does not clip glyph overhang at the edges
+    pad = rect_item(*printsrc.box_mm(29.5, 135.5, 226.5, 265.5), fill=None, stroke=None, tag="pad")
+    return crop(src, 1, printsrc.box_mm(20, 130, 236, 270), texts=True, over=[pad])
 
 
 @element("py-comp-bar-footer-callout", "Voetbalk melding", "comp", "bar", 1, src="diefstal",
          variables=("callout text", "phone number"),
-         notes="Navy bar 140 x 27.7 mm, top corners radius 4.23 mm, bottom corners square. In print the bar runs 4.3 mm over the page bottom, so the bar is taller "
-               "than its visible part (23.4 mm above the trim). Live text white 7.76 mm: 'Verdachte situatie? Bel' Ubuntu Regular, '0900-8844' Ubuntu Bold.")
+         notes="Navy bar 140 x 27.7 mm, radius 4.23 mm on all four corners as drawn in the source; the bottom corners start at the page bottom (4.3 mm below the trim), "
+               "so on the sticker only the top corners show and the visible part is 23.4 mm high. The application template draws the bar with square bottom corners running to the bleed edge. Live text white 7.76 mm: 'Verdachte situatie? Bel' Ubuntu Regular, '0900-8844' Ubuntu Bold.")
 def _(src):
     return crop(src, 1, printsrc.box_mm(0, 256, 141, 285), texts=True)
 

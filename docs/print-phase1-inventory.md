@@ -167,7 +167,7 @@ Reuse first: an element is only new when no library element has the same shape. 
 | `py-atom-symbol-p-garage-outline` | P in garage-omtrek | atom | campagnebord | Outline house with P, differs from `py-atom-symbol-p-roof` | no |
 | `py-atom-line-divider` | Scheidingslijn | atom | stickers | Hairline, white on navy (0.7 mm, 68 percent of width) or navy on white (0.35 mm, 91 percent) | no |
 | `py-comp-text-bilingual-nl-en` | Tweetalig tekstblok NL/EN | comp | stickers | NL first, divider, EN with the same weight pattern | no |
-| `py-comp-bar-footer-callout` | Voetbalk melding | comp | diefstal | Navy bar, top corners r 4.2 mm, text with bold phone number | no |
+| `py-comp-bar-footer-callout` | Voetbalk melding | comp | diefstal | Navy bar, r 4.2 mm (all four corners in the source; the bottom ones lie below the trim), text with bold phone number | no |
 | `py-comp-pill-destination` | Bestemmingspil (actief, inactief) | comp | GLOW | White pill, navy disc with arrow or pin, bold label; inactive = whole group at 25 percent | no |
 | `py-comp-pill-list-destinations` | Bestemmingslijst | comp | GLOW | Three pills, pitch 51.7 mm | no |
 | `py-comp-price-bubble-corner` | Prijsbel in de hoek | comp | campagnebord | White circle cropped by the corner, rotated price in bold italic | no |
