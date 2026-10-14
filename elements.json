@@ -1,0 +1,7915 @@
+{
+ "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
+ "count": 204,
+ "elements": [
+  {
+   "id": "py-tok-color-aqua",
+   "name_nl": "PY-Aqua",
+   "level": "tok",
+   "category": "color",
+   "source_page": 8,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Value from handbook 1.3.",
+   "svg": "svg/tok/py-tok-color-aqua.svg"
+  },
+  {
+   "id": "py-tok-color-blauw",
+   "name_nl": "PY-Blauw",
+   "level": "tok",
+   "category": "color",
+   "source_page": 8,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Value from handbook 1.3.",
+   "svg": "svg/tok/py-tok-color-blauw.svg"
+  },
+  {
+   "id": "py-tok-color-grijs",
+   "name_nl": "PY-Grijs",
+   "level": "tok",
+   "category": "color",
+   "source_page": 8,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Value from handbook 1.3.",
+   "svg": "svg/tok/py-tok-color-grijs.svg"
+  },
+  {
+   "id": "py-tok-color-led-green",
+   "name_nl": "LED groen (geen merk)",
+   "level": "tok",
+   "category": "color",
+   "source_page": null,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Observed in the drawings, not defined in 1.3.",
+   "svg": "svg/tok/py-tok-color-led-green.svg"
+  },
+  {
+   "id": "py-tok-color-oranje",
+   "name_nl": "PY-Oranje",
+   "level": "tok",
+   "category": "color",
+   "source_page": 8,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-oranje",
+     "hex": "#F08300"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Value from handbook 1.3.",
+   "svg": "svg/tok/py-tok-color-oranje.svg"
+  },
+  {
+   "id": "py-tok-color-ral-9010",
+   "name_nl": "RAL 9010 hoogtebalk (niet in 1.3)",
+   "level": "tok",
+   "category": "color",
+   "source_page": null,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.2,
+    "height": 24.2,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Observed in the drawings, not defined in 1.3.",
+   "svg": "svg/tok/py-tok-color-ral-9010.svg"
+  },
+  {
+   "id": "py-tok-color-reflective-red",
+   "name_nl": "Rode reflecterende band (geen merk)",
+   "level": "tok",
+   "category": "color",
+   "source_page": null,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-reflective-red",
+     "hex": "#C20016"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Observed in the drawings, not defined in 1.3.",
+   "svg": "svg/tok/py-tok-color-reflective-red.svg"
+  },
+  {
+   "id": "py-tok-color-rvv-red",
+   "name_nl": "RVV rood (third-party)",
+   "level": "tok",
+   "category": "color",
+   "source_page": null,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Observed in the drawings, not defined in 1.3.",
+   "svg": "svg/tok/py-tok-color-rvv-red.svg"
+  },
+  {
+   "id": "py-tok-color-safety-green",
+   "name_nl": "Veiligheidsgroen (geen merk)",
+   "level": "tok",
+   "category": "color",
+   "source_page": null,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-safety-green",
+     "hex": "#008A3B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Observed in the drawings, not defined in 1.3.",
+   "svg": "svg/tok/py-tok-color-safety-green.svg"
+  },
+  {
+   "id": "py-tok-color-wit",
+   "name_nl": "Wit (niet in 1.3)",
+   "level": "tok",
+   "category": "color",
+   "source_page": null,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.2,
+    "height": 24.2,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Observed in the drawings, not defined in 1.3.",
+   "svg": "svg/tok/py-tok-color-wit.svg"
+  },
+  {
+   "id": "py-tok-color-zwart",
+   "name_nl": "PY-Zwart",
+   "level": "tok",
+   "category": "color",
+   "source_page": 8,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 24.0,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Value from handbook 1.3.",
+   "svg": "svg/tok/py-tok-color-zwart.svg"
+  },
+  {
+   "id": "py-tok-gradient-verloop",
+   "name_nl": "Verloop (diagonaal)",
+   "level": "tok",
+   "category": "gradient",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 42.3,
+    "height": 21.2,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua"
+   ],
+   "tags": [],
+   "notes": "Source gradients are PDF shadings; stops were measured (#1A3580 to 18%, #097BAE at 62%, #32B9CD at 100%).",
+   "svg": "svg/tok/py-tok-gradient-verloop.svg"
+  },
+  {
+   "id": "py-tok-gradient-verloop-horizontal",
+   "name_nl": "Verloop (horizontaal)",
+   "level": "tok",
+   "category": "gradient",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 42.3,
+    "height": 21.2,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua"
+   ],
+   "tags": [],
+   "notes": "Source gradients are PDF shadings; stops were measured (#1A3580 to 18%, #097BAE at 62%, #32B9CD at 100%).",
+   "svg": "svg/tok/py-tok-gradient-verloop-horizontal.svg"
+  },
+  {
+   "id": "py-tok-gradient-verloop-vertical",
+   "name_nl": "Verloop (verticaal)",
+   "level": "tok",
+   "category": "gradient",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 42.3,
+    "height": 21.2,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua"
+   ],
+   "tags": [],
+   "notes": "Source gradients are PDF shadings; stops were measured (#1A3580 to 18%, #097BAE at 62%, #32B9CD at 100%).",
+   "svg": "svg/tok/py-tok-gradient-verloop-vertical.svg"
+  },
+  {
+   "id": "py-tok-type-hoogtebalk-lettering",
+   "name_nl": "Snijletters hoogtebalk",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 22,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 64.1,
+    "stated": [
+     1000,
+     64.1
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Typeface unidentified, outlined in the PDF. Extracted from the clean sample on p22.",
+   "svg": "svg/tok/py-tok-type-hoogtebalk-lettering.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-bold",
+   "name_nl": "Ubuntu Bold",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 55.9,
+    "height": 15.7,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-bold.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-bold-italic",
+   "name_nl": "Ubuntu Bold Italic",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 56.9,
+    "height": 15.7,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-bold-italic.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-italic",
+   "name_nl": "Ubuntu Italic",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 54.1,
+    "height": 15.7,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-italic.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-light",
+   "name_nl": "Ubuntu Light",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 53.0,
+    "height": 16.5,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-light.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-light-italic",
+   "name_nl": "Ubuntu Light Italic",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 52.8,
+    "height": 16.5,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-light-italic.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-medium",
+   "name_nl": "Ubuntu Medium",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 54.9,
+    "height": 15.7,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-medium.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-medium-italic",
+   "name_nl": "Ubuntu Medium Italic",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 55.3,
+    "height": 15.7,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-medium-italic.svg"
+  },
+  {
+   "id": "py-tok-type-ubuntu-regular",
+   "name_nl": "Ubuntu Regular",
+   "level": "tok",
+   "category": "typography",
+   "source_page": 7,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 53.8,
+    "height": 16.5,
+    "stated": null,
+    "basis": "n/a (token swatch)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/tok/py-tok-type-ubuntu-regular.svg"
+  },
+  {
+   "id": "py-atom-arrow-diagonal-pair-black",
+   "name_nl": "Zwarte diagonale pijlen",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": [
+    33,
+    34
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 314.1,
+    "height": 134.1,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Pair of heavy black arrows (down-left and down-right), source colour #0D0E10. Scale 1:5 of the plate.",
+   "svg": "svg/atom/py-atom-arrow-diagonal-pair-black.svg"
+  },
+  {
+   "id": "py-atom-arrow-downleft-plain",
+   "name_nl": "pijl linksonder",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": 14,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 199.1,
+    "height": 198.7,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "White arrow of the lichtbak entree (p14, 1:10 scale).",
+   "svg": "svg/atom/py-atom-arrow-downleft-plain.svg"
+  },
+  {
+   "id": "py-atom-arrow-left-plain",
+   "name_nl": "pijl links",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": 28,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 50.0,
+    "height": 50.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-arrow-left-plain.svg"
+  },
+  {
+   "id": "py-atom-arrow-right-circle",
+   "name_nl": "pijl rechts in witte cirkel",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 44.4,
+    "height": 44.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "direction",
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-arrow-right-circle.svg"
+  },
+  {
+   "id": "py-atom-arrow-right-plain",
+   "name_nl": "pijl rechts",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": [
+    12,
+    28
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 250.0,
+    "height": 250.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Lichtbak arrow of p12 (white). The route arrow of p28 is not extracted here.",
+   "svg": "svg/atom/py-atom-arrow-right-plain.svg"
+  },
+  {
+   "id": "py-atom-arrow-up-circle",
+   "name_nl": "pijl omhoog in witte cirkel",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": 27,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 169.9,
+    "height": 169.9,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "direction",
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Aqua arrow in a white circle (white on transparent: view on a dark background).",
+   "svg": "svg/atom/py-atom-arrow-up-circle.svg"
+  },
+  {
+   "id": "py-atom-arrow-up-plain",
+   "name_nl": "pijl omhoog",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": 28,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 50.0,
+    "height": 50.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-arrow-up-plain.svg"
+  },
+  {
+   "id": "py-atom-display-volvrij-vrij",
+   "name_nl": "VOL/VRIJ display, VRIJ",
+   "level": "atom",
+   "category": "display",
+   "source_page": [
+    25,
+    12,
+    15
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 400.8,
+    "height": 200.8,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": null,
+     "hex": "#323234"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#53A043"
+    },
+    {
+     "token": null,
+     "hex": "#6E6E6F"
+    }
+   ],
+   "variables": [
+    "state"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Front panel of the digital display: frame, black face and the green 'VRIJ' LED dots. Bracket bolts and dimension lines left out.",
+   "svg": "svg/atom/py-atom-display-volvrij-vrij.svg"
+  },
+  {
+   "id": "py-atom-escape-door-release",
+   "name_nl": "Noodontgrendeling deur",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 3.1,
+    "height": 3.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard safety symbol (third party).",
+   "svg": "svg/atom/py-atom-escape-door-release.svg"
+  },
+  {
+   "id": "py-atom-escape-emergency-exit",
+   "name_nl": "Nooduitgang",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 5.9,
+    "height": 2.7,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard safety symbol (third party).",
+   "svg": "svg/atom/py-atom-escape-emergency-exit.svg"
+  },
+  {
+   "id": "py-atom-escape-exit",
+   "name_nl": "Uitgang",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 5.9,
+    "height": 2.7,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard safety symbol (third party). The source sign is a 47 x 22 px raster; rebuilt as a vector (green field, door outline, arrow down), shape traced from the raster.",
+   "svg": "svg/atom/py-atom-escape-exit.svg"
+  },
+  {
+   "id": "py-atom-escape-extinguisher",
+   "name_nl": "Brandblusser",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 3.1,
+    "height": 3.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#E63515"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard safety symbol (third party).",
+   "svg": "svg/atom/py-atom-escape-extinguisher.svg"
+  },
+  {
+   "id": "py-atom-escape-first-aid",
+   "name_nl": "EHBO middelen",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 3.1,
+    "height": 3.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard safety symbol (third party).",
+   "svg": "svg/atom/py-atom-escape-first-aid.svg"
+  },
+  {
+   "id": "py-atom-escape-lift-no-use",
+   "name_nl": "Bij brand lift niet gebruiken",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 3.2,
+    "height": 3.2,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00B6CB"
+    },
+    {
+     "token": null,
+     "hex": "#070606"
+    },
+    {
+     "token": null,
+     "hex": "#E63515"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard prohibition symbol (third party).",
+   "svg": "svg/atom/py-atom-escape-lift-no-use.svg"
+  },
+  {
+   "id": "py-atom-escape-manager",
+   "name_nl": "Beheerder",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 3.1,
+    "height": 3.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#005A8F"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard information symbol (third party).",
+   "svg": "svg/atom/py-atom-escape-manager.svg"
+  },
+  {
+   "id": "py-atom-escape-route",
+   "name_nl": "Vluchtroute",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 6.4,
+    "height": 2.2,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": null,
+     "hex": "#AED6B7"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Standard safety symbol (third party). Light green band is #AED6B7 as drawn.",
+   "svg": "svg/atom/py-atom-escape-route.svg"
+  },
+  {
+   "id": "py-atom-figure-bags-cheer",
+   "name_nl": "figuur 7",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 60.5,
+    "height": 53.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-bags-cheer.svg"
+  },
+  {
+   "id": "py-atom-figure-bags-walk",
+   "name_nl": "figuur 6",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 46.2,
+    "height": 51.0,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-bags-walk.svg"
+  },
+  {
+   "id": "py-atom-figure-cap-point",
+   "name_nl": "figuur 8",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 30.7,
+    "height": 54.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-cap-point.svg"
+  },
+  {
+   "id": "py-atom-figure-cap-wave",
+   "name_nl": "figuur 9",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 29.1,
+    "height": 54.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-cap-wave.svg"
+  },
+  {
+   "id": "py-atom-figure-dance",
+   "name_nl": "figuur 2",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 34.3,
+    "height": 49.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-dance.svg"
+  },
+  {
+   "id": "py-atom-figure-jump",
+   "name_nl": "figuur 4",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 37.0,
+    "height": 53.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-jump.svg"
+  },
+  {
+   "id": "py-atom-figure-point",
+   "name_nl": "figuur 5",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 30.7,
+    "height": 52.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-point.svg"
+  },
+  {
+   "id": "py-atom-figure-walk",
+   "name_nl": "figuur 1",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 26.5,
+    "height": 51.0,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-walk.svg"
+  },
+  {
+   "id": "py-atom-figure-wave",
+   "name_nl": "figuur 3",
+   "level": "atom",
+   "category": "figure",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 29.1,
+    "height": 52.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy figure. The white paths are the separation gaps of the source (limb outlines painted white), not a second colour of the figure. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-figure-wave.svg"
+  },
+  {
+   "id": "py-atom-logo-beeldmerk-black",
+   "name_nl": "Beeldmerk black",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 21.1,
+    "height": 25.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#010101 to #1D1D1B).",
+   "svg": "svg/atom/py-atom-logo-beeldmerk-black.svg"
+  },
+  {
+   "id": "py-atom-logo-beeldmerk-color",
+   "name_nl": "Beeldmerk",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 9,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 43.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-beeldmerk-color.svg"
+  },
+  {
+   "id": "py-atom-logo-beeldmerk-reverse",
+   "name_nl": "Beeldmerk op blauw (candidate)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": [
+    12,
+    1
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 14.6,
+    "height": 17.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Source page 12 (top right of the aanrijroute lichtbak). White bubble, navy ring, aqua dot. Not defined in 1.4. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-beeldmerk-reverse.svg"
+  },
+  {
+   "id": "py-atom-logo-beeldmerk-white",
+   "name_nl": "Beeldmerk white",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 24.0,
+    "height": 28.9,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-logo-beeldmerk-white.svg"
+  },
+  {
+   "id": "py-atom-logo-horizontal-black",
+   "name_nl": "Logo liggend, zwart",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 92.1,
+    "height": 25.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-beeldmerk-black",
+    "py-atom-logo-wordmark-black"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#010101 to #1D1D1B).",
+   "svg": "svg/atom/py-atom-logo-horizontal-black.svg"
+  },
+  {
+   "id": "py-atom-logo-horizontal-color",
+   "name_nl": "Logo liggend, kleur",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 92.1,
+    "height": 25.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-horizontal-color.svg"
+  },
+  {
+   "id": "py-atom-logo-horizontal-reverse",
+   "name_nl": "Logo liggend op blauw (candidate)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": [
+    14,
+    1,
+    38
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 80.1,
+    "height": 22.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Source page 14 (also on p1 and p38). White shape, navy ring #1A3580, aqua dot, white wordmark. On p1 the ring is the background showing through the hole, so p14 was used. Not defined in 1.1. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-horizontal-reverse.svg"
+  },
+  {
+   "id": "py-atom-logo-horizontal-white",
+   "name_nl": "Logo liggend, diapositief",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 104.9,
+    "height": 28.9,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-beeldmerk-white",
+    "py-atom-logo-wordmark-white"
+   ],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-logo-horizontal-white.svg"
+  },
+  {
+   "id": "py-atom-logo-stacked-black",
+   "name_nl": "Logo staand, zwart",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 64.8,
+    "height": 41.5,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-beeldmerk-black",
+    "py-atom-logo-wordmark-black"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#010101 to #1D1D1B).",
+   "svg": "svg/atom/py-atom-logo-stacked-black.svg"
+  },
+  {
+   "id": "py-atom-logo-stacked-color",
+   "name_nl": "Logo staand, kleur",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 64.8,
+    "height": 41.5,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-stacked-color.svg"
+  },
+  {
+   "id": "py-atom-logo-stacked-reverse",
+   "name_nl": "Logo staand op blauw (candidate)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": [
+    6,
+    1
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 73.8,
+    "height": 47.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-stacked-white",
+    "py-atom-logo-beeldmerk-reverse"
+   ],
+   "tags": [],
+   "notes": "No stacked reverse logo with a drawn ring exists in the handbook (p1 stacked is the colour version, and the white diapositief logo on p6 is a hole on a raster background). Built from the p6 white stacked logo plus the navy ring disc and aqua dot of the p12 beeldmerk, scaled to the p6 mark. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-stacked-reverse.svg"
+  },
+  {
+   "id": "py-atom-logo-stacked-white",
+   "name_nl": "Logo staand, diapositief",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 73.8,
+    "height": 47.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-beeldmerk-white",
+    "py-atom-logo-wordmark-white"
+   ],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-logo-stacked-white.svg"
+  },
+  {
+   "id": "py-atom-logo-wordmark-black",
+   "name_nl": "Woordmerk black (contouren)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 64.8,
+    "height": 13.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#010101 to #1D1D1B).",
+   "svg": "svg/atom/py-atom-logo-wordmark-black.svg"
+  },
+  {
+   "id": "py-atom-logo-wordmark-color",
+   "name_nl": "Woordmerk color (contouren)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 64.8,
+    "height": 13.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-logo-wordmark-color.svg"
+  },
+  {
+   "id": "py-atom-logo-wordmark-white",
+   "name_nl": "Woordmerk white (contouren)",
+   "level": "atom",
+   "category": "logo",
+   "source_page": 6,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 73.8,
+    "height": 15.0,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-logo-wordmark-white.svg"
+  },
+  {
+   "id": "py-atom-pattern-hoogtebalk-bands",
+   "name_nl": "hoogtebalk rode banden",
+   "level": "atom",
+   "category": "pattern",
+   "source_page": 22,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2000.0,
+    "height": 89.8,
+    "stated": [
+     2000,
+     90
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#F6F6F6"
+    }
+   ],
+   "variables": [
+    "bar length"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Red/white pattern of 250 mm bands over a 2000 mm bar: half a band of white at each end, then red, white, red, white, red, white, red. The bands are raster strips in the source; rebuilt here as vector rectangles in the source red #E30613 on the bar white #F6F6F6. For 2500 mm the bar carries five red bands, for 3000 mm six.",
+   "svg": "svg/atom/py-atom-pattern-hoogtebalk-bands.svg"
+  },
+  {
+   "id": "py-atom-payment-contactless",
+   "name_nl": "contactloos betalen",
+   "level": "atom",
+   "category": "payment",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 44.1,
+    "height": 26.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-payment-contactless.svg"
+  },
+  {
+   "id": "py-atom-payment-maestro",
+   "name_nl": "Maestro",
+   "level": "atom",
+   "category": "payment",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 45.5,
+    "height": 35.4,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00A6E3"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": null,
+     "hex": "#7D79B8"
+    },
+    {
+     "token": null,
+     "hex": "#DE0716"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-payment-maestro.svg"
+  },
+  {
+   "id": "py-atom-payment-mastercard",
+   "name_nl": "Mastercard",
+   "level": "atom",
+   "category": "payment",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 45.4,
+    "height": 35.6,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": null,
+     "hex": "#DE0716"
+    },
+    {
+     "token": null,
+     "hex": "#EA5B0B"
+    },
+    {
+     "token": null,
+     "hex": "#F59E00"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-payment-mastercard.svg"
+  },
+  {
+   "id": "py-atom-payment-pin-hand",
+   "name_nl": "hand met pas",
+   "level": "atom",
+   "category": "payment",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 34.3,
+    "height": 33.9,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-payment-pin-hand.svg"
+  },
+  {
+   "id": "py-atom-picto-accessible",
+   "name_nl": "Route naar parkeervakken voor mindervaliden",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 23.8,
+    "height": 28.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-accessible.svg"
+  },
+  {
+   "id": "py-atom-picto-car",
+   "name_nl": "Route voor autoverkeer",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 28.0,
+    "height": 20.5,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-car.svg"
+  },
+  {
+   "id": "py-atom-picto-escalator",
+   "name_nl": "Geeft route naar de troltrap (tapis roulant) aan",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 21.7,
+    "height": 16.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-escalator.svg"
+  },
+  {
+   "id": "py-atom-picto-ev",
+   "name_nl": "Route naar parkeervakken voor electrische voertuigen",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 26.8,
+    "height": 28.0,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-ev.svg"
+  },
+  {
+   "id": "py-atom-picto-family",
+   "name_nl": "Route naar parkeervakken voor gezinnen met kinderen",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 29.7,
+    "height": 24.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-family.svg"
+  },
+  {
+   "id": "py-atom-picto-info",
+   "name_nl": "Geeft route naar de beheerder/infobali aan",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 21.2,
+    "height": 25.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font.",
+   "svg": "svg/atom/py-atom-picto-info.svg"
+  },
+  {
+   "id": "py-atom-picto-lift",
+   "name_nl": "Geeft route naar de lift aan",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 21.7,
+    "height": 24.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-lift.svg"
+  },
+  {
+   "id": "py-atom-picto-motorcycle",
+   "name_nl": "Route naar parkeervakken voor motorfietsen",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 28.0,
+    "height": 22.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-motorcycle.svg"
+  },
+  {
+   "id": "py-atom-picto-payment-machine",
+   "name_nl": "Geeft route naar de betaalautomaat aan",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 20.4,
+    "height": 20.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font.",
+   "svg": "svg/atom/py-atom-picto-payment-machine.svg"
+  },
+  {
+   "id": "py-atom-picto-pedestrian",
+   "name_nl": "Route voor voetgangers",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 11.9,
+    "height": 23.0,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-picto-pedestrian.svg"
+  },
+  {
+   "id": "py-atom-picto-stairs",
+   "name_nl": "Geeft route naar de trap aan",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 20.8,
+    "height": 12.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font.",
+   "svg": "svg/atom/py-atom-picto-stairs.svg"
+  },
+  {
+   "id": "py-atom-picto-toilet",
+   "name_nl": "Geeft route naar de toiletten aan",
+   "level": "atom",
+   "category": "picto",
+   "source_page": 10,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 20.8,
+    "height": 20.8,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Any lettering (euro sign, WC) is outlined so the symbol does not depend on a font.",
+   "svg": "svg/atom/py-atom-picto-toilet.svg"
+  },
+  {
+   "id": "py-atom-rvv-a01",
+   "name_nl": "A01 Maximumsnelheid",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "speed value"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-a01.svg"
+  },
+  {
+   "id": "py-atom-rvv-b06",
+   "name_nl": "B06 Verleen voorrang",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 42.6,
+    "height": 36.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-b06.svg"
+  },
+  {
+   "id": "py-atom-rvv-c02",
+   "name_nl": "C02 Eenrichtingweg, in deze richting gesloten",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": [
+    51,
+    27
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-c02.svg"
+  },
+  {
+   "id": "py-atom-rvv-c03",
+   "name_nl": "C03 Eenrichtingsweg",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00629D"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-c03.svg"
+  },
+  {
+   "id": "py-atom-rvv-c07",
+   "name_nl": "C07 Gesloten voor vrachtauto's",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#1E1E1C"
+    },
+    {
+     "token": null,
+     "hex": "#E20E18"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-c07.svg"
+  },
+  {
+   "id": "py-atom-rvv-c10",
+   "name_nl": "C10 Gesloten voor motorvoertuigen met aanhangwagen",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-c10.svg"
+  },
+  {
+   "id": "py-atom-rvv-c11",
+   "name_nl": "C11 Gesloten voor motorfietsen",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-c11.svg"
+  },
+  {
+   "id": "py-atom-rvv-c16",
+   "name_nl": "C16 Gesloten voor voetgangers",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 32.1,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-c16.svg"
+  },
+  {
+   "id": "py-atom-rvv-d2",
+   "name_nl": "D2 Gebod voor alle bestuurders het bord voorbij te gaan",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 35.3,
+    "height": 35.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00629D"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "direction"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-d2.svg"
+  },
+  {
+   "id": "py-atom-rvv-e06",
+   "name_nl": "E06 Gehandicaptenparkeerplaats",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.1,
+    "height": 48.2,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00629D"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-e06.svg"
+  },
+  {
+   "id": "py-atom-rvv-e08c",
+   "name_nl": "E08c Laadplaats voor elektrische voertuigen",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 32.0,
+    "height": 48.2,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00629D"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-e08c.svg"
+  },
+  {
+   "id": "py-atom-rvv-e10",
+   "name_nl": "E10 Parkeerschijfzone",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": 51,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 41.3,
+    "height": 54.8,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00629D"
+    },
+    {
+     "token": null,
+     "hex": "#0075BF"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "zone text",
+    "duration"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "",
+   "svg": "svg/atom/py-atom-rvv-e10.svg"
+  },
+  {
+   "id": "py-atom-rvv-max-height",
+   "name_nl": "maximale doorrijhoogte bord",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": [
+    15,
+    16,
+    23
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 202.2,
+    "height": 202.2,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "height value"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Sign C21 style with max height 2,4 m; numerals are RWSTTDdx glyphs converted to outlines. Drawn at 200 mm diameter in the portal cluster.",
+   "svg": "svg/atom/py-atom-rvv-max-height.svg"
+  },
+  {
+   "id": "py-atom-rvv-no-bicycles",
+   "name_nl": "fietsen verboden",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 64.5,
+    "height": 64.5,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Not in section 9.2. Taken from the pyloon sign row.",
+   "svg": "svg/atom/py-atom-rvv-no-bicycles.svg"
+  },
+  {
+   "id": "py-atom-shape-bracket-arc",
+   "name_nl": "beugelboog met slogan",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 50.4,
+    "height": 45.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "slogan text"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-shape-bracket-arc.svg"
+  },
+  {
+   "id": "py-atom-shape-bubble-gradient",
+   "name_nl": "verloop",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 43.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-shape-bubble-solid",
+    "py-tok-gradient-verloop"
+   ],
+   "tags": [],
+   "notes": "Bubble outline is the clip path of the source shading; the gradient is re-measured and written as a real SVG gradient.",
+   "svg": "svg/atom/py-atom-shape-bubble-gradient.svg"
+  },
+  {
+   "id": "py-atom-shape-bubble-image-mask",
+   "name_nl": "afbeeldingsmasker",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 43.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    }
+   ],
+   "variables": [
+    "image"
+   ],
+   "built_from": [
+    "py-atom-shape-bubble-solid"
+   ],
+   "tags": [],
+   "notes": "Source photo is a third-party raster (175 px). Replaced by an empty bubble with a placeholder label.",
+   "svg": "svg/atom/py-atom-shape-bubble-image-mask.svg"
+  },
+  {
+   "id": "py-atom-shape-bubble-solid",
+   "name_nl": "volvlak",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 43.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-oranje",
+     "hex": "#F08300"
+    }
+   ],
+   "variables": [
+    "fill colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-shape-bubble-solid.svg"
+  },
+  {
+   "id": "py-atom-shape-circle",
+   "name_nl": "cirkel",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 36.0,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "fill colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/atom/py-atom-shape-circle.svg"
+  },
+  {
+   "id": "py-atom-shape-pill-outline-gradient",
+   "name_nl": "pil met rand op verloop",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 107.0,
+    "height": 42.9,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-oranje",
+     "hex": "#F08300"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "pill colour"
+   ],
+   "built_from": [
+    "py-atom-shape-pill-solid",
+    "py-tok-gradient-verloop"
+   ],
+   "tags": [],
+   "notes": "Gradient panel rebuilt as a vector gradient from the clip path of the source shading. Pill is extracted.",
+   "svg": "svg/atom/py-atom-shape-pill-outline-gradient.svg"
+  },
+  {
+   "id": "py-atom-shape-pill-solid",
+   "name_nl": "pil, vol",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 84.7,
+    "height": 16.9,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "fill colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-shape-pill-solid.svg"
+  },
+  {
+   "id": "py-atom-shape-separator-arc",
+   "name_nl": "scheidingsboog",
+   "level": "atom",
+   "category": "shape",
+   "source_page": 9,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 31.8,
+    "height": 31.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    }
+   ],
+   "variables": [
+    "stroke colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-shape-separator-arc.svg"
+  },
+  {
+   "id": "py-atom-sign-camera",
+   "name_nl": "cameratoezicht",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 64.1,
+    "height": 64.1,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Not in section 9.2 and not an RVV sign. Black ring with camera, from the pyloon sign row.",
+   "svg": "svg/atom/py-atom-sign-camera.svg"
+  },
+  {
+   "id": "py-atom-sign-ev-allowed-green",
+   "name_nl": "groene cirkel auto met stekker",
+   "level": "atom",
+   "category": "rvv",
+   "source_page": [
+    15,
+    16
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 200.8,
+    "height": 200.8,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Green ring with car and plug (EV allowed), as drawn in the portal RVV cluster, 200 mm diameter.",
+   "svg": "svg/atom/py-atom-sign-ev-allowed-green.svg"
+  },
+  {
+   "id": "py-atom-sticker-trash",
+   "name_nl": "vuilnisbak sticker",
+   "level": "atom",
+   "category": "sticker",
+   "source_page": [
+    47,
+    24,
+    48
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 165.8,
+    "height": 200.0,
+    "stated": [
+     166,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-shape-bubble-solid"
+   ],
+   "tags": [],
+   "notes": "White bubble (volvlak) with the aqua bin pictogram, taken from the p47 front elevation. The source holds no separate cut ring path: the faint ring in the render is the seam of a white circle (O36) laid over the white bubble, which is kept as drawn. Scale from the stated sticker size on p24 ('200x16,6mm', read as 166 x 200 mm: the artwork is 60 x 72.3 pt, which gives 2.77 mm per pt on both axes). Also used on p24 and p48. Intended on a navy (RAL 5002) bin face.",
+   "svg": "svg/atom/py-atom-sticker-trash.svg"
+  },
+  {
+   "id": "py-atom-symbol-p-roof",
+   "name_nl": "P met dak",
+   "level": "atom",
+   "category": "symbol",
+   "source_page": [
+    12,
+    14,
+    15,
+    23,
+    37,
+    38
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 546.1,
+    "height": 700.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Taken from p12 (white P with chevron roof, lichtbak 1:10 scale).",
+   "svg": "svg/atom/py-atom-symbol-p-roof.svg"
+  },
+  {
+   "id": "py-atom-tag-level-bubble-gradient",
+   "name_nl": "Niveauaanduiding bel",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 30,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 350.0,
+    "height": 420.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-shape-bubble-gradient"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. Digit is live Ubuntu Bold text. Bubble is 350 mm wide at 1:5.",
+   "svg": "svg/atom/py-atom-tag-level-bubble-gradient.svg"
+  },
+  {
+   "id": "py-atom-tag-level-bubble-small",
+   "name_nl": "Niveau bel klein",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 31,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 139.8,
+    "height": 168.6,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-shape-bubble-solid"
+   ],
+   "tags": [],
+   "notes": "White bubble with navy digit (live Ubuntu Bold). Drawn on the gradient strip, so it is white-on-transparent here. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-tag-level-bubble-small.svg"
+  },
+  {
+   "id": "py-atom-tag-level-bubble-white",
+   "name_nl": "Niveau bel wit",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 229.2,
+    "height": 276.4,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-shape-bubble-solid"
+   ],
+   "tags": [],
+   "notes": "Big white bubble with aqua digit (live Ubuntu Bold) from the overzichtsbord. Scale 1:5.",
+   "svg": "svg/atom/py-atom-tag-level-bubble-white.svg"
+  },
+  {
+   "id": "py-atom-tag-level-circle-navy",
+   "name_nl": "Niveau cirkel navy",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 59.5,
+    "height": 59.5,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-shape-circle"
+   ],
+   "tags": [],
+   "notes": "Navy circle with white digit (row on white pill). The digit is an outlined glyph in the source. Scale 1:5. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-tag-level-circle-navy.svg"
+  },
+  {
+   "id": "py-atom-tag-level-circle-white",
+   "name_nl": "Niveau cirkel wit",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 59.5,
+    "height": 59.5,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-shape-circle"
+   ],
+   "tags": [],
+   "notes": "White circle with digit (row on navy pill). The source digit is aqua (#32B9CD), not navy, and an outlined glyph. White circle is invisible on a white page. Scale 1:5.",
+   "svg": "svg/atom/py-atom-tag-level-circle-white.svg"
+  },
+  {
+   "id": "py-atom-tag-section-1a",
+   "name_nl": "Sectieaanduiding 1A",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 31,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 336.0,
+    "height": 240.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level digit",
+    "section letter"
+   ],
+   "built_from": [
+    "py-atom-tag-level-bubble-small",
+    "py-atom-tag-section-circle"
+   ],
+   "tags": [],
+   "notes": "Level bubble plus section circle, live Ubuntu Bold digit and letter. White artwork, meant for the gradient strip. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/atom/py-atom-tag-section-1a.svg"
+  },
+  {
+   "id": "py-atom-tag-section-circle",
+   "name_nl": "Sectie cirkel",
+   "level": "atom",
+   "category": "tag",
+   "source_page": 31,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 240.0,
+    "height": 240.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "section letter"
+   ],
+   "built_from": [
+    "py-atom-shape-circle"
+   ],
+   "tags": [],
+   "notes": "White circle with aqua letter (live Ubuntu Bold).",
+   "svg": "svg/atom/py-atom-tag-section-circle.svg"
+  },
+  {
+   "id": "py-atom-text-hoogtebalk-lettering",
+   "name_nl": "snijletters",
+   "level": "atom",
+   "category": "text",
+   "source_page": 22,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1002.1,
+    "height": 64.6,
+    "stated": [
+     1000,
+     65
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    }
+   ],
+   "variables": [
+    "height value"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outlined letters 'maximale doorrijhoogte 2,1m' (outlines in the source, kept as outlines). Clean sample at the bottom of p22, 1000 mm wide.",
+   "svg": "svg/atom/py-atom-text-hoogtebalk-lettering.svg"
+  },
+  {
+   "id": "py-comp-bord-arrow-plate",
+   "name_nl": "Pijlplaat",
+   "level": "comp",
+   "category": "signage",
+   "source_page": [
+    33,
+    34
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 200.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-arrow-diagonal-pair-black"
+   ],
+   "tags": [],
+   "notes": "White plate (white face, grey edge) with the black arrow pair. Scale 1:5.",
+   "svg": "svg/comp/py-comp-bord-arrow-plate.svg"
+  },
+  {
+   "id": "py-comp-bord-picto-bubble-face",
+   "name_nl": "Rijstvlies bord voorzijde",
+   "level": "comp",
+   "category": "signage",
+   "source_page": [
+    33,
+    34
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 600.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "picto",
+    "caption"
+   ],
+   "built_from": [
+    "py-atom-shape-bubble-solid"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. Face with the p33 pictogram (accessible) and caption; the p34 variant swaps the pictogram (EV) and caption. Scale 1:5. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-bord-picto-bubble-face.svg"
+  },
+  {
+   "id": "py-comp-escape-legend",
+   "name_nl": "Legenda vluchtweg",
+   "level": "comp",
+   "category": "signage",
+   "source_page": 35,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 26.1,
+    "height": 36.7,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#005A8F"
+    },
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": null,
+     "hex": "#00B6CB"
+    },
+    {
+     "token": null,
+     "hex": "#070606"
+    },
+    {
+     "token": null,
+     "hex": "#AED6B7"
+    },
+    {
+     "token": null,
+     "hex": "#E63515"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "which symbols"
+   ],
+   "built_from": [
+    "py-atom-escape-exit",
+    "py-atom-escape-emergency-exit",
+    "py-atom-escape-first-aid",
+    "py-atom-escape-route",
+    "py-atom-escape-door-release",
+    "py-atom-escape-extinguisher",
+    "py-atom-escape-manager",
+    "py-atom-escape-lift-no-use"
+   ],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Title LEGENDA, eight third-party safety symbols and labels (labels partly outlined glyphs, partly live text in the source). White text, meant for the gradient panel. The source sign is a 47 x 22 px raster; rebuilt as a vector (green field, door outline, arrow down), shape traced from the raster.",
+   "svg": "svg/comp/py-comp-escape-legend.svg"
+  },
+  {
+   "id": "py-comp-escape-safety-instructions",
+   "name_nl": "Veiligheidsinstructies",
+   "level": "comp",
+   "category": "signage",
+   "source_page": 35,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 26.3,
+    "height": 39.4,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "text"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Safety text block (ongeval/letsel, bij ontruiming, bij brand). Mixed outlined glyphs and live Ubuntu Bold in the source. White text, meant for the gradient panel.",
+   "svg": "svg/comp/py-comp-escape-safety-instructions.svg"
+  },
+  {
+   "id": "py-comp-face-aanrijroute",
+   "name_nl": "lichtbakfront aanrijroute",
+   "level": "comp",
+   "category": "lichtbak",
+   "source_page": 12,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 1250.0,
+    "stated": [
+     1000,
+     1250
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "arrow direction",
+    "display fitted"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-arrow-right-plain",
+    "py-atom-logo-beeldmerk-reverse"
+   ],
+   "tags": [],
+   "notes": "Gradient rebuilt from the clip path of the source raster shading, re-measured as a real SVG gradient. The #182F72 frame fill of the source is a soft-masked shadow effect drawn as outer plus inner rectangle; it is skipped and the lichtbakprofiel frame is rebuilt as an even-odd ring in RAL 5002 (PY-Blauw). Face with display zone (VRIJ state) as drawn. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-face-aanrijroute.svg"
+  },
+  {
+   "id": "py-comp-face-entree",
+   "name_nl": "lichtbakfront entree",
+   "level": "comp",
+   "category": "lichtbak",
+   "source_page": 14,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 1000.0,
+    "stated": [
+     1000,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-reverse",
+    "py-atom-symbol-p-roof",
+    "py-atom-arrow-downleft-plain"
+   ],
+   "tags": [],
+   "notes": "Gradient rebuilt from the clip path of the source raster shading (real SVG gradient). Paths and the live text 'Fellenoord' are extracted. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580).",
+   "svg": "svg/comp/py-comp-face-entree.svg"
+  },
+  {
+   "id": "py-comp-face-voetganger-liggend",
+   "name_nl": "lichtbakfront liggend",
+   "level": "comp",
+   "category": "lichtbak",
+   "source_page": 37,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2500.0,
+    "height": 300.0,
+    "stated": [
+     2500,
+     300
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-logo-beeldmerk-reverse",
+    "py-atom-picto-pedestrian"
+   ],
+   "tags": [],
+   "notes": "Face rebuilt: navy base, white tab cut by the navy circle (arc taken from the source clip circle), aqua P block as a real SVG gradient from the clip path of the source raster, ring frame (source draws it as outer plus inner rectangle) as an even-odd path in RAL 5002 (PY-Blauw). P roof, beeldmerk, pedestrian and live text 'City Tower' are extracted.  Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-face-voetganger-liggend.svg"
+  },
+  {
+   "id": "py-comp-face-voetganger-staand",
+   "name_nl": "lichtbakfront voetgangersentree",
+   "level": "comp",
+   "category": "lichtbak",
+   "source_page": 38,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 799.1,
+    "height": 1000.0,
+    "stated": [
+     800,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-reverse",
+    "py-atom-symbol-p-roof",
+    "py-atom-picto-pedestrian"
+   ],
+   "tags": [],
+   "notes": "Gradient rebuilt from the clip path of the source raster shading (real SVG gradient). All other paths and the live text 'City Tower' are extracted. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580).",
+   "svg": "svg/comp/py-comp-face-voetganger-staand.svg"
+  },
+  {
+   "id": "py-comp-hoogtebalk-bar",
+   "name_nl": "hoogtebalk",
+   "level": "comp",
+   "category": "hoogtebalk",
+   "source_page": 22,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2001.0,
+    "height": 97.9,
+    "stated": [
+     2000,
+     90
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#F6F6F6"
+    }
+   ],
+   "variables": [
+    "length",
+    "height text"
+   ],
+   "built_from": [
+    "py-atom-pattern-hoogtebalk-bands",
+    "py-atom-text-hoogtebalk-lettering"
+   ],
+   "tags": [],
+   "notes": "Bar without hanging hardware, shown at 2000 mm. Outline, bottom edge and snijletters follow the source; the body and red bands are rebuilt vector rectangles (raster in the source). The handbook height label 900 mm is a typo for 90 mm and is not reproduced.",
+   "svg": "svg/comp/py-comp-hoogtebalk-bar.svg"
+  },
+  {
+   "id": "py-comp-location-name-slot",
+   "name_nl": "locatienaam slot",
+   "level": "comp",
+   "category": "lichtbak",
+   "source_page": [
+    14,
+    37,
+    38,
+    40
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 445.6,
+    "height": 69.7,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Generic name field: live text in Ubuntu Bold, white (here 'Fellenoord' from p14, 25 pt at 1:10). Replace the text with the location name. Aqua variant is the same slot with fill #32B9CD.",
+   "svg": "svg/comp/py-comp-location-name-slot.svg"
+  },
+  {
+   "id": "py-comp-overview-level-header",
+   "name_nl": "Overzichtsbord niveaukop",
+   "level": "comp",
+   "category": "signage",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 229.2,
+    "height": 276.4,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-tag-level-bubble-white"
+   ],
+   "tags": [],
+   "notes": "White bubble with aqua digit (live Ubuntu Bold). White artwork, meant for the gradient face; scale 1:5.",
+   "svg": "svg/comp/py-comp-overview-level-header.svg"
+  },
+  {
+   "id": "py-comp-overview-level-row-filled",
+   "name_nl": "Niveaurij gevuld",
+   "level": "comp",
+   "category": "signage",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 360.0,
+    "height": 70.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level",
+    "icons"
+   ],
+   "built_from": [
+    "py-atom-shape-pill-solid",
+    "py-atom-tag-level-circle-white"
+   ],
+   "tags": [],
+   "notes": "Navy pill, white level circle, white icons (rolltrap, lift, betaalautomaat). The level digit is an outlined glyph in the source. Scale 1:5. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-overview-level-row-filled.svg"
+  },
+  {
+   "id": "py-comp-overview-level-row-outlined",
+   "name_nl": "Niveaurij wit",
+   "level": "comp",
+   "category": "signage",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 360.0,
+    "height": 70.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "level",
+    "icons"
+   ],
+   "built_from": [
+    "py-atom-shape-pill-solid",
+    "py-atom-tag-level-circle-navy"
+   ],
+   "tags": [],
+   "notes": "White pill, navy level circle, aqua icons. The level digit is an outlined glyph in the source. Scale 1:5. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-overview-level-row-outlined.svg"
+  },
+  {
+   "id": "py-comp-portal-display-slot",
+   "name_nl": "portaal displayvak",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    15,
+    16
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 371.8,
+    "height": 171.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    }
+   ],
+   "variables": [
+    "state"
+   ],
+   "built_from": [
+    "py-atom-display-volvrij-vrij"
+   ],
+   "tags": [],
+   "notes": "VOL/VRIJ display, 200x400 mm with 170x370 mm view area: bezel and all LED dots as drawn (state shown: VRIJ).",
+   "svg": "svg/comp/py-comp-portal-display-slot.svg"
+  },
+  {
+   "id": "py-comp-portal-display-slot-dual",
+   "name_nl": "portaal displayvak dubbel",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    15,
+    16,
+    18,
+    19
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 948.1,
+    "height": 239.2,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "labels",
+    "states"
+   ],
+   "built_from": [
+    "py-atom-display-volvrij-vrij"
+   ],
+   "tags": [],
+   "notes": "Two displays with live Ubuntu Bold labels Bezoekers and Vergunninghouders.",
+   "svg": "svg/comp/py-comp-portal-display-slot-dual.svg"
+  },
+  {
+   "id": "py-comp-portal-face-1baans",
+   "name_nl": "portaal beeldplaat 1-baans",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    15,
+    18
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3314.0,
+    "height": 602.7,
+    "stated": [
+     3300,
+     600
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "extra display"
+   ],
+   "built_from": [
+    "py-comp-portal-p-block",
+    "py-comp-portal-name-block",
+    "py-comp-portal-display-slot",
+    "py-comp-rvv-cluster-portal"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; luxe artwork of page 15; page 18 differs only by the navy aluminium profile edge. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-portal-face-1baans.svg"
+  },
+  {
+   "id": "py-comp-portal-face-2baans",
+   "name_nl": "portaal beeldplaat 2-baans",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    16,
+    19
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 6627.7,
+    "height": 602.7,
+    "stated": [
+     6600,
+     600
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width"
+   ],
+   "built_from": [
+    "py-comp-portal-p-block",
+    "py-comp-portal-name-block",
+    "py-comp-portal-display-slot",
+    "py-comp-rvv-cluster-portal"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; luxe artwork of page 16 (name centred, display and 2x2 RVV on the right). Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-portal-face-2baans.svg"
+  },
+  {
+   "id": "py-comp-portal-name-block",
+   "name_nl": "portaal naamblok",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    15,
+    16
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1899.5,
+    "height": 392.4,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-white"
+   ],
+   "tags": [],
+   "notes": "White parkingyou logo (pin hole in navy, dot in aqua as drawn) and the location name as live Ubuntu Bold, white, no background. The plate behind it is navy RAL 5002. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-portal-name-block.svg"
+  },
+  {
+   "id": "py-comp-portal-p-block",
+   "name_nl": "portaal P blok links",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    15,
+    16,
+    18,
+    19,
+    37
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 623.7,
+    "height": 602.5,
+    "stated": [
+     625,
+     600
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-symbol-p-roof"
+   ],
+   "tags": [],
+   "notes": "Aqua block with circular right edge and the blauw to aqua edge band are rebuilt (measured real vector gradient, clip shapes from the source); the P with roof is extracted. Same artwork on all four portal pages.",
+   "svg": "svg/comp/py-comp-portal-p-block.svg"
+  },
+  {
+   "id": "py-comp-price-strip-110x400",
+   "name_nl": "deelfolie 110x400",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 110.0,
+    "stated": [
+     400,
+     110
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "tariff names",
+    "prices"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Deelfolie strip 110 x 400 with four tariff rows, rows 3 and 4 in blauw. Caption and dimensions left out. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-price-strip-110x400.svg"
+  },
+  {
+   "id": "py-comp-pyloon-back-logo",
+   "name_nl": "achterzijde alleen logo",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 24,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 999.9,
+    "stated": [
+     400,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-logo-stacked-color"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-pyloon-back-logo.svg"
+  },
+  {
+   "id": "py-comp-pyloon-back-tot-ziens",
+   "name_nl": "achterzijde Tot ziens",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": 23,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 999.9,
+    "stated": [
+     400,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "goodbye text",
+    "optional image"
+   ],
+   "built_from": [
+    "py-comp-pyloon-header-band",
+    "py-atom-logo-stacked-color"
+   ],
+   "tags": [],
+   "notes": "Drawn at 1:10 on the page, unlike the 1:8 front. Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-pyloon-back-tot-ziens.svg"
+  },
+  {
+   "id": "py-comp-pyloon-emergency",
+   "name_nl": "calamiteiten blok",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 220.9,
+    "height": 31.6,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    }
+   ],
+   "variables": [
+    "phone number"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/comp/py-comp-pyloon-emergency.svg"
+  },
+  {
+   "id": "py-comp-pyloon-header-band",
+   "name_nl": "pyloon kopband",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 225.2,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-tok-gradient-verloop"
+   ],
+   "tags": [],
+   "notes": "Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-pyloon-header-band.svg"
+  },
+  {
+   "id": "py-comp-pyloon-location-name-slot",
+   "name_nl": "locatienaam pyloon",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 348.4,
+    "height": 63.9,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-color"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-pyloon-location-name-slot.svg"
+  },
+  {
+   "id": "py-comp-pyloon-opening-hours",
+   "name_nl": "openingstijden blok",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 339.8,
+    "height": 39.1,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "days",
+    "hours",
+    "note"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-pyloon-opening-hours.svg"
+  },
+  {
+   "id": "py-comp-pyloon-payment-row",
+   "name_nl": "betaalmogelijkheden rij",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 224.7,
+    "height": 35.6,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00A6E3"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": null,
+     "hex": "#7D79B8"
+    },
+    {
+     "token": null,
+     "hex": "#DE0716"
+    },
+    {
+     "token": null,
+     "hex": "#EA5B0B"
+    },
+    {
+     "token": null,
+     "hex": "#F59E00"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "which marks"
+   ],
+   "built_from": [
+    "py-atom-payment-contactless",
+    "py-atom-payment-mastercard",
+    "py-atom-payment-maestro",
+    "py-atom-payment-pin-hand"
+   ],
+   "tags": [],
+   "notes": "",
+   "svg": "svg/comp/py-comp-pyloon-payment-row.svg"
+  },
+  {
+   "id": "py-comp-pyloon-section-bar-algemene-voorwaarden",
+   "name_nl": "balk Algemene voorwaarden",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 35.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-gradient-verloop-horizontal"
+   ],
+   "tags": [],
+   "notes": "Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text.",
+   "svg": "svg/comp/py-comp-pyloon-section-bar-algemene-voorwaarden.svg"
+  },
+  {
+   "id": "py-comp-pyloon-section-bar-betalingsmogelijkheden",
+   "name_nl": "balk Betalingsmogelijkheden",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 35.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-gradient-verloop-horizontal"
+   ],
+   "tags": [],
+   "notes": "Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text.",
+   "svg": "svg/comp/py-comp-pyloon-section-bar-betalingsmogelijkheden.svg"
+  },
+  {
+   "id": "py-comp-pyloon-section-bar-calamiteiten",
+   "name_nl": "balk Calamiteiten",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 35.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-gradient-verloop-horizontal"
+   ],
+   "tags": [],
+   "notes": "Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text.",
+   "svg": "svg/comp/py-comp-pyloon-section-bar-calamiteiten.svg"
+  },
+  {
+   "id": "py-comp-pyloon-section-bar-openingstijden",
+   "name_nl": "balk Openingstijden",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 35.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-gradient-verloop-horizontal"
+   ],
+   "tags": [],
+   "notes": "Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text.",
+   "svg": "svg/comp/py-comp-pyloon-section-bar-openingstijden.svg"
+  },
+  {
+   "id": "py-comp-pyloon-section-bar-tarieven",
+   "name_nl": "balk Tarieven",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 35.0,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-tok-gradient-verloop-horizontal"
+   ],
+   "tags": [],
+   "notes": "Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text.",
+   "svg": "svg/comp/py-comp-pyloon-section-bar-tarieven.svg"
+  },
+  {
+   "id": "py-comp-pyloon-terms",
+   "name_nl": "algemene voorwaarden blok",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 340.2,
+    "height": 157.7,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "URL",
+    "signs"
+   ],
+   "built_from": [
+    "py-comp-rvv-cluster-pyloon"
+   ],
+   "tags": [],
+   "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-pyloon-terms.svg"
+  },
+  {
+   "id": "py-comp-route-back-noentry",
+   "name_nl": "achterzijde routebord",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 200.0,
+    "stated": [
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-comp-route-panel-pill",
+    "py-atom-rvv-c02"
+   ],
+   "tags": [],
+   "notes": "Red no-entry sign (RVV C02 look) centred on the navy pill. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-route-back-noentry.svg"
+  },
+  {
+   "id": "py-comp-route-module-arrow",
+   "name_nl": "route module pijl",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 199.8,
+    "height": 200.1,
+    "stated": [
+     200,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "direction"
+   ],
+   "built_from": [
+    "py-atom-arrow-up-circle"
+   ],
+   "tags": [],
+   "notes": "End module of the panel: aqua arrow in a white circle on the navy pill end (radius 100 mm). Circle and arrow are source paths; the navy end cap is rebuilt.",
+   "svg": "svg/comp/py-comp-route-module-arrow.svg"
+  },
+  {
+   "id": "py-comp-route-module-picto",
+   "name_nl": "route module pictogram",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 200.1,
+    "height": 200.1,
+    "stated": [
+     200,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "picto"
+   ],
+   "built_from": [
+    "py-atom-picto-accessible",
+    "py-atom-shape-separator-arc"
+   ],
+   "tags": [],
+   "notes": "200 x 200 mm module slot: aqua separator arc on the left edge plus one white picto (accessible shown). Picto and arc are source paths; the navy slot square is rebuilt.",
+   "svg": "svg/comp/py-comp-route-module-picto.svg"
+  },
+  {
+   "id": "py-comp-route-module-separator",
+   "name_nl": "route module scheiding",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": [
+    27,
+    29
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 39.4,
+    "height": 174.2,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-shape-separator-arc"
+   ],
+   "tags": [],
+   "notes": "Aqua separator arc between two modules, taken from the 1000 mm board. Stroke only, to be placed on navy.",
+   "svg": "svg/comp/py-comp-route-module-separator.svg"
+  },
+  {
+   "id": "py-comp-route-module-text",
+   "name_nl": "route module tekst",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 200.1,
+    "height": 200.1,
+    "stated": [
+     200,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "label text"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "200 x 200 mm text module with separator arc and the label 'in'. The label is outlined in the source (no live text), so it is kept as paths. The navy slot square is rebuilt.",
+   "svg": "svg/comp/py-comp-route-module-text.svg"
+  },
+  {
+   "id": "py-comp-route-panel-pill",
+   "name_nl": "routebord paneel",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": [
+    27,
+    28,
+    29
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 200.0,
+    "stated": [
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "width",
+    "fill"
+   ],
+   "built_from": [
+    "py-atom-shape-pill-solid"
+   ],
+   "tags": [],
+   "notes": "Navy pill panel, 200 mm high, shown at 1000 mm wide. 600 and 800 mm panels use the same ends with a shorter straight; the white pedestrian panel is the same shape filled white. Radius 100 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-route-panel-pill.svg"
+  },
+  {
+   "id": "py-comp-rvv-cluster-portal",
+   "name_nl": "RVV icon cluster portaal",
+   "level": "comp",
+   "category": "portaal",
+   "source_page": [
+    15,
+    16,
+    18,
+    19
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 648.6,
+    "height": 602.4,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "speed",
+    "height",
+    "signs"
+   ],
+   "built_from": [
+    "py-atom-rvv-a01",
+    "py-atom-rvv-c07",
+    "py-atom-rvv-max-height",
+    "py-atom-sign-ev-allowed-green"
+   ],
+   "tags": [],
+   "notes": "Four signs (max speed 5, no trailers, max height 2,4 m, EV allowed) as extracted paths with RVV numerals as outlines. The white tab with its curved edge is rebuilt from the plate geometry; its outline is the thin grey line of the plate.",
+   "svg": "svg/comp/py-comp-rvv-cluster-portal.svg"
+  },
+  {
+   "id": "py-comp-rvv-cluster-pyloon",
+   "name_nl": "RVV icon cluster pyloon",
+   "level": "comp",
+   "category": "pyloon",
+   "source_page": [
+    23,
+    24
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 340.2,
+    "height": 64.5,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "speed",
+    "height"
+   ],
+   "built_from": [
+    "py-atom-rvv-a01",
+    "py-atom-rvv-max-height",
+    "py-atom-rvv-c07",
+    "py-atom-rvv-no-bicycles",
+    "py-atom-sign-camera"
+   ],
+   "tags": [],
+   "notes": "Five round signs: speed 5, max height 2,1m, truck, bicycles prohibited, camera. Numerals outlined (AnwbEe fonts). Bicycle and camera signs are third-party marks.",
+   "svg": "svg/comp/py-comp-rvv-cluster-pyloon.svg"
+  },
+  {
+   "id": "py-comp-section-wrap-strip",
+   "name_nl": "Kolomband sectie",
+   "level": "comp",
+   "category": "signage",
+   "source_page": 31,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2000.0,
+    "height": 300.0,
+    "stated": [
+     2000,
+     300
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "level",
+    "section",
+    "repeats",
+    "width"
+   ],
+   "built_from": [
+    "py-atom-tag-section-1a",
+    "py-tok-gradient-verloop-vertical"
+   ],
+   "tags": [],
+   "notes": "Vertical gradient strip rebuilt from the clip path of the source shading, three '1A' tags as drawn (live text). Width is variable (depends on column diameter), the drawn example is about 2000 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-section-wrap-strip.svg"
+  },
+  {
+   "id": "py-comp-walk-route-figure-block",
+   "name_nl": "voetgangersfiguur blok",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": 28,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 121.7,
+    "height": 150.5,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "direction"
+   ],
+   "built_from": [
+    "py-atom-picto-pedestrian",
+    "py-atom-shape-separator-arc"
+   ],
+   "tags": [],
+   "notes": "Navy pedestrian figure with the aqua arc, facing right (front side). The back side mirrors it. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-walk-route-figure-block.svg"
+  },
+  {
+   "id": "py-comp-walk-route-row",
+   "name_nl": "voetgangersroute regel",
+   "level": "comp",
+   "category": "routebord",
+   "source_page": 28,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 763.0,
+    "height": 66.6,
+    "stated": null,
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "exit name",
+    "pictos",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-picto-lift",
+    "py-atom-picto-escalator",
+    "py-atom-picto-stairs",
+    "py-atom-picto-payment-machine",
+    "py-atom-arrow-up-plain"
+   ],
+   "tags": [],
+   "notes": "One row: picto strip (lift, escalator, stairs, payment), live Ubuntu 'Uitgang Naam', up arrow, and the aqua rule below the row. A board carries two rows. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-walk-route-row.svg"
+  },
+  {
+   "id": "py-comp-welcome-wall-banner",
+   "name_nl": "welkom muurbanner",
+   "level": "comp",
+   "category": "banner",
+   "source_page": 40,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 326.4,
+    "height": 117.6,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-reverse",
+    "py-atom-arrow-right-circle",
+    "py-atom-figure-wave"
+   ],
+   "tags": [],
+   "notes": "Extracted straight from p40: navy half-pill, live text 'Welkom bij' and the location name, white logo, arrow circle and the large waving figure (white separation outlines kept). Frame and white backing removed. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/comp/py-comp-welcome-wall-banner.svg"
+  },
+  {
+   "id": "py-prod-anti-rampaal",
+   "name_nl": "7.1 RVS anti-rampaal",
+   "level": "prod",
+   "category": "post",
+   "source_page": 43,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 193.5,
+    "height": 1504.1,
+    "stated": [
+     139.7,
+     1500,
+     139.7
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#949494"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outline, joint line (ground level) and fixing tabs are extracted source strokes. The shaded stainless fill is raster in the source and is rebuilt as a measured vector gradient; the two red reflective bands are rebuilt as gradients on the #C20016 token. 850 mm above ground, 650 mm buried (joint line at 850). Photo render, dimension lines and callouts left out.",
+   "svg": "svg/prod/py-prod-anti-rampaal.svg"
+  },
+  {
+   "id": "py-prod-bolderpaal",
+   "name_nl": "RVS bolderpaal",
+   "level": "prod",
+   "category": "post",
+   "source_page": 43,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 223.8,
+    "height": 854.1,
+    "stated": [
+     220,
+     850,
+     220
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#303030"
+    },
+    {
+     "token": null,
+     "hex": "#535353"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outline, foot plate and bolt heads are extracted source strokes. The shaded stainless fill is raster in the source and is rebuilt as a measured vector gradient; the two red reflective bands are rebuilt as gradients on the #C20016 token. Scale from the 850 mm dimension (top of tube to underside of the plate); checks: tube 139.6 mm, plate 220 mm. Photo render, plan view of the foot plate (O220), dimension lines and callouts left out.",
+   "svg": "svg/prod/py-prod-bolderpaal.svg"
+  },
+  {
+   "id": "py-prod-bord-ev",
+   "name_nl": "4.8 EV-laad parkeerplek aanduiding",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 34,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 600.0,
+    "stated": [
+     400,
+     600
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "caption"
+   ],
+   "built_from": [
+    "py-comp-bord-picto-bubble-face"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. Rijstvlies board 400 x 600 with white bubble, EV pictogram and live caption 'Oplaadpunt'. Pole mock-up, callouts and dimension lines left out. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-bord-ev.svg"
+  },
+  {
+   "id": "py-prod-bord-mindervaliden",
+   "name_nl": "4.7 Mindervaliden parkeerplek aanduiding",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 33,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 600.0,
+    "stated": [
+     400,
+     600
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "caption"
+   ],
+   "built_from": [
+    "py-comp-bord-picto-bubble-face"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. Rijstvlies board 400 x 600 with white bubble, wheelchair pictogram and live Ubuntu Bold caption. Pole mock-up, callouts and dimension lines left out. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-bord-mindervaliden.svg"
+  },
+  {
+   "id": "py-prod-bord-pijlplaat",
+   "name_nl": "Pijlplaat",
+   "level": "prod",
+   "category": "signage",
+   "source_page": [
+    33,
+    34
+   ],
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 200.0,
+    "stated": [
+     400,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-comp-bord-arrow-plate"
+   ],
+   "tags": [],
+   "notes": "400 x 200 plate with two black diagonal arrows, white face and grey 2 pt edge as drawn. Same on p33 and p34.",
+   "svg": "svg/prod/py-prod-bord-pijlplaat.svg"
+  },
+  {
+   "id": "py-prod-buispaal",
+   "name_nl": "Optionele buispaal",
+   "level": "prod",
+   "category": "signage",
+   "source_page": [
+    33,
+    34
+   ],
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 387.0,
+    "height": 1084.1,
+    "stated": [
+     48,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": null,
+     "hex": "#706F6F"
+    },
+    {
+     "token": null,
+     "hex": "#878787"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Side view of the optional buispaal (1000 mm long, O48, round foot plate, RAL 9006) with the board seen edge-on on top. Cylinder shading rebuilt as vector grey gradients (source shading plus raster soft shadow), the soft shadow is left out. Scale from the pole length 1000 mm; the board strip on top is not at that scale reference. Callout left out.",
+   "svg": "svg/prod/py-prod-buispaal.svg"
+  },
+  {
+   "id": "py-prod-display-volvrij",
+   "name_nl": "3.8 Digitale display",
+   "level": "prod",
+   "category": "display",
+   "source_page": 25,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 425.8,
+    "height": 200.8,
+    "stated": [
+     400,
+     200,
+     93
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": null,
+     "hex": "#323234"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#53A043"
+    },
+    {
+     "token": null,
+     "hex": "#6E6E6F"
+    }
+   ],
+   "variables": [
+    "state"
+   ],
+   "built_from": [
+    "py-atom-display-volvrij-vrij"
+   ],
+   "tags": [],
+   "notes": "Front view of the CAD drawing including the bracket bolts (414 mm over the bolts). The 'VRIJ' dots are the only state drawn in the handbook. Dimension lines and numbers left out.",
+   "svg": "svg/prod/py-prod-display-volvrij.svg"
+  },
+  {
+   "id": "py-prod-flexpost-groot",
+   "name_nl": "Flexpost groot",
+   "level": "prod",
+   "category": "post",
+   "source_page": 45,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 303.3,
+    "height": 1003.5,
+    "stated": [
+     300,
+     1000,
+     220
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outline and edge lines are extracted source strokes (CAD sketch lines). The black plastic body and the three white reflective bands are raster in the source and are rebuilt as a flat PY-Zwart silhouette and measured vector band gradients. Scale from the 1000 mm height; checks: tube 160 mm, foot 300 mm. Photo render, plan view of the foot (300 x 220), dimension lines and callouts left out.",
+   "svg": "svg/prod/py-prod-flexpost-groot.svg"
+  },
+  {
+   "id": "py-prod-flexpost-klein",
+   "name_nl": "7.2 Flexpost klein",
+   "level": "prod",
+   "category": "post",
+   "source_page": 45,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 202.6,
+    "height": 752.5,
+    "stated": [
+     210,
+     750,
+     210
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outline and edge lines are extracted source strokes (CAD sketch lines). The black plastic body and the three white reflective bands are raster in the source and are rebuilt as a flat PY-Zwart silhouette and measured vector band gradients. Scale from the 750 mm height; the drawing is not perfectly uniform (top O80 measures 80 mm, foot measures about 200 mm against the stated 210). Photo render, plan view of the foot, dimension lines and callouts left out.",
+   "svg": "svg/prod/py-prod-flexpost-klein.svg"
+  },
+  {
+   "id": "py-prod-hoogtebalk-gaffel",
+   "name_nl": "Hoogtebalk met gaffelset",
+   "level": "prod",
+   "category": "hoogtebalk",
+   "source_page": 22,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2501.0,
+    "height": 517.2,
+    "stated": [
+     2500,
+     90
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": null,
+     "hex": "#DADADA"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#F6F6F6"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "length",
+    "height text"
+   ],
+   "built_from": [
+    "py-comp-hoogtebalk-bar"
+   ],
+   "tags": [],
+   "notes": "Bar outline, bottom edge and snijletters follow the source drawing; the white body and the red 250 mm bands (raster strips in the source) are rebuilt as vector rectangles in the source red #E30613, half a band of white at each end. The gaffelset hardware is raster in the source and is rebuilt here as simple vector shapes. Scale from the bar length of 2500 mm. The handbook labels the bar height 900 mm, which is a typo for 90 mm and is not reproduced.",
+   "svg": "svg/prod/py-prod-hoogtebalk-gaffel.svg"
+  },
+  {
+   "id": "py-prod-hoogtebalk-ketting",
+   "name_nl": "3.5 Hoogtebalk met ketting",
+   "level": "prod",
+   "category": "hoogtebalk",
+   "source_page": 22,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2001.0,
+    "height": 396.7,
+    "stated": [
+     2000,
+     90
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": null,
+     "hex": "#706F6F"
+    },
+    {
+     "token": null,
+     "hex": "#9D9D9C"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#F6F6F6"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "length",
+    "height text"
+   ],
+   "built_from": [
+    "py-comp-hoogtebalk-bar"
+   ],
+   "tags": [],
+   "notes": "Bar outline, bottom edge and snijletters follow the source drawing; the white body and the red 250 mm bands (raster strips in the source) are rebuilt as vector rectangles in the source red #E30613, half a band of white at each end. The chain hardware is raster in the source and is rebuilt here as simple vector shapes. Scale from the bar length of 2000 mm. The handbook labels the bar height 900 mm, which is a typo for 90 mm and is not reproduced.",
+   "svg": "svg/prod/py-prod-hoogtebalk-ketting.svg"
+  },
+  {
+   "id": "py-prod-hoogtebalk-pendel",
+   "name_nl": "Hoogtebalk met starre pendel",
+   "level": "prod",
+   "category": "hoogtebalk",
+   "source_page": 22,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3001.0,
+    "height": 508.8,
+    "stated": [
+     3000,
+     90
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": null,
+     "hex": "#706F6F"
+    },
+    {
+     "token": null,
+     "hex": "#9D9D9C"
+    },
+    {
+     "token": null,
+     "hex": "#DADADA"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#F6F6F6"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "length",
+    "height text"
+   ],
+   "built_from": [
+    "py-comp-hoogtebalk-bar"
+   ],
+   "tags": [],
+   "notes": "Bar outline, bottom edge and snijletters follow the source drawing; the white body and the red 250 mm bands (raster strips in the source) are rebuilt as vector rectangles in the source red #E30613, half a band of white at each end. The pendel and chain hardware is raster in the source and is rebuilt here as simple vector shapes. Scale from the bar length of 3000 mm. The handbook labels the bar height 900 mm, which is a typo for 90 mm and is not reproduced.",
+   "svg": "svg/prod/py-prod-hoogtebalk-pendel.svg"
+  },
+  {
+   "id": "py-prod-lichtbak-aanrijroute-display",
+   "name_nl": "2.1 Uitsteeklichtbak in aanrijroute, met display",
+   "level": "prod",
+   "category": "lichtbak",
+   "source_page": 12,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1139.7,
+    "height": 1622.6,
+    "stated": [
+     1000,
+     1250,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "arrow direction",
+    "display state"
+   ],
+   "built_from": [
+    "py-comp-face-aanrijroute"
+   ],
+   "tags": [],
+   "notes": "Gradient rebuilt from the clip path of the source raster shading, re-measured as a real SVG gradient. The #182F72 frame fill of the source is a soft-masked shadow effect drawn as outer plus inner rectangle; it is skipped and the lichtbakprofiel frame is rebuilt as an even-odd ring in RAL 5002 (PY-Blauw). Front elevation only (no top view, no 3D render). Pole grey fade is a raster in the source: rebuilt as a flat PY-Grijs bar (RAL 9006) of the visible length, open at the bottom; the pole length is not specified (min 2500 mm above ground). Display VRIJ LED dots are extracted source paths. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-lichtbak-aanrijroute-display.svg"
+  },
+  {
+   "id": "py-prod-lichtbak-aanrijroute-nodisplay",
+   "name_nl": "2.1 Uitsteeklichtbak in aanrijroute, zonder display",
+   "level": "prod",
+   "category": "lichtbak",
+   "source_page": 12,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1139.7,
+    "height": 1622.6,
+    "stated": [
+     1000,
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-comp-face-aanrijroute"
+   ],
+   "tags": [],
+   "notes": "Gradient rebuilt from the clip path of the source raster shading, re-measured as a real SVG gradient. The #182F72 frame fill of the source is a soft-masked shadow effect drawn as outer plus inner rectangle; it is skipped and the lichtbakprofiel frame is rebuilt as an even-odd ring in RAL 5002 (PY-Blauw). Variant without display: the 1000 x 1000 face of the handbook (dashed line 'indien geen display geplaatst'). Face cropped at 1000 mm height with the same gradient axis, bottom frame edge rebuilt, display left out, spacer shortened to keep the 40 mm margins. Pole as in the display variant (flat grey, raster fade replaced). Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-lichtbak-aanrijroute-nodisplay.svg"
+  },
+  {
+   "id": "py-prod-lichtbak-entree",
+   "name_nl": "3.1 Uitsteeklichtbak bij entree",
+   "level": "prod",
+   "category": "lichtbak",
+   "source_page": 14,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1041.8,
+    "height": 1000.0,
+    "stated": [
+     1000,
+     1000,
+     100
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-comp-face-entree"
+   ],
+   "tags": [],
+   "notes": "Front elevation only (no top view, no wall boxes, no 3D render). Face gradient rebuilt from the clip path of the source raster shading and re-measured as a real SVG gradient; all other paths, the spacer (aluminium koker 40x70, RAL 9006) and live text 'Fellenoord' are extracted. The white soft-mask rectangles of the source are skipped. Frame is the source 7.09 pt stroke, brand-normalised RAL 5002. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580; #A0A1A0 to #AEAEAE).",
+   "svg": "svg/prod/py-prod-lichtbak-entree.svg"
+  },
+  {
+   "id": "py-prod-lichtbak-voetganger-liggend",
+   "name_nl": "5.1 Voetgangersentree lichtbak (liggend)",
+   "level": "prod",
+   "category": "lichtbak",
+   "source_page": 37,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2500.0,
+    "height": 300.0,
+    "stated": [
+     2500,
+     300,
+     100
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-comp-face-voetganger-liggend"
+   ],
+   "tags": [],
+   "notes": "Face rebuilt: navy base, white tab cut by the navy circle (arc taken from the source clip circle), aqua P block as a real SVG gradient from the clip path of the source raster, ring frame (source draws it as outer plus inner rectangle) as an even-odd path in RAL 5002 (PY-Blauw). P roof, beeldmerk, pedestrian and live text 'City Tower' are extracted. Front elevation only (no side view, no 3D render). Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-lichtbak-voetganger-liggend.svg"
+  },
+  {
+   "id": "py-prod-lichtbak-voetganger-staand",
+   "name_nl": "5.2 Voetgangersentree lichtbak (staand)",
+   "level": "prod",
+   "category": "lichtbak",
+   "source_page": 38,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 843.2,
+    "height": 1000.0,
+    "stated": [
+     800,
+     1000,
+     100
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name"
+   ],
+   "built_from": [
+    "py-comp-face-voetganger-staand"
+   ],
+   "tags": [],
+   "notes": "Front elevation only (no top view, no wall boxes, no side view, no 3D renders). Face gradient rebuilt from the clip path of the source raster shading (real SVG gradient); spacer (koker 40x70, RAL 9006), frame stroke, logo, P roof, pedestrian and live text 'City Tower' are extracted. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580; #A0A1A0 to #AEAEAE).",
+   "svg": "svg/prod/py-prod-lichtbak-voetganger-staand.svg"
+  },
+  {
+   "id": "py-prod-niveauaanduiding",
+   "name_nl": "4.4 Niveauaanduiding",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 30,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 350.0,
+    "height": 420.0,
+    "stated": [
+     350,
+     420
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "level digit"
+   ],
+   "built_from": [
+    "py-atom-tag-level-bubble-gradient"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. Front view of the 420 x 350 sandwich panel (example digit 0). Side section, wall, drop shadows, 3D render and dimension lines left out.",
+   "svg": "svg/prod/py-prod-niveauaanduiding.svg"
+  },
+  {
+   "id": "py-prod-overzichtsbord",
+   "name_nl": "4.6 Overzichtsbord",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 32,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 550.0,
+    "stated": [
+     400,
+     550
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "levels",
+    "icons per level"
+   ],
+   "built_from": [
+    "py-comp-overview-level-header",
+    "py-comp-overview-level-row-filled",
+    "py-comp-overview-level-row-outlined"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. 400 x 550 plus 90 per extra level. Two level rows (1 and 0) as drawn; row digits are outlined glyphs in the source (not live text). Houten frame, 3D render and dimension lines left out. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-overzichtsbord.svg"
+  },
+  {
+   "id": "py-prod-overzichtsbord-frame",
+   "name_nl": "Houten frame overzichtsbord",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 32,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1041.7,
+    "height": 545.5,
+    "stated": [
+     400,
+     550
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#706F6F"
+    },
+    {
+     "token": null,
+     "hex": "#C6C6C6"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Left: plan of the wooden frame (multiplex 20 mm, 50 mm strips, 10 mm inset) in front of the 400 x 550 board, at 1:5 of the board scale given here. Right: corner detail, drawn in the handbook at about 5.1 times the plan scale and moved next to the plan; it is NOT at the stated scale. Dimension lines and break lines left out.",
+   "svg": "svg/prod/py-prod-overzichtsbord-frame.svg"
+  },
+  {
+   "id": "py-prod-pms-beschermpaal",
+   "name_nl": "PMS beschermpaal",
+   "level": "prod",
+   "category": "post",
+   "source_page": 44,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 222.6,
+    "height": 1002.5,
+    "stated": [
+     220,
+     1000,
+     220
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#8C8C8C"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Outline and foot plate edge are extracted source strokes (clean left elevation of the pair). The shaded stainless fill is raster in the source and is rebuilt as a measured vector gradient; the two red reflective bands are rebuilt as gradients on the #C20016 token. Scale from the 1000 mm dimension (top of tube to underside of the 8 mm plate); check: plate 220 mm. Photo render, dimensioned elevation, plate plan (220 x 220, holes O14 at 180), dimension lines and callouts left out.",
+   "svg": "svg/prod/py-prod-pms-beschermpaal.svg"
+  },
+  {
+   "id": "py-prod-portaal-1baans-luxe",
+   "name_nl": "3.2.1 Portaal 1-baans luxe",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 15,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3314.0,
+    "height": 602.7,
+    "stated": [
+     3300,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-1baans"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 3300 mm in the illustration, measured 3314 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-1baans-luxe.svg"
+  },
+  {
+   "id": "py-prod-portaal-1baans-luxe-extradisplay",
+   "name_nl": "3.2.1 Portaal 1-baans luxe met extra display",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 15,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3315.1,
+    "height": 602.7,
+    "stated": [
+     3315,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-1baans",
+    "py-comp-portal-display-slot-dual"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 3300 mm in the illustration, measured 3315 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-1baans-luxe-extradisplay.svg"
+  },
+  {
+   "id": "py-prod-portaal-1baans-standaard",
+   "name_nl": "3.3.1 Portaal 1-baans standaard",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 18,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3314.0,
+    "height": 602.7,
+    "stated": [
+     3300,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-1baans"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 3300 mm in the illustration, measured 3314 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-1baans-standaard.svg"
+  },
+  {
+   "id": "py-prod-portaal-1baans-standaard-extradisplay",
+   "name_nl": "3.3.1 Portaal 1-baans standaard met extra display",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 18,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3309.6,
+    "height": 601.7,
+    "stated": [
+     3309,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-1baans",
+    "py-comp-portal-display-slot-dual"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 3300 mm in the illustration, measured 3309 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-1baans-standaard-extradisplay.svg"
+  },
+  {
+   "id": "py-prod-portaal-2baans-luxe",
+   "name_nl": "3.2.2 Portaal 2-baans luxe",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 16,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 6627.7,
+    "height": 602.7,
+    "stated": [
+     6600,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-2baans"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 6600 mm in the illustration, measured 6627 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-2baans-luxe.svg"
+  },
+  {
+   "id": "py-prod-portaal-2baans-luxe-extradisplay",
+   "name_nl": "3.2.2 Portaal 2-baans luxe met extra display",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 16,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 6622.8,
+    "height": 602.0,
+    "stated": [
+     6623,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-2baans",
+    "py-comp-portal-display-slot-dual"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 6600 mm in the illustration, measured 6623 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-2baans-luxe-extradisplay.svg"
+  },
+  {
+   "id": "py-prod-portaal-2baans-standaard",
+   "name_nl": "3.3.2 Portaal 2-baans standaard",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 19,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 6627.7,
+    "height": 602.7,
+    "stated": [
+     6600,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-2baans"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 6600 mm in the illustration, measured 6627 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-2baans-standaard.svg"
+  },
+  {
+   "id": "py-prod-portaal-2baans-standaard-extradisplay",
+   "name_nl": "3.3.2 Portaal 2-baans standaard met extra display",
+   "level": "prod",
+   "category": "portaal",
+   "source_page": 19,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 6622.8,
+    "height": 602.0,
+    "stated": [
+     6623,
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width",
+    "max height",
+    "speed",
+    "post height"
+   ],
+   "built_from": [
+    "py-comp-portal-face-2baans",
+    "py-comp-portal-display-slot-dual"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the plate, extracted from the source paths with live Ubuntu text and RVV numerals as outlines. Rebuilt parts: the blauw to aqua band at the P block edge (measured real vector gradient from the clip of the source shading) and the P block and navy right edges (clip rectangle with circular edge, the source paints them as a circle under a clip). Scale from the 600 mm frame height of the drawing; the handbook states a width of 6600 mm in the illustration, measured 6623 mm. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-2baans-standaard-extradisplay.svg"
+  },
+  {
+   "id": "py-prod-portaal-standaard-spec",
+   "name_nl": "3.3.3 Portaal technische specificaties (standaard)",
+   "level": "prod",
+   "category": "portal",
+   "source_page": 20,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 843.1,
+    "height": 391.9,
+    "stated": [
+     200,
+     160
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#0075AA"
+    },
+    {
+     "token": null,
+     "hex": "#009FE3"
+    },
+    {
+     "token": null,
+     "hex": "#070707"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#485E99"
+    },
+    {
+     "token": null,
+     "hex": "#75B8B6"
+    },
+    {
+     "token": null,
+     "hex": "#7686B3"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "CAD drawing (isometric views, Details A, B, C). Dimension lines, leaders, call-out rings, labels and scale texts removed. Vector paths are taken from the source; the fills of Detail C (stripes) and the soft top band of Detail B are raster in the source and were rebuilt as vector shapes. Scale from the 200 mm profile width of Detail A (1:2); the isometric views and Detail C (5:1) are drawn at other scales. Colour normalised to the 1.3 brand value (#082E7A to #1A3580).",
+   "svg": "svg/prod/py-prod-portaal-standaard-spec.svg"
+  },
+  {
+   "id": "py-prod-pyloon-hoog-vuilnisbak-back",
+   "name_nl": "3.7 Informatiepyloon hoog, achterzijde",
+   "level": "prod",
+   "category": "pyloon",
+   "source_page": 24,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 999.9,
+    "stated": [
+     400,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-comp-pyloon-back-logo"
+   ],
+   "tags": [],
+   "notes": "Back side 400 x 1000 with the logo in print foil. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-pyloon-hoog-vuilnisbak-back.svg"
+  },
+  {
+   "id": "py-prod-pyloon-hoog-vuilnisbak-front",
+   "name_nl": "3.7 Informatiepyloon hoog met vuilnisbak, voorzijde",
+   "level": "prod",
+   "category": "pyloon",
+   "source_page": 24,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 539.9,
+    "height": 1999.8,
+    "stated": [
+     480,
+     2000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00A6E3"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": null,
+     "hex": "#7D79B8"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": null,
+     "hex": "#DE0716"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#EA5B0B"
+    },
+    {
+     "token": null,
+     "hex": "#F59E00"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "opening hours",
+    "tariffs",
+    "phone",
+    "URL",
+    "which signs"
+   ],
+   "built_from": [
+    "py-prod-pyloon-laag-front"
+   ],
+   "tags": [],
+   "notes": "Panel 1000 plus bin zone 1000 (Dulce 50L bin with trash sticker), total height 2000. Callout line and dot on the bin and the 400mm dimension are left out. Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #082E7A to #1A3580; #A0A1A0 to #AEAEAE).",
+   "svg": "svg/prod/py-prod-pyloon-hoog-vuilnisbak-front.svg"
+  },
+  {
+   "id": "py-prod-pyloon-laag-back",
+   "name_nl": "3.6 Informatiepyloon, achterzijde",
+   "level": "prod",
+   "category": "pyloon",
+   "source_page": 23,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 999.9,
+    "stated": [
+     400,
+     1000
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "goodbye text"
+   ],
+   "built_from": [
+    "py-comp-pyloon-back-tot-ziens"
+   ],
+   "tags": [],
+   "notes": "Back side 'Tot ziens' panel 400 x 1000 (drawn at 1:10 on the page, unlike the 1:8 front). Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-pyloon-laag-back.svg"
+  },
+  {
+   "id": "py-prod-pyloon-laag-front",
+   "name_nl": "3.6 Informatiepyloon, voorzijde",
+   "level": "prod",
+   "category": "pyloon",
+   "source_page": 23,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 540.0,
+    "height": 1400.1,
+    "stated": [
+     480,
+     1400
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00A6E3"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": null,
+     "hex": "#7D79B8"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": null,
+     "hex": "#DE0716"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#EA5B0B"
+    },
+    {
+     "token": null,
+     "hex": "#F59E00"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "opening hours",
+    "tariffs",
+    "phone",
+    "URL",
+    "which signs"
+   ],
+   "built_from": [
+    "py-comp-pyloon-header-band",
+    "py-comp-pyloon-section-bar-openingstijden",
+    "py-comp-pyloon-section-bar-tarieven",
+    "py-comp-pyloon-section-bar-betalingsmogelijkheden",
+    "py-comp-pyloon-section-bar-calamiteiten",
+    "py-comp-pyloon-section-bar-algemene-voorwaarden",
+    "py-comp-pyloon-location-name-slot",
+    "py-comp-pyloon-opening-hours",
+    "py-comp-price-strip-110x400",
+    "py-comp-pyloon-payment-row",
+    "py-comp-pyloon-emergency",
+    "py-comp-pyloon-terms"
+   ],
+   "tags": [],
+   "notes": "2D elevation with posts and 1000 x 400 panel (width 480 over the posts, total height 1400; the SVG is 540 wide because the foot plates are drawn). Plan view with foot plates, dimension lines and callouts left out. Blauw to aqua gradient fills are raster in the source; rebuilt as real vector gradients on the exact clip outlines. Everything else is taken straight from source paths and live text. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580; #A0A1A0 to #AEAEAE).",
+   "svg": "svg/prod/py-prod-pyloon-laag-front.svg"
+  },
+  {
+   "id": "py-prod-routebord-auto-1000-front",
+   "name_nl": "4.1 Autoroutebord 1000",
+   "level": "prod",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 200.0,
+    "stated": [
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "pictos",
+    "label",
+    "arrow"
+   ],
+   "built_from": [
+    "py-comp-route-panel-pill",
+    "py-comp-route-module-picto",
+    "py-comp-route-module-text",
+    "py-comp-route-module-arrow"
+   ],
+   "tags": [],
+   "notes": "Scale from the stated 1000 mm board width. Five modules: car, in, accessible, EV, arrow. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-routebord-auto-1000-front.svg"
+  },
+  {
+   "id": "py-prod-routebord-auto-600-front",
+   "name_nl": "4.1 Autoroutebord 600",
+   "level": "prod",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 599.8,
+    "height": 199.9,
+    "stated": [
+     600,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "pictos",
+    "label",
+    "arrow"
+   ],
+   "built_from": [
+    "py-comp-route-panel-pill",
+    "py-comp-route-module-picto",
+    "py-comp-route-module-text",
+    "py-comp-route-module-arrow"
+   ],
+   "tags": [],
+   "notes": "Scale from the stated 600 mm board width. Die-cut outline, dimension lines and callout dot stripped. 'in' is outlined in the source. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-routebord-auto-600-front.svg"
+  },
+  {
+   "id": "py-prod-routebord-auto-back",
+   "name_nl": "4.1 Autoroutebord achterzijde",
+   "level": "prod",
+   "category": "routebord",
+   "source_page": 27,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1000.0,
+    "height": 200.0,
+    "stated": [
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-comp-route-back-noentry"
+   ],
+   "tags": [],
+   "notes": "Back side of the 1000 mm board: red no-entry sign on navy pill. Same scale as the front. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-routebord-auto-back.svg"
+  },
+  {
+   "id": "py-prod-routebord-spec",
+   "name_nl": "4.3 Routeborden technische gegevens (zijaanzicht)",
+   "level": "prod",
+   "category": "routebord",
+   "source_page": 29,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 26.0,
+    "height": 310.0,
+    "stated": [
+     null,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#000000"
+    },
+    {
+     "token": null,
+     "hex": "#666766"
+    },
+    {
+     "token": null,
+     "hex": "#706F6F"
+    },
+    {
+     "token": null,
+     "hex": "#7B7B7A"
+    },
+    {
+     "token": null,
+     "hex": "#8D8D8C"
+    },
+    {
+     "token": null,
+     "hex": "#A2A2A1"
+    },
+    {
+     "token": null,
+     "hex": "#BFBFBF"
+    },
+    {
+     "token": null,
+     "hex": "#C6C6C6"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Side view only: two aluminium sandwich panels with the wooden core between them (set back 10 mm top and bottom, 10/180/10 mm) and the hanging wire with screw eyes. Scale from the stated 200 mm board height. The layered 3D render and the radius 100 detail are raster or annotation and are left out, as are the ceiling blocks, dimension lines, labels and callouts.",
+   "svg": "svg/prod/py-prod-routebord-spec.svg"
+  },
+  {
+   "id": "py-prod-routebord-voet-back",
+   "name_nl": "4.2 Voetgangersroutebord achterzijde",
+   "level": "prod",
+   "category": "routebord",
+   "source_page": 28,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1001.2,
+    "height": 201.2,
+    "stated": [
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "exit names",
+    "pictos",
+    "arrow directions"
+   ],
+   "built_from": [
+    "py-comp-route-panel-pill",
+    "py-comp-walk-route-figure-block",
+    "py-comp-walk-route-row"
+   ],
+   "tags": [],
+   "notes": "Mirrored back side: figure and arrows point left. Same scale as the front. The back face white pill is the source white pill of the front face moved down (the source back face has a stray grey rectangle and a shifted white pill); everything else is extracted. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-routebord-voet-back.svg"
+  },
+  {
+   "id": "py-prod-routebord-voet-front",
+   "name_nl": "4.2 Voetgangersroutebord voorzijde",
+   "level": "prod",
+   "category": "routebord",
+   "source_page": 28,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1001.2,
+    "height": 201.2,
+    "stated": [
+     1000,
+     200
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "exit names",
+    "pictos",
+    "arrow directions"
+   ],
+   "built_from": [
+    "py-comp-route-panel-pill",
+    "py-comp-walk-route-figure-block",
+    "py-comp-walk-route-row"
+   ],
+   "tags": [],
+   "notes": "Scale from the stated 1000 mm board width. Live Ubuntu text. The thin board outline is kept so the white board stays visible; die-cut dashes and dimension lines are removed. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-routebord-voet-front.svg"
+  },
+  {
+   "id": "py-prod-sectieaanduiding-kolomband",
+   "name_nl": "4.5 Sectieaanduiding",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 31,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 2000.0,
+    "height": 300.0,
+    "stated": [
+     2000,
+     300
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "level",
+    "section",
+    "width"
+   ],
+   "built_from": [
+    "py-comp-section-wrap-strip"
+   ],
+   "tags": [],
+   "notes": "300 mm high wall foil strip glued on columns; width variable, drawn example about 2000 mm. Column mock-ups, dimension lines and callout left out. Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient.  Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-sectieaanduiding-kolomband.svg"
+  },
+  {
+   "id": "py-prod-vluchtwegplattegrond",
+   "name_nl": "4.9 Vluchtwegplattegrond",
+   "level": "prod",
+   "category": "signage",
+   "source_page": 35,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 163.1,
+    "height": 114.3,
+    "stated": null,
+    "basis": "illustrative (no dimension in handbook)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#00222F"
+    },
+    {
+     "token": null,
+     "hex": "#005A8F"
+    },
+    {
+     "token": "py-tok-color-safety-green",
+     "hex": "#008A3B"
+    },
+    {
+     "token": null,
+     "hex": "#00913E"
+    },
+    {
+     "token": null,
+     "hex": "#00B6CB"
+    },
+    {
+     "token": null,
+     "hex": "#070606"
+    },
+    {
+     "token": null,
+     "hex": "#1B3780"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": null,
+     "hex": "#36B9CB"
+    },
+    {
+     "token": null,
+     "hex": "#AED6B7"
+    },
+    {
+     "token": null,
+     "hex": "#B0D7B7"
+    },
+    {
+     "token": null,
+     "hex": "#E63515"
+    },
+    {
+     "token": "py-tok-color-oranje",
+     "hex": "#F08300"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "floor plan",
+    "symbols"
+   ],
+   "built_from": [
+    "py-comp-escape-legend",
+    "py-comp-escape-safety-instructions",
+    "py-atom-logo-horizontal-color"
+   ],
+   "tags": [],
+   "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. No dimension in the handbook, default scale. The floor plan inside the white area is a location-specific placeholder, kept as drawn. The two 'uitgang' signs (legend and plan) are rebuilt as vectors because they are rasters in the source. The pink annotation and the callout are left out.",
+   "svg": "svg/prod/py-prod-vluchtwegplattegrond.svg"
+  },
+  {
+   "id": "py-prod-vuilnisbak-staanders",
+   "name_nl": "8.2 Vuilnisbak op staanders",
+   "level": "prod",
+   "category": "bin",
+   "source_page": 48,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 875.8,
+    "height": 903.6,
+    "stated": [
+     400,
+     850,
+     265
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#070606"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": null,
+     "hex": "#828181"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-sticker-trash"
+   ],
+   "tags": [],
+   "notes": "Front elevation of the Dulce bin between the two RVS posts (koker 40 x 40 with 80 x 80 foot plate, grey RAL 9006 drawn as #A0A1A0, normalised to #AEAEAE) plus the bin side view, with the trash sticker on the front. Scale from the 850 mm dimension line (post top to foot plate, the bin top sits about 50 mm higher). The open-bin technical view, 3D render, dimension lines and callouts are left out. Colour normalised to the 1.3 brand value (#082E7A to #1A3580; #A0A1A0 to #AEAEAE).",
+   "svg": "svg/prod/py-prod-vuilnisbak-staanders.svg"
+  },
+  {
+   "id": "py-prod-vuilnisbak-wand",
+   "name_nl": "8.1 Vuilnisbak wandmontage",
+   "level": "prod",
+   "category": "bin",
+   "source_page": 47,
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 817.4,
+    "height": 682.6,
+    "stated": [
+     400,
+     675,
+     265
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#070606"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": null,
+     "hex": "#828181"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [
+    "py-atom-sticker-trash"
+   ],
+   "tags": [],
+   "notes": "Front and side elevation of the Dulce 50 L bin as drawn in the handbook (RAL 5002 swatch drawn as #082E7A, normalised to PY-Blauw #1A3580), including the trash sticker on the front. Scale from the 675 mm height dimension line (400 mm wide, 265 mm deep). The open-bin technical view, 3D render, dimension lines, callouts and dots are left out. Colour normalised to the 1.3 brand value (#082E7A to #1A3580).",
+   "svg": "svg/prod/py-prod-vuilnisbak-wand.svg"
+  },
+  {
+   "id": "py-prod-wandbord",
+   "name_nl": "3.4 Wandbord",
+   "level": "prod",
+   "category": "wandbord",
+   "source_page": 21,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 3299.8,
+    "height": 513.3,
+    "stated": [
+     3300,
+     300
+    ],
+    "basis": "handbook scale"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#009641"
+    },
+    {
+     "token": null,
+     "hex": "#0D0E10"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": null,
+     "hex": "#DADADA"
+    },
+    {
+     "token": "py-tok-color-rvv-red",
+     "hex": "#E30613"
+    },
+    {
+     "token": null,
+     "hex": "#F6F6F6"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "location name",
+    "width"
+   ],
+   "built_from": [
+    "py-comp-portal-face-2baans",
+    "py-comp-hoogtebalk-bar"
+   ],
+   "tags": [],
+   "notes": "Wandbord plate (300 mm high; width variable, 3300 mm as drawn) with display and RVV cluster, plus two hoogtebalken. Brick wall, dark wall gradient, dimension and call-out lines are left out. Plate vector paths are taken from the source; the P block and right navy edge (discs clipped by the plate) and the verloop crescent (clip and shading in the source) are rebuilt. The hoogtebalken (red bands and gaffelsets are raster in the source) are rebuilt as vectors. Scale from the 300 mm plate height; the hoogtebalken are drawn schematically in the handbook (2500 x 90 mm per its call-out) and are not at plate scale. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
+   "svg": "svg/prod/py-prod-wandbord.svg"
+  }
+ ]
+}

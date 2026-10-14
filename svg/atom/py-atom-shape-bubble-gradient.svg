@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="35.965mm" height="43.381mm" viewBox="0 0 35.965 43.381">
+<title>py-atom-shape-bubble-gradient: verloop</title>
+<defs><linearGradient id="py-atom-shape-bubble-gradient-grad1" gradientUnits="userSpaceOnUse" x1="3.341" y1="7.073" x2="22.228" y2="25.929"><stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/><stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient></defs><g id="py-atom-shape-bubble-gradient"><path d="M0 17.981C0 34.667 16.674 43.031 16.674 43.031C17.247 43.381 17.982 42.964 17.982 42.293L17.982 35.961C27.914 35.961 35.965 27.911 35.965 17.981C35.965 8.05 27.914 0 17.982 0C8.051 0 0 8.05 0 17.981Z" fill="url(#py-atom-shape-bubble-gradient-grad1)"/></g>
+</svg>

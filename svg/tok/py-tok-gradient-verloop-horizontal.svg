@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="42.333mm" height="21.167mm" viewBox="0 0 42.333 21.167">
+<title>py-tok-gradient-verloop-horizontal: Verloop (horizontaal)</title>
+<defs><linearGradient id="py-tok-gradient-verloop-horizontal-grad1" gradientUnits="userSpaceOnUse" x1="0" y1="10.583" x2="42.333" y2="10.583"><stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/><stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient></defs><g id="py-tok-gradient-verloop-horizontal"><path d="M0 0L42.333 0L42.333 21.167L0 21.167Z" fill="url(#py-tok-gradient-verloop-horizontal-grad1)"/></g>
+</svg>

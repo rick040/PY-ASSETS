@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="350mm" height="420.001mm" viewBox="0 0 350 420.001">
+<title>py-atom-tag-level-bubble-gradient: Niveauaanduiding bel</title>
+<defs><linearGradient id="py-atom-tag-level-bubble-gradient-grad1" gradientUnits="userSpaceOnUse" x1="103.181" y1="85.51" x2="246.287" y2="333.569"><stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/><stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient></defs><g id="py-atom-tag-level-bubble-gradient"><path d="M0 174.966C0 337.242 162.308 418.764 162.308 418.764C167.693 422.224 175.001 417.994 175.001 411.458L175.001 349.931C271.539 349.931 350 271.486 350 174.966C350 78.447 271.539 0 175.001 0C78.463 0 0 78.447 0 174.966Z" fill="url(#py-atom-tag-level-bubble-gradient-grad1)"/><text x="99.6" y="272.732" font-family="Ubuntu" font-size="282.222" font-weight="bold" fill="#FFFFFF" xml:space="preserve">0</text></g>
+</svg>

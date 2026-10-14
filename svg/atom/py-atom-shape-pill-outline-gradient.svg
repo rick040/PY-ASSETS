@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="106.958mm" height="42.891mm" viewBox="0 0 106.958 42.891">
+<title>py-atom-shape-pill-outline-gradient: pil met rand op verloop</title>
+<defs><linearGradient id="py-atom-shape-pill-outline-gradient-grad1" gradientUnits="userSpaceOnUse" x1="15.266" y1="-16.307" x2="91.733" y2="59.239"><stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/><stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient></defs><g id="py-atom-shape-pill-outline-gradient"><path d="M0 0L106.958 0L106.958 42.891L0 42.891Z" fill="url(#py-atom-shape-pill-outline-gradient-grad1)"/><path d="M19.591 13.273C15.085 13.273 11.418 16.939 11.418 21.446C11.418 25.952 15.085 29.619 19.591 29.619L87.366 29.619C91.873 29.619 95.539 25.952 95.539 21.446C95.539 16.939 91.873 13.273 87.366 13.273L19.591 13.273" fill="#F08300" stroke="#FFFFFF" stroke-width="0.598"/></g>
+</svg>
