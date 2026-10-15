@@ -136,7 +136,7 @@ class Pg:
         if self.sub:
             h.append(text(MX, 30, self.sub, 3.2, LAB))
         h.append(text(PW - MX, 14, "parkingyou toepassingen-overzicht", 3.2, LAB, anchor="end"))
-        h.append(text(MX, PH - 8, "Bron: tien printbestanden (source/print). Referentie = getrouwe vectorweergave; template = officiele tokenkleuren, 3 mm bleed, variabelen als live tekst. Labels staan in aparte groepen.", FS7, LAB))
+        h.append(text(MX, PH - 8, "Bron: twintig printbestanden (source/print). Referentie = getrouwe vectorweergave; template = officiele tokenkleuren, 3 mm bleed, variabelen als live tekst. Labels staan in aparte groepen.", FS7, LAB))
         h.append(text(PW - MX, PH - 8, str(num), 4, BRAND["blauw"], weight=700, anchor="end"))
         d = "<defs>" + "".join(self.defs.values()) + "</defs>" if self.defs else ""
         return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{fmt(PW)}mm" height="{fmt(PH)}mm" viewBox="0 0 {fmt(PW)} {fmt(PH)}">'
@@ -213,7 +213,10 @@ def app_pages(apps, els, root):
             for c in spec.get("copy_corrections", []):
                 lines.append(("t", f"Tekstcorrectie in template: \"{c['original']}\" wordt \"{c['corrected']}\" (referentie houdt het origineel)."))
             if spec.get("notes"):
-                lines.append(("t", str(spec["notes"])[:1100]))
+                nt = str(spec["notes"])
+                if len(nt) > 1100:  # cut at a sentence end so no ID is split
+                    nt = nt[:1100].rsplit(". ", 1)[0] + "."
+                lines.append(("t", nt))
             pg.block(MX, bot + 6, PW - 2 * MX, lines, f"spec-{vid}")
             pages.append((pg, f"{vid}"))
             pg.ids += [vid] + bf

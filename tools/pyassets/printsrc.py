@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import os
 
-from .core import (PT_MM, Defs, Element, Path, Source, TF, Text, fmt, regroup, _esc)
+from .core import (PT_MM, Defs, Element, Path, Source, TF, Text, clip_to_rect, fmt, regroup, _esc)
 from .registry import crop
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -75,7 +75,8 @@ def reference_items(key, pno=1, omit=None, outline_fonts=(), extra=(), skip_text
 
     items = crop(src, pno, (-W, -H, 2 * W, 2 * H), partial=True, skip=skip, outline_fonts=outline_fonts, skip_text=skip_text)
     items = regroup(src, pno, items) + list(extra)
-    return items
+    pad = mm2pt(12.0)  # a little room around the page; anything farther out is cut (boolean intersection, no clipping mask)
+    return clip_to_rect(items, (-pad, -pad, W + pad, H + pad), slack=0.0)
 
 
 def reference_svg(app_id, key, pno=1, variant="", omit=None, outline_fonts=(), extra=(), skip_text=None, title=None):

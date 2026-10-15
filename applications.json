@@ -1,7 +1,91 @@
 {
  "source": "ten print sources in source/print/ (PM-137)",
- "count": 9,
+ "count": 19,
  "applications": [
+  {
+   "id": "py-app-banner-dranghek-abonnees",
+   "name_nl": "Dranghekspandoek dubbelzijdig",
+   "type": "banner",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-banner-dranghek-abonnees",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-light",
+      "py-tok-type-ubuntu-medium",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-bold-italic",
+      "py-atom-icon-warning-triangle",
+      "py-comp-pill-storing-contact",
+      "py-atom-figure-wave"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/dranghekspandoek-dubbelzijdig_01.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       2420,
+       1550
+      ],
+      "bleed_box_set": true
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     2420.0,
+     1550.0
+    ],
+    "bleed_mm": 10.0,
+    "size_with_bleed_mm": [
+     2440.0,
+     1570.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "front-nl": "Alleen voor abonnees!",
+     "front-en": "Subscribers only!",
+     "text": "Bij storingen, bel naar",
+     "phone-number": "085 21 30 422",
+     "back-nl": "Tot ziens",
+     "back-en": "Goodbye"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-light",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-bold-italic",
+    "py-atom-icon-warning-triangle",
+    "py-comp-pill-storing-contact",
+    "py-atom-figure-wave"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [
+    "Fold band shadow: the 15901 x 112 px grayscale raster at y 766 to 784 mm (soft mask of the shadow) and the 20 percent black rectangle it masks (-29 to 2469 x 767 to 783 mm, #231F20). Without the soft mask the rectangle would show as a hard band, so both are left out; the 20 pt white fold line at y 775 stays."
+   ],
+   "copy_corrections": [],
+   "notes": "Print file of 2440 x 1570 mm (trim 2420 x 1550, 10 mm bleed set), CMYK, ONE version that holds both sides: the lower half (page y 775 to 1560) is the front and reads normally, the upper half (page y 10 to 775) is the back side and is rotated 180 degrees in the file (the back reads upside down), the two halves meet at the white fold line at y 775. Template: front group side-front (warning triangle py-atom-icon-warning-triangle at its source position, 'Alleen voor ' Ubuntu Light + 'abonnees' Bold + '!' Light 172.9 mm white, divider light aqua 20 pt = 7.06 mm from x 534.9 to 2294, 'Subscribers ' Bold + 'only!' Light); back group side-back = the upright layout rotated 180 degrees about (1220 / 392.5) so the file reads like the source: comp py-comp-pill-storing-contact (new, upright, flat end bleeds off the page edge), 'Tot ziens' Ubuntu Bold white and 'Goodbye' Ubuntu Bold Italic light aqua 127 mm (start x 504.4, baselines 583.6 and 703.5 in the upright frame), and the white figure = library py-atom-figure-wave mirrored, scaled 20.82x (fitted by pixel overlay, overlap 0.92: the source torso is about 6 mm wider and its head pointer is mirrored;  the head outline gap of the source is a navy 31 pt stroke, in the library the head is a separate path), cut with pathops to the band of the back side; the body runs off the page as in the source. Group fold-line: white 20 pt (7.06 mm) at y 775 (765 trim relative). Colours: the blue of the file is CMYK 100/85/10/1 (#1A4691, text 24408F, stroke 213B86) and is the token navy in the template; light aqua CMYK 51/1/11/0 (#71CBDF: pill, triangle, divider, Goodbye) has no token and is kept as sampled. Variables: front-nl, front-en, back-nl, back-en, text, phone-number (the last two live inside the pill comp), background-colour. Open points for the owner: (1) the storing number 085 21 30 422 differs from 085 4011647 (Maashaven pyloon, posters); (2) the fold line is at y 775, not at the middle of the trim (785): the back is 765 mm and the front 785 mm high, check with the printer; (3) bleed: 10 mm is set on top, left and right, but the navy field stops at y 1560 (the trim bottom): no bottom bleed in the source, the template adds it; (4) the fold shadow is a raster in the source and is not reproduced; (5) the print logo differs slightly from the library logo (see the pill comp). No spelling errors found. No cut contour: a banner, not a sticker."
+  },
   {
    "id": "py-app-brand-background-tagline",
    "name_nl": "Merkachtergrond met tagline",
@@ -167,6 +251,79 @@
    "omitted": [],
    "copy_corrections": [],
    "notes": "Source has no bleed box (art overshoots the page by 3 to 20 mm); templates are built with 3 mm bleed. Front: the beeldmerk at 1.508x (54.3 x 65.5 mm) runs 20.7 mm off the left, 10.0 mm off the top and 0.5 mm off the bottom; the part beyond the 3 mm bleed lies outside the template viewBox. Back: the source background overshoots the trim only 0.2 mm at the bottom and 3.3 mm at the top; the template runs the navy into 3 mm all round. The watermark is 5 percent (the Phase 1 document said 10 percent). The back lockup is the reverse lockup (white bubble, aqua dot) at 0.511x of the A6 lockup, centred on the card; the tagline is live text so it can be a variable. Card number and plate fields are blank in print (input fields only)."
+  },
+  {
+   "id": "py-app-envelope-220x156",
+   "name_nl": "Envelop 220 x 156",
+   "type": "envelope",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-envelope-220x156",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-light",
+      "py-tok-type-ubuntu-regular",
+      "py-comp-address-line-envelop",
+      "py-comp-lockup-logo-tagline-color"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/ParkingYou_Envelop_220x156.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC), file claims PDF/X-1a",
+      "trim_mm": [
+       220,
+       156
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     220,
+     156
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     226.0,
+     162.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "street": "Victoriapark 4 ",
+     "postcode-city": " 5611 BM Eindhoven"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-light",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-address-line-envelop",
+    "py-comp-lockup-logo-tagline-color"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Source page 249.28 x 185.28 mm, trim 220 x 156 mm centred (offset 14.64 mm), no BleedBox. The reference is faithful and keeps the crop marks: two stroked paths, white 1.25 pt under black 0.25 pt (registration spot All in the source). OPEN POINT: the marks sit at 11.64 and 237.64 mm, i.e. 3 mm OUTSIDE the trim, at the bleed edge of a 226 x 162 mm area, and not at the trim edge; marks that are normally set to the trim would be at 14.64 and 234.64 mm. Confirm with the printer whether the 3 mm is meant as the bleed and which edge the marks refer to. The template has no crop marks (the printer's system adds them), 3 mm bleed (white, the envelope has no bleed content), coordinates relative to the trim. Lockup: py-comp-lockup-logo-tagline-color at scale 0.652 (beeldmerk 15.6 x 18.9 mm at x 20.39, y 18.23 relative to the trim, page 35.0, 32.9), then the address line comp below it (Ubuntu Light 2.47 mm, text origin x 40.64, baseline 58.1 minus 14.64 = 43.46 mm from the trim top, aligned with the wordmark left edge). The file claims PDF/X-1a but is RGB (ICC): colours are #223A7A (blue) and #34BACE (aqua), both listed under observed; the template uses #1A3580 and #32B9CD. PDF/X-1a requires CMYK, so the print file as supplied does not conform to the standard it claims. The envelope has no window, flap line or return address field in the source."
   },
   {
    "id": "py-app-event-sign-glow",
@@ -389,6 +546,89 @@
     }
    ],
    "notes": "The file is named A5 but the page is 148 x 105 mm (A6 landscape). No bleed in the source; the template has 3 mm bleed (white). Open question for the owner: the running text spells the brand 'ParkingYou' (capital P and Y) while the logo is set 'parkingyou'; kept as in the source, not changed. Reflow: with the word 'toegangsmiddel' whole, line 2 no longer fits in the text width, so paragraph 1 is set in three lines (leading 1.2 x 4.59 mm = 5.5 mm, as in the source) and the gap to paragraph 2 is 8.0 mm instead of 11.0 mm so the lower block (Naam klant, signature box) stays where it is in the source. The beeldmerk bottom right is the beeldmerk without wordmark (py-atom-logo-beeldmerk-color at 0.348x, 12.6 x 15.1 mm)."
+  },
+  {
+   "id": "py-app-letterhead-briefpapier",
+   "name_nl": "Briefpapier A4",
+   "type": "letterhead",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-letterhead-briefpapier",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-comp-address-block-brief",
+      "py-comp-lockup-logo-tagline-color",
+      "py-atom-mark-registered"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/Briefpapier_nieuw.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       210,
+       297
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     210,
+     297
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     216.0,
+     303.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "company": "ParkingYou BV",
+     "street": "Victoriapark 4",
+     "postcode-city": "5611 BM Eindhoven",
+     "email": "info@parkingyou.nl",
+     "website": "www.parkingyou.nl"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-address-block-brief",
+    "py-comp-lockup-logo-tagline-color",
+    "py-atom-mark-registered"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [
+    {
+     "original": "5611BM Eindhoven",
+     "corrected": "5611 BM Eindhoven (space in the postcode, as on the envelope)"
+    }
+   ],
+   "notes": "A4 portrait, no bleed and no BleedBox in the source (page = trim, everything else is white paper); the template adds 3 mm bleed (white). Blank page below the header block. Lockup: py-comp-lockup-logo-tagline-color at scale 0.515 (beeldmerk 12.4 x 14.9 mm at x 20.2, y 12.2; the tagline is live text inside the comp, aqua), the registered mark py-atom-mark-registered 0.75 mm right of the wordmark, level with its top. Address block: recomposed from py-comp-address-block-brief (right edge 187.26 mm, 3.17 mm Ubuntu, Bold company line) as five live text lines with data-variable (company, street, postcode-city, email, website). The source address text is CMYK 100/85.5/22.3/4 (viewer #1E4382, a drifted blue, listed in observed); the logo is CMYK 100/83/0/17 (viewer #0B3D8A, equal to the token); the template uses #1A3580 for both. Open point: the source has no fold marks, hole punch mark or address window position; the owner may want to add them if the letterhead goes into window envelopes."
   },
   {
    "id": "py-app-panel-campagne-hofplein",
@@ -615,6 +855,519 @@
    "notes": "Print panel 400 x 1000 mm with 3 mm bleed (page 406 x 1006). Reference: faithful reproduction in source colours (drifted blues #1F4383 for header, bars, text and QR plate; token blue #0B3D8A in the badges; rich black as #000000), ArialMT (MOBIAN) outlined, the header edge shading rebuilt as vector gradient with the exact axis and curve of the PDF, QR modules from the clip path. Template: token colours only (#1A3580 all blues, #1D1D1B text), live Ubuntu text, every variable has data-variable (title-<bar>, day-N, hours-N, label-N, price-N, location-name, phone, terms-url), QR as placeholder group inside the navy plate (variable qr-target, example https://parkingyou.nl/nl/locaties/rotterdam/parking-maashaven/id=129). Bars run through the bleed; header band comp includes its own bleed. OPEN: terms URL. The print has www.parkingyou.nl/algemene-voorwaarden, the handbook (3.6) www.parkingyou.nl/nl/algemene-voorwaarden; the print value is kept as the variable value, the owner decides which one is correct. Positions: page mm minus 3 mm trim offset (the Phase 1 note 'text starts at 14.8 mm' is the page coordinate: 11.8 mm from the trim edge). The inverted QR (white on navy) may fail on some scanners; the sample decodes with zxing. Layout fact: bars 35.15 mm high, rows pitch 21.17 mm (1.2 x 17.64 mm)."
   },
   {
+   "id": "py-app-panel-tarief-evenement",
+   "name_nl": "Tariefbord evenement (aangepast inrijdtarief)",
+   "type": "panel",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-panel-tarief-evenement",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
+      "py-tok-type-ubuntu-regular",
+      "py-comp-tagline-lockup",
+      "py-comp-price-bubble-speech",
+      "py-comp-calendar-date",
+      "py-atom-icon-calendar",
+      "py-atom-mark-live-at-philips-stadium"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TariefConcerten.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC)",
+      "trim_mm": [
+       700,
+       1000
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     700,
+     1000
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     706.0,
+     1006.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "price": "€20",
+     "label": "inrijdtarief",
+     "headline": "Let op!",
+     "body-line-1": "Aangepast inrijdtarief",
+     "body-line-2": "op de volgende data:",
+     "day-1": "20",
+     "month-1": "juni",
+     "day-2": "26",
+     "month-2": "juni",
+     "day-3": "27",
+     "month-3": "juni"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-tagline-lockup",
+    "py-comp-price-bubble-speech",
+    "py-comp-calendar-date",
+    "py-atom-icon-calendar",
+    "py-atom-mark-live-at-philips-stadium"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "700 x 1000 mm, no bleed in the source (page = trim), template adds 3 mm bleed. No hidden or off-page leftovers: all 72 source paths are on the page; the two paths that stick out (the navy field and the speech bubble) are kept in the reference. Navy field: one huge source path (956 x 1272 mm, a speech bubble of radius 527 mm centred at 350.8 / 364.4 whose pointer lies at the bottom), only the part on the page is visible. The template rebuilds the visible part as a path (source path intersected with the page plus bleed): the lower left is cut by the arc, white paper below it up to x 350.8, then a vertical edge, and a second white wedge at the bottom right where the pointer curve leaves the page. Library: logo and tagline are py-comp-tagline-lockup at scale 2.52 (beeldmerk 73.0 mm high, library 28.95 mm), top left at 58.7 / 58.1 mm. Texts are live Ubuntu in the source and in the template: Let op! Bold 111.9 mm, two body lines Medium 55.95 mm (baselines 54 mm apart), all white; price and label are rotated 6.71 degrees counter clockwise inside the speech bubble. Calendars: three py-atom-icon-calendar (pitch 175.85 mm) with centred navy date. In the source the first date (20 juni) sits 3.3 mm left of the centre of its calendar, the template centres all three. Colours: navy of the file #23398E (RGB ICC, drift) becomes the token #1A3580 in the template and in the library elements, the reference keeps the source value. The bubble light aqua #78C9DC has no token and is kept as sampled. Variables: headline, body-line-1, body-line-2, price, label, day-N, month-N, background-colour. Third party mark Live at Philips Stadium (bottom left, 48 to 235 mm) is reference only, source the official file. The template bubble shape is the source path cut at the bleed (it sticks out 9 mm at the top and right in the source)."
+  },
+  {
+   "id": "py-app-poster-app-a2",
+   "name_nl": "Poster app downloaden A2",
+   "type": "poster",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-poster-app-a2",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-regular",
+      "py-comp-url-chevron",
+      "py-atom-logo-beeldmerk-color",
+      "py-atom-logo-wordmark-color",
+      "py-atom-shape-bubble-image-mask",
+      "py-comp-qr-plate"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/posters_420x594_3_1.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC sRGB)",
+      "trim_mm": [
+       420,
+       594
+      ],
+      "bleed_box_set": true
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     420,
+     594
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     426.0,
+     600.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "photo": "foto van handen met telefoon (bubbelvorm)",
+     "headline-1": "Makkelijk parkeren",
+     "headline-2": "vanuit je broekzak",
+     "subline": "Download nu onze app",
+     "qr-target": "https://parkingyou.nl/nl"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-url-chevron",
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color",
+    "py-atom-shape-bubble-image-mask",
+    "py-comp-qr-plate"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [
+    "Photo: JPEG 824 x 988 px (hands holding a phone, 64.8 to 379.8 mm by 60.9 to 438.6 mm) clipped to the bubble outline: not copied. The reference shows the clip outline as a flat #EBEBEB placeholder (group placeholder-photo).",
+    "Navy bubble fill (#2A3282, same outline as the photo clip, 313.8 x 378.6 mm) directly under the photo: hidden underlay, not drawn.",
+    "Two white specks (0.1 mm) next to the QR code at x 358 / y 524 mm: kept in the reference (part of the source), no meaning."
+   ],
+   "copy_corrections": [],
+   "notes": "A2 420 x 594 mm, the source has the 3 mm bleed (page 426 x 600) and a TrimBox. REBUILT in the template: the headline and the subline are outlined in the source and are rebuilt as live Ubuntu (Bold 28.2 mm for both headline lines, line pitch 26.75 mm, Regular 22.58 mm for the subline; fitted by overlay, width and height agree). The only listed font in the source is Helvetica for the QR, there is no live text. Library: py-comp-url-chevron at scale 0.456 (white text and chevron recoloured to navy and the light aqua sample #8CCDDF; the library chevron is #69CADA), py-atom-shape-bubble-image-mask at scale 8.717 (the photo clip outline has the same bubble shape; the tail tip differs by under 2 mm), py-atom-logo-beeldmerk-color (scale 0.578) and py-atom-logo-wordmark-color (scale 0.988). The library stacked logo py-atom-logo-stacked-color is NOT used: the print has 6.3 mm between the beeldmerk and the wordmark, the library 3.0 mm, so the two atoms are placed separately (group logo-stacked). New: py-comp-qr-plate (navy plate 87.9 mm, radius 5.77 mm): the plate of py-comp-qr-reserveer (118.6 mm, radius 11.95 mm) does not match. Reference: faithful, QR modules as vector fills (white on navy, inverted), photo as flat placeholder. Template: placeholder-photo (data-variable photo, library afbeeldingsmasker) and the QR as placeholder group inside the plate (data-variable qr-target, example https://parkingyou.nl/nl). Colours: source blues #2A3282 (text, QR plate) and #23398E (logo) are drift, the template uses #1A3580; the chevron light aqua is kept as sampled. Variables: url-line-1, url-line-2 (in the placed url component), headline-1, headline-2, subline, photo, qr-target."
+  },
+  {
+   "id": "py-app-poster-pr-mandelapark",
+   "name_nl": "P+R poster Mandelapark",
+   "type": "poster",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-poster-pr-mandelapark",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-light",
+      "py-comp-symbol-pr",
+      "py-comp-lockup-location-garage",
+      "py-comp-price-bubble-speech",
+      "py-comp-url-tag-chevron"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/PR_WTC_Poster.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC)",
+      "trim_mm": [
+       700,
+       1000
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     700,
+     1000
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     706.0,
+     1006.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "label-pr": "P+R",
+     "location-line-1": "Parking",
+     "location-line-2": "Mandelapark",
+     "price": "€6",
+     "price-suffix": ",-",
+     "label": "per dag",
+     "url-bold": "voordelig",
+     "url-regular": "parkeren.nl"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-light",
+    "py-comp-symbol-pr",
+    "py-comp-lockup-location-garage",
+    "py-comp-price-bubble-speech",
+    "py-comp-url-tag-chevron"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "700 x 1000 mm, no bleed in the source (page = trim, RGB ICC). Navy field: one source path of 847 x 1127 mm (-117 / -177 to 730 / 949.5) of which only the part on the page is visible: the top and the sides run off the page, the lower left is cut by an arc, white paper below it up to x 349, a vertical edge and a pointed bottom right. The template rebuilds the visible part as a path (source path intersected with the page plus 3 mm bleed with pathops, as in the tariff panel). The reference also keeps a navy rectangle (70.8 to 644.1 x 112.5 to 383.2 mm, #233A89 against the field #23398E) that is faintly visible in the source as a slightly different blue; it is a leftover and is not in the template. P+R symbol: py-comp-symbol-pr scaled 5.964x at 100.0 / 59.8 mm, live label P+R Ubuntu Bold 270.4 mm white. Location: white outline pill 311.2 x 87.0 mm (stroke 6 pt = 2.12 mm, full round) with the garage symbol of py-comp-lockup-location-garage (white, scale 0.66, strip_text) and own live text, Ubuntu Bold 27.8 mm white (Parking / Mandelapark, baselines 512.2 and 537.2): the proportions of the library lockup do not hold here either (see the sticker). Price bubble: py-comp-price-bubble-speech at scale 1.1893 and rotation -0.67 degrees (matches the source path), cut to the bleed at the left page edge (it sticks out 21 mm in the source); live Ubuntu Bold white, rotated -6.9 degrees: '€6' 181.2 mm, ',-' 67.6 mm, 'per dag' 50.5 mm (outlined in the source, fitted by overlay; the suffix is scaled from the sticker, 1.75x). URL tag: new comp py-comp-url-tag-chevron at 458.5 / 938.4 mm (on white paper). Colours: file blue #23398E and tag #374F9C are the token navy, light aqua #78C9DC (no token) as sampled. Variables: label-pr, price, price-suffix, label, location-line-1, location-line-2, url-bold, url-regular, background-colour. Same location name and price as the sticker; the web address voordeligparkeren.nl is not the www.parkingyou.nl used elsewhere (open point for the owner). No spelling errors found. No cut contour: a poster."
+  },
+  {
+   "id": "py-app-poster-storing-a3",
+   "name_nl": "Poster storing A3",
+   "type": "poster",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-poster-storing-a3",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
+      "py-atom-logo-beeldmerk-watermark",
+      "py-comp-lockup-logo-tagline-color",
+      "py-atom-icon-warning-triangle",
+      "py-comp-box-storing-contact",
+      "py-atom-icon-warning-triangle-thin"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/posters_297x420_3_1.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC sRGB)",
+      "trim_mm": [
+       297,
+       420
+      ],
+      "bleed_box_set": true
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     297,
+     420
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     303.0,
+     426.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "headline": "Let op!",
+     "sentence-start": "Op",
+     "location-name": "locatie",
+     "sentence-1-end": "is het",
+     "sentence-line-2": "niet mogelijk om op deze",
+     "sentence-line-3": "locatie te parkeren.",
+     "contact-heading": "Storing?",
+     "contact-phone": "Bel 085 4011647",
+     "contact-text": "en wij lossen het zo snel mogelijk op",
+     "url": "www.parkingyou.nl"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-logo-beeldmerk-watermark",
+    "py-comp-lockup-logo-tagline-color",
+    "py-atom-icon-warning-triangle",
+    "py-comp-box-storing-contact",
+    "py-atom-icon-warning-triangle-thin"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [
+    "Full page navy rectangle (#23398E, 303 x 428.4 mm) directly under the white page rectangle of the same size: hidden underlay.",
+    "Raster image 740 x 1527 px (indexed, 111.3 to 303.0 mm by 20.1 to 415.8 mm) with the pale bubble: replaced by a vector shape (same silhouette, flat #F7F8FA), the raster is not copied.",
+    "Trailing space and the run of spaces in the first sentence span ('Op' + spaces + 'is het'): the words are written at their true positions."
+   ],
+   "copy_corrections": [],
+   "notes": "A3 297 x 420 mm, the source has the 3 mm bleed (page 303 x 426) and a TrimBox. REBUILT because the large pale bubble in the background is a raster in the source: it is rebuilt as a vector, the silhouette of the beeldmerk (shape of py-atom-logo-beeldmerk-watermark) scaled by 6.069 with the top left at 111.35 / 20.25 mm (page mm), cut at the right edge of the page. Fitted to the raster mask (overlap 99.98 percent, so the print bubble is the beeldmerk bubble, uniformly scaled to a 329.6 mm circle). Colour: the raster is flat #F5F6F9 in its palette and renders as #F7F8FA; the reference uses the rendered value, the template draws the navy token #1A3580 at 3.5 percent (same result, a tint as in observed rule 8; the library watermark is aqua at 5 percent and would look different). Library: py-comp-lockup-logo-tagline-color at scale 1.125 (118.0 mm wide), py-atom-icon-warning-triangle at 87.0 mm wide, recoloured to the light aqua sample #83CBE1 (no token, kept as sampled; the library triangle uses #71CBDF). New: py-comp-box-storing-contact (box, small triangle, two text lines) and py-atom-icon-warning-triangle-thin. Live text: Let op! Ubuntu Bold 46.79 mm, sentence Ubuntu Medium 21.95 mm (three lines, baseline pitch 31.3 mm), URL Ubuntu Medium 9.0 mm centred (in the source 'Let op!', the contact lines and the URL are outlined and fitted by overlay). The location name is a grey rounded box #EBEBEB (59.6 to 203.6 mm, radius 5.1 mm) in the source: the template keeps it as the placeholder group placeholder-location-name (data-placeholder and data-variable location-name); 'is het' stays at its printed position, a longer location name needs a reflow (open point). Colours: the source blues #2B3D91 (text, outline), #374F9E (contact text), #2B529F (small triangle) and #273A7C (logo) are drift, the template uses #1A3580 only. Open: the contact text colour #374F9E and the text blue #2B3D91 are two different blues on one poster. Variables: headline, sentence-start, sentence-1-end, sentence-line-2, sentence-line-3, location-name, contact-heading, contact-phone, contact-text, url."
+  },
+  {
+   "id": "py-app-sign-pr-gratis-a20",
+   "name_nl": "P+R bord A20 dicht, tijdelijk gratis",
+   "type": "sign",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sign-pr-gratis-a20",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-medium",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-line-divider",
+      "py-comp-symbol-pr",
+      "py-atom-partner-zuid-holland-bereikbaar",
+      "py-comp-lockup-logo-tagline-color"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/PR_RoadSignage.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC)",
+      "trim_mm": [
+       210,
+       297
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     210.0,
+     297.0
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     216.0,
+     303.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "headline": "A20 dicht?",
+     "body-line-1": "Parkeer nu ",
+     "keyword-1": "tijdelijk",
+     "keyword-2": "gratis",
+     "body-line-2": " op P+R",
+     "city": "Schiedam",
+     "punctuation": "."
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-line-divider",
+    "py-comp-symbol-pr",
+    "py-atom-partner-zuid-holland-bereikbaar",
+    "py-comp-lockup-logo-tagline-color"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "A4 210 x 297 mm, no bleed in the source (the BleedBox is not set). Navy field with rounded bottom corners (radius 17.93 mm, measured from the path, bottom edge at 241.35 mm); the lower 55.7 mm is white paper (no ink) with the partner mark left and the colour lockup right. In the source the field overshoots the page at the top (to y -65.2 mm, the shape continues with rounded top corners off the page) and its sides lie exactly on the page edge (x 0 and 210); the template runs the field 3 mm into the bleed at top, left and right and keeps the trim shape of the bottom edge and corners (a small step at the corner centre height lies in the bleed and is cut off). P+R symbol: comp py-comp-symbol-pr placed at its source position (bars 88.0 mm wide, the label is live text, variable label). Headline A20 dicht? Ubuntu Medium 24.69 mm white (variable headline). Divider: white stroke 4 pt (1.41 mm) from x 7 to 203 mm at y 126.5, the pattern of py-atom-line-divider (the library atom is 0.706 mm, here drawn with Doc.line at 1.41 mm). Body Ubuntu Regular 22.22 mm white, centred on x 105, leading 26.65 mm (1.2), three lines; the keywords tijdelijk gratis are Ubuntu Bold in PY-Aqua. Variables: headline, body-line-1, keyword-1, keyword-2, body-line-2, city (Schiedam), punctuation, background-colour. Text is start anchored at the printed origins (text-anchor middle is laid out wrongly by cairosvg for this text), so a changed word needs the line re-centred by hand. The source sets the first piece of line 1 with letter-spacing -0.1 mm (observed, kept). Partner mark: py-atom-partner-zuid-holland-bereikbaar (third party, reference only, own colours kept, so the template carries the partner blue #213A8F, green, yellow and magenta). Logo: py-comp-lockup-logo-tagline-color at scale 0.735 (beeldmerk 17.6 x 21.3 mm at x 120.1, y 258.8), navy logo and aqua tagline in tokens. OBSERVED drift (RGB ICC file, sRGB values): the navy field is #273A7C and the printed logo (beeldmerk and wordmark) is #213A8F, two different blues on one sign, neither equals PY-Blauw (#1A3580); the template uses the token. The aqua of the logo tagline is #2DB8CD and the keyword aqua #32B9CD. No spelling errors found. No cut contour: the source has none and a road sign is not a sticker (not added)."
+  },
+  {
+   "id": "py-app-sign-slagboom-evenement",
+   "name_nl": "Bord slagboom evenement",
+   "type": "sign",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sign-slagboom-evenement",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-logo-horizontal-white"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/BordSlagboomEVO.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       480,
+       240
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     480,
+     240
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     486.0,
+     246.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": null
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "line-1": "i.v.m. een evenement is de",
+     "line-2": "parking enkel toegankelijk",
+     "line-3-lead": "voor ",
+     "keyword": "abonnementhouders",
+     "line-3-end": "."
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-logo-horizontal-white"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [
+    "10 percent opacity group (form XObject Fm0, graphics state GS1 at 10 percent, bbox x -514 to 481 mm, y -81 to 245 mm, mostly off the page): the form content stream is empty (length 0), it draws nothing, so there is nothing to reproduce (the reference has no ink from it). Probably a leftover of a deleted watermark or beeldmerk copy."
+   ],
+   "copy_corrections": [
+    {
+     "original": "i.v.m een evenement is de",
+     "corrected": "i.v.m. een evenement is de (full stop after the m)"
+    },
+    {
+     "original": "abonnementshouders",
+     "corrected": "abonnementhouders (the handbook writes abonnementhouders, see svg/comp/py-comp-pyloon-opening-hours.svg)"
+    }
+   ],
+   "notes": "480 x 240 mm sign, no bleed and no BleedBox in the source (page = trim, art is the full navy field only); the template adds 3 mm bleed (viewBox 486 x 246). Navy: the source is CMYK 100/86.3/21.5/3.5 (viewer #204382, the same drifted blue as the diefstal sticker), the template uses the token #1A3580. Logo: py-atom-logo-horizontal-white at scale 1.155 (beeldmerk 27.7 x 33.4 mm at x 178.6, y 25.5), beeldmerk and wordmark together span x 178.6 to 299.7 mm, centred on the sign within 1 mm (centre 239.1). Text: three lines of live Ubuntu Regular 98 pt = 34.57 mm white, baselines 114.47, 156.78 and 199.10 mm (pitch 42.3 mm = 1.22 x the size), centred on x 240 (the source centres the lines 0.2 to 1.2 mm right of 240 because the typed trailing spaces are counted; the template centres the ink). The keyword in Ubuntu Bold in the sampled light aqua #68CBDA (CMYK 54/0/14/0, no token, kept as sampled, same colour as the icons on the laadkabel and diefstal stickers). Variables: line-1, line-2, line-3-lead, keyword, line-3-end (line 3 is one text element with three runs, start anchored at the x that centres the example; recentre it when the keyword changes). Mounting holes: two 1 pt magenta rings (#ED308A, CMYK 0/93.4/7.2/0, an ordinary process colour and NOT a spot like ThruCut), diameter 3.7 mm, centres x 150.05 and 329.95 mm, y 126.70 mm (each 90 mm left and right of the centre line). They are kept in the reference. In the template they are the named group mounting-holes (stroke #ED308A, 1 pt, no fill). ASSUMPTION: their purpose (mounting hole marks for the barrier sign) is not stated in the file; the owner must confirm whether they print, cut or are only guides. No cut contour (none in the source, the sign is not a die cut shape)."
+  },
+  {
    "id": "py-app-sign-uitrit",
    "name_nl": "Uitritbord",
    "type": "sign",
@@ -779,6 +1532,88 @@
    ],
    "copy_corrections": [],
    "notes": "Layout measured on LaadKabel.pdf: navy background into the 3 mm bleed, plug icon (light aqua, kept as sampled #68CBDB, no token), NL/EN text Ubuntu 21.47 mm white leading 1.2 centred, white divider 0.706 mm x 170.6 mm, library logo py-atom-logo-horizontal-white scaled by height (beeldmerk 11.1 mm, logo about 40 mm wide) centred at the bottom. The source blue is CMYK 100/85.9/6.6/0 (drift); the template uses the token blue. Variables: NL text lines and EN text lines as live text (the bold phrases are runs). The cut contour is a proposal: no contour in the source, radius 4.2 mm taken from the diefstal footer."
+  },
+  {
+   "id": "py-app-sticker-pr-mandelapark",
+   "name_nl": "P+R sticker Mandelapark",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-pr-mandelapark",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-comp-symbol-pr",
+      "py-comp-price-bubble-speech",
+      "py-comp-lockup-location-garage"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/PR_WTC_Sticker.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "RGB (ICC)",
+      "trim_mm": [
+       700,
+       700
+      ],
+      "bleed_box_set": false
+     }
+    ]
+   },
+   "template": {
+    "trim_mm": [
+     700,
+     700
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     706.0,
+     706.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.2,
+     "note": "Proposal: the source has no cut contour. Corner radius 4.2 mm is borrowed from the diefstal footer bar (4.23 mm); to be confirmed by the owner."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "label-pr": "P+R",
+     "price": "€6",
+     "price-suffix": ",-",
+     "label": "per dag",
+     "location-line-1": "Parking",
+     "location-line-2": "Mandelapark"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-symbol-pr",
+    "py-comp-price-bubble-speech",
+    "py-comp-lockup-location-garage"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "700 x 700 mm, no bleed in the source (page = trim, RGB ICC). The navy field is 700 x 516.1 mm and runs to the top and the sides (template: 3 mm into the bleed), the lower 183.9 mm is white paper (no ink, no white fill in the template). The reference keeps a navy rectangle (118.7 to 596.2 x 176.6 to 402.1 mm, #233A89) between the two bars: navy on navy, invisible, left out of the template. P+R symbol: py-comp-symbol-pr scaled 4.968x at 143.0 / 132.7 mm, the label P+R is live Ubuntu Bold 225.2 mm white (variable label-pr, source text is live). Price bubble: py-comp-price-bubble-speech MATCHES: the 17 control points of the source path equal the library bubble at scale 0.6797 and rotation -0.67 degrees (residual 0.44 mm rms), so it is placed (strip_text) with that scale and rotation. The price numerals are outlined in the source and rebuilt as live Ubuntu Bold, fitted by overlay (pixel overlap 0.99 / 0.94 / 0.97): '€6' 103.75 mm, ',-' 38.8 mm (a separate smaller text, the comma and hyphen are 37 percent of the price height in the source), 'per dag' 28.84 mm, all white, rotated -6.9 degrees (the library bubble text is rotated 6.7 degrees). Lockup: the garage symbol is py-comp-lockup-location-garage at scale 1.314 (symbol 133.7 mm wide), but the proportions of the library lockup do not hold here (name 49.8 mm against 46.7 mm at symbol width 101.8 in the library, name start 163.1 mm from the symbol edge against 140 mm, baseline pitch 49.8 mm): the name is drawn as own live text with strip_text, Ubuntu Bold 49.8 mm navy, two lines (Parking / Mandelapark, baselines 615.9 and 665.7 mm). The file blue #233A89 (RGB ICC) is the token navy in the template, light aqua #78C9DC (no token) is kept as sampled. Variables: label-pr, price, price-suffix, label, location-line-1, location-line-2, background-colour. The cut contour (ThruCut, 1 pt, 0.2 mm inside the trim, radius 4.2 mm) is a PROPOSAL: the source has none and the corner radius is borrowed from the diefstal sticker."
   },
   {
    "id": "py-app-sticker-waarschuwing-diefstal",

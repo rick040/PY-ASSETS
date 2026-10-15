@@ -159,7 +159,8 @@ class Doc:
             a += f' id="{gid}"'
         self._emit(f"<line {a}/>", (min(ax, bx), min(ay, by) - sw / 2, max(ax, bx), max(ay, by) + sw / 2))
 
-    def path(self, d, box, fill=None, stroke=None, sw=None, opacity=None, evenodd=False, gid=None, dx=0.0, dy=0.0):
+    def path(self, d, box, fill=None, stroke=None, sw=None, opacity=None, evenodd=False, gid=None, dx=0.0, dy=0.0,
+             variable=None, example=None):
         """Raw path data in doc coordinates (trim relative). `box` = (x0, y0, x1, y1) of the path in the same space.
         The bleed offset is applied through a translate, so d needs no manual shift."""
         a = f'd="{d}" fill="{fill or "none"}"'
@@ -171,6 +172,9 @@ class Doc:
             a += f' stroke="{stroke}" stroke-width="{fmt(sw or 0.25)}"'
         if gid:
             a += f' id="{gid}"'
+        if variable:
+            a += f' data-variable="{variable}"'
+            self.variables[variable] = example if example is not None else fill
         ax, ay = self._p(0, 0)
         self._emit(f'<path transform="translate({fmt(ax)} {fmt(ay)})" {a}/>', (box[0] + ax, box[1] + ay, box[2] + ax, box[3] + ay))
 

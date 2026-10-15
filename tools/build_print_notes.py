@@ -85,7 +85,14 @@ def main():
         "Inverted QR (white on navy) in Maashaven: test with the scanners in use before printing.",
         "Six print blues deviate from PY-Blauw (see `tokens.json` section `observed`); the printer files should be regenerated from the templates in the token blue.",
         "Third-party marks (payment brands, partner badges, GLOW) are reference only: source the official files.",
-        "Light aqua (CMYK 54/0/14/0) has no token; confirm whether it becomes a brand colour.",
+        "Light aqua (CMYK 54/0/14/0 and several RGB samples) has no token; confirm whether it becomes a brand colour.",
+        "Storing number differs: 085 4011647 (Maashaven, A3 poster) versus 085 21 30 422 (barrier banner).",
+        "Slagboombord: the two magenta rings (x 150 and 330 mm) are assumed to be mounting hole marks; confirm whether they print, cut or are guides.",
+        "Envelope: crop marks sit at the bleed edge of a 226 x 162 mm area, not at the 220 x 156 mm trim; the file claims PDF/X-1a but is RGB.",
+        "Barrier banner: fold line at y 775 mm (not the middle, 785 mm) and no bottom bleed in the source; the template adds the bleed.",
+        "Eight of the twenty source files are RGB only; print files should be generated from the CMYK templates in the token blue.",
+        "A2 poster: the photo is not part of the library (placeholder only); the A3 background bubble raster is rebuilt as a vector.",
+        "P+R poster shows voordeligparkeren.nl, other pieces www.parkingyou.nl: confirm the web address per piece.",
     ):
         w("* " + t)
     open(os.path.join(ROOT, "docs", "print-build-notes.md"), "w", encoding="utf8").write("\n".join(o) + "\n")

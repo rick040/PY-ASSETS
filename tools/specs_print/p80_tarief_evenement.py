@@ -162,8 +162,7 @@ def _template(ctx, app_id):
     d = ctx.Doc(app_id, "Tariefbord evenement", trim=TRIM, bleed=3.0)
     d.uses("py-tok-color-blauw", "py-tok-color-wit", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium", "py-tok-type-ubuntu-regular")
     n = _navy_shape()
-    d.path(_pd(n), _pbox(n), fill=NAVY, gid="bleed-background")
-    d.variables["background-colour"] = NAVY
+    d.path(_pd(n), _pbox(n), fill=NAVY, gid="bleed-background", variable="background-colour", example=NAVY)
     with d.group("py-comp-tagline-lockup"):
         d.place("py-comp-tagline-lockup", LOGO[0], LOGO[1], scale=LOGO[2])
     with d.group("py-comp-price-bubble-speech"):

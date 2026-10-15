@@ -1054,6 +1054,34 @@ def cutout(items, hole="#FFFFFF"):
     return out
 
 
+def clip_to_rect(items, rect, slack=0.0):
+    """Cut filled paths that reach beyond `rect` (x0, y0, x1, y1 in source points) down to the rect (boolean intersection).
+    Paths that stay inside rect + slack are untouched. Strokes, text and groups are left alone. Used so that references do not carry
+    huge off-page geometry (for example a 956 x 1272 mm field on a 700 x 1000 mm sign)."""
+    import pathops
+
+    x0, y0, x1, y1 = rect
+    box = pathops.Path()
+    pen = box.getPen()
+    pen.moveTo((x0, y0)); pen.lineTo((x1, y0)); pen.lineTo((x1, y1)); pen.lineTo((x0, y1)); pen.closePath()
+    out = []
+    for it in items:
+        if isinstance(it, Path) and it.fill is not None and it.stroke is None and isinstance(it.fill, str):
+            b = it.box
+            if b[0] < x0 - slack or b[1] < y0 - slack or b[2] > x1 + slack or b[3] > y1 + slack:
+                r = pathops.op(_to_pathops(it), box, pathops.PathOp.INTERSECTION)
+                new = _from_pathops(r, it)
+                new.evenodd = False
+                if new.segs:
+                    for a in ("seq", "gop", "clipped"):
+                        if hasattr(it, a):
+                            setattr(new, a, getattr(it, a))
+                    out.append(new)
+                continue
+        out.append(it)
+    return out
+
+
 # ---------------------------------------------------------------- print support
 # Blues, aquas and black that the print files draw slightly off the 1.3 values (see docs/print-phase1-inventory.md).
 # Applied only when library elements are built from print files (library atoms and components);

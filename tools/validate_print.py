@@ -20,7 +20,7 @@ APP_RE = re.compile(r"^py-app-[a-z0-9]+(?:-[a-z0-9]+)*$")
 EL_RE = re.compile(r"^py-(?:atom|comp|prod)-[a-z0-9]+(?:-[a-z0-9]+)*$")
 BRAND_HEX = {"#1A3580", "#32B9CD", "#F08300", "#AEAEAE", "#1D1D1B", "#FFFFFF"}
 OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD", "#78C9DC", "#79C9DC", "#71CBDF", "#83CBE1", "#8CCDDF"}  # light aqua (observed token)
-CUT_PH = {"#EE4D9B", "#00A0E0"}  # cut contour, placeholders, guides
+CUT_PH = {"#EE4D9B", "#00A0E0", "#ED308A", "#EBEBEB"}  # cut contour, placeholders, guides, mounting-hole rings (source magenta), placeholder grey
 DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD",
          "#273A7C", "#213A8F", "#223A7A", "#243A78", "#23398E", "#1E4482", "#1E4382", "#2DB8CD", "#34BACE", "#1FBECC", "#33BACC",
          "#1A4691", "#213B86", "#24408F", "#233A89", "#2B3D91", "#374F9E", "#374F9C", "#2B529F", "#2A3282", "#48BED6", "#231F20"}
@@ -210,7 +210,7 @@ def main():
                             errs.append(f"{vid}: variable {name} not marked in template")
                     if not vk:
                         errs.append(f"{vid}: template has no variables")
-                    ph = len(re.findall(r'<text[^>]*data-variable', s))
+                    ph = len(re.findall(r'<(?:text|tspan)[^>]*data-variable', s))
                     if ph == 0 and "data-placeholder" not in s:
                         errs.append(f"{vid}: no live text variable or placeholder in template")
                 else:
