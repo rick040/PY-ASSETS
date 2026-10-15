@@ -19,9 +19,10 @@ ID_RE = re.compile(r"py-(?:tok|atom|comp|prod|app)-[a-z0-9]+(?:-[a-z0-9]+)*")
 APP_RE = re.compile(r"^py-app-[a-z0-9]+(?:-[a-z0-9]+)*$")
 EL_RE = re.compile(r"^py-(?:atom|comp|prod)-[a-z0-9]+(?:-[a-z0-9]+)*$")
 BRAND_HEX = {"#1A3580", "#32B9CD", "#F08300", "#AEAEAE", "#1D1D1B", "#FFFFFF"}
-OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD"}  # light aqua (observed token)
+OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD", "#78C9DC"}  # light aqua (observed token)
 CUT_PH = {"#EE4D9B", "#00A0E0"}  # cut contour, placeholders, guides
-DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD"}
+DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD",
+         "#273A7C", "#213A8F", "#223A7A", "#243A78", "#23398E", "#1E4482", "#1E4382", "#2DB8CD", "#34BACE", "#1FBECC", "#33BACC"}
 DASH = ("—", "–")
 BASELINE_COMMIT = "4c04c1f"  # PM-134 result: handbook elements and official tokens must not change
 

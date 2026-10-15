@@ -28,15 +28,24 @@ OBSERVED = [
     ("py-obs-blauw-uitrit", "Blauw uitritbord", (100, 92.5, 19.2, 5.9), "15728501-1.pdf", "pill background"),
     ("py-obs-blauw-maashaven", "Blauw Maashaven", (100, 86, 21.2, 3.7), "Maashaven.pdf", "header, bars, logo, text"),
     ("py-obs-blauw-laadkabel", "Blauw laadkabel", (100, 85.9, 6.6, 0), "LaadKabel.pdf", "background"),
-    ("py-obs-blauw-diefstal", "Blauw diefstalsticker", (100, 86.3, 21.5, 3.5), "StickerDiefstalARtisDruk.pdf", "text, icon, footer"),
+    ("py-obs-blauw-diefstal", "Blauw diefstalsticker en slagboombord", (100, 86.3, 21.5, 3.5), "StickerDiefstalARtisDruk.pdf, BordSlagboomEVO.pdf", "text, icon, footer, background"),
     ("py-obs-blauw-glow", "Blauw GLOW", (100, 84.4, 5.5, 0.4), "Tekengebied_1.pdf, Tekengebied_4_kopie_4.pdf", "background, text"),
     ("py-obs-blauw-rgb-1a3680", "Blauw RGB achtergrond", None, "Naamloos-7.pdf", "RGB only, #1A3680 (the vector blue replaced by #1A3580 in 1.3)"),
     ("py-obs-aqua-uitrit", "Aqua uitritbord", (67.8, 3.1, 19.2, 0), "15728501-1.pdf", "arrow and arc"),
     ("py-obs-aqua-licht", "Lichtaqua", (54, 0, 14, 0), "LaadKabel.pdf, StickerDiefstalARtisDruk.pdf, InfoPylonBordGoed.pdf", "icons on navy (plug, padlock), chevron"),
     ("py-obs-zwart-rijk", "Rijk zwart", (91.2, 78.7, 62, 97.4), "Maashaven.pdf", "small text"),
+    # second batch
+    ("py-obs-blauw-briefpapier-tekst", "Blauw adresblok briefpapier", (100, 85.5, 22.3, 4), "Briefpapier_nieuw.pdf", "address text"),
+    ("py-obs-magenta-gaten", "Magenta montagegaten", (0, 93.4, 7.2, 0), "BordSlagboomEVO.pdf", "two 1 pt rings (mounting holes), not a spot colour"),
+    ("py-obs-blauw-rgb-pr", "Blauw RGB P+R bord", None, "PR_RoadSignage.pdf", "background and text, RGB (ICC) only", "#273A7C"),
+    ("py-obs-blauw-rgb-pr-logo", "Blauw RGB P+R bord logo", None, "PR_RoadSignage.pdf", "logo and partner text, RGB (ICC) only", "#213A8F"),
+    ("py-obs-blauw-rgb-envelop", "Blauw RGB envelop", None, "ParkingYou_Envelop_220x156.pdf", "logo and address, RGB (ICC) only (file claims PDF/X-1a)", "#223A7A"),
+    ("py-obs-blauw-rgb-tarief", "Blauw RGB tariefbord", None, "TariefConcerten.pdf", "background and text, RGB (ICC) only", "#23398E"),
+    ("py-obs-aqua-rgb-envelop", "Aqua RGB envelop", None, "ParkingYou_Envelop_220x156.pdf, PR_RoadSignage.pdf", "tagline, dot; RGB (ICC)", "#34BACE"),
+    ("py-obs-aqua-licht-rgb", "Lichtaqua RGB", None, "TariefConcerten.pdf", "price bubble, RGB (ICC) only", "#78C9DC"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
-OBS_HEX = {"#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}
+OBS_HEX = {"#78C9DC": "py-obs-aqua-licht-rgb", "#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}
 
 
 def load_specs(only=None):
@@ -82,7 +91,8 @@ def write_observed(root):
                  "Official blauw is CMYK 100/83/0/17 (#1A3580); four files use exactly that, the rest drift as listed."),
         "colors": {},
     }
-    for oid, name, cmyk, files, use in OBSERVED:
+    for rec in OBSERVED:
+        oid, name, cmyk, files, use = rec[:5]
         row = {"name": name, "files": files, "used_for": use, "kind": "observed"}
         if cmyk:
             row["cmyk"] = list(cmyk)
@@ -91,8 +101,9 @@ def write_observed(root):
             if ref:
                 row["delta_to_token_cmyk"] = [round(a - b, 1) for a, b in zip(cmyk, ref)]
         else:
-            row["rgb"] = [26, 54, 128]
-            row["hex_viewer"] = "#1A3680"
+            hx = rec[5] if len(rec) > 5 else "#1A3680"
+            row["rgb"] = [int(hx[i:i + 2], 16) for i in (1, 3, 5)]
+            row["hex_viewer"] = hx
         obs["colors"][oid] = row
     t["observed"] = obs
     json.dump(t, open(p, "w", encoding="utf8"), indent=1, ensure_ascii=False)

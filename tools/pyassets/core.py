@@ -1063,6 +1063,10 @@ PRINT_NORMALISE = {
     "#174797": "#1A3580", "#27397E": "#1A3580",
     "#24BFCD": "#32B9CD", "#24BDCD": "#32B9CD", "#23BDCD": "#32B9CD", "#31BBCD": "#32B9CD",
     "#000000": "#1D1D1B",
+    # second batch: RGB blues and aquas (ICC) and one more CMYK address blue
+    "#273A7C": "#1A3580", "#213A8F": "#1A3580", "#223A7A": "#1A3580", "#243A78": "#1A3580", "#23398E": "#1A3580",
+    "#1E4482": "#1A3580", "#1E4382": "#1A3580",
+    "#2DB8CD": "#32B9CD", "#34BACE": "#32B9CD", "#1FBECC": "#32B9CD", "#33BACC": "#32B9CD",
 }
 
 

@@ -25,6 +25,12 @@ SOURCES = {
     "glow4": dict(file="Tekengebied_4_kopie_4.pdf", pages=1, page_mm=(297, 420), trim_mm=(297, 420), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
     "tagline": dict(file="Naamloos-7.pdf", pages=1, page_mm=(148, 105), trim_mm=(148, 105), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC, sRGB)"),
     "inleveren": dict(file="Inleveren_Abbonementborg_A5.pdf", pages=1, page_mm=(148, 105), trim_mm=(148, 105), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    # second batch (PM-137 follow-up)
+    "slagboom": dict(file="BordSlagboomEVO.pdf", pages=1, page_mm=(480, 240), trim_mm=(480, 240), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "briefpapier": dict(file="Briefpapier_nieuw.pdf", pages=1, page_mm=(210, 297), trim_mm=(210, 297), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
+    "pr": dict(file="PR_RoadSignage.pdf", pages=1, page_mm=(210, 297), trim_mm=(210, 297), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
+    "envelop": dict(file="ParkingYou_Envelop_220x156.pdf", pages=1, page_mm=(249.28, 185.28), trim_mm=(220, 156), trim_off=(14.64, 14.64), bleed_set=False, cs="RGB (ICC), file claims PDF/X-1a"),
+    "tarief": dict(file="TariefConcerten.pdf", pages=1, page_mm=(700, 1000), trim_mm=(700, 1000), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
 }
 _CACHE: dict = {}
 
