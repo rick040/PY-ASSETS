@@ -67,13 +67,10 @@ def _bar_paths(d):
     d.path(_pd(bot), _pbox(bot), fill=WHITE, gid="bar-bottom")
 
 
-def _label_cx(s="P+R"):
-    return LABEL_ORIGIN + text_width(s, LABEL_SIZE, 700) / 2
-
-
 def _symbol(d, label_var="label"):
     _bar_paths(d)
-    d.text(_label_cx(), LABEL_BASE, "P+R", size=LABEL_SIZE, fill=WHITE, weight=700, anchor="middle", variable=label_var, gid="label")
+    # start anchored at the measured origin: text-anchor middle is laid out 1.4 mm off by cairosvg for this text
+    d.text(LABEL_ORIGIN, LABEL_BASE, "P+R", size=LABEL_SIZE, fill=WHITE, weight=700, variable=label_var, gid="label")
 
 
 @element("py-comp-symbol-pr", "P+R symbool", "comp", "symbol", 1, src="pr", status="rebuilt", variables=("label",),
@@ -89,12 +86,11 @@ def _(src):
 
 # ================================================================================================ application
 def _field_path(bleed):
-    """Navy field with rounded bottom corners. Trim shape: corner radius 17.925 at x 0 and 210; the bleed shape is its offset by `bleed` mm
-    (same corner centres, radius + bleed), so that the curve passes through the same trim points. Top and sides run into the bleed."""
-    r = FIELD_R + bleed
-    x0, x1, yb = -bleed, TRIM[0] + bleed, FIELD_BOTTOM + bleed
-    return (f"M{x0} {-bleed}H{x1}V{yb - r:.3f}A{r:.3f} {r:.3f} 0 0 1 {x1 - r:.3f} {yb:.3f}H{x0 + r:.3f}"
-            f"A{r:.3f} {r:.3f} 0 0 1 {x0} {yb - r:.3f}Z"), (x0, -bleed, x1, yb)
+    """Navy field: top and sides run into the bleed, the bottom edge and its two rounded corners (radius 17.925, centres at x 17.925 and 192.075)
+    are the trim shape as in the source (the bottom edge is inside the page, so it gets no bleed offset)."""
+    r, yb, w = FIELD_R, FIELD_BOTTOM, TRIM[0]
+    x0, x1 = -bleed, w + bleed
+    return (f"M{x0} {-bleed}H{x1}V{yb - r:.3f}H{w}A{r} {r} 0 0 1 {w - r:.3f} {yb}H{r}A{r} {r} 0 0 1 0 {yb - r:.3f}H{x0}Z"), (x0, -bleed, x1, yb)
 
 
 def _logo_box():
@@ -122,6 +118,10 @@ def _body(d):
         total = sum(text_width(s, BODY_SIZE, w) for s, w, _, _ in pieces)
         x = CX - total / 2
         for s, w, col, var in pieces:
+            if var == "keyword-1":
+                x = 120.8  # line 1 is kerned in the source (7.3 and 120.8 are the measured origins)
+            elif var == "body-line-1":
+                x = 7.3
             d.text(x, base, s, size=BODY_SIZE, fill=col, weight=w, variable=var)
             x += text_width(s, BODY_SIZE, w)
 
@@ -138,7 +138,7 @@ def _(ctx):
     d.variables["background-colour"] = NAVY
     with d.group("py-comp-symbol-pr"):
         d.place("py-comp-symbol-pr", SYM_X, SYM_Y, scale=1.0)
-    d.text(CX, HEAD_BASE, "A20 dicht?", size=HEAD_SIZE, fill=WHITE, weight=500, anchor="middle", variable="headline")
+    d.text(45.5, HEAD_BASE, "A20 dicht?", size=HEAD_SIZE, fill=WHITE, weight=500, variable="headline")
     with d.group("py-atom-line-divider"):
         d.line(DIV_X0, DIV_Y, DIV_X1, DIV_Y, WHITE, DIV_W, gid="divider")
     with d.group("variables"):

@@ -101,9 +101,22 @@ def _(src):
     return d
 
 
-def _bubble(d, price="€20", label="inrijdtarief"):
-    """Light aqua speech bubble (source path, whole shape, sticks out of the page at top and right) plus the two rotated white texts."""
+def _cut_to_bleed(p, bleed=3.0):
+    """Source path cut to the page plus bleed (mm)."""
+    import pathops
+
+    k = 1 / PT_MM
+    x0, y0, x1, y1 = -bleed * k, -bleed * k, (TRIM[0] + bleed) * k, (TRIM[1] + bleed) * k
+    page = Path([("M", x0, y0), ("L", x1, y0), ("L", x1, y1), ("L", x0, y1), ("Z",)], fill=p.fill, box=(x0, y0, x1, y1))
+    return _from_pathops(pathops.op(_to_pathops(p), _to_pathops(page), pathops.PathOp.INTERSECTION), p)
+
+
+def _bubble(d, price="€20", label="inrijdtarief", cut=False):
+    """Light aqua speech bubble (source path, whole shape, sticks out of the page at top and right) plus the two rotated white texts.
+    cut=True cuts the shape to the page plus 3 mm bleed (template)."""
     p = _grab(BUBBLE_BOX, tol=2.0)
+    if cut:
+        p = _cut_to_bleed(p)
     d.path(_pd(p), _pbox(p), fill=BUBBLE, gid="bubble")
     _rtext(d, *PRICE_ORG, price, PRICE_SIZE, WHITE, ANGLE, weight=700, variable="price")
     _rtext(d, *LABEL_ORG, label, LABEL_SIZE, WHITE, ANGLE, weight=400, variable="label")
@@ -133,18 +146,9 @@ def _(src):
 # ================================================================================================ application
 def _navy_shape():
     """The huge navy speech bubble shape of the source (956 x 1272 mm, mostly off the page) cut to the page plus 3 mm bleed."""
-    import pathops
-
     src = printsrc.source(KEY)
     big = [p for p in src.paths(1, (-3000, -3000, 6000, 6000), partial=True) if p.fill == SRC_NAVY and (p.box[2] - p.box[0]) * PT_MM > 900][0]
-    k = 1 / PT_MM
-    x0, y0, x1, y1 = -3 * k, -3 * k, 703 * k, 1003 * k
-    page = Path([("M", x0, y0), ("L", x1, y0), ("L", x1, y1), ("L", x0, y1), ("Z",)], fill=big.fill, box=(x0, y0, x1, y1))
-    return _from_pathops(pathops.op(_to_pathops(big), _to_pathops(page), pathops.PathOp.INTERSECTION), big)
-
-
-def _lockup_args():
-    return dict(x=58.7, y=58.1)
+    return _cut_to_bleed(big)
 
 
 LOGO = (58.7, 58.1, 73.0 / 28.949)  # beeldmerk top left and scale of the library logo (beeldmerk 60.6 x 73.0 mm in the source)
@@ -163,7 +167,7 @@ def _template(ctx, app_id):
     with d.group("py-comp-tagline-lockup"):
         d.place("py-comp-tagline-lockup", LOGO[0], LOGO[1], scale=LOGO[2])
     with d.group("py-comp-price-bubble-speech"):
-        _bubble(d)
+        _bubble(d, cut=True)
     d.uses("py-comp-price-bubble-speech", "py-comp-calendar-date", "py-atom-icon-calendar", "py-atom-mark-live-at-philips-stadium")
     d.text(HEAD[0], HEAD[1], "Let op!", HEAD[2], WHITE, weight=700, variable="headline")
     d.text(BODY[0][0], BODY[0][1], BODY[0][2], BODY_SIZE, WHITE, weight=500, variable="body-line-1")
@@ -201,4 +205,22 @@ def _(ctx):
             extra.append(Raw(xml, box=(0, 0, 0, 0)))
     ref = ctx.reference(KEY, 1, skip_text=lambda t: t.strip() in ("€20", "inrijdtarief"), extra=extra)
     d = _template(ctx, "py-app-panel-tarief-evenement")
-    return dict(reference={"": ref}, template={"": d}, omitted=[], copy_corrections=[], notes="")
+    return dict(
+        reference={"": ref}, template={"": d},
+        omitted=[],
+        copy_corrections=[],
+        notes=("700 x 1000 mm, no bleed in the source (page = trim), template adds 3 mm bleed. No hidden or off-page leftovers: all 72 source paths are on the page; the two "
+               "paths that stick out (the navy field and the speech bubble) are kept in the reference. "
+               "Navy field: one huge source path (956 x 1272 mm, a speech bubble of radius 527 mm centred at 350.8 / 364.4 whose pointer lies at the bottom), only the part on the page is "
+               "visible. The template rebuilds the visible part as a path (source path intersected with the page plus bleed): the lower left is cut by the arc, white paper below it "
+               "up to x 350.8, then a vertical edge, and a second white wedge at the bottom right where the pointer curve leaves the page. "
+               "Library: logo and tagline are py-comp-tagline-lockup at scale 2.52 (beeldmerk 73.0 mm high, library 28.95 mm), top left at 58.7 / 58.1 mm. "
+               "Texts are live Ubuntu in the source and in the template: Let op! Bold 111.9 mm, two body lines Medium 55.95 mm (baselines 54 mm apart), all white; "
+               "price and label are rotated 6.71 degrees counter clockwise inside the speech bubble. Calendars: three py-atom-icon-calendar (pitch 175.85 mm) with centred navy date. "
+               "In the source the first date (20 juni) sits 3.3 mm left of the centre of its calendar, the template centres all three. "
+               "Colours: navy of the file #23398E (RGB ICC, drift) becomes the token #1A3580 in the template and in the library elements, the reference keeps the source value. "
+               "The bubble light aqua #78C9DC has no token and is kept as sampled. "
+               "Variables: headline, body-line-1, body-line-2, price, label, day-N, month-N, background-colour. "
+               "Third party mark Live at Philips Stadium (bottom left, 48 to 235 mm) is reference only, source the official file. "
+               "The template bubble shape is the source path cut at the bleed (it sticks out 9 mm at the top and right in the source)."),
+    )

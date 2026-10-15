@@ -127,8 +127,9 @@ def _slagboom_template(ctx):
     with d.group("variables"):
         d.text(240.0, SB_BASE[0], SB_LINES[0], size=SB_SIZE, fill=WHITE, anchor="middle", variable="line-1", gid="line-1")
         d.text(240.0, SB_BASE[1], SB_LINES[1], size=SB_SIZE, fill=WHITE, anchor="middle", variable="line-2", gid="line-2")
-        _rich(d, 240.0, SB_BASE[2], SB_SIZE, [("voor ", 400, WHITE, "line-3-lead"), ("abonnementhouders", 700, LIGHT_AQUA, "keyword"),
-                                             (".", 400, WHITE, "line-3-end")], anchor="middle", gid="line-3")
+        runs3 = [("voor ", 400, WHITE, "line-3-lead"), ("abonnementhouders", 700, LIGHT_AQUA, "keyword"), (".", 400, WHITE, "line-3-end")]
+        w3 = sum(text_width(t, SB_SIZE, w) for t, w, _, _ in runs3)
+        _rich(d, 240.0 - w3 / 2, SB_BASE[2], SB_SIZE, runs3, gid="line-3")  # start anchored from the centred example (text-anchor middle fails in cairosvg)
     with d.group("mounting-holes", data_purpose="assumed mounting hole marks", stroke_colour=MAGENTA):
         for cx, cy in SB_HOLES:
             d.circle(cx, cy, SB_HOLE_R, fill=None, stroke=MAGENTA, sw=PT_MM)
@@ -139,7 +140,9 @@ def _slagboom_template(ctx):
 @application("py-app-sign-slagboom-evenement", "Bord slagboom evenement", "sign", trim_mm=SB_TRIM, source=[("slagboom", [1])], bleed_mm=3.0,
              status="rebuilt")
 def _(ctx):
-    ref = ctx.reference("slagboom", 1)
+    # the empty 10 percent group (whole page) would wrap all live text in regroup() and fade it to 10 percent: texts are skipped there and added back plain
+    src = printsrc.source("slagboom")
+    ref = ctx.reference("slagboom", 1, skip_text=lambda t: True, extra=src.texts(1, printsrc.box_mm(-10, -10, 490, 250)))
     return dict(
         reference={"": ref}, template={"": _slagboom_template(ctx)},
         omitted=["10 percent opacity group (form XObject Fm0, graphics state GS1 at 10 percent, bbox x -514 to 481 mm, y -81 to 245 mm, mostly off the page): "
@@ -153,7 +156,7 @@ def _(ctx):
                "Text: three lines of live Ubuntu Regular 98 pt = 34.57 mm white, baselines 114.47, 156.78 and 199.10 mm (pitch 42.3 mm = 1.22 x the size), centred on x 240 (the source "
                "centres the lines 0.2 to 1.2 mm right of 240 because the typed trailing spaces are counted; the template centres the ink). The keyword in Ubuntu Bold in the sampled "
                "light aqua #68CBDA (CMYK 54/0/14/0, no token, kept as sampled, same colour as the icons on the laadkabel and diefstal stickers). "
-               "Variables: line-1, line-2, line-3-lead, keyword, line-3-end (line 3 is one text element with three runs, so it stays centred when the keyword changes). "
+               "Variables: line-1, line-2, line-3-lead, keyword, line-3-end (line 3 is one text element with three runs, start anchored at the x that centres the example; recentre it when the keyword changes). "
                "Mounting holes: two 1 pt magenta rings (#ED308A, CMYK 0/93.4/7.2/0, an ordinary process colour and NOT a spot like ThruCut), diameter 3.7 mm, centres x 150.05 and 329.95 mm, "
                "y 126.70 mm (each 90 mm left and right of the centre line). They are kept in the reference. In the template they are the named group mounting-holes (stroke #ED308A, 1 pt, no fill). "
                "ASSUMPTION: their purpose (mounting hole marks for the barrier sign) is not stated in the file; the owner must confirm whether they print, cut or are only guides. "
