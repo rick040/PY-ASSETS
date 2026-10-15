@@ -224,7 +224,7 @@ class Doc:
 
     # ------------------------------------------------------------ library elements
     def place(self, ref_id, x, y, w=None, h=None, scale=None, anchor="tl", recolor=None, opacity=None, rotate=0.0,
-              flip_x=False, flip_y=False, gid=None):
+              flip_x=False, flip_y=False, gid=None, strip_text=False):
         """Place a library SVG. Size by w (mm), h (mm) or scale; (x, y) is where `anchor` of the element lands.
         Returns the placed box (x0, y0, x1, y1) in trim-relative coordinates."""
         ew, eh, defs, inner = lib_svg(ref_id)
@@ -246,6 +246,8 @@ class Doc:
             t = f"translate({fmt(tx + (sw_ if flip_x else 0))} {fmt(ty + (sh_ if flip_y else 0))})" + (
                 f" rotate({fmt(rotate)})" if rotate else "") + f" scale({fmt(-scale if flip_x else scale)} {fmt(-scale if flip_y else scale)})"
         body = _recolor(inner, recolor)
+        if strip_text:  # drop the example texts of the placed element: the caller draws its own live text with variables
+            body = re.sub(r"<text\b[^>]*>.*?</text>", "", body, flags=re.S)
         a = f' data-element="{ref_id}" transform="{t}"'
         if opacity is not None and opacity < 0.999:
             a += f' opacity="{fmt(opacity)}"'

@@ -114,8 +114,9 @@ def main():
             errs.append(f"{i}: no top-level group with its ID")
         if any(d in s for d in DASH) or any(d in (e["notes"] or "") + e["name_nl"] for d in DASH):
             errs.append(f"{i}: em or en dash in text")
-        for h in hexes(s) & DRIFT:
-            errs.append(f"{i}: print drift colour {h} in a library element")
+        if "third-party" not in e["tags"]:
+            for h in hexes(s) & DRIFT:
+                errs.append(f"{i}: print drift colour {h} in a library element")
         if "third-party" in e["tags"] and "reference only" not in (e["notes"] or "").lower():
             errs.append(f"{i}: third-party without a 'reference only' note")
         for b in e["built_from"]:
@@ -195,7 +196,11 @@ def main():
                     if bad:
                         tp = any("third-party" in els[b]["tags"] for b in sp["built_from"] if b in els)
                         (warns if tp else errs).append(f"{vid}: colours outside the tokens in template: {sorted(bad)}")
-                    for h_ in hexes(s) & DRIFT:
+                    own = set()
+                    for b in sp["built_from"]:
+                        if b in els and "third-party" in els[b]["tags"]:
+                            own |= hexes(open(os.path.join(root, els[b]["svg"]), encoding="utf8").read())
+                    for h_ in (hexes(s) & DRIFT) - own:
                         errs.append(f"{vid}: print drift colour {h_} in template")
                     if sp["template"].get("cut_contour") and 'id="cut-contour"' not in s:
                         errs.append(f"{vid}: spec has a cut contour but the template has no cut-contour group")

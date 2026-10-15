@@ -21,10 +21,11 @@ FIELD_BOTTOM = 241.35   # page mm, 684.133 pt
 FIELD_R = 17.925        # 50.811 pt
 BAR_R = 6.68            # 18.94 pt outer corner radius of the P+R bars
 SYM_X, SYM_Y = 60.592, 11.073
-LABEL_ORIGIN, LABEL_BASE, LABEL_SIZE = 61.7, 59.2, 45.33
+LABEL_ORIGIN, LABEL_BASE, LABEL_SIZE = 61.722, 59.198, 45.334
 ZHB_BOX = (14.0, 246.0, 81.0, 282.0)
-HEAD_BASE, HEAD_SIZE = 113.9, 24.69
-BODY_SIZE, BODY_BASE = 22.22, (157.5, 184.2, 210.8)
+HEAD_BASE, HEAD_SIZE = 113.878, 24.694
+BODY_SIZE, BODY_BASE = 22.225, (157.482, 184.152, 210.822)
+LINE1_TRACK = -0.1  # the source sets 'Parkeer nu ' with letter-spacing -0.1 mm (about -4.5/1000 em); the other lines have none
 DIV_Y, DIV_X0, DIV_X1, DIV_W = 126.5, 7.0, 203.0, 1.41
 
 
@@ -119,11 +120,12 @@ def _body(d):
         x = CX - total / 2
         for s, w, col, var in pieces:
             if var == "keyword-1":
-                x = 120.8  # line 1 is kerned in the source (7.3 and 120.8 are the measured origins)
+                x = 120.826  # measured origin in the source
             elif var == "body-line-1":
-                x = 7.3
-            d.text(x, base, s, size=BODY_SIZE, fill=col, weight=w, variable=var)
-            x += text_width(s, BODY_SIZE, w)
+                x = 7.323
+            sp = LINE1_TRACK if var == "body-line-1" else 0.0
+            d.text(x, base, s, size=BODY_SIZE, fill=col, weight=w, spacing=sp, variable=var)
+            x += text_width(s, BODY_SIZE, w, spacing=sp)
 
 
 @application("py-app-sign-pr-gratis-a20", "P+R bord A20 dicht, tijdelijk gratis", "sign", trim_mm=TRIM, source=[("pr", [1])], bleed_mm=3.0,
@@ -138,7 +140,7 @@ def _(ctx):
     d.variables["background-colour"] = NAVY
     with d.group("py-comp-symbol-pr"):
         d.place("py-comp-symbol-pr", SYM_X, SYM_Y, scale=1.0)
-    d.text(45.5, HEAD_BASE, "A20 dicht?", size=HEAD_SIZE, fill=WHITE, weight=500, variable="headline")
+    d.text(45.475, HEAD_BASE, "A20 dicht?", size=HEAD_SIZE, fill=WHITE, weight=500, variable="headline")
     with d.group("py-atom-line-divider"):
         d.line(DIV_X0, DIV_Y, DIV_X1, DIV_Y, WHITE, DIV_W, gid="divider")
     with d.group("variables"):
@@ -154,5 +156,18 @@ def _(ctx):
         reference={"": ctx.reference("pr", 1)}, template={"": d},
         omitted=[],
         copy_corrections=[],
-        notes="",
+        notes=("A4 210 x 297 mm, no bleed in the source (the BleedBox is not set). Navy field with rounded bottom corners (radius 17.93 mm, measured from the path, bottom edge at 241.35 mm); "
+               "the lower 55.7 mm is white paper (no ink) with the partner mark left and the colour lockup right. In the source the field overshoots the page at the top (to y -65.2 mm, "
+               "the shape continues with rounded top corners off the page) and its sides lie exactly on the page edge (x 0 and 210); the template runs the field 3 mm into the bleed at top, left and right "
+               "and keeps the trim shape of the bottom edge and corners (a small step at the corner centre height lies in the bleed and is cut off). "
+               "P+R symbol: comp py-comp-symbol-pr placed at its source position (bars 88.0 mm wide, the label is live text, variable label). "
+               "Headline A20 dicht? Ubuntu Medium 24.69 mm white (variable headline). Divider: white stroke 4 pt (1.41 mm) from x 7 to 203 mm at y 126.5, the pattern of py-atom-line-divider "
+               "(the library atom is 0.706 mm, here drawn with Doc.line at 1.41 mm). Body Ubuntu Regular 22.22 mm white, centred on x 105, leading 26.65 mm (1.2), three lines; the keywords tijdelijk gratis are Ubuntu Bold "
+               "in PY-Aqua. Variables: headline, body-line-1, keyword-1, keyword-2, body-line-2, city (Schiedam), punctuation, background-colour. Text is start anchored at the printed origins (text-anchor middle is laid out "
+               "wrongly by cairosvg for this text), so a changed word needs the line re-centred by hand. The source sets the first piece of line 1 with letter-spacing -0.1 mm (observed, kept). "
+               "Partner mark: py-atom-partner-zuid-holland-bereikbaar (third party, reference only, own colours kept, so the template carries the partner blue #213A8F, green, yellow and magenta). "
+               "Logo: py-comp-lockup-logo-tagline-color at scale 0.735 (beeldmerk 17.6 x 21.3 mm at x 120.1, y 258.8), navy logo and aqua tagline in tokens. "
+               "OBSERVED drift (RGB ICC file, sRGB values): the navy field is #273A7C and the printed logo (beeldmerk and wordmark) is #213A8F, two different blues on one sign, neither equals PY-Blauw "
+               "(#1A3580); the template uses the token. The aqua of the logo tagline is #2DB8CD and the keyword aqua #32B9CD. No spelling errors found. "
+               "No cut contour: the source has none and a road sign is not a sticker (not added)."),
     )

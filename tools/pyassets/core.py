@@ -1099,7 +1099,9 @@ def regroup(src: "Source", pno: int, items: list):
     # live text carries no group information: it joins only a text-only group (a group without path members), the smallest one
     # whose rectangle holds its centre. A text over a tinted shape (watermark, field) therefore stays outside the tint.
     with_paths = {it.gop[-1][0] for it in items if isinstance(it, Path) and getattr(it, "gop", ())}
-    text_groups = {g: v for g, v in rects.items() if g not in with_paths}
+    pr = src.page(pno).rect
+    # a group that spans (nearly) the whole page carries no text of its own (an empty full-page form with 10 percent opacity exists in BordSlagboomEVO)
+    text_groups = {g: v for g, v in rects.items() if g not in with_paths and v[1].width * v[1].height < 0.8 * pr.width * pr.height}
     out: list = []
     cur: dict = {}
     for it in items:

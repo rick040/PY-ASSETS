@@ -152,7 +152,7 @@ def _(ctx):
                           {"original": "abonnementshouders", "corrected": "abonnementhouders (the handbook writes abonnementhouders, see svg/comp/py-comp-pyloon-opening-hours.svg)"}],
         notes=("480 x 240 mm sign, no bleed and no BleedBox in the source (page = trim, art is the full navy field only); the template adds 3 mm bleed (viewBox 486 x 246). "
                "Navy: the source is CMYK 100/86.3/21.5/3.5 (viewer #204382, the same drifted blue as the diefstal sticker), the template uses the token #1A3580. "
-               "Logo: py-atom-logo-horizontal-white at scale 1.155 (beeldmerk 27.7 x 33.4 mm at x 178.6, y 25.5), the logo block is centred on the sign (beeldmerk and wordmark together, x 178.6 to 299.7 mm). "
+               "Logo: py-atom-logo-horizontal-white at scale 1.155 (beeldmerk 27.7 x 33.4 mm at x 178.6, y 25.5), beeldmerk and wordmark together span x 178.6 to 299.7 mm, centred on the sign within 1 mm (centre 239.1). "
                "Text: three lines of live Ubuntu Regular 98 pt = 34.57 mm white, baselines 114.47, 156.78 and 199.10 mm (pitch 42.3 mm = 1.22 x the size), centred on x 240 (the source "
                "centres the lines 0.2 to 1.2 mm right of 240 because the typed trailing spaces are counted; the template centres the ink). The keyword in Ubuntu Bold in the sampled "
                "light aqua #68CBDA (CMYK 54/0/14/0, no token, kept as sampled, same colour as the icons on the laadkabel and diefstal stickers). "
@@ -193,8 +193,7 @@ def _(ctx):
                "Address block: recomposed from py-comp-address-block-brief (right edge 187.26 mm, 3.17 mm Ubuntu, Bold company line) as five live text lines with data-variable "
                "(company, street, postcode-city, email, website). The source address text is CMYK 100/85.5/22.3/4 (viewer #1E4382, a drifted blue, listed in observed); the logo is "
                "CMYK 100/83/0/17 (viewer #0B3D8A, equal to the token); the template uses #1A3580 for both. "
-               "Open point (layout): the address block is not aligned with the logo, its top line sits 3.5 mm above the wordmark baseline and its left start is ragged by design (right aligned). "
-               "No margins, folding marks or a window position are drawn in the source; the owner may want to add them (DIN 5008 starts the address window at 45 mm)."),
+               "Open point: the source has no fold marks, hole punch mark or address window position; the owner may want to add them if the letterhead goes into window envelopes."),
     )
 
 
