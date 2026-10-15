@@ -1,0 +1,84 @@
+{
+ "id": "py-app-poster-app-a2",
+ "name_nl": "Poster app downloaden A2",
+ "type": "poster",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-poster-app-a2",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-url-chevron",
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-logo-wordmark-color",
+    "py-atom-shape-bubble-image-mask",
+    "py-comp-qr-plate"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/posters_420x594_3_1.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC sRGB)",
+    "trim_mm": [
+     420,
+     594
+    ],
+    "bleed_box_set": true
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   420,
+   594
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   426.0,
+   600.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "photo": "foto van handen met telefoon (bubbelvorm)",
+   "headline-1": "Makkelijk parkeren",
+   "headline-2": "vanuit je broekzak",
+   "subline": "Download nu onze app",
+   "qr-target": "https://parkingyou.nl/nl"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-regular",
+  "py-comp-url-chevron",
+  "py-atom-logo-beeldmerk-color",
+  "py-atom-logo-wordmark-color",
+  "py-atom-shape-bubble-image-mask",
+  "py-comp-qr-plate"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "Photo: JPEG 824 x 988 px (hands holding a phone, 64.8 to 379.8 mm by 60.9 to 438.6 mm) clipped to the bubble outline: not copied. The reference shows the clip outline as a flat #EBEBEB placeholder (group placeholder-photo).",
+  "Navy bubble fill (#2A3282, same outline as the photo clip, 313.8 x 378.6 mm) directly under the photo: hidden underlay, not drawn.",
+  "Two white specks (0.1 mm) next to the QR code at x 358 / y 524 mm: kept in the reference (part of the source), no meaning."
+ ],
+ "copy_corrections": [],
+ "notes": "A2 420 x 594 mm, the source has the 3 mm bleed (page 426 x 600) and a TrimBox. REBUILT in the template: the headline and the subline are outlined in the source and are rebuilt as live Ubuntu (Bold 28.2 mm for both headline lines, line pitch 26.75 mm, Regular 22.58 mm for the subline; fitted by overlay, width and height agree). The only listed font in the source is Helvetica for the QR, there is no live text. Library: py-comp-url-chevron at scale 0.456 (white text and chevron recoloured to navy and the light aqua sample #8CCDDF; the library chevron is #69CADA), py-atom-shape-bubble-image-mask at scale 8.717 (the photo clip outline has the same bubble shape; the tail tip differs by under 2 mm), py-atom-logo-beeldmerk-color (scale 0.578) and py-atom-logo-wordmark-color (scale 0.988). The library stacked logo py-atom-logo-stacked-color is NOT used: the print has 6.3 mm between the beeldmerk and the wordmark, the library 3.0 mm, so the two atoms are placed separately (group logo-stacked). New: py-comp-qr-plate (navy plate 87.9 mm, radius 5.77 mm): the plate of py-comp-qr-reserveer (118.6 mm, radius 11.95 mm) does not match. Reference: faithful, QR modules as vector fills (white on navy, inverted), photo as flat placeholder. Template: placeholder-photo (data-variable photo, library afbeeldingsmasker) and the QR as placeholder group inside the plate (data-variable qr-target, example https://parkingyou.nl/nl). Colours: source blues #2A3282 (text, QR plate) and #23398E (logo) are drift, the template uses #1A3580; the chevron light aqua is kept as sampled. Variables: url-line-1, url-line-2 (in the placed url component), headline-1, headline-2, subline, photo, qr-target."
+}

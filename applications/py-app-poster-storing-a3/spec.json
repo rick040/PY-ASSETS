@@ -1,0 +1,89 @@
+{
+ "id": "py-app-poster-storing-a3",
+ "name_nl": "Poster storing A3",
+ "type": "poster",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-poster-storing-a3",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-logo-beeldmerk-watermark",
+    "py-comp-lockup-logo-tagline-color",
+    "py-atom-icon-warning-triangle",
+    "py-comp-box-storing-contact",
+    "py-atom-icon-warning-triangle-thin"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/posters_297x420_3_1.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC sRGB)",
+    "trim_mm": [
+     297,
+     420
+    ],
+    "bleed_box_set": true
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   297,
+   420
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   303.0,
+   426.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "headline": "Let op!",
+   "sentence-start": "Op",
+   "location-name": "locatie",
+   "sentence-1-end": "is het",
+   "sentence-line-2": "niet mogelijk om op deze",
+   "sentence-line-3": "locatie te parkeren.",
+   "contact-heading": "Storing?",
+   "contact-phone": "Bel 085 4011647",
+   "contact-text": "en wij lossen het zo snel mogelijk op",
+   "url": "www.parkingyou.nl"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-medium",
+  "py-atom-logo-beeldmerk-watermark",
+  "py-comp-lockup-logo-tagline-color",
+  "py-atom-icon-warning-triangle",
+  "py-comp-box-storing-contact",
+  "py-atom-icon-warning-triangle-thin"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [
+  "Full page navy rectangle (#23398E, 303 x 428.4 mm) directly under the white page rectangle of the same size: hidden underlay.",
+  "Raster image 740 x 1527 px (indexed, 111.3 to 303.0 mm by 20.1 to 415.8 mm) with the pale bubble: replaced by a vector shape (same silhouette, flat #F7F8FA), the raster is not copied.",
+  "Trailing space and the run of spaces in the first sentence span ('Op' + spaces + 'is het'): the words are written at their true positions."
+ ],
+ "copy_corrections": [],
+ "notes": "A3 297 x 420 mm, the source has the 3 mm bleed (page 303 x 426) and a TrimBox. REBUILT because the large pale bubble in the background is a raster in the source: it is rebuilt as a vector, the silhouette of the beeldmerk (shape of py-atom-logo-beeldmerk-watermark) scaled by 6.069 with the top left at 111.35 / 20.25 mm (page mm), cut at the right edge of the page. Fitted to the raster mask (overlap 99.98 percent, so the print bubble is the beeldmerk bubble, uniformly scaled to a 329.6 mm circle). Colour: the raster is flat #F5F6F9 in its palette and renders as #F7F8FA; the reference uses the rendered value, the template draws the navy token #1A3580 at 3.5 percent (same result, a tint as in observed rule 8; the library watermark is aqua at 5 percent and would look different). Library: py-comp-lockup-logo-tagline-color at scale 1.125 (118.0 mm wide), py-atom-icon-warning-triangle at 87.0 mm wide, recoloured to the light aqua sample #83CBE1 (no token, kept as sampled; the library triangle uses #71CBDF). New: py-comp-box-storing-contact (box, small triangle, two text lines) and py-atom-icon-warning-triangle-thin. Live text: Let op! Ubuntu Bold 46.79 mm, sentence Ubuntu Medium 21.95 mm (three lines, baseline pitch 31.3 mm), URL Ubuntu Medium 9.0 mm centred (in the source 'Let op!', the contact lines and the URL are outlined and fitted by overlay). The location name is a grey rounded box #EBEBEB (59.6 to 203.6 mm, radius 5.1 mm) in the source: the template keeps it as the placeholder group placeholder-location-name (data-placeholder and data-variable location-name); 'is het' stays at its printed position, a longer location name needs a reflow (open point). Colours: the source blues #2B3D91 (text, outline), #374F9E (contact text), #2B529F (small triangle) and #273A7C (logo) are drift, the template uses #1A3580 only. Open: the contact text colour #374F9E and the text blue #2B3D91 are two different blues on one poster. Variables: headline, sentence-start, sentence-1-end, sentence-line-2, sentence-line-3, location-name, contact-heading, contact-phone, contact-text, url."
+}
