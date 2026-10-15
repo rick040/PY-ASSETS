@@ -31,6 +31,12 @@ SOURCES = {
     "pr": dict(file="PR_RoadSignage.pdf", pages=1, page_mm=(210, 297), trim_mm=(210, 297), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
     "envelop": dict(file="ParkingYou_Envelop_220x156.pdf", pages=1, page_mm=(249.28, 185.28), trim_mm=(220, 156), trim_off=(14.64, 14.64), bleed_set=False, cs="RGB (ICC), file claims PDF/X-1a"),
     "tarief": dict(file="TariefConcerten.pdf", pages=1, page_mm=(700, 1000), trim_mm=(700, 1000), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
+    # third batch
+    "dranghek": dict(file="dranghekspandoek-dubbelzijdig_01.pdf", pages=1, page_mm=(2440, 1570), trim_mm=(2420, 1550), trim_off=(10, 10), bleed_set=True, cs="CMYK"),
+    "wtcsticker": dict(file="PR_WTC_Sticker.pdf", pages=1, page_mm=(700, 700), trim_mm=(700, 700), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
+    "wtcposter": dict(file="PR_WTC_Poster.pdf", pages=1, page_mm=(700, 1000), trim_mm=(700, 1000), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
+    "posterA3": dict(file="posters_297x420_3_1.pdf", pages=1, page_mm=(303, 426), trim_mm=(297, 420), trim_off=(3, 3), bleed_set=True, cs="RGB (ICC sRGB)"),
+    "posterA2": dict(file="posters_420x594_3_1.pdf", pages=1, page_mm=(426, 600), trim_mm=(420, 594), trim_off=(3, 3), bleed_set=True, cs="RGB (ICC sRGB)"),
 }
 _CACHE: dict = {}
 

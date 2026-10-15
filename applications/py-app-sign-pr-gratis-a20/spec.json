@@ -1,0 +1,85 @@
+{
+ "id": "py-app-sign-pr-gratis-a20",
+ "name_nl": "P+R bord A20 dicht, tijdelijk gratis",
+ "type": "sign",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sign-pr-gratis-a20",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-line-divider",
+    "py-comp-symbol-pr",
+    "py-atom-partner-zuid-holland-bereikbaar",
+    "py-comp-lockup-logo-tagline-color"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/PR_RoadSignage.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC)",
+    "trim_mm": [
+     210,
+     297
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   210.0,
+   297.0
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   216.0,
+   303.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "headline": "A20 dicht?",
+   "body-line-1": "Parkeer nu ",
+   "keyword-1": "tijdelijk",
+   "keyword-2": "gratis",
+   "body-line-2": " op P+R",
+   "city": "Schiedam",
+   "punctuation": "."
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-line-divider",
+  "py-comp-symbol-pr",
+  "py-atom-partner-zuid-holland-bereikbaar",
+  "py-comp-lockup-logo-tagline-color"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": ""
+}

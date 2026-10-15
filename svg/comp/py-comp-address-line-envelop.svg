@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="38.953mm" height="2.836mm" viewBox="0 0 38.953 2.836">
+<title>py-comp-address-line-envelop: Adresregel envelop</title>
+<g id="py-comp-address-line-envelop"><g transform="translate(0 0)"><text x="0" y="2.367" font-family="Ubuntu Light" font-size="2.466" fill="#1A3580" xml:space="preserve"><tspan font-family="Ubuntu Light" font-weight="normal" fill="#1A3580" data-variable="street">Victoriapark 4 </tspan><tspan font-family="Ubuntu" font-weight="normal" fill="#32B9CD">|</tspan><tspan font-family="Ubuntu Light" font-weight="normal" fill="#1A3580" data-variable="postcode-city"> 5611 BM Eindhoven</tspan></text></g></g>
+</svg>

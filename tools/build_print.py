@@ -42,10 +42,16 @@ OBSERVED = [
     ("py-obs-blauw-rgb-envelop", "Blauw RGB envelop", None, "ParkingYou_Envelop_220x156.pdf", "logo and address, RGB (ICC) only (file claims PDF/X-1a)", "#223A7A"),
     ("py-obs-blauw-rgb-tarief", "Blauw RGB tariefbord", None, "TariefConcerten.pdf", "background and text, RGB (ICC) only", "#23398E"),
     ("py-obs-aqua-rgb-envelop", "Aqua RGB envelop", None, "ParkingYou_Envelop_220x156.pdf, PR_RoadSignage.pdf", "tagline, dot; RGB (ICC)", "#34BACE"),
-    ("py-obs-aqua-licht-rgb", "Lichtaqua RGB", None, "TariefConcerten.pdf", "price bubble, RGB (ICC) only", "#78C9DC"),
+    ("py-obs-aqua-licht-rgb", "Lichtaqua RGB", None, "TariefConcerten.pdf, PR_WTC_Sticker.pdf, PR_WTC_Poster.pdf", "price bubble, RGB (ICC) only", "#78C9DC"),
+    # third batch
+    ("py-obs-blauw-dranghek", "Blauw dranghekspandoek", (100, 85, 10, 1), "dranghekspandoek-dubbelzijdig_01.pdf", "background, figure text"),
+    ("py-obs-aqua-licht-dranghek", "Lichtaqua dranghekspandoek", (51, 1, 11, 0), "dranghekspandoek-dubbelzijdig_01.pdf", "pill, triangle, divider, keyword"),
+    ("py-obs-blauw-rgb-wtc", "Blauw RGB P+R sticker en poster", None, "PR_WTC_Sticker.pdf, PR_WTC_Poster.pdf", "background and text, RGB (ICC) only", "#233A89"),
+    ("py-obs-blauw-rgb-poster-a3", "Blauw RGB poster A3", None, "posters_297x420_3_1.pdf", "text and icons, RGB (ICC sRGB) only", "#2B3D91"),
+    ("py-obs-blauw-rgb-poster-a2", "Blauw RGB poster A2", None, "posters_420x594_3_1.pdf", "text and QR plate, RGB (ICC sRGB) only", "#2A3282"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
-OBS_HEX = {"#78C9DC": "py-obs-aqua-licht-rgb", "#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}
+OBS_HEX = {"#78C9DC": "py-obs-aqua-licht-rgb", "#79C9DC": "py-obs-aqua-licht-rgb", "#71CBDF": "py-obs-aqua-licht-dranghek", "#83CBE1": "py-obs-aqua-licht-rgb", "#8CCDDF": "py-obs-aqua-licht-rgb", "#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}
 
 
 def load_specs(only=None):

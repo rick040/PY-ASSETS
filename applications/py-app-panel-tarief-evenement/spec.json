@@ -1,0 +1,89 @@
+{
+ "id": "py-app-panel-tarief-evenement",
+ "name_nl": "Tariefbord evenement (aangepast inrijdtarief)",
+ "type": "panel",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-panel-tarief-evenement",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-tagline-lockup",
+    "py-comp-price-bubble-speech",
+    "py-comp-calendar-date",
+    "py-atom-icon-calendar",
+    "py-atom-mark-live-at-philips-stadium"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/TariefConcerten.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC)",
+    "trim_mm": [
+     700,
+     1000
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   700,
+   1000
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   706.0,
+   1006.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "price": "€20",
+   "label": "inrijdtarief",
+   "headline": "Let op!",
+   "body-line-1": "Aangepast inrijdtarief",
+   "body-line-2": "op de volgende data:",
+   "day-1": "20",
+   "month-1": "juni",
+   "day-2": "26",
+   "month-2": "juni",
+   "day-3": "27",
+   "month-3": "juni"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-regular",
+  "py-comp-tagline-lockup",
+  "py-comp-price-bubble-speech",
+  "py-comp-calendar-date",
+  "py-atom-icon-calendar",
+  "py-atom-mark-live-at-philips-stadium"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": ""
+}
