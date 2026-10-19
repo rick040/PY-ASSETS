@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.titel}}</title>
+<meta name="description" content="{{meta.beschrijving|attr}}">
+<link rel="icon" type="image/svg+xml" href="assets/py-atom-logo-beeldmerk-color.svg">
+<link rel="stylesheet" href="assets/stijl.css">
+</head>
+<body>
+
+<!-- Blok: hero. Payload: Hero (kop, tekst, knop met anker). -->
+<section class="blok hero donker" data-block="hero" aria-labelledby="hero-kop">
+  <svg class="watermerk" viewBox="0 0 54.316 65.516" aria-hidden="true" focusable="false"><path fill="#32B9CD" d="{{@beeldmerk_pad}}"/></svg>
+  <div class="houder">
+    <a class="logo" href="https://parkingyou.nl/" aria-label="ParkingYou"><img src="assets/py-atom-logo-horizontal-reverse.svg" alt="ParkingYou" width="176" height="49"></a>
+    <h1 id="hero-kop">{{hero.kop}}</h1>
+    <p class="lead">{{hero.tekst}}</p>
+    <a class="knop" href="#aanmelden">{{hero.knop}}</a>
+  </div>
+</section>
+
+<main>
+
+<!-- Blok: zo werkt het. Payload: Stappen (kop, stappen[]). -->
+<section class="blok" data-block="zo-werkt-het" aria-labelledby="zo-kop">
+  <div class="houder">
+    <h2 id="zo-kop">{{zo_werkt_het.kop}}</h2>
+    <ol class="stappen">
+{{@stappen}}
+    </ol>
+  </div>
+</section>
+
+<!-- Blok: voor wie. Payload: Kaarten (kop, intro, items[kop, tekst]). -->
+<section class="blok tint" data-block="voor-wie" aria-labelledby="wie-kop">
+  <div class="houder">
+    <h2 id="wie-kop">{{voor_wie.kop}}</h2>
+    <p class="intro">{{voor_wie.intro}}</p>
+    <ul class="kaarten">
+{{@voor_wie}}
+    </ul>
+  </div>
+</section>
+
+<!-- Blok: commissietabel. Payload: Tabel (kop, rijen[niveau, omschrijving, percentage, aanbevolen]) + twee tekstregels. -->
+<section class="blok" data-block="commissietabel" aria-labelledby="tabel-kop">
+  <div class="houder">
+    <h2 id="tabel-kop">{{commissietabel.kop}}</h2>
+    <table class="commissie">
+      <thead>
+        <tr><th scope="col">{{commissietabel.kolom_niveau}}</th><th scope="col">{{commissietabel.kolom_omschrijving}}</th><th scope="col">{{commissietabel.kolom_percentage}}</th></tr>
+      </thead>
+      <tbody>
+{{@tabel}}
+      </tbody>
+    </table>
+    <div class="toelichting">
+      <p><strong>{{commissietabel.plus_label}}</strong> {{commissietabel.plus}}</p>
+      <p><strong>{{commissietabel.kosten_label}}</strong> {{commissietabel.kosten}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blok: rekenhulp. Payload: Rekenhulp (kop, intro, labels; locaties en percentages komen uit de collectie Locaties en de niveaus). -->
+<section class="blok tint" data-block="rekenhulp" aria-labelledby="rekenhulp-kop">
+  <div class="houder">
+    <h2 id="rekenhulp-kop">{{rekenhulp.kop}}</h2>
+    <p class="intro">{{rekenhulp.intro}}</p>
+    <form class="rekenhulp" data-rekenhulp novalidate onsubmit="return false"
+          data-voor="{{rekenhulp.uitkomst_voor|attr}}" data-maand="{{rekenhulp.uitkomst_maand|attr}}" data-jaar="{{rekenhulp.uitkomst_jaar|attr}}"
+          data-placeholder="{{rekenhulp.placeholder_boeking|attr}}"
+          data-tpl-bezoekers="{{rekenhulp.waarde_bezoekers|attr}}" data-tpl-deel="{{rekenhulp.waarde_deel|attr}}">
+      <fieldset class="keuze">
+        <legend>{{rekenhulp.label_garage}}</legend>
+{{@rh_garage}}
+      </fieldset>
+      <div class="schuif">
+        <div class="schuif-kop"><label for="rh-bezoekers">{{rekenhulp.label_bezoekers}}</label><output id="rh-bezoekers-waarde" for="rh-bezoekers">200</output></div>
+        <input type="range" id="rh-bezoekers" name="bezoekers" min="{{@bez_min}}" max="{{@bez_max}}" step="{{@bez_stap}}" value="{{@bez_std}}">
+      </div>
+      <div class="schuif">
+        <div class="schuif-kop"><label for="rh-deel">{{rekenhulp.label_deel}}</label><output id="rh-deel-waarde" for="rh-deel">20%</output></div>
+        <input type="range" id="rh-deel" name="deel" min="{{@deel_min}}" max="{{@deel_max}}" step="{{@deel_stap}}" value="{{@deel_std}}">
+      </div>
+      <fieldset class="keuze">
+        <legend>{{rekenhulp.label_niveau}}</legend>
+{{@rh_niveau}}
+      </fieldset>
+      <div class="uitkomst" data-uitkomst>
+        <p class="bedrag" data-bedrag aria-hidden="true"></p>
+        <p class="disclaimer">{{rekenhulp.disclaimer}}</p>
+        <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-live></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Blok: veelgestelde vragen. Payload: FAQ (kop, items[vraag, antwoord]). -->
+<section class="blok" data-block="veelgestelde-vragen" aria-labelledby="faq-kop">
+  <div class="houder smal">
+    <h2 id="faq-kop">{{faq.kop}}</h2>
+{{@faq}}
+  </div>
+</section>
+
+<!-- Blok: aanmeldformulier. Payload: Formulier (form-builder; velden hieronder, verzend-endpoint = Payload form submissions). -->
+<section class="blok donker aanmelden" data-block="aanmeldformulier" id="aanmelden" aria-labelledby="form-kop">
+  <div class="houder smal">
+    <h2 id="form-kop">{{formulier.kop}}</h2>
+    <p class="intro">{{formulier.intro}}</p>
+    <form class="aanmeldform" data-aanmeldform novalidate data-endpoint="{{formulier.endpoint|attr}}" aria-describedby="form-samenvatting">
+      <p class="samenvatting" id="form-samenvatting" role="alert" hidden data-melding="{{meldingen.samenvatting|attr}}"></p>
+{{@velden}}
+      <button class="knop" type="submit">{{formulier.knop_verzenden}}</button>
+    </form>
+    <div class="bevestiging" data-bevestiging tabindex="-1" role="status" hidden>
+      <p>{{formulier.bevestiging}}</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="voet donker">
+  <div class="houder"><img src="assets/py-atom-logo-horizontal-reverse.svg" alt="ParkingYou" width="132" height="36"></div>
+</footer>
+
+<script type="application/json" id="meldingen">{{@meldingen_json}}</script>
+<script src="assets/rekenhulp-logica.js"></script>
+<script src="assets/pagina.js"></script>
+</body>
+</html>

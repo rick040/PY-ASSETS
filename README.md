@@ -19,6 +19,7 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 | `docs/print-phase1-inventory.md` | The PM-137 inventory the print build is based on. |
 | `source/print/` | The twenty print source PDFs. |
 | `fonts/` | Ubuntu (8 styles) under the Ubuntu Font Licence 1.0. Install them to see live text correctly. |
+| `partnerprogramma/` | Visuals voor het partnerprogramma: one-pager, balie- en QR-kaart, partnerlogo, social posts, landingspagina, mailheader. Per locatie of partner te genereren met `python3 -I partnerprogramma/build.py`. Zie `partnerprogramma/README.md`. |
 | `tools/` | Extraction and build scripts (see `tools/README.md`). |
 | `docs/phase1-inventory.md` | The inventory the build is based on: element tables, inconsistencies found in the handbook, suggested additions. |
 | `docs/build-notes.md` | What was rebuilt and why, deviations and open points from the build. |

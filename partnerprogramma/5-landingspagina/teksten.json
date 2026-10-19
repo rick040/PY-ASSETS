@@ -1,0 +1,109 @@
+{
+  "_info": "Enige tekstbron van de pagina. Waarden tussen [haken] zijn placeholders voor teksten uit teksten-landingspagina.md; ze worden in beeld oranje omlijnd. Zie README.md voor welke sleutels daaruit komen.",
+  "meta": {
+    "titel": "[paginatitel: teksten-landingspagina.md]",
+    "beschrijving": "[meta-beschrijving: teksten-landingspagina.md]"
+  },
+  "hero": {
+    "kop": "[hero-kop: teksten-landingspagina.md]",
+    "tekst": "[hero-tekst: teksten-landingspagina.md]",
+    "knop": "Word partner"
+  },
+  "zo_werkt_het": {
+    "kop": "Zo werkt het",
+    "stappen": [
+      "U krijgt een eigen link, code en QR-kaart.",
+      "Uw gasten reserveren daarmee vooraf een plek in onze garage, vlak bij u.",
+      "Elk kwartaal krijgt u uw commissie uitbetaald. Wij regelen de factuur."
+    ]
+  },
+  "voor_wie": {
+    "kop": "[voor-wie-kop: teksten-landingspagina.md]",
+    "intro": "[voor-wie-intro: teksten-landingspagina.md]",
+    "items": [
+      {"kop": "Hotels", "tekst": "[voor-wie-hotels: teksten-landingspagina.md]"},
+      {"kop": "Theaters", "tekst": "[voor-wie-theaters: teksten-landingspagina.md]"},
+      {"kop": "Zalen", "tekst": "[voor-wie-zalen: teksten-landingspagina.md]"},
+      {"kop": "Restaurants", "tekst": "[voor-wie-restaurants: teksten-landingspagina.md]"}
+    ]
+  },
+  "commissietabel": {
+    "kop": "Wat u krijgt",
+    "kolom_niveau": "Niveau",
+    "kolom_omschrijving": "Wat u doet",
+    "kolom_percentage": "Commissie",
+    "aanbevolen": "Aanbevolen",
+    "niveaus": {
+      "basis": "Link delen als gasten vragen naar parkeren",
+      "actief": "Parkeerinfo standaard in uw mails, op uw site en bij de balie",
+      "top": "Actief plus een vaste afspraak"
+    },
+    "plus_label": "Plus:",
+    "plus": "een kant-en-klare partnerkit, een maandoverzicht van uw reserveringen en een vast aanspreekpunt.",
+    "kosten_label": "Wat het u kost:",
+    "kosten": "Niets. Geen abonnement, geen minimum, opzeggen per maand."
+  },
+  "rekenhulp": {
+    "kop": "[rekenhulp-kop: teksten-landingspagina.md]",
+    "intro": "[rekenhulp-intro: teksten-landingspagina.md]",
+    "label_garage": "Garage",
+    "label_bezoekers": "Bezoekers per maand",
+    "label_deel": "Deel dat reserveert",
+    "label_niveau": "Niveau",
+    "waarde_bezoekers": "{n} bezoekers per maand",
+    "waarde_deel": "{n} procent reserveert",
+    "waarde_percentage": "{n} procent commissie",
+    "uitkomst_voor": "Indicatie: ",
+    "uitkomst_maand": " per maand, ",
+    "uitkomst_jaar": " per jaar.",
+    "disclaimer": "Dit is een rekenvoorbeeld, geen garantie.",
+    "placeholder_boeking": "[gemiddelde boeking per locatie]"
+  },
+  "faq": {
+    "kop": "[faq-kop: teksten-landingspagina.md]",
+    "items": [
+      {"vraag": "[faq-vraag-1: teksten-landingspagina.md]", "antwoord": "[faq-antwoord-1: teksten-landingspagina.md]"},
+      {"vraag": "[faq-vraag-2: teksten-landingspagina.md]", "antwoord": "[faq-antwoord-2: teksten-landingspagina.md]"},
+      {"vraag": "[faq-vraag-3: teksten-landingspagina.md]", "antwoord": "[faq-antwoord-3: teksten-landingspagina.md]"},
+      {"vraag": "[faq-vraag-4: teksten-landingspagina.md]", "antwoord": "[faq-antwoord-4: teksten-landingspagina.md]"}
+    ]
+  },
+  "formulier": {
+    "kop": "[formulier-kop: teksten-landingspagina.md]",
+    "intro": "[formulier-intro: teksten-landingspagina.md]",
+    "endpoint": "[endpoint]",
+    "velden": {
+      "bedrijfsnaam": "Bedrijfsnaam",
+      "kvk": "KvK-nummer",
+      "soort_bedrijf": "Soort bedrijf",
+      "garage": "Bij welke garage",
+      "naam": "Naam",
+      "functie": "Functie",
+      "email": "E-mail",
+      "telefoon": "Telefoon",
+      "bezoekers": "Bezoekers met de auto per maand",
+      "opmerking": "Opmerking"
+    },
+    "keuze_leeg": "[keuze-tekst: teksten-landingspagina.md]",
+    "soort_opties": ["Hotel", "Theater", "Zaal", "Restaurant", "Anders"],
+    "akkoord_voor": "Akkoord met ",
+    "akkoord_voorwaarden": "voorwaarden",
+    "akkoord_en": " en ",
+    "akkoord_privacy": "privacyverklaring",
+    "url_voorwaarden": "[url-voorwaarden]",
+    "url_privacy": "[url-privacyverklaring]",
+    "optioneel": "(optioneel)",
+    "knop_verzenden": "[knop-verzenden: teksten-landingspagina.md]",
+    "bevestiging": "[bevestiging: teksten-landingspagina.md]"
+  },
+  "meldingen": {
+    "verplicht": "Vul dit veld in.",
+    "kvk": "Vul een KvK-nummer van 8 cijfers in.",
+    "email": "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.nl.",
+    "telefoon": "Vul een telefoonnummer in met minimaal 10 cijfers.",
+    "bezoekers": "Vul een heel getal in van 0 of hoger.",
+    "keuze": "Maak een keuze.",
+    "akkoord": "Vink aan dat u akkoord gaat om door te gaan.",
+    "samenvatting": "Er is iets niet ingevuld. Controleer de gemarkeerde velden."
+  }
+}

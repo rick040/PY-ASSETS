@@ -1,0 +1,18 @@
+{
+  "aantal_locaties": 37,
+  "loopsnelheid_m_per_minuut": 80,
+  "niveaus": [
+    {"id": "basis", "naam": "Basis", "percentage": 4},
+    {"id": "actief", "naam": "Actief", "percentage": 6, "aanbevolen": true},
+    {"id": "top", "naam": "Top", "percentage": 9}
+  ],
+  "rekenvoorbeeld": {"gasten_per_maand": 100, "niveau": "actief"},
+  "link_prefix": "parkingyou.nl/p/",
+  "contact": {
+    "naam": null,
+    "functie": null,
+    "telefoon": null,
+    "email": null,
+    "url": "parkingyou.nl/partners"
+  }
+}
