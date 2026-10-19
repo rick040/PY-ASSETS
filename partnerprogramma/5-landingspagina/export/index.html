@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[paginatitel: teksten-landingspagina.md]</title>
-<meta name="description" content="[meta-beschrijving: teksten-landingspagina.md]">
+<title>Partner worden van ParkingYou | Verdien aan parkeren</title>
+<meta name="description" content="Heeft u een bedrijf bij een van onze garages? Uw gasten reserveren een plek, u krijgt 4 tot 9% commissie. Gratis en zonder verplichtingen.">
 <link rel="icon" type="image/svg+xml" href="assets/py-atom-logo-beeldmerk-color.svg">
 <link rel="stylesheet" href="assets/stijl.css">
 </head>
@@ -15,44 +15,46 @@
   <svg class="watermerk" viewBox="0 0 54.316 65.516" aria-hidden="true" focusable="false"><path fill="#32B9CD" d="M0 27.156C0 12.158 12.159 0 27.158 0C42.157 0 54.316 12.158 54.316 27.156C54.316 42.153 42.157 54.312 27.158 54.312L27.158 63.874C27.158 64.886 26.047 65.516 25.183 64.989C25.183 64.989 0 52.356 0 27.156"/></svg>
   <div class="houder">
     <a class="logo" href="https://parkingyou.nl/" aria-label="ParkingYou"><img src="assets/py-atom-logo-horizontal-reverse.svg" alt="ParkingYou" width="176" height="49"></a>
-    <h1 id="hero-kop"><span class="placeholder">[hero-kop: teksten-landingspagina.md]</span></h1>
-    <p class="lead"><span class="placeholder">[hero-tekst: teksten-landingspagina.md]</span></p>
+    <h1 id="hero-kop">Uw gasten parkeren zonder zoeken. U verdient eraan.</h1>
+    <p class="lead">Hotel, theater, restaurant of zaal bij een ParkingYou-garage? Geef uw gasten een vaste plek vlakbij en ontvang commissie op elke reservering.</p>
     <a class="knop" href="#aanmelden">Word partner</a>
   </div>
 </section>
 
 <main>
 
-<!-- Blok: zo werkt het. Payload: Stappen (kop, stappen[]). -->
+<!-- Blok: zo werkt het. Payload: Stappen (kop, stappen[kop, tekst]). -->
 <section class="blok" data-block="zo-werkt-het" aria-labelledby="zo-kop">
   <div class="houder">
     <h2 id="zo-kop">Zo werkt het</h2>
     <ol class="stappen">
-      <li><span class="nr" aria-hidden="true">1</span><p>U krijgt een eigen link, code en QR-kaart.</p></li>
-      <li><span class="nr" aria-hidden="true">2</span><p>Uw gasten reserveren daarmee vooraf een plek in onze garage, vlak bij u.</p></li>
-      <li><span class="nr" aria-hidden="true">3</span><p>Elk kwartaal krijgt u uw commissie uitbetaald. Wij regelen de factuur.</p></li>
+      <li><span class="nr" aria-hidden="true">1</span><div><h3>Aanmelden.</h3><p>Vul het formulier in. We bellen u binnen twee werkdagen.</p></div></li>
+      <li><span class="nr" aria-hidden="true">2</span><div><h3>Delen.</h3><p>U krijgt een eigen link, code en QR-kaart voor uw gasten.</p></div></li>
+      <li><span class="nr" aria-hidden="true">3</span><div><h3>Verdienen.</h3><p>Elk kwartaal krijgt u uw commissie. Wij regelen de factuur.</p></div></li>
     </ol>
   </div>
 </section>
 
-<!-- Blok: voor wie. Payload: Kaarten (kop, intro, items[kop, tekst]). -->
+<!-- Blok: voor wie. Payload: Kaarten (kop, items[kop], slot). -->
 <section class="blok tint" data-block="voor-wie" aria-labelledby="wie-kop">
   <div class="houder">
-    <h2 id="wie-kop"><span class="placeholder">[voor-wie-kop: teksten-landingspagina.md]</span></h2>
-    <p class="intro"><span class="placeholder">[voor-wie-intro: teksten-landingspagina.md]</span></p>
+    <h2 id="wie-kop">Voor wie</h2>
     <ul class="kaarten">
-      <li class="kaart"><h3>Hotels</h3><p><span class="placeholder">[voor-wie-hotels: teksten-landingspagina.md]</span></p></li>
-      <li class="kaart"><h3>Theaters</h3><p><span class="placeholder">[voor-wie-theaters: teksten-landingspagina.md]</span></p></li>
-      <li class="kaart"><h3>Zalen</h3><p><span class="placeholder">[voor-wie-zalen: teksten-landingspagina.md]</span></p></li>
-      <li class="kaart"><h3>Restaurants</h3><p><span class="placeholder">[voor-wie-restaurants: teksten-landingspagina.md]</span></p></li>
+      <li class="kaart"><h3>Hotels</h3></li>
+      <li class="kaart"><h3>Theaters en bioscopen</h3></li>
+      <li class="kaart"><h3>Congres- en evenementenlocaties</h3></li>
+      <li class="kaart"><h3>Trouw- en feestlocaties</h3></li>
+      <li class="kaart"><h3>Restaurants</h3></li>
+      <li class="kaart"><h3>Kantoren en sportclubs</h3></li>
     </ul>
+    <p class="slot">in de buurt van een ParkingYou-garage.</p>
   </div>
 </section>
 
 <!-- Blok: commissietabel. Payload: Tabel (kop, rijen[niveau, omschrijving, percentage, aanbevolen]) + twee tekstregels. -->
 <section class="blok" data-block="commissietabel" aria-labelledby="tabel-kop">
   <div class="houder">
-    <h2 id="tabel-kop">Wat u krijgt</h2>
+    <h2 id="tabel-kop">Commissie</h2>
     <table class="commissie">
       <thead>
         <tr><th scope="col">Niveau</th><th scope="col">Wat u doet</th><th scope="col">Commissie</th></tr>
@@ -60,12 +62,12 @@
       <tbody>
         <tr><th scope="row"><span class="niveau">Basis</span></th><td>Link delen als gasten vragen naar parkeren</td><td class="pct">4%</td></tr>
         <tr class="aanbevolen-rij"><th scope="row"><span class="niveau">Actief</span><span class="aanbevolen">Aanbevolen</span></th><td>Parkeerinfo standaard in uw mails, op uw site en bij de balie</td><td class="pct">6%</td></tr>
-        <tr><th scope="row"><span class="niveau">Top</span></th><td>Actief plus een vaste afspraak</td><td class="pct">9%</td></tr>
+        <tr><th scope="row"><span class="niveau">Top</span></th><td>Actief, plus een vaste afspraak</td><td class="pct">9%</td></tr>
       </tbody>
     </table>
     <div class="toelichting">
       <p><strong>Plus:</strong> een kant-en-klare partnerkit, een maandoverzicht van uw reserveringen en een vast aanspreekpunt.</p>
-      <p><strong>Wat het u kost:</strong> Niets. Geen abonnement, geen minimum, opzeggen per maand.</p>
+      <p><strong>Wat het u kost:</strong> niets. Geen abonnement, geen minimum, opzeggen per maand.</p>
     </div>
   </div>
 </section>
@@ -73,23 +75,23 @@
 <!-- Blok: rekenhulp. Payload: Rekenhulp (kop, intro, labels; locaties en percentages komen uit de collectie Locaties en de niveaus). -->
 <section class="blok tint" data-block="rekenhulp" aria-labelledby="rekenhulp-kop">
   <div class="houder">
-    <h2 id="rekenhulp-kop"><span class="placeholder">[rekenhulp-kop: teksten-landingspagina.md]</span></h2>
-    <p class="intro"><span class="placeholder">[rekenhulp-intro: teksten-landingspagina.md]</span></p>
+    <h2 id="rekenhulp-kop">Rekenhulp</h2>
+    <p class="intro"><span class="placeholder">[rekenhulp-intro: niet in teksten-landingspagina.md]</span></p>
     <form class="rekenhulp" data-rekenhulp novalidate onsubmit="return false"
           data-voor="Indicatie: " data-maand=" per maand, " data-jaar=" per jaar."
           data-placeholder="[gemiddelde boeking per locatie]"
-          data-tpl-bezoekers="{n} bezoekers per maand" data-tpl-deel="{n} procent reserveert">
+          data-tpl-bezoekers="{n} bezoekers per maand" data-tpl-deel="{n} procent reserveert via uw link">
       <fieldset class="keuze">
         <legend>Garage</legend>
         <label class="optie"><input type="radio" name="garage" value="HOF" data-boeking="" checked><span>Hofplein</span></label>
         <label class="optie"><input type="radio" name="garage" value="PLA" data-boeking=""><span>Artis (Plantage)</span></label>
       </fieldset>
       <div class="schuif">
-        <div class="schuif-kop"><label for="rh-bezoekers">Bezoekers per maand</label><output id="rh-bezoekers-waarde" for="rh-bezoekers">200</output></div>
+        <div class="schuif-kop"><label for="rh-bezoekers">Bezoekers met de auto per maand</label><output id="rh-bezoekers-waarde" for="rh-bezoekers">200</output></div>
         <input type="range" id="rh-bezoekers" name="bezoekers" min="10" max="5000" step="10" value="200">
       </div>
       <div class="schuif">
-        <div class="schuif-kop"><label for="rh-deel">Deel dat reserveert</label><output id="rh-deel-waarde" for="rh-deel">20%</output></div>
+        <div class="schuif-kop"><label for="rh-deel">Deel dat via uw link reserveert</label><output id="rh-deel-waarde" for="rh-deel">20%</output></div>
         <input type="range" id="rh-deel" name="deel" min="5" max="60" step="1" value="20">
       </div>
       <fieldset class="keuze">
@@ -100,7 +102,7 @@
       </fieldset>
       <div class="uitkomst" data-uitkomst>
         <p class="bedrag" data-bedrag aria-hidden="true"></p>
-        <p class="disclaimer">Dit is een rekenvoorbeeld, geen garantie.</p>
+        <p class="disclaimer">Dit is een rekenvoorbeeld, geen garantie. De echte commissie hangt af van hoeveel gasten reserveren.</p>
         <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-live></p>
       </div>
     </form>
@@ -110,36 +112,37 @@
 <!-- Blok: veelgestelde vragen. Payload: FAQ (kop, items[vraag, antwoord]). -->
 <section class="blok" data-block="veelgestelde-vragen" aria-labelledby="faq-kop">
   <div class="houder smal">
-    <h2 id="faq-kop"><span class="placeholder">[faq-kop: teksten-landingspagina.md]</span></h2>
-    <details class="faq"><summary><span class="placeholder">[faq-vraag-1: teksten-landingspagina.md]</span></summary><div class="antwoord"><p><span class="placeholder">[faq-antwoord-1: teksten-landingspagina.md]</span></p></div></details>
-    <details class="faq"><summary><span class="placeholder">[faq-vraag-2: teksten-landingspagina.md]</span></summary><div class="antwoord"><p><span class="placeholder">[faq-antwoord-2: teksten-landingspagina.md]</span></p></div></details>
-    <details class="faq"><summary><span class="placeholder">[faq-vraag-3: teksten-landingspagina.md]</span></summary><div class="antwoord"><p><span class="placeholder">[faq-antwoord-3: teksten-landingspagina.md]</span></p></div></details>
-    <details class="faq"><summary><span class="placeholder">[faq-vraag-4: teksten-landingspagina.md]</span></summary><div class="antwoord"><p><span class="placeholder">[faq-antwoord-4: teksten-landingspagina.md]</span></p></div></details>
+    <h2 id="faq-kop">Veelgestelde vragen</h2>
+    <details class="faq"><summary>Wat kost het?</summary><div class="antwoord"><p>Niets. Geen abonnement, geen minimum.</p></div></details>
+    <details class="faq"><summary>Hoe weten jullie dat een reservering via ons komt?</summary><div class="antwoord"><p>Elke reservering met uw link of code wordt aan u gekoppeld.</p></div></details>
+    <details class="faq"><summary>Wanneer krijg ik geld?</summary><div class="antwoord"><p>Per kwartaal, binnen 30 dagen na het einde van het kwartaal.</p></div></details>
+    <details class="faq"><summary>Moet ik een factuur sturen?</summary><div class="antwoord"><p>Nee, wij maken die namens u op.</p></div></details>
+    <details class="faq"><summary>Zie ik wie er geparkeerd heeft?</summary><div class="antwoord"><p>Nee, u ziet alleen aantallen en omzet. Zo blijven de gegevens van uw gasten privé.</p></div></details>
+    <details class="faq"><summary>Kan ik stoppen?</summary><div class="antwoord"><p>Ja, per maand.</p></div></details>
   </div>
 </section>
 
 <!-- Blok: aanmeldformulier. Payload: Formulier (form-builder; velden hieronder, verzend-endpoint = Payload form submissions). -->
 <section class="blok donker aanmelden" data-block="aanmeldformulier" id="aanmelden" aria-labelledby="form-kop">
   <div class="houder smal">
-    <h2 id="form-kop"><span class="placeholder">[formulier-kop: teksten-landingspagina.md]</span></h2>
-    <p class="intro"><span class="placeholder">[formulier-intro: teksten-landingspagina.md]</span></p>
+    <h2 id="form-kop">Aanmelden</h2>
     <form class="aanmeldform" data-aanmeldform novalidate data-endpoint="[endpoint]" aria-describedby="form-samenvatting">
       <p class="samenvatting" id="form-samenvatting" role="alert" hidden data-melding="Er is iets niet ingevuld. Controleer de gemarkeerde velden."></p>
       <div class="veld" data-veld="bedrijfsnaam"><label for="f-bedrijfsnaam">Bedrijfsnaam</label><input id="f-bedrijfsnaam" name="bedrijfsnaam" type="text" required aria-required="true" aria-describedby="f-bedrijfsnaam-fout" autocomplete="organization"><p class="fout" id="f-bedrijfsnaam-fout" hidden></p></div>
       <div class="veld" data-veld="kvk"><label for="f-kvk">KvK-nummer</label><input id="f-kvk" name="kvk" type="text" required aria-required="true" aria-describedby="f-kvk-fout" inputmode="numeric" autocomplete="off" maxlength="12"><p class="fout" id="f-kvk-fout" hidden></p></div>
-      <div class="veld" data-veld="soort_bedrijf"><label for="f-soort_bedrijf">Soort bedrijf</label><select id="f-soort_bedrijf" name="soort_bedrijf" required aria-required="true" aria-describedby="f-soort_bedrijf-fout"><option value="">[keuze-tekst: teksten-landingspagina.md]</option><option value="Hotel">Hotel</option><option value="Theater">Theater</option><option value="Zaal">Zaal</option><option value="Restaurant">Restaurant</option><option value="Anders">Anders</option></select><p class="fout" id="f-soort_bedrijf-fout" hidden></p></div>
-      <div class="veld" data-veld="garage"><label for="f-garage">Bij welke garage</label><select id="f-garage" name="garage" required aria-required="true" aria-describedby="f-garage-fout"><option value="">[keuze-tekst: teksten-landingspagina.md]</option><option value="HOF">Hofplein</option><option value="PLA">Artis (Plantage)</option></select><p class="fout" id="f-garage-fout" hidden></p></div>
-      <div class="veld" data-veld="naam"><label for="f-naam">Naam</label><input id="f-naam" name="naam" type="text" required aria-required="true" aria-describedby="f-naam-fout" autocomplete="name"><p class="fout" id="f-naam-fout" hidden></p></div>
-      <div class="veld" data-veld="functie"><label for="f-functie">Functie</label><input id="f-functie" name="functie" type="text" required aria-required="true" aria-describedby="f-functie-fout" autocomplete="organization-title"><p class="fout" id="f-functie-fout" hidden></p></div>
+      <div class="veld" data-veld="soort_bedrijf"><label for="f-soort_bedrijf">Soort bedrijf</label><select id="f-soort_bedrijf" name="soort_bedrijf" required aria-required="true" aria-describedby="f-soort_bedrijf-fout"><option value="">Maak een keuze</option><option value="Hotel">Hotel</option><option value="Theater/bioscoop">Theater/bioscoop</option><option value="Evenementen/congres">Evenementen/congres</option><option value="Trouw/feest">Trouw/feest</option><option value="Restaurant">Restaurant</option><option value="Kantoor/coworking">Kantoor/coworking</option><option value="Sport/opleiding">Sport/opleiding</option><option value="Anders">Anders</option></select><p class="fout" id="f-soort_bedrijf-fout" hidden></p></div>
+      <div class="veld" data-veld="garage"><label for="f-garage">Bij welke garage</label><select id="f-garage" name="garage" required aria-required="true" aria-describedby="f-garage-fout"><option value="">Maak een keuze</option><option value="HOF">Hofplein</option><option value="PLA">Artis (Plantage)</option></select><p class="fout" id="f-garage-fout" hidden></p></div>
+      <div class="veld" data-veld="naam"><label for="f-naam">Naam contactpersoon</label><input id="f-naam" name="naam" type="text" required aria-required="true" aria-describedby="f-naam-fout" autocomplete="name"><p class="fout" id="f-naam-fout" hidden></p></div>
+      <div class="veld" data-veld="functie"><label for="f-functie">Functie <span class="optioneel">(optioneel)</span></label><input id="f-functie" name="functie" type="text" aria-describedby="f-functie-fout" autocomplete="organization-title"><p class="fout" id="f-functie-fout" hidden></p></div>
       <div class="veld" data-veld="email"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" required aria-required="true" aria-describedby="f-email-fout" autocomplete="email" inputmode="email"><p class="fout" id="f-email-fout" hidden></p></div>
       <div class="veld" data-veld="telefoon"><label for="f-telefoon">Telefoon</label><input id="f-telefoon" name="telefoon" type="tel" required aria-required="true" aria-describedby="f-telefoon-fout" autocomplete="tel" inputmode="tel"><p class="fout" id="f-telefoon-fout" hidden></p></div>
-      <div class="veld" data-veld="bezoekers"><label for="f-bezoekers">Bezoekers met de auto per maand</label><input id="f-bezoekers" name="bezoekers" type="number" required aria-required="true" aria-describedby="f-bezoekers-fout" min="0" step="1" inputmode="numeric"><p class="fout" id="f-bezoekers-fout" hidden></p></div>
+      <div class="veld" data-veld="bezoekers"><label for="f-bezoekers">Bezoekers met de auto per maand <span class="optioneel">(optioneel)</span></label><select id="f-bezoekers" name="bezoekers" aria-describedby="f-bezoekers-fout"><option value="">Maak een keuze</option><option value="Tot 50">Tot 50</option><option value="50 tot 200">50 tot 200</option><option value="200 tot 1.000">200 tot 1.000</option><option value="Meer dan 1.000">Meer dan 1.000</option></select><p class="fout" id="f-bezoekers-fout" hidden></p></div>
       <div class="veld" data-veld="opmerking"><label for="f-opmerking">Opmerking <span class="optioneel">(optioneel)</span></label><textarea id="f-opmerking" name="opmerking" rows="4" aria-describedby="f-opmerking-fout"></textarea><p class="fout" id="f-opmerking-fout" hidden></p></div>
       <div class="veld akkoord" data-veld="akkoord"><label class="vink"><input id="f-akkoord" name="akkoord" type="checkbox" required aria-required="true" aria-describedby="f-akkoord-fout"><span>Akkoord met <a href="[url-voorwaarden]">voorwaarden</a> en <a href="[url-privacyverklaring]">privacyverklaring</a></span></label><p class="fout" id="f-akkoord-fout" hidden></p></div>
-      <button class="knop" type="submit"><span class="placeholder">[knop-verzenden: teksten-landingspagina.md]</span></button>
+      <button class="knop" type="submit">Versturen</button>
     </form>
     <div class="bevestiging" data-bevestiging tabindex="-1" role="status" hidden>
-      <p><span class="placeholder">[bevestiging: teksten-landingspagina.md]</span></p>
+      <p>Bedankt! We bellen u binnen twee werkdagen.</p>
     </div>
   </div>
 </section>
@@ -150,7 +153,7 @@
   <div class="houder"><img src="assets/py-atom-logo-horizontal-reverse.svg" alt="ParkingYou" width="132" height="36"></div>
 </footer>
 
-<script type="application/json" id="meldingen">{"verplicht": "Vul dit veld in.", "kvk": "Vul een KvK-nummer van 8 cijfers in.", "email": "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.nl.", "telefoon": "Vul een telefoonnummer in met minimaal 10 cijfers.", "bezoekers": "Vul een heel getal in van 0 of hoger.", "keuze": "Maak een keuze.", "akkoord": "Vink aan dat u akkoord gaat om door te gaan.", "samenvatting": "Er is iets niet ingevuld. Controleer de gemarkeerde velden."}</script>
+<script type="application/json" id="meldingen">{"verplicht": "Vul dit veld in.", "kvk": "Vul een KvK-nummer van 8 cijfers in.", "email": "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.nl.", "telefoon": "Vul een telefoonnummer in met minimaal 10 cijfers.", "keuze": "Maak een keuze.", "akkoord": "Vink aan dat u akkoord gaat om door te gaan.", "samenvatting": "Er is iets niet ingevuld. Controleer de gemarkeerde velden."}</script>
 <script src="assets/rekenhulp-logica.js"></script>
 <script src="assets/pagina.js"></script>
 </body>

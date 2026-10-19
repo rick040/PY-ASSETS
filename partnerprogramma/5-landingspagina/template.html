@@ -23,7 +23,7 @@
 
 <main>
 
-<!-- Blok: zo werkt het. Payload: Stappen (kop, stappen[]). -->
+<!-- Blok: zo werkt het. Payload: Stappen (kop, stappen[kop, tekst]). -->
 <section class="blok" data-block="zo-werkt-het" aria-labelledby="zo-kop">
   <div class="houder">
     <h2 id="zo-kop">{{zo_werkt_het.kop}}</h2>
@@ -33,14 +33,14 @@
   </div>
 </section>
 
-<!-- Blok: voor wie. Payload: Kaarten (kop, intro, items[kop, tekst]). -->
+<!-- Blok: voor wie. Payload: Kaarten (kop, items[kop], slot). -->
 <section class="blok tint" data-block="voor-wie" aria-labelledby="wie-kop">
   <div class="houder">
     <h2 id="wie-kop">{{voor_wie.kop}}</h2>
-    <p class="intro">{{voor_wie.intro}}</p>
     <ul class="kaarten">
 {{@voor_wie}}
     </ul>
+    <p class="slot">{{voor_wie.slot}}</p>
   </div>
 </section>
 
@@ -109,7 +109,6 @@
 <section class="blok donker aanmelden" data-block="aanmeldformulier" id="aanmelden" aria-labelledby="form-kop">
   <div class="houder smal">
     <h2 id="form-kop">{{formulier.kop}}</h2>
-    <p class="intro">{{formulier.intro}}</p>
     <form class="aanmeldform" data-aanmeldform novalidate data-endpoint="{{formulier.endpoint|attr}}" aria-describedby="form-samenvatting">
       <p class="samenvatting" id="form-samenvatting" role="alert" hidden data-melding="{{meldingen.samenvatting|attr}}"></p>
 {{@velden}}

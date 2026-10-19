@@ -54,13 +54,13 @@ def zoek(pad):
 def stappen():
     regels = []
     for i, tekst in enumerate(TEKSTEN["zo_werkt_het"]["stappen"], 1):
-        regels.append('      <li><span class="nr" aria-hidden="true">%d</span><p>%s</p></li>' % (i, t(tekst)))
+        regels.append('      <li><span class="nr" aria-hidden="true">%d</span><div><h3>%s</h3><p>%s</p></div></li>'
+                      % (i, t(tekst["kop"]), t(tekst["tekst"])))
     return "\n".join(regels)
 
 
 def voor_wie():
-    return "\n".join('      <li class="kaart"><h3>%s</h3><p>%s</p></li>' % (t(i["kop"]), t(i["tekst"]))
-                     for i in TEKSTEN["voor_wie"]["items"])
+    return "\n".join('      <li class="kaart"><h3>%s</h3></li>' % t(i) for i in TEKSTEN["voor_wie"]["items"])
 
 
 def tabel():
@@ -108,7 +108,7 @@ def veld(sleutel, label, soort="text", verplicht=True, extra="", opties=None):
     req = ' required aria-required="true"' if verplicht else ""
     desc = ' aria-describedby="%s-fout"' % id_
     if soort == "select":
-        opts = '<option value="">%s</option>' % t(TEKSTEN["formulier"]["keuze_leeg"]).replace('<span class="placeholder">', "").replace("</span>", "")
+        opts = '<option value="">%s</option>' % esc(TEKSTEN["formulier"]["keuze_leeg"])
         opts += "".join('<option value="%s">%s</option>' % (esc(v), esc(w)) for v, w in opties)
         ctl = '<select id="%s" name="%s"%s%s%s>%s</select>' % (id_, sleutel, req, desc, extra, opts)
     elif soort == "textarea":
@@ -130,10 +130,10 @@ def velden():
         veld("soort_bedrijf", v["soort_bedrijf"], "select", opties=soorten),
         veld("garage", v["garage"], "select", opties=garages),
         veld("naam", v["naam"], extra=' autocomplete="name"'),
-        veld("functie", v["functie"], extra=' autocomplete="organization-title"'),
+        veld("functie", v["functie"], verplicht=False, extra=' autocomplete="organization-title"'),
         veld("email", v["email"], "email", extra=' autocomplete="email" inputmode="email"'),
         veld("telefoon", v["telefoon"], "tel", extra=' autocomplete="tel" inputmode="tel"'),
-        veld("bezoekers", v["bezoekers"], "number", extra=' min="0" step="1" inputmode="numeric"'),
+        veld("bezoekers", v["bezoekers"], "select", verplicht=False, opties=[(o, o) for o in f["bezoekers_opties"]]),
         veld("opmerking", v["opmerking"], "textarea", verplicht=False),
         ('      <div class="veld akkoord" data-veld="akkoord"><label class="vink"><input id="f-akkoord" name="akkoord" type="checkbox" required aria-required="true" aria-describedby="f-akkoord-fout"><span>%s<a href="%s">%s</a>%s<a href="%s">%s</a></span></label><p class="fout" id="f-akkoord-fout" hidden></p></div>'
          % (esc(f["akkoord_voor"]), esc(f["url_voorwaarden"]), t(f["akkoord_voorwaarden"]), esc(f["akkoord_en"]),
@@ -176,7 +176,7 @@ def bouw():
         pagina = f.read()
     pagina = re.sub(r"\{\{([^}]+)\}\}", vervang, pagina)
     # em en en dashes horen nergens in de uitvoer thuis
-    assert "—" not in pagina and "–" not in pagina, "gedachtestreepje in uitvoer"
+    assert "\u2014" not in pagina and "\u2013" not in pagina, "gedachtestreepje in uitvoer"
     os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
     with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
         f.write(pagina)

@@ -69,8 +69,7 @@
   var REGELS = {
     kvk: function (w) { return /^\d{8}$/.test(w.replace(/\s/g, "")) ? "" : MELDINGEN.kvk; },
     email: function (w) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(w) ? "" : MELDINGEN.email; },
-    telefoon: function (w) { return /^[+\d][\d\s().-]*$/.test(w) && w.replace(/\D/g, "").length >= 10 ? "" : MELDINGEN.telefoon; },
-    bezoekers: function (w) { return /^\d+$/.test(w) ? "" : MELDINGEN.bezoekers; }
+    telefoon: function (w) { return /^[+\d][\d\s().-]*$/.test(w) && w.replace(/\D/g, "").length >= 10 ? "" : MELDINGEN.telefoon; }
   };
 
   function controleer(veld) {
