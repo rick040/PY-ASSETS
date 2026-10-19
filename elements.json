@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 270,
+ "count": 272,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -10357,6 +10357,110 @@
    ],
    "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Copy of the existing subscribers banner in this order: warning triangle (py-atom-icon-warning-triangle), Alleen voor abonnees!, Geen abonnement = Geen toegang., Subscribers only!, No subscription = No access., then the fault number 085 21 30 422 (number only, no pill, no arrow). Sub lines on two lines in Ubuntu Medium for legibility. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
    "svg": "svg/prod/py-prod-zuil-abonnees-wit.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-bord-abonnees-blauw",
+   "name_nl": "Bord Alleen voor abonnees 400 x 1000 voor bordpaal, PY-Blauw met aqua header",
+   "level": "prod",
+   "category": "bord",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 1000.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "subline-nl",
+    "subline-en",
+    "phone-number",
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-icon-warning-triangle",
+    "py-atom-logo-stacked-white"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook): cheaper alternative to the 2000 mm column, a flat panel 400 x 1000 mm (the format of the info pylon panel) for a sign post. Same copy and order as py-prod-zuil-abonnees-*, compacted: P header, warning triangle, NL and EN headline with sub lines, fault number, divider, small logo with location name, thin PY-Aqua edge. Panel only; the post (about 60 to 76 mm round) is not drawn. Proposal.",
+   "svg": "svg/prod/py-prod-bord-abonnees-blauw.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-bord-abonnees-wit",
+   "name_nl": "Bord Alleen voor abonnees 400 x 1000 voor bordpaal, wit met blauwe header",
+   "level": "prod",
+   "category": "bord",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 1000.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "subline-nl",
+    "subline-en",
+    "phone-number",
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-icon-warning-triangle",
+    "py-atom-logo-stacked-color"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook): cheaper alternative to the 2000 mm column, a flat panel 400 x 1000 mm (the format of the info pylon panel) for a sign post. Same copy and order as py-prod-zuil-abonnees-*, compacted: P header, warning triangle, NL and EN headline with sub lines, fault number, divider, small logo with location name, thin PY-Aqua edge. Panel only; the post (about 60 to 76 mm round) is not drawn. Proposal.",
+   "svg": "svg/prod/py-prod-bord-abonnees-wit.svg",
    "origin": "design"
   }
  ],
