@@ -12,7 +12,7 @@ from ppkit.doc import Doc             # noqa: E402
 W, H = 210, 297
 M = 14                  # marge links en rechts
 CW = W - 2 * M          # tekstbreedte
-HEAD = 94               # hoogte navy kop
+HEAD = 90               # hoogte navy kop
 FOOT = 256              # begin navy voet
 
 d = Doc(W, H, "ParkingYou partnerprogramma, one-pager {locatie}", defs=b.verloop_defs("verloop", "diag"))
@@ -48,8 +48,11 @@ y = HEAD + 45
 d.text(M, y + 5, "Wat u krijgt", "bold", 15, b.BLAUW)
 rows = [("Basis", "Link delen als gasten vragen naar parkeren", "4%", False),
         ("Actief", "Parkeerinfo standaard in uw mails, op uw site en bij de balie", "6%", True),
-        ("Top", "Actief plus een vaste afspraak", "9%", False)]
-ry, rh, rg = y + 10, 15.5, 2.2
+        ("Top", "Actief, plus een vaste afspraak", "9%", False)]
+d.text(M + 5, y + 11.2, "Niveau", "medium", 8.5, b.GRIJS)
+d.text(M + 36, y + 11.2, "Wat u doet", "medium", 8.5, b.GRIJS)
+d.text(M + CW - 5, y + 11.2, "Commissie", "medium", 8.5, b.GRIJS, anchor="end")
+ry, rh, rg = y + 14, 15.5, 2.2
 for i, (naam, tekst, pct, rec) in enumerate(rows):
     t = ry + i * (rh + rg)
     if rec:

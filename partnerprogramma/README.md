@@ -40,12 +40,27 @@ De QR-code wijst naar `https://` plus `link`.
 
 ## Wat nog moet worden aangeleverd (placeholders blijven zichtbaar)
 
-* `[bedrag]` en `[uitkomst]` in het rekenvoorbeeld: `gemiddelde_boeking_eur` per locatie in `data/locaties.json`.
+* `[bedrag]` en `[uitkomst]` in het rekenvoorbeeld: `gemiddelde_boeking_eur` per locatie in `data/locaties.json`. In het brondocument staat €15 als voorbeeld; dat is bewust niet overgenomen.
 * `[naam]`, `[functie]`, `[telefoon]`, `[e-mail]` bij Contact: `contact` in `data/partnerprogramma.json`.
 * Echte partners in `data/partners.csv` (nu twee voorbeeldpartners met verzonnen afstanden).
-* Alle teksten van de landingspagina uit `teksten-landingspagina.md` (dat bestand was niet beschikbaar); zie `5-landingspagina/README.md`.
+* Landingspagina: links naar voorwaarden en privacyverklaring en het formulier-endpoint; zie `5-landingspagina/README.md`.
 
 Placeholders in `[haken]` krijgen automatisch een oranje markering in de exports.
+
+## Bron van de teksten
+
+`teksten-landingspagina.md` uit de brief was niet beschikbaar. De teksten komen uit het Claude Doc "Partnerprogramma ParkingYou: teksten en documenten":
+tab Werving (one-pager en landingspagina) en tab Partnerkit (balie- en QR-kaart, social posts en captions). `5-landingspagina/teksten-landingspagina.md` is daar een letterlijke kopie van en vervangt het ontbrekende bestand.
+
+## Waar brief en brondocument verschillen
+
+| Plek | Brief | Brondocument | Gekozen |
+|---|---|---|---|
+| One-pager, stap 2 | "in onze garage, vlak bij u" | "in onze garage, op {afstand} lopen" | brief; een one-pager is per locatie en kent geen afstand per partner |
+| One-pager, niveau Top | "Actief plus een vaste afspraak" | "Actief, plus een vaste afspraak" | brondocument (alleen een komma) |
+| One-pager, tabel | geen kolomkoppen | Niveau, Wat u doet, Commissie | brondocument |
+| Rekenvoorbeeld | zichtbare placeholder | €15, €90, "ruim €1.000" als voorbeeld | placeholder |
+| Rekenhulp, disclaimer | "Dit is een rekenvoorbeeld, geen garantie." | plus "De echte commissie hangt af van hoeveel gasten reserveren." | brondocument |
 
 ## Keuzes buiten de brief
 
@@ -54,7 +69,8 @@ Placeholders in `[haken]` krijgen automatisch een oranje markering in de exports
 * **Tafelstandaard:** gelezen als tentkaart: een vel van 105 x 296 mm, vouw op 148 mm, twee A6-kanten (de bovenste staat op zijn kop zodat beide kanten rechtop staan). Vouwmerken staan in de afloop.
 * **Partnerlogo in de posts en de mailheader:** de badge uit `3-partnerlogo` (donker, liggend). Het eigen logo van de partner is niet geplaatst.
 * **"Licht" en "donker"** gaan over de achtergrond waarop de badge staat, niet over de badge zelf.
-* **Eén woord toegevoegd:** het label "Aanbevolen" bij Actief. Verder staan de teksten letterlijk uit de brief; alleen hoofdletters aan het begin van tabelcellen en regels zijn gezet en de contactgegevens staan op aparte regels.
+* **Eén woord toegevoegd:** het label "Aanbevolen" bij Actief. Verder zijn de teksten letterlijk; alleen hoofdletters aan het begin van tabelcellen en regels zijn gezet en de contactgegevens staan op aparte regels.
 * **Artis (Plantage):** in `locaties.json` staat `locatie` als "Artis (Plantage)", dus de tekst luidt "ParkingYou Artis (Plantage)". Pas daar aan als dit "Artis" moet zijn.
-* **Captions** bij de posts staan niet in de brief en zijn niet geschreven.
+* **Captions** bij de posts komen uit het brondocument (`4-social/captions.json`) en staan per partner als `.txt` naast de posts. De caption van de partnerpost eindigt op "Link in bio"; dat past niet bij LinkedIn.
+* **Rekenhulp:** extra keuze voor de garage, omdat de gemiddelde boeking per locatie verschilt.
 * **Drukcontrole:** exports hebben geen snijmerken; BleedBox en TrimBox zijn in de PDF gezet.

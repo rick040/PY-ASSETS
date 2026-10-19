@@ -3,6 +3,7 @@
 
     python3 -I partnerprogramma/4-social/vul.py [CODE ...]
 """
+import json
 import os
 import sys
 
@@ -28,6 +29,13 @@ def bouw(partner, uit=None):
             p = os.path.join(uit, f"parkingyou-social-{naam}-{k}-{partner['code']}.png")
             render.png(gevuld, p, px)
             out.append(p)
+    # captions: de tekst bij de post, uit captions.json (bron: tab Partnerkit, Social posts)
+    captions = json.load(open(os.path.join(HERE, "captions.json"), encoding="utf-8"))
+    for naam in TEMPLATES:
+        tekst = template.fill_fields(captions[naam], vals).replace("\u00a0", " ")
+        p = os.path.join(uit, f"parkingyou-social-{naam}-caption-{partner['code']}.txt")
+        open(p, "w", encoding="utf-8").write(tekst + "\n")
+        out.append(p)
     return out
 
 
@@ -36,4 +44,4 @@ if __name__ == "__main__":
     for p in data.partners():
         if not codes or p["code"] in codes:
             files = bouw(p)
-            print(p["code"], len(files), "posts")
+            print(p["code"], len(files), "bestanden")
