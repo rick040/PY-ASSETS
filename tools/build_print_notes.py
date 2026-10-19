@@ -8,7 +8,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 def main():
     m = json.load(open(os.path.join(ROOT, "elements.json"), encoding="utf8"))
     els = {e["id"]: e for e in m["elements"]}
-    new = [e for e in m["elements"] if e.get("origin") == "print"]
+    new = [e for e in m["elements"] if e.get("origin") in ("print", "design")]
     apps = json.load(open(os.path.join(ROOT, "applications.json"), encoding="utf8"))["applications"]
     lv = collections.Counter(e["level"] for e in new)
     reb = [e for e in new if e["status"] == "rebuilt"]
@@ -16,11 +16,11 @@ def main():
     reused = {}
     for s in apps:
         for b in s["built_from"]:
-            if b in els and els[b].get("origin") != "print":
+            if b in els and els[b].get("origin") not in ("print", "design"):
                 reused.setdefault(b, set()).add(s["id"])
     for e in new:
         for b in e["built_from"]:
-            if b in els and els[b].get("origin") != "print":
+            if b in els and els[b].get("origin") not in ("print", "design"):
                 reused.setdefault(b, set()).add(e["id"])
     reused_el = {b for b in reused if els[b]["level"] != "tok"}
     reused_tok = {b for b in reused if els[b]["level"] == "tok"}
@@ -44,8 +44,8 @@ def main():
     w("| ID | Name | Type | Trim (mm) | Bleed (mm) | Status | Built from (existing) | Built from (new) |")
     w("|---|---|---|---|---|---|---|---|")
     for s in apps:
-        ex = [b for b in s["built_from"] if b in els and els[b].get("origin") != "print"]
-        nw = [b for b in s["built_from"] if b in els and els[b].get("origin") == "print"]
+        ex = [b for b in s["built_from"] if b in els and els[b].get("origin") not in ("print", "design")]
+        nw = [b for b in s["built_from"] if b in els and els[b].get("origin") in ("print", "design")]
         w(f"| `{s['id']}` | {s['name_nl']} | {s['type']} | {s['template']['trim_mm'][0]:g} x {s['template']['trim_mm'][1]:g} | {s['template']['bleed_mm']:g} | {s['status']} | {len(ex)} | {len(nw)} |")
     w("")
     w("## Reused existing elements\n")
@@ -88,6 +88,7 @@ def main():
         "Light aqua (CMYK 54/0/14/0) has no token; confirm whether it becomes a brand colour.",
         "Terminal sticker sheet: contours of the info bubble and of the automaat storing sticker are proposals (no die line in the source); the printer must confirm all contours and the 3 mm bleed.",
         "Terminal sticker sheet: the pass card (scan pas) shows Philips Stadion branding and the scan pas sticker is location specific; swap the card group per location.",
+        "New terminal sticker designs (kenteken invoeren, gele knop, ParkBee reservering): the yellow of the button, the sizes and Dutch only text are proposals; confirm against the real terminal.",
         "Terminal sticker sheet: three stickers appear twice on the sheet (druk 3 seconden, pijl links, automaatnummer). They are one application each; confirm they are meant to be identical.",
     ):
         w("* " + t)

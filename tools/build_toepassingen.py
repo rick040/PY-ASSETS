@@ -152,20 +152,26 @@ def app_pages(apps, els, root):
     for spec in apps:
         for v in spec["variants"]:
             vid = v["id"]
-            ref = os.path.join(root, "applications", spec["id"], v["reference"])
+            ref = os.path.join(root, "applications", spec["id"], v["reference"]) if v["reference"] else None  # None: new design, no print source
             tpl = os.path.join(root, "applications", spec["id"], v["template"])
-            rw, rh = read_svg(ref)[:2]
+            rw, rh = read_svg(ref)[:2] if ref else (0.0, 0.0)
             tw_, th_ = read_svg(tpl)[:2]
             vname = f" ({v['variant']})" if v["variant"] else ""
             pg = Pg("Toepassing", f"{spec['name_nl']}{vname}", f"{vid}   |   type {spec['type']}   |   trim {spec['template']['trim_mm'][0]:g} x {spec['template']['trim_mm'][1]:g} mm, bleed {spec['template']['bleed_mm']:g} mm   |   status {spec['status']}")
             top, bot = 36.0, 244.0  # artwork band
             ex_x0, ex_x1 = 302.0, PW - MX  # exploded column
             gap = 8.0
-            rs, ts = spill(ref), spill(tpl)  # (left, top, right, bottom) overshoot in mm
+            rs, ts = (spill(ref) if ref else (0.0, 0.0, 0.0, 0.0)), spill(tpl)  # (left, top, right, bottom) overshoot in mm
             rW, rH = rw + rs[0] + rs[2], rh + rs[1] + rs[3]
             tW, tH = tw_ + ts[0] + ts[2], th_ + ts[1] + ts[3]
             wide = max(rW, tW) > 1.25 * max(rH, tH)
-            if wide:
+            if ref is None:
+                aw, ah = ex_x0 - MX - 6, bot - top - 20
+                k = min(fit(tW, tH, aw, ah), 6.0)
+                y2 = top + 4 + ts[1] * k
+                pg.embed(tpl, MX + ts[0] * k, y2, k, f"{vid}-template")
+                pg.label(MX + ts[0] * k + tw_ * k / 2, y2 + th_ * k + ts[3] * k + 1.5, vid, "Template (nieuw ontwerp, tokenkleuren, met bleed)", 150)
+            elif wide:
                 aw, ah = ex_x0 - MX - 6, (bot - top - 16) / 2
                 k = fit(max(rW, tW), max(rH, tH), aw, ah - 8)
                 y1 = top + 4 + rs[1] * k
@@ -202,7 +208,9 @@ def app_pages(apps, els, root):
             # spec block
             src = spec["source"]["files"]
             lines = [("h", "Specificatie")]
-            lines.append(("t", f"Bron: {', '.join(f['file'].split('/')[-1] + ' p' + ','.join(map(str, f['pages'])) for f in src)}  ({src[0]['colour_space']}; bleed box in bron {'ja' if src[0]['bleed_box_set'] else 'nee'}). "
+            bron = (f"Bron: {', '.join(f['file'].split('/')[-1] + ' p' + ','.join(map(str, f['pages'])) for f in src)}  ({src[0]['colour_space']}; bleed box in bron {'ja' if src[0]['bleed_box_set'] else 'nee'}). "
+                    if src else "Bron: nieuw ontwerp, geen printbestand en geen referentie. ")
+            lines.append(("t", bron +
                                f"Template: trim {spec['template']['trim_mm'][0]:g} x {spec['template']['trim_mm'][1]:g} mm, bleed {spec['template']['bleed_mm']:g} mm, totaal {spec['template']['size_with_bleed_mm'][0]:g} x {spec['template']['size_with_bleed_mm'][1]:g} mm."))
             vv = spec["variables"].get(v["variant"] or "default", {})
             if vv:
@@ -260,7 +268,7 @@ def main():
     a = ap.parse_args()
     man = json.load(open(os.path.join(ROOT, "elements.json"), encoding="utf8"))
     els = {e["id"]: e for e in man["elements"]}
-    new_els = [e for e in man["elements"] if e.get("origin") == "print"]
+    new_els = [e for e in man["elements"] if e.get("origin") in ("print", "design")]
     apps = json.load(open(os.path.join(ROOT, "applications.json"), encoding="utf8"))["applications"]
     apages = app_pages(apps, els, ROOT)
     epages = element_pages(new_els, ROOT)

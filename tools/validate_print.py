@@ -19,7 +19,7 @@ ID_RE = re.compile(r"py-(?:tok|atom|comp|prod|app)-[a-z0-9]+(?:-[a-z0-9]+)*")
 APP_RE = re.compile(r"^py-app-[a-z0-9]+(?:-[a-z0-9]+)*$")
 EL_RE = re.compile(r"^py-(?:atom|comp|prod)-[a-z0-9]+(?:-[a-z0-9]+)*$")
 BRAND_HEX = {"#1A3580", "#32B9CD", "#F08300", "#AEAEAE", "#1D1D1B", "#FFFFFF"}
-OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD", "#E6E7E6"}  # light aqua, light grey QR plate (observed tokens)
+OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD", "#E6E7E6", "#FFD500"}  # light aqua, light grey QR plate (observed tokens)
 CUT_PH = {"#EE4D9B", "#00A0E0"}  # cut contour, placeholders, guides
 DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD", "#1C4480", "#1E427F", "#1C427E"}
 DASH = ("—", "–")
@@ -59,7 +59,7 @@ def main():
 
     man = json.load(open(os.path.join(root, "elements.json"), encoding="utf8"))
     els = {e["id"]: e for e in man["elements"]}
-    new = {i: e for i, e in els.items() if e.get("origin") == "print"}
+    new = {i: e for i, e in els.items() if e.get("origin") in ("print", "design")}
     ids_all = [e["id"] for e in man["elements"]]
     if len(ids_all) != len(set(ids_all)):
         errs.append("duplicate IDs in elements.json")
@@ -161,6 +161,10 @@ def main():
             if not APP_RE.match(vid):
                 errs.append(f"bad variant ID {vid}")
             for kind in ("reference", "template"):
+                if v[kind] is None:  # new design without a print source: no reference
+                    if kind == "template" or sp.get("origin") != "design":
+                        errs.append(f"{vid}: missing {kind}")
+                    continue
                 fp = os.path.join(d, v[kind])
                 if not os.path.exists(fp):
                     errs.append(f"{vid}: missing {v[kind]}")

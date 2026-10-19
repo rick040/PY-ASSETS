@@ -35,10 +35,11 @@ OBSERVED = [
     ("py-obs-aqua-licht", "Lichtaqua", (54, 0, 14, 0), "LaadKabel.pdf, StickerDiefstalARtisDruk.pdf, InfoPylonBordGoed.pdf", "icons on navy (plug, padlock), chevron"),
     ("py-obs-blauw-terminal", "Blauw terminalstickers", (99.5, 85, 21.4, 6.8), "TerminalStickers_September2026.pdf", "text, icons, badges, bars (also 99.6/84/21.3/6.6 and 100/86.4/21.4/3.7 on single stickers)"),
     ("py-obs-grijs-qrplaat", "Lichtgrijs QR plaat", (8.4, 5.8, 6.9, 0), "TerminalStickers_September2026.pdf", "QR plates of the phone, reader and subscription card illustrations (at 90 percent opacity)"),
+    ("py-obs-geel-knop", "Geel drukknop terminal", (0, 15, 100, 0), "no file (design)", "yellow push button icon of the gele knop sticker; functional colour, to be matched to the real button"),
     ("py-obs-zwart-rijk", "Rijk zwart", (91.2, 78.7, 62, 97.4), "Maashaven.pdf", "small text"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
-OBS_HEX = {"#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht", "#E6E7E6": "py-obs-grijs-qrplaat"}
+OBS_HEX = {"#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht", "#E6E7E6": "py-obs-grijs-qrplaat", "#FFD500": "py-obs-geel-knop"}
 
 
 def load_specs(only=None):
@@ -142,7 +143,8 @@ def element_row(id_, el, w, h, meta):
     srcinfo = printsrc.SOURCES[meta["src"]]
     return {
         "id": id_, "name_nl": el.name_nl, "level": el.level, "category": el.category,
-        "source_page": el.page, "source_file": srcinfo["file"], "origin": "print", "status": el.status,
+        "source_page": None if meta.get("design") else el.page, "source_file": None if meta.get("design") else srcinfo["file"],
+        "origin": "design" if meta.get("design") else "print", "status": el.status,
         "dimensions_mm": {"width": round(w, 1), "height": round(h, 1),
                           "stated": list(el.dims_mm) if el.dims_mm else None,
                           "basis": "print scale (1:1 from source)" if el.level != "tok" else "n/a"},
@@ -188,10 +190,13 @@ def build_apps(only):
         vbf = {}
         for v in variants:
             sfx = f"-{v}" if v else ""
-            ref = res["reference"][v]
+            ref = (res.get("reference") or {}).get(v)  # None for new designs (no print source)
             tpl = res["template"][v]
             fn_r, fn_t = f"reference{sfx}.svg", f"template{sfx}.svg"
-            open(os.path.join(d, fn_r), "w", encoding="utf8").write(ref)
+            if ref is None:
+                fn_r = None
+            else:
+                open(os.path.join(d, fn_r), "w", encoding="utf8").write(ref)
             vid = id_ + sfx
             tsvg = tpl.svg(group_id=f"{vid}-template") if hasattr(tpl, "svg") else tpl
             open(os.path.join(d, fn_t), "w", encoding="utf8").write(tsvg)
@@ -213,7 +218,7 @@ def build_apps(only):
         srcs = meta["source"]
         first = printsrc.SOURCES[srcs[0][0]] if srcs and srcs[0][0] in printsrc.SOURCES else {}
         spec = {
-            "id": id_, "name_nl": meta["name_nl"], "type": meta["type"], "origin": "print",
+            "id": id_, "name_nl": meta["name_nl"], "type": meta["type"], "origin": "design" if meta.get("design") else "print",
             "variants": [{"id": id_ + (f"-{v}" if v else ""), "variant": v or None,
                           "reference": files["reference"][v or "default"], "template": files["template"][v or "default"],
                           "built_from": vbf.get(v or "default", [])} for v in variants],
@@ -224,7 +229,9 @@ def build_apps(only):
             "template": {"trim_mm": [tw_, th_], "bleed_mm": bl, "size_with_bleed_mm": [tw_ + 2 * bl, th_ + 2 * bl],
                          "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
                          "cut_contour": meta["cut_contour"]},
-            "reference_note": ("Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted."
+            "reference_note": ("New design: no print source and no reference. Look and sizes follow the terminal sticker sheet."
+                               if meta.get("design") else
+                               "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted."
                                if meta.get("region_references") else
                                "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted."),
             "variables": variables,
@@ -256,7 +263,7 @@ def main():
     if not a.no_json and a.spec is None and a.only == ".*":
         mp = os.path.join(ROOT, "elements.json")
         m = json.load(open(mp, encoding="utf8"))
-        keep = [e for e in m["elements"] if e.get("origin") != "print"]
+        keep = [e for e in m["elements"] if e.get("origin") not in ("print", "design")]
         new = [element_row(i, *rows[i][:3], rows[i][3]) for i in rows]
         els = keep + new
         els.sort(key=lambda e: (LEVELS.index(e["level"]), e["id"]))

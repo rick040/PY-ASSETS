@@ -1,4 +1,5 @@
 """Terminal stickers (TerminalStickers_September2026.pdf): one sheet of 21 stickers for the payment terminal (automaat), 15 applications.
+Below the sheet reproductions: three new designs without a print source (kenteken invoeren, gele knop voor parkeerkaart, ParkBee reservering) with four new icons.
 
 New atoms: info bubble, left arrow, arrow down in a circle, headset and phone icons, phone with QR, QR reader plate, subscription card with barcode,
 pass card (third party branding), contactless hand (navy line art). Payment and partner badges reuse the library atoms (py-atom-badge-*, py-atom-payment-*, py-atom-partner-*).
@@ -466,3 +467,160 @@ def _(ctx):
     st.d.guides(st.w, st.h)
     return dict(reference={"": make_ref(ctx, KEY, st)}, template={"": st.d}, omitted=[], copy_corrections=[],
                 notes="Navy bar with the machine number in white Ubuntu Medium 7.06 mm (example BSG-i1). The sheet holds the sticker twice, identical. " + SHEET_NOTE)
+
+
+# ================================================================ new designs (no print source)
+# Three stickers asked for after the sheet: kenteken invoeren, gele knop voor parkeerkaart, ParkBee reservering. Built in the style of the sheet
+# (white sticker, navy Ubuntu text, navy line icons) from library atoms plus four new icons. Marked design: no reference, no source PDF.
+YELLOW = "#FFD500"  # functional colour of the terminal button (observed token py-obs-geel-knop, to be matched to the real button)
+AQUA = "#32B9CD"    # py-tok-color-aqua
+
+
+def _tight(id_, title):
+    from pyassets.compose import Doc
+
+    d = Doc(id_, title, tight=True)
+    d.uses("py-tok-color-blauw", "py-tok-color-wit")
+    return d
+
+
+@element("py-atom-icon-kenteken-invoer", "Kentekenplaat met invoercursor", "atom", "icon", 1, src=KEY, design=True, status="rebuilt",
+         variables=("kenteken voorbeeld",), tags=(),
+         notes="Dutch style licence plate icon (36 x 11.5 mm): white plate with navy outline, navy country strip with NL and a navy example plate text with an input cursor. "
+               "Drawn for the terminal stickers (design, no print source). The example plate text is live Ubuntu Bold and a variable; no EU stars.")
+def _(src):
+    from pyassets.compose import text_width
+
+    d = _tight("py-atom-icon-kenteken-invoer", "Kentekenplaat met invoercursor")
+    d.uses("py-tok-type-ubuntu-bold")
+    d.rect(0, 0, 36, 11.5, fill=WHITE, rx=1.8, stroke=NAVY, sw=0.9, gid="plate")
+    d.path(rrect(0.45, 0.45, 6.4, 11.05, (1.4, 0, 0, 1.4)), (0.45, 0.45, 6.4, 11.05), fill=NAVY, gid="strip")
+    d.text(3.42, 6.75, "NL", size=2.7, fill=WHITE, weight=700, anchor="middle", gid="country")
+    txt = "12-AB-3"
+    d.text(8.6, 8.0, txt, size=6.2, fill=NAVY, weight=700, variable="kenteken-voorbeeld", gid="plate-text")
+    x = 8.6 + text_width(txt, 6.2, 700) + 0.9
+    d.rect(x, 2.4, x + 0.8, 9.1, fill=NAVY, gid="cursor")
+    return d
+
+
+@element("py-atom-icon-toetsenblok", "Toetsenblok", "atom", "icon", 1, src=KEY, design=True, status="rebuilt", variables=("colour", "colour enter"),
+         notes="Keypad icon (13 x 17 mm): navy outline, three by four navy keys, the bottom right key (enter) in aqua. Drawn for the terminal stickers (design, no print source).")
+def _(src):
+    d = _tight("py-atom-icon-toetsenblok", "Toetsenblok")
+    d.rect(0, 0, 13, 17, fill=WHITE, rx=1.8, stroke=NAVY, sw=0.9, gid="body")
+    for r in range(4):
+        for c in range(3):
+            last = r == 3 and c == 2
+            d.rect(1.7 + c * 3.5, 1.95 + r * 3.5, 1.7 + c * 3.5 + 2.6, 1.95 + r * 3.5 + 2.6, fill=AQUA if last else NAVY, rx=0.6,
+                   gid=("key-enter" if last else None))
+    return d
+
+
+@element("py-atom-icon-parkeerkaart", "Parkeerkaart met P", "atom", "icon", 1, src=KEY, design=True, status="rebuilt", variables=("colour",),
+         notes="Parking ticket icon (15 x 22 mm): white card with navy outline, navy header with a white P (live Ubuntu Bold) and a barcode. Drawn for the terminal stickers (design, no print source).")
+def _(src):
+    d = _tight("py-atom-icon-parkeerkaart", "Parkeerkaart met P")
+    d.uses("py-tok-type-ubuntu-bold")
+    d.rect(0, 0, 15, 22, fill=WHITE, rx=1.6, stroke=NAVY, sw=0.9, gid="card")
+    d.path(rrect(0.45, 0.45, 14.55, 7.9, (1.2, 1.2, 0, 0)), (0.45, 0.45, 14.55, 7.9), fill=NAVY, gid="header")
+    d.text(7.5, 6.55, "P", size=6.6, fill=WHITE, weight=700, anchor="middle", gid="p")
+    x = 2.9
+    for w, gap in ((0.5, 0.5), (0.9, 0.5), (0.4, 0.6), (0.7, 0.5), (0.4, 0.5), (1.0, 0.5), (0.5, 0.4), (0.4, 0.5), (0.8, 0.5), (0.5, 0.0)):
+        d.rect(x, 11.2, x + w, 18.2, fill=NAVY)
+        x += w + gap
+    return d
+
+
+@element("py-atom-icon-knop-geel", "Gele drukknop", "atom", "icon", 1, src=KEY, design=True, status="rebuilt", variables=("colour button",),
+         notes="Round push button icon (32 mm across with the burst): navy housing, yellow button, white highlight and three navy burst lines at the top that say press. "
+               "Yellow is a functional colour (observed token py-obs-geel-knop), to be matched to the real button. Drawn for the terminal stickers (design, no print source).")
+def _(src):
+    import math
+
+    d = _tight("py-atom-icon-knop-geel", "Gele drukknop")
+    cx, cy = 16.0, 18.0
+    d.circle(cx, cy, 10.5, fill=NAVY, gid="housing")
+    d.circle(cx, cy, 8.0, fill=YELLOW, gid="button")
+    d.path(f"M{cx - 5.2:.3f} {cy - 1.2:.3f}A5.4 5.4 0 0 1 {cx - 0.8:.3f} {cy - 5.2:.3f}", (cx - 5.6, cy - 5.6, cx, cy), stroke=WHITE, sw=1.0, gid="highlight")
+    with d.group("burst"):
+        for a in (-135, -90, -45):
+            r0, r1 = 12.6, 16.0
+            x0, y0 = cx + r0 * math.cos(math.radians(a)), cy + r0 * math.sin(math.radians(a))
+            x1, y1 = cx + r1 * math.cos(math.radians(a)), cy + r1 * math.sin(math.radians(a))
+            d.line(x0, y0, x1, y1, NAVY, 1.0, cap="round")
+    return d
+
+
+DESIGN_NOTE = ("New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut "
+               "0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal.")
+
+
+def _cut_design():
+    return _cut(4.65, "Proposal: new design without a die line; radius taken from the scan stickers of the sheet (4.65 mm). To be confirmed by the printer.")
+
+
+def centred_runs(st, cx, base, runs, size, fill, variable):
+    from pyassets.compose import text_width
+
+    w = sum(text_width(t, size, wt) for t, wt in runs)
+    st.d.text(cx - w / 2, base, "", size=size, fill=fill, weight=400, variable=variable, runs=runs)
+
+
+@application("py-app-sticker-terminal-kenteken-invoeren", "Terminalsticker voer hier uw kenteken in", "sticker", trim_mm=(120.0, 33.76),
+             source=[], bleed_mm=BLEED, design=True, status="rebuilt", cut_contour=_cut_design())
+def _(ctx):
+    st = Sticker(ctx, "py-app-sticker-terminal-kenteken-invoeren", "Terminalsticker voer hier uw kenteken in", (0, 0, 120.0, 33.76), ("py-tok-type-ubuntu-bold",))
+    st.text(7.0, 14.7, [("Voer hier uw", 400)], 7.62, NAVY, "text-1")
+    st.text(7.0, 23.8, [("kenteken", 700), (" in", 400)], 7.62, NAVY, "text-2")
+    with st.d.group("py-atom-icon-toetsenblok"):
+        st.place("py-atom-icon-toetsenblok", 62.0, 33.76 / 2, anchor="cl")
+    with st.d.group("py-atom-icon-kenteken-invoer"):
+        st.place("py-atom-icon-kenteken-invoer", 80.0, 33.76 / 2, scale=0.9, anchor="cl")
+    st.d.cut_contour(0, 0, st.w, st.h, rx=4.65)
+    st.d.guides(st.w, st.h)
+    return dict(reference=None, template={"": st.d}, omitted=[], copy_corrections=[],
+                notes="'Voer hier uw kenteken in': two lines of navy text ('kenteken' bold), a keypad icon and a licence plate with an input cursor. " + DESIGN_NOTE)
+
+
+@application("py-app-sticker-terminal-gele-knop-parkeerkaart", "Terminalsticker druk op de gele knop voor een parkeerkaart", "sticker", trim_mm=(123.32, 83.67),
+             source=[], bleed_mm=BLEED, design=True, status="rebuilt", cut_contour=_cut_design(), tags=["functional-colour"])
+def _(ctx):
+    st = Sticker(ctx, "py-app-sticker-terminal-gele-knop-parkeerkaart", "Terminalsticker druk op de gele knop voor een parkeerkaart", (0, 0, 123.32, 83.67),
+                 ("py-tok-type-ubuntu-bold",))
+    cx = st.w / 2
+    centred_runs(st, cx, 14.0, [("Druk op de ", 400), ("gele knop", 700)], 9.0, NAVY, "text-1")
+    centred_runs(st, cx, 24.8, [("voor een ", 400), ("parkeerkaart", 700)], 9.0, NAVY, "text-2")
+    y = 54.5
+    with st.d.group("py-atom-icon-knop-geel"):
+        st.place("py-atom-icon-knop-geel", 17.4, y, anchor="cl")
+    with st.d.group("py-atom-arrow-left-solid"):
+        st.place("py-atom-arrow-left-solid", 59.4, y, w=14.0, anchor="cl", flip_x=True)
+    with st.d.group("py-atom-icon-parkeerkaart"):
+        st.place("py-atom-icon-parkeerkaart", 83.4, y, scale=1.5, anchor="cl")
+    st.d.cut_contour(0, 0, st.w, st.h, rx=4.65)
+    st.d.guides(st.w, st.h)
+    return dict(reference=None, template={"": st.d}, omitted=[], copy_corrections=[],
+                notes="'Druk op de gele knop voor een parkeerkaart': two centred lines of navy text ('gele knop' and 'parkeerkaart' bold), then the yellow push button, an arrow and the parking ticket. "
+                      "The yellow of the button is a functional colour (observed token py-obs-geel-knop), to be matched to the real terminal button. " + DESIGN_NOTE)
+
+
+@application("py-app-sticker-terminal-parkbee-reservering", "Terminalsticker reservering pak uw ticket (ParkBee)", "sticker", trim_mm=(120.0, 33.76),
+             source=[], bleed_mm=BLEED, design=True, status="rebuilt", cut_contour=_cut_design(), tags=["third-party"])
+def _(ctx):
+    st = Sticker(ctx, "py-app-sticker-terminal-parkbee-reservering", "Terminalsticker reservering pak uw ticket (ParkBee)", (0, 0, 120.0, 33.76),
+                 ("py-tok-type-ubuntu-bold", "py-atom-badge-square-navy", "py-atom-partner-parkbee"))
+    st.text(7.0, 14.7, [("Reservering,", 700)], 7.62, NAVY, "text-1", weight=700)
+    st.text(7.0, 23.8, [("pak uw ", 400), ("ticket", 700)], 7.62, NAVY, "text-2")
+    yc = st.h / 2
+    with st.d.group("badge-parkbee", data_badge="parkbee"):
+        st.place("py-atom-badge-square-navy", 66.0, yc, w=20.6, anchor="cl")
+        st.place("py-atom-partner-parkbee", 66.0 + 10.3, yc, scale=20.6 / 36.0, anchor="cc")
+    with st.d.group("py-atom-arrow-left-solid"):
+        st.place("py-atom-arrow-left-solid", 90.0, yc, w=6.5, anchor="cl", flip_x=True)
+    with st.d.group("py-atom-icon-parkeerkaart"):
+        st.place("py-atom-icon-parkeerkaart", 99.0, yc, anchor="cl")
+    st.d.cut_contour(0, 0, st.w, st.h, rx=4.65)
+    st.d.guides(st.w, st.h)
+    return dict(reference=None, template={"": st.d}, omitted=[], copy_corrections=[],
+                notes=("'Reservering, pak uw ticket' for ParkBee reservations: two lines of navy text ('Reservering' and 'ticket' bold), the ParkBee badge (third party mark, reference only, "
+                       "source the official file), an arrow and the parking ticket. " + DESIGN_NOTE))

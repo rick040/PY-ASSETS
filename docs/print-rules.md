@@ -20,6 +20,7 @@ Sources: the eleven print files in `source/print/`. Measurements come from the P
 | 10 | `Naamloos-7` (RGB) is rebuilt in the token blue (CMYK); the RGB original is kept as reference. |
 | 11 | `reference.svg` keeps the original copy including typos; `template.svg` has the corrected copy (`copy_corrections` in `spec.json`). |
 | 12 | The terminal sticker sheet (September 2026) is split into 15 applications `py-app-sticker-terminal-*`, one per sticker design. Identical copies on the sheet (druk 3 seconden, pijl links, automaatnummer) are one application. Their `reference.svg` is the one sticker cut out of the sheet with 1.5 mm margin (`source.region_references` in `spec.json`), not the whole page. |
+| 14 | New designs without a print source (`origin: "design"` in the manifests) have no `reference.svg`; the three terminal stickers kenteken invoeren, gele knop parkeerkaart and ParkBee reservering are the first. They follow the look of the sheet and use the functional yellow `py-obs-geel-knop` for the push button. |
 | 13 | The hairline die lines of the sheet (0.25 to 0.74 pt black) become the ThruCut `cut-contour` of each template, 0.2 mm inside the trim, plus 3 mm bleed. Radii are measured on the die lines; where the source has no die line (info bubble, automaat storing) the contour is a proposal. |
 
 ## 1. Colour drift
@@ -123,3 +124,11 @@ One page, 271 x 391 mm, no bleed, no trim marks, 21 white stickers with a hairli
 * **Pattern across stickers.** Cards and badges are scaled copies of one drawing: the phone with QR is 17.1 x 30.4 mm on the subscription sticker and about 0.88 times that on the QR sticker; payment badges are the Maashaven badges at 0.544 (round, 19.6 mm) and 0.572 (square, 20.6 mm).
 * **Third party.** Payment and partner marks, the contactless line art and the pass card (Philips Stadion) are reference only, tagged `third-party`.
 * **Corner radii** (mm): druk 4.78, scan pas and QR 4.65, scan code abonnement and bankpas voorhouden 4.7, bankpas invoeren 3.59, wacht 1.85, betaal and partner rows 6.93, storing balk 7.47 top and 8.58 bottom, storing pill 8.85 (full round), automaat storing 4.63, automaatnummer bar 1.82, round arrow 6.04 (circle).
+
+## 8. New terminal sticker designs (no print source)
+
+* `py-app-sticker-terminal-kenteken-invoeren` (120 x 33.76 mm): "Voer hier uw kenteken in", keypad icon and a licence plate with input cursor.
+* `py-app-sticker-terminal-gele-knop-parkeerkaart` (123.32 x 83.67 mm, the size of the wacht sticker): "Druk op de gele knop voor een parkeerkaart", yellow push button, arrow, parking ticket.
+* `py-app-sticker-terminal-parkbee-reservering` (120 x 33.76 mm): "Reservering, pak uw ticket", ParkBee badge (third party, reference only), arrow, parking ticket.
+* New icons (atoms, origin design): `py-atom-icon-kenteken-invoer`, `py-atom-icon-toetsenblok`, `py-atom-icon-parkeerkaart`, `py-atom-icon-knop-geel`. Navy line style, 0.9 mm outline, same chunky arrow as the sheet (`py-atom-arrow-left-solid`, mirrored).
+* Open: the yellow (`#FFD500`, CMYK 0/15/100/0) is a guess for the real terminal button; the corner radius 4.65 mm and the contour are proposals; Dutch only (an English line could be added as the druk 3 seconden sticker does).

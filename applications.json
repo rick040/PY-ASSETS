@@ -1,6 +1,6 @@
 {
- "source": "ten print sources in source/print/ (PM-137)",
- "count": 24,
+ "source": "eleven print sources in source/print/ (PM-137)",
+ "count": 27,
  "applications": [
   {
    "id": "py-app-brand-background-tagline",
@@ -1263,6 +1263,74 @@
    "notes": "White sticker, navy text centred, two lines: 'Druk 3 seconden' bold and 'Press 3 seconds' italic. The source outlines the text; the template sets it as live Ubuntu (bold 5.96 mm with slight negative tracking, medium italic 5.96 mm) fitted to the outlined glyphs. The sheet holds the sticker twice, identical. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
   },
   {
+   "id": "py-app-sticker-terminal-gele-knop-parkeerkaart",
+   "name_nl": "Terminalsticker druk op de gele knop voor een parkeerkaart",
+   "type": "sticker",
+   "origin": "design",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-gele-knop-parkeerkaart",
+     "variant": null,
+     "reference": null,
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-icon-knop-geel",
+      "py-atom-arrow-left-solid",
+      "py-atom-icon-parkeerkaart"
+     ]
+    }
+   ],
+   "source": {
+    "files": []
+   },
+   "template": {
+    "trim_mm": [
+     123.32,
+     83.67
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     129.32,
+     89.67
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.65,
+     "note": "Proposal: new design without a die line; radius taken from the scan stickers of the sheet (4.65 mm). To be confirmed by the printer."
+    }
+   },
+   "reference_note": "New design: no print source and no reference. Look and sizes follow the terminal sticker sheet.",
+   "variables": {
+    "default": {
+     "text-1": "Druk op de gele knop",
+     "text-2": "voor een parkeerkaart"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-icon-knop-geel",
+    "py-atom-arrow-left-solid",
+    "py-atom-icon-parkeerkaart"
+   ],
+   "status": "rebuilt",
+   "tags": [
+    "functional-colour"
+   ],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "'Druk op de gele knop voor een parkeerkaart': two centred lines of navy text ('gele knop' and 'parkeerkaart' bold), then the yellow push button, an arrow and the parking ticket. The yellow of the button is a functional colour (observed token py-obs-geel-knop), to be matched to the real terminal button. New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut 0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal."
+  },
+  {
    "id": "py-app-sticker-terminal-info",
    "name_nl": "Terminalsticker info",
    "type": "sticker",
@@ -1336,6 +1404,140 @@
    "omitted": [],
    "copy_corrections": [],
    "notes": "Die cut sticker in the shape of the bubble, navy with a white i, no die line in the source. The cut-contour group is the bubble outline traced from the source path. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-kenteken-invoeren",
+   "name_nl": "Terminalsticker voer hier uw kenteken in",
+   "type": "sticker",
+   "origin": "design",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-kenteken-invoeren",
+     "variant": null,
+     "reference": null,
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-icon-toetsenblok",
+      "py-atom-icon-kenteken-invoer"
+     ]
+    }
+   ],
+   "source": {
+    "files": []
+   },
+   "template": {
+    "trim_mm": [
+     120.0,
+     33.76
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     126.0,
+     39.76
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.65,
+     "note": "Proposal: new design without a die line; radius taken from the scan stickers of the sheet (4.65 mm). To be confirmed by the printer."
+    }
+   },
+   "reference_note": "New design: no print source and no reference. Look and sizes follow the terminal sticker sheet.",
+   "variables": {
+    "default": {
+     "text-1": "Voer hier uw",
+     "text-2": "kenteken in"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-icon-toetsenblok",
+    "py-atom-icon-kenteken-invoer"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "'Voer hier uw kenteken in': two lines of navy text ('kenteken' bold), a keypad icon and a licence plate with an input cursor. New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut 0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal."
+  },
+  {
+   "id": "py-app-sticker-terminal-parkbee-reservering",
+   "name_nl": "Terminalsticker reservering pak uw ticket (ParkBee)",
+   "type": "sticker",
+   "origin": "design",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-parkbee-reservering",
+     "variant": null,
+     "reference": null,
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-badge-square-navy",
+      "py-atom-partner-parkbee",
+      "py-atom-arrow-left-solid",
+      "py-atom-icon-parkeerkaart"
+     ]
+    }
+   ],
+   "source": {
+    "files": []
+   },
+   "template": {
+    "trim_mm": [
+     120.0,
+     33.76
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     126.0,
+     39.76
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.65,
+     "note": "Proposal: new design without a die line; radius taken from the scan stickers of the sheet (4.65 mm). To be confirmed by the printer."
+    }
+   },
+   "reference_note": "New design: no print source and no reference. Look and sizes follow the terminal sticker sheet.",
+   "variables": {
+    "default": {
+     "text-1": "Reservering,",
+     "text-2": "pak uw ticket"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-badge-square-navy",
+    "py-atom-partner-parkbee",
+    "py-atom-arrow-left-solid",
+    "py-atom-icon-parkeerkaart"
+   ],
+   "status": "rebuilt",
+   "tags": [
+    "third-party"
+   ],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "'Reservering, pak uw ticket' for ParkBee reservations: two lines of navy text ('Reservering' and 'ticket' bold), the ParkBee badge (third party mark, reference only, source the official file), an arrow and the parking ticket. New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut 0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal."
   },
   {
    "id": "py-app-sticker-terminal-partnermerken",

@@ -37,7 +37,8 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 
 ## Print applications
 
-Cards, forms, stickers (including the 15 terminal stickers of `TerminalStickers_September2026.pdf`, `py-app-sticker-terminal-*`), panels, event signs and brand backgrounds are built by combining existing atoms and components and filling in variables (`applications/<id>/spec.json` lists them).
+Cards, forms, stickers (including the 15 terminal stickers of `TerminalStickers_September2026.pdf` and three new terminal sticker designs, all `py-app-sticker-terminal-*`), panels, event signs and brand backgrounds are built by combining existing atoms and components and filling in variables (`applications/<id>/spec.json` lists them).
+Applications and elements with `origin: "design"` are new designs without a print source: they have a `template.svg` and a `spec.json` but no `reference.svg`.
 Library elements found in print (new atoms, components and the product `py-prod-pyloon-laag-front-qr`) are in `svg/` and in `elements.json` with `origin: "print"`, `source_file` and `source_page`.
 Third-party marks (payment brands, partner badges, GLOW) are reference only (`third-party` tag): source the official files.
 Rules seen in practice are written down in `docs/print-rules.md` and labelled "observed in print". Colours sampled from print that differ from the brand values are in the `observed` section of `tokens.json`; they never overwrite the official tokens.

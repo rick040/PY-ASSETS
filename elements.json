@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 258,
+ "count": 262,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -1704,6 +1704,83 @@
    "svg": "svg/atom/py-atom-icon-info-bubble.svg"
   },
   {
+   "id": "py-atom-icon-kenteken-invoer",
+   "name_nl": "Kentekenplaat met invoercursor",
+   "level": "atom",
+   "category": "icon",
+   "source_page": null,
+   "source_file": null,
+   "origin": "design",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 36.0,
+    "height": 11.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "kenteken-voorbeeld"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold"
+   ],
+   "tags": [],
+   "notes": "Dutch style licence plate icon (36 x 11.5 mm): white plate with navy outline, navy country strip with NL and a navy example plate text with an input cursor. Drawn for the terminal stickers (design, no print source). The example plate text is live Ubuntu Bold and a variable; no EU stars.",
+   "svg": "svg/atom/py-atom-icon-kenteken-invoer.svg"
+  },
+  {
+   "id": "py-atom-icon-knop-geel",
+   "name_nl": "Gele drukknop",
+   "level": "atom",
+   "category": "icon",
+   "source_page": null,
+   "source_file": null,
+   "origin": "design",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 22.6,
+    "height": 27.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-obs-geel-knop",
+     "hex": "#FFD500"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour button"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit"
+   ],
+   "tags": [],
+   "notes": "Round push button icon (32 mm across with the burst): navy housing, yellow button, white highlight and three navy burst lines at the top that say press. Yellow is a functional colour (observed token py-obs-geel-knop), to be matched to the real button. Drawn for the terminal stickers (design, no print source).",
+   "svg": "svg/atom/py-atom-icon-knop-geel.svg"
+  },
+  {
    "id": "py-atom-icon-location-pin",
    "name_nl": "Locatiepin",
    "level": "atom",
@@ -1729,6 +1806,43 @@
    "tags": [],
    "notes": "White location pin in the active Evoluon pill (Tekengebied_4_kopie_4 p1), one path with the round hole. White on transparent: view on a dark background. Printed size 21.3 x 29.8 mm.",
    "svg": "svg/atom/py-atom-icon-location-pin.svg"
+  },
+  {
+   "id": "py-atom-icon-parkeerkaart",
+   "name_nl": "Parkeerkaart met P",
+   "level": "atom",
+   "category": "icon",
+   "source_page": null,
+   "source_file": null,
+   "origin": "design",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 15.0,
+    "height": 22.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold"
+   ],
+   "tags": [],
+   "notes": "Parking ticket icon (15 x 22 mm): white card with navy outline, navy header with a white P (live Ubuntu Bold) and a barcode. Drawn for the terminal stickers (design, no print source).",
+   "svg": "svg/atom/py-atom-icon-parkeerkaart.svg"
   },
   {
    "id": "py-atom-icon-plug-ring",
@@ -1758,6 +1872,47 @@
    "tags": [],
    "notes": "Plug in an open ring, three paths in light aqua (CMYK 54/0/14/0, viewer #68CBDB). Colour kept as sampled: light aqua has no token. Drawn for navy; the sticker uses it at 103.8 x 97.4 mm. Not the green EV sign.",
    "svg": "svg/atom/py-atom-icon-plug-ring.svg"
+  },
+  {
+   "id": "py-atom-icon-toetsenblok",
+   "name_nl": "Toetsenblok",
+   "level": "atom",
+   "category": "icon",
+   "source_page": null,
+   "source_file": null,
+   "origin": "design",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 13.0,
+    "height": 17.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour",
+    "colour enter"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit"
+   ],
+   "tags": [],
+   "notes": "Keypad icon (13 x 17 mm): navy outline, three by four navy keys, the bottom right key (enter) in aqua. Drawn for the terminal stickers (design, no print source).",
+   "svg": "svg/atom/py-atom-icon-toetsenblok.svg"
   },
   {
    "id": "py-atom-illustration-card-barcode",

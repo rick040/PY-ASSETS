@@ -1,0 +1,64 @@
+{
+ "id": "py-app-sticker-terminal-kenteken-invoeren",
+ "name_nl": "Terminalsticker voer hier uw kenteken in",
+ "type": "sticker",
+ "origin": "design",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-kenteken-invoeren",
+   "variant": null,
+   "reference": null,
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-icon-toetsenblok",
+    "py-atom-icon-kenteken-invoer"
+   ]
+  }
+ ],
+ "source": {
+  "files": []
+ },
+ "template": {
+  "trim_mm": [
+   120.0,
+   33.76
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   126.0,
+   39.76
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 4.65,
+   "note": "Proposal: new design without a die line; radius taken from the scan stickers of the sheet (4.65 mm). To be confirmed by the printer."
+  }
+ },
+ "reference_note": "New design: no print source and no reference. Look and sizes follow the terminal sticker sheet.",
+ "variables": {
+  "default": {
+   "text-1": "Voer hier uw",
+   "text-2": "kenteken in"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-icon-toetsenblok",
+  "py-atom-icon-kenteken-invoer"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "'Voer hier uw kenteken in': two lines of navy text ('kenteken' bold), a keypad icon and a licence plate with an input cursor. New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut 0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal."
+}
