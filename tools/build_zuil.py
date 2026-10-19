@@ -132,10 +132,82 @@ def zuil(with_counter=True, digits="071", H=None):
     return d
 
 
+# ---------------------------------------------------------------------------------------------- 2000 mm designs
+H2 = 2000.0
+V2_HEADER, V2_BAND = 580.0, 115.0          # blauw style: aqua header with the verloop band into the column
+V2_PLINTH_TOP = 1935.0
+MESSAGES = {
+    "public": dict(slug="publiek-parkeren", name="Public parking 24/7",
+                   lines=(("PUBLIC", "main"), ("PARKING", "main"), ("24/7", "aqua"))),
+    "abonnee": dict(slug="abonnees", name="Alleen voor abonnementshouders",
+                    lines=(("ALLEEN VOOR", "aqua"), ("ABONNEMENTS-", "main"), ("HOUDERS", "main"))),
+}
+
+
+def zuil2(style, message):
+    """Column at 400 x 2000 mm. style 'blauw' = PY-Blauw column with aqua header, 'wit' = white column with PY-Blauw header (curved edge as on the
+    info pylon). message 'public' = PUBLIC PARKING 24/7, 'abonnee' = ALLEEN VOOR ABONNEMENTSHOUDERS. Positions measured from the approved layout."""
+    wit = style == "wit"
+    msg = MESSAGES[message]
+    pid = f"py-prod-zuil-{msg['slug']}-{style}"
+    d = Doc(pid, f"Informatiezuil {msg['name']}, {'wit' if wit else 'blauw'}", tight=True)
+    main = NAVY if wit else WHITE
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-gradient-verloop", "py-tok-type-ubuntu-bold")
+    if wit:
+        d.defs["py-zuil-edge"] = (
+            '<linearGradient id="py-zuil-edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="830" y2="0">'
+            '<stop offset="0" stop-color="#1A3580"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>')
+    else:
+        d.defs["py-zuil-verloop"] = (
+            '<linearGradient id="py-zuil-verloop" gradientUnits="userSpaceOnUse" x1="0" y1="%g" x2="0" y2="%g">'
+            '<stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/>'
+            '<stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % (V2_HEADER, V2_HEADER - V2_BAND))
+
+    with d.group("body"):
+        d.rect(0, 0, W, V2_PLINTH_TOP, fill=WHITE if wit else NAVY, gid="column")
+    with d.group("header"):
+        if wit:
+            d.path("M0 0H400V519C340 529 220 534 140 533S30 532 0 531Z", (0, 0, 400, 534), fill="url(#py-zuil-edge)", gid="header-edge")
+            d.path("M0 0H400V491C340 501 220 506 140 505S30 502 0 501Z", (0, 0, 400, 506), fill=NAVY, gid="header-navy")
+        else:
+            d.rect(0, 0, W, V2_HEADER, fill=AQUA, gid="header-aqua")
+            d.rect(0, V2_HEADER - V2_BAND, W, V2_HEADER, fill="url(#py-zuil-verloop)", gid="header-verloop")
+        d.place("py-atom-symbol-p-roof", CX, 76, w=276, anchor="tc")
+
+    size = (350.0 if message == "public" else 366.0) / max(text_width(t, 1.0, 700) for t, _ in msg["lines"])
+    if message == "public":
+        base0, pitch = 760.0, (size * 1.2, size * 1.55)
+        ys = [base0, base0 + pitch[0], base0 + pitch[0] + pitch[1]]
+        sizes = [size, size, size * 1.45]
+    else:
+        cap = 0.693 * size
+        pitch = size * 1.36
+        top = 840.0 - (cap + 2 * pitch) / 2
+        ys = [top + cap + i * pitch for i in range(3)]
+        sizes = [size] * 3
+    with d.group("headline", data_variable="headline"):
+        for i, ((t, col), y, sz) in enumerate(zip(msg["lines"], ys, sizes)):
+            d.text(CX - text_width(t, sz, 700) / 2, y, t, size=sz, fill=AQUA if col == "aqua" else main, weight=700, gid=f"headline-{i + 1}")
+    d.variables["headline"] = " ".join(t for t, _ in msg["lines"])
+
+    with d.group("direction"):
+        d.place("py-atom-arrow-up-circle", CX, 1106, w=134, anchor="tc", gid="arrow", recolor={"#FFFFFF": NAVY} if wit else None)
+    d.variables["arrow direction"] = "up"
+    d.rect(0, 1574.2, W, 1578.2, fill=AQUA, gid="divider")
+    with d.group("lockup"):
+        d.place("py-atom-logo-stacked-color" if wit else "py-atom-logo-stacked-white", CX, 1661, w=238, anchor="tc")
+        ls = 208.0 / text_width("Locatienaam", 1.0, 700)
+        d.text(CX - 104.0, 1878, "Locatienaam", size=ls, fill=main, weight=700, gid="location-name", variable="location name")
+    with d.group("plinth"):
+        d.rect(0, V2_PLINTH_TOP, W, H2, fill=AQUA, gid="plinth-plate")
+    return d
+
+
 def main():
     no_json = "--no-json" in sys.argv
     built = {}
     jobs = [("comp", comp_counter()), ("prod", zuil(True)), ("prod", zuil(False))]
+    jobs += [("prod", zuil2(st, m)) for m in ("public", "abonnee") for st in ("blauw", "wit")]
     for lvl, d in jobs:
         p = os.path.join(ROOT, "svg", lvl, d.id + ".svg")
         open(p, "w", encoding="utf8").write(d.svg())
@@ -167,6 +239,19 @@ def main():
             variables=["headline", "location name", "arrow direction"],
             notes="Same design without the counter block, 400 x 1470 mm. NEW DESIGN (not in the handbook), proposal."),
     }
+    for m_ in ("public", "abonnee"):
+        for st in ("blauw", "wit"):
+            msg = MESSAGES[m_]
+            meta[f"py-prod-zuil-{msg['slug']}-{st}"] = dict(
+                name_nl=f"Informatiezuil {msg['name']}, {'wit met blauwe header' if st == 'wit' else 'PY-Blauw met aqua header'}",
+                category="zuil", variables=["headline", "location name", "arrow direction"],
+                notes=("NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. "
+                       + ("White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. "
+                          if st == "wit" else
+                          "PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. ")
+                       + ("Headline PUBLIC PARKING 24/7 (24/7 in PY-Aqua). " if m_ == "public" else
+                          "Headline ALLEEN VOOR ABONNEMENTSHOUDERS on three lines (ALLEEN VOOR in PY-Aqua, split ABONNEMENTS- / HOUDERS), Dutch only. ")
+                       + "Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing."))
     rows = {e["id"]: i for i, e in enumerate(man["elements"])}
     for eid, (lvl, d) in built.items():
         svg = open(os.path.join(ROOT, "svg", lvl, eid + ".svg"), encoding="utf8").read()
@@ -176,7 +261,7 @@ def main():
             if h not in hexes:
                 hexes.append(h)
         cols = [{"token": hex2tok.get(h), "hex": h} for h in hexes]
-        if "url(#py-zuil-verloop)" in svg:
+        if "url(#py-zuil-verloop)" in svg or "url(#py-zuil-edge)" in svg:
             cols.append({"token": "py-tok-gradient-verloop", "hex": None})
         w, h = d.size()
         m = meta[eid]
@@ -187,7 +272,7 @@ def main():
             "built_from": [b for b in d.built_from if b.startswith(("py-atom", "py-comp"))],
             "tags": ["new-design"], "notes": m["notes"], "svg": f"svg/{lvl}/{eid}.svg", "origin": "design",
         }
-        if lvl == "prod" and "zonder" not in eid:
+        if eid == "py-prod-zuil-publiek-parkeren":
             row["built_from"].append("py-comp-led-counter")
         if eid in rows:
             man["elements"][rows[eid]] = row

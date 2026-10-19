@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 266,
+ "count": 270,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -10153,6 +10153,206 @@
    ],
    "notes": "Same design without the counter block, 400 x 1470 mm. NEW DESIGN (not in the handbook), proposal.",
    "svg": "svg/prod/py-prod-zuil-publiek-parkeren-zonder-teller.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-publiek-parkeren-blauw",
+   "name_nl": "Informatiezuil Public parking 24/7, PY-Blauw met aqua header",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 2000.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-arrow-up-circle",
+    "py-atom-logo-stacked-white"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. Headline PUBLIC PARKING 24/7 (24/7 in PY-Aqua). Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "svg": "svg/prod/py-prod-zuil-publiek-parkeren-blauw.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-publiek-parkeren-wit",
+   "name_nl": "Informatiezuil Public parking 24/7, wit met blauwe header",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 2000.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-arrow-up-circle",
+    "py-atom-logo-stacked-color"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Headline PUBLIC PARKING 24/7 (24/7 in PY-Aqua). Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "svg": "svg/prod/py-prod-zuil-publiek-parkeren-wit.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-abonnees-blauw",
+   "name_nl": "Informatiezuil Alleen voor abonnementshouders, PY-Blauw met aqua header",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 2000.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-arrow-up-circle",
+    "py-atom-logo-stacked-white"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. Headline ALLEEN VOOR ABONNEMENTSHOUDERS on three lines (ALLEEN VOOR in PY-Aqua, split ABONNEMENTS- / HOUDERS), Dutch only. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "svg": "svg/prod/py-prod-zuil-abonnees-blauw.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-abonnees-wit",
+   "name_nl": "Informatiezuil Alleen voor abonnementshouders, wit met blauwe header",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 2000.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-arrow-up-circle",
+    "py-atom-logo-stacked-color"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Headline ALLEEN VOOR ABONNEMENTSHOUDERS on three lines (ALLEEN VOOR in PY-Aqua, split ABONNEMENTS- / HOUDERS), Dutch only. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "svg": "svg/prod/py-prod-zuil-abonnees-wit.svg",
    "origin": "design"
   }
  ],
