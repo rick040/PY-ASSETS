@@ -15,11 +15,12 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pyassets.compose import ROOT, Doc, text_width  # noqa: E402
 
-NAVY, AQUA, BLACK, WHITE = "#1A3580", "#32B9CD", "#1D1D1B", "#FFFFFF"
-LED_ON, LED_OFF = AQUA, NAVY  # lit dots PY-Aqua, unlit dots PY-Blauw outline: brand colours only
+NAVY, AQUA, WHITE = "#1A3580", "#32B9CD", "#FFFFFF"
+LED_ON, LED_OFF = WHITE, AQUA  # lit dots white, unlit dots PY-Aqua at 22 percent: brand colours only
 
 W = 400.0            # column width, as the pyloon panel
 HEADER_H = 420.0
+BAND_H = 110.0       # blauw to aqua band at the foot of the header
 PLINTH_H = 60.0
 FOOT_PAD = 40.0
 CX = W / 2
@@ -41,7 +42,7 @@ FONT = {
 
 
 def counter(d, x0, y0, w=340.0, h=160.0, digits="071", gid=None):
-    """Free-spaces counter: black bezel with an aqua hairline (as py-comp-portal-display-slot) and a dot matrix, lit dots in PY-Aqua."""
+    """Free-spaces counter: PY-Blauw bezel with an aqua hairline and a dot matrix, lit dots white, unlit dots PY-Aqua at 22 percent."""
     n = len(digits)
     cols = n * 5 + (n - 1)
     pitch = min((w - 36) / cols, (h - 36) / 7)
@@ -49,14 +50,14 @@ def counter(d, x0, y0, w=340.0, h=160.0, digits="071", gid=None):
     gx = x0 + (w - (cols - 1) * pitch) / 2
     gy = y0 + (h - 6 * pitch) / 2
     with d.group(gid or "counter"):
-        d.rect(x0, y0, x0 + w, y0 + h, fill=BLACK, gid="bezel")
-        d.rect(x0 + 0.157, y0 + 0.157, x0 + w - 0.157, y0 + h - 0.157, fill="none", stroke=AQUA, sw=0.314, gid="bezel-line")
+        d.rect(x0, y0, x0 + w, y0 + h, fill=NAVY, gid="bezel")
+        d.rect(x0 + 0.6, y0 + 0.6, x0 + w - 0.6, y0 + h - 0.6, fill="none", stroke=AQUA, sw=1.2, gid="bezel-line")
         with d.group("dots-off"):
             for i, ch in enumerate(digits):
                 for ry, row in enumerate(FONT[ch]):
                     for cx_, bit in enumerate(row):
                         if bit == "0":
-                            d.circle(gx + (i * 6 + cx_) * pitch, gy + ry * pitch, r, fill="none", stroke=LED_OFF, sw=0.7)
+                            d.circle(gx + (i * 6 + cx_) * pitch, gy + ry * pitch, r, fill=LED_OFF, opacity=0.22)
         with d.group("dots-on", data_variable="free-spaces"):
             for i, ch in enumerate(digits):
                 for ry, row in enumerate(FONT[ch]):
@@ -78,17 +79,17 @@ def zuil(with_counter=True, digits="071", H=None):
     H = H or 2400.0   # first pass with a long column; the second pass trims it to the content
     d = Doc(pid, "Informatiezuil Public parking 24/7" + ("" if with_counter else ", zonder teller"), tight=True)
     d.defs["py-zuil-verloop"] = (
-        '<linearGradient id="py-zuil-verloop" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="%g" y2="0">'
+        '<linearGradient id="py-zuil-verloop" gradientUnits="userSpaceOnUse" x1="0" y1="%g" x2="0" y2="%g">'
         '<stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/>'
-        '<stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % W)
-    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-zwart", "py-tok-color-wit",
+        '<stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % (HEADER_H, HEADER_H - BAND_H))
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit",
            "py-tok-gradient-verloop", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
 
     with d.group("body"):
-        d.rect(0, 0, W, H - PLINTH_H, fill=BLACK, gid="column")
+        d.rect(0, 0, W, H - PLINTH_H, fill=NAVY, gid="column")
     with d.group("header"):
-        d.rect(0, 0, W, HEADER_H, fill=NAVY, gid="header-navy")
-        d.rect(0, HEADER_H - 26, W, HEADER_H, fill="url(#py-zuil-verloop)", gid="header-verloop")
+        d.rect(0, 0, W, HEADER_H, fill=AQUA, gid="header-aqua")
+        d.rect(0, HEADER_H - BAND_H, W, HEADER_H, fill="url(#py-zuil-verloop)", gid="header-verloop")
         d.place("py-atom-symbol-p-roof", CX, 62, w=236, anchor="tc")      # white P with roof, 236 x 303
     y = HEADER_H + 40
 
@@ -125,7 +126,7 @@ def zuil(with_counter=True, digits="071", H=None):
     d.end_y = ay + 130 + FOOT_PAD + PLINTH_H
 
     with d.group("plinth"):
-        d.rect(0, H - PLINTH_H, W, H, fill=NAVY, gid="plinth-plate")
+        d.rect(0, H - PLINTH_H, W, H, fill=AQUA, gid="plinth-plate")
     if H0 is None:
         return zuil(with_counter, digits, H=round(d.end_y))
     return d
@@ -151,16 +152,15 @@ def main():
     meta = {
         "py-comp-led-counter": dict(
             name_nl="LED teller vrije plaatsen", category="display", variables=["free-spaces"],
-            notes="Dot matrix counter (5 x 7 dots per digit, three digits shown: 071) in a black bezel with an aqua hairline, same bezel as "
-                  "py-comp-portal-display-slot. REBUILT: new construction (no source drawing); lit dots PY-Aqua, unlit dots as PY-Blauw outline "
+            notes="Dot matrix counter (5 x 7 dots per digit, three digits shown: 071) in a PY-Blauw bezel with an aqua hairline. REBUILT: new construction (no source drawing); lit dots white, unlit dots PY-Aqua at 22 percent "
                   "(brand colours only; the portal displays in the handbook use LED green and red). Variable free-spaces is the digit string."),
         "py-prod-zuil-publiek-parkeren": dict(
             name_nl="Informatiezuil Public parking 24/7, met teller", category="zuil",
             variables=["free-spaces", "headline", "location name", "arrow direction", "counter labels"],
             notes="NEW DESIGN (not in the handbook), modelled on a street pylon with a P header, a free-spaces counter and the line PUBLIC PARKING 24/7. "
-                  "Front elevation, 400 x 1750 mm (width as the info pylon panel), black column (PY-Zwart), navy header with white P-roof symbol and a "
-                  "blauw to aqua band, counter, headline in Ubuntu Bold (24/7 in PY-Aqua), aqua divider, white stacked logo with location name, "
-                  "direction arrow, PY-Blauw plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. "
+                  "Front elevation, 400 x 1750 mm (width as the info pylon panel), PY-Blauw column, aqua header with white P-roof symbol and a "
+                  "aqua to blauw band, counter, headline in Ubuntu Bold (24/7 in PY-Aqua), aqua divider, white stacked logo with location name, "
+                  "direction arrow, PY-Aqua plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. "
                   "Text is live Ubuntu; the counter digits are dots (variable free-spaces)."),
         "py-prod-zuil-publiek-parkeren-zonder-teller": dict(
             name_nl="Informatiezuil Public parking 24/7, zonder teller", category="zuil",

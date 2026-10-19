@@ -10025,16 +10025,16 @@
    },
    "colors": [
     {
-     "token": "py-tok-color-zwart",
-     "hex": "#1D1D1B"
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
     },
     {
      "token": "py-tok-color-aqua",
      "hex": "#32B9CD"
     },
     {
-     "token": "py-tok-color-blauw",
-     "hex": "#1A3580"
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
     }
    ],
    "variables": [
@@ -10044,7 +10044,7 @@
    "tags": [
     "new-design"
    ],
-   "notes": "Dot matrix counter (5 x 7 dots per digit, three digits shown: 071) in a black bezel with an aqua hairline, same bezel as py-comp-portal-display-slot. REBUILT: new construction (no source drawing); lit dots PY-Aqua, unlit dots as PY-Blauw outline (brand colours only; the portal displays in the handbook use LED green and red). Variable free-spaces is the digit string.",
+   "notes": "Dot matrix counter (5 x 7 dots per digit, three digits shown: 071) in a PY-Blauw bezel with an aqua hairline. REBUILT: new construction (no source drawing); lit dots white, unlit dots PY-Aqua at 22 percent (brand colours only; the portal displays in the handbook use LED green and red). Variable free-spaces is the digit string.",
    "svg": "svg/comp/py-comp-led-counter.svg",
    "origin": "design"
   },
@@ -10075,10 +10075,6 @@
      "hex": "#32B9CD"
     },
     {
-     "token": "py-tok-color-zwart",
-     "hex": "#1D1D1B"
-    },
-    {
      "token": "py-tok-color-wit",
      "hex": "#FFFFFF"
     },
@@ -10103,7 +10099,7 @@
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook), modelled on a street pylon with a P header, a free-spaces counter and the line PUBLIC PARKING 24/7. Front elevation, 400 x 1750 mm (width as the info pylon panel), black column (PY-Zwart), navy header with white P-roof symbol and a blauw to aqua band, counter, headline in Ubuntu Bold (24/7 in PY-Aqua), aqua divider, white stacked logo with location name, direction arrow, PY-Blauw plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. Text is live Ubuntu; the counter digits are dots (variable free-spaces).",
+   "notes": "NEW DESIGN (not in the handbook), modelled on a street pylon with a P header, a free-spaces counter and the line PUBLIC PARKING 24/7. Front elevation, 400 x 1750 mm (width as the info pylon panel), PY-Blauw column, aqua header with white P-roof symbol and a aqua to blauw band, counter, headline in Ubuntu Bold (24/7 in PY-Aqua), aqua divider, white stacked logo with location name, direction arrow, PY-Aqua plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. Text is live Ubuntu; the counter digits are dots (variable free-spaces).",
    "svg": "svg/prod/py-prod-zuil-publiek-parkeren.svg",
    "origin": "design"
   },
@@ -10132,10 +10128,6 @@
     {
      "token": "py-tok-color-aqua",
      "hex": "#32B9CD"
-    },
-    {
-     "token": "py-tok-color-zwart",
-     "hex": "#1D1D1B"
     },
     {
      "token": "py-tok-color-wit",
