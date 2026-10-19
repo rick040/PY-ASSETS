@@ -1,4 +1,4 @@
-"""The ten print source PDFs (source/print/) with their production data, plus the reference reproduction builder.
+"""The eleven print source PDFs (source/print/) with their production data, plus the reference reproduction builder.
 
 Coordinates in the source are PDF points from the top left of the MediaBox (PyMuPDF convention); 1 pt = 25.4/72 mm.
 `trim_off` is where the trim corner sits inside the page (mm); `bleed_set` says whether the PDF defines a BleedBox.
@@ -24,6 +24,7 @@ SOURCES = {
     "glow1": dict(file="Tekengebied_1.pdf", pages=1, page_mm=(297, 420), trim_mm=(297, 420), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
     "glow4": dict(file="Tekengebied_4_kopie_4.pdf", pages=1, page_mm=(297, 420), trim_mm=(297, 420), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
     "tagline": dict(file="Naamloos-7.pdf", pages=1, page_mm=(148, 105), trim_mm=(148, 105), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC, sRGB)"),
+    "terminal": dict(file="TerminalStickers_September2026.pdf", pages=1, page_mm=(271.0, 391.0), trim_mm=(271.0, 391.0), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
     "inleveren": dict(file="Inleveren_Abbonementborg_A5.pdf", pages=1, page_mm=(148, 105), trim_mm=(148, 105), trim_off=(0, 0), bleed_set=False, cs="CMYK"),
 }
 _CACHE: dict = {}
@@ -49,9 +50,10 @@ def box_mm(x0, y0, x1, y1):
     return (mm2pt(x0), mm2pt(y0), mm2pt(x1), mm2pt(y1))
 
 
-def reference_items(key, pno=1, omit=None, outline_fonts=(), extra=(), skip_text=None):
+def reference_items(key, pno=1, omit=None, outline_fonts=(), extra=(), skip_text=None, region=None, under=()):
     """All visible vectors and live text of one page, in paint order, source colours (no normalisation).
-    Paths that lie completely outside the page are dropped. `omit(path)` drops more (hidden underlays, leftovers)."""
+    Paths that lie completely outside the page are dropped. `omit(path)` drops more (hidden underlays, leftovers).
+    `region` = (x0, y0, x1, y1) in page mm: only what lies completely inside it (one sticker of a sheet)."""
     src = source(key)
     W, H = page_pt(key)
 
@@ -61,23 +63,32 @@ def reference_items(key, pno=1, omit=None, outline_fonts=(), extra=(), skip_text
             return True
         return bool(omit and omit(p))
 
-    items = crop(src, pno, (-W, -H, 2 * W, 2 * H), partial=True, skip=skip, outline_fonts=outline_fonts, skip_text=skip_text)
-    items = regroup(src, pno, items) + list(extra)
-    return items
+    if region:
+        items = crop(src, pno, box_mm(*region), partial=False, skip=skip, outline_fonts=outline_fonts, skip_text=skip_text)
+    else:
+        items = crop(src, pno, (-W, -H, 2 * W, 2 * H), partial=True, skip=skip, outline_fonts=outline_fonts, skip_text=skip_text)
+    items = regroup(src, pno, items)
+    items = items[:1] + list(under) + items[1:]  # `under`: shapes missing in the vector export (shadings) go right above the first item, the die line fill
+    return items + list(extra)
 
 
-def reference_svg(app_id, key, pno=1, variant="", omit=None, outline_fonts=(), extra=(), skip_text=None, title=None):
+def reference_svg(app_id, key, pno=1, variant="", omit=None, outline_fonts=(), extra=(), skip_text=None, title=None, region=None, trim_box=None, under=()):
     """Faithful reproduction of one source page. viewBox = the whole page (MediaBox, bleed included), mm.
     A hidden group `trim-guide` carries the trim box. Colours are the source colours (sRGB as a viewer shows the CMYK)."""
     info = SOURCES[key]
-    items = reference_items(key, pno, omit, outline_fonts, extra, skip_text)
+    items = reference_items(key, pno, omit, outline_fonts, extra, skip_text, region, under)
     el = Element(id=app_id, name_nl="", level="app", category="reference", page=pno, items=items)
-    tf = TF(0.0, 0.0, PT_MM, 0.0, 0.0)
+    rx0, ry0 = (region[0], region[1]) if region else (0.0, 0.0)
+    tf = TF(rx0 / PT_MM, ry0 / PT_MM, PT_MM, 0.0, 0.0)
     defs = Defs(prefix=f"{app_id}{('-' + variant) if variant else ''}-ref-")
     body = el.body(tf, defs)
     W, H = info["page_mm"]
     tx, ty = info["trim_off"]
     tw, th = info["trim_mm"]
+    if region:
+        W, H = region[2] - region[0], region[3] - region[1]
+        tb = trim_box or region
+        tx, ty, tw, th = tb[0] - region[0], tb[1] - region[1], tb[2] - tb[0], tb[3] - tb[1]
     d = "<defs>" + "".join(defs.items) + "</defs>" if defs.items else ""
     gid = f"{app_id}-reference" + (f"-{variant}" if variant else "")
     t = title or f"{app_id}{(' ' + variant) if variant else ''}: reference reproduction of {info['file']} page {pno}"

@@ -1,0 +1,74 @@
+{
+ "id": "py-app-sticker-terminal-automaatnummer",
+ "name_nl": "Terminalsticker automaatnummer",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-automaatnummer",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/TerminalStickers_September2026.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     271.0,
+     391.0
+    ],
+    "bleed_box_set": false
+   }
+  ],
+  "region_references": true
+ },
+ "template": {
+  "trim_mm": [
+   58.91,
+   13.05
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   64.91,
+   19.05
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 1.82,
+   "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "automaatnummer": "BSG-i1"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-medium"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Navy bar with the machine number in white Ubuntu Medium 7.06 mm (example BSG-i1). The sheet holds the sticker twice, identical. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+}

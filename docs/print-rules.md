@@ -2,13 +2,13 @@
 
 Everything in this file is **observed in print**. None of it is an official handbook rule. The official brand values stay in `tokens.json`
 (section `colors`, `gradients`, `typography`); sampled print colours that differ are in the separate `observed` section and never replace the official tokens.
-Sources: the ten print files in `source/print/`. Measurements come from the PDF content (PyMuPDF), not from screenshots.
+Sources: the eleven print files in `source/print/`. Measurements come from the PDF content (PyMuPDF), not from screenshots.
 
 ## Decisions taken for the print library
 
 | # | Decision |
 |---|---|
-| 1 | The ten source PDFs are committed in `source/print/` (needed to rebuild; the handbook PDF stays out of the repo). |
+| 1 | The eleven source PDFs are committed in `source/print/` (needed to rebuild; the handbook PDF stays out of the repo). |
 | 2 | Master blue for print templates is the official token PY-Blauw, CMYK 100/83/0/17 (`#1A3580`). The other six print blues are drift and only listed under `observed`. |
 | 3 | The two GLOW files are one application `py-app-event-sign-glow` with two variants (`-route`, `-bestemming`). |
 | 4 | The Hofplein sign is typed `panel`, name `campagne` (not an info pyloon). |
@@ -19,6 +19,8 @@ Sources: the ten print files in `source/print/`. Measurements come from the PDF 
 | 9 | Stickers and the uitrit sign get a `cut-contour` group (spot ThruCut, 1 pt, 0.2 mm inside the trim). The sticker corner radius (4.2 mm) is a proposal. |
 | 10 | `Naamloos-7` (RGB) is rebuilt in the token blue (CMYK); the RGB original is kept as reference. |
 | 11 | `reference.svg` keeps the original copy including typos; `template.svg` has the corrected copy (`copy_corrections` in `spec.json`). |
+| 12 | The terminal sticker sheet (September 2026) is split into 15 applications `py-app-sticker-terminal-*`, one per sticker design. Identical copies on the sheet (druk 3 seconden, pijl links, automaatnummer) are one application. Their `reference.svg` is the one sticker cut out of the sheet with 1.5 mm margin (`source.region_references` in `spec.json`), not the whole page. |
+| 13 | The hairline die lines of the sheet (0.25 to 0.74 pt black) become the ThruCut `cut-contour` of each template, 0.2 mm inside the trim, plus 3 mm bleed. Radii are measured on the die lines; where the source has no die line (info bubble, automaat storing) the contour is a proposal. |
 
 ## 1. Colour drift
 
@@ -107,3 +109,17 @@ Venue and destination names (Evoluon, Philips stadion, TD-gebouw, DLL, Parking H
 14. **Header curve.** The pyloon header ends in a convex curve with a thin blue to aqua gradient edge.
 15. **Headline on the campaign panel.** Font size about 106 mm (cap height of the M 73.6 mm; the 78.1 mm first measured is the i with its dot), line pitch 90.4 mm, left margin 8.2 percent of the width, keywords aqua bold. "per dag" is upright Ubuntu Regular, not italic.
 16. **Cut contour.** Uitrit contour 0.2 mm inside the trim, 1 pt, spot ThruCut. Used as the model for the sticker contours (corner radius proposed, not observed).
+
+## 7. Terminal sticker sheet (TerminalStickers_September2026.pdf)
+
+One page, 271 x 391 mm, no bleed, no trim marks, 21 white stickers with a hairline die line. Vector only (no raster), Ubuntu embedded.
+
+* **Blue drift.** The sheet uses CMYK 99.5/85/21.4/6.8 for almost everything (also 99.6/84/21.3/6.6 and 100/86.4/21.4/3.7 on single stickers): viewer sRGB `#1C4480`, `#1E427F`, `#1C427E`, `#204382`. Not the token CMYK 100/83/0/17. Logged as `py-obs-blauw-terminal` under `observed`; templates and library elements use the token blue.
+* **Black text** on the automaat stickers is pure K black (`#000000`); templates use PY-Zwart `#1D1D1B`. The QR and barcode illustrations use rich blacks (`#111617` to `#171B1D`), normalised to PY-Zwart in the library atoms.
+* **Light grey QR plate** (CMYK 8.4/5.8/6.9/0, `#E6E7E6`, drawn at 90 percent) is logged as `py-obs-grijs-qrplaat`.
+* **Outlined text.** "Druk 3 seconden / Press 3 seconds" and the header of the subscription pass are outlines in the source. The template sets the sticker text as live Ubuntu fitted to the glyphs (bold 5.96 mm with -0.085 mm tracking, medium italic 5.96 mm).
+* **Hidden leftover.** A red bar (`#EB1E26`, 8.6 x 3.1 mm) lies under the navy header of the subscription pass illustration; it is left out of the atom.
+* **Gradient.** The pass card background is a PDF shading, which the vector reader does not export. It is rebuilt as a three stop vector gradient sampled from the render; the star and hexagon pattern is a source path (10 percent white) clipped by the card in the source and cut to the card outline with a boolean intersection.
+* **Pattern across stickers.** Cards and badges are scaled copies of one drawing: the phone with QR is 17.1 x 30.4 mm on the subscription sticker and about 0.88 times that on the QR sticker; payment badges are the Maashaven badges at 0.544 (round, 19.6 mm) and 0.572 (square, 20.6 mm).
+* **Third party.** Payment and partner marks, the contactless line art and the pass card (Philips Stadion) are reference only, tagged `third-party`.
+* **Corner radii** (mm): druk 4.78, scan pas and QR 4.65, scan code abonnement and bankpas voorhouden 4.7, bankpas invoeren 3.59, wacht 1.85, betaal and partner rows 6.93, storing balk 7.47 top and 8.58 bottom, storing pill 8.85 (full round), automaat storing 4.63, automaatnummer bar 1.82, round arrow 6.04 (circle).

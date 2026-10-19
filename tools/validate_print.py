@@ -19,9 +19,9 @@ ID_RE = re.compile(r"py-(?:tok|atom|comp|prod|app)-[a-z0-9]+(?:-[a-z0-9]+)*")
 APP_RE = re.compile(r"^py-app-[a-z0-9]+(?:-[a-z0-9]+)*$")
 EL_RE = re.compile(r"^py-(?:atom|comp|prod)-[a-z0-9]+(?:-[a-z0-9]+)*$")
 BRAND_HEX = {"#1A3580", "#32B9CD", "#F08300", "#AEAEAE", "#1D1D1B", "#FFFFFF"}
-OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD"}  # light aqua (observed token)
+OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD", "#E6E7E6"}  # light aqua, light grey QR plate (observed tokens)
 CUT_PH = {"#EE4D9B", "#00A0E0"}  # cut contour, placeholders, guides
-DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD"}
+DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD", "#1C4480", "#1E427F", "#1C427E"}
 DASH = ("—", "–")
 BASELINE_COMMIT = "4c04c1f"  # PM-134 result: handbook elements and official tokens must not change
 
@@ -203,7 +203,7 @@ def main():
                             errs.append(f"{vid}: variable {name} not marked in template")
                     if not vk:
                         errs.append(f"{vid}: template has no variables")
-                    ph = len(re.findall(r'<text[^>]*data-variable', s))
+                    ph = len(re.findall(r'<(?:text|g|rect|path|circle)[^>]*data-variable', s))
                     if ph == 0 and "data-placeholder" not in s:
                         errs.append(f"{vid}: no live text variable or placeholder in template")
                 else:
@@ -211,7 +211,7 @@ def main():
                     src0 = sp["source"]["files"][0]
                     # reference page size equals the source page size
                     pdfp = os.path.join(root, src0["file"])
-                    if os.path.exists(pdfp):
+                    if os.path.exists(pdfp) and not sp["source"].get("region_references"):
                         pg = pymupdf.open(pdfp)[0]
                         if abs(w - pg.rect.width * 25.4 / 72) > 0.1 or abs(h - pg.rect.height * 25.4 / 72) > 0.1:
                             errs.append(f"{vid}: reference size {w:.1f} x {h:.1f} differs from source page {pg.rect.width * 25.4 / 72:.1f} x {pg.rect.height * 25.4 / 72:.1f}")

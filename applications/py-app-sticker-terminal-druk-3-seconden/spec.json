@@ -1,0 +1,74 @@
+{
+ "id": "py-app-sticker-terminal-druk-3-seconden",
+ "name_nl": "Terminalsticker druk 3 seconden",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-druk-3-seconden",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/TerminalStickers_September2026.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     271.0,
+     391.0
+    ],
+    "bleed_box_set": false
+   }
+  ],
+  "region_references": true
+ },
+ "template": {
+  "trim_mm": [
+   56.44,
+   21.31
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   62.44,
+   27.31
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 4.78,
+   "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "text-nl": "Druk 3 seconden",
+   "text-en": "Press 3 seconds"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "White sticker, navy text centred, two lines: 'Druk 3 seconden' bold and 'Press 3 seconds' italic. The source outlines the text; the template sets it as live Ubuntu (bold 5.96 mm with slight negative tracking, medium italic 5.96 mm) fitted to the outlined glyphs. The sheet holds the sticker twice, identical. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+}

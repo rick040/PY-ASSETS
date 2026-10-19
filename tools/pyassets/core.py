@@ -1060,9 +1060,12 @@ def cutout(items, hole="#FFFFFF"):
 # reference reproductions keep the source colours.
 PRINT_NORMALISE = {
     "#0B3D8A": "#1A3580", "#1F4383": "#1A3580", "#1C4695": "#1A3580", "#204382": "#1A3580",
-    "#174797": "#1A3580", "#27397E": "#1A3580",
+    "#174797": "#1A3580", "#27397E": "#1A3580", "#1C4480": "#1A3580", "#1E427F": "#1A3580", "#1C427E": "#1A3580",
     "#24BFCD": "#32B9CD", "#24BDCD": "#32B9CD", "#23BDCD": "#32B9CD", "#31BBCD": "#32B9CD",
     "#000000": "#1D1D1B",
+    # TerminalStickers_September2026.pdf: rich blacks of the QR and barcode modules, near whites of the QR plates
+    "#111617": "#1D1D1B", "#131719": "#1D1D1B", "#141819": "#1D1D1B", "#15191B": "#1D1D1B", "#171B1D": "#1D1D1B",
+    "#FDFEFE": "#FFFFFF", "#FAFAFA": "#FFFFFF",
 }
 
 

@@ -136,7 +136,7 @@ class Pg:
         if self.sub:
             h.append(text(MX, 30, self.sub, 3.2, LAB))
         h.append(text(PW - MX, 14, "parkingyou toepassingen-overzicht", 3.2, LAB, anchor="end"))
-        h.append(text(MX, PH - 8, "Bron: tien printbestanden (source/print). Referentie = getrouwe vectorweergave; template = officiele tokenkleuren, 3 mm bleed, variabelen als live tekst. Labels staan in aparte groepen.", FS7, LAB))
+        h.append(text(MX, PH - 8, "Bron: elf printbestanden (source/print). Referentie = getrouwe vectorweergave; template = officiele tokenkleuren, 3 mm bleed, variabelen als live tekst. Labels staan in aparte groepen.", FS7, LAB))
         h.append(text(PW - MX, PH - 8, str(num), 4, BRAND["blauw"], weight=700, anchor="end"))
         d = "<defs>" + "".join(self.defs.values()) + "</defs>" if self.defs else ""
         return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{fmt(PW)}mm" height="{fmt(PH)}mm" viewBox="0 0 {fmt(PW)} {fmt(PH)}">'

@@ -1,0 +1,99 @@
+{
+ "id": "py-app-sticker-terminal-automaat-storing",
+ "name_nl": "Terminalsticker automaat storing met automaatnummer",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-automaat-storing-leeg",
+   "variant": "leeg",
+   "reference": "reference-leeg.svg",
+   "template": "template-leeg.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-logo-horizontal-reverse"
+   ]
+  },
+  {
+   "id": "py-app-sticker-terminal-automaat-storing-bsg-i1",
+   "variant": "bsg-i1",
+   "reference": "reference-bsg-i1.svg",
+   "template": "template-bsg-i1.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-logo-horizontal-reverse"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/TerminalStickers_September2026.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     271.0,
+     391.0
+    ],
+    "bleed_box_set": false
+   }
+  ],
+  "region_references": true
+ },
+ "template": {
+  "trim_mm": [
+   81.1,
+   86.1
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   87.1,
+   92.1
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 4.63,
+   "note": "Proposal: the source has no die line. The sticker is drawn with all four corners rounded at the header radius (4.63 mm). To be confirmed by the printer."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "leeg": {
+   "header-colour": "#1A3580",
+   "text-storing": "Storing?",
+   "phone-number": "085 - 401 16 47",
+   "text-automaatnummer": "Automaatnummer",
+   "placeholder-text": "plaats sticker hier"
+  },
+  "bsg-i1": {
+   "header-colour": "#1A3580",
+   "text-storing": "Storing?",
+   "phone-number": "085 - 401 16 47",
+   "text-automaatnummer": "Automaatnummer",
+   "automaatnummer": "BSG-i1"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-medium",
+  "py-atom-logo-horizontal-reverse"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Terminal fault sticker: navy header with the reverse logo, 'Storing?' and the phone number in black (Ubuntu), then 'Automaatnummer' with either a dashed 'plaats sticker hier' field (variant leeg) or a navy bar with the machine number (variant bsg-i1). The text colour in the source is pure black, the template uses PY-Zwart. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+}

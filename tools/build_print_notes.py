@@ -86,6 +86,9 @@ def main():
         "Six print blues deviate from PY-Blauw (see `tokens.json` section `observed`); the printer files should be regenerated from the templates in the token blue.",
         "Third-party marks (payment brands, partner badges, GLOW) are reference only: source the official files.",
         "Light aqua (CMYK 54/0/14/0) has no token; confirm whether it becomes a brand colour.",
+        "Terminal sticker sheet: contours of the info bubble and of the automaat storing sticker are proposals (no die line in the source); the printer must confirm all contours and the 3 mm bleed.",
+        "Terminal sticker sheet: the pass card (scan pas) shows Philips Stadion branding and the scan pas sticker is location specific; swap the card group per location.",
+        "Terminal sticker sheet: three stickers appear twice on the sheet (druk 3 seconden, pijl links, automaatnummer). They are one application each; confirm they are meant to be identical.",
     ):
         w("* " + t)
     open(os.path.join(ROOT, "docs", "print-build-notes.md"), "w", encoding="utf8").write("\n".join(o) + "\n")

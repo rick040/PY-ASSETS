@@ -12,12 +12,12 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 | `svg/{tok,atom,comp,prod}/<id>.svg` | One SVG per element. File name equals the element ID. The viewBox is tight to the artwork, units are millimetres. |
 | `elements.json` | Manifest: id, name_nl, level, category, source_page, status (extracted or rebuilt), dimensions_mm, colors, variables, built_from, tags, notes. |
 | `tokens.json` | Colours (HEX, RGB, CMYK, RAL), gradients, typography, and the colour deviations that were normalised. |
-| `applications/<id>/` | Print applications (level `app`, PM-137): `reference.svg` (faithful vector copy of the print file, source colours, original copy), `template.svg` (official token colours, trim plus 3 mm bleed, variables as live Ubuntu text or placeholder groups, `cut-contour` group for stickers and signs) and `spec.json` (type, trim and bleed in mm, colour space, variables with example values, `built_from`, source file, status). Applications with variants have `reference-<variant>.svg` and `template-<variant>.svg`. |
+| `applications/<id>/` | Print applications (level `app`, PM-137): `reference.svg` (faithful vector copy of the print file, or of one sticker cut out of a sheet, source colours, original copy), `template.svg` (official token colours, trim plus 3 mm bleed, variables as live Ubuntu text or placeholder groups, `cut-contour` group for stickers and signs) and `spec.json` (type, trim and bleed in mm, colour space, variables with example values, `built_from`, source file, status). Applications with variants have `reference-<variant>.svg` and `template-<variant>.svg`. |
 | `applications.json` | Manifest of the applications: one row per application with its variants, source files, template size, variables, `built_from`, status and copy corrections. |
 | `overview/parkingyou-toepassingen-overzicht.pdf` | A3 landscape vector overview of the applications: original, template and exploded view with the IDs it is built from, followed by the new atoms, components and products. Same group and label rules as the element overview. |
 | `docs/print-rules.md` | Decisions, colour drift, layout and copy drift, production findings and the rules observed in print (observed in print, not official handbook rules). |
 | `docs/print-phase1-inventory.md` | The PM-137 inventory the print build is based on. |
-| `source/print/` | The ten print source PDFs. |
+| `source/print/` | The eleven print source PDFs. `TerminalStickers_September2026.pdf` is one sheet with 21 terminal stickers (15 applications). |
 | `fonts/` | Ubuntu (8 styles) under the Ubuntu Font Licence 1.0. Install them to see live text correctly. |
 | `tools/` | Extraction and build scripts (see `tools/README.md`). |
 | `docs/phase1-inventory.md` | The inventory the build is based on: element tables, inconsistencies found in the handbook, suggested additions. |
@@ -37,7 +37,7 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 
 ## Print applications
 
-Cards, forms, stickers, panels, event signs and brand backgrounds are built by combining existing atoms and components and filling in variables (`applications/<id>/spec.json` lists them).
+Cards, forms, stickers (including the 15 terminal stickers of `TerminalStickers_September2026.pdf`, `py-app-sticker-terminal-*`), panels, event signs and brand backgrounds are built by combining existing atoms and components and filling in variables (`applications/<id>/spec.json` lists them).
 Library elements found in print (new atoms, components and the product `py-prod-pyloon-laag-front-qr`) are in `svg/` and in `elements.json` with `origin: "print"`, `source_file` and `source_page`.
 Third-party marks (payment brands, partner badges, GLOW) are reference only (`third-party` tag): source the official files.
 Rules seen in practice are written down in `docs/print-rules.md` and labelled "observed in print". Colours sampled from print that differ from the brand values are in the `observed` section of `tokens.json`; they never overwrite the official tokens.

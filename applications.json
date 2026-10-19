@@ -1,6 +1,6 @@
 {
  "source": "ten print sources in source/print/ (PM-137)",
- "count": 9,
+ "count": 24,
  "applications": [
   {
    "id": "py-app-brand-background-tagline",
@@ -779,6 +779,1202 @@
    ],
    "copy_corrections": [],
    "notes": "Layout measured on LaadKabel.pdf: navy background into the 3 mm bleed, plug icon (light aqua, kept as sampled #68CBDB, no token), NL/EN text Ubuntu 21.47 mm white leading 1.2 centred, white divider 0.706 mm x 170.6 mm, library logo py-atom-logo-horizontal-white scaled by height (beeldmerk 11.1 mm, logo about 40 mm wide) centred at the bottom. The source blue is CMYK 100/85.9/6.6/0 (drift); the template uses the token blue. Variables: NL text lines and EN text lines as live text (the bold phrases are runs). The cut contour is a proposal: no contour in the source, radius 4.2 mm taken from the diefstal footer."
+  },
+  {
+   "id": "py-app-sticker-terminal-automaat-storing",
+   "name_nl": "Terminalsticker automaat storing met automaatnummer",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-automaat-storing-leeg",
+     "variant": "leeg",
+     "reference": "reference-leeg.svg",
+     "template": "template-leeg.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-medium",
+      "py-atom-logo-horizontal-reverse"
+     ]
+    },
+    {
+     "id": "py-app-sticker-terminal-automaat-storing-bsg-i1",
+     "variant": "bsg-i1",
+     "reference": "reference-bsg-i1.svg",
+     "template": "template-bsg-i1.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-medium",
+      "py-atom-logo-horizontal-reverse"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     81.1,
+     86.1
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     87.1,
+     92.1
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.63,
+     "note": "Proposal: the source has no die line. The sticker is drawn with all four corners rounded at the header radius (4.63 mm). To be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "leeg": {
+     "header-colour": "#1A3580",
+     "text-storing": "Storing?",
+     "phone-number": "085 - 401 16 47",
+     "text-automaatnummer": "Automaatnummer",
+     "placeholder-text": "plaats sticker hier"
+    },
+    "bsg-i1": {
+     "header-colour": "#1A3580",
+     "text-storing": "Storing?",
+     "phone-number": "085 - 401 16 47",
+     "text-automaatnummer": "Automaatnummer",
+     "automaatnummer": "BSG-i1"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-logo-horizontal-reverse"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Terminal fault sticker: navy header with the reverse logo, 'Storing?' and the phone number in black (Ubuntu), then 'Automaatnummer' with either a dashed 'plaats sticker hier' field (variant leeg) or a navy bar with the machine number (variant bsg-i1). The text colour in the source is pure black, the template uses PY-Zwart. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-automaatnummer",
+   "name_nl": "Terminalsticker automaatnummer",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-automaatnummer",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-medium"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     58.91,
+     13.05
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     64.91,
+     19.05
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 1.82,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "automaatnummer": "BSG-i1"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-medium"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Navy bar with the machine number in white Ubuntu Medium 7.06 mm (example BSG-i1). The sheet holds the sticker twice, identical. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-bankpas-invoeren",
+   "name_nl": "Terminalsticker bankpas invoeren",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-bankpas-invoeren",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-icon-arrow-down-circle"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     69.6,
+     25.74
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     75.6,
+     31.74
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 3.59,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "text": "Bankpas invoeren"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-icon-arrow-down-circle"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "White sticker, navy text ('Bankpas' bold) and a navy disc with a white arrow down. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-bankpas-voorhouden",
+   "name_nl": "Terminalsticker bankpas voorhouden",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-bankpas-voorhouden",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-icon-arrow-down-circle"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     85.0,
+     43.0
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     91.0,
+     49.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.7,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "background-colour": "#1A3580",
+     "text-1": "Bankpas minimaal",
+     "text-2": "3 seconden voorhouden"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-icon-arrow-down-circle"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Navy sticker, white text centred ('3 seconden' bold), arrow in a white disc. The arrow icon is the library atom with the colours swapped. Die line 0.5 pt. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-betaalmerken",
+   "name_nl": "Terminalsticker betaalmerken",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-betaalmerken",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-atom-badge-round-navy",
+      "py-atom-payment-maestro-badge",
+      "py-atom-payment-mastercard-badge",
+      "py-atom-payment-visa",
+      "py-atom-payment-vpay"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     104.97,
+     30.61
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     110.97,
+     36.61
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 6.93,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "badges": "maestro-badge, mastercard-badge, visa, vpay"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-atom-badge-round-navy",
+    "py-atom-payment-maestro-badge",
+    "py-atom-payment-mastercard-badge",
+    "py-atom-payment-visa",
+    "py-atom-payment-vpay"
+   ],
+   "status": "rebuilt",
+   "tags": [
+    "third-party"
+   ],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Four round navy badges (19.6 mm) with Maestro, Mastercard, VISA and V PAY, composed from py-atom-badge-round-navy and the third party mark atoms (reference only, source the official files). Each badge is a group badge-<name>: remove a group to change the accepted cards. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-druk-3-seconden",
+   "name_nl": "Terminalsticker druk 3 seconden",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-druk-3-seconden",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     56.44,
+     21.31
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     62.44,
+     27.31
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.78,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "text-nl": "Druk 3 seconden",
+     "text-en": "Press 3 seconds"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "White sticker, navy text centred, two lines: 'Druk 3 seconden' bold and 'Press 3 seconds' italic. The source outlines the text; the template sets it as live Ubuntu (bold 5.96 mm with slight negative tracking, medium italic 5.96 mm) fitted to the outlined glyphs. The sheet holds the sticker twice, identical. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-info",
+   "name_nl": "Terminalsticker info",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-info",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-icon-info-bubble"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     26.4,
+     32.0
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     32.4,
+     38.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 0,
+     "note": "Proposal: the die contour follows the bubble outline exactly (free shape, no inset); the source has no die line for this sticker. To be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "colour": "#1A3580"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-icon-info-bubble"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Die cut sticker in the shape of the bubble, navy with a white i, no die line in the source. The cut-contour group is the bubble outline traced from the source path. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-partnermerken",
+   "name_nl": "Terminalsticker partnermerken",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-partnermerken",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-atom-badge-square-navy",
+      "py-atom-partner-easypark",
+      "py-atom-partner-parkbee",
+      "py-atom-partner-myway",
+      "py-atom-partner-mobian"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     104.97,
+     30.61
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     110.97,
+     36.61
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 6.93,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "badges": "easypark, parkbee, myway, mobian"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-atom-badge-square-navy",
+    "py-atom-partner-easypark",
+    "py-atom-partner-parkbee",
+    "py-atom-partner-myway",
+    "py-atom-partner-mobian"
+   ],
+   "status": "rebuilt",
+   "tags": [
+    "third-party"
+   ],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Four square navy badges (20.6 mm, radius 22 percent) with EasyPark, ParkBee, MyWay and Mobian, composed from py-atom-badge-square-navy and the third party partner atoms (reference only, source the official files). Order on the sheet: EasyPark, ParkBee, MyWay, Mobian. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-pijl-links",
+   "name_nl": "Terminalsticker pijl links",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-pijl-links",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-atom-arrow-left-solid"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     12.09,
+     12.09
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     18.09,
+     18.09
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 6.045,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "arrow-direction": "links"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-atom-arrow-left-solid"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Round sticker 12.1 mm, navy arrow 6.5 mm, no text. The sheet holds the sticker twice, identical. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-scan-code-abonnement",
+   "name_nl": "Terminalsticker scan hier je code (abonnement of telefoon)",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-scan-code-abonnement",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-illustration-card-barcode",
+      "py-atom-illustration-phone-qr"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     130.67,
+     38.11
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     136.67,
+     44.11
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.7,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "text": "Scan hier je code",
+     "text-of": "of"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-illustration-card-barcode",
+    "py-atom-illustration-phone-qr"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Text 'Scan hier je code' (Ubuntu 8.6 mm, code bold), 'of' (5.16 mm), subscription pass with barcode and phone with QR. Die line 0.5 pt. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-scan-code-qr",
+   "name_nl": "Terminalsticker scan hier je code (telefoon of lezer)",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-scan-code-qr",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-illustration-phone-qr",
+      "py-atom-illustration-reader-qr"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     109.0,
+     33.76
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     115.0,
+     39.76
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.65,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "text": "Scan hier je code",
+     "text-of": "of"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-illustration-phone-qr",
+    "py-atom-illustration-reader-qr"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Text 'Scan hier je code' (code bold), 'of', then a phone with QR (the library phone at 0.88) and a QR reader plate. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-scan-pas",
+   "name_nl": "Terminalsticker scan hier je pas",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-scan-pas",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-illustration-card-pas"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     109.0,
+     33.76
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     115.0,
+     39.76
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.65,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "text": "Scan hier je pas",
+     "card-image": "py-atom-illustration-card-pas"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-illustration-card-pas"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Text 'Scan hier je pas' (Ubuntu 7.62 mm, 'pas' bold) left, pass card right. The card is a third party branded illustration (Philips Stadion), swap the card group for the pass of the location. The card background is a sampled vector gradient (the source shading is not exported by the vector reader, see py-atom-illustration-card-pas), in the reference as well as in the template. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-storing-balk",
+   "name_nl": "Terminalsticker storing met telefoonnummer (balk)",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-storing-balk",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
+      "py-atom-icon-headset-agent"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     91.22,
+     30.7
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     97.22,
+     36.7
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 8.0,
+     "note": "Proposal: the source has only a 0.65 to 0.74 pt hairline; radii measured (top 7.47 mm, bottom 8.58 mm), a single 8 mm radius is used for the contour. To be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "header-colour": "#1A3580",
+     "header-text": "Storing?",
+     "phone-number": "085 401 16 47"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-icon-headset-agent"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Navy header with 'Storing?' (white, Ubuntu Medium 7.06 mm) above a white body with the service agent icon and the phone number (navy, Ubuntu Bold 9.56 mm). Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-storing-nummer",
+   "name_nl": "Terminalsticker storing telefoonnummer (pil)",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-storing-nummer-headset",
+     "variant": "headset",
+     "reference": "reference-headset.svg",
+     "template": "template-headset.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-badge-icon-headset-navy"
+     ]
+    },
+    {
+     "id": "py-app-sticker-terminal-storing-nummer-telefoon",
+     "variant": "telefoon",
+     "reference": "reference-telefoon.svg",
+     "template": "template-telefoon.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-badge-icon-phone-navy"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     91.22,
+     17.7
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     97.22,
+     23.7
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 8.85,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "headset": {
+     "icon": "headset",
+     "phone-number": "085 401 16 47"
+    },
+    "telefoon": {
+     "icon": "telefoon",
+     "phone-number": "085 401 16 47"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-badge-icon-headset-navy",
+    "py-atom-badge-icon-phone-navy"
+   ],
+   "status": "rebuilt",
+   "tags": [],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "Pill sticker (full radius) with a navy round icon badge (headset or phone) and the phone number in navy Ubuntu Bold 9.56 mm. Two variants on the sheet, same size. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+  },
+  {
+   "id": "py-app-sticker-terminal-wacht-lampjes",
+   "name_nl": "Terminalsticker wacht tot alle lampjes groen zijn",
+   "type": "sticker",
+   "origin": "print",
+   "variants": [
+    {
+     "id": "py-app-sticker-terminal-wacht-lampjes",
+     "variant": null,
+     "reference": "reference.svg",
+     "template": "template.svg",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-regular",
+      "py-tok-type-ubuntu-bold",
+      "py-atom-illustration-contactless-hand"
+     ]
+    }
+   ],
+   "source": {
+    "files": [
+     {
+      "file": "source/print/TerminalStickers_September2026.pdf",
+      "pages": [
+       1
+      ],
+      "colour_space": "CMYK",
+      "trim_mm": [
+       271.0,
+       391.0
+      ],
+      "bleed_box_set": false
+     }
+    ],
+    "region_references": true
+   },
+   "template": {
+    "trim_mm": [
+     123.32,
+     83.67
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     129.32,
+     89.67
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 1.85,
+     "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+    }
+   },
+   "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+   "variables": {
+    "default": {
+     "text-1": "Wacht tot alle ",
+     "text-2": "lampjes groen zijn"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-illustration-contactless-hand"
+   ],
+   "status": "rebuilt",
+   "tags": [
+    "third-party"
+   ],
+   "omitted": [],
+   "copy_corrections": [],
+   "notes": "White sticker, two lines of navy text ('groen' bold) and the contactless line art in navy (third party mark, reference only). Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
   },
   {
    "id": "py-app-sticker-waarschuwing-diefstal",

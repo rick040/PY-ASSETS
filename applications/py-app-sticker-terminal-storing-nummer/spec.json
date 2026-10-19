@@ -1,0 +1,94 @@
+{
+ "id": "py-app-sticker-terminal-storing-nummer",
+ "name_nl": "Terminalsticker storing telefoonnummer (pil)",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-storing-nummer-headset",
+   "variant": "headset",
+   "reference": "reference-headset.svg",
+   "template": "template-headset.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-badge-icon-headset-navy"
+   ]
+  },
+  {
+   "id": "py-app-sticker-terminal-storing-nummer-telefoon",
+   "variant": "telefoon",
+   "reference": "reference-telefoon.svg",
+   "template": "template-telefoon.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-badge-icon-phone-navy"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/TerminalStickers_September2026.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     271.0,
+     391.0
+    ],
+    "bleed_box_set": false
+   }
+  ],
+  "region_references": true
+ },
+ "template": {
+  "trim_mm": [
+   91.22,
+   17.7
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   97.22,
+   23.7
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 8.85,
+   "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "headset": {
+   "icon": "headset",
+   "phone-number": "085 401 16 47"
+  },
+  "telefoon": {
+   "icon": "telefoon",
+   "phone-number": "085 401 16 47"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-badge-icon-headset-navy",
+  "py-atom-badge-icon-phone-navy"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Pill sticker (full radius) with a navy round icon badge (headset or phone) and the phone number in navy Ubuntu Bold 9.56 mm. Two variants on the sheet, same size. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+}

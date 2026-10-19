@@ -2,7 +2,7 @@
 """Build the PM-137 print additions: new atoms/components/products in svg/, applications/<id>/, applications.json,
 the additions to elements.json and the `observed` section of tokens.json.
 
-Sources are the ten PDFs in source/print/. Specs live in tools/specs_print/ (one module registers its elements and applications).
+Sources are the eleven PDFs in source/print/. Specs live in tools/specs_print/ (one module registers its elements and applications).
 
 usage: python3 -I tools/build_print.py [--spec REGEX] [--only REGEX]
 """
@@ -20,7 +20,7 @@ from pyassets.compose import Doc  # noqa: E402
 import build_all  # noqa: E402
 
 LEVELS = ["tok", "atom", "comp", "prod"]
-PRINT_SOURCE_NOTE = "ten print sources in source/print/ (PM-137)"
+PRINT_SOURCE_NOTE = "eleven print sources in source/print/ (PM-137)"
 
 # sampled print colours that are not brand values (observed, never official). CMYK from the PDF content streams.
 OBSERVED = [
@@ -33,10 +33,12 @@ OBSERVED = [
     ("py-obs-blauw-rgb-1a3680", "Blauw RGB achtergrond", None, "Naamloos-7.pdf", "RGB only, #1A3680 (the vector blue replaced by #1A3580 in 1.3)"),
     ("py-obs-aqua-uitrit", "Aqua uitritbord", (67.8, 3.1, 19.2, 0), "15728501-1.pdf", "arrow and arc"),
     ("py-obs-aqua-licht", "Lichtaqua", (54, 0, 14, 0), "LaadKabel.pdf, StickerDiefstalARtisDruk.pdf, InfoPylonBordGoed.pdf", "icons on navy (plug, padlock), chevron"),
+    ("py-obs-blauw-terminal", "Blauw terminalstickers", (99.5, 85, 21.4, 6.8), "TerminalStickers_September2026.pdf", "text, icons, badges, bars (also 99.6/84/21.3/6.6 and 100/86.4/21.4/3.7 on single stickers)"),
+    ("py-obs-grijs-qrplaat", "Lichtgrijs QR plaat", (8.4, 5.8, 6.9, 0), "TerminalStickers_September2026.pdf", "QR plates of the phone, reader and subscription card illustrations (at 90 percent opacity)"),
     ("py-obs-zwart-rijk", "Rijk zwart", (91.2, 78.7, 62, 97.4), "Maashaven.pdf", "small text"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
-OBS_HEX = {"#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}
+OBS_HEX = {"#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht", "#E6E7E6": "py-obs-grijs-qrplaat"}
 
 
 def load_specs(only=None):
@@ -77,9 +79,9 @@ def write_observed(root):
     p = os.path.join(root, "tokens.json")
     t = json.load(open(p, encoding="utf8"))
     obs = {
-        "note": ("Colours sampled from the ten print files in source/print/. They are NOT brand values and never replace the official tokens. "
+        "note": ("Colours sampled from the eleven print files in source/print/. They are NOT brand values and never replace the official tokens. "
                  "Native print values are CMYK; hex_viewer is the sRGB a PDF viewer shows, hex_fogra39 the sRGB through the FOGRA39 profile. "
-                 "Official blauw is CMYK 100/83/0/17 (#1A3580); four files use exactly that, the rest drift as listed."),
+                 "Official blauw is CMYK 100/83/0/17 (#1A3580); four files use exactly that, the rest (the terminal sticker sheet included) drift as listed."),
         "colors": {},
     }
     for oid, name, cmyk, files, use in OBSERVED:
@@ -215,13 +217,16 @@ def build_apps(only):
             "variants": [{"id": id_ + (f"-{v}" if v else ""), "variant": v or None,
                           "reference": files["reference"][v or "default"], "template": files["template"][v or "default"],
                           "built_from": vbf.get(v or "default", [])} for v in variants],
-            "source": {"files": [{"file": "source/print/" + printsrc.SOURCES[k]["file"], "pages": pg,
-                                  "colour_space": printsrc.SOURCES[k]["cs"], "trim_mm": list(printsrc.SOURCES[k]["trim_mm"]),
-                                  "bleed_box_set": printsrc.SOURCES[k]["bleed_set"]} for k, pg in srcs]},
+            "source": dict({"files": [{"file": "source/print/" + printsrc.SOURCES[k]["file"], "pages": pg,
+                                       "colour_space": printsrc.SOURCES[k]["cs"], "trim_mm": list(printsrc.SOURCES[k]["trim_mm"]),
+                                       "bleed_box_set": printsrc.SOURCES[k]["bleed_set"]} for k, pg in srcs]},
+                           **({"region_references": True} if meta.get("region_references") else {})),
             "template": {"trim_mm": [tw_, th_], "bleed_mm": bl, "size_with_bleed_mm": [tw_ + 2 * bl, th_ + 2 * bl],
                          "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
                          "cut_contour": meta["cut_contour"]},
-            "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+            "reference_note": ("Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted."
+                               if meta.get("region_references") else
+                               "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted."),
             "variables": variables,
             "built_from": built,
             "status": meta["status"],

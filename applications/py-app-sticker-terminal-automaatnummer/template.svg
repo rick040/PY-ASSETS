@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64.91mm" height="19.05mm" viewBox="0 0 64.91 19.05">
+<title>py-app-sticker-terminal-automaatnummer: Terminalsticker automaatnummer</title>
+<g id="py-app-sticker-terminal-automaatnummer-template"><rect x="0" y="0" width="64.91" height="19.05" fill="#1A3580" id="background" data-variable="background-colour"/><text x="21.7" y="12.2" font-family="Ubuntu Medium" font-size="7.06" fill="#FFFFFF" data-variable="automaatnummer" xml:space="preserve">BSG-i1</text><g id="cut-contour" data-spot="ThruCut"><rect x="3.2" y="3.2" width="58.51" height="12.65" fill="none" stroke="#EE4D9B" stroke-width="0.353" rx="1.62" ry="1.62"/></g><g id="guides" visibility="hidden"><rect x="3" y="3" width="58.91" height="13.05" fill="none" stroke="#00A0E0" stroke-width="0.2"/></g></g>
+</svg>
