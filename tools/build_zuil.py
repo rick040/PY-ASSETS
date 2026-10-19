@@ -15,8 +15,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pyassets.compose import ROOT, Doc, text_width  # noqa: E402
 
-NAVY, AQUA, GREY, BLACK, WHITE = "#1A3580", "#32B9CD", "#AEAEAE", "#1D1D1B", "#FFFFFF"
-LED_ON, LED_OFF = "#3AAA35", "#711515"  # observed on the portal displays (not brand colours)
+NAVY, AQUA, BLACK, WHITE = "#1A3580", "#32B9CD", "#1D1D1B", "#FFFFFF"
+LED_ON, LED_OFF = AQUA, NAVY  # lit dots PY-Aqua, unlit dots PY-Blauw outline: brand colours only
 
 W = 400.0            # column width, as the pyloon panel
 HEADER_H = 420.0
@@ -41,7 +41,7 @@ FONT = {
 
 
 def counter(d, x0, y0, w=340.0, h=160.0, digits="071", gid=None):
-    """Free-spaces counter: black bezel with an aqua hairline (as py-comp-portal-display-slot) and a dot matrix, lit dots in LED green."""
+    """Free-spaces counter: black bezel with an aqua hairline (as py-comp-portal-display-slot) and a dot matrix, lit dots in PY-Aqua."""
     n = len(digits)
     cols = n * 5 + (n - 1)
     pitch = min((w - 36) / cols, (h - 36) / 7)
@@ -81,7 +81,7 @@ def zuil(with_counter=True, digits="071", H=None):
         '<linearGradient id="py-zuil-verloop" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="%g" y2="0">'
         '<stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/>'
         '<stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % W)
-    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-grijs", "py-tok-color-zwart", "py-tok-color-wit",
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-zwart", "py-tok-color-wit",
            "py-tok-gradient-verloop", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
 
     with d.group("body"):
@@ -125,7 +125,7 @@ def zuil(with_counter=True, digits="071", H=None):
     d.end_y = ay + 130 + FOOT_PAD + PLINTH_H
 
     with d.group("plinth"):
-        d.rect(0, H - PLINTH_H, W, H, fill=GREY, gid="plinth-plate")
+        d.rect(0, H - PLINTH_H, W, H, fill=NAVY, gid="plinth-plate")
     if H0 is None:
         return zuil(with_counter, digits, H=round(d.end_y))
     return d
@@ -152,15 +152,15 @@ def main():
         "py-comp-led-counter": dict(
             name_nl="LED teller vrije plaatsen", category="display", variables=["free-spaces"],
             notes="Dot matrix counter (5 x 7 dots per digit, three digits shown: 071) in a black bezel with an aqua hairline, same bezel as "
-                  "py-comp-portal-display-slot. REBUILT: new construction (no source drawing); lit dots LED green #3AAA35, unlit dots as red outline "
-                  "#711515, both as observed on the portal displays (not brand colours). Variable free-spaces is the digit string."),
+                  "py-comp-portal-display-slot. REBUILT: new construction (no source drawing); lit dots PY-Aqua, unlit dots as PY-Blauw outline "
+                  "(brand colours only; the portal displays in the handbook use LED green and red). Variable free-spaces is the digit string."),
         "py-prod-zuil-publiek-parkeren": dict(
             name_nl="Informatiezuil Public parking 24/7, met teller", category="zuil",
             variables=["free-spaces", "headline", "location name", "arrow direction", "counter labels"],
             notes="NEW DESIGN (not in the handbook), modelled on a street pylon with a P header, a free-spaces counter and the line PUBLIC PARKING 24/7. "
                   "Front elevation, 400 x 1750 mm (width as the info pylon panel), black column (PY-Zwart), navy header with white P-roof symbol and a "
                   "blauw to aqua band, counter, headline in Ubuntu Bold (24/7 in PY-Aqua), aqua divider, white stacked logo with location name, "
-                  "direction arrow, PY-Grijs plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. "
+                  "direction arrow, PY-Blauw plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. "
                   "Text is live Ubuntu; the counter digits are dots (variable free-spaces)."),
         "py-prod-zuil-publiek-parkeren-zonder-teller": dict(
             name_nl="Informatiezuil Public parking 24/7, zonder teller", category="zuil",
