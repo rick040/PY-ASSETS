@@ -64,5 +64,5 @@
  ],
  "omitted": [],
  "copy_corrections": [],
- "notes": "'Druk op de gele knop voor een parkeerkaart': two centred lines of navy text ('gele knop' and 'parkeerkaart' bold), then the yellow push button, an arrow and the parking ticket. The yellow of the button is a functional colour (observed token py-obs-geel-knop), to be matched to the real terminal button. New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut 0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal."
+ "notes": "'Druk op de gele knop voor een parkeerkaart': two centred lines of navy text ('gele knop' and 'parkeerkaart' bold), then the yellow ticket button of the terminal, an arrow and the parking ticket. The yellow of the button is a functional colour (observed token py-obs-geel-knop), to be matched to the real terminal button. New design after the sheet, no print source and no reference. Look and sizes follow the sheet: white sticker, navy Ubuntu text, navy line icons, hairline contour as ThruCut 0.2 mm inside the trim, 3 mm bleed. Corner radius 4.65 mm is taken from the scan stickers and is a proposal."
 }

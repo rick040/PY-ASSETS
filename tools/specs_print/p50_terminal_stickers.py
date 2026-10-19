@@ -531,22 +531,22 @@ def _(src):
     return d
 
 
-@element("py-atom-icon-knop-geel", "Gele drukknop", "atom", "icon", 1, src=KEY, design=True, status="rebuilt", variables=("colour button",),
-         notes="Round push button icon (32 mm across with the burst): navy housing, yellow button, white highlight and three navy burst lines at the top that say press. "
+@element("py-atom-icon-knop-geel", "Gele kaartknop", "atom", "icon", 1, src=KEY, design=True, status="rebuilt", variables=("colour button",),
+         notes="Yellow ticket button of the terminal (22 x 26 mm plus burst), drawn after a photo of the terminal: a square yellow pad with rounded corners, a ring with an upward triangle, "
+               "in a bezel with two chevrons above it, and three navy burst lines that say press. The bezel is navy instead of the silver of the terminal. "
                "Yellow is a functional colour (observed token py-obs-geel-knop), to be matched to the real button. Drawn for the terminal stickers (design, no print source).")
 def _(src):
-    import math
-
-    d = _tight("py-atom-icon-knop-geel", "Gele drukknop")
-    cx, cy = 16.0, 18.0
-    d.circle(cx, cy, 10.5, fill=NAVY, gid="housing")
-    d.circle(cx, cy, 8.0, fill=YELLOW, gid="button")
-    d.path(f"M{cx - 5.2:.3f} {cy - 1.2:.3f}A5.4 5.4 0 0 1 {cx - 0.8:.3f} {cy - 5.2:.3f}", (cx - 5.6, cy - 5.6, cx, cy), stroke=WHITE, sw=1.0, gid="highlight")
+    d = _tight("py-atom-icon-knop-geel", "Gele kaartknop")
+    d.rect(0, 0, 22, 26, fill=NAVY, rx=3.6, gid="bezel")
+    with d.group("chevrons"):
+        for cx in (6.7, 15.3):
+            d.path(f"M{cx - 1.2:.3f} 2.1L{cx:.3f} 3.4L{cx + 1.2:.3f} 2.1", (cx - 1.2, 2.1, cx + 1.2, 3.4), stroke=WHITE, sw=0.6)
+    d.rect(4.0, 6.6, 18.0, 21.8, fill=YELLOW, rx=1.8, gid="button")
+    cx, cy = 11.0, 14.6
+    d.circle(cx, cy, 4.4, fill=None, stroke=NAVY, sw=0.6, gid="ring")
+    d.path(f"M{cx:.3f} {cy - 2.6:.3f}L{cx + 3.0:.3f} {cy + 2.0:.3f}L{cx - 3.0:.3f} {cy + 2.0:.3f}Z", (cx - 3, cy - 2.6, cx + 3, cy + 2.0), fill=NAVY, gid="triangle")
     with d.group("burst"):
-        for a in (-135, -90, -45):
-            r0, r1 = 12.6, 16.0
-            x0, y0 = cx + r0 * math.cos(math.radians(a)), cy + r0 * math.sin(math.radians(a))
-            x1, y1 = cx + r1 * math.cos(math.radians(a)), cy + r1 * math.sin(math.radians(a))
+        for x0, y0, x1, y1 in ((11.0, -2.2, 11.0, -4.8), (1.0, -1.2, -1.2, -3.3), (21.0, -1.2, 23.2, -3.3)):
             d.line(x0, y0, x1, y1, NAVY, 1.0, cap="round")
     return d
 
@@ -592,7 +592,7 @@ def _(ctx):
     centred_runs(st, cx, 24.8, [("voor een ", 400), ("parkeerkaart", 700)], 9.0, NAVY, "text-2")
     y = 54.5
     with st.d.group("py-atom-icon-knop-geel"):
-        st.place("py-atom-icon-knop-geel", 17.4, y, anchor="cl")
+        st.place("py-atom-icon-knop-geel", 17.4, y, scale=1.35, anchor="cl")
     with st.d.group("py-atom-arrow-left-solid"):
         st.place("py-atom-arrow-left-solid", 59.4, y, w=14.0, anchor="cl", flip_x=True)
     with st.d.group("py-atom-icon-parkeerkaart"):
@@ -600,7 +600,7 @@ def _(ctx):
     st.d.cut_contour(0, 0, st.w, st.h, rx=4.65)
     st.d.guides(st.w, st.h)
     return dict(reference=None, template={"": st.d}, omitted=[], copy_corrections=[],
-                notes="'Druk op de gele knop voor een parkeerkaart': two centred lines of navy text ('gele knop' and 'parkeerkaart' bold), then the yellow push button, an arrow and the parking ticket. "
+                notes="'Druk op de gele knop voor een parkeerkaart': two centred lines of navy text ('gele knop' and 'parkeerkaart' bold), then the yellow ticket button of the terminal, an arrow and the parking ticket. "
                       "The yellow of the button is a functional colour (observed token py-obs-geel-knop), to be matched to the real terminal button. " + DESIGN_NOTE)
 
 

@@ -1742,7 +1742,7 @@
   },
   {
    "id": "py-atom-icon-knop-geel",
-   "name_nl": "Gele drukknop",
+   "name_nl": "Gele kaartknop",
    "level": "atom",
    "category": "icon",
    "source_page": null,
@@ -1750,8 +1750,8 @@
    "origin": "design",
    "status": "rebuilt",
    "dimensions_mm": {
-    "width": 22.6,
-    "height": 27.0,
+    "width": 24.4,
+    "height": 31.3,
     "stated": null,
     "basis": "print scale (1:1 from source)"
    },
@@ -1777,7 +1777,7 @@
     "py-tok-color-wit"
    ],
    "tags": [],
-   "notes": "Round push button icon (32 mm across with the burst): navy housing, yellow button, white highlight and three navy burst lines at the top that say press. Yellow is a functional colour (observed token py-obs-geel-knop), to be matched to the real button. Drawn for the terminal stickers (design, no print source).",
+   "notes": "Yellow ticket button of the terminal (22 x 26 mm plus burst), drawn after a photo of the terminal: a square yellow pad with rounded corners, a ring with an upward triangle, in a bezel with two chevrons above it, and three navy burst lines that say press. The bezel is navy instead of the silver of the terminal. Yellow is a functional colour (observed token py-obs-geel-knop), to be matched to the real button. Drawn for the terminal stickers (design, no print source).",
    "svg": "svg/atom/py-atom-icon-knop-geel.svg"
   },
   {
