@@ -10257,7 +10257,7 @@
   },
   {
    "id": "py-prod-zuil-abonnees-blauw",
-   "name_nl": "Informatiezuil Alleen voor abonnementshouders, PY-Blauw met aqua header",
+   "name_nl": "Informatiezuil Alleen voor abonnees, PY-Blauw met aqua header",
    "level": "prod",
    "category": "zuil",
    "source_page": null,
@@ -10293,7 +10293,11 @@
    "variables": [
     "headline",
     "location name",
-    "arrow direction"
+    "arrow direction",
+    "subline-nl",
+    "subline-en",
+    "text",
+    "phone-number"
    ],
    "built_from": [
     "py-atom-symbol-p-roof",
@@ -10303,13 +10307,13 @@
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. Headline ALLEEN VOOR ABONNEMENTSHOUDERS on three lines (ALLEEN VOOR in PY-Aqua, split ABONNEMENTS- / HOUDERS), Dutch only. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. Copy of the existing subscribers banner: Alleen voor abonnees! / Geen abonnement = Geen toegang. / Subscribers only! / No subscription = No access., plus the fault contact in a PY-Aqua pill (085 21 30 422). Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
    "svg": "svg/prod/py-prod-zuil-abonnees-blauw.svg",
    "origin": "design"
   },
   {
    "id": "py-prod-zuil-abonnees-wit",
-   "name_nl": "Informatiezuil Alleen voor abonnementshouders, wit met blauwe header",
+   "name_nl": "Informatiezuil Alleen voor abonnees, wit met blauwe header",
    "level": "prod",
    "category": "zuil",
    "source_page": null,
@@ -10341,7 +10345,11 @@
    "variables": [
     "headline",
     "location name",
-    "arrow direction"
+    "arrow direction",
+    "subline-nl",
+    "subline-en",
+    "text",
+    "phone-number"
    ],
    "built_from": [
     "py-atom-symbol-p-roof",
@@ -10351,7 +10359,7 @@
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Headline ALLEEN VOOR ABONNEMENTSHOUDERS on three lines (ALLEEN VOOR in PY-Aqua, split ABONNEMENTS- / HOUDERS), Dutch only. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Copy of the existing subscribers banner: Alleen voor abonnees! / Geen abonnement = Geen toegang. / Subscribers only! / No subscription = No access., plus the fault contact in a PY-Aqua pill (085 21 30 422). Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
    "svg": "svg/prod/py-prod-zuil-abonnees-wit.svg",
    "origin": "design"
   }
