@@ -144,39 +144,46 @@ MESSAGES = {
 }
 
 
-def _subscriber_text(d, main):
-    """Copy of the existing subscribers banner (NL and EN, with the two sub lines) and the fault contact pill. Returns the top of the arrow."""
+def _subscriber_text(d, main, wit):
+    """Subscribers copy (NL and EN, as on the existing banner) with the warning triangle on top, readable sub lines and the fault number."""
     nl = ("Alleen voor", "abonnees!")
     en = ("Subscribers", "only!")
+    subs = (("Geen abonnement =", "Geen toegang."), ("No subscription =", "No access."))
     size = 350.0 / max(text_width(t, 1.0, 700) for t in nl + en)
-    subs = ("Geen abonnement = Geen toegang.", "No subscription = No access.")
-    ssz = min(size * 0.42, 340.0 / max(text_width(t, 1.0, 400) for t in subs))
-    y = 700.0
+    ssz = min(size * 0.62, 340.0 / max(text_width(t, 1.0, 500) for pair in subs for t in pair))
+    tri = NAVY if wit else AQUA
+    with d.group("warning"):
+        d.place("py-atom-icon-warning-triangle", CX, 630, w=124, anchor="tc", gid="warning-triangle", recolor={"#71CBDF": tri})
+    y = 630 + 124 * 302.706 / 346.786 + 20 + size * 0.75
     with d.group("headline", data_variable="headline"):
-        for i, t in enumerate(nl):
-            d.text(CX - text_width(t, size, 700) / 2, y, t, size=size, fill=main, weight=700, gid=f"headline-nl-{i + 1}")
+        for t in nl:
+            d.text(CX - text_width(t, size, 700) / 2, y, t, size=size, fill=main, weight=700, gid=f"headline-nl-{len(t)}")
             y += size * 1.2
-    y += ssz * 0.55
-    d.text(CX - text_width(subs[0], ssz, 400) / 2, y, subs[0], size=ssz, fill=main, weight=400, gid="subline-nl", variable="subline-nl")
-    y += size * 1.05
-    d.rect(150, y - ssz * 0.9, 250, y - ssz * 0.9 + 3, fill=AQUA, gid="language-divider")
-    y += size * 0.95
+    y += ssz * 0.35
+    with d.group("subline-nl", data_variable="subline-nl"):
+        for t in subs[0]:
+            d.text(CX - text_width(t, ssz, 500) / 2, y, t, size=ssz, fill=main, weight=500)
+            y += ssz * 1.3
+    y += size * 0.45
+    d.rect(150, y, 250, y + 3, fill=AQUA, gid="language-divider")
+    y += 3 + size * 0.45 + size * 0.75
     with d.group("headline-en"):
-        for i, t in enumerate(en):
-            d.text(CX - text_width(t, size, 700) / 2, y, t, size=size, fill=main, weight=700, gid=f"headline-en-{i + 1}")
+        for t in en:
+            d.text(CX - text_width(t, size, 700) / 2, y, t, size=size, fill=main, weight=700)
             y += size * 1.2
-    y += ssz * 0.55
-    d.text(CX - text_width(subs[1], ssz, 400) / 2, y, subs[1], size=ssz, fill=main, weight=400, gid="subline-en", variable="subline-en")
+    y += ssz * 0.35
+    with d.group("subline-en", data_variable="subline-en"):
+        for t in subs[1]:
+            d.text(CX - text_width(t, ssz, 500) / 2, y, t, size=ssz, fill=main, weight=500)
+            y += ssz * 1.3
     d.variables["headline"] = "Alleen voor abonnees! / Subscribers only!"
-    arrow_top = y + 60
-    pill_top = arrow_top + 134 + 60
-    with d.group("fault-contact"):
-        d.rect(30, pill_top, 370, pill_top + 120, fill=AQUA, rx=60, gid="pill")
-        t1, t2 = "Bij storingen, bel naar", "085 21 30 422"
-        d.text(CX - text_width(t1, 24, 500) / 2, pill_top + 50, t1, size=24, fill=NAVY, weight=500, gid="fault-text", variable="text")
-        d.text(CX - text_width(t2, 38, 700) / 2, pill_top + 96, t2, size=38, fill=NAVY, weight=700, gid="phone-number", variable="phone-number")
-    assert pill_top + 120 < 1560, pill_top
-    return arrow_top
+    d.variables["subline-nl"] = "Geen abonnement = Geen toegang."
+    d.variables["subline-en"] = "No subscription = No access."
+    num = "085 21 30 422"
+    nsz = 330.0 / text_width(num, 1.0, 700)
+    base = 1500.0
+    assert y < base - nsz, (y, base)
+    d.text(CX - text_width(num, nsz, 700) / 2, base, num, size=nsz, fill=main, weight=700, gid="phone-number", variable="phone-number")
 
 
 def zuil2(style, message):
@@ -210,7 +217,7 @@ def zuil2(style, message):
         d.place("py-atom-symbol-p-roof", CX, 76, w=276, anchor="tc")
 
     if message == "abonnee":
-        arrow_top = _subscriber_text(d, main)
+        _subscriber_text(d, main, wit)
     else:
         size = 350.0 / max(text_width(t, 1.0, 700) for t, _ in msg["lines"])
         base0, pitch = 760.0, (size * 1.2, size * 1.55)
@@ -222,9 +229,10 @@ def zuil2(style, message):
         d.variables["headline"] = " ".join(t for t, _ in msg["lines"])
         arrow_top = 1106.0
 
-    with d.group("direction"):
-        d.place("py-atom-arrow-up-circle", CX, arrow_top, w=134, anchor="tc", gid="arrow", recolor={"#FFFFFF": NAVY} if wit else None)
-    d.variables["arrow direction"] = "up"
+    if message == "public":
+        with d.group("direction"):
+            d.place("py-atom-arrow-up-circle", CX, arrow_top, w=134, anchor="tc", gid="arrow", recolor={"#FFFFFF": NAVY} if wit else None)
+        d.variables["arrow direction"] = "up"
     d.rect(0, 1574.2, W, 1578.2, fill=AQUA, gid="divider")
     with d.group("lockup"):
         d.place("py-atom-logo-stacked-color" if wit else "py-atom-logo-stacked-white", CX, 1661, w=238, anchor="tc")
@@ -276,13 +284,13 @@ def main():
             msg = MESSAGES[m_]
             meta[f"py-prod-zuil-{msg['slug']}-{st}"] = dict(
                 name_nl=f"Informatiezuil {msg['name']}, {'wit met blauwe header' if st == 'wit' else 'PY-Blauw met aqua header'}",
-                category="zuil", variables=["headline", "location name", "arrow direction"] + (["subline-nl", "subline-en", "text", "phone-number"] if m_ == "abonnee" else []),
+                category="zuil", variables=(["headline", "location name", "arrow direction"] if m_ == "public" else ["headline", "subline-nl", "subline-en", "phone-number", "location name"]),
                 notes=("NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. "
                        + ("White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. "
                           if st == "wit" else
                           "PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. ")
                        + ("Headline PUBLIC PARKING 24/7 (24/7 in PY-Aqua). " if m_ == "public" else
-                          "Copy of the existing subscribers banner: Alleen voor abonnees! / Geen abonnement = Geen toegang. / Subscribers only! / No subscription = No access., plus the fault contact in a PY-Aqua pill (085 21 30 422). ")
+                          "Copy of the existing subscribers banner in this order: warning triangle (py-atom-icon-warning-triangle), Alleen voor abonnees!, Geen abonnement = Geen toegang., Subscribers only!, No subscription = No access., then the fault number 085 21 30 422 (number only, no pill, no arrow). Sub lines on two lines in Ubuntu Medium for legibility. ")
                        + "Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing."))
     rows = {e["id"]: i for i, e in enumerate(man["elements"])}
     for eid, (lvl, d) in built.items():

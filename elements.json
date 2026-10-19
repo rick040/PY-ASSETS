@@ -10292,22 +10292,20 @@
    ],
    "variables": [
     "headline",
-    "location name",
-    "arrow direction",
     "subline-nl",
     "subline-en",
-    "text",
-    "phone-number"
+    "phone-number",
+    "location name"
    ],
    "built_from": [
     "py-atom-symbol-p-roof",
-    "py-atom-arrow-up-circle",
+    "py-atom-icon-warning-triangle",
     "py-atom-logo-stacked-white"
    ],
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. Copy of the existing subscribers banner: Alleen voor abonnees! / Geen abonnement = Geen toegang. / Subscribers only! / No subscription = No access., plus the fault contact in a PY-Aqua pill (085 21 30 422). Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. PY-Blauw column with PY-Aqua header and the blauw to aqua band into the column, white headline, white arrow disc, white logo. Copy of the existing subscribers banner in this order: warning triangle (py-atom-icon-warning-triangle), Alleen voor abonnees!, Geen abonnement = Geen toegang., Subscribers only!, No subscription = No access., then the fault number 085 21 30 422 (number only, no pill, no arrow). Sub lines on two lines in Ubuntu Medium for legibility. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
    "svg": "svg/prod/py-prod-zuil-abonnees-blauw.svg",
    "origin": "design"
   },
@@ -10344,22 +10342,20 @@
    ],
    "variables": [
     "headline",
-    "location name",
-    "arrow direction",
     "subline-nl",
     "subline-en",
-    "text",
-    "phone-number"
+    "phone-number",
+    "location name"
    ],
    "built_from": [
     "py-atom-symbol-p-roof",
-    "py-atom-arrow-up-circle",
+    "py-atom-icon-warning-triangle",
     "py-atom-logo-stacked-color"
    ],
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Copy of the existing subscribers banner: Alleen voor abonnees! / Geen abonnement = Geen toegang. / Subscribers only! / No subscription = No access., plus the fault contact in a PY-Aqua pill (085 21 30 422). Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
+   "notes": "NEW DESIGN (not in the handbook), 400 x 2000 mm front elevation, positions measured from the approved layout. White column with PY-Blauw header (curved edge as on the info pylon), headline in PY-Blauw, arrow disc PY-Blauw, colour logo. Copy of the existing subscribers banner in this order: warning triangle (py-atom-icon-warning-triangle), Alleen voor abonnees!, Geen abonnement = Geen toegang., Subscribers only!, No subscription = No access., then the fault number 085 21 30 422 (number only, no pill, no arrow). Sub lines on two lines in Ubuntu Medium for legibility. Plinth PY-Aqua from 1935 mm. Text is live Ubuntu Bold. Proposal, no material or foundation drawing.",
    "svg": "svg/prod/py-prod-zuil-abonnees-wit.svg",
    "origin": "design"
   }
