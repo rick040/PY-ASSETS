@@ -20,7 +20,7 @@ Sources: the eleven print files in `source/print/`. Measurements come from the P
 | 10 | `Naamloos-7` (RGB) is rebuilt in the token blue (CMYK); the RGB original is kept as reference. |
 | 11 | `reference.svg` keeps the original copy including typos; `template.svg` has the corrected copy (`copy_corrections` in `spec.json`). |
 | 12 | The terminal sticker sheet (September 2026) is split into 15 applications `py-app-sticker-terminal-*`, one per sticker design. Identical copies on the sheet (druk 3 seconden, pijl links, automaatnummer) are one application. Their `reference.svg` is the one sticker cut out of the sheet with 1.5 mm margin (`source.region_references` in `spec.json`), not the whole page. |
-| 14 | New designs without a print source (`origin: "design"` in the manifests) have no `reference.svg`; the three terminal stickers kenteken invoeren, gele knop parkeerkaart and ParkBee reservering are the first. They follow the look of the sheet and use the functional yellow `py-obs-geel-knop` for the ticket button. |
+| 14 | New designs without a print source (`origin: "design"` in the manifests) have no `reference.svg`; the four terminal stickers kenteken invoeren, gele knop parkeerkaart and ParkBee reservering are the first. They follow the look of the sheet and use the functional yellow `py-obs-geel-knop` for the ticket button. |
 | 13 | The hairline die lines of the sheet (0.25 to 0.74 pt black) become the ThruCut `cut-contour` of each template, 0.2 mm inside the trim, plus 3 mm bleed. Radii are measured on the die lines; where the source has no die line (info bubble, automaat storing) the contour is a proposal. |
 
 ## 1. Colour drift
@@ -129,6 +129,7 @@ One page, 271 x 391 mm, no bleed, no trim marks, 21 white stickers with a hairli
 
 * `py-app-sticker-terminal-kenteken-invoeren` (120 x 33.76 mm): "Voer hier uw kenteken in", keypad icon and a licence plate with input cursor.
 * `py-app-sticker-terminal-gele-knop-parkeerkaart` (123.32 x 83.67 mm, the size of the wacht sticker): "Druk op de gele knop voor een parkeerkaart", yellow ticket button (as on the terminal), arrow, parking ticket.
+* `py-app-sticker-terminal-gele-knop-tekst` (100 x 11 mm): small text only version of the gele knop sticker for the strip above the ticket button; the real available space is still to be measured.
 * `py-app-sticker-terminal-parkbee-reservering` (120 x 33.76 mm): "Reservering, pak uw ticket", ParkBee badge (third party, reference only), arrow, parking ticket.
 * New icons (atoms, origin design): `py-atom-icon-kenteken-invoer`, `py-atom-icon-toetsenblok`, `py-atom-icon-parkeerkaart`, `py-atom-icon-knop-geel`. Navy line style, 0.9 mm outline, same chunky arrow as the sheet (`py-atom-arrow-left-solid`, mirrored).
 * Open: the yellow (`#FFD500`, CMYK 0/15/100/0) is a guess for the real terminal button; the corner radius 4.65 mm and the contour are proposals; Dutch only (an English line could be added as the druk 3 seconden sticker does).

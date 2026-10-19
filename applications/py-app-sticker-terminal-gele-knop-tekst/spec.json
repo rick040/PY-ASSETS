@@ -1,0 +1,59 @@
+{
+ "id": "py-app-sticker-terminal-gele-knop-tekst",
+ "name_nl": "Terminalsticker gele knop voor parkeerkaart (klein, alleen tekst)",
+ "type": "sticker",
+ "origin": "design",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-gele-knop-tekst",
+   "variant": null,
+   "reference": null,
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold"
+   ]
+  }
+ ],
+ "source": {
+  "files": []
+ },
+ "template": {
+  "trim_mm": [
+   100.0,
+   11.0
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   106.0,
+   17.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 3.0,
+   "note": "Proposal: new design without a die line; small radius of 3 mm for a 11 mm high sticker. To be confirmed by the printer."
+  }
+ },
+ "reference_note": "New design: no print source and no reference. Look and sizes follow the terminal sticker sheet.",
+ "variables": {
+  "default": {
+   "text": "Druk op de gele knop voor een parkeerkaart"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Small text only version of the gele knop sticker, to be placed above the ticket button of the terminal: one line of navy Ubuntu 4.4 mm ('gele knop' and 'parkeerkaart' bold) on a 100 x 11 mm sticker. The available space on the terminal is a guess from a photo: give the real width and height and the size follows. New design after the sheet, no print source and no reference; 3 mm bleed, ThruCut contour 0.2 mm inside the trim."
+}

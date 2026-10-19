@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="106mm" height="17mm" viewBox="0 0 106 17">
+<title>py-app-sticker-terminal-gele-knop-tekst: Terminalsticker gele knop voor parkeerkaart (klein)</title>
+<g id="py-app-sticker-terminal-gele-knop-tekst-template"><text x="7.539" y="10" font-family="Ubuntu" font-size="4.4" fill="#1A3580" data-variable="text" xml:space="preserve">Druk op de <tspan font-family="Ubuntu" font-weight="bold">gele knop</tspan> voor een <tspan font-family="Ubuntu" font-weight="bold">parkeerkaart</tspan></text><g id="cut-contour" data-spot="ThruCut"><rect x="3.2" y="3.2" width="99.6" height="10.6" fill="none" stroke="#EE4D9B" stroke-width="0.353" rx="2.8" ry="2.8"/></g><g id="guides" visibility="hidden"><rect x="3" y="3" width="100" height="11" fill="none" stroke="#00A0E0" stroke-width="0.2"/></g></g>
+</svg>

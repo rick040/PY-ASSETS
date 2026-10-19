@@ -624,3 +624,17 @@ def _(ctx):
     return dict(reference=None, template={"": st.d}, omitted=[], copy_corrections=[],
                 notes=("'Reservering, pak uw ticket' for ParkBee reservations: two lines of navy text ('Reservering' and 'ticket' bold), the ParkBee badge (third party mark, reference only, "
                        "source the official file), an arrow and the parking ticket. " + DESIGN_NOTE))
+
+
+@application("py-app-sticker-terminal-gele-knop-tekst", "Terminalsticker gele knop voor parkeerkaart (klein, alleen tekst)", "sticker", trim_mm=(100.0, 11.0),
+             source=[], bleed_mm=BLEED, design=True, status="rebuilt",
+             cut_contour=_cut(3.0, "Proposal: new design without a die line; small radius of 3 mm for a 11 mm high sticker. To be confirmed by the printer."))
+def _(ctx):
+    st = Sticker(ctx, "py-app-sticker-terminal-gele-knop-tekst", "Terminalsticker gele knop voor parkeerkaart (klein)", (0, 0, 100.0, 11.0), ("py-tok-type-ubuntu-bold",))
+    centred_runs(st, st.w / 2, 7.0, [("Druk op de ", 400), ("gele knop", 700), (" voor een ", 400), ("parkeerkaart", 700)], 4.4, NAVY, "text")
+    st.d.cut_contour(0, 0, st.w, st.h, rx=3.0)
+    st.d.guides(st.w, st.h)
+    return dict(reference=None, template={"": st.d}, omitted=[], copy_corrections=[],
+                notes=("Small text only version of the gele knop sticker, to be placed above the ticket button of the terminal: one line of navy Ubuntu 4.4 mm ('gele knop' and 'parkeerkaart' bold) "
+                       "on a 100 x 11 mm sticker. The available space on the terminal is a guess from a photo: give the real width and height and the size follows. "
+                       "New design after the sheet, no print source and no reference; 3 mm bleed, ThruCut contour 0.2 mm inside the trim."))
