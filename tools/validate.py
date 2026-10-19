@@ -27,7 +27,7 @@ def main():
 
     man = json.load(open(os.path.join(root, "elements.json"), encoding="utf8"))
     man_ids = {e["id"] for e in man["elements"]}
-    pdf_ids = {e["id"] for e in man["elements"] if e.get("origin") != "print"}  # print additions have their own overview and validator
+    pdf_ids = {e["id"] for e in man["elements"] if e.get("origin") not in ("print", "design")}  # print additions have their own overview and validator; new designs (tools/build_zuil.py) are not in the handbook overview
     svg_files = sorted(glob.glob(os.path.join(root, "svg", "*", "*.svg")))
     svg_ids = {os.path.basename(f)[:-4] for f in svg_files}
 

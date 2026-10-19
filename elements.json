@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 263,
+ "count": 266,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -10009,6 +10009,179 @@
    "tags": [],
    "notes": "Wandbord plate (300 mm high; width variable, 3300 mm as drawn) with display and RVV cluster, plus two hoogtebalken. Brick wall, dark wall gradient, dimension and call-out lines are left out. Plate vector paths are taken from the source; the P block and right navy edge (discs clipped by the plate) and the verloop crescent (clip and shading in the source) are rebuilt. The hoogtebalken (red bands and gaffelsets are raster in the source) are rebuilt as vectors. Scale from the 300 mm plate height; the hoogtebalken are drawn schematically in the handbook (2500 x 90 mm per its call-out) and are not at plate scale. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/prod/py-prod-wandbord.svg"
+  },
+  {
+   "id": "py-comp-led-counter",
+   "name_nl": "LED teller vrije plaatsen",
+   "level": "comp",
+   "category": "display",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 340.0,
+    "height": 160.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    }
+   ],
+   "variables": [
+    "free-spaces"
+   ],
+   "built_from": [],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "Dot matrix counter (5 x 7 dots per digit, three digits shown: 071) in a black bezel with an aqua hairline, same bezel as py-comp-portal-display-slot. REBUILT: new construction (no source drawing); lit dots LED green #3AAA35, unlit dots as red outline #711515, both as observed on the portal displays (not brand colours). Variable free-spaces is the digit string.",
+   "svg": "svg/comp/py-comp-led-counter.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-publiek-parkeren",
+   "name_nl": "Informatiezuil Public parking 24/7, met teller",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 1693.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": null,
+     "hex": "#711515"
+    },
+    {
+     "token": "py-tok-color-led-green",
+     "hex": "#3AAA35"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "free-spaces",
+    "headline",
+    "location name",
+    "arrow direction",
+    "counter labels"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-logo-stacked-white",
+    "py-atom-arrow-up-circle",
+    "py-comp-led-counter"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook), modelled on a street pylon with a P header, a free-spaces counter and the line PUBLIC PARKING 24/7. Front elevation, 400 x 1750 mm (width as the info pylon panel), black column (PY-Zwart), navy header with white P-roof symbol and a blauw to aqua band, counter, headline in Ubuntu Bold (24/7 in PY-Aqua), aqua divider, white stacked logo with location name, direction arrow, PY-Grijs plinth of 60 mm. Dimensions and the plinth are a proposal; no material, post or foundation drawing. Text is live Ubuntu; the counter digits are dots (variable free-spaces).",
+   "svg": "svg/prod/py-prod-zuil-publiek-parkeren.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-publiek-parkeren-zonder-teller",
+   "name_nl": "Informatiezuil Public parking 24/7, zonder teller",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 400.0,
+    "height": 1408.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-color-grijs",
+     "hex": "#AEAEAE"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "location name",
+    "arrow direction"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-logo-stacked-white",
+    "py-atom-arrow-up-circle"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "Same design without the counter block, 400 x 1470 mm. NEW DESIGN (not in the handbook), proposal.",
+   "svg": "svg/prod/py-prod-zuil-publiek-parkeren-zonder-teller.svg",
+   "origin": "design"
   }
  ],
  "print_sources": [
