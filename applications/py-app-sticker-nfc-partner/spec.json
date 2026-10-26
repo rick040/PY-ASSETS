@@ -1,0 +1,78 @@
+{
+ "id": "py-app-sticker-nfc-partner",
+ "name_nl": "NFC sticker (partner)",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-nfc-partner",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-logo-beeldmerk-color"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/MarketingCampagne_ParkingYouPartner.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC), mock-up slide",
+    "trim_mm": [
+     297,
+     210
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   70.0,
+   70.0
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   76.0,
+   76.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "shape": "circle",
+   "corner_radius_mm": 35.0,
+   "note": "Proposal: the mock-up shows no cut contour. Circle, radius half the diameter (35 mm), 0.2 mm inside the trim."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "line-1": "Reserveer je",
+   "line-2": "parkeerplek"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-logo-beeldmerk-color"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "mockup",
+ "omitted": [
+  "Round grey sticker body with its soft shadow: ONE raster image (254.7 to 279.5 x 107.3 to 132.1 mm on the slide), NOT copied. Rebuilt as a flat vector circle in light grey #E1E1E1 (measured from the render: 225/225/225), diameter 70 mm; the slight darker rim and the soft shadow of the raster are not reproduced.",
+  "Mock-up caption 'NFC sticker' (slide text under the sticker): not part of the piece."
+ ],
+ "copy_corrections": [],
+ "notes": "NFC sticker of the partner package, shown as a mock-up on the slide 'Partner pakket'. REAL SIZE IS A PROPOSAL: the disc measures 24.8 mm on the slide (horizontal 254.68 to 279.49 mm, vertical 24.7 mm), 69.3 mm at the scale 0.358, proposed 70 mm round (trim 70 x 70, 3 mm bleed, the reference is scaled so that 70 mm equals the measured disc, 1 percent). REBUILT: in the source the grey sticker body and its shadow are one raster image; the disc is a flat vector circle (#E1E1E1, no token) and the raster is not used. Only the beeldmerk and the text are vector in the source. Library: py-atom-logo-beeldmerk-color (compared: same drawing, 26.6 mm wide, 32.1 mm high, centred, top 24.2 mm above the centre). Text: 'Reserveer je' / 'parkeerplek' is outlined in the source; fitted by overlay as Ubuntu Bold 6.68 mm (ink width 39.3 and 38.3 mm, ink height agrees), navy, centred, baseline pitch about 7.7 mm; live text in the template. NFC chip: its type and position are NOT drawn (unknown); keep a chip free zone (to be defined by the supplier) before the artwork is sent to print. Cut contour: circle with radius half the diameter, 0.2 mm inside the trim, 1 pt ThruCut: proposal. Colours: slide blue #192AA2 and cyan #0AD3E6 are drift, the template uses #1A3580 and #32B9CD (inside the beeldmerk). Variables: line-1, line-2."
+}
