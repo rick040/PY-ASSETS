@@ -79,6 +79,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [
   "Full page navy rectangle (#23398E, 303 x 428.4 mm) directly under the white page rectangle of the same size: hidden underlay.",
   "Raster image 740 x 1527 px (indexed, 111.3 to 303.0 mm by 20.1 to 415.8 mm) with the pale bubble: replaced by a vector shape (same silhouette, flat #F7F8FA), the raster is not copied.",

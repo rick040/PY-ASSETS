@@ -53,6 +53,8 @@ OBSERVED = [
     ("py-obs-blauw-rgb-partner", "Blauw RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "poster, flyers, stickers, RGB (ICC) only, vivid royal blue", "#192AA2"),
     ("py-obs-cyaan-rgb-partner", "Cyaan RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "beeldmerk dot, flyer panel, bright cyan, not PY-Aqua", "#0AD3E6"),
     ("py-obs-oranje-rgb-partner", "Oranje RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "price and keyword; close to PY-Oranje (#F08300)", "#FF8401"),
+    ("py-obs-grijs-licht-sticker", "Lichtgrijs stickerbasis", None, "MarketingCampagne_ParkingYouPartner.pdf", "window sticker body, flat grey in the mock-up (raster in source), template placeholder", "#F0F0F0"),
+    ("py-obs-grijs-nfc-schijf", "Grijs NFC schijf", None, "MarketingCampagne_ParkingYouPartner.pdf", "NFC sticker disc, flat grey in the mock-up (raster in source), template placeholder", "#E1E1E1"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
 OBS_HEX = {"#78C9DC": "py-obs-aqua-licht-rgb", "#79C9DC": "py-obs-aqua-licht-rgb", "#71CBDF": "py-obs-aqua-licht-dranghek", "#83CBE1": "py-obs-aqua-licht-rgb", "#8CCDDF": "py-obs-aqua-licht-rgb", "#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}

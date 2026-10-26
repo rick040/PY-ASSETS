@@ -93,6 +93,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [],
  "copy_corrections": [],
  "notes": "Source has no bleed box (art overshoots the page by 3 to 20 mm); templates are built with 3 mm bleed. Front: the beeldmerk at 1.508x (54.3 x 65.5 mm) runs 20.7 mm off the left, 10.0 mm off the top and 0.5 mm off the bottom; the part beyond the 3 mm bleed lies outside the template viewBox. Back: the source background overshoots the trim only 0.2 mm at the bottom and 3.3 mm at the top; the template runs the navy into 3 mm all round. The watermark is 5 percent (the Phase 1 document said 10 percent). The back lockup is the reverse lockup (white bubble, aqua dot) at 0.511x of the A6 lockup, centred on the card; the tagline is live text so it can be a variable. Card number and plate fields are blank in print (input fields only)."

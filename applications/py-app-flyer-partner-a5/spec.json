@@ -1,0 +1,124 @@
+{
+ "id": "py-app-flyer-partner-a5",
+ "name_nl": "Partnerflyer A5",
+ "type": "flyer",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-flyer-partner-a5-front",
+   "variant": "front",
+   "reference": "reference-front.svg",
+   "template": "template-front.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-color-aqua",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-price-badge-circle",
+    "py-comp-pill-location",
+    "py-atom-logo-horizontal-white",
+    "py-atom-shape-bubble-image-mask",
+    "py-atom-logo-beeldmerk-color",
+    "py-atom-icon-location-pin-symmetric"
+   ]
+  },
+  {
+   "id": "py-app-flyer-partner-a5-back",
+   "variant": "back",
+   "reference": "reference-back.svg",
+   "template": "template-back.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-regular",
+    "py-atom-logo-horizontal-color",
+    "py-atom-shape-bubble-image-mask"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/MarketingCampagne_ParkingYouPartner.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC), mock-up slide",
+    "trim_mm": [
+     297,
+     210
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   148,
+   210
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   154.0,
+   216.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "front": {
+   "background-colour": "#1A3580",
+   "photo": "foto van het Hofpleingebouw (bubbelvorm)",
+   "price": "€7",
+   "price-cents": "50",
+   "unit": "per dag",
+   "location-name": "Hofplein",
+   "claim-1": "Parkeren en shopping",
+   "claim-2": "maar dan voordelig",
+   "validity": "Geldig vanaf 1 januari, niet op wedstrijddagen"
+  },
+  "back": {
+   "photo": "foto van handen met telefoon (bubbelvorm)",
+   "headline-1": "Makkelijk parkeren",
+   "headline-2": "vanuit je broekzak",
+   "subline": "Download nu onze app",
+   "qr-target": "https://parkingyou.nl/nl"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-color-aqua",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-regular",
+  "py-comp-price-badge-circle",
+  "py-comp-pill-location",
+  "py-atom-logo-horizontal-white",
+  "py-atom-shape-bubble-image-mask",
+  "py-atom-logo-beeldmerk-color",
+  "py-atom-icon-location-pin-symmetric",
+  "py-atom-logo-horizontal-color"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "mockup",
+ "omitted": [
+  "Soft shadows of the mock-up (transparency groups, black at 5 to 30 percent, including the black rectangles behind the flyers) and the raster images of the slide: not drawn.",
+  "The two photos (building at the Hofplein on the front, hands with a phone on the back) are rasters clipped to the beeldmerk bubble: never copied. The references show the clip outline as a flat #EBEBEB placeholder (group placeholder-photo).",
+  "Back: navy bubble (#192AA2, same outline as the photo clip, 109 x 132 mm) directly under the photo: hidden underlay, replaced by the placeholder. Back: a white rectangle clipped to the QR modules, a duplicate of the white module path directly before it.",
+  "The A5 labels of the slide ('A5 flyer - voorkant', 'A5 flyer - achterkant') and the other mock-ups. The back flyer is partly hidden behind the front flyer on the slide, its paths are complete and drawn in full here."
+ ],
+ "copy_corrections": [
+  {
+   "original": "Geldig vanaf 1 januari - niet op wedstrijddagen",
+   "corrected": "Geldig vanaf 1 januari, niet op wedstrijddagen",
+   "reason": "The spaced hyphen is a typographic dash; the house rule is no dashes in copy, so the template uses a comma. The reference keeps the original."
+  }
+ ],
+ "notes": "A5 flyer 148 x 210 mm, two sides (variants front and back), shown as MOCK-UPS on the slide 'Partner pakket' at a scale of 0.35807 (white sheets 53.173 x 75.194 mm). The mock-up is 148.5 mm wide at that scale (the standard A5 is 148 x 210, rounded from 148.5): the template and the reference viewBox use 148 x 210 as specified, so the reference cuts 0.5 mm off the right edge and the right hand elements sit 0.5 mm closer to the edge than in the mock-up. The mock-up shows no bleed, the template adds 3 mm. FRONT (voorkant): navy field 167.9 mm high, white footer; py-atom-logo-horizontal-white at scale 0.340 (overlap 0.99), photo placeholder = py-atom-shape-bubble-image-mask at scale 2.840 (the clip outline of the building photo, 102 x 124 mm; placeholder-photo with data-variable photo), py-comp-price-badge-circle placed 1:1 (white circle 56.0 mm, navy italic price '€7,50' and 'per dag'), py-comp-pill-location construction in white with navy pin and 'Hofplein' (the pill is 41.0 x 11.1 mm; own measures, see the comp note; the slide's one live text 'Hofplein' belongs to the raamsticker, on the flyer it is outlined like the rest), footer: py-atom-logo-beeldmerk-color at scale 0.452 (overlap 0.999), 'Parkeren en shopping' / 'maar dan voordelig' Ubuntu Bold 10.45 mm navy (leading 9.6 mm) and the small line in aqua Ubuntu Regular 4.13 mm. BACK (achterkant): white sheet, py-atom-logo-horizontal-color at scale 0.442 (overlap 0.97; the print logo has a navy dot where the library colour logo has the aqua dot, so the dot is recoloured to navy, a one colour navy logo that the library does not have), large photo bubble placeholder (py-atom-shape-bubble-image-mask at scale 3.038, overlap 1.00), 'Makkelijk parkeren' / 'vanuit je broekzak' Ubuntu Bold 9.86 mm navy (pitch 9.2 mm), 'Download nu onze app' Ubuntu Regular 7.87 mm navy, QR plate 30.6 mm. QR: the source draws a real QR code (white modules on a navy rounded square, vector paths, 1193 sub paths); the reference keeps it, the template has the plate and a placeholder group qr-target (data-variable qr-target, example https://parkingyou.nl/nl). The library plate py-comp-qr-plate does NOT match: corner radius 3.85 mm on 30.6 mm (12.6 percent) against 5.77 on 87.9 (6.6 percent), the other plate py-comp-qr-reserveer is 10 percent: the plate is drawn inline (owner: add a plate variant with 12.6 percent?). Texts are outlined in the source and live Ubuntu in the template, fitted by overlay (IoU 0.86 to 0.99). Colours: slide blue #192AA2 is drift (template #1A3580), slide cyan #0AD3E6 (small line, beeldmerk dot) is not PY-Aqua; the template uses the token #32B9CD. Variables front: price, price-cents, unit, location-name, claim-1, claim-2, validity, photo, background-colour; back: headline-1, headline-2, subline, photo, qr-target. Open points: the building photo (Hofplein) and the hands photo are placeholders; the price 7,50 per dag appears here and on the Hofplein panel."
+}

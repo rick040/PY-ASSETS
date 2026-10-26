@@ -74,6 +74,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [
   "Photo: JPEG 824 x 988 px (hands holding a phone, 64.8 to 379.8 mm by 60.9 to 438.6 mm) clipped to the bubble outline: not copied. The reference shows the clip outline as a flat #EBEBEB placeholder (group placeholder-photo).",
   "Navy bubble fill (#2A3282, same outline as the photo clip, 313.8 x 378.6 mm) directly under the photo: hidden underlay, not drawn.",

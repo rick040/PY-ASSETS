@@ -67,6 +67,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [
   "10 percent opacity group (form XObject Fm0, graphics state GS1 at 10 percent, bbox x -514 to 481 mm, y -81 to 245 mm, mostly off the page): the form content stream is empty (length 0), it draws nothing, so there is nothing to reproduce (the reference has no ink from it). Probably a leftover of a deleted watermark or beeldmerk copy."
  ],

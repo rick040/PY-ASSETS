@@ -61,6 +61,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [],
  "copy_corrections": [],
  "notes": "Template is built in the official PY-Blauw (CMYK 100/83/0/17, #1A3580). The source is RGB only (#1A3680)."

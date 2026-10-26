@@ -17,7 +17,7 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 | `overview/parkingyou-toepassingen-overzicht.pdf` | A3 landscape vector overview of the applications: original, template and exploded view with the IDs it is built from, followed by the new atoms, components and products. Same group and label rules as the element overview. |
 | `docs/print-rules.md` | Decisions, colour drift, layout and copy drift, production findings and the rules observed in print (observed in print, not official handbook rules). |
 | `docs/print-phase1-inventory.md` | The PM-137 inventory the print build is based on. |
-| `source/print/` | The twenty print source PDFs. |
+| `source/print/` | The 21 print source PDFs (20 print files and the partner package slide). |
 | `fonts/` | Ubuntu (8 styles) under the Ubuntu Font Licence 1.0. Install them to see live text correctly. |
 | `tools/` | Extraction and build scripts (see `tools/README.md`). |
 | `docs/phase1-inventory.md` | The inventory the build is based on: element tables, inconsistencies found in the handbook, suggested additions. |

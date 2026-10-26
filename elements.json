@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 263,
+ "count": 266,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -1569,6 +1569,33 @@
    "tags": [],
    "notes": "White location pin in the active Evoluon pill (Tekengebied_4_kopie_4 p1), one path with the round hole. White on transparent: view on a dark background. Printed size 21.3 x 29.8 mm.",
    "svg": "svg/atom/py-atom-icon-location-pin.svg"
+  },
+  {
+   "id": "py-atom-icon-location-pin-symmetric",
+   "name_nl": "Locatiepin symmetrisch",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "MarketingCampagne_ParkingYouPartner.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 5.2,
+    "height": 7.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "White location pin of the location pills on the partner poster and the Hofplein flyer, one path with the round hole, 5.2 x 7.7 mm. Taken from the poster mock-up (the slide draws it 1.9 x 2.8 mm; scaled by 1 / 0.35807 to the real size of the A4 poster). It is NOT the library py-atom-icon-location-pin: compared by overlay at equal height the print pin is symmetric and narrower (width 0.67 of the height, the library pin 0.72 and asymmetric); overlap only 0.93, visible at 7.7 mm. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-icon-location-pin-symmetric.svg"
   },
   {
    "id": "py-atom-icon-plug-ring",
@@ -5294,6 +5321,44 @@
    "svg": "svg/comp/py-comp-pill-list-destinations.svg"
   },
   {
+   "id": "py-comp-pill-location",
+   "name_nl": "Locatiepil",
+   "level": "comp",
+   "category": "pill",
+   "source_page": 1,
+   "source_file": "MarketingCampagne_ParkingYouPartner.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 64.6,
+    "height": 15.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location-name"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-icon-location-pin-symmetric"
+   ],
+   "tags": [],
+   "notes": "Stadium pill (full round ends) with a location pin and a name, as on the footer of the partner poster: navy pill 64.6 x 15.5 mm, white pin (py-atom-icon-location-pin-symmetric, 7.7 mm high, 5.4 mm from the left edge), name in Ubuntu Medium 6.36 mm white (live text, variable location-name, starts 14.0 mm from the left edge). The flyer front has the same pill in white with navy pin and text (Hofplein, 41.0 x 11.1 mm, text 5.89 mm): the proportions are NOT a uniform scale of this one (pin to height 0.50 in both, but the text is 0.41 of the height on the poster and 0.53 on the flyer, the pin sits 0.35 against 0.30 of the height from the edge), so the flyer draws the same construction with its own measures instead of placing this element. The pill is narrower or wider with the name (no fixed width). Rebuilt: the print outlines the text; construction plus live text. Navy pill: view on a light background.",
+   "svg": "svg/comp/py-comp-pill-location.svg"
+  },
+  {
    "id": "py-comp-pill-storing-contact",
    "name_nl": "Pil storingen contact",
    "level": "comp",
@@ -5676,6 +5741,46 @@
    "tags": [],
    "notes": "Aqua block with circular right edge and the blauw to aqua edge band are rebuilt (measured real vector gradient, clip shapes from the source); the P with roof is extracted. Same artwork on all four portal pages.",
    "svg": "svg/comp/py-comp-portal-p-block.svg"
+  },
+  {
+   "id": "py-comp-price-badge-circle",
+   "name_nl": "Prijscirkel",
+   "level": "comp",
+   "category": "price",
+   "source_page": 1,
+   "source_file": "MarketingCampagne_ParkingYouPartner.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 56.0,
+    "height": 56.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "price",
+    "price-cents",
+    "unit"
+   ],
+   "built_from": [
+    "py-tok-color-wit",
+    "py-tok-color-blauw",
+    "py-tok-type-ubuntu-bold-italic",
+    "py-tok-type-ubuntu-medium"
+   ],
+   "tags": [],
+   "notes": "White circle of 56.0 mm with the day price: '€7' in Ubuntu Bold Italic 23.66 mm navy, the comma (13.1 mm) and the cents '50' (15.75 mm, set raised) in the same face, and the unit 'per dag' in Ubuntu Medium 8.26 mm below. Live text (variables price, price-cents, unit; the comma is fixed), fitted by overlay to the outlines of the Hofplein flyer (IoU 0.98 to 0.99 per run). The poster uses the same construction in orange on a 74.9 mm circle that is cropped by the top right corner, with the text 1.18 times larger (23.66 to 27.84 mm) and rotated 12 degrees, but with other proportions to the circle (price height 0.74 of the radius against 0.85), so it is drawn there with its own measures. NOT py-comp-price-bubble-corner (a white quarter bubble with a different arc and price size) and not the aqua speech bubbles. Rebuilt: circle plus live text. White circle: view on a navy background.",
+   "svg": "svg/comp/py-comp-price-badge-circle.svg"
   },
   {
    "id": "py-comp-price-bubble-corner",
@@ -10020,6 +10125,7 @@
   "Inleveren_Abbonementborg_A5.pdf",
   "LaadKabel.pdf",
   "Maashaven.pdf",
+  "MarketingCampagne_ParkingYouPartner.pdf",
   "Naamloos-7.pdf",
   "PR_RoadSignage.pdf",
   "PR_WTC_Poster.pdf",
