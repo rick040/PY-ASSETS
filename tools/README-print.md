@@ -1,6 +1,6 @@
 # Print toolkit (PM-137)
 
-Builds the new print elements (svg/), the applications (applications/<id>/) and the manifests from the ten PDFs in `source/print/`.
+Builds the new print elements (svg/), the applications (applications/<id>/) and the manifests from the eleven PDFs in `source/print/`.
 It extends the handbook toolkit (`tools/README.md`: Source, crop, registry). Read that first for extraction basics.
 
 ```

@@ -1,0 +1,84 @@
+{
+ "id": "py-app-sticker-terminal-partnermerken",
+ "name_nl": "Terminalsticker partnermerken",
+ "type": "sticker",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sticker-terminal-partnermerken",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-atom-badge-square-navy",
+    "py-atom-partner-easypark",
+    "py-atom-partner-parkbee",
+    "py-atom-partner-myway",
+    "py-atom-partner-mobian"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/TerminalStickers_September2026.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     271.0,
+     391.0
+    ],
+    "bleed_box_set": false
+   }
+  ],
+  "region_references": true
+ },
+ "template": {
+  "trim_mm": [
+   104.97,
+   30.61
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   110.97,
+   36.61
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 6.93,
+   "note": "Proposal: the source has only a 0.25 pt hairline as die line, no ThruCut contour. Radius measured on the die line, to be confirmed by the printer."
+  }
+ },
+ "reference_note": "Faithful vector reproduction of one sticker of the source sheet, cut out with 1.5 mm margin (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "badges": "easypark, parkbee, myway, mobian"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-atom-badge-square-navy",
+  "py-atom-partner-easypark",
+  "py-atom-partner-parkbee",
+  "py-atom-partner-myway",
+  "py-atom-partner-mobian"
+ ],
+ "status": "rebuilt",
+ "tags": [
+  "third-party"
+ ],
+ "reference_scope": "page",
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Four square navy badges (20.6 mm, radius 22 percent) with EasyPark, ParkBee, MyWay and Mobian, composed from py-atom-badge-square-navy and the third party partner atoms (reference only, source the official files). Order on the sheet: EasyPark, ParkBee, MyWay, Mobian. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."
+}

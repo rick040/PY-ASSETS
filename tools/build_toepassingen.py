@@ -136,7 +136,7 @@ class Pg:
         if self.sub:
             h.append(text(MX, 30, self.sub, 3.2, LAB))
         h.append(text(PW - MX, 14, "parkingyou toepassingen-overzicht", 3.2, LAB, anchor="end"))
-        h.append(text(MX, PH - 8, "Bron: 21 printbestanden (source/print). Referentie = getrouwe vectorweergave; template = officiele tokenkleuren, 3 mm bleed, variabelen als live tekst. Labels staan in aparte groepen.", FS7, LAB))
+        h.append(text(MX, PH - 8, "Bron: 22 printbestanden (source/print). Referentie = getrouwe vectorweergave; template = officiele tokenkleuren, 3 mm bleed, variabelen als live tekst. Labels staan in aparte groepen.", FS7, LAB))
         h.append(text(PW - MX, PH - 8, str(num), 4, BRAND["blauw"], weight=700, anchor="end"))
         d = "<defs>" + "".join(self.defs.values()) + "</defs>" if self.defs else ""
         return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{fmt(PW)}mm" height="{fmt(PH)}mm" viewBox="0 0 {fmt(PW)} {fmt(PH)}">'
@@ -277,7 +277,7 @@ def main():
             text(MX + 205, y, "Type", FS7, BRAND["blauw"], weight=700), text(MX + 235, y, "Trim (mm)", FS7, BRAND["blauw"], weight=700),
             text(MX + 275, y, "Pagina", FS7, BRAND["blauw"], weight=700)]
     y += 4
-    pno = 3
+    pno = 4
     for s in apps:
         for v in s["variants"]:
             rows.append(text(MX, y, v["id"], FS7, "#3C3C3B"))
@@ -288,8 +288,12 @@ def main():
             y += 3.6
             pno += 1
     idx.body.append(group("".join(rows), "idx-apps"))
-    y += 6
-    idx.body.append(group(text(MX, y, "Nieuwe elementen", 4, BRAND["blauw"], weight=700), "idx-h2"))
+    if y > PH - 12:
+        raise SystemExit("application index too long for one page")
+    # second index page: the new elements (page numbers of the application pages start at 4)
+    idx2 = Pg("Index", "Nieuwe elementen", "Atomen, componenten en producten die voor de toepassingen zijn toegevoegd")
+    y = 40.0
+    idx2.body.append(group(text(MX, y, "Nieuwe elementen", 4, BRAND["blauw"], weight=700), "idx-h2"))
     y += 6
     cols = 3
     cw = (PW - 2 * MX) / cols
@@ -297,11 +301,10 @@ def main():
     out = []
     for i, e in enumerate(new_els):
         c, r = divmod(i, per_col)
-        out.append(text(MX + c * cw, y + r * 3.3, e["id"], 2.2, "#3C3C3B"))
-    idx.body.append(group("".join(out), "idx-elements"))
-    # fit check: index must stay inside the page
-    if y + per_col * 3.3 > PH - 12:
-        raise SystemExit("index too long for one page")
+        out.append(text(MX + c * cw, y + r * 3.6, e["id"], 2.6, "#3C3C3B"))
+    idx2.body.append(group("".join(out), "idx-elements"))
+    if y + per_col * 3.6 > PH - 12:
+        raise SystemExit("element index too long for one page")
 
     # cover
     cov = []
@@ -334,7 +337,8 @@ def main():
 
     add(cover, "Cover", 1)
     add(idx.svg(2), "Index", 2)
-    num = 3
+    add(idx2.svg(3), "Index nieuwe elementen", 3)
+    num = 4
     for pg, t in apages + epages:
         add(pg.svg(num), t, num)
         num += 1

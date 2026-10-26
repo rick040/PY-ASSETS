@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 266,
+ "count": 277,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -714,6 +714,35 @@
    "svg": "svg/atom/py-atom-arrow-left-plain.svg"
   },
   {
+   "id": "py-atom-arrow-left-solid",
+   "name_nl": "Pijl links (sticker)",
+   "level": "atom",
+   "category": "arrow",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 6.5,
+    "height": 6.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Chunky left arrow, navy, as used in the round arrow sticker (6.5 mm). The source draws a 0.25 pt black hairline around it; it is left out here.",
+   "svg": "svg/atom/py-atom-arrow-left-solid.svg"
+  },
+  {
    "id": "py-atom-arrow-right-circle",
    "name_nl": "pijl rechts in witte cirkel",
    "level": "atom",
@@ -833,6 +862,72 @@
    "tags": [],
    "notes": "Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/atom/py-atom-arrow-up-plain.svg"
+  },
+  {
+   "id": "py-atom-badge-icon-headset-navy",
+   "name_nl": "Ronde badge met headset",
+   "level": "atom",
+   "category": "badge",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 14.8,
+    "height": 14.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy disc (14.8 mm) with a white agent with headset. Used on the storing pill.",
+   "svg": "svg/atom/py-atom-badge-icon-headset-navy.svg"
+  },
+  {
+   "id": "py-atom-badge-icon-phone-navy",
+   "name_nl": "Ronde badge met telefoon",
+   "level": "atom",
+   "category": "badge",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 14.8,
+    "height": 14.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy disc (14.8 mm) with a handset as a hole in the disc (single compound path, works on any background). Used on the storing pill.",
+   "svg": "svg/atom/py-atom-badge-icon-phone-navy.svg"
   },
   {
    "id": "py-atom-badge-round-navy",
@@ -1479,6 +1574,40 @@
    "svg": "svg/atom/py-atom-figure-wave.svg"
   },
   {
+   "id": "py-atom-icon-arrow-down-circle",
+   "name_nl": "Pijl omlaag in cirkel",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 7.7,
+    "height": 7.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour disc",
+    "colour arrow"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy disc (7.7 mm) with a white arrow pointing down, drawn for the bankpas invoeren sticker. The navy sticker uses it 1.19 times larger with the colours swapped (white disc, navy arrow): place with recolor.",
+   "svg": "svg/atom/py-atom-icon-arrow-down-circle.svg"
+  },
+  {
    "id": "py-atom-icon-calendar",
    "name_nl": "Kalendericoon",
    "level": "atom",
@@ -1542,6 +1671,68 @@
    "tags": [],
    "notes": "Car part (navy, normalised to the token #1A3580) plus padlock (light aqua CMYK 54/0/14/0, viewer #68CBDA as sampled, no token). The white gaps in the car are holes in a compound path, not white shapes: it works on any background where navy is visible. 46.2 x 32.0 mm on the sticker.",
    "svg": "svg/atom/py-atom-icon-car-lock.svg"
+  },
+  {
+   "id": "py-atom-icon-headset-agent",
+   "name_nl": "Servicemedewerker met headset",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 9.0,
+    "height": 11.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Customer service agent with headset, navy line and fill, 9 mm. Used next to the phone number on the storing bar.",
+   "svg": "svg/atom/py-atom-icon-headset-agent.svg"
+  },
+  {
+   "id": "py-atom-icon-info-bubble",
+   "name_nl": "Infobubbel met i",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 26.5,
+    "height": 31.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Round speech bubble with the tail at the bottom right and a white lowercase i (live Ubuntu Bold 23.4 mm). 26.5 x 31.9 mm on the sticker. The bubble path is navy (token), the i is white and sits on the bubble: view on a light background.",
+   "svg": "svg/atom/py-atom-icon-info-bubble.svg"
   },
   {
    "id": "py-atom-icon-location-pin",
@@ -1681,6 +1872,195 @@
    "tags": [],
    "notes": "Small outline warning triangle with exclamation mark, navy (the print blue #2B529F is normalised to the token #1A3580), 22.0 x 18.8 mm, two paths. Extracted from the A3 storing poster (inside the contact box). It is NOT the library py-atom-icon-warning-triangle scaled down: compared by overlay at 22.0 mm the print outline is thinner, the corners are rounder and the exclamation mark is smaller and set lower, so the library icon would print visibly different. Navy: view on a light background.",
    "svg": "svg/atom/py-atom-icon-warning-triangle-thin.svg"
+  },
+  {
+   "id": "py-atom-illustration-card-barcode",
+   "name_nl": "Abonnementspas met barcode",
+   "level": "atom",
+   "category": "illustration",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 20.3,
+    "height": 30.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-obs-grijs-qrplaat",
+     "hex": "#E6E7E6"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "card title"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Subscription pass with a navy header ('Parkeer Abonnement', outlined in the source), a barcode and an aqua button, 20.2 x 29.9 mm. The header text is outlined, the barcode is an illustration.",
+   "svg": "svg/atom/py-atom-illustration-card-barcode.svg"
+  },
+  {
+   "id": "py-atom-illustration-card-pas",
+   "name_nl": "Pas met Philips Stadion",
+   "level": "atom",
+   "category": "illustration",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 33.7,
+    "height": 21.8,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "card design"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Pass card (33.7 x 21.8 mm) as shown on the scan pas sticker: blue to dark gradient, white P under a roof, 'Operated by parkingyou' and the Philips Stadion logo. The card carries third party branding (Philips Stadion), reference only: source the official files. Rebuilt: the background gradient is a vector gradient from three sampled colours (the source writes it as a shading, which the vector reader does not export); the star and hexagon pattern (10 percent white) and the logos are source paths.",
+   "svg": "svg/atom/py-atom-illustration-card-pas.svg"
+  },
+  {
+   "id": "py-atom-illustration-contactless-hand",
+   "name_nl": "Contactloos betalen met hand",
+   "level": "atom",
+   "category": "illustration",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 59.0,
+    "height": 36.6,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Contactless payment line art in navy: oval, waves and a hand holding a card, 59 x 37 mm as a single path. Contactless is a third party mark, reference only: source the official file. The black variant from the handbook is py-atom-payment-contactless.",
+   "svg": "svg/atom/py-atom-illustration-contactless-hand.svg"
+  },
+  {
+   "id": "py-atom-illustration-phone-qr",
+   "name_nl": "Telefoon met QR",
+   "level": "atom",
+   "category": "illustration",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 17.2,
+    "height": 30.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-obs-grijs-qrplaat",
+     "hex": "#E6E7E6"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "qr target"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Phone outline (17.1 x 30.4 mm) with a QR plate and QR modules. The plate is a navy tint on white, drawn as a transparency group in the source. The QR modules are an illustration, not a working code. The smaller phone on the scan code sticker is this drawing at 0.885.",
+   "svg": "svg/atom/py-atom-illustration-phone-qr.svg"
+  },
+  {
+   "id": "py-atom-illustration-reader-qr",
+   "name_nl": "QR leesvlak",
+   "level": "atom",
+   "category": "illustration",
+   "source_page": 1,
+   "source_file": "TerminalStickers_September2026.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 16.8,
+    "height": 11.4,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-zwart",
+     "hex": "#1D1D1B"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "qr target"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Rounded reader plate (16.7 x 11.4 mm) with navy outline and a QR illustration, as drawn next to the phone on the scan code sticker.",
+   "svg": "svg/atom/py-atom-illustration-reader-qr.svg"
   },
   {
    "id": "py-atom-line-divider",
@@ -10135,6 +10515,7 @@
   "TariefConcerten.pdf",
   "Tekengebied_1.pdf",
   "Tekengebied_4_kopie_4.pdf",
+  "TerminalStickers_September2026.pdf",
   "dranghekspandoek-dubbelzijdig_01.pdf",
   "posters_297x420_3_1.pdf",
   "posters_420x594_3_1.pdf"

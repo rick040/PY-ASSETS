@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="18.09mm" height="18.09mm" viewBox="0 0 18.09 18.09">
+<title>py-app-sticker-terminal-pijl-links: Terminalsticker pijl links (rond)</title>
+<g id="py-app-sticker-terminal-pijl-links-template"><g id="arrow" data-variable="arrow-direction"><g data-element="py-atom-arrow-left-solid" transform="translate(5.8 5.8) scale(1 1)"><path d="M2.251 0L0 3.25L2.251 6.485L3.503 5.866L2.473 4.059L6.486 3.932L6.486 2.55L2.48 2.424L3.503 0.619L2.251 0" fill="#1A3580"/></g></g><g id="cut-contour" data-spot="ThruCut"><rect x="3.2" y="3.2" width="11.69" height="11.69" fill="none" stroke="#EE4D9B" stroke-width="0.353" rx="5.845" ry="5.845"/></g><g id="guides" visibility="hidden"><rect x="3" y="3" width="12.09" height="12.09" fill="none" stroke="#00A0E0" stroke-width="0.2"/></g></g>
+</svg>
