@@ -1,0 +1,85 @@
+{
+ "id": "py-app-sign-slagboom-evenement",
+ "name_nl": "Bord slagboom evenement",
+ "type": "sign",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-sign-slagboom-evenement",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-atom-logo-horizontal-white"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/BordSlagboomEVO.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     480,
+     240
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   480,
+   240
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   486.0,
+   246.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "line-1": "i.v.m. een evenement is de",
+   "line-2": "parking enkel toegankelijk",
+   "line-3-lead": "voor ",
+   "keyword": "abonnementhouders",
+   "line-3-end": "."
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-atom-logo-horizontal-white"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "page",
+ "omitted": [
+  "10 percent opacity group (form XObject Fm0, graphics state GS1 at 10 percent, bbox x -514 to 481 mm, y -81 to 245 mm, mostly off the page): the form content stream is empty (length 0), it draws nothing, so there is nothing to reproduce (the reference has no ink from it). Probably a leftover of a deleted watermark or beeldmerk copy."
+ ],
+ "copy_corrections": [
+  {
+   "original": "i.v.m een evenement is de",
+   "corrected": "i.v.m. een evenement is de (full stop after the m)"
+  },
+  {
+   "original": "abonnementshouders",
+   "corrected": "abonnementhouders (the handbook writes abonnementhouders, see svg/comp/py-comp-pyloon-opening-hours.svg)"
+  }
+ ],
+ "notes": "480 x 240 mm sign, no bleed and no BleedBox in the source (page = trim, art is the full navy field only); the template adds 3 mm bleed (viewBox 486 x 246). Navy: the source is CMYK 100/86.3/21.5/3.5 (viewer #204382, the same drifted blue as the diefstal sticker), the template uses the token #1A3580. Logo: py-atom-logo-horizontal-white at scale 1.155 (beeldmerk 27.7 x 33.4 mm at x 178.6, y 25.5), beeldmerk and wordmark together span x 178.6 to 299.7 mm, centred on the sign within 1 mm (centre 239.1). Text: three lines of live Ubuntu Regular 98 pt = 34.57 mm white, baselines 114.47, 156.78 and 199.10 mm (pitch 42.3 mm = 1.22 x the size), centred on x 240 (the source centres the lines 0.2 to 1.2 mm right of 240 because the typed trailing spaces are counted; the template centres the ink). The keyword in Ubuntu Bold in the sampled light aqua #68CBDA (CMYK 54/0/14/0, no token, kept as sampled, same colour as the icons on the laadkabel and diefstal stickers). Variables: line-1, line-2, line-3-lead, keyword, line-3-end (line 3 is one text element with three runs, start anchored at the x that centres the example; recentre it when the keyword changes). Mounting holes: two 1 pt magenta rings (#ED308A, CMYK 0/93.4/7.2/0, an ordinary process colour and NOT a spot like ThruCut), diameter 3.7 mm, centres x 150.05 and 329.95 mm, y 126.70 mm (each 90 mm left and right of the centre line). They are kept in the reference. In the template they are the named group mounting-holes (stroke #ED308A, 1 pt, no fill). ASSUMPTION: their purpose (mounting hole marks for the barrier sign) is not stated in the file; the owner must confirm whether they print, cut or are only guides. No cut contour (none in the source, the sign is not a die cut shape)."
+}

@@ -72,6 +72,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [],
  "copy_corrections": [],
  "notes": "Text 'Scan hier je code' (Ubuntu 8.6 mm, code bold), 'of' (5.16 mm), subscription pass with barcode and phone with QR. Die line 0.5 pt. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."

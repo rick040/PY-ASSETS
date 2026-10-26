@@ -81,6 +81,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [
   "Page 2 of StickerDiefstalARtisDruk.pdf: empty (a 1 mm art box in a corner), not part of the reference.",
   "The footer bar part that lies below the page (4.3 mm): the reference shows the page only, as a viewer does."

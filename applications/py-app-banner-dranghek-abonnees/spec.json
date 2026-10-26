@@ -1,0 +1,85 @@
+{
+ "id": "py-app-banner-dranghek-abonnees",
+ "name_nl": "Dranghekspandoek dubbelzijdig",
+ "type": "banner",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-banner-dranghek-abonnees",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-light",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-bold-italic",
+    "py-atom-icon-warning-triangle",
+    "py-comp-pill-storing-contact",
+    "py-atom-figure-wave"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/dranghekspandoek-dubbelzijdig_01.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     2420,
+     1550
+    ],
+    "bleed_box_set": true
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   2420.0,
+   1550.0
+  ],
+  "bleed_mm": 10.0,
+  "size_with_bleed_mm": [
+   2440.0,
+   1570.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "front-nl": "Alleen voor abonnees!",
+   "front-en": "Subscribers only!",
+   "text": "Bij storingen, bel naar",
+   "phone-number": "085 21 30 422",
+   "back-nl": "Tot ziens",
+   "back-en": "Goodbye"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-light",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-bold-italic",
+  "py-atom-icon-warning-triangle",
+  "py-comp-pill-storing-contact",
+  "py-atom-figure-wave"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "page",
+ "omitted": [
+  "Fold band shadow: the 15901 x 112 px grayscale raster at y 766 to 784 mm (soft mask of the shadow) and the 20 percent black rectangle it masks (-29 to 2469 x 767 to 783 mm, #231F20). Without the soft mask the rectangle would show as a hard band, so both are left out; the 20 pt white fold line at y 775 stays."
+ ],
+ "copy_corrections": [],
+ "notes": "Print file of 2440 x 1570 mm (trim 2420 x 1550, 10 mm bleed set), CMYK, ONE version that holds both sides: the lower half (page y 775 to 1560) is the front and reads normally, the upper half (page y 10 to 775) is the back side and is rotated 180 degrees in the file (the back reads upside down), the two halves meet at the white fold line at y 775. Template: front group side-front (warning triangle py-atom-icon-warning-triangle at its source position, 'Alleen voor ' Ubuntu Light + 'abonnees' Bold + '!' Light 172.9 mm white, divider light aqua 20 pt = 7.06 mm from x 534.9 to 2294, 'Subscribers ' Bold + 'only!' Light); back group side-back = the upright layout rotated 180 degrees about (1220 / 392.5) so the file reads like the source: comp py-comp-pill-storing-contact (new, upright, flat end bleeds off the page edge), 'Tot ziens' Ubuntu Bold white and 'Goodbye' Ubuntu Bold Italic light aqua 127 mm (start x 504.4, baselines 583.6 and 703.5 in the upright frame), and the white figure = library py-atom-figure-wave mirrored, scaled 20.82x (fitted by pixel overlay, overlap 0.92: the source torso is about 6 mm wider and its head pointer is mirrored;  the head outline gap of the source is a navy 31 pt stroke, in the library the head is a separate path), cut with pathops to the band of the back side; the body runs off the page as in the source. Group fold-line: white 20 pt (7.06 mm) at y 775 (765 trim relative). Colours: the blue of the file is CMYK 100/85/10/1 (#1A4691, text 24408F, stroke 213B86) and is the token navy in the template; light aqua CMYK 51/1/11/0 (#71CBDF: pill, triangle, divider, Goodbye) has no token and is kept as sampled. Variables: front-nl, front-en, back-nl, back-en, text, phone-number (the last two live inside the pill comp), background-colour. Open points for the owner: (1) the storing number 085 21 30 422 differs from 085 4011647 (Maashaven pyloon, posters); (2) the fold line is at y 775, not at the middle of the trim (785): the back is 765 mm and the front 785 mm high, check with the printer; (3) bleed: 10 mm is set on top, left and right, but the navy field stops at y 1560 (the trim bottom): no bottom bleed in the source, the template adds it; (4) the fold shadow is a raster in the source and is not reproduced; (5) the print logo differs slightly from the library logo (see the pill comp). No spelling errors found. No cut contour: a banner, not a sticker."
+}

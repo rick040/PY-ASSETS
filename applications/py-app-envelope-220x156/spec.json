@@ -1,0 +1,74 @@
+{
+ "id": "py-app-envelope-220x156",
+ "name_nl": "Envelop 220 x 156",
+ "type": "envelope",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-envelope-220x156",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-light",
+    "py-tok-type-ubuntu-regular",
+    "py-comp-address-line-envelop",
+    "py-comp-lockup-logo-tagline-color"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/ParkingYou_Envelop_220x156.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC), file claims PDF/X-1a",
+    "trim_mm": [
+     220,
+     156
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   220,
+   156
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   226.0,
+   162.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "street": "Victoriapark 4 ",
+   "postcode-city": " 5611 BM Eindhoven"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-light",
+  "py-tok-type-ubuntu-regular",
+  "py-comp-address-line-envelop",
+  "py-comp-lockup-logo-tagline-color"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "page",
+ "omitted": [],
+ "copy_corrections": [],
+ "notes": "Source page 249.28 x 185.28 mm, trim 220 x 156 mm centred (offset 14.64 mm), no BleedBox. The reference is faithful and keeps the crop marks: two stroked paths, white 1.25 pt under black 0.25 pt (registration spot All in the source). OPEN POINT: the marks sit at 11.64 and 237.64 mm, i.e. 3 mm OUTSIDE the trim, at the bleed edge of a 226 x 162 mm area, and not at the trim edge; marks that are normally set to the trim would be at 14.64 and 234.64 mm. Confirm with the printer whether the 3 mm is meant as the bleed and which edge the marks refer to. The template has no crop marks (the printer's system adds them), 3 mm bleed (white, the envelope has no bleed content), coordinates relative to the trim. Lockup: py-comp-lockup-logo-tagline-color at scale 0.652 (beeldmerk 15.6 x 18.9 mm at x 20.39, y 18.23 relative to the trim, page 35.0, 32.9), then the address line comp below it (Ubuntu Light 2.47 mm, text origin x 40.64, baseline 58.1 minus 14.64 = 43.46 mm from the trim top, aligned with the wordmark left edge). The file claims PDF/X-1a but is RGB (ICC): colours are #223A7A (blue) and #34BACE (aqua), both listed under observed; the template uses #1A3580 and #32B9CD. PDF/X-1a requires CMYK, so the print file as supplied does not conform to the standard it claims. The envelope has no window, flap line or return address field in the source."
+}

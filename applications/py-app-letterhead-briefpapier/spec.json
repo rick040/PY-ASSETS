@@ -1,0 +1,84 @@
+{
+ "id": "py-app-letterhead-briefpapier",
+ "name_nl": "Briefpapier A4",
+ "type": "letterhead",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-letterhead-briefpapier",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-regular",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-address-block-brief",
+    "py-comp-lockup-logo-tagline-color",
+    "py-atom-mark-registered"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/Briefpapier_nieuw.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "CMYK",
+    "trim_mm": [
+     210,
+     297
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   210,
+   297
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   216.0,
+   303.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "company": "ParkingYou BV",
+   "street": "Victoriapark 4",
+   "postcode-city": "5611 BM Eindhoven",
+   "email": "info@parkingyou.nl",
+   "website": "www.parkingyou.nl"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-regular",
+  "py-tok-type-ubuntu-bold",
+  "py-comp-address-block-brief",
+  "py-comp-lockup-logo-tagline-color",
+  "py-atom-mark-registered"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "page",
+ "omitted": [],
+ "copy_corrections": [
+  {
+   "original": "5611BM Eindhoven",
+   "corrected": "5611 BM Eindhoven (space in the postcode, as on the envelope)"
+  }
+ ],
+ "notes": "A4 portrait, no bleed and no BleedBox in the source (page = trim, everything else is white paper); the template adds 3 mm bleed (white). Blank page below the header block. Lockup: py-comp-lockup-logo-tagline-color at scale 0.515 (beeldmerk 12.4 x 14.9 mm at x 20.2, y 12.2; the tagline is live text inside the comp, aqua), the registered mark py-atom-mark-registered 0.75 mm right of the wordmark, level with its top. Address block: recomposed from py-comp-address-block-brief (right edge 187.26 mm, 3.17 mm Ubuntu, Bold company line) as five live text lines with data-variable (company, street, postcode-city, email, website). The source address text is CMYK 100/85.5/22.3/4 (viewer #1E4382, a drifted blue, listed in observed); the logo is CMYK 100/83/0/17 (viewer #0B3D8A, equal to the token); the template uses #1A3580 for both. Open point: the source has no fold marks, hole punch mark or address window position; the owner may want to add them if the letterhead goes into window envelopes."
+}

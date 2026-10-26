@@ -72,6 +72,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [],
  "copy_corrections": [],
  "notes": "Text 'Scan hier je code' (code bold), 'of', then a phone with QR (the library phone at 0.88) and a QR reader plate. Sheet TerminalStickers_September2026.pdf (271 x 391 mm, no bleed, no trim marks): a hairline die line (black, 0.25 to 0.74 pt) around each white sticker. The template replaces that line by a ThruCut contour 0.2 mm inside the trim and adds a 3 mm bleed. Source blue CMYK 99.5/85/21.4/6.8 (drift, see tokens.json observed): the template uses the token blue."

@@ -107,6 +107,7 @@
  ],
  "status": "rebuilt",
  "tags": [],
+ "reference_scope": "page",
  "omitted": [
   "White 115 mm square at x 237.3 to 352.1, y 881.0 to 995.8 (page mm): white on white, unused.",
   "White 115.3 mm rectangle at y 613.9 (page mm) that the source clips to the QR modules: replaced by the clip path itself (the modules), so the QR is drawn as vector modules.",

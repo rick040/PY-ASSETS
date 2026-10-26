@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 258,
+ "count": 277,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -1608,6 +1608,37 @@
    "svg": "svg/atom/py-atom-icon-arrow-down-circle.svg"
   },
   {
+   "id": "py-atom-icon-calendar",
+   "name_nl": "Kalendericoon",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "TariefConcerten.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 143.2,
+    "height": 156.3,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "White calendar icon of the tariff panel (TariefConcerten p1, first of three): white body 143.2 x 111.3 mm with rounded corners, white header 143.2 x 22.7 mm (a 1 mm gap between header and body) and two binder rings (white fill, 4 pt = 1.41 mm stroke in the file navy #203B8B, normalised to the token #1A3580). Extracted as is, four paths, no text. White on transparent: view on a navy background (the ring strokes disappear on navy, as in print).",
+   "svg": "svg/atom/py-atom-icon-calendar.svg"
+  },
+  {
    "id": "py-atom-icon-car-lock",
    "name_nl": "Auto met slot",
    "level": "atom",
@@ -1731,6 +1762,33 @@
    "svg": "svg/atom/py-atom-icon-location-pin.svg"
   },
   {
+   "id": "py-atom-icon-location-pin-symmetric",
+   "name_nl": "Locatiepin symmetrisch",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "MarketingCampagne_ParkingYouPartner.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 5.2,
+    "height": 7.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "White location pin of the location pills on the partner poster and the Hofplein flyer, one path with the round hole, 5.2 x 7.7 mm. Taken from the poster mock-up (the slide draws it 1.9 x 2.8 mm; scaled by 1 / 0.35807 to the real size of the A4 poster). It is NOT the library py-atom-icon-location-pin: compared by overlay at equal height the print pin is symmetric and narrower (width 0.67 of the height, the library pin 0.72 and asymmetric); overlap only 0.93, visible at 7.7 mm. White on transparent: view on a dark background.",
+   "svg": "svg/atom/py-atom-icon-location-pin-symmetric.svg"
+  },
+  {
    "id": "py-atom-icon-plug-ring",
    "name_nl": "Stekker in open ring",
    "level": "atom",
@@ -1758,6 +1816,62 @@
    "tags": [],
    "notes": "Plug in an open ring, three paths in light aqua (CMYK 54/0/14/0, viewer #68CBDB). Colour kept as sampled: light aqua has no token. Drawn for navy; the sticker uses it at 103.8 x 97.4 mm. Not the green EV sign.",
    "svg": "svg/atom/py-atom-icon-plug-ring.svg"
+  },
+  {
+   "id": "py-atom-icon-warning-triangle",
+   "name_nl": "Waarschuwingsdriehoek",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "dranghekspandoek-dubbelzijdig_01.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 346.8,
+    "height": 302.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-obs-aqua-licht-dranghek",
+     "hex": "#71CBDF"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Light aqua warning triangle with exclamation mark (outline triangle, bar and dot as three paths) from the barrier banner (dranghekspandoek-dubbelzijdig_01.pdf, 346.8 x 302.7 mm there). Light aqua CMYK 51/1/11/0 (viewer #71CBDF) has no token and is kept as sampled. The A3 storing poster draws the same icon as a light aqua fill and a small navy outline version.",
+   "svg": "svg/atom/py-atom-icon-warning-triangle.svg"
+  },
+  {
+   "id": "py-atom-icon-warning-triangle-thin",
+   "name_nl": "Waarschuwingsdriehoek dun",
+   "level": "atom",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "posters_297x420_3_1.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 22.0,
+    "height": 18.8,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [],
+   "notes": "Small outline warning triangle with exclamation mark, navy (the print blue #2B529F is normalised to the token #1A3580), 22.0 x 18.8 mm, two paths. Extracted from the A3 storing poster (inside the contact box). It is NOT the library py-atom-icon-warning-triangle scaled down: compared by overlay at 22.0 mm the print outline is thinner, the corners are rounder and the exclamation mark is smaller and set lower, so the library icon would print visibly different. Navy: view on a light background.",
+   "svg": "svg/atom/py-atom-icon-warning-triangle-thin.svg"
   },
   {
    "id": "py-atom-illustration-card-barcode",
@@ -2489,6 +2603,64 @@
    "svg": "svg/atom/py-atom-mark-glow.svg"
   },
   {
+   "id": "py-atom-mark-live-at-philips-stadium",
+   "name_nl": "Merk Live at Philips Stadium",
+   "level": "atom",
+   "category": "mark",
+   "source_page": 1,
+   "source_file": "TariefConcerten.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 186.9,
+    "height": 73.1,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Third party mark of the event Live at Philips Stadium: 26 outlined navy paths (letters, two stars, two chevron brackets) about 187 x 74 mm, taken as is from TariefConcerten p1. The navy of the file (#23398E) is normalised to the token #1A3580. Reference only, source the official file. Navy: view on a light background.",
+   "svg": "svg/atom/py-atom-mark-live-at-philips-stadium.svg"
+  },
+  {
+   "id": "py-atom-mark-registered",
+   "name_nl": "Gedeponeerd merk",
+   "level": "atom",
+   "category": "mark",
+   "source_page": 1,
+   "source_file": "Briefpapier_nieuw.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 1.2,
+    "height": 1.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "colour"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Small registered mark (R in a circle) next to the wordmark on the letterhead, 1.15 x 1.22 mm (about 1.2 mm), 57 path segments, taken as it is from Briefpapier_nieuw p1 (drawing 13). Source colour (viewer #1FBECC) normalised to PY-Aqua #32B9CD. In print it sits 0.75 mm right of the wordmark, level with its top (x 75.05, y 14.93 on the page). Not part of py-comp-lockup-logo-tagline-color. Aqua on transparent: view on a light ground.",
+   "svg": "svg/atom/py-atom-mark-registered.svg"
+  },
+  {
    "id": "py-atom-partner-easypark",
    "name_nl": "EasyPark",
    "level": "atom",
@@ -2611,6 +2783,47 @@
    ],
    "notes": "White mark only, without the navy badge, taken from the Maashaven print. Third party reference only: source the official file, do not redraw. White on transparent: view on a dark background.",
    "svg": "svg/atom/py-atom-partner-parkbee.svg"
+  },
+  {
+   "id": "py-atom-partner-zuid-holland-bereikbaar",
+   "name_nl": "Partner Zuid-Holland Bereikbaar",
+   "level": "atom",
+   "category": "partner",
+   "source_page": 1,
+   "source_file": "PR_RoadSignage.pdf",
+   "origin": "print",
+   "status": "extracted",
+   "dimensions_mm": {
+    "width": 63.9,
+    "height": 33.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": null,
+     "hex": "#213A8F"
+    },
+    {
+     "token": null,
+     "hex": "#72A32D"
+    },
+    {
+     "token": null,
+     "hex": "#E5007D"
+    },
+    {
+     "token": null,
+     "hex": "#F9D900"
+    }
+   ],
+   "variables": [],
+   "built_from": [],
+   "tags": [
+    "third-party"
+   ],
+   "notes": "Third party logo of Zuid-Holland Bereikbaar (arcs in yellow, magenta, green and blue plus the letters Zuid Holland Bereikbaar), 63.9 x 33.0 mm, all 22 paths as printed on PR_RoadSignage p1, bottom left. Own colours kept, NOT normalised: blue #213A8F (the RGB print blue of the sign, a drift of PY-Blauw, here the partner blue), green #72A32D, yellow #F9D900, magenta #E5007D. Reference only, source the official file. Drawn for a white ground.",
+   "svg": "svg/atom/py-atom-partner-zuid-holland-bereikbaar.svg"
   },
   {
    "id": "py-atom-pattern-hoogtebalk-bands",
@@ -4468,6 +4681,73 @@
    "svg": "svg/atom/py-atom-text-tagline.svg"
   },
   {
+   "id": "py-comp-address-block-brief",
+   "name_nl": "Adresblok briefpapier",
+   "level": "comp",
+   "category": "address",
+   "source_page": 1,
+   "source_file": "Briefpapier_nieuw.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 28.4,
+    "height": 20.7,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    }
+   ],
+   "variables": [
+    "company",
+    "street",
+    "postcode-city",
+    "email",
+    "website"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Right aligned address block of the letterhead as live text in Ubuntu 3.17 mm (9 pt), navy PY-Blauw: company in Bold, then street, postcode and city, a blank gap (7.05 mm baseline step instead of 3.53), email and website. Right edge at 187.26 mm in page coordinates (end of the text advance; the letterhead is 22.7 mm from the right trim edge). REBUILT: all five lines are live text in the source too, but are recomposed in a tight Doc (right anchored) so the variables can change length. The source address blue is CMYK 100/85.5/22.3/4 (viewer #1E4382), drift: the token blue is used. COPY CORRECTION also in this comp: the source writes 5611BM, the comp (and the template) write 5611 BM, as on the envelope. Navy on transparent: view on a light background.",
+   "svg": "svg/comp/py-comp-address-block-brief.svg"
+  },
+  {
+   "id": "py-comp-address-line-envelop",
+   "name_nl": "Adresregel envelop",
+   "level": "comp",
+   "category": "address",
+   "source_page": 1,
+   "source_file": "ParkingYou_Envelop_220x156.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 39.0,
+    "height": 2.8,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "street",
+    "postcode-city"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "One line 'Victoriapark 4 | 5611 BM Eindhoven' in live Ubuntu Light 2.47 mm navy PY-Blauw, the separator bar in Ubuntu Regular PY-Aqua (three runs in one text element, so the line reflows when street or city change; the spaces around the bar belong to the Light runs as in the source). REBUILT: live text in the source as well, recomposed with token colours (source RGB blue #223A7A and aqua #34BACE, the envelope file is RGB only). Light is used here and on the campaign panel URL only. Navy and aqua on transparent: view on a light background.",
+   "svg": "svg/comp/py-comp-address-line-envelop.svg"
+  },
+  {
    "id": "py-comp-bar-footer-callout",
    "name_nl": "Voetbalk melding",
    "level": "comp",
@@ -4583,6 +4863,83 @@
    "tags": [],
    "notes": "Gradient face rebuilt: outline is the clip path of the source shading, the blauw to aqua verloop is re-measured and written as a real SVG gradient. Face with the p33 pictogram (accessible) and caption; the p34 variant swaps the pictogram (EV) and caption. Scale 1:5. Colour normalised to the 1.3 brand value (#1A3680 to #1A3580).",
    "svg": "svg/comp/py-comp-bord-picto-bubble-face.svg"
+  },
+  {
+   "id": "py-comp-box-storing-contact",
+   "name_nl": "Storingsbox met contact",
+   "level": "comp",
+   "category": "box",
+   "source_page": 1,
+   "source_file": "posters_297x420_3_1.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 269.1,
+    "height": 45.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "heading",
+    "phone",
+    "text"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-icon-warning-triangle-thin"
+   ],
+   "tags": [],
+   "notes": "Outlined box (navy stroke 1.03 mm, white fill, 268.1 x 44.5 mm) with the small outline triangle (py-atom-icon-warning-triangle-thin) and two text lines: heading Ubuntu Bold 9.1 mm ('Storing?'), then a bold phone part 'Bel 085 4011647' (Ubuntu Bold 8.64 mm, tracking -0.17 mm) followed by the sentence in Ubuntu Medium 8.64 mm. Text is live: the heading, the phone line and the sentence carry data-variable heading, phone and text; the sentence starts a fixed gap (about 3.4 mm) after the phone line. The print outlines the two bold lines, size and origin are fitted by overlay (Storing? 9.1 mm, Bel line 8.64 mm with about 2 percent tighter spacing than the font default). The source box corners are elliptical (2.97 mm wide, 1.34 mm high): the box was stretched in the print, kept as printed. Rebuilt: composed from the thin triangle atom plus live text. Navy on white: view on a light background.",
+   "svg": "svg/comp/py-comp-box-storing-contact.svg"
+  },
+  {
+   "id": "py-comp-calendar-date",
+   "name_nl": "Kalender met datum",
+   "level": "comp",
+   "category": "icon",
+   "source_page": 1,
+   "source_file": "TariefConcerten.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 143.2,
+    "height": 156.3,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "day",
+    "month"
+   ],
+   "built_from": [
+    "py-atom-icon-calendar"
+   ],
+   "tags": [],
+   "notes": "py-atom-icon-calendar with the date as live Ubuntu text, navy (token #1A3580), both centred on the body width: day Ubuntu Medium 64.51 mm (baseline 61.3 mm below the top of the body), month Ubuntu Regular 23.04 mm (baseline 89.0 mm below the top of the body). Rebuilt: composed from the library atom plus new live text. In the source the first calendar (20 juni) has its text 3.3 mm left of the centre (calendars 2 and 3 are centred), the component centres all three. Shown: 20 juni. Navy text on a white icon: view on a navy background (the date is then navy on white).",
+   "svg": "svg/comp/py-comp-calendar-date.svg"
   },
   {
    "id": "py-comp-escape-legend",
@@ -5114,6 +5471,47 @@
    "svg": "svg/comp/py-comp-lockup-location-garage.svg"
   },
   {
+   "id": "py-comp-lockup-logo-tagline-color",
+   "name_nl": "Taglinelockup (kleur)",
+   "level": "comp",
+   "category": "lockup",
+   "source_page": 1,
+   "source_file": "Briefpapier_nieuw.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 104.9,
+    "height": 28.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "tagline text",
+    "scale"
+   ],
+   "built_from": [
+    "py-atom-logo-horizontal-color",
+    "py-atom-text-tagline"
+   ],
+   "tags": [],
+   "notes": "Library logo py-atom-logo-horizontal-color plus the tagline atom recoloured to PY-Aqua, same geometry as the white A6 lockup (tagline size 0.158 x beeldmerk height, left aligned with the wordmark; measured equal on Briefpapier_nieuw, ParkingYou_Envelop_220x156 and PR_RoadSignage). Navy logo on a light ground. Observed in print, not an official rule.",
+   "svg": "svg/comp/py-comp-lockup-logo-tagline-color.svg"
+  },
+  {
    "id": "py-comp-overview-level-header",
    "name_nl": "Overzichtsbord niveaukop",
    "level": "comp",
@@ -5301,6 +5699,78 @@
    "tags": [],
    "notes": "Three destination pills under each other, pitch 51.5 mm (measured 51.61 and 51.41, the brief says 51.7; gap 8.4 mm). Same drawing as py-comp-pill-destination (shared construction, the labels are live text per pill, so the pill SVG itself is not placed three times). Route variant shown: Philips stadion (arrow left), DLL (arrow up), TD-gebouw (arrow up), all active. White on transparent: view on a navy background.",
    "svg": "svg/comp/py-comp-pill-list-destinations.svg"
+  },
+  {
+   "id": "py-comp-pill-location",
+   "name_nl": "Locatiepil",
+   "level": "comp",
+   "category": "pill",
+   "source_page": 1,
+   "source_file": "MarketingCampagne_ParkingYouPartner.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 64.6,
+    "height": 15.5,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location-name"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-medium",
+    "py-atom-icon-location-pin-symmetric"
+   ],
+   "tags": [],
+   "notes": "Stadium pill (full round ends) with a location pin and a name, as on the footer of the partner poster: navy pill 64.6 x 15.5 mm, white pin (py-atom-icon-location-pin-symmetric, 7.7 mm high, 5.4 mm from the left edge), name in Ubuntu Medium 6.36 mm white (live text, variable location-name, starts 14.0 mm from the left edge). The flyer front has the same pill in white with navy pin and text (Hofplein, 41.0 x 11.1 mm, text 5.89 mm): the proportions are NOT a uniform scale of this one (pin to height 0.50 in both, but the text is 0.41 of the height on the poster and 0.53 on the flyer, the pin sits 0.35 against 0.30 of the height from the edge), so the flyer draws the same construction with its own measures instead of placing this element. The pill is narrower or wider with the name (no fixed width). Rebuilt: the print outlines the text; construction plus live text. Navy pill: view on a light background.",
+   "svg": "svg/comp/py-comp-pill-location.svg"
+  },
+  {
+   "id": "py-comp-pill-storing-contact",
+   "name_nl": "Pil storingen contact",
+   "level": "comp",
+   "category": "pill",
+   "source_page": 1,
+   "source_file": "dranghekspandoek-dubbelzijdig_01.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 1427.1,
+    "height": 317.2,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-obs-aqua-licht-dranghek",
+     "hex": "#71CBDF"
+    }
+   ],
+   "variables": [
+    "text",
+    "phone-number"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Light aqua pill of the banner back side with the storing contact and the navy logo, drawn upright (in the source it is rotated 180 degrees and cut off at the left page edge; here the rounded end is on the left and the flat end is the cut at the page edge, 1427.1 x 317.2 mm, to be placed so that the cut bleeds off). Light aqua CMYK 51/1/11/0 (viewer #71CBDF) has no token and is kept as sampled. REBUILT: the pill is constructed (full round end, radius 158.6 mm measured from the source curves; the source path is 2062 mm long and 635 mm of it lies off the page), the text is live Ubuntu Medium 49.4 mm in the navy token (start 132.1 mm from the rounded end, baseline 176.4 mm below the top), split in 'text' and 'phone number' (one span in the source, same weight and size). The logo is the print logo as drawn in the source (14 paths: beeldmerk, wordmark and registered mark, stacked, 280 mm wide, 68 mm from the cut), taken from the source and rotated: NOT py-atom-logo-stacked-black, because the print wordmark is about 3 percent narrower than the library one (the word 'you' in particular) while the beeldmerk is the library shape at 4.2x; colour normalised to the token navy. Open point: which logo drawing is the master.",
+   "svg": "svg/comp/py-comp-pill-storing-contact.svg"
   },
   {
    "id": "py-comp-portal-display-slot",
@@ -5653,6 +6123,46 @@
    "svg": "svg/comp/py-comp-portal-p-block.svg"
   },
   {
+   "id": "py-comp-price-badge-circle",
+   "name_nl": "Prijscirkel",
+   "level": "comp",
+   "category": "price",
+   "source_page": 1,
+   "source_file": "MarketingCampagne_ParkingYouPartner.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 56.0,
+    "height": 56.0,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "price",
+    "price-cents",
+    "unit"
+   ],
+   "built_from": [
+    "py-tok-color-wit",
+    "py-tok-color-blauw",
+    "py-tok-type-ubuntu-bold-italic",
+    "py-tok-type-ubuntu-medium"
+   ],
+   "tags": [],
+   "notes": "White circle of 56.0 mm with the day price: '€7' in Ubuntu Bold Italic 23.66 mm navy, the comma (13.1 mm) and the cents '50' (15.75 mm, set raised) in the same face, and the unit 'per dag' in Ubuntu Medium 8.26 mm below. Live text (variables price, price-cents, unit; the comma is fixed), fitted by overlay to the outlines of the Hofplein flyer (IoU 0.98 to 0.99 per run). The poster uses the same construction in orange on a 74.9 mm circle that is cropped by the top right corner, with the text 1.18 times larger (23.66 to 27.84 mm) and rotated 12 degrees, but with other proportions to the circle (price height 0.74 of the radius against 0.85), so it is drawn there with its own measures. NOT py-comp-price-bubble-corner (a white quarter bubble with a different arc and price size) and not the aqua speech bubbles. Rebuilt: circle plus live text. White circle: view on a navy background.",
+   "svg": "svg/comp/py-comp-price-badge-circle.svg"
+  },
+  {
    "id": "py-comp-price-bubble-corner",
    "name_nl": "Prijsbel in de hoek",
    "level": "comp",
@@ -5687,6 +6197,40 @@
    "tags": [],
    "notes": "White circle (radius 141 mm) cropped by the top right corner (shape includes the 3 mm bleed), with the price rotated 21.8 degrees clockwise: live Ubuntu Bold Italic 115.18 mm for the euro and the 7, live Ubuntu Medium Italic 62 mm for the decimals. REBUILT: the text per dag and the asterisk are outlined in the source, rebuilt as live text. Measured by fitting the glyphs: per dag is upright Ubuntu Regular 34.17 mm (not Medium Italic as in the brief: only upright Regular fits the outlines in width and height), the asterisk is 11.8 mm raised 14.1 mm. In the source the white circle is a hole in the navy field (paper), here it is drawn as a white shape. Open point: the asterisk has no footnote anywhere on the panel (kept as in the source, variable footnote mark). Navy text on white.",
    "svg": "svg/comp/py-comp-price-bubble-corner.svg"
+  },
+  {
+   "id": "py-comp-price-bubble-speech",
+   "name_nl": "Prijsbel spraakwolk",
+   "level": "comp",
+   "category": "bubble",
+   "source_page": 1,
+   "source_file": "TariefConcerten.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 301.0,
+    "height": 350.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-obs-aqua-licht-rgb",
+     "hex": "#78C9DC"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "price",
+    "label"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Light aqua speech bubble (viewer #78C9DC in this RGB file, no token, kept as sampled) 301 x 351 mm with a rounded pointer at the bottom right (source path, whole shape: in the source it is cropped by the page at the top and the right edge, 8.7 mm and 9.1 mm stick out). Texts rotated 6.71 degrees counter clockwise (matrix 0.9932 / -0.1168, measured from the spans, both texts share the angle): price live Ubuntu Bold 146.52 mm white (origin 434.7 / 193.0 on the page), label live Ubuntu Regular 35.07 mm white. REBUILT: shape is the source path, the text is rebuilt as live text with the measured angle (the source text is live too, but rotated text is written by this module). Not py-comp-price-bubble-corner (white circle with navy price). White text on light aqua.",
+   "svg": "svg/comp/py-comp-price-bubble-speech.svg"
   },
   {
    "id": "py-comp-price-strip-110x400",
@@ -6486,6 +7030,42 @@
    "svg": "svg/comp/py-comp-pyloon-terms.svg"
   },
   {
+   "id": "py-comp-qr-plate",
+   "name_nl": "QR plaat navy",
+   "level": "comp",
+   "category": "qr",
+   "source_page": 1,
+   "source_file": "posters_420x594_3_1.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 87.9,
+    "height": 87.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#EE4D9B"
+    }
+   ],
+   "variables": [
+    "qr-target"
+   ],
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit"
+   ],
+   "tags": [],
+   "notes": "Navy rounded square 87.89 mm (corner radius 5.77 mm, 6.6 percent) with a 75.5 mm placeholder group (placeholder-qr, data-variable qr-target) for the QR code, inset 6.18 mm on all sides; the print QR (white modules on navy, modules as vector fills) has the same inset. The library py-comp-qr-reserveer plate does not match: it is 118.6 mm with a corner radius of 11.95 mm (10 percent) and belongs to a block with slogan and arc. Rebuilt: construction (rounded rectangle plus placeholder). The placeholder is dashed magenta and not for print: place the QR modules in white on the plate (inverted codes may fail on older scanners, see py-comp-qr-reserveer). Navy plate: view on a light background.",
+   "svg": "svg/comp/py-comp-qr-plate.svg"
+  },
+  {
    "id": "py-comp-qr-reserveer",
    "name_nl": "Reserveer QR blok",
    "level": "comp",
@@ -6971,6 +7551,35 @@
    "svg": "svg/comp/py-comp-section-wrap-strip.svg"
   },
   {
+   "id": "py-comp-symbol-pr",
+   "name_nl": "P+R symbool",
+   "level": "comp",
+   "category": "symbol",
+   "source_page": 1,
+   "source_file": "PR_RoadSignage.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 88.0,
+    "height": 62.3,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "label"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "P+R symbol of the road sign: two white bars 88.0 mm wide (top 8.8 mm high with rounded top corners, bottom 8.0 mm high with rounded bottom corners, outer corner radius 6.68 mm; both are the source paths) with the label P+R between them as live text, Ubuntu Bold 45.33 mm white (centred between the bars, 61.7 mm from the left edge of the page in the source). REBUILT: the bars are extracted, the text is live (variable label). Overall 88.0 x 62.2 mm. White on transparent: view on a navy background.",
+   "svg": "svg/comp/py-comp-symbol-pr.svg"
+  },
+  {
    "id": "py-comp-tagline-lockup",
    "name_nl": "Taglinelockup (wit)",
    "level": "comp",
@@ -7107,6 +7716,44 @@
    "tags": [],
    "notes": "Two line URL in white plus the light aqua chevron (viewer #69CADA, CMYK 54/0/14/0, no token, kept as sampled). The chevron is the source path. REBUILT: both lines are outlined in the source, rebuilt as live text. Fitted by overlay with the outlines: line 1 Ubuntu Bold 37.7 mm, line 2 Ubuntu Light 34.4 mm (Regular does not fit: the width and the height of the glyphs agree only for Light; Light is otherwise not used in print). The URL is split inside the domain as in the source (voordelig / parkeren.nl), open point. White and light aqua on transparent: view on navy.",
    "svg": "svg/comp/py-comp-url-chevron.svg"
+  },
+  {
+   "id": "py-comp-url-tag-chevron",
+   "name_nl": "URL label met chevron",
+   "level": "comp",
+   "category": "tag",
+   "source_page": 1,
+   "source_file": "PR_WTC_Poster.pdf",
+   "origin": "print",
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 219.6,
+    "height": 32.9,
+    "stated": null,
+    "basis": "print scale (1:1 from source)"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-obs-aqua-licht-rgb",
+     "hex": "#79C9DC"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "url-bold",
+    "url-regular"
+   ],
+   "built_from": [],
+   "tags": [],
+   "notes": "Navy tag 219.6 x 32.9 mm (corner radius 1.43 mm) with the URL on one line: 'voordelig' Ubuntu Bold white and 'parkeren.nl' Ubuntu Light white, both 18.4 mm, light aqua chevron (source path, 15.9 x 23.9 mm) and a light aqua registered mark. Light aqua (viewer #79C9DC, RGB file) has no token and is kept as sampled. REBUILT: the letters are outlined in the source and rebuilt as live text, fitted by overlay (pixel overlap about 0.8 on 18 mm letters): the glyph height agrees at 18.4 mm for both words, 'voordelig' needs a tracking of -0.18 mm in Bold, 'parkeren.nl' fits Light (Regular is 2.3 percent too narrow and does not overlay), as in py-comp-url-chevron. The tag colour of the file is #374F9C (lighter than the page navy #23398E), normalised to the token navy. The tag and the registered mark are new; the chevron has the shape of py-comp-url-chevron at scale 0.54 but that comp is a two line URL (voordelig / parkeren.nl at 37.7 and 34.4 mm, no tag), so this is a separate comp. Place it on white paper (navy tag). The registered mark is the source path (2.4 mm), the library atom py-atom-mark-registered is not used because the colour is light aqua here.",
+   "svg": "svg/comp/py-comp-url-tag-chevron.svg"
   },
   {
    "id": "py-comp-walk-route-figure-block",
@@ -9851,15 +10498,26 @@
  ],
  "print_sources": [
   "15728501-1.pdf",
+  "BordSlagboomEVO.pdf",
+  "Briefpapier_nieuw.pdf",
   "EvoluonPasjes.pdf",
   "InfoPylonBordGoed.pdf",
   "Inleveren_Abbonementborg_A5.pdf",
   "LaadKabel.pdf",
   "Maashaven.pdf",
+  "MarketingCampagne_ParkingYouPartner.pdf",
   "Naamloos-7.pdf",
+  "PR_RoadSignage.pdf",
+  "PR_WTC_Poster.pdf",
+  "PR_WTC_Sticker.pdf",
+  "ParkingYou_Envelop_220x156.pdf",
   "StickerDiefstalARtisDruk.pdf",
+  "TariefConcerten.pdf",
   "Tekengebied_1.pdf",
   "Tekengebied_4_kopie_4.pdf",
-  "TerminalStickers_September2026.pdf"
+  "TerminalStickers_September2026.pdf",
+  "dranghekspandoek-dubbelzijdig_01.pdf",
+  "posters_297x420_3_1.pdf",
+  "posters_420x594_3_1.pdf"
  ]
 }

@@ -1054,6 +1054,34 @@ def cutout(items, hole="#FFFFFF"):
     return out
 
 
+def clip_to_rect(items, rect, slack=0.0):
+    """Cut filled paths that reach beyond `rect` (x0, y0, x1, y1 in source points) down to the rect (boolean intersection).
+    Paths that stay inside rect + slack are untouched. Strokes, text and groups are left alone. Used so that references do not carry
+    huge off-page geometry (for example a 956 x 1272 mm field on a 700 x 1000 mm sign)."""
+    import pathops
+
+    x0, y0, x1, y1 = rect
+    box = pathops.Path()
+    pen = box.getPen()
+    pen.moveTo((x0, y0)); pen.lineTo((x1, y0)); pen.lineTo((x1, y1)); pen.lineTo((x0, y1)); pen.closePath()
+    out = []
+    for it in items:
+        if isinstance(it, Path) and it.fill is not None and it.stroke is None and isinstance(it.fill, str):
+            b = it.box
+            if b[0] < x0 - slack or b[1] < y0 - slack or b[2] > x1 + slack or b[3] > y1 + slack:
+                r = pathops.op(_to_pathops(it), box, pathops.PathOp.INTERSECTION)
+                new = _from_pathops(r, it)
+                new.evenodd = False
+                if new.segs:
+                    for a in ("seq", "gop", "clipped"):
+                        if hasattr(it, a):
+                            setattr(new, a, getattr(it, a))
+                    out.append(new)
+                continue
+        out.append(it)
+    return out
+
+
 # ---------------------------------------------------------------- print support
 # Blues, aquas and black that the print files draw slightly off the 1.3 values (see docs/print-phase1-inventory.md).
 # Applied only when library elements are built from print files (library atoms and components);
@@ -1063,6 +1091,16 @@ PRINT_NORMALISE = {
     "#174797": "#1A3580", "#27397E": "#1A3580", "#1C4480": "#1A3580", "#1E427F": "#1A3580", "#1C427E": "#1A3580",
     "#24BFCD": "#32B9CD", "#24BDCD": "#32B9CD", "#23BDCD": "#32B9CD", "#31BBCD": "#32B9CD",
     "#000000": "#1D1D1B",
+    # second batch: RGB blues and aquas (ICC) and one more CMYK address blue
+    "#273A7C": "#1A3580", "#213A8F": "#1A3580", "#223A7A": "#1A3580", "#243A78": "#1A3580", "#23398E": "#1A3580",
+    "#1E4482": "#1A3580", "#1E4382": "#1A3580",
+    "#2DB8CD": "#32B9CD", "#34BACE": "#32B9CD", "#1FBECC": "#32B9CD", "#33BACC": "#32B9CD",
+    # third batch (banner, P+R sticker and poster, A3 and A2 posters)
+    "#1A4691": "#1A3580", "#213B86": "#1A3580", "#24408F": "#1A3580", "#233A89": "#1A3580", "#2B3D91": "#1A3580",
+    "#374F9E": "#1A3580", "#374F9C": "#1A3580", "#2B529F": "#1A3580", "#2A3282": "#1A3580",
+    "#48BED6": "#32B9CD", "#231F20": "#1D1D1B",
+    # fourth batch (partner package slide): vivid blue, bright cyan and the near-orange map to the tokens
+    "#192AA2": "#1A3580", "#0AD3E6": "#32B9CD", "#0BD3E6": "#32B9CD", "#FF8401": "#F08300",
     # TerminalStickers_September2026.pdf: rich blacks of the QR and barcode modules, near whites of the QR plates
     "#111617": "#1D1D1B", "#131719": "#1D1D1B", "#141819": "#1D1D1B", "#15191B": "#1D1D1B", "#171B1D": "#1D1D1B",
     "#FDFEFE": "#FFFFFF", "#FAFAFA": "#FFFFFF",
@@ -1094,7 +1132,9 @@ def regroup(src: "Source", pno: int, items: list):
     # live text carries no group information: it joins only a text-only group (a group without path members), the smallest one
     # whose rectangle holds its centre. A text over a tinted shape (watermark, field) therefore stays outside the tint.
     with_paths = {it.gop[-1][0] for it in items if isinstance(it, Path) and getattr(it, "gop", ())}
-    text_groups = {g: v for g, v in rects.items() if g not in with_paths}
+    pr = src.page(pno).rect
+    # a group that spans (nearly) the whole page carries no text of its own (an empty full-page form with 10 percent opacity exists in BordSlagboomEVO)
+    text_groups = {g: v for g, v in rects.items() if g not in with_paths and v[1].width * v[1].height < 0.8 * pr.width * pr.height}
     out: list = []
     cur: dict = {}
     for it in items:

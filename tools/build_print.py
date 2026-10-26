@@ -28,7 +28,7 @@ OBSERVED = [
     ("py-obs-blauw-uitrit", "Blauw uitritbord", (100, 92.5, 19.2, 5.9), "15728501-1.pdf", "pill background"),
     ("py-obs-blauw-maashaven", "Blauw Maashaven", (100, 86, 21.2, 3.7), "Maashaven.pdf", "header, bars, logo, text"),
     ("py-obs-blauw-laadkabel", "Blauw laadkabel", (100, 85.9, 6.6, 0), "LaadKabel.pdf", "background"),
-    ("py-obs-blauw-diefstal", "Blauw diefstalsticker", (100, 86.3, 21.5, 3.5), "StickerDiefstalARtisDruk.pdf", "text, icon, footer"),
+    ("py-obs-blauw-diefstal", "Blauw diefstalsticker en slagboombord", (100, 86.3, 21.5, 3.5), "StickerDiefstalARtisDruk.pdf, BordSlagboomEVO.pdf", "text, icon, footer, background"),
     ("py-obs-blauw-glow", "Blauw GLOW", (100, 84.4, 5.5, 0.4), "Tekengebied_1.pdf, Tekengebied_4_kopie_4.pdf", "background, text"),
     ("py-obs-blauw-rgb-1a3680", "Blauw RGB achtergrond", None, "Naamloos-7.pdf", "RGB only, #1A3680 (the vector blue replaced by #1A3580 in 1.3)"),
     ("py-obs-aqua-uitrit", "Aqua uitritbord", (67.8, 3.1, 19.2, 0), "15728501-1.pdf", "arrow and arc"),
@@ -36,9 +36,30 @@ OBSERVED = [
     ("py-obs-blauw-terminal", "Blauw terminalstickers", (99.5, 85, 21.4, 6.8), "TerminalStickers_September2026.pdf", "text, icons, badges, bars (also 99.6/84/21.3/6.6 and 100/86.4/21.4/3.7 on single stickers)"),
     ("py-obs-grijs-qrplaat", "Lichtgrijs QR plaat", (8.4, 5.8, 6.9, 0), "TerminalStickers_September2026.pdf", "QR plates of the phone, reader and subscription card illustrations (at 90 percent opacity)"),
     ("py-obs-zwart-rijk", "Rijk zwart", (91.2, 78.7, 62, 97.4), "Maashaven.pdf", "small text"),
+    # second batch
+    ("py-obs-blauw-briefpapier-tekst", "Blauw adresblok briefpapier", (100, 85.5, 22.3, 4), "Briefpapier_nieuw.pdf", "address text"),
+    ("py-obs-magenta-gaten", "Magenta montagegaten", (0, 93.4, 7.2, 0), "BordSlagboomEVO.pdf", "two 1 pt rings (mounting holes), not a spot colour"),
+    ("py-obs-blauw-rgb-pr", "Blauw RGB P+R bord", None, "PR_RoadSignage.pdf", "background and text, RGB (ICC) only", "#273A7C"),
+    ("py-obs-blauw-rgb-pr-logo", "Blauw RGB P+R bord logo", None, "PR_RoadSignage.pdf", "logo and partner text, RGB (ICC) only", "#213A8F"),
+    ("py-obs-blauw-rgb-envelop", "Blauw RGB envelop", None, "ParkingYou_Envelop_220x156.pdf", "logo and address, RGB (ICC) only (file claims PDF/X-1a)", "#223A7A"),
+    ("py-obs-blauw-rgb-tarief", "Blauw RGB tariefbord", None, "TariefConcerten.pdf", "background and text, RGB (ICC) only", "#23398E"),
+    ("py-obs-aqua-rgb-envelop", "Aqua RGB envelop", None, "ParkingYou_Envelop_220x156.pdf, PR_RoadSignage.pdf", "tagline, dot; RGB (ICC)", "#34BACE"),
+    ("py-obs-aqua-licht-rgb", "Lichtaqua RGB", None, "TariefConcerten.pdf, PR_WTC_Sticker.pdf, PR_WTC_Poster.pdf", "price bubble, RGB (ICC) only", "#78C9DC"),
+    # third batch
+    ("py-obs-blauw-dranghek", "Blauw dranghekspandoek", (100, 85, 10, 1), "dranghekspandoek-dubbelzijdig_01.pdf", "background, figure text"),
+    ("py-obs-aqua-licht-dranghek", "Lichtaqua dranghekspandoek", (51, 1, 11, 0), "dranghekspandoek-dubbelzijdig_01.pdf", "pill, triangle, divider, keyword"),
+    ("py-obs-blauw-rgb-wtc", "Blauw RGB P+R sticker en poster", None, "PR_WTC_Sticker.pdf, PR_WTC_Poster.pdf", "background and text, RGB (ICC) only", "#233A89"),
+    ("py-obs-blauw-rgb-poster-a3", "Blauw RGB poster A3", None, "posters_297x420_3_1.pdf", "text and icons, RGB (ICC sRGB) only", "#2B3D91"),
+    ("py-obs-blauw-rgb-poster-a2", "Blauw RGB poster A2", None, "posters_420x594_3_1.pdf", "text and QR plate, RGB (ICC sRGB) only", "#2A3282"),
+    # fourth batch (partner package slide)
+    ("py-obs-blauw-rgb-partner", "Blauw RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "poster, flyers, stickers, RGB (ICC) only, vivid royal blue", "#192AA2"),
+    ("py-obs-cyaan-rgb-partner", "Cyaan RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "beeldmerk dot, flyer panel, bright cyan, not PY-Aqua", "#0AD3E6"),
+    ("py-obs-oranje-rgb-partner", "Oranje RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "price and keyword; close to PY-Oranje (#F08300)", "#FF8401"),
+    ("py-obs-grijs-licht-sticker", "Lichtgrijs stickerbasis", None, "MarketingCampagne_ParkingYouPartner.pdf", "window sticker body, flat grey in the mock-up (raster in source), template placeholder", "#F0F0F0"),
+    ("py-obs-grijs-nfc-schijf", "Grijs NFC schijf", None, "MarketingCampagne_ParkingYouPartner.pdf", "NFC sticker disc, flat grey in the mock-up (raster in source), template placeholder", "#E1E1E1"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
-OBS_HEX = {"#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht", "#E6E7E6": "py-obs-grijs-qrplaat"}
+OBS_HEX = {"#78C9DC": "py-obs-aqua-licht-rgb", "#79C9DC": "py-obs-aqua-licht-rgb", "#71CBDF": "py-obs-aqua-licht-dranghek", "#83CBE1": "py-obs-aqua-licht-rgb", "#8CCDDF": "py-obs-aqua-licht-rgb", "#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht", "#E6E7E6": "py-obs-grijs-qrplaat"}
 
 
 def load_specs(only=None):
@@ -84,7 +105,8 @@ def write_observed(root):
                  "Official blauw is CMYK 100/83/0/17 (#1A3580); four files use exactly that, the rest (the terminal sticker sheet included) drift as listed."),
         "colors": {},
     }
-    for oid, name, cmyk, files, use in OBSERVED:
+    for rec in OBSERVED:
+        oid, name, cmyk, files, use = rec[:5]
         row = {"name": name, "files": files, "used_for": use, "kind": "observed"}
         if cmyk:
             row["cmyk"] = list(cmyk)
@@ -93,8 +115,9 @@ def write_observed(root):
             if ref:
                 row["delta_to_token_cmyk"] = [round(a - b, 1) for a, b in zip(cmyk, ref)]
         else:
-            row["rgb"] = [26, 54, 128]
-            row["hex_viewer"] = "#1A3680"
+            hx = rec[5] if len(rec) > 5 else "#1A3680"
+            row["rgb"] = [int(hx[i:i + 2], 16) for i in (1, 3, 5)]
+            row["hex_viewer"] = hx
         obs["colors"][oid] = row
     t["observed"] = obs
     json.dump(t, open(p, "w", encoding="utf8"), indent=1, ensure_ascii=False)
@@ -161,6 +184,10 @@ class Ctx:
 
     def reference(self, key, pno=1, variant="", **kw):
         return printsrc.reference_svg(self.app_id, key, pno, variant, **kw)
+
+    def piece_reference(self, key, seq_ranges, origin_mm, scale, trim_mm, pno=1, variant="", **kw):
+        """Mock-up piece from a presentation slide, scaled to real size (see printsrc.piece_reference_svg)."""
+        return printsrc.piece_reference_svg(self.app_id, key, seq_ranges, origin_mm, scale, trim_mm, pno, variant, **kw)
 
 
 def build_apps(only):
@@ -231,6 +258,7 @@ def build_apps(only):
             "built_from": built,
             "status": meta["status"],
             "tags": meta["tags"],
+            "reference_scope": meta.get("reference_scope", "page"),
             "omitted": res.get("omitted", []),
             "copy_corrections": res.get("copy_corrections", []),
             "notes": res.get("notes", meta.get("notes", "")),

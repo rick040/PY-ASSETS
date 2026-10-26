@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="55.97mm" height="55.97mm" viewBox="0 0 55.97 55.97">
+<title>py-comp-price-badge-circle: Prijscirkel</title>
+<g id="py-comp-price-badge-circle"><g transform="translate(0 0)"><circle cx="27.985" cy="27.985" r="27.985" fill="#FFFFFF" id="circle"/><g id="price-block"><text x="5.023" y="31.17" font-family="Ubuntu" font-size="23.655" font-weight="bold" font-style="italic" fill="#1A3580" data-variable="price" xml:space="preserve">€7</text><text x="31.792" y="29.562" font-family="Ubuntu" font-size="13.096" font-weight="bold" font-style="italic" fill="#1A3580" id="price-comma" xml:space="preserve">,</text><text x="31.941" y="25.229" font-family="Ubuntu" font-size="15.75" font-weight="bold" font-style="italic" fill="#1A3580" data-variable="price-cents" xml:space="preserve">50</text></g><text x="13.44" y="41.659" font-family="Ubuntu Medium" font-size="8.258" fill="#1A3580" data-variable="unit" xml:space="preserve">per dag</text></g></g>
+</svg>

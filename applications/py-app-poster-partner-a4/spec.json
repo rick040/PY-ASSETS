@@ -1,0 +1,92 @@
+{
+ "id": "py-app-poster-partner-a4",
+ "name_nl": "Partnerposter A4",
+ "type": "poster",
+ "origin": "print",
+ "variants": [
+  {
+   "id": "py-app-poster-partner-a4",
+   "variant": null,
+   "reference": "reference.svg",
+   "template": "template.svg",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-wit",
+    "py-tok-color-oranje",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-bold-italic",
+    "py-comp-price-badge-circle",
+    "py-comp-pill-location",
+    "py-atom-logo-horizontal-white",
+    "py-atom-icon-location-pin-symmetric"
+   ]
+  }
+ ],
+ "source": {
+  "files": [
+   {
+    "file": "source/print/MarketingCampagne_ParkingYouPartner.pdf",
+    "pages": [
+     1
+    ],
+    "colour_space": "RGB (ICC), mock-up slide",
+    "trim_mm": [
+     297,
+     210
+    ],
+    "bleed_box_set": false
+   }
+  ]
+ },
+ "template": {
+  "trim_mm": [
+   210,
+   297
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   216.0,
+   303.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": null
+ },
+ "reference_note": "Faithful vector reproduction of the source page (source colours as a viewer shows them, original copy including typos). Hidden leftovers are listed under omitted.",
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "price": "€7",
+   "price-cents": "50",
+   "unit": "per dag",
+   "headline-1": "Jouw dagje",
+   "headline-2": "shoppen",
+   "headline-3": "start hier!",
+   "subline": "Slim parkeren. Snel in de stad.",
+   "footer-text": "Volg de borden",
+   "location-name": "Philips Stadion"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-wit",
+  "py-tok-color-oranje",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-medium",
+  "py-tok-type-ubuntu-bold-italic",
+  "py-comp-price-badge-circle",
+  "py-comp-pill-location",
+  "py-atom-logo-horizontal-white",
+  "py-atom-icon-location-pin-symmetric"
+ ],
+ "status": "rebuilt",
+ "tags": [],
+ "reference_scope": "mockup",
+ "omitted": [
+  "Soft shadow of the mock-up (transparency groups, black at 5 to 30 percent) and the three raster images of the slide (two photos, one shadow): not drawn.",
+  "The slide labels (A4 poster, A5 flyer ...) and the other mock-ups (raamsticker, NFC sticker, flyers) around the poster. The poster is partly hidden under the flyers on the slide, its paths are complete and drawn in full here.",
+  "The poster has no separate white circle in the source: the navy field is one path with a circle shaped notch (top right) through which the white sheet shows. The template draws the white circle as its own shape on the navy field."
+ ],
+ "copy_corrections": [],
+ "notes": "A4 poster 210 x 297 mm, shown as a MOCK-UP on the slide 'Partner pakket' at a scale of 0.35807 (white sheet 75.194 x 106.346 mm on the slide, so 210.0 x 297.0 mm real, A4 is a standard format). The reference is the mock-up taken from the slide at real size (viewBox 210 x 297 mm, no bleed: the mock-up shows the trimmed sheet; the template adds 3 mm bleed). REBUILT: all texts are outlined in the source and are live Ubuntu in the template, fitted by overlay (IoU 0.88 to 0.99): headline 'Jouw dagje' / 'shoppen' (orange) / 'start hier!' Ubuntu Bold 31.0 mm, tracking -0.02 em, line pitch 30.3 mm; 'Slim parkeren. Snel in de stad.' Ubuntu Medium 10.45 mm white; 'Volg de borden' Ubuntu Medium 10.49 mm navy (the brief says regular and bold: the overlay fits Medium best for both); the price circle and the location pill come from the new comps. Library: py-atom-logo-horizontal-white at scale 0.749 (78.5 mm wide, overlap 0.99), py-comp-price-badge-circle construction (white circle 74.9 mm, centre 182.5 / 23.7 mm, cropped by the corner with pathops at the bleed edge; '€7' Ubuntu Bold Italic 27.84 mm, comma 15.4 mm and cents '50' 18.55 mm in the orange token, 'per dag' Ubuntu Medium 9.71 mm, all rotated 12 degrees (the brief estimated 10)), py-comp-pill-location (navy pill 64.6 x 15.5 mm, new atom py-atom-icon-location-pin-symmetric, 'Philips Stadion' Ubuntu Medium 6.36 mm white). The navy field ends at y 259.3 mm (white footer 37.7 mm). Colours: the slide blue #192AA2 is drift (template #1A3580), the slide orange #FF8401 is the token PY-Oranje #F08300 in the template (first print piece with the orange token), white. Variables: price, price-cents, unit, headline-1, headline-2, headline-3, subline, footer-text, location-name, background-colour. Open points: price 7,50 per dag is the same as on the Hofplein panel; the location name is an example value; the tracking of the headline is -0.02 em in the print."
+}

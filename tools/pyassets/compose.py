@@ -159,7 +159,8 @@ class Doc:
             a += f' id="{gid}"'
         self._emit(f"<line {a}/>", (min(ax, bx), min(ay, by) - sw / 2, max(ax, bx), max(ay, by) + sw / 2))
 
-    def path(self, d, box, fill=None, stroke=None, sw=None, opacity=None, evenodd=False, gid=None, dx=0.0, dy=0.0):
+    def path(self, d, box, fill=None, stroke=None, sw=None, opacity=None, evenodd=False, gid=None, dx=0.0, dy=0.0,
+             variable=None, example=None):
         """Raw path data in doc coordinates (trim relative). `box` = (x0, y0, x1, y1) of the path in the same space.
         The bleed offset is applied through a translate, so d needs no manual shift."""
         a = f'd="{d}" fill="{fill or "none"}"'
@@ -171,6 +172,9 @@ class Doc:
             a += f' stroke="{stroke}" stroke-width="{fmt(sw or 0.25)}"'
         if gid:
             a += f' id="{gid}"'
+        if variable:
+            a += f' data-variable="{variable}"'
+            self.variables[variable] = example if example is not None else fill
         ax, ay = self._p(0, 0)
         self._emit(f'<path transform="translate({fmt(ax)} {fmt(ay)})" {a}/>', (box[0] + ax, box[1] + ay, box[2] + ax, box[3] + ay))
 
@@ -224,7 +228,7 @@ class Doc:
 
     # ------------------------------------------------------------ library elements
     def place(self, ref_id, x, y, w=None, h=None, scale=None, anchor="tl", recolor=None, opacity=None, rotate=0.0,
-              flip_x=False, flip_y=False, gid=None):
+              flip_x=False, flip_y=False, gid=None, strip_text=False):
         """Place a library SVG. Size by w (mm), h (mm) or scale; (x, y) is where `anchor` of the element lands.
         Returns the placed box (x0, y0, x1, y1) in trim-relative coordinates."""
         ew, eh, defs, inner = lib_svg(ref_id)
@@ -246,6 +250,8 @@ class Doc:
             t = f"translate({fmt(tx + (sw_ if flip_x else 0))} {fmt(ty + (sh_ if flip_y else 0))})" + (
                 f" rotate({fmt(rotate)})" if rotate else "") + f" scale({fmt(-scale if flip_x else scale)} {fmt(-scale if flip_y else scale)})"
         body = _recolor(inner, recolor)
+        if strip_text:  # drop the example texts of the placed element: the caller draws its own live text with variables
+            body = re.sub(r"<text\b[^>]*>.*?</text>", "", body, flags=re.S)
         a = f' data-element="{ref_id}" transform="{t}"'
         if opacity is not None and opacity < 0.999:
             a += f' opacity="{fmt(opacity)}"'

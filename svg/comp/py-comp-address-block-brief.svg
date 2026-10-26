@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="28.385mm" height="20.698mm" viewBox="0 0 28.385 20.698">
+<title>py-comp-address-block-brief: Adresblok briefpapier</title>
+<g id="py-comp-address-block-brief"><g transform="translate(-158.847 -16.325)"><text x="187.263" y="18.789" font-family="Ubuntu" font-size="3.175" font-weight="bold" text-anchor="end" fill="#1A3580" data-variable="company" xml:space="preserve">ParkingYou BV</text><text x="187.263" y="22.316" font-family="Ubuntu" font-size="3.175" text-anchor="end" fill="#1A3580" data-variable="street" xml:space="preserve">Victoriapark 4</text><text x="187.263" y="25.844" font-family="Ubuntu" font-size="3.175" text-anchor="end" fill="#1A3580" data-variable="postcode-city" xml:space="preserve">5611 BM Eindhoven</text><text x="187.263" y="32.899" font-family="Ubuntu" font-size="3.175" text-anchor="end" fill="#1A3580" data-variable="email" xml:space="preserve">info@parkingyou.nl</text><text x="187.263" y="36.426" font-family="Ubuntu" font-size="3.175" text-anchor="end" fill="#1A3580" data-variable="website" xml:space="preserve">www.parkingyou.nl</text></g></g>
+</svg>
