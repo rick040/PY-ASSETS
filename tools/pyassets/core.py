@@ -1099,6 +1099,8 @@ PRINT_NORMALISE = {
     "#1A4691": "#1A3580", "#213B86": "#1A3580", "#24408F": "#1A3580", "#233A89": "#1A3580", "#2B3D91": "#1A3580",
     "#374F9E": "#1A3580", "#374F9C": "#1A3580", "#2B529F": "#1A3580", "#2A3282": "#1A3580",
     "#48BED6": "#32B9CD", "#231F20": "#1D1D1B",
+    # fourth batch (partner package slide): vivid blue, bright cyan and the near-orange map to the tokens
+    "#192AA2": "#1A3580", "#0AD3E6": "#32B9CD", "#0BD3E6": "#32B9CD", "#FF8401": "#F08300",
 }
 
 

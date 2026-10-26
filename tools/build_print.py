@@ -49,6 +49,10 @@ OBSERVED = [
     ("py-obs-blauw-rgb-wtc", "Blauw RGB P+R sticker en poster", None, "PR_WTC_Sticker.pdf, PR_WTC_Poster.pdf", "background and text, RGB (ICC) only", "#233A89"),
     ("py-obs-blauw-rgb-poster-a3", "Blauw RGB poster A3", None, "posters_297x420_3_1.pdf", "text and icons, RGB (ICC sRGB) only", "#2B3D91"),
     ("py-obs-blauw-rgb-poster-a2", "Blauw RGB poster A2", None, "posters_420x594_3_1.pdf", "text and QR plate, RGB (ICC sRGB) only", "#2A3282"),
+    # fourth batch (partner package slide)
+    ("py-obs-blauw-rgb-partner", "Blauw RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "poster, flyers, stickers, RGB (ICC) only, vivid royal blue", "#192AA2"),
+    ("py-obs-cyaan-rgb-partner", "Cyaan RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "beeldmerk dot, flyer panel, bright cyan, not PY-Aqua", "#0AD3E6"),
+    ("py-obs-oranje-rgb-partner", "Oranje RGB partnerpakket", None, "MarketingCampagne_ParkingYouPartner.pdf", "price and keyword; close to PY-Oranje (#F08300)", "#FF8401"),
 ]
 TOKEN_CMYK = {"blauw": (100, 83, 0, 17), "aqua": (69, 0, 21, 0)}
 OBS_HEX = {"#78C9DC": "py-obs-aqua-licht-rgb", "#79C9DC": "py-obs-aqua-licht-rgb", "#71CBDF": "py-obs-aqua-licht-dranghek", "#83CBE1": "py-obs-aqua-licht-rgb", "#8CCDDF": "py-obs-aqua-licht-rgb", "#68CBDB": "py-obs-aqua-licht", "#69CADA": "py-obs-aqua-licht", "#68CBDA": "py-obs-aqua-licht", "#7CCBDD": "py-obs-aqua-licht"}
@@ -177,6 +181,10 @@ class Ctx:
     def reference(self, key, pno=1, variant="", **kw):
         return printsrc.reference_svg(self.app_id, key, pno, variant, **kw)
 
+    def piece_reference(self, key, seq_ranges, origin_mm, scale, trim_mm, pno=1, variant="", **kw):
+        """Mock-up piece from a presentation slide, scaled to real size (see printsrc.piece_reference_svg)."""
+        return printsrc.piece_reference_svg(self.app_id, key, seq_ranges, origin_mm, scale, trim_mm, pno, variant, **kw)
+
 
 def build_apps(only):
     pat = re.compile(only)
@@ -243,6 +251,7 @@ def build_apps(only):
             "built_from": built,
             "status": meta["status"],
             "tags": meta["tags"],
+            "reference_scope": meta.get("reference_scope", "page"),
             "omitted": res.get("omitted", []),
             "copy_corrections": res.get("copy_corrections", []),
             "notes": res.get("notes", meta.get("notes", "")),

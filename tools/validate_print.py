@@ -23,7 +23,7 @@ OBSERVED_OK = {"#68CBDB", "#69CADA", "#68CBDA", "#7CCBDD", "#78C9DC", "#79C9DC",
 CUT_PH = {"#EE4D9B", "#00A0E0", "#ED308A", "#EBEBEB"}  # cut contour, placeholders, guides, mounting-hole rings (source magenta), placeholder grey
 DRIFT = {"#1A3680", "#0B3D8A", "#1F4383", "#1C4695", "#204382", "#174797", "#27397E", "#24BFCD", "#24BDCD", "#23BDCD", "#31BBCD",
          "#273A7C", "#213A8F", "#223A7A", "#243A78", "#23398E", "#1E4482", "#1E4382", "#2DB8CD", "#34BACE", "#1FBECC", "#33BACC",
-         "#1A4691", "#213B86", "#24408F", "#233A89", "#2B3D91", "#374F9E", "#374F9C", "#2B529F", "#2A3282", "#48BED6", "#231F20"}
+         "#1A4691", "#213B86", "#24408F", "#233A89", "#2B3D91", "#374F9E", "#374F9C", "#2B529F", "#2A3282", "#48BED6", "#231F20", "#192AA2", "#0AD3E6", "#0BD3E6", "#FF8401"}
 DASH = ("—", "–")
 BASELINE_COMMIT = "4c04c1f"  # PM-134 result: handbook elements and official tokens must not change
 
@@ -216,9 +216,12 @@ def main():
                 else:
                     ok_ref += 1
                     src0 = sp["source"]["files"][0]
-                    # reference page size equals the source page size
+                    # reference page size equals the source page size (mock-up pieces: the real trim size)
                     pdfp = os.path.join(root, src0["file"])
-                    if os.path.exists(pdfp):
+                    if sp.get("reference_scope") == "mockup":
+                        if abs(w - tr[0]) > 0.05 or abs(h - tr[1]) > 0.05:
+                            errs.append(f"{vid}: mock-up reference size {w:.1f} x {h:.1f} differs from the real trim {tr[0]:g} x {tr[1]:g}")
+                    elif os.path.exists(pdfp):
                         pg = pymupdf.open(pdfp)[0]
                         if abs(w - pg.rect.width * 25.4 / 72) > 0.1 or abs(h - pg.rect.height * 25.4 / 72) > 0.1:
                             errs.append(f"{vid}: reference size {w:.1f} x {h:.1f} differs from source page {pg.rect.width * 25.4 / 72:.1f} x {pg.rect.height * 25.4 / 72:.1f}")

@@ -36,6 +36,8 @@ SOURCES = {
     "wtcsticker": dict(file="PR_WTC_Sticker.pdf", pages=1, page_mm=(700, 700), trim_mm=(700, 700), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
     "wtcposter": dict(file="PR_WTC_Poster.pdf", pages=1, page_mm=(700, 1000), trim_mm=(700, 1000), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC)"),
     "posterA3": dict(file="posters_297x420_3_1.pdf", pages=1, page_mm=(303, 426), trim_mm=(297, 420), trim_off=(3, 3), bleed_set=True, cs="RGB (ICC sRGB)"),
+    # fourth batch: one A4 landscape slide with mock-ups of the partner package (poster, flyers, stickers); pieces are at about 0.358 scale
+    "marketing": dict(file="MarketingCampagne_ParkingYouPartner.pdf", pages=1, page_mm=(297, 210), trim_mm=(297, 210), trim_off=(0, 0), bleed_set=False, cs="RGB (ICC), mock-up slide"),
     "posterA2": dict(file="posters_420x594_3_1.pdf", pages=1, page_mm=(426, 600), trim_mm=(420, 594), trim_off=(3, 3), bleed_set=True, cs="RGB (ICC sRGB)"),
 }
 _CACHE: dict = {}
@@ -100,5 +102,46 @@ def reference_svg(app_id, key, pno=1, variant="", omit=None, outline_fonts=(), e
         f"<title>{_esc(t)}</title>\n{d}"
         f'<g id="{gid}" data-role="reference">{body}</g>\n'
         f'<g id="trim-guide" visibility="hidden"><rect x="{fmt(tx)}" y="{fmt(ty)}" width="{fmt(tw)}" height="{fmt(th)}" fill="none" stroke="#00A0E0" stroke-width="0.2"/></g>\n'
+        "</svg>\n"
+    )
+
+
+def piece_reference_svg(app_id, key, seq_ranges, origin_mm, scale, trim_mm, pno=1, variant="", omit=None, extra=(), skip_text=None, title=None):
+    """Reproduction of ONE mock-up piece taken from a presentation slide, scaled up to its real size.
+
+    seq_ranges: paint order ranges (Source.drawings 'seq') that belong to the piece; origin_mm: top left of the real piece on the slide (mm);
+    scale: slide scale (mm on the slide per mm real); trim_mm: real size. viewBox = trim size. Paths inside transparency groups (soft shadows)
+    are dropped; list them under omitted. Live text whose centre lies on the piece is added."""
+    from .core import affine
+
+    src = source(key)
+    ox, oy = origin_mm
+    k = 1.0 / scale
+    tw, th = trim_mm
+    x0, y0 = mm2pt(ox), mm2pt(oy)
+    x1, y1 = mm2pt(ox + tw * scale), mm2pt(oy + th * scale)
+    inr = lambda q: any(a <= getattr(q, "seq", -1) <= b for a, b in seq_ranges)
+
+    def skip(p_):
+        if not inr(p_) or getattr(p_, "gop", ()):
+            return True
+        return bool(omit and omit(p_))
+
+    items = crop(src, pno, (-1e5, -1e5, 1e5, 1e5), partial=True, skip=skip, texts=False)
+    items = clip_to_rect(items, (x0 - mm2pt(2), y0 - mm2pt(2), x1 + mm2pt(2), y1 + mm2pt(2)))
+    txt = [t for t in src.texts(pno, (x0, y0, x1, y1), skip_text=skip_text)]
+    items = affine(items + txt + list(extra), k, k, -x0 * k, -y0 * k)
+    el = Element(id=app_id, name_nl="", level="app", category="reference", page=pno, items=items)
+    tf = TF(0.0, 0.0, PT_MM, 0.0, 0.0)
+    defs = Defs(prefix=f"{app_id}{('-' + variant) if variant else ''}-ref-")
+    body = el.body(tf, defs)
+    d = "<defs>" + "".join(defs.items) + "</defs>" if defs.items else ""
+    gid = f"{app_id}-reference" + (f"-{variant}" if variant else "")
+    t = title or f"{app_id}{(' ' + variant) if variant else ''}: reference reproduction of a mock-up piece from {SOURCES[key]['file']}, scaled to real size (slide scale {scale})"
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{fmt(tw)}mm" height="{fmt(th)}mm" viewBox="0 0 {fmt(tw)} {fmt(th)}">\n'
+        f"<title>{_esc(t)}</title>\n{d}"
+        f'<g id="{gid}" data-role="reference">{body}</g>\n'
         "</svg>\n"
     )
