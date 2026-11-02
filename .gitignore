@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 source/*.pdf
 .DS_Store
+remotion/node_modules/
+remotion/public/svg/
+remotion/public/fonts/

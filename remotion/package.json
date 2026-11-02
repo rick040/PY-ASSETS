@@ -1,0 +1,24 @@
+{
+  "name": "py-assets-remotion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ParkingYou social media stories built with Remotion from the py-assets library",
+  "scripts": {
+    "studio": "npm run sync-assets && remotion studio src/index.ts",
+    "sync-assets": "node scripts/sync-assets.mjs",
+    "render": "npm run sync-assets && node scripts/render-all.mjs",
+    "still": "remotion still src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.540",
+    "@remotion/cli": "^4.0.540",
+    "@remotion/renderer": "^4.0.540",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.540"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "typescript": "^7.0.2"
+  }
+}
