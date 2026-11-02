@@ -46,7 +46,7 @@ export const Story3Tagline: React.FC = () => {
         }}
       >
         {WORDS.map((w, i) => (
-          <Rise key={w} delay={8 + i * 14} distance={80} style={{color: i === 3 ? colors.oranje : colors.wit}}>
+          <Rise key={w} delay={8 + i * 14} distance={80} style={{color: i === 3 ? colors.aqua : colors.wit}}>
             {w}
           </Rise>
         ))}
@@ -86,7 +86,7 @@ export const Story3Tagline: React.FC = () => {
 
         <Rise delay={REVEAL_AT + 70} style={{position: 'absolute', bottom: SAFE.bottom + 20, width: '100%', display: 'flex', justifyContent: 'center'}}>
           <div style={{transform: `scale(${pulse})`}}>
-            <Pill background={colors.oranje} size={50}>
+            <Pill background={colors.wit} color={colors.blauw} size={50}>
               voordeligparkeren.nl
             </Pill>
           </div>

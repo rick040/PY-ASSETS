@@ -25,7 +25,7 @@ export const Story1App: React.FC = () => {
       <div style={{position: 'absolute', top: 460, width: '100%', textAlign: 'center', ...headline, fontSize: 104, color: colors.wit}}>
         <Rise delay={10}>Makkelijk</Rise>
         <Rise delay={16}>parkeren</Rise>
-        <Rise delay={24} style={{color: colors.oranje}}>
+        <Rise delay={24} style={{color: colors.aqua}}>
           vanuit je broekzak
         </Rise>
       </div>
@@ -51,8 +51,8 @@ export const Story1App: React.FC = () => {
               top: 125 + scan * 150,
               height: 8,
               borderRadius: 4,
-              background: colors.oranje,
-              boxShadow: `0 0 24px ${colors.oranje}`,
+              background: colors.aqua,
+              boxShadow: `0 0 24px ${colors.aqua}`,
               opacity: frame > 90 ? 0.9 : 0,
             }}
           />
@@ -61,7 +61,7 @@ export const Story1App: React.FC = () => {
 
       <Rise delay={60} style={{position: 'absolute', bottom: SAFE.bottom + 20, width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div style={{transform: `scale(${pulse})`}}>
-          <Pill background={colors.oranje} size={50}>
+          <Pill background={colors.wit} color={colors.blauw} size={50}>
             Download nu onze app
           </Pill>
         </div>

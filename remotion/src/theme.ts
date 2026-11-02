@@ -7,7 +7,6 @@ const stops = tokens.gradients['py-tok-gradient-verloop'].stops;
 export const colors = {
   blauw: c['py-tok-color-blauw'].hex, // #1A3580
   aqua: c['py-tok-color-aqua'].hex, // #32B9CD
-  oranje: c['py-tok-color-oranje'].hex, // #F08300
   grijs: c['py-tok-color-grijs'].hex,
   zwart: c['py-tok-color-zwart'].hex,
   wit: '#FFFFFF',

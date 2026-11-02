@@ -48,7 +48,7 @@ export const Story2Shoppen: React.FC = () => {
         </Rise>
       </div>
 
-      {/* orange bubble with the shopper */}
+      {/* verloop bubble with the shopper (figure in white) */}
       <div
         style={{
           position: 'absolute',
@@ -59,10 +59,10 @@ export const Story2Shoppen: React.FC = () => {
           transformOrigin: '50% 100%',
         }}
       >
-        <Atom id="shape-bubble-solid" width={560} />
+        <Atom id="shape-bubble-gradient" width={560} />
         <div style={{position: 'absolute', left: 0, right: 0, top: 105, display: 'flex', justifyContent: 'center'}}>
           <div style={{transform: `translate(${x}px, ${hop}px)`}}>
-            <Atom id={cheering ? 'figure-bags-cheer' : 'figure-bags-walk'} width={cheering ? 420 : 360} />
+            <Atom id={cheering ? 'figure-bags-cheer' : 'figure-bags-walk'} width={cheering ? 420 : 360} style={{filter: 'brightness(0) invert(1)'}} />
           </div>
         </div>
       </div>
