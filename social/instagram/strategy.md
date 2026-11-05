@@ -113,7 +113,7 @@ The 39 reels in the library use only 7 templates. Build the templates once; ever
 | R1 | Locatiekaart | 10 | 1 (built, `social/remotion`) |
 | R5 | Figuursketch | 8 | 2 (built) |
 | R7 | Kinetische tekst | 7 | 3 (built) |
-| R2 | Prijsrol | 4 | 4 |
+| R2 | Prijsrol | 4 | 4 (built) |
 | R4 | Drie stappen | 4 | 5 |
 | R3 | Looproute | 3 | 6 |
 | R6 | Aftelkalender | 3 | 7 |

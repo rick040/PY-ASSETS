@@ -741,7 +741,7 @@ Link in bio.
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Prijzen gelden ma tot vr; in het weekend is het dagtarief €15.
+**Notes:** Gerenderd met Remotion (template R2): social/remotion/renders/IG-017-hofplein-drie-prijzen-reel.mp4 en -feed.mp4. Prijzen gecontroleerd in de kennisbank op 5 november 2026. Prijzen gelden ma tot vr; in het weekend is het dagtarief €15.
 
 ### IG-018 Rijswijk: €12, €9 of €7
 
@@ -768,6 +768,8 @@ Link in bio.
 **Assets:** `py-comp-price-bubble-speech`
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
+
+**Notes:** Gerenderd met Remotion (template R2): social/remotion/renders/IG-018-rijswijk-drie-prijzen-reel.mp4 en -feed.mp4. Prijzen gecontroleerd in de kennisbank op 5 november 2026.
 
 ### IG-019 Vroegboeken: tot een derde goedkoper
 

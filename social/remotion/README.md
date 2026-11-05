@@ -5,9 +5,10 @@ Animated Instagram reels built from the PY-ASSETS brand library. Each reel is a 
 | Template | Status | Items in the library |
 |---|---|---|
 | R1 Locatiekaart | built | IG-001, 002, 003, 005 to 010, 012, 016, 066 (IG-002 rendered) |
+| R2 Prijsrol | built | IG-017, 018, 025, 054 (IG-017 and IG-018 rendered) |
 | R5 Figuursketch | built | IG-023, 031, 042, 050, 053, 057, 060, 064 (IG-064 rendered) |
 | R7 Kinetische tekst | built | IG-021, 032, 033, 045, 048, 051, 062 (IG-021 rendered) |
-| R2, R3, R4, R6 | not built yet | see `../instagram/strategy.md`, section 9 |
+| R3, R4, R6 | not built yet | see `../instagram/strategy.md`, section 9 |
 
 ## Start
 
@@ -25,6 +26,8 @@ In Studio, folder `R1-Locatiekaart` has a `Template` and one entry per item, eac
 npm run render:ig-002         # renders/IG-002-hofplein-reel.mp4
 npm run render:ig-002:feed    # renders/IG-002-hofplein-feed.mp4
 npm run still:ig-002          # renders/IG-002-hofplein-cover.png (frame 60)
+npm run render:ig-017         # and :feed, still:  R2, Hofplein €30 / €25 / €20
+npm run render:ig-018         # and :feed, still:  R2, Rijswijk €12 / €9 / €7
 npm run render:ig-021         # and :feed, still:  R7, "Rondjes rijden is ook betalen."
 npm run render:ig-064         # and :feed, still:  R5, "Welk parkeertype ben jij?"
 ```
@@ -60,6 +63,7 @@ src/theme.ts                  brand colours and verloop from tokens.json, Ubuntu
 src/lib/                      layout (Stage inside the safe zones, scales for 4:5), springs, shape paths, *key phrase* parsing
 src/components/               EndCard, Glyph, LabelPill, Headline, BubbleMedia, LocationPill, FactRow, PriceBubble, UrlCta, Rain, SafeZones, AssetImg (any PY-ASSETS ID)
 src/locatiekaart/             R1: schema.ts, LocatiekaartAd.tsx, scenes/ (Main, Price, Cta)
+src/prijsrol/                 R2: price tags hook, rows that count up and get struck through, saving badge (calculated), price bubble
 src/figuursketch/             R5: hook line-up, one beat per figure, outro, end card
 src/kinetisch/                R7: hook (optional orbit), lines with icons, end line (optional arrive), end card
 src/components/EndCard.tsx    shared end card for every template
@@ -98,3 +102,15 @@ public/py/                    synced copy of svg/, fonts/, tokens.json (git-igno
 | 2.0 s, 3.8 s, 5.5 s, 7.2 s | 1/4 De rondjesrijder, 2/4 De last-minute boeker, 3/4 De vroegboeker, 4/4 De zoeker |
 | 9.0 s | "Tag een rondjesrijder." with the walker highlighted |
 | 11.0 s | End card "Word een vroegboeker" |
+
+## IG-017 timeline (R2, 366 frames, 12.2 s)
+
+| Time | What happens |
+|---|---|
+| 0.0 s | "Zelfde plek. Drie prijzen." with three swinging price tags (€30, €25, €20), then the Hofplein pill |
+| 2.2 s | "Een dag parkeren": Ter plaatse €30, Online reserveren €25, Vroegboeken €20 count up one by one |
+| 4.6 s | €30 and €25 are struck through, Vroegboeken turns aqua, "Je bespaart €10 per dag" (calculated from the rows) |
+| 6.8 s | "Zelfde garage. Alleen eerder geboekt." with the €20 per dag bubble, "Doordeweeks, vroegboeken online" |
+| 9.2 s | End card "Boek vroeg, betaal minder" |
+
+The saving in the badge is always calculated from the row amounts (highest minus highlighted), so it cannot drift from the prices.

@@ -17,8 +17,14 @@
     "render:ig-064": "remotion render PY-R5-IG-064-Reel renders/IG-064-parkeertypes-reel.mp4 --props=src/items/IG-064.json",
     "render:ig-064:feed": "remotion render PY-R5-IG-064-Feed renders/IG-064-parkeertypes-feed.mp4 --props=src/items/IG-064.json",
     "still:ig-064": "remotion still PY-R5-IG-064-Reel renders/IG-064-parkeertypes-cover.png --frame=20 --props=src/items/IG-064.json",
-    "render:all": "npm run sync-assets && for i in ig-002 ig-021 ig-064; do npm run render:$i -- $B && npm run render:$i:feed -- $B && npm run still:$i -- $B; done",
-    "prerender:ig-002": "npm run sync-assets"
+    "render:all": "npm run sync-assets && for i in ig-002 ig-017 ig-018 ig-021 ig-064; do npm run render:$i -- $B && npm run render:$i:feed -- $B && npm run still:$i -- $B; done",
+    "prerender:ig-002": "npm run sync-assets",
+    "render:ig-017": "remotion render PY-R2-IG-017-Reel renders/IG-017-hofplein-drie-prijzen-reel.mp4 --props=src/items/IG-017.json",
+    "render:ig-017:feed": "remotion render PY-R2-IG-017-Feed renders/IG-017-hofplein-drie-prijzen-feed.mp4 --props=src/items/IG-017.json",
+    "still:ig-017": "remotion still PY-R2-IG-017-Reel renders/IG-017-hofplein-drie-prijzen-cover.png --frame=40 --props=src/items/IG-017.json",
+    "render:ig-018": "remotion render PY-R2-IG-018-Reel renders/IG-018-rijswijk-drie-prijzen-reel.mp4 --props=src/items/IG-018.json",
+    "render:ig-018:feed": "remotion render PY-R2-IG-018-Feed renders/IG-018-rijswijk-drie-prijzen-feed.mp4 --props=src/items/IG-018.json",
+    "still:ig-018": "remotion still PY-R2-IG-018-Reel renders/IG-018-rijswijk-drie-prijzen-cover.png --frame=40 --props=src/items/IG-018.json"
   },
   "dependencies": {
     "@remotion/cli": "4.0.534",

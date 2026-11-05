@@ -25,8 +25,10 @@ export const Headline: React.FC<{
           {line.map((w, wi) => {
             const p = pop(frame, fps, delay + i++ * stagger);
             return (
-              <span key={wi} style={{ display: "inline-block", marginRight: "0.26em", fontWeight: w.key ? 700 : 400, color: w.key ? keyColor : color, opacity: Math.min(1, p * 1.6), transform: `translateY(${(1 - p) * 40}px) scale(${0.85 + 0.15 * p})` }}>
-                {w.text}
+              <span key={wi} style={{ display: "inline-block", marginRight: "0.26em", opacity: Math.min(1, p * 1.6), transform: `translateY(${(1 - p) * 40}px) scale(${0.85 + 0.15 * p})` }}>
+                {w.map((seg, si) => (
+                  <span key={si} style={{ fontWeight: seg.key ? 700 : 400, color: seg.key ? keyColor : color }}>{seg.text}</span>
+                ))}
               </span>
             );
           })}

@@ -1,0 +1,61 @@
+{
+  "hook": {
+    "headline": "Zelfde plek.\n*Drie prijzen.*"
+  },
+  "cta": {
+    "headline": "Boek *vroeg*,\nbetaal minder",
+    "url": "parkingyou.nl",
+    "tagline": "The other way of parking"
+  },
+  "colors": {
+    "bg": "#1A3580",
+    "text": "#FFFFFF",
+    "accent": "#32B9CD",
+    "muted": "#AEAEAE",
+    "ctaBgFrom": "#1A3580",
+    "ctaBgTo": "#32B9CD"
+  },
+  "timing": {
+    "hook": 2.6,
+    "rows": 5,
+    "bubble": 2.8,
+    "cta": 3,
+    "transition": 0.4
+  },
+  "showSafeZones": false,
+  "itemId": "IG-017",
+  "location": {
+    "name": "Hofplein",
+    "city": "Rotterdam"
+  },
+  "rows": {
+    "title": "Een dag parkeren",
+    "items": [
+      {
+        "label": "Ter plaatse",
+        "icon": "py-atom-picto-car",
+        "amount": 30,
+        "suffix": ""
+      },
+      {
+        "label": "Online reserveren",
+        "icon": "py-atom-illustration-phone-qr",
+        "amount": 25,
+        "suffix": ""
+      },
+      {
+        "label": "Vroegboeken",
+        "icon": "py-atom-icon-calendar",
+        "amount": 20,
+        "suffix": ""
+      }
+    ],
+    "highlight": -1,
+    "saving": "Je bespaart *{x}* per dag"
+  },
+  "bubble": {
+    "headline": "Zelfde garage.\nAlleen *eerder geboekt.*",
+    "label": "per dag",
+    "note": "Doordeweeks, vroegboeken online"
+  }
+}
