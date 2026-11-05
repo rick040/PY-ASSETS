@@ -80,77 +80,32 @@ Logos on blue, gradient or photo backgrounds are white with the aqua dot only. T
 
 `Glyph` takes a PY-ASSETS ID or one of the built-in glyphs `clock`, `fuel`, `mood`, `pin`, `check`, `cross` (rounded stroke style), for ideas the library has no pictogram for yet. Note that several PY-ASSETS icons are white (for use on blue): on a light background use a glyph or a navy element.
 
-## Real footage
-
-`media.type: "none"` shows a branded stand-in (verloop, P with roof, a car parking under it). For the real thing, put a photo or a short clip of the location in `public/media/` and set for example `"media": { "type": "video", "src": "media/hofplein.mp4" }`. It is masked into the speech bubble of `py-atom-shape-bubble-image-mask`. A 5 to 7 second vertical clip of the entrance works best.
-
 ## Structure
 
 ```
 src/theme.ts                  brand colours and verloop from tokens.json, Ubuntu from fonts/
 src/lib/                      layout (Stage inside the safe zones, scales for 4:5), springs, shape paths, *key phrase* parsing
-src/components/               EndCard, Slagboom (animated barrier), Glyph, LabelPill, Headline, BubbleMedia, LocationPill, FactRow, PriceBubble, UrlCta, Rain, SafeZones, AssetImg (any PY-ASSETS ID)
-src/locatiekaart/             R1: schema.ts, LocatiekaartAd.tsx, scenes/ (Main, Price, Cta)
-src/prijsrol/                 R2: price tags hook, rows that count up and get struck through, saving badge (calculated), price bubble
+src/components/               Slagboom (animated barrier), Glyph, BubbleMedia, Rain, SafeZones, AssetImg (any PY-ASSETS ID)
+src/v2/                       feed-style kit: Backdrop, Title, CtaPill, UrlLine, PriceBadge, PlacePill, TopLogo, Card, Fx, transitions, withMotionBlur, EndCardV2
+src/locatiekaart/             R1: hook (photo or stand-in), facts, price badge, end card
+src/prijsrol/                 R2: price badges hook, rows that count up and get struck through, saving pill (calculated), answer badge
 src/driestappen/              R4: barrier opens (outcome first), one scene per step with progress dots, outcome, end card
 src/figuursketch/             R5: hook line-up, one beat per figure, outro, end card
 src/kinetisch/                R7: hook (optional orbit), lines with icons, end line (optional arrive), end card
-src/components/EndCard.tsx    shared end card for every template
 src/items/                    one JSON per library item
 renders/                      delivered MP4s and covers (in git)
 public/py/                    synced copy of svg/, fonts/, tokens.json (git-ignored)
 ```
 
-## IG-002 timeline (30 fps, 366 frames, 12.2 s)
+## Rendered items (feed style, 30 fps, motion blur)
 
-| Time | Frame | What happens |
-|---|---|---|
-| 0.0 s | 0 | Hook on screen: "Midden in Rotterdam. Droog geparkeerd.", rain, bubble, car driving in under the roof |
-| 0.6 s | 18 | Location pill "Hofplein Rotterdam" |
-| 3.1 s | 92 | Bubble shrinks, pill moves up |
-| 3.7 / 4.3 / 4.9 s | 112 / 130 / 148 | Facts: 300 overdekte plekken, Camerabewaking, Vroegboeken €20 per dag |
-| 6.6 s | 198 | Slide up to the price scene |
-| 7.0 s | 208 | Price bubble "€15 per dag", "En in het weekend?" |
-| 9.2 s | 276 | Wipe to the end card |
-| 9.7 s | 290 | parkingyou.nl, then logo and tagline |
+| Item | Template | Length | Scenes |
+|---|---|---|---|
+| IG-002 Hofplein | R1 | 12.3 s | hook with headline and place pill, facts on white cards, weekend price badge over rays, end card |
+| IG-017 Hofplein drie prijzen | R2 | 12.3 s | price badges on the GLOW gradient, rows that count up and get struck through, saving pill, answer badge, end card |
+| IG-018 Rijswijk drie prijzen | R2 | 12.3 s | same as IG-017 with €12 / €9 / €7 |
+| IG-021 Rondjes rijden | R7 | 11.5 s | car circling the P with a lap counter, three cards, car drives straight in, end card |
+| IG-028 Reserveren in 3 stappen | R4 | 13.8 s | barrier opens, three steps on pale blue with rays, outcome with confetti, end card |
+| IG-064 Parkeertypes | R5 | 14.4 s | line-up, four types, outro with confetti, end card |
 
-## IG-021 timeline (R7, 342 frames, 11.4 s)
-
-| Time | What happens |
-|---|---|
-| 0.0 s | "Rondjes rijden is ook betalen." with a car circling the P, lap counter |
-| 2.8 s | "Je betaalt met": Benzine, Tijd, Je goede humeur (lines at +0.5, +1.1, +1.7 s) |
-| 5.8 s | "Reserveer vooraf. Rijd direct naar je plek.": car drives straight in, check mark |
-| 8.4 s | End card |
-
-## IG-064 timeline (R5, 420 frames, 14.0 s)
-
-| Time | What happens |
-|---|---|
-| 0.0 s | "Welk parkeertype ben jij?" with the four figures |
-| 2.0 s, 3.8 s, 5.5 s, 7.2 s | 1/4 De rondjesrijder, 2/4 De last-minute boeker, 3/4 De vroegboeker, 4/4 De zoeker |
-| 9.0 s | "Tag een rondjesrijder." with the walker highlighted |
-| 11.0 s | End card "Word een vroegboeker" |
-
-## IG-017 timeline (R2, 366 frames, 12.2 s)
-
-| Time | What happens |
-|---|---|
-| 0.0 s | "Zelfde plek. Drie prijzen." with three swinging price tags (€30, €25, €20), then the Hofplein pill |
-| 2.2 s | "Een dag parkeren": Ter plaatse €30, Online reserveren €25, Vroegboeken €20 count up one by one |
-| 4.6 s | €30 and €25 are struck through, Vroegboeken turns aqua, "Je bespaart €10 per dag" (calculated from the rows) |
-| 6.8 s | "Zelfde garage. Alleen eerder geboekt." with the €20 per dag bubble, "Doordeweeks, vroegboeken online" |
-| 9.2 s | End card "Boek vroeg, betaal minder" |
-
-The saving in the badge is always calculated from the row amounts (highest minus highlighted), so it cannot drift from the prices.
-
-## IG-028 timeline (R4, 401 frames, 13.4 s)
-
-| Time | What happens |
-|---|---|
-| 0.0 s | "Je plek geregeld in 3 stappen." The barrier opens (0.5 s) and a car drives through |
-| 2.2 s | Step 1: phone with QR, "Kies je locatie en tijd" |
-| 4.1 s | Step 2: contactless hand, "Betaal online" |
-| 6.0 s | Step 3: QR reader, "Rijd in met je code" |
-| 7.8 s | "Slagboom open. Je plek staat klaar.": barrier opens, the car drives out, a figure with shopping bags cheers |
-| 10.4 s | End card |
+Beat timings live as constants at the top of each scene file (for example `T_PILL`, `T_FACTS`, `T_STRIKE`), so a voice-over can be timed against them.
