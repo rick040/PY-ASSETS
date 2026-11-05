@@ -1066,7 +1066,7 @@
         "*"
       ],
       "timing": "Evergreen",
-      "hook": "Zo heb je je plek binnen een minuut.",
+      "hook": "Je plek geregeld in 3 stappen.",
       "body": [
         "Stap 1: 'Kies je locatie en tijd' (phone-qr)",
         "Stap 2: 'Betaal online' (contactless-hand)",
@@ -1080,7 +1080,7 @@
         "py-atom-figure-bags-cheer"
       ],
       "price_check": false,
-      "notes": "Stap 3 per locatie checken: QR, kenteken of pas."
+      "notes": "Gerenderd met Remotion (template R4): social/remotion/renders/IG-028-reserveren-in-3-stappen-reel.mp4 en -feed.mp4. Hook aangepast: \"binnen een minuut\" is niet te onderbouwen. Stap 3 zegt \"code\"; op locaties met kentekenherkenning kan een variant met kenteken. Stap 3 per locatie checken: QR, kenteken of pas."
     },
     {
       "id": "IG-029",

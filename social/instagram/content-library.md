@@ -1033,7 +1033,7 @@ Neem de drempel weg: reserveren, inrijden, scannen, betalen, je auto terugvinden
 
 **Reel** · template R4 Drie stappen · locations: * · Evergreen
 
-**Hook:** Zo heb je je plek binnen een minuut.
+**Hook:** Je plek geregeld in 3 stappen.
 
 **Scenes / slides:**
 
@@ -1057,7 +1057,7 @@ Link in bio.
 
 **Assets:** `py-atom-illustration-phone-qr`, `py-atom-illustration-contactless-hand`, `py-atom-illustration-reader-qr`, `py-atom-figure-bags-cheer`
 
-**Notes:** Stap 3 per locatie checken: QR, kenteken of pas.
+**Notes:** Gerenderd met Remotion (template R4): social/remotion/renders/IG-028-reserveren-in-3-stappen-reel.mp4 en -feed.mp4. Hook aangepast: "binnen een minuut" is niet te onderbouwen. Stap 3 zegt "code"; op locaties met kentekenherkenning kan een variant met kenteken. Stap 3 per locatie checken: QR, kenteken of pas.
 
 ### IG-029 De slagboom kent je al
 

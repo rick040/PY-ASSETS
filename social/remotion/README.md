@@ -6,9 +6,10 @@ Animated Instagram reels built from the PY-ASSETS brand library. Each reel is a 
 |---|---|---|
 | R1 Locatiekaart | built | IG-001, 002, 003, 005 to 010, 012, 016, 066 (IG-002 rendered) |
 | R2 Prijsrol | built | IG-017, 018, 025, 054 (IG-017 and IG-018 rendered) |
+| R4 Drie stappen | built | IG-028, 029, 035, 059 (IG-028 rendered) |
 | R5 Figuursketch | built | IG-023, 031, 042, 050, 053, 057, 060, 064 (IG-064 rendered) |
 | R7 Kinetische tekst | built | IG-021, 032, 033, 045, 048, 051, 062 (IG-021 rendered) |
-| R3, R4, R6 | not built yet | see `../instagram/strategy.md`, section 9 |
+| R3, R6 | not built yet | see `../instagram/strategy.md`, section 9 |
 
 ## Start
 
@@ -28,6 +29,7 @@ npm run render:ig-002:feed    # renders/IG-002-hofplein-feed.mp4
 npm run still:ig-002          # renders/IG-002-hofplein-cover.png (frame 60)
 npm run render:ig-017         # and :feed, still:  R2, Hofplein €30 / €25 / €20
 npm run render:ig-018         # and :feed, still:  R2, Rijswijk €12 / €9 / €7
+npm run render:ig-028         # and :feed, still:  R4, "Je plek geregeld in 3 stappen."
 npm run render:ig-021         # and :feed, still:  R7, "Rondjes rijden is ook betalen."
 npm run render:ig-064         # and :feed, still:  R5, "Welk parkeertype ben jij?"
 ```
@@ -61,9 +63,10 @@ Logos on blue, gradient or photo backgrounds are white with the aqua dot only. T
 ```
 src/theme.ts                  brand colours and verloop from tokens.json, Ubuntu from fonts/
 src/lib/                      layout (Stage inside the safe zones, scales for 4:5), springs, shape paths, *key phrase* parsing
-src/components/               EndCard, Glyph, LabelPill, Headline, BubbleMedia, LocationPill, FactRow, PriceBubble, UrlCta, Rain, SafeZones, AssetImg (any PY-ASSETS ID)
+src/components/               EndCard, Slagboom (animated barrier), Glyph, LabelPill, Headline, BubbleMedia, LocationPill, FactRow, PriceBubble, UrlCta, Rain, SafeZones, AssetImg (any PY-ASSETS ID)
 src/locatiekaart/             R1: schema.ts, LocatiekaartAd.tsx, scenes/ (Main, Price, Cta)
 src/prijsrol/                 R2: price tags hook, rows that count up and get struck through, saving badge (calculated), price bubble
+src/driestappen/              R4: barrier opens (outcome first), one scene per step with progress dots, outcome, end card
 src/figuursketch/             R5: hook line-up, one beat per figure, outro, end card
 src/kinetisch/                R7: hook (optional orbit), lines with icons, end line (optional arrive), end card
 src/components/EndCard.tsx    shared end card for every template
@@ -114,3 +117,14 @@ public/py/                    synced copy of svg/, fonts/, tokens.json (git-igno
 | 9.2 s | End card "Boek vroeg, betaal minder" |
 
 The saving in the badge is always calculated from the row amounts (highest minus highlighted), so it cannot drift from the prices.
+
+## IG-028 timeline (R4, 401 frames, 13.4 s)
+
+| Time | What happens |
+|---|---|
+| 0.0 s | "Je plek geregeld in 3 stappen." The barrier opens (0.5 s) and a car drives through |
+| 2.2 s | Step 1: phone with QR, "Kies je locatie en tijd" |
+| 4.1 s | Step 2: contactless hand, "Betaal online" |
+| 6.0 s | Step 3: QR reader, "Rijd in met je code" |
+| 7.8 s | "Slagboom open. Je plek staat klaar.": barrier opens, the car drives out, a figure with shopping bags cheers |
+| 10.4 s | End card |
