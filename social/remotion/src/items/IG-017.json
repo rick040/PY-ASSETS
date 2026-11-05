@@ -4,8 +4,9 @@
   },
   "cta": {
     "headline": "Boek *vroeg*,\nbetaal minder",
-    "url": "parkingyou.nl",
-    "tagline": "The other way of parking"
+    "url": "voordeligparkeren.nl",
+    "tagline": "The other way of parking",
+    "button": "Reserveer online"
   },
   "colors": {
     "bg": "#1A3580",
@@ -16,11 +17,11 @@
     "ctaBgTo": "#32B9CD"
   },
   "timing": {
-    "hook": 2.6,
-    "rows": 5,
-    "bubble": 2.8,
-    "cta": 3,
-    "transition": 0.4
+    "hook": 2.8,
+    "rows": 4.6,
+    "bubble": 3,
+    "cta": 3.4,
+    "transition": 0.5
   },
   "showSafeZones": false,
   "itemId": "IG-017",
@@ -29,7 +30,7 @@
     "city": "Rotterdam"
   },
   "rows": {
-    "title": "Een dag parkeren",
+    "title": "Een dag\n*parkeren*",
     "items": [
       {
         "label": "Ter plaatse",
@@ -54,7 +55,7 @@
     "saving": "Je bespaart *{x}* per dag"
   },
   "bubble": {
-    "headline": "Zelfde garage.\nAlleen *eerder geboekt.*",
+    "headline": "Zelfde garage.\nAlleen *eerder*\n*geboekt.*",
     "label": "per dag",
     "note": "Doordeweeks, vroegboeken online"
   }

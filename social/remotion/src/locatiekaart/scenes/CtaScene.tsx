@@ -1,7 +1,5 @@
 import React from "react";
 import { LocatiekaartProps } from "../schema";
-import { EndCard } from "../../components/EndCard";
+import { EndCardV2 } from "../../v2/EndCardV2";
 
-export { T_URL, T_LOGO } from "../../components/EndCard";
-
-export const CtaScene: React.FC<LocatiekaartProps> = (p) => <EndCard cta={p.cta} text={p.colors.text} from={p.colors.ctaBgFrom} to={p.colors.ctaBgTo} />;
+export const CtaScene: React.FC<LocatiekaartProps> = (p) => <EndCardV2 cta={p.cta} />;

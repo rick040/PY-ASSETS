@@ -16,7 +16,7 @@ export const figuursketchSchema = z.object({
   hook: z.object({ headline: z.string() }),
   beats: z.array(beat).min(2).max(5),
   outro: z.object({ headline: z.string(), highlight: z.number().int().min(0).max(4) }),
-  cta: z.object({ headline: z.string(), url: z.string(), tagline: z.string() }),
+  cta: z.object({ headline: z.string(), button: z.string(), url: z.string(), tagline: z.string() }),
   colors: z.object({ bg: zColor(), text: zColor(), accent: zColor(), card: zColor(), ctaBgFrom: zColor(), ctaBgTo: zColor() }),
   timing: z.object({
     hook: z.number().min(1.5).max(5),
@@ -40,10 +40,10 @@ export const figuursketchDefaults: FiguursketchProps = {
     { figure: "py-atom-figure-point", title: "De *zoeker*", line: "Waar stond hij ook alweer?", prop: "pin", motion: "bob" },
   ],
   outro: { headline: "Tag een\n*rondjesrijder.*", highlight: 0 },
-  cta: { headline: "Word een\n*vroegboeker*", url: "parkingyou.nl", tagline: "The other way of parking" },
+  cta: { headline: "Word een\n*vroegboeker*", button: "Reserveer online", url: "voordeligparkeren.nl", tagline: "The other way of parking" },
   // light background = aqua at 10 percent on white (tints are transparency, observed print rule 8)
   colors: { bg: "#EAF8FA", text: BRAND.blauw, accent: BRAND.aqua, card: BRAND.wit, ctaBgFrom: BRAND.blauw, ctaBgTo: BRAND.aqua },
-  timing: { hook: 2.4, beat: 2.1, outro: 2.4, cta: 3, transition: 0.35 },
+  timing: { hook: 2.6, beat: 2.2, outro: 2.6, cta: 3.4, transition: 0.5 },
   showSafeZones: false,
 };
 

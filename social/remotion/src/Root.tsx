@@ -1,5 +1,6 @@
 import React from "react";
 import { Composition, Folder } from "remotion";
+import { withMotionBlur } from "./v2/withMotionBlur";
 import { LocatiekaartAd } from "./locatiekaart/LocatiekaartAd";
 import { locatiekaartSchema, locatiekaartDefaults, locatiekaartTotal, LocatiekaartProps } from "./locatiekaart/schema";
 import { KinetischAd } from "./kinetisch/KinetischAd";
@@ -30,40 +31,46 @@ const r4: Array<[string, DrieStappenProps]> = [["Template", drieStappenDefaults]
 const r5: Array<[string, FiguursketchProps]> = [["Template", figuursketchDefaults], ["IG-064", ig064 as FiguursketchProps]];
 const r7: Array<[string, KinetischProps]> = [["Template", kinetischDefaults], ["IG-021", ig021 as KinetischProps]];
 
+const LocatiekaartMB = withMotionBlur(LocatiekaartAd);
+const PrijsrolMB = withMotionBlur(PrijsrolAd);
+const DrieStappenMB = withMotionBlur(DrieStappenAd);
+const FiguursketchMB = withMotionBlur(FiguursketchAd);
+const KinetischMB = withMotionBlur(KinetischAd);
+
 export const RemotionRoot: React.FC = () => (
   <>
     <Folder name="R1-Locatiekaart">
       {r1.flatMap(([id, props]) =>
         SIZES.map((s) => (
-          <Composition key={id + s.suffix} id={`PY-R1-${id}-${s.suffix}`} component={LocatiekaartAd} schema={locatiekaartSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: locatiekaartTotal(p.timing) })} durationInFrames={locatiekaartTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
+          <Composition key={id + s.suffix} id={`PY-R1-${id}-${s.suffix}`} component={LocatiekaartMB} schema={locatiekaartSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: locatiekaartTotal(p.timing) })} durationInFrames={locatiekaartTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
     </Folder>
     <Folder name="R2-Prijsrol">
       {r2.flatMap(([id, props]) =>
         SIZES.map((s) => (
-          <Composition key={id + s.suffix} id={`PY-R2-${id}-${s.suffix}`} component={PrijsrolAd} schema={prijsrolSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: prijsrolTotal(p.timing) })} durationInFrames={prijsrolTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
+          <Composition key={id + s.suffix} id={`PY-R2-${id}-${s.suffix}`} component={PrijsrolMB} schema={prijsrolSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: prijsrolTotal(p.timing) })} durationInFrames={prijsrolTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
     </Folder>
     <Folder name="R4-Drie-stappen">
       {r4.flatMap(([id, props]) =>
         SIZES.map((s) => (
-          <Composition key={id + s.suffix} id={`PY-R4-${id}-${s.suffix}`} component={DrieStappenAd} schema={drieStappenSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: drieStappenTotal(p) })} durationInFrames={drieStappenTotal(props)} fps={FPS} width={s.width} height={s.height} />
+          <Composition key={id + s.suffix} id={`PY-R4-${id}-${s.suffix}`} component={DrieStappenMB} schema={drieStappenSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: drieStappenTotal(p) })} durationInFrames={drieStappenTotal(props)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
     </Folder>
     <Folder name="R5-Figuursketch">
       {r5.flatMap(([id, props]) =>
         SIZES.map((s) => (
-          <Composition key={id + s.suffix} id={`PY-R5-${id}-${s.suffix}`} component={FiguursketchAd} schema={figuursketchSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: figuursketchTotal(p) })} durationInFrames={figuursketchTotal(props)} fps={FPS} width={s.width} height={s.height} />
+          <Composition key={id + s.suffix} id={`PY-R5-${id}-${s.suffix}`} component={FiguursketchMB} schema={figuursketchSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: figuursketchTotal(p) })} durationInFrames={figuursketchTotal(props)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
     </Folder>
     <Folder name="R7-Kinetische-tekst">
       {r7.flatMap(([id, props]) =>
         SIZES.map((s) => (
-          <Composition key={id + s.suffix} id={`PY-R7-${id}-${s.suffix}`} component={KinetischAd} schema={kinetischSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: kinetischTotal(p.timing) })} durationInFrames={kinetischTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
+          <Composition key={id + s.suffix} id={`PY-R7-${id}-${s.suffix}`} component={KinetischMB} schema={kinetischSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: kinetischTotal(p.timing) })} durationInFrames={kinetischTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
     </Folder>

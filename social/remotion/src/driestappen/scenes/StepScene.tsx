@@ -1,50 +1,55 @@
 import React from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { DrieStappenProps } from "../schema";
 import { Stage, STAGE_W } from "../../lib/layout";
-import { fadeIn, pop, springs } from "../../lib/anim";
+import { Backdrop } from "../../v2/Backdrop";
+import { Title } from "../../v2/Title";
+import { TopLogo } from "../../v2/Badges";
+import { Sunburst } from "../../v2/Fx";
+import { enter, leave } from "../../v2/ease";
 import { Glyph } from "../../components/Glyph";
-import { Rich } from "../../lib/rich";
-import { FONT } from "../../theme";
+import { BRAND, FONT } from "../../theme";
 
-export const T_CARD = 4;
-export const T_TEXT = 12;
+export const T_CARD = 6;
+export const T_TEXT = 10;
 
-export const StepScene: React.FC<{ p: DrieStappenProps; index: number }> = ({ p, index }) => {
+/** One step on the pale feed background (as the Easter post): number badge, illustration in a white disc over rays, navy text. */
+export const StepScene: React.FC<{ p: DrieStappenProps; index: number; dur: number }> = ({ p, index, dur }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const st = p.steps[index];
-  const card = pop(frame, fps, T_CARD, springs.bouncy);
-  const num = pop(frame, fps, 0, springs.pop);
-  const D = 660;
-  const ring = (frame % 36) / 36; // pulse ring loop
-  const cardBg = st.card === "accent" ? p.colors.accent : p.colors.card;
+  const card = spring({ frame: frame - T_CARD, fps, config: { damping: 14, stiffness: 110, mass: 0.9 } });
+  const num = enter(frame, 0, 16);
+  const out = leave(frame, dur - 2, 10);
+  const D = 600;
+  const cy = 820;
   return (
-    <AbsoluteFill style={{ backgroundColor: p.colors.bg }}>
+    <Backdrop kind="light" seed={`r4s${index}`}>
       <Stage>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
+          <TopLogo width={320} start={-20} dark />
+        </div>
         {/* progress */}
-        <div style={{ position: "absolute", left: 0, right: 0, top: 10, display: "flex", justifyContent: "center", gap: 18 }}>
+        <div style={{ position: "absolute", right: 60, top: 170, display: "flex", gap: 14 }}>
           {p.steps.map((_, i) => (
-            <div key={i} style={{ width: i === index ? 90 : 26, height: 26, borderRadius: 13, background: i <= index ? p.colors.accent : "rgba(255,255,255,0.25)" }} />
+            <div key={i} style={{ width: i === index ? 80 : 24, height: 24, borderRadius: 12, background: i <= index ? BRAND.blauw : "rgba(26,53,128,0.2)" }} />
           ))}
         </div>
-        {/* step number */}
-        <div style={{ position: "absolute", left: 0, right: 0, top: 90, display: "flex", justifyContent: "center" }}>
-          <div style={{ width: 170, height: 170, borderRadius: 85, background: p.colors.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 700, fontSize: 120, color: p.colors.text, transform: `scale(${num})` }}>{index + 1}</div>
+        <div style={{ position: "absolute", left: 60, top: 130, fontFamily: FONT, fontWeight: 700, fontSize: 210, lineHeight: 1, color: BRAND.aqua, opacity: num, transform: `translateY(${(1 - num) * 60}px)` }}>
+          {index + 1}
         </div>
-        {/* illustration card with a pulse ring */}
-        <div style={{ position: "absolute", left: STAGE_W / 2 - D / 2, top: 330, width: D, height: D }}>
-          <div style={{ position: "absolute", inset: -40 * ring, borderRadius: "50%", border: `6px solid ${p.colors.accent}`, opacity: (1 - ring) * 0.7 * card }} />
-          <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: cardBg, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${card}) rotate(${(1 - card) * -15}deg)`, boxShadow: "0 24px 60px rgba(0,0,0,0.28)" }}>
-            <div style={{ transform: `rotate(${interpolate(Math.sin(frame / 10), [-1, 1], [-4, 4])}deg)` }}>
-              <Glyph name={st.illustration} size={D * 0.62} color={p.colors.bg} tint="none" />
-            </div>
+        <div style={{ position: "absolute", left: STAGE_W / 2 - 420, top: cy - 420, width: 840, height: 840 }}>
+          <Sunburst start={T_CARD + 4} size={840} color={BRAND.aqua} opacity={0.6} />
+        </div>
+        <div style={{ position: "absolute", left: STAGE_W / 2 - D / 2, top: cy - D / 2, width: D, height: D, borderRadius: "50%", background: BRAND.wit, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${card * (1 - out * 0.15)}) rotate(${(1 - card) * -12}deg)`, opacity: 1 - out, boxShadow: "0 30px 70px rgba(26,53,128,0.22)" }}>
+          <div style={{ transform: `rotate(${Math.sin(frame / 12) * 3}deg)` }}>
+            <Glyph name={st.illustration} size={D * 0.6} color={BRAND.blauw} tint="none" />
           </div>
         </div>
-        <div style={{ position: "absolute", left: 40, right: 40, top: 1090, textAlign: "center", fontFamily: FONT, fontSize: 92, lineHeight: 1.12, color: p.colors.text, opacity: fadeIn(frame, T_TEXT, 10), transform: `translateY(${(1 - fadeIn(frame, T_TEXT, 10)) * 30}px)` }}>
-          <Rich text={st.text} keyColor={p.colors.accent} />
+        <div style={{ position: "absolute", left: 60, top: 1170 }}>
+          <Title text={st.text} color={BRAND.blauw} maxSize={92} width={960} delay={T_TEXT} end={dur} />
         </div>
       </Stage>
-    </AbsoluteFill>
+    </Backdrop>
   );
 };

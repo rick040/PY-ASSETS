@@ -1,32 +1,42 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame } from "remotion";
 import { LocatiekaartProps } from "../schema";
 import { Stage, STAGE_W } from "../../lib/layout";
-import { pop, springs, fadeIn } from "../../lib/anim";
-import { Headline } from "../../components/Headline";
-import { PriceBubble } from "../../components/PriceBubble";
-import { FONT } from "../../theme";
+import { Backdrop } from "../../v2/Backdrop";
+import { Title } from "../../v2/Title";
+import { PriceBadge, TopLogo } from "../../v2/Badges";
+import { Sunburst } from "../../v2/Fx";
+import { enter } from "../../v2/ease";
+import { BRAND, FONT } from "../../theme";
 import { Rich } from "../../lib/rich";
 
-export const T_BUBBLE = 10; // price bubble lands
-export const T_NOTE = 30; // small print under the bubble
+export const T_BADGE = 14;
+export const T_NOTE = 34;
 
-export const PriceScene: React.FC<LocatiekaartProps> = (p) => {
+/** Price: headline, white round badge popping in over drawing rays, small print underneath. */
+export const PriceScene: React.FC<LocatiekaartProps & { dur: number }> = (p) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const b = pop(frame, fps, T_BUBBLE, springs.pop);
-  const W = 760;
+  const note = enter(frame, T_NOTE, 18);
+  const S = 520;
   return (
-    <AbsoluteFill style={{ backgroundColor: p.colors.bg }}>
+    <Backdrop kind="navy" seed="price">
       <Stage>
-        <Headline text={p.price.headline} color={p.colors.text} keyColor={p.colors.accent} size={88} delay={-20} top={0} />
-        <div style={{ position: "absolute", left: (STAGE_W - W) / 2, top: 190, transform: `scale(${Math.min(b, 1.03)}) rotate(${(1 - b) * -12}deg)`, transformOrigin: "50% 95%" }}>
-          <PriceBubble width={W} price={p.price.amount} label={p.price.label} fill={p.colors.accent} text={p.colors.text} />
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
+          <TopLogo width={320} start={-20} />
         </div>
-        <div style={{ position: "absolute", left: 60, right: 60, top: 1130, textAlign: "center", fontFamily: FONT, fontSize: 56, color: p.colors.text, opacity: fadeIn(frame, T_NOTE, 12) }}>
-          <Rich text={p.price.note} keyColor={p.colors.accent} />
+        <div style={{ position: "absolute", left: 60, top: 150 }}>
+          <Title text={p.price.headline} color={BRAND.wit} maxSize={150} width={960} delay={-2} end={p.dur} />
+        </div>
+        <div style={{ position: "absolute", left: STAGE_W / 2 - 410, top: 880 - 410, width: 820, height: 820, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Sunburst start={T_BADGE + 4} size={820} />
+        </div>
+        <div style={{ position: "absolute", left: STAGE_W / 2 - S / 2, top: 880 - 260 }}>
+          <PriceBadge amount={p.price.amount} label={p.price.label} start={T_BADGE} size={S} />
+        </div>
+        <div style={{ position: "absolute", left: 60, right: 60, top: 1290, textAlign: "center", fontFamily: FONT, fontSize: 50, color: BRAND.wit, opacity: note, transform: `translateY(${(1 - note) * 16}px)` }}>
+          <Rich text={p.price.note} keyColor={BRAND.wit} />
         </div>
       </Stage>
-    </AbsoluteFill>
+    </Backdrop>
   );
 };

@@ -11,7 +11,7 @@ export const kinetischSchema = z.object({
     items: z.array(z.object({ icon: z.string().describe("PY-ASSETS ID or clock | fuel | mood | pin | check | cross"), text: z.string() })).min(1).max(4),
   }),
   end: z.object({ headline: z.string(), visual: z.enum(["none", "arrive"]) }),
-  cta: z.object({ headline: z.string(), url: z.string(), tagline: z.string() }),
+  cta: z.object({ headline: z.string(), button: z.string(), url: z.string(), tagline: z.string() }),
   colors: z.object({ bgTop: zColor(), bgBottom: zColor(), text: zColor(), accent: zColor(), ctaBgFrom: zColor(), ctaBgTo: zColor() }),
   timing: z.object({
     hook: z.number().min(2).max(6),
@@ -27,9 +27,9 @@ export type KinetischProps = z.infer<typeof kinetischSchema>;
 
 export const kinetischDefaults: KinetischProps = {
   itemId: "IG-021",
-  hook: { headline: "Rondjes rijden\nis ook *betalen.*", visual: "orbit", counterLabel: "Rondje" },
+  hook: { headline: "Rondjes\nrijden is ook\n*betalen.*", visual: "orbit", counterLabel: "Rondje" },
   lines: {
-    title: "Je betaalt met",
+    title: "Je betaalt\n*met:*",
     items: [
       { icon: "fuel", text: "*Benzine*" },
       { icon: "clock", text: "*Tijd*" },
@@ -37,9 +37,9 @@ export const kinetischDefaults: KinetischProps = {
     ],
   },
   end: { headline: "Reserveer vooraf.\nRijd *direct*\nnaar je plek.", visual: "arrive" },
-  cta: { headline: "Reserveer\n*je plek*", url: "parkingyou.nl", tagline: "The other way of parking" },
+  cta: { headline: "Reserveer\n*je plek*", button: "Reserveer online", url: "voordeligparkeren.nl", tagline: "The other way of parking" },
   colors: { bgTop: BRAND.blauw, bgBottom: "#097BAE", text: BRAND.wit, accent: BRAND.aqua, ctaBgFrom: BRAND.blauw, ctaBgTo: BRAND.aqua },
-  timing: { hook: 3.2, lines: 3.4, end: 3, cta: 3, transition: 0.4 },
+  timing: { hook: 3.2, lines: 3.4, end: 3, cta: 3.4, transition: 0.5 },
   showSafeZones: false,
 };
 

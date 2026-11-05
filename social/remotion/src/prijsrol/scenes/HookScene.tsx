@@ -1,39 +1,46 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { PrijsrolProps } from "../schema";
 import { Stage, STAGE_W } from "../../lib/layout";
-import { pop, springs } from "../../lib/anim";
-import { Headline } from "../../components/Headline";
-import { LocationPill } from "../../components/LocationPill";
-import { PriceBubble } from "../../components/PriceBubble";
-import { euro } from "../../lib/euro";
+import { Backdrop } from "../../v2/Backdrop";
+import { Title } from "../../v2/Title";
+import { PlacePill, PriceBadge, TopLogo } from "../../v2/Badges";
+import { BRAND } from "../../theme";
 
-export const T_PILL = 12;
+export const T_PILL = 30;
 
-/** Three small price bubbles that swing like price tags: the question before the answer. */
-export const HookScene: React.FC<PrijsrolProps> = (p) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const pill = pop(frame, fps, T_PILL, springs.bouncy);
+/** Hook: GLOW gradient, big question, the prices as round badges tumbling in, the location pill. */
+export const HookScene: React.FC<PrijsrolProps & { dur: number }> = (p) => {
   const items = p.rows.items;
-  const w = Math.min(330, (STAGE_W - 60) / items.length);
+  const n = items.length;
+  const S = n > 3 ? 280 : 340;
+  const slots = [
+    { x: 0.06, y: 560, r: -10 },
+    { x: 0.52, y: 640, r: 7 },
+    { x: 0.3, y: 840, r: -4 },
+    { x: 0.62, y: 900, r: 9 },
+  ];
   return (
-    <AbsoluteFill style={{ backgroundColor: p.colors.bg }}>
+    <Backdrop kind="glow" seed="r2hook">
       <Stage>
-        <Headline text={p.hook.headline} color={p.colors.text} keyColor={p.colors.accent} size={118} delay={-24} stagger={3} top={0} />
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
+          <TopLogo width={320} />
+        </div>
+        <div style={{ position: "absolute", left: 60, top: 140 }}>
+          <Title text={p.hook.headline} color={BRAND.wit} maxSize={160} width={960} delay={-14} end={p.dur} />
+        </div>
         {items.map((it, i) => {
-          const s = pop(frame, fps, -14 + i * 4, springs.bouncy);
-          const swing = Math.sin((frame + i * 9) / 9) * 5;
+          const s = slots[i];
+          const last = i === n - 1;
           return (
-            <div key={i} style={{ position: "absolute", left: STAGE_W / 2 - (items.length * w) / 2 + i * w, top: 470 + (i % 2) * 100, width: w, display: "flex", justifyContent: "center", transform: `scale(${s}) rotate(${swing}deg)`, transformOrigin: "50% 0%" }}>
-              <PriceBubble width={w - 20} price={euro(it.amount)} label="" fill={i === items.length - 1 ? p.colors.accent : "rgba(255,255,255,0.16)"} text={p.colors.text} />
+            <div key={i} style={{ position: "absolute", left: s.x * STAGE_W, top: s.y - (n > 3 ? 40 : 0) }}>
+              <PriceBadge amount={it.amount} label="" start={-6 + i * 5} size={last ? S * 1.12 : S} tone={last ? "white" : "aqua"} rotate={s.r} />
             </div>
           );
         })}
-        <div style={{ position: "absolute", left: 0, right: 0, top: 1140, display: "flex", justifyContent: "center", opacity: Math.min(1, pill * 1.5), transform: `scale(${0.7 + 0.3 * pill})` }}>
-          <LocationPill name={p.location.name} city={p.location.city} bg={p.colors.accent} fg={p.colors.text} accent={p.colors.bg} height={124} />
+        <div style={{ position: "absolute", left: 60, top: 1250 }}>
+          <PlacePill name={p.location.name} start={T_PILL} height={112} />
         </div>
       </Stage>
-    </AbsoluteFill>
+    </Backdrop>
   );
 };

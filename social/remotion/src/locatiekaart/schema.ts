@@ -18,11 +18,12 @@ export const locatiekaartSchema = z.object({
     .array(z.object({ icon: z.string().describe("PY-ASSETS element ID"), tint: z.enum(["none", "white"]), text: z.string() }))
     .min(1)
     .max(3),
-  price: z.object({ headline: z.string(), amount: z.string(), label: z.string(), note: z.string() }),
-  cta: z.object({ headline: z.string(), url: z.string(), tagline: z.string() }),
+  price: z.object({ headline: z.string(), amount: z.number().min(0), label: z.string(), note: z.string() }),
+  cta: z.object({ headline: z.string(), button: z.string(), url: z.string(), tagline: z.string() }),
   colors: z.object({ bg: zColor(), text: zColor(), accent: zColor(), ctaBgFrom: zColor(), ctaBgTo: zColor() }),
   timing: z.object({
-    main: z.number().min(5).max(12),
+    hook: z.number().min(2).max(6),
+    main: z.number().min(2).max(8),
     price: z.number().min(2).max(6),
     cta: z.number().min(2).max(6),
     transition: z.number().min(0.2).max(1),
@@ -34,7 +35,7 @@ export type LocatiekaartProps = z.infer<typeof locatiekaartSchema>;
 
 export const locatiekaartDefaults: LocatiekaartProps = {
   itemId: "IG-002",
-  hook: { headline: "Midden in *Rotterdam.*\n*Droog* geparkeerd.", weather: "rain" },
+  hook: { headline: "Midden in\n*Rotterdam.*\n*Droog*\ngeparkeerd.", weather: "rain" },
   media: { type: "none", src: "" },
   location: { name: "Hofplein", city: "Rotterdam" },
   facts: [
@@ -42,15 +43,16 @@ export const locatiekaartDefaults: LocatiekaartProps = {
     { icon: "py-atom-sign-camera", tint: "none", text: "*Camerabewaking*" },
     { icon: "py-atom-icon-calendar", tint: "none", text: "Vroegboeken *€20* per dag" },
   ],
-  price: { headline: "En in het *weekend?*", amount: "€15", label: "per dag", note: "Zaterdag en zondag, ter plaatse" },
-  cta: { headline: "Reserveer\n*je plek*", url: "parkingyou.nl", tagline: "The other way of parking" },
+  price: { headline: "En in het\n*weekend?*", amount: 15, label: "per dag", note: "Zaterdag en zondag, ter plaatse" },
+  cta: { headline: "Reserveer\n*je plek*", button: "Reserveer online", url: "voordeligparkeren.nl", tagline: "The other way of parking" },
   colors: { bg: BRAND.blauw, text: BRAND.wit, accent: BRAND.aqua, ctaBgFrom: BRAND.blauw, ctaBgTo: BRAND.aqua },
-  timing: { main: 7, price: 3, cta: 3, transition: 0.4 },
+  timing: { hook: 3.4, main: 3.8, price: 3.2, cta: 3.4, transition: 0.5 },
   showSafeZones: false,
 };
 
 export const FPS = 30;
 export const locatiekaartFrames = (t: LocatiekaartProps["timing"]) => ({
+  hook: Math.round(t.hook * FPS),
   main: Math.round(t.main * FPS),
   price: Math.round(t.price * FPS),
   cta: Math.round(t.cta * FPS),
@@ -58,5 +60,5 @@ export const locatiekaartFrames = (t: LocatiekaartProps["timing"]) => ({
 });
 export const locatiekaartTotal = (t: LocatiekaartProps["timing"]) => {
   const f = locatiekaartFrames(t);
-  return f.main + f.price + f.cta - 2 * f.transition;
+  return f.hook + f.main + f.price + f.cta - 3 * f.transition;
 };

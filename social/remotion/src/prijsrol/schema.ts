@@ -20,7 +20,7 @@ export const prijsrolSchema = z.object({
     saving: z.string().describe("{x} = difference between the highest and the highlighted price; empty = no badge"),
   }),
   bubble: z.object({ headline: z.string(), label: z.string(), note: z.string() }),
-  cta: z.object({ headline: z.string(), url: z.string(), tagline: z.string() }),
+  cta: z.object({ headline: z.string(), button: z.string(), url: z.string(), tagline: z.string() }),
   colors: z.object({ bg: zColor(), text: zColor(), accent: zColor(), muted: zColor(), ctaBgFrom: zColor(), ctaBgTo: zColor() }),
   timing: z.object({
     hook: z.number().min(1.5).max(5),
@@ -39,7 +39,7 @@ export const prijsrolDefaults: PrijsrolProps = {
   hook: { headline: "Zelfde plek.\n*Drie prijzen.*" },
   location: { name: "Hofplein", city: "Rotterdam" },
   rows: {
-    title: "Een dag parkeren",
+    title: "Een dag\n*parkeren*",
     items: [
       { label: "Ter plaatse", icon: "py-atom-picto-car", amount: 30, suffix: "" },
       { label: "Online reserveren", icon: "py-atom-illustration-phone-qr", amount: 25, suffix: "" },
@@ -48,10 +48,10 @@ export const prijsrolDefaults: PrijsrolProps = {
     highlight: -1,
     saving: "Je bespaart *{x}* per dag",
   },
-  bubble: { headline: "Zelfde garage.\nAlleen *eerder geboekt.*", label: "per dag", note: "Doordeweeks, vroegboeken online" },
-  cta: { headline: "Boek *vroeg*,\nbetaal minder", url: "parkingyou.nl", tagline: "The other way of parking" },
+  bubble: { headline: "Zelfde garage.\nAlleen *eerder*\n*geboekt.*", label: "per dag", note: "Doordeweeks, vroegboeken online" },
+  cta: { headline: "Boek *vroeg*,\nbetaal minder", button: "Reserveer online", url: "voordeligparkeren.nl", tagline: "The other way of parking" },
   colors: { bg: BRAND.blauw, text: BRAND.wit, accent: BRAND.aqua, muted: BRAND.grijs, ctaBgFrom: BRAND.blauw, ctaBgTo: BRAND.aqua },
-  timing: { hook: 2.6, rows: 5, bubble: 2.8, cta: 3, transition: 0.4 },
+  timing: { hook: 2.8, rows: 4.6, bubble: 3, cta: 3.4, transition: 0.5 },
   showSafeZones: false,
 };
 

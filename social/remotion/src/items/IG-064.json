@@ -1,7 +1,7 @@
 {
   "itemId": "IG-064",
   "hook": {
-    "headline": "Welk *parkeertype*\nben jij?"
+    "headline": "Welk\n*parkeertype*\nben jij?"
   },
   "beats": [
     {
@@ -39,8 +39,9 @@
   },
   "cta": {
     "headline": "Word een\n*vroegboeker*",
-    "url": "parkingyou.nl",
-    "tagline": "The other way of parking"
+    "url": "voordeligparkeren.nl",
+    "tagline": "The other way of parking",
+    "button": "Boek vroeg"
   },
   "colors": {
     "bg": "#EAF8FA",
@@ -51,11 +52,11 @@
     "ctaBgTo": "#32B9CD"
   },
   "timing": {
-    "hook": 2.4,
-    "beat": 2.1,
-    "outro": 2.4,
-    "cta": 3,
-    "transition": 0.35
+    "hook": 2.6,
+    "beat": 2.2,
+    "outro": 2.6,
+    "cta": 3.4,
+    "transition": 0.5
   },
   "showSafeZones": false
 }

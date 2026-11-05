@@ -1,9 +1,13 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 import { FiguursketchProps } from "../schema";
 import { Stage, STAGE_W } from "../../lib/layout";
 import { pop, springs } from "../../lib/anim";
-import { Headline } from "../../components/Headline";
+import { Backdrop } from "../../v2/Backdrop";
+import { Title } from "../../v2/Title";
+import { TopLogo } from "../../v2/Badges";
+import { Confetti } from "../../v2/Fx";
+import { BRAND } from "../../theme";
 import { Figure } from "./Figure";
 
 /** Line-up of all beat figures under the question. Used again by the outro with one figure highlighted. */
@@ -12,7 +16,7 @@ export const LineUp: React.FC<{ p: FiguursketchProps; frame: number; fps: number
   const slot = Math.min(260, (STAGE_W - 40) / n);
   return (
     <>
-      <div style={{ position: "absolute", left: 60, right: 60, top: top + 560, height: 10, borderRadius: 5, background: p.colors.accent, opacity: 0.5 }} />
+      <div style={{ position: "absolute", left: 60, right: 60, top: top + 560, height: 10, borderRadius: 5, background: BRAND.blauw, opacity: 0.15 }} />
       {p.beats.map((b, i) => {
         const s = pop(frame, fps, -8 + i * 3, springs.bouncy);
         const on = highlight === undefined || highlight === i;
@@ -27,28 +31,40 @@ export const LineUp: React.FC<{ p: FiguursketchProps; frame: number; fps: number
   );
 };
 
-export const HookScene: React.FC<FiguursketchProps> = (p) => {
+const Head: React.FC<{ text: string; dur: number; delay: number }> = ({ text, dur, delay }) => (
+  <>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
+      <TopLogo width={320} start={-20} dark />
+    </div>
+    <div style={{ position: "absolute", left: 60, top: 140 }}>
+      <Title text={text} color={BRAND.blauw} maxSize={150} width={960} delay={delay} end={dur} />
+    </div>
+  </>
+);
+
+export const HookScene: React.FC<FiguursketchProps & { dur: number }> = (p) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   return (
-    <AbsoluteFill style={{ backgroundColor: p.colors.bg }}>
+    <Backdrop kind="light" seed="r5hook">
       <Stage>
-        <Headline text={p.hook.headline} color={p.colors.text} keyColor={p.colors.accent} size={112} delay={-16} stagger={3} top={0} />
-        <LineUp p={p} frame={frame} fps={fps} top={520} />
+        <Head text={p.hook.headline} dur={p.dur} delay={-16} />
+        <LineUp p={p} frame={frame} fps={fps} top={640} />
       </Stage>
-    </AbsoluteFill>
+    </Backdrop>
   );
 };
 
-export const OutroScene: React.FC<FiguursketchProps> = (p) => {
+export const OutroScene: React.FC<FiguursketchProps & { dur: number }> = (p) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   return (
-    <AbsoluteFill style={{ backgroundColor: p.colors.bg }}>
+    <Backdrop kind="light" seed="r5out">
       <Stage>
-        <Headline text={p.outro.headline} color={p.colors.text} keyColor={p.colors.accent} size={112} delay={-6} stagger={3} top={0} />
-        <LineUp p={p} frame={frame} fps={fps} top={520} highlight={p.outro.highlight} />
+        <Head text={p.outro.headline} dur={p.dur} delay={-2} />
+        <LineUp p={p} frame={frame} fps={fps} top={640} highlight={p.outro.highlight} />
       </Stage>
-    </AbsoluteFill>
+      <Confetti start={10} x={0.3} y={0.62} count={50} colors={[BRAND.oranje, BRAND.aqua, BRAND.blauw]} />
+    </Backdrop>
   );
 };

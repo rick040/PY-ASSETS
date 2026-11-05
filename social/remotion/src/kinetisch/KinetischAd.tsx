@@ -1,15 +1,13 @@
 import React from "react";
 import { TransitionSeries, springTiming } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
-import { slide } from "@remotion/transitions/slide";
-import { wipe } from "@remotion/transitions/wipe";
 import "../theme";
 import { KinetischProps, kinetischFrames } from "./schema";
 import { HookScene } from "./scenes/HookScene";
 import { LinesScene } from "./scenes/LinesScene";
 import { EndScene } from "./scenes/EndScene";
-import { EndCard } from "../components/EndCard";
+import { EndCardV2 } from "../v2/EndCardV2";
 import { SafeZones } from "../components/SafeZones";
+import { slideBlur, bubbleReveal, zoomThrough } from "../v2/transitions";
 
 export const KinetischAd: React.FC<KinetischProps> = (props) => {
   const f = kinetischFrames(props.timing);
@@ -18,19 +16,19 @@ export const KinetischAd: React.FC<KinetischProps> = (props) => {
     <>
       <TransitionSeries>
         <TransitionSeries.Sequence durationInFrames={f.hook}>
-          <HookScene {...props} />
+          <HookScene {...props} dur={f.hook} />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition presentation={slide({ direction: "from-right" })} timing={timing} />
+        <TransitionSeries.Transition presentation={slideBlur()} timing={timing} />
         <TransitionSeries.Sequence durationInFrames={f.lines}>
-          <LinesScene {...props} />
+          <LinesScene {...props} dur={f.lines} />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+        <TransitionSeries.Transition presentation={bubbleReveal()} timing={timing} />
         <TransitionSeries.Sequence durationInFrames={f.end}>
-          <EndScene {...props} />
+          <EndScene {...props} dur={f.end} />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition presentation={wipe({ direction: "from-bottom" })} timing={timing} />
+        <TransitionSeries.Transition presentation={zoomThrough()} timing={timing} />
         <TransitionSeries.Sequence durationInFrames={f.cta}>
-          <EndCard cta={props.cta} text={props.colors.text} from={props.colors.ctaBgFrom} to={props.colors.ctaBgTo} />
+          <EndCardV2 cta={props.cta} />
         </TransitionSeries.Sequence>
       </TransitionSeries>
       {props.showSafeZones && <SafeZones />}

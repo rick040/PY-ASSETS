@@ -1,13 +1,11 @@
 import React from "react";
 import { TransitionSeries, springTiming } from "@remotion/transitions";
-import { slide } from "@remotion/transitions/slide";
-import { fade } from "@remotion/transitions/fade";
-import { wipe } from "@remotion/transitions/wipe";
+import { slideBlur, bubbleReveal, zoomThrough } from "../v2/transitions";
+import { EndCardV2 } from "../v2/EndCardV2";
 import "../theme";
 import { DrieStappenProps, drieStappenFrames } from "./schema";
 import { GateScene } from "./scenes/GateScene";
 import { StepScene } from "./scenes/StepScene";
-import { EndCard } from "../components/EndCard";
 import { SafeZones } from "../components/SafeZones";
 
 export const DrieStappenAd: React.FC<DrieStappenProps> = (props) => {
@@ -17,21 +15,21 @@ export const DrieStappenAd: React.FC<DrieStappenProps> = (props) => {
     <>
       <TransitionSeries>
         <TransitionSeries.Sequence durationInFrames={f.hook}>
-          <GateScene p={props} headline={props.hook.headline} withFigure={false} />
+          <GateScene p={props} headline={props.hook.headline} withFigure={false} dur={f.hook} />
         </TransitionSeries.Sequence>
         {props.steps.flatMap((_, i) => [
-          <TransitionSeries.Transition key={`t${i}`} presentation={i === 0 ? fade() : slide({ direction: "from-right" })} timing={timing} />,
+          <TransitionSeries.Transition key={`t${i}`} presentation={i === 0 ? bubbleReveal() : slideBlur()} timing={timing} />,
           <TransitionSeries.Sequence key={`s${i}`} durationInFrames={f.step}>
-            <StepScene p={props} index={i} />
+            <StepScene p={props} index={i} dur={f.step} />
           </TransitionSeries.Sequence>,
         ])}
-        <TransitionSeries.Transition presentation={fade()} timing={timing} />
+        <TransitionSeries.Transition presentation={zoomThrough()} timing={timing} />
         <TransitionSeries.Sequence durationInFrames={f.outcome}>
-          <GateScene p={props} headline={props.outcome.headline} withFigure />
+          <GateScene p={props} headline={props.outcome.headline} withFigure dur={f.outcome} />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition presentation={wipe({ direction: "from-bottom" })} timing={timing} />
+        <TransitionSeries.Transition presentation={slideBlur()} timing={timing} />
         <TransitionSeries.Sequence durationInFrames={f.cta}>
-          <EndCard cta={props.cta} text={props.colors.text} from={props.colors.ctaBgFrom} to={props.colors.ctaBgTo} />
+          <EndCardV2 cta={props.cta} />
         </TransitionSeries.Sequence>
       </TransitionSeries>
       {props.showSafeZones && <SafeZones />}

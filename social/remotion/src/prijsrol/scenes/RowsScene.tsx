@@ -1,78 +1,85 @@
 import React from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 import { PrijsrolProps, highlightIndex } from "../schema";
 import { Stage } from "../../lib/layout";
-import { pop, springs } from "../../lib/anim";
-import { Headline } from "../../components/Headline";
-import { Glyph } from "../../components/Glyph";
-import { LabelPill } from "../../components/LabelPill";
-import { FONT } from "../../theme";
+import { Backdrop } from "../../v2/Backdrop";
+import { Title } from "../../v2/Title";
+import { TopLogo } from "../../v2/Badges";
+import { Card } from "../../v2/Card";
+import { enter, leave, EASE_OUT } from "../../v2/ease";
+import { BRAND, FONT } from "../../theme";
+import { Rich } from "../../lib/rich";
 import { euro } from "../../lib/euro";
 
-// Beats in scene frames. Rows land one by one and count up, then the dearer ones are struck through.
-export const T_ROW0 = 10;
-export const T_ROW_STEP = 14;
-export const T_COUNT = 18; // frames a price takes to count up
-export const T_STRIKE = 72;
-export const T_HIGHLIGHT = 92;
-export const T_SAVING = 104;
+export const T_ROW0 = 14;
+export const T_ROW_STEP = 9;
+export const T_COUNT = 22;
+export const T_STRIKE = 70;
+export const T_HIGHLIGHT = 86;
+export const T_SAVING = 98;
 
-const ease = (t: number) => 1 - Math.pow(1 - t, 3);
-
-export const RowsScene: React.FC<PrijsrolProps> = (p) => {
+/** Price rows as white cards: prices count up, dearer ones get an aqua strike and dim, the cheapest turns aqua. */
+export const RowsScene: React.FC<PrijsrolProps & { dur: number }> = (p) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
   const items = p.rows.items;
   const hi = highlightIndex(p);
   const max = Math.max(...items.map((r) => r.amount));
   const diff = Math.round((max - items[hi].amount) * 100) / 100;
-  const rowH = 236;
-  const gap = 40;
-  const top = 220 + ((4 - items.length) * (rowH + gap)) / 2 - 60;
-  const hiP = pop(frame, fps, T_HIGHLIGHT, springs.bouncy);
-  const saving = pop(frame, fps, T_SAVING, springs.bouncy);
-
+  const out = leave(frame, p.dur - 4, 12);
+  const hiP = enter(frame, T_HIGHLIGHT, 16);
+  const save = enter(frame, T_SAVING, 20);
+  const H = 190;
   return (
-    <AbsoluteFill style={{ backgroundColor: p.colors.bg }}>
+    <Backdrop kind="navy" seed="r2rows">
       <Stage>
-        <Headline text={p.rows.title} color={p.colors.text} keyColor={p.colors.accent} size={96} delay={-12} top={0} />
-        {items.map((r, i) => {
-          const start = T_ROW0 + i * T_ROW_STEP;
-          const s = pop(frame, fps, start, springs.pop);
-          const count = ease(interpolate(frame, [start, start + T_COUNT], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
-          const shown = count >= 1 ? r.amount : Math.round(r.amount * count); // whole euros while counting
-          const isHi = i === hi;
-          const strike = isHi ? 0 : interpolate(frame, [T_STRIKE + i * 4, T_STRIKE + i * 4 + 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-          const dim = 1 - 0.5 * strike;
-          return (
-            <div
-              key={i}
-              style={{
-                position: "absolute", left: 50, right: 50, top: top + i * (rowH + gap), height: rowH, borderRadius: 48,
-                background: isHi ? `rgba(50,185,205,${0.16 + 0.84 * hiP})` : "rgba(255,255,255,0.10)",
-                display: "flex", alignItems: "center", padding: "0 48px", gap: 36,
-                opacity: Math.min(1, s * 1.5) * dim, transform: `translateX(${(1 - s) * -120}px) scale(${isHi ? 1 + 0.04 * hiP : 1})`,
-                boxShadow: isHi && hiP > 0.1 ? "0 18px 44px rgba(0,0,0,0.25)" : undefined,
-              }}
-            >
-              <div style={{ width: 120, height: 120, borderRadius: 60, border: `5px solid ${isHi && hiP > 0.5 ? p.colors.text : p.colors.accent}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <Glyph name={r.icon} size={68} color={p.colors.text} tint="white" />
-              </div>
-              <div style={{ flex: 1, fontFamily: FONT, fontSize: 62, color: p.colors.text, fontWeight: isHi ? 500 : 400, whiteSpace: "nowrap" }}>{r.label}</div>
-              <div style={{ position: "relative", fontFamily: FONT, fontWeight: 700, fontSize: 116, color: p.colors.text, fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>
-                {euro(shown)}
-                {r.suffix && <span style={{ fontSize: 48, fontWeight: 400 }}>{r.suffix}</span>}
-                <div style={{ position: "absolute", left: -8, top: "54%", height: 10, borderRadius: 5, width: `${strike * 104}%`, background: p.colors.accent, transform: "rotate(-8deg)" }} />
-              </div>
-            </div>
-          );
-        })}
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
+          <TopLogo width={320} start={-20} />
+        </div>
+        <div style={{ position: "absolute", left: 60, top: 150 }}>
+          <Title text={p.rows.title} color={BRAND.wit} maxSize={140} width={960} delay={-4} end={p.dur} />
+        </div>
+        <div style={{ position: "absolute", left: 50, right: 50, top: 560, display: "flex", flexDirection: "column", gap: 40 }}>
+          {items.map((r, i) => {
+            const start = T_ROW0 + i * T_ROW_STEP;
+            const e = enter(frame, start, 22);
+            const c = enter(frame, start + 4, T_COUNT, EASE_OUT);
+            const shown = c >= 1 ? r.amount : Math.round(r.amount * c);
+            const isHi = i === hi;
+            const strike = isHi ? 0 : enter(frame, T_STRIKE + i * 4, 12);
+            const bg = isHi ? `rgb(${Math.round(255 - (255 - 50) * hiP)},${Math.round(255 - (255 - 185) * hiP)},${Math.round(255 - (255 - 205) * hiP)})` : BRAND.wit;
+            const fg = isHi && hiP > 0.5 ? BRAND.wit : BRAND.blauw;
+            return (
+              <Card
+                key={i}
+                icon={r.icon}
+                text={r.label}
+                height={H}
+                bg={bg}
+                fg={fg}
+                disc={isHi && hiP > 0.5 ? BRAND.blauw : BRAND.blauw}
+                textWidth={520}
+                maxFont={60}
+                style={{ opacity: Math.min(1, e * 1.3) * (1 - 0.45 * strike) * (1 - out), transform: `translateX(${(1 - e) * -110 + out * 60}%) scale(${isHi ? 1 + 0.045 * hiP : 1})`, boxShadow: isHi && hiP > 0 ? `0 0 ${60 * hiP}px rgba(50,185,205,${0.55 * hiP}), 0 18px 40px rgba(4,10,40,0.26)` : undefined }}
+                right={
+                  <div style={{ position: "relative", fontFamily: FONT, fontWeight: 700, fontStyle: "italic", fontSize: 104, color: fg, fontVariantNumeric: "tabular-nums" }}>
+                    {euro(shown)}
+                    {r.suffix && <span style={{ fontSize: 44, fontWeight: 400, fontStyle: "normal" }}>{r.suffix}</span>}
+                    <div style={{ position: "absolute", left: -10, top: "52%", height: 12, borderRadius: 6, width: `${strike * 112}%`, background: BRAND.aqua, transform: "rotate(-9deg)", transformOrigin: "0 50%" }} />
+                  </div>
+                }
+              />
+            );
+          })}
+        </div>
         {p.rows.saving && diff > 0 && (
-          <div style={{ position: "absolute", left: 0, right: 0, top: 1150, display: "flex", justifyContent: "center", opacity: Math.min(1, saving * 1.5), transform: `scale(${0.6 + 0.4 * saving})` }}>
-            <LabelPill text={p.rows.saving.replace("{x}", euro(diff))} bg={p.colors.text} fg={p.colors.bg} keyColor={p.colors.accent} height={132} />
+          <div style={{ position: "absolute", left: 0, right: 0, top: 1230, display: "flex", justifyContent: "center", opacity: save * (1 - out), transform: `translateY(${(1 - save) * 30}px) scale(${0.9 + 0.1 * save})` }}>
+            <div style={{ height: 116, padding: "0 50px", borderRadius: 58, background: BRAND.wit, display: "flex", alignItems: "center", fontFamily: FONT, fontSize: 52, color: BRAND.blauw, boxShadow: "0 14px 34px rgba(4,10,40,0.25)" }}>
+              <span style={{ whiteSpace: "pre" }}><Rich text={p.rows.saving.replace("{x}", euro(diff))} keyColor={BRAND.blauw} /></span>
+            </div>
           </div>
         )}
       </Stage>
-    </AbsoluteFill>
+    </Backdrop>
   );
 };
+export const _i = interpolate;

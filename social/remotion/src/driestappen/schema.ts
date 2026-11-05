@@ -11,7 +11,7 @@ export const drieStappenSchema = z.object({
     .min(2)
     .max(4),
   outcome: z.object({ headline: z.string(), figure: z.string() }),
-  cta: z.object({ headline: z.string(), url: z.string(), tagline: z.string() }),
+  cta: z.object({ headline: z.string(), button: z.string(), url: z.string(), tagline: z.string() }),
   colors: z.object({ bg: zColor(), text: zColor(), accent: zColor(), card: zColor(), ctaBgFrom: zColor(), ctaBgTo: zColor() }),
   timing: z.object({
     hook: z.number().min(1.5).max(5),
@@ -27,16 +27,16 @@ export type DrieStappenProps = z.infer<typeof drieStappenSchema>;
 
 export const drieStappenDefaults: DrieStappenProps = {
   itemId: "IG-028",
-  hook: { headline: "Je plek geregeld\nin *3 stappen.*" },
+  hook: { headline: "Je plek\ngeregeld in\n*3 stappen.*" },
   steps: [
     { illustration: "py-atom-illustration-phone-qr", text: "Kies je *locatie en tijd*", card: "light" },
     { illustration: "py-atom-illustration-contactless-hand", text: "Betaal *online*", card: "light" },
     { illustration: "py-atom-illustration-reader-qr", text: "Rijd in met je *code*", card: "light" },
   ],
-  outcome: { headline: "Slagboom open.\n*Je plek staat klaar.*", figure: "py-atom-figure-bags-cheer" },
-  cta: { headline: "Reserveer\n*je plek*", url: "parkingyou.nl", tagline: "The other way of parking" },
+  outcome: { headline: "Slagboom open.\n*Je plek*\n*staat klaar.*", figure: "py-atom-figure-bags-cheer" },
+  cta: { headline: "Reserveer\n*je plek*", button: "Reserveer online", url: "voordeligparkeren.nl", tagline: "The other way of parking" },
   colors: { bg: BRAND.blauw, text: BRAND.wit, accent: BRAND.aqua, card: BRAND.wit, ctaBgFrom: BRAND.blauw, ctaBgTo: BRAND.aqua },
-  timing: { hook: 2.6, step: 2.2, outcome: 3, cta: 3, transition: 0.35 },
+  timing: { hook: 2.8, step: 2.3, outcome: 3.2, cta: 3.4, transition: 0.5 },
   showSafeZones: false,
 };
 

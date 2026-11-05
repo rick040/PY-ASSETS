@@ -46,6 +46,32 @@ Output is h264, yuv420p, BT.709 (set in `remotion.config.ts`, keeps PY-Blauw on 
 3. Add the item to the `items` list in `src/Root.tsx` and add render scripts to `package.json`.
 4. Render 15 or so stills across the timeline and look at them before rendering the MP4 (headline on two lines, nothing under the safe zones, frame 0 not empty).
 
+## Feed style (v2, November 2026)
+
+All templates follow the look of the current Instagram feed. The shared kit is in `src/v2/`:
+
+| Part | What it does |
+|---|---|
+| `Backdrop` | `navy` (flat PY-Blauw with slowly drifting light, noise driven), `glow` (the cyan-to-blue GLOW gradient), `light` (pale blue, as the Easter post), `photo` (photo or video with a slow Ken Burns move and a dark gradient for legible text). Fine film grain and a vignette on top |
+| `Title` | Big white headline, key words in **Bold** (weight contrast, same colour). Size is fitted to the widest line. Each line rises out of a mask with an expo-out curve, staggered; lines leave upwards before the scene ends |
+| `CtaPill`, `UrlLine` | The "Reserveer online" button (aqua pill, white arrow circle) that grows out of its circle, gets a light sweep and a nudging arrow; the "voordelig**parkeren.nl**" line with the aqua chevron |
+| `PriceBadge`, `PlacePill`, `TopLogo` | Round price badge (white/navy or aqua/white, small raised cents, one soft overshoot, then floats); white place pill with navy pin; small logo on top |
+| `Card` | White pill card with a navy icon disc for facts, price rows and lines; text auto-fits |
+| `Fx` | `Sunburst` (rays drawn with `@remotion/paths`, turning slowly), `Confetti` (orange, aqua, white; physics with drag and gravity), `Skyline` (white silhouettes of cars and people) |
+| `transitions` | `slideBlur` (vertical push with speed-based blur), `bubbleReveal` (the next scene opens through the ParkingYou speech bubble), `zoomThrough` (zoom and blur) |
+| `withMotionBlur` | Real camera motion blur from `@remotion/motion-blur` (6 sub-frames per frame, shutter 180 degrees) around every composition |
+| `EndCardV2` | GLOW gradient, logo, headline, button, url line, tagline |
+
+Motion rules: entrances use `cubic-bezier(0.16, 1, 0.3, 1)` (expo out), exits `cubic-bezier(0.7, 0, 0.84, 0)`; text never bounces, only badges get one soft overshoot; everything leaves before the cut so transitions feel choreographed; only transforms, opacity and filters are animated.
+
+Render time with motion blur is about 3 minutes per 12-second reel at `--concurrency=4`. Turn it off for quick checks with the prop `motionBlur: false`. `npm run render:all` (`scripts/render-all.sh [browser]`) renders every item.
+
+The url on the end card is `voordeligparkeren.nl`, as on the current posts; change `cta.url` per item if a post should point elsewhere.
+
+## Photos
+
+The hook of R1 switches to a full-bleed photo or video as soon as an item has `"media": { "type": "image" | "video", "src": "media/<file>" }` with the file in `public/media/`. The Ken Burns move and the text gradient are automatic. Good sources are the photos already used in the feed (Hofplein skyline, Bos en Lommer entrance, GLOW at night).
+
 ## Logo rule
 
 Logos on blue, gradient or photo backgrounds are white with the aqua dot only. The `py-atom-logo-*-reverse` files have a navy ring fill; `scripts/sync-assets.mjs` writes `-open` versions without it to `public/py/derived/`. Always use `py-atom-logo-horizontal-reverse-open` (or the stacked or beeldmerk `-open` variant); the shared `EndCard` already does.

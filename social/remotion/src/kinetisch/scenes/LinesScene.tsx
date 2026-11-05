@@ -1,41 +1,36 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame } from "remotion";
 import { KinetischProps } from "../schema";
 import { Stage } from "../../lib/layout";
-import { pop, springs } from "../../lib/anim";
-import { Headline } from "../../components/Headline";
-import { Glyph } from "../../components/Glyph";
-import { Rich } from "../../lib/rich";
-import { FONT } from "../../theme";
-import { Bg } from "./Bg";
+import { Backdrop } from "../../v2/Backdrop";
+import { Title } from "../../v2/Title";
+import { TopLogo } from "../../v2/Badges";
+import { Card } from "../../v2/Card";
+import { enter, leave } from "../../v2/ease";
+import { BRAND } from "../../theme";
 
-export const T_LINE0 = 14;
-export const T_LINE_STEP = 18;
+export const T_LINE0 = 16;
+export const T_LINE_STEP = 12;
 
-export const LinesScene: React.FC<KinetischProps> = (p) => {
+export const LinesScene: React.FC<KinetischProps & { dur: number }> = (p) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const n = p.lines.items.length;
-  const rowH = 230;
-  const top = 300 + ((4 - n) * rowH) / 2;
+  const out = leave(frame, p.dur - 4, 12);
   return (
-    <Bg top={p.colors.bgTop} bottom={p.colors.bgBottom}>
+    <Backdrop kind="navy" seed="r7lines">
       <Stage>
-        <Headline text={p.lines.title} color={p.colors.text} keyColor={p.colors.accent} size={104} delay={-12} top={20} />
-        {p.lines.items.map((it, i) => {
-          const s = pop(frame, fps, T_LINE0 + i * T_LINE_STEP, springs.bouncy);
-          return (
-            <div key={i} style={{ position: "absolute", left: 80, right: 30, top: top + i * rowH, height: 190, display: "flex", alignItems: "center", gap: 48, opacity: Math.min(1, s * 1.5), transform: `translateX(${(1 - s) * 140}px)` }}>
-              <div style={{ width: 180, height: 180, borderRadius: 90, border: `6px solid ${p.colors.accent}`, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${0.5 + 0.5 * s}) rotate(${(1 - s) * -30}deg)`, flexShrink: 0 }}>
-                <Glyph name={it.icon} size={104} color={p.colors.text} />
-              </div>
-              <div style={{ fontFamily: FONT, fontSize: 84, color: p.colors.text, whiteSpace: "nowrap" }}>
-                <Rich text={it.text} keyColor={p.colors.accent} />
-              </div>
-            </div>
-          );
-        })}
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
+          <TopLogo width={320} start={-20} />
+        </div>
+        <div style={{ position: "absolute", left: 60, top: 150 }}>
+          <Title text={p.lines.title} color={BRAND.wit} maxSize={150} width={960} delay={-4} end={p.dur} />
+        </div>
+        <div style={{ position: "absolute", left: 50, right: 50, top: 640, display: "flex", flexDirection: "column", gap: 60 }}>
+          {p.lines.items.map((it, i) => {
+            const e = enter(frame, T_LINE0 + i * T_LINE_STEP, 22);
+            return <Card key={i} icon={it.icon} text={it.text} height={220} style={{ opacity: Math.min(1, e * 1.3) * (1 - out), transform: `translateX(${(1 - e) * -110 + out * 60}%) rotate(${(1 - e) * -3}deg)` }} />;
+          })}
+        </div>
       </Stage>
-    </Bg>
+    </Backdrop>
   );
 };

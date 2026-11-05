@@ -20,6 +20,19 @@ Logo rule (Rick, 5 November 2026): on blue, gradient or photo backgrounds the lo
 
 Tagline: "The other way of parking", Ubuntu Regular, tracking +60/1000 em, white, left aligned with the wordmark (`py-comp-tagline-lockup-reverse`).
 
+## Feed style (what the current posts look like)
+
+Use this for every new reel or post; the Remotion kit in `social/remotion/src/v2/` implements it.
+
+* Headlines: very large, white, sentence case, short lines; key words **Bold** in the same colour (weight contrast, not colour). On light backgrounds navy.
+* Backgrounds: photo with a dark gradient, flat PY-Blauw, the cyan-to-blue GLOW gradient, or pale blue. Never flat white.
+* Small logo on top (white with aqua dot).
+* Button "Reserveer online": aqua pill with a white arrow circle on the left. Second style: navy pill "Bekijk locaties" with the arrow circle on the right.
+* Url line "**voordelig**parkeren.nl" with the aqua chevron.
+* Price: round badge, white with navy italic numerals (cents small and raised) or aqua with white; slightly rotated.
+* Location: white pill, navy pin, navy name.
+* Big numbers get a sunburst of short white rays. Celebrations get orange and aqua confetti and white silhouettes of cars and people.
+
 ## Building blocks per template
 
 | Need | Asset ID | Notes |
