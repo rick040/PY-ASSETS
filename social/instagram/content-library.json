@@ -96,7 +96,7 @@
         "py-comp-pill-location",
         "py-comp-price-bubble-speech",
         "py-comp-url-chevron",
-        "py-atom-logo-horizontal-reverse",
+        "py-atom-logo-horizontal-reverse-open",
         "py-tok-gradient-verloop"
       ]
     },
@@ -122,7 +122,7 @@
         "py-comp-price-bubble-speech",
         "py-comp-headline-two-colour",
         "py-comp-url-chevron",
-        "py-atom-logo-horizontal-reverse"
+        "py-atom-logo-horizontal-reverse-open"
       ]
     },
     {
@@ -902,7 +902,7 @@
         "py-atom-icon-calendar"
       ],
       "price_check": false,
-      "notes": ""
+      "notes": "Gerenderd met Remotion (template R7): social/remotion/renders/IG-021-rondjes-rijden-reel.mp4 en -feed.mp4, props in social/remotion/src/items/IG-021.json."
     },
     {
       "id": "IG-022",
@@ -2004,7 +2004,7 @@
         "py-atom-figure-point"
       ],
       "price_check": false,
-      "notes": ""
+      "notes": "Gerenderd met Remotion (template R5): social/remotion/renders/IG-064-parkeertypes-reel.mp4 en -feed.mp4, props in social/remotion/src/items/IG-064.json."
     },
     {
       "id": "IG-065",

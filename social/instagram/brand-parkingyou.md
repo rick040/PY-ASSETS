@@ -16,13 +16,15 @@ Read this before building a reel or static post. Everything here comes from this
 
 Type: Ubuntu (`fonts/`), Regular 400, Medium 500, Bold 700. Load the TTFs with `@remotion/fonts` or `loadFont`. Headline pattern: key phrase Bold, rest Regular, one line; stacked headlines alternate Regular and Bold lines. Italic only for price numerals (as on the campaign panel: `€7,50`).
 
+Logo rule (Rick, 5 November 2026): on blue, gradient or photo backgrounds the logo is white with the aqua dot and nothing else. The `py-atom-logo-*-reverse` files contain a PY-Blauw ring disc; leave that fill out.
+
 Tagline: "The other way of parking", Ubuntu Regular, tracking +60/1000 em, white, left aligned with the wordmark (`py-comp-tagline-lockup-reverse`).
 
 ## Building blocks per template
 
 | Need | Asset ID | Notes |
 |---|---|---|
-| Logo end card | `py-atom-logo-horizontal-reverse`, `py-atom-logo-stacked-white` | White on PY-Blauw |
+| Logo end card | `py-atom-logo-horizontal-reverse-open` (Remotion), `py-atom-logo-horizontal-white` | **White and aqua only.** Never use the navy ring fill of the `-reverse` logos: the ring stays open so the background shows through. In Remotion use the `-open` IDs (made by `scripts/sync-assets.mjs`) |
 | Watermark | `py-atom-logo-beeldmerk-watermark` | Aqua at 5% on blue, centred |
 | Photo or video frame | `py-atom-shape-bubble-image-mask` | Use as a CSS `clip-path` or SVG mask over `<OffthreadVideo>` |
 | Price label | `py-comp-price-bubble-speech`, `py-comp-price-badge-circle` | Price as live text, not outlines |

@@ -1,0 +1,61 @@
+{
+  "itemId": "IG-064",
+  "hook": {
+    "headline": "Welk *parkeertype*\nben jij?"
+  },
+  "beats": [
+    {
+      "figure": "py-atom-figure-walk",
+      "title": "De *rondjesrijder*",
+      "line": "Derde rondje. Bijna.",
+      "prop": "py-atom-picto-car",
+      "motion": "walk"
+    },
+    {
+      "figure": "py-atom-figure-jump",
+      "title": "De *last-minute* boeker",
+      "line": "Boekt op de oprit.",
+      "prop": "py-atom-illustration-phone-qr",
+      "motion": "jump"
+    },
+    {
+      "figure": "py-atom-figure-dance",
+      "title": "De *vroegboeker*",
+      "line": "Betaalt het minst.",
+      "prop": "check",
+      "motion": "dance"
+    },
+    {
+      "figure": "py-atom-figure-point",
+      "title": "De *zoeker*",
+      "line": "Waar stond hij ook alweer?",
+      "prop": "pin",
+      "motion": "bob"
+    }
+  ],
+  "outro": {
+    "headline": "Tag een\n*rondjesrijder.*",
+    "highlight": 0
+  },
+  "cta": {
+    "headline": "Word een\n*vroegboeker*",
+    "url": "parkingyou.nl",
+    "tagline": "The other way of parking"
+  },
+  "colors": {
+    "bg": "#EAF8FA",
+    "text": "#1A3580",
+    "accent": "#32B9CD",
+    "card": "#FFFFFF",
+    "ctaBgFrom": "#1A3580",
+    "ctaBgTo": "#32B9CD"
+  },
+  "timing": {
+    "hook": 2.4,
+    "beat": 2.1,
+    "outro": 2.4,
+    "cta": 3,
+    "transition": 0.35
+  },
+  "showSafeZones": false
+}

@@ -7,11 +7,18 @@
     "sync-assets": "node scripts/sync-assets.mjs",
     "prestudio": "npm run sync-assets",
     "studio": "remotion studio",
-    "prerender:ig-002": "npm run sync-assets",
     "render:ig-002": "remotion render PY-R1-IG-002-Reel renders/IG-002-hofplein-reel.mp4 --props=src/items/IG-002.json",
     "render:ig-002:feed": "remotion render PY-R1-IG-002-Feed renders/IG-002-hofplein-feed.mp4 --props=src/items/IG-002.json",
     "still:ig-002": "remotion still PY-R1-IG-002-Reel renders/IG-002-hofplein-cover.png --frame=60 --props=src/items/IG-002.json",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "render:ig-021": "remotion render PY-R7-IG-021-Reel renders/IG-021-rondjes-rijden-reel.mp4 --props=src/items/IG-021.json",
+    "render:ig-021:feed": "remotion render PY-R7-IG-021-Feed renders/IG-021-rondjes-rijden-feed.mp4 --props=src/items/IG-021.json",
+    "still:ig-021": "remotion still PY-R7-IG-021-Reel renders/IG-021-rondjes-rijden-cover.png --frame=40 --props=src/items/IG-021.json",
+    "render:ig-064": "remotion render PY-R5-IG-064-Reel renders/IG-064-parkeertypes-reel.mp4 --props=src/items/IG-064.json",
+    "render:ig-064:feed": "remotion render PY-R5-IG-064-Feed renders/IG-064-parkeertypes-feed.mp4 --props=src/items/IG-064.json",
+    "still:ig-064": "remotion still PY-R5-IG-064-Reel renders/IG-064-parkeertypes-cover.png --frame=20 --props=src/items/IG-064.json",
+    "render:all": "npm run sync-assets && for i in ig-002 ig-021 ig-064; do npm run render:$i -- $B && npm run render:$i:feed -- $B && npm run still:$i -- $B; done",
+    "prerender:ig-002": "npm run sync-assets"
   },
   "dependencies": {
     "@remotion/cli": "4.0.534",

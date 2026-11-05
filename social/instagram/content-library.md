@@ -85,7 +85,7 @@ Generated from `content-library.json` (version 1.0, 2026-11-05). Edit the JSON, 
 
 Props: `headline, photo_or_clip, location_name, city, facts[3]{picto,text}, price, price_unit, price_label, cta`
 
-Assets: `py-atom-shape-bubble-image-mask`, `py-comp-pill-location`, `py-comp-price-bubble-speech`, `py-comp-url-chevron`, `py-atom-logo-horizontal-reverse`, `py-tok-gradient-verloop`
+Assets: `py-atom-shape-bubble-image-mask`, `py-comp-pill-location`, `py-comp-price-bubble-speech`, `py-comp-url-chevron`, `py-atom-logo-horizontal-reverse-open`, `py-tok-gradient-verloop`
 
 ### R2 Prijsrol (Reel, 8-10 s)
 
@@ -96,7 +96,7 @@ Assets: `py-atom-shape-bubble-image-mask`, `py-comp-pill-location`, `py-comp-pri
 
 Props: `location_name, city, rows[]{label,price}, highlight_index, cta`
 
-Assets: `py-comp-price-bubble-speech`, `py-comp-headline-two-colour`, `py-comp-url-chevron`, `py-atom-logo-horizontal-reverse`
+Assets: `py-comp-price-bubble-speech`, `py-comp-headline-two-colour`, `py-comp-url-chevron`, `py-atom-logo-horizontal-reverse-open`
 
 ### R3 Looproute (Reel, 10-12 s)
 
@@ -855,6 +855,8 @@ Link in bio.
 ```
 
 **Assets:** `py-atom-picto-car`, `py-atom-icon-calendar`
+
+**Notes:** Gerenderd met Remotion (template R7): social/remotion/renders/IG-021-rondjes-rijden-reel.mp4 en -feed.mp4, props in social/remotion/src/items/IG-021.json.
 
 ### IG-022 P+R Schiedam: €3,64 per dag
 
@@ -2019,6 +2021,8 @@ Tag iemand die zich hierin herkent.
 ```
 
 **Assets:** `py-atom-figure-walk`, `py-atom-figure-jump`, `py-atom-figure-dance`, `py-atom-figure-point`
+
+**Notes:** Gerenderd met Remotion (template R5): social/remotion/renders/IG-064-parkeertypes-reel.mp4 en -feed.mp4, props in social/remotion/src/items/IG-064.json.
 
 ### IG-065 The other way of parking
 
