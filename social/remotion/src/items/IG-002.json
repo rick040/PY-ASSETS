@@ -1,0 +1,16 @@
+{
+  "itemId": "IG-002",
+  "hook": { "headline": "Midden in *Rotterdam.*\n*Droog* geparkeerd.", "weather": "rain" },
+  "media": { "type": "none", "src": "" },
+  "location": { "name": "Hofplein", "city": "Rotterdam" },
+  "facts": [
+    { "icon": "py-atom-symbol-p-roof", "tint": "none", "text": "*300* overdekte plekken" },
+    { "icon": "py-atom-sign-camera", "tint": "none", "text": "*Camerabewaking*" },
+    { "icon": "py-atom-icon-calendar", "tint": "none", "text": "Vroegboeken *€20* per dag" }
+  ],
+  "price": { "headline": "En in het *weekend?*", "amount": "€15", "label": "per dag", "note": "Zaterdag en zondag, ter plaatse" },
+  "cta": { "headline": "Reserveer\n*je plek*", "url": "parkingyou.nl", "tagline": "The other way of parking" },
+  "colors": { "bg": "#1A3580", "text": "#FFFFFF", "accent": "#32B9CD", "ctaBgFrom": "#1A3580", "ctaBgTo": "#32B9CD" },
+  "timing": { "main": 7, "price": 3, "cta": 3, "transition": 0.4 },
+  "showSafeZones": false
+}

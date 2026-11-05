@@ -109,7 +109,7 @@ The 39 reels in the library use only 7 templates. Build the templates once; ever
 
 | Template | Name | Items | Build order |
 |---|---|---|---|
-| R1 | Locatiekaart | 10 | 1 |
+| R1 | Locatiekaart | 10 | 1 (built, `social/remotion`) |
 | R5 | Figuursketch | 8 | 2 |
 | R7 | Kinetische tekst | 7 | 3 |
 | R2 | Prijsrol | 4 | 4 |

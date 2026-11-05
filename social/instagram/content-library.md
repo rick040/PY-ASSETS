@@ -265,6 +265,8 @@ Reserveer je plek via de link in bio.
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
+**Notes:** Gerenderd met Remotion (template R1): social/remotion/renders/IG-002-hofplein-reel.mp4 en -feed.mp4, props in social/remotion/src/items/IG-002.json. Staat nu met de vervangende illustratie; een echte video van de inrit in public/media zetten en media.type op video.
+
 ### IG-003 Philips Stadion: 700 plekken onder het stadion
 
 **Reel** · template R1 Locatiekaart · locations: PSV · Evergreen (niet op wedstrijd- en evenementdagen)

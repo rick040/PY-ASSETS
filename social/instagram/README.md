@@ -11,3 +11,5 @@
 The working backlog (status, posted date, reach) lives in the Notion database "ParkingYou Instagram contentbibliotheek". The JSON is the source for the texts and template props; Notion is where you track what has been made and posted.
 
 Prices come from the kennisbank (Supabase `parkingyou-platform`, schema `kennisbank`) as of 5 November 2026. Every item with `price_check: true` must be checked against `kennisbank.tarief` before it is posted, and again after the February price change.
+
+The reels are built with Remotion in `../remotion/` (template R1 Locatiekaart is built; IG-002 is rendered in `../remotion/renders/`).

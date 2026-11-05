@@ -1,0 +1,31 @@
+{
+  "name": "parkingyou-social-remotion",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ParkingYou Instagram reels built from PY-ASSETS",
+  "scripts": {
+    "sync-assets": "node scripts/sync-assets.mjs",
+    "prestudio": "npm run sync-assets",
+    "studio": "remotion studio",
+    "prerender:ig-002": "npm run sync-assets",
+    "render:ig-002": "remotion render PY-R1-IG-002-Reel renders/IG-002-hofplein-reel.mp4 --props=src/items/IG-002.json",
+    "render:ig-002:feed": "remotion render PY-R1-IG-002-Feed renders/IG-002-hofplein-feed.mp4 --props=src/items/IG-002.json",
+    "still:ig-002": "remotion still PY-R1-IG-002-Reel renders/IG-002-hofplein-cover.png --frame=60 --props=src/items/IG-002.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/fonts": "4.0.534",
+    "@remotion/transitions": "4.0.534",
+    "@remotion/zod-types": "4.0.534",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "remotion": "4.0.534",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@remotion/renderer": "4.0.534",
+    "@types/react": "19.1.10",
+    "typescript": "5.8.3"
+  }
+}
