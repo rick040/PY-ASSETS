@@ -22,6 +22,7 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 | `tools/` | Extraction and build scripts (see `tools/README.md`). |
 | `docs/phase1-inventory.md` | The inventory the build is based on: element tables, inconsistencies found in the handbook, suggested additions. |
 | `docs/build-notes.md` | What was rebuilt and why, deviations and open points from the build. |
+| `social/instagram/` | Instagram strategy, content pillars and a library of 66 posts and reels built on these assets (`strategy.md`, `content-library.json`, `brand-parkingyou.md` for Remotion). |
 
 ## ID scheme
 

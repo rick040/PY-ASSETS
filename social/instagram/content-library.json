@@ -1,0 +1,2057 @@
+{
+  "version": "1.0",
+  "updated": "2026-11-05",
+  "brand": "ParkingYou",
+  "channel": "Instagram",
+  "sources": [
+    "kennisbank (Supabase parkingyou-platform, schema kennisbank) for locations and prices",
+    "dashboard.social_posts for past reach",
+    "dashboard.events for the event calendar",
+    "PY-ASSETS elements.json and applications.json for visuals"
+  ],
+  "pillars": [
+    {
+      "id": "P1",
+      "name": "Locatie in beeld",
+      "en": "Location spotlight",
+      "share": 25,
+      "goal": "Laat zien waar we zitten en waarom die plek handig is. Eén locatie per post, met naam, stad, 2 tot 3 feiten en de voordeligste prijs.",
+      "kpi": "Bereik, profielbezoek, linkklik"
+    },
+    {
+      "id": "P2",
+      "name": "Slim voordelig",
+      "en": "Price and value",
+      "share": 20,
+      "goal": "Maak het prijsvoordeel concreet: ter plaatse tegenover online reserveren tegenover vroegboeken, strippenkaarten, doelgroeptarieven.",
+      "kpi": "Opslaan, linkklik, reserveringen"
+    },
+    {
+      "id": "P3",
+      "name": "Zo geregeld",
+      "en": "Easy to use",
+      "share": 15,
+      "goal": "Neem de drempel weg: reserveren, inrijden, scannen, betalen, je auto terugvinden. Kort en visueel, met de iconen van de borden en stickers.",
+      "kpi": "Opslaan, kijktijd, minder supportvragen"
+    },
+    {
+      "id": "P4",
+      "name": "Erbij zijn",
+      "en": "Events and city life",
+      "share": 15,
+      "goal": "Koppel parkeren aan de momenten waarvoor mensen de stad in gaan. Evergreen sjablonen die per evenement opnieuw te gebruiken zijn.",
+      "kpi": "Bereik, deelacties, reserveringen rond de datum"
+    },
+    {
+      "id": "P5",
+      "name": "Zorgeloos parkeren",
+      "en": "Benefits and peace of mind",
+      "share": 10,
+      "goal": "Overdekt, camerabewaking, laadpalen, zeker van je plek. Het gevoel achter de prijs.",
+      "kpi": "Bereik, opslaan"
+    },
+    {
+      "id": "P6",
+      "name": "Je vaste plek",
+      "en": "Subscriptions",
+      "share": 10,
+      "goal": "Abonnementen voor forensen, bewoners en bedrijven. Rekensommen die laten zien wanneer een abonnement loont.",
+      "kpi": "DM's, aanvragen abonnement, linkklik"
+    },
+    {
+      "id": "P7",
+      "name": "Achter de slagboom",
+      "en": "Behind the scenes and community",
+      "share": 5,
+      "goal": "De mensen, de borden, de humor. Bouwt sympathie en maakt het account menselijk.",
+      "kpi": "Reacties, deelacties, volgers"
+    }
+  ],
+  "templates": [
+    {
+      "id": "R1",
+      "kind": "Reel",
+      "name": "Locatiekaart",
+      "length_s": "10-12",
+      "scenes": [
+        "Hook: kop + foto of video van de locatie in py-atom-shape-bubble-image-mask (frame 0 al gevuld)",
+        "Naam: py-comp-pill-location schuift in met de stad eronder",
+        "Feiten: 3 pictogrammen (py-atom-picto-*, py-atom-icon-*) ploppen één voor één in met een korte regel",
+        "Prijs: py-comp-price-bubble-speech of py-comp-price-badge-circle landt met een veer",
+        "CTA: py-comp-url-chevron 'parkingyou.nl' + py-atom-logo-horizontal-reverse op PY-Blauw"
+      ],
+      "props": [
+        "headline",
+        "photo_or_clip",
+        "location_name",
+        "city",
+        "facts[3]{picto,text}",
+        "price",
+        "price_unit",
+        "price_label",
+        "cta"
+      ],
+      "assets": [
+        "py-atom-shape-bubble-image-mask",
+        "py-comp-pill-location",
+        "py-comp-price-bubble-speech",
+        "py-comp-url-chevron",
+        "py-atom-logo-horizontal-reverse",
+        "py-tok-gradient-verloop"
+      ]
+    },
+    {
+      "id": "R2",
+      "kind": "Reel",
+      "name": "Prijsrol",
+      "length_s": "8-10",
+      "scenes": [
+        "Hook: 'Zelfde plek. Drie prijzen.' met de locatienaam",
+        "Rij 1 'Ter plaatse' met prijs, rij 2 'Online reserveren', rij 3 'Vroegboeken'; elke prijs rolt omlaag (RollingNumber)",
+        "Duurste prijzen worden doorgestreept, de laagste krijgt de prijsbubbel in PY-Aqua",
+        "CTA: 'Reserveer vooraf' + url-chevron + logo"
+      ],
+      "props": [
+        "location_name",
+        "city",
+        "rows[]{label,price}",
+        "highlight_index",
+        "cta"
+      ],
+      "assets": [
+        "py-comp-price-bubble-speech",
+        "py-comp-headline-two-colour",
+        "py-comp-url-chevron",
+        "py-atom-logo-horizontal-reverse"
+      ]
+    },
+    {
+      "id": "R3",
+      "kind": "Reel",
+      "name": "Looproute",
+      "length_s": "10-12",
+      "scenes": [
+        "Hook: 'Waar parkeer je voor <evenement>?'",
+        "py-comp-pill-list-destinations bouwt rij voor rij op, met per locatie een minutenteller",
+        "py-atom-figure-walk loopt langs een lijn in PY-Aqua naar het doel (py-atom-icon-location-pin)",
+        "Prijs per avond of dag + 'reserveer vooraf'",
+        "CTA + logo"
+      ],
+      "props": [
+        "event_name",
+        "destinations[]{name,minutes,arrow}",
+        "price_line",
+        "cta"
+      ],
+      "assets": [
+        "py-comp-pill-list-destinations",
+        "py-comp-pill-destination",
+        "py-atom-figure-walk",
+        "py-comp-walk-route-figure-block",
+        "py-atom-icon-location-pin",
+        "py-atom-arrow-up-circle"
+      ]
+    },
+    {
+      "id": "R4",
+      "kind": "Reel",
+      "name": "Drie stappen",
+      "length_s": "12-14",
+      "scenes": [
+        "Hook: uitkomst eerst (slagboom open, figuur juicht)",
+        "Stap 1 met illustratie (bijvoorbeeld py-atom-illustration-phone-qr)",
+        "Stap 2 met illustratie (py-atom-picto-car, py-atom-illustration-reader-qr)",
+        "Stap 3: slagboom gaat open, py-atom-figure-bags-cheer of py-atom-figure-jump",
+        "CTA + logo"
+      ],
+      "props": [
+        "headline",
+        "steps[3]{illustration,text}",
+        "end_line",
+        "cta"
+      ],
+      "assets": [
+        "py-atom-illustration-phone-qr",
+        "py-atom-illustration-reader-qr",
+        "py-atom-illustration-contactless-hand",
+        "py-atom-illustration-card-pas",
+        "py-atom-picto-car",
+        "py-atom-figure-bags-cheer",
+        "py-atom-figure-jump"
+      ]
+    },
+    {
+      "id": "R5",
+      "kind": "Reel",
+      "name": "Figuursketch",
+      "length_s": "12-15",
+      "scenes": [
+        "Hook: herkenbare situatie in één zin, figuur staat al in beeld",
+        "Probleem: figuur in de 'verkeerde' pose (zoeken, rondjes, wachten), met tekst",
+        "Wending: telefoon of bord verschijnt, pose wisselt",
+        "Uitkomst: py-atom-figure-dance / -jump / -bags-cheer",
+        "CTA + logo"
+      ],
+      "props": [
+        "hook",
+        "beats[]{figure,text}",
+        "end_line",
+        "cta"
+      ],
+      "assets": [
+        "py-atom-figure-walk",
+        "py-atom-figure-point",
+        "py-atom-figure-wave",
+        "py-atom-figure-dance",
+        "py-atom-figure-jump",
+        "py-atom-figure-bags-walk",
+        "py-atom-figure-bags-cheer",
+        "py-atom-figure-cap-point",
+        "py-atom-figure-cap-wave"
+      ]
+    },
+    {
+      "id": "R6",
+      "kind": "Reel",
+      "name": "Aftelkalender",
+      "length_s": "8-10",
+      "scenes": [
+        "Hook: py-comp-calendar-date bladert van vandaag naar de evenementdatum",
+        "Naam van het evenement + stad",
+        "Locatie(s) en prijs bij vooraf reserveren",
+        "CTA + logo"
+      ],
+      "props": [
+        "event_name",
+        "date_day",
+        "date_month",
+        "locations[]",
+        "price_line",
+        "cta"
+      ],
+      "assets": [
+        "py-comp-calendar-date",
+        "py-atom-icon-calendar",
+        "py-comp-price-badge-circle",
+        "py-comp-url-chevron"
+      ]
+    },
+    {
+      "id": "R7",
+      "kind": "Reel",
+      "name": "Kinetische tekst",
+      "length_s": "6-10",
+      "scenes": [
+        "Hook: vraag of stelling woord voor woord (Headline-stijl), sleutelwoord in PY-Aqua",
+        "2 tot 4 korte antwoordregels, elk met een pictogram",
+        "Slotregel + CTA + logo op het verloop"
+      ],
+      "props": [
+        "hook",
+        "lines[]{picto,text}",
+        "end_line",
+        "cta"
+      ],
+      "assets": [
+        "py-comp-headline-two-colour",
+        "py-tok-gradient-verloop-vertical",
+        "py-atom-shape-bubble-gradient",
+        "py-atom-logo-beeldmerk-watermark"
+      ]
+    },
+    {
+      "id": "S1",
+      "kind": "Post",
+      "name": "Prijsposter",
+      "length_s": null,
+      "scenes": [
+        "Opbouw van py-app-poster-partner-a4: PY-Blauw vlak, tweekleurige kop, prijs in py-comp-price-badge-circle, 'Volg de borden'-voet vervangen door parkingyou.nl"
+      ],
+      "props": [
+        "headline_lines[3]",
+        "price",
+        "price_cents",
+        "unit",
+        "subline",
+        "location_name"
+      ],
+      "assets": [
+        "py-app-poster-partner-a4",
+        "py-comp-price-badge-circle",
+        "py-comp-headline-two-colour",
+        "py-comp-url-chevron"
+      ]
+    },
+    {
+      "id": "S2",
+      "kind": "Post",
+      "name": "Locatiefoto",
+      "length_s": null,
+      "scenes": [
+        "Echte foto van de locatie in py-atom-shape-bubble-image-mask op wit of blauw, locatienaam in py-comp-lockup-location-garage, 3 feiten met pictogrammen"
+      ],
+      "props": [
+        "photo",
+        "location_name",
+        "city",
+        "facts[3]",
+        "price_line"
+      ],
+      "assets": [
+        "py-atom-shape-bubble-image-mask",
+        "py-comp-lockup-location-garage",
+        "py-atom-picto-ev",
+        "py-atom-icon-car-lock"
+      ]
+    },
+    {
+      "id": "S3",
+      "kind": "Carrousel",
+      "name": "Uitleg-carrousel",
+      "length_s": null,
+      "scenes": [
+        "Dia 1: kop met belofte (hook). Dia 2 tot n-1: één punt per dia met pictogram. Laatste dia: samenvatting + CTA. Wissel blauw en wit af."
+      ],
+      "props": [
+        "slides[]{picto,title,text}"
+      ],
+      "assets": [
+        "py-comp-section-bar",
+        "py-atom-picto-*",
+        "py-atom-icon-*",
+        "py-comp-url-chevron"
+      ]
+    },
+    {
+      "id": "S4",
+      "kind": "Post",
+      "name": "Typografisch",
+      "length_s": null,
+      "scenes": [
+        "Alleen tekst: tweekleurige kop (wit + PY-Aqua) op PY-Blauw of het verloop, beeldmerk als watermerk op 5 procent"
+      ],
+      "props": [
+        "headline",
+        "keyword",
+        "subline"
+      ],
+      "assets": [
+        "py-comp-headline-two-colour",
+        "py-atom-logo-beeldmerk-watermark",
+        "py-app-brand-background-tagline"
+      ]
+    },
+    {
+      "id": "S5",
+      "kind": "Post",
+      "name": "Foto + kop",
+      "length_s": null,
+      "scenes": [
+        "Echte foto (mensen, host, bord, garage) met een korte kop in een witte of blauwe balk onderin"
+      ],
+      "props": [
+        "photo",
+        "headline"
+      ],
+      "assets": [
+        "py-comp-bar-footer-callout",
+        "py-atom-logo-horizontal-white"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "IG-001",
+      "title": "Plantage: parkeren naast Artis",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "PLA"
+      ],
+      "timing": "Evergreen (piek: schoolvakanties)",
+      "hook": "Naar Artis? Je parkeert ernaast.",
+      "body": [
+        "Foto of video: ingang Plantage, Artis-poort op de achtergrond",
+        "Pill: Plantage · Amsterdam",
+        "Feiten: picto-family '483 plekken' · picto-ev 'Laadpalen' · icon-calendar 'Vooraf te reserveren'",
+        "Prijsbubbel: '€17,50 per dag met je Artis-ticket'",
+        "CTA: parkingyou.nl"
+      ],
+      "caption": "Dagje Artis met de kinderen? Dan wil je niet eerst een half uur rondjes rijden door de Plantage.\n\n📍 Plantage, pal naast Artis\n🎟️ Met je Artis-ticket parkeer je voor €17,50 per dag\n🔌 Laadpalen aanwezig\n\nLiever zeker van je plek? Reserveer vooraf via de link in bio.\n\n#Artis #Amsterdam #dagjeuit #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-picto-family",
+        "py-atom-picto-ev",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": true,
+      "notes": "Check hoe het Artis-tarief werkt (ticket tonen of valideren) voor de caption."
+    },
+    {
+      "id": "IG-002",
+      "title": "Hofplein: overdekt midden in Rotterdam",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "HOF"
+      ],
+      "timing": "Evergreen",
+      "hook": "Midden in Rotterdam. Droog geparkeerd.",
+      "body": [
+        "Video: inrit Hofplein, de fontein",
+        "Pill: Hofplein · Rotterdam",
+        "Feiten: symbol-p-roof 'Overdekt' · sign-camera 'Camerabewaking' · icon-calendar 'Vroegboeken €20'",
+        "Prijsbubbel: 'Weekend €15 per dag'",
+        "CTA"
+      ],
+      "caption": "Shoppen op de Lijnbaan, eten in de stad, even naar het Centraal. Hofplein ligt er middenin.\n\n🅿️ 300 overdekte plekken\n📹 Camerabewaking\n🗓️ Doordeweeks vroegboeken voor €20 per dag, in het weekend €15 per dag\n\nReserveer je plek via de link in bio.\n\n#Rotterdam #Hofplein #parkeren #Lijnbaan #ParkingYou",
+      "assets": [
+        "py-atom-symbol-p-roof",
+        "py-atom-sign-camera",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-003",
+      "title": "Philips Stadion: 700 plekken onder het stadion",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "PSV"
+      ],
+      "timing": "Evergreen (niet op wedstrijd- en evenementdagen)",
+      "hook": "700 plekken. Onder het stadion.",
+      "body": [
+        "Video: afrit de garage in, lichtbak Philips Stadion",
+        "Pill: Philips Stadion · Eindhoven",
+        "Feiten: symbol-p-garage-outline 'Ondergronds' · picto-pedestrian '5 min naar het centrum' · icon-calendar 'Online €12,50'",
+        "Prijsbubbel: '€12,50 per dag online'",
+        "CTA"
+      ],
+      "caption": "Wist je dat je onder het Philips Stadion kunt parkeren als je de stad in gaat? Ondergronds, dichtbij het centrum en online te reserveren.\n\n🅿️ 700 plekken onder het stadion\n💶 Online €12,50 per dag (ter plaatse €15)\n\nLink in bio.\n\n#Eindhoven #PhilipsStadion #parkeren #040 #ParkingYou",
+      "assets": [
+        "py-atom-symbol-p-garage-outline",
+        "py-atom-picto-pedestrian",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": true,
+      "notes": "Loopafstand naar het centrum laten bevestigen. Op evenementdagen is de garage soms alleen voor abonnees (bord py-app-sign-slagboom-evenement); dan niet posten."
+    },
+    {
+      "id": "IG-004",
+      "title": "Cruquius: ook je busje past",
+      "pillar": "P1",
+      "format": "Post",
+      "template": "S2",
+      "locations": [
+        "CRU"
+      ],
+      "timing": "Evergreen (piek: verhuisseizoen, zomer met dakkoffer)",
+      "hook": "2,70 meter. Ook je busje past.",
+      "body": [
+        "Foto: hoogtebalk bij de inrit van Cruquius (py-prod-hoogtebalk-*)",
+        "Groot getal 2,70 m in PY-Aqua",
+        "Regel: Ondergrondse garage in Amsterdam-Oost"
+      ],
+      "caption": "Met een busje of dakkoffer de stad in en geen idee of je garage past? Bij Cruquius is de doorrijhoogte 2,70 meter.\n\n📍 Cruquius, Amsterdam-Oost\n🅿️ Ondergronds en bewaakt met camera's\n🗓️ Vroegboeken vanaf €17,50 per dag\n\nReserveer via de link in bio.\n\n#Amsterdam #AmsterdamOost #parkeren #verhuizen #ParkingYou",
+      "assets": [
+        "py-comp-hoogtebalk-bar",
+        "py-atom-rvv-max-height",
+        "py-atom-sign-camera"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-005",
+      "title": "Eindhoven: zes plekken in één overzicht",
+      "pillar": "P1",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "DLLG",
+        "DLLP",
+        "TDG",
+        "PBE",
+        "PSV",
+        "EVO"
+      ],
+      "timing": "Evergreen",
+      "hook": "Parkeren in Eindhoven? Zes plekken, één overzicht.",
+      "body": [
+        "Dia 1: kop + kaartje met 6 pins (icon-location-pin)",
+        "Dia 2: DLL garage · ondergronds · laadpalen · vroegboek €12",
+        "Dia 3: DLL parkeerdek · vroegboek €12",
+        "Dia 4: TD Gebouw · kentekenherkenning · vroegboek €12",
+        "Dia 5: Philips Bedrijfsschool · laadpalen · vroegboek €12",
+        "Dia 6: Philips Stadion · ondergronds · online €12,50",
+        "Dia 7: Evoluon · laadpalen · online €9",
+        "Dia 8: 'Sla op voor je volgende keer' + parkingyou.nl"
+      ],
+      "caption": "Bewaar deze even voor de volgende keer dat je de stad in gaat 📌\n\nZes ParkingYou-locaties in Eindhoven, allemaal vooraf te reserveren. Swipe voor de prijzen en wat er handig is aan elke plek.\n\nReserveren gaat via de link in bio.\n\n#Eindhoven #parkeren #EindhovenCentrum #040 #ParkingYou",
+      "assets": [
+        "py-atom-icon-location-pin",
+        "py-atom-picto-ev",
+        "py-atom-symbol-p-garage-outline"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-006",
+      "title": "Amsterdam: waar parkeer je voordelig?",
+      "pillar": "P1",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "BLO",
+        "CRU",
+        "ZEE",
+        "PLA"
+      ],
+      "timing": "Evergreen",
+      "hook": "Parkeren in Amsterdam zonder de hoofdprijs.",
+      "body": [
+        "Dia 1: kop",
+        "Dia 2: Bos en Lommerplantsoen · vroegboek €14",
+        "Dia 3: Cruquius · 2,70 m · vroegboek €17,50",
+        "Dia 4: Zeeburgerkade · ondergronds · laadpalen · vroegboek €17,50",
+        "Dia 5: Plantage · naast Artis · vroegboek €30",
+        "Dia 6: 'Vooraf boeken is goedkoper dan ter plaatse' + CTA"
+      ],
+      "caption": "Straatparkeren in Amsterdam is duur en je moet maar zien of er plek is. Wij hebben vier locaties waar je vooraf je plek vastlegt.\n\nSwipe voor de prijzen per locatie 👉\n\nReserveer via de link in bio.\n\n#Amsterdam #parkeren #AmsterdamWest #AmsterdamOost #ParkingYou",
+      "assets": [
+        "py-atom-icon-location-pin",
+        "py-atom-picto-ev"
+      ],
+      "price_check": true,
+      "notes": "Opvolger van de best bekeken reel tot nu toe (Bos en Lommer, maart 2026, bereik 275)."
+    },
+    {
+      "id": "IG-007",
+      "title": "Rijswijk: €7 per dag",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "PAR2"
+      ],
+      "timing": "Evergreen",
+      "hook": "€7 per dag. In Rijswijk.",
+      "body": [
+        "Video: Parking At the Park",
+        "Pill: Parking At the Park · Rijswijk",
+        "Feiten: symbol-p-roof 'Overdekt' · picto-ev 'Laadpalen' · sign-camera 'Camerabewaking'",
+        "Prijsbubbel: '€7 per dag bij vroegboeken'",
+        "CTA"
+      ],
+      "caption": "Werken, winkelen of een afspraak in Rijswijk? Bij Parking At the Park sta je overdekt voor €7 per dag als je vroeg boekt.\n\n🅿️ 800 overdekte plekken\n🔌 Laadpalen\n📹 Camerabewaking\n\nLink in bio.\n\n#Rijswijk #DenHaag #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-symbol-p-roof",
+        "py-atom-picto-ev",
+        "py-atom-sign-camera"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-008",
+      "title": "Europoint: ruim 1.100 plekken in Rotterdam-West",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "EUR"
+      ],
+      "timing": "Evergreen",
+      "hook": "Ruim 1.100 plekken. Je vindt er altijd een.",
+      "body": [
+        "Video: Europoint torens, inrit",
+        "Pill: Europoint · Rotterdam",
+        "Feiten: '1.133 plekken' · 'Overdekt' · 'Camerabewaking'",
+        "Prijsbubbel: 'Vroegboeken €12 per dag'",
+        "CTA"
+      ],
+      "caption": "Bij Europoint in Rotterdam-West heb je de ruimte: 1.133 overdekte plekken met camerabewaking.\n\n🗓️ Vroegboeken voor €12 per dag\n🏠 Woon je in de buurt? Er is ook een bewonersabonnement.\n\nLink in bio.\n\n#Rotterdam #RotterdamWest #Europoint #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-symbol-p-roof",
+        "py-atom-sign-camera"
+      ],
+      "price_check": true,
+      "notes": "Haak 'Je vindt er altijd een' alleen gebruiken als de bezetting dat waarmaakt; anders 'Ruim 1.100 plekken'."
+    },
+    {
+      "id": "IG-009",
+      "title": "Bos en Lommer: goedkoper dan de straat",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "BLO"
+      ],
+      "timing": "Evergreen",
+      "hook": "Straatparkeren in Amsterdam? Even rekenen.",
+      "body": [
+        "Video: straat met parkeerautomaat, dan Bos en Lommerplantsoen",
+        "Feiten: 'Laadpalen' · 'Camerabewaking' · 'Ook via EasyPark'",
+        "Prijsbubbel: '€2,50 per half uur'",
+        "CTA"
+      ],
+      "caption": "Parkeren op straat in Amsterdam kost al snel de hoofdprijs. Bij Bos en Lommerplantsoen betaal je €2,50 per half uur, of je boekt vooraf een hele dag voor €14.\n\n🔌 Laadpalen\n📹 Camerabewaking\n📱 Betalen kan ook met EasyPark\n\nLink in bio.\n\n#Amsterdam #BosenLommer #AmsterdamWest #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-picto-ev",
+        "py-atom-sign-camera",
+        "py-atom-partner-easypark"
+      ],
+      "price_check": true,
+      "notes": "EasyPark-logo is third-party: officieel bestand gebruiken."
+    },
+    {
+      "id": "IG-010",
+      "title": "Zeeburgerkade: ondergronds met laadpalen",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "ZEE"
+      ],
+      "timing": "Evergreen",
+      "hook": "Ondergronds parkeren in Oost. Met laadpaal.",
+      "body": [
+        "Video: inrit Zeeburgerkade",
+        "Feiten: 'Ondergronds' · 'Laadpalen' · 'Camerabewaking'",
+        "Prijsbubbel: 'Vroegboeken €17,50'",
+        "CTA"
+      ],
+      "caption": "Naar het Oostelijk Havengebied of de Indische Buurt? Bij Zeeburgerkade parkeer je ondergronds, met laadpalen en camerabewaking.\n\n🗓️ Vroegboeken €17,50 per dag\n\nLink in bio.\n\n#Amsterdam #AmsterdamOost #Zeeburg #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-symbol-p-garage-outline",
+        "py-atom-picto-ev",
+        "py-atom-sign-camera"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-011",
+      "title": "Blijdorp: 1.200 plekken naast de dierentuin",
+      "pillar": "P1",
+      "format": "Post",
+      "template": "S2",
+      "locations": [
+        "DBL"
+      ],
+      "timing": "Evergreen (piek: vakanties, zondagen)",
+      "hook": "Naar Blijdorp? Parkeer ernaast.",
+      "body": [
+        "Foto: parkeerterrein met de dierentuin op de achtergrond",
+        "Feiten: '1.200 plekken' · 'Laadpalen' · '€12,50 per dag'"
+      ],
+      "caption": "Een dag tussen de olifanten en ijsberen begint met een plek voor de auto. Bij Diergaarde Blijdorp staan er 1.200 voor je klaar.\n\n💶 €12,50 per dag\n🔌 Laadpalen\n\n#Blijdorp #Rotterdam #dagjeuit #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-picto-family",
+        "py-atom-picto-ev"
+      ],
+      "price_check": true,
+      "notes": "Blijdorp is niet online reserveerbaar: geen 'reserveer'-CTA, wel 'route in bio' of locatielink."
+    },
+    {
+      "id": "IG-012",
+      "title": "Evoluon: parkeren bij de vliegende schotel",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "EVO"
+      ],
+      "timing": "Evergreen",
+      "hook": "Parkeren bij de vliegende schotel van Eindhoven.",
+      "body": [
+        "Video: drone of brede foto van het Evoluon",
+        "Feiten: '350 plekken' · 'Laadpalen' · 'Online €9 per dag'",
+        "CTA"
+      ],
+      "caption": "Een congres, een beurs of een feest in het Evoluon? Je parkeert er voor de deur.\n\n🅿️ 350 plekken\n🔌 Laadpalen\n💶 Online €9 per dag (ter plaatse €10)\n\nLink in bio.\n\n#Evoluon #Eindhoven #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-picto-ev",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": true,
+      "notes": "Niet posten op dagen dat het Evoluon de reserveringen sluit (zie Evenementen in het dashboard)."
+    },
+    {
+      "id": "IG-013",
+      "title": "Almere WTC: €6 per dag",
+      "pillar": "P1",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "P2MAN"
+      ],
+      "timing": "Evergreen (start met WTC-opening, november 2026)",
+      "hook": "Een hele dag parkeren in Almere voor €6.",
+      "body": [
+        "Prijsposter: 'Hele dag' / 'parkeren' / 'in Almere' + prijsbadge €6 per dag",
+        "Locatie: P2 Mandela WTC"
+      ],
+      "caption": "Werk je in of rond het WTC Almere? In de ondergrondse garage P2 Mandela parkeer je een hele dag voor €6.\n\n🅿️ 250 overdekte plekken\n📍 Onder het WTC Almere\n\n#Almere #WTCAlmere #parkeren #ParkingYou",
+      "assets": [
+        "py-app-poster-partner-a4",
+        "py-comp-price-badge-circle"
+      ],
+      "price_check": true,
+      "notes": "Prijs laten bevestigen: P1 Carlton naast de deur staat op €30 per dag. Sluit aan op de campagne 'WTC opening, Almere'."
+    },
+    {
+      "id": "IG-014",
+      "title": "Zoetermeer: eerste 2 uur gratis",
+      "pillar": "P1",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "P1BEL",
+        "P2BOV",
+        "P2OND",
+        "P4LUX",
+        "P5AMS",
+        "P8NED",
+        "P9DUI"
+      ],
+      "timing": "Evergreen (piek: koopzondagen, december)",
+      "hook": "Shoppen in Zoetermeer? De eerste 2 uur parkeer je gratis.",
+      "body": [
+        "Dia 1: kop met '2 uur gratis' in PY-Aqua",
+        "Dia 2: kaartje met de 7 garages rond het Stadshart",
+        "Dia 3: daarna €3 per uur, dagtarief €16",
+        "Dia 4: welke garage bij welke ingang (P1 Belgiëlaan ... P9 Duitslandlaan)",
+        "Dia 5: CTA"
+      ],
+      "caption": "Even snel naar het Stadshart? Bij onze 7 garages in Zoetermeer zijn de eerste 2 uur gratis.\n\n⏱️ Daarna €3 per uur\n💶 Een hele dag €16\n🔌 Laadpalen in de meeste garages\n\nSwipe voor de garage die het dichtst bij jouw winkel ligt 👉\n\n#Zoetermeer #Stadshart #shoppen #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-icon-location-pin",
+        "py-atom-picto-ev"
+      ],
+      "price_check": true,
+      "notes": "Kennisbank: P1 Belgiëlaan 0 tot 120 min €0. Bevestigen dat dit voor alle 7 garages geldt voordat je post."
+    },
+    {
+      "id": "IG-015",
+      "title": "Heerhugowaard: €1 per uur",
+      "pillar": "P1",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "P1ZUI",
+        "P2MID"
+      ],
+      "timing": "Evergreen",
+      "hook": "Parkeren in Heerhugowaard: 20 cent per 12 minuten.",
+      "body": [
+        "Prijsposter: '€1 per uur' groot, kleine regel '€0,20 per 12 minuten · dagtarief €9'",
+        "Locaties: P1 Zuidtangent en P2 Middenwaard"
+      ],
+      "caption": "Boodschappen in Middenwaard of een afspraak in het centrum? Je betaalt per 12 minuten, dus nooit voor een heel uur als je er maar even bent.\n\n💶 €0,20 per 12 minuten\n📅 Dagtarief €9\n🔌 Laadpalen\n\n#Heerhugowaard #Middenwaard #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-price-badge-circle",
+        "py-atom-picto-ev"
+      ],
+      "price_check": true,
+      "notes": "Doorrijhoogte P1 Zuidtangent is 1,90 m: niet adverteren voor busjes."
+    },
+    {
+      "id": "IG-016",
+      "title": "Plek van de week: sjabloon",
+      "pillar": "P1",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen (wekelijks, roteren over alle reserveerbare locaties)",
+      "hook": "Plek van de week: <locatie>",
+      "body": [
+        "Vast format: zelfde intro-jingle en kleur elke week, zodat volgers het herkennen",
+        "Data uit de kennisbank: plekken, overdekt, laden, voordeligste prijs"
+      ],
+      "caption": "📍 Plek van de week: <locatie>, <stad>\n\n<1 zin waarom deze plek handig is>\n\n🅿️ <aantal> plekken\n<feit 2>\n💶 <voordeligste prijs>\n\nReserveer via de link in bio.\n\n#<stad> #parkeren #plekvandeweek #ParkingYou",
+      "assets": [],
+      "price_check": true,
+      "notes": "Vul de props automatisch uit kennisbank.locatie + locatie_specificatie + tarief. Rotatie: 14 reserveerbare locaties = ruim 3 maanden zonder herhaling."
+    },
+    {
+      "id": "IG-017",
+      "title": "Hofplein: zelfde plek, drie prijzen",
+      "pillar": "P2",
+      "format": "Reel",
+      "template": "R2",
+      "locations": [
+        "HOF"
+      ],
+      "timing": "Evergreen",
+      "hook": "Zelfde plek. Drie prijzen.",
+      "body": [
+        "Rijen: 'Ter plaatse €30' · 'Online reserveren €25' · 'Vroegboeken €20'",
+        "€30 en €25 worden doorgestreept, €20 krijgt de bubbel",
+        "Regel: 'Doordeweeks, Hofplein Rotterdam'"
+      ],
+      "caption": "Wist je dat je bij Hofplein tot €10 per dag bespaart door vroeg te boeken?\n\n🚗 Ter plaatse: €30\n💻 Online reserveren: €25\n🗓️ Vroegboeken: €20\n\nZelfde plek, zelfde garage. Alleen het moment van boeken verschilt.\n\nLink in bio.\n\n#Rotterdam #Hofplein #besparen #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-price-bubble-speech"
+      ],
+      "price_check": true,
+      "notes": "Prijzen gelden ma tot vr; in het weekend is het dagtarief €15."
+    },
+    {
+      "id": "IG-018",
+      "title": "Rijswijk: €12, €9 of €7",
+      "pillar": "P2",
+      "format": "Reel",
+      "template": "R2",
+      "locations": [
+        "PAR2"
+      ],
+      "timing": "Evergreen",
+      "hook": "€12, €9 of €7. Jij kiest.",
+      "body": [
+        "Rijen: 'Ter plaatse €12' · 'Online €9' · 'Vroegboeken €7'"
+      ],
+      "caption": "Bij Parking At the Park in Rijswijk betaal je ter plaatse €12 per dag. Online €9. En wie vroeg boekt, €7.\n\nDat scheelt €5 per dag voor één klik eerder.\n\nLink in bio.\n\n#Rijswijk #DenHaag #besparen #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-price-bubble-speech"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-019",
+      "title": "Vroegboeken: tot een derde goedkoper",
+      "pillar": "P2",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "PLA",
+        "HOF",
+        "PAR2"
+      ],
+      "timing": "Evergreen",
+      "hook": "Vroeg boeken = tot 1/3 goedkoper parkeren.",
+      "body": [
+        "Prijsposter met '-33%' in de prijsbadge",
+        "Kleine regel: 'Plantage Amsterdam: €45 ter plaatse, €30 vroegboeken'"
+      ],
+      "caption": "Hoe eerder je boekt, hoe minder je betaalt. Bij Plantage in Amsterdam scheelt dat €15 per dag: €45 ter plaatse, €30 als je vroeg boekt.\n\nBij de meeste reserveerbare locaties werkt het zo. Kijk op de site wat het bij jouw plek scheelt.\n\nLink in bio.\n\n#besparen #parkeren #Amsterdam #ParkingYou",
+      "assets": [
+        "py-comp-price-badge-circle"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-020",
+      "title": "Strippenkaart: wanneer is hij slim?",
+      "pillar": "P2",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "EVO",
+        "DLLG",
+        "BLO",
+        "PAR2"
+      ],
+      "timing": "Evergreen",
+      "hook": "Vaak in de stad, maar geen abonnement nodig? Ken je de strippenkaart?",
+      "body": [
+        "Dia 1: kop",
+        "Dia 2: 'Wat is het?' Een kaart met 10 of 25 parkeerdagen.",
+        "Dia 3: Evoluon: 25 dagen voor €200 (€8 per dag)",
+        "Dia 4: DLL garage: 25 dagen voor €275 (€11 per dag)",
+        "Dia 5: Rijswijk: 25 dagen voor €175 (€7 per dag)",
+        "Dia 6: 'Voor wie?' 2 of 3 dagen per week op kantoor, hybride werken",
+        "Dia 7: CTA"
+      ],
+      "caption": "Hybride werken en 2 dagen per week naar kantoor? Dan is een abonnement vaak te veel en dagkaartjes te duur. Daar is de strippenkaart voor.\n\n🎟️ 10 of 25 parkeerdagen op één kaart\n💶 Bij 25 dagen vanaf €7 per dag\n\nSwipe voor de prijzen per locatie 👉\n\n#hybridewerken #parkeren #Eindhoven #ParkingYou",
+      "assets": [
+        "py-atom-illustration-card-pas",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": true,
+      "notes": "Rijswijk: bestellen via info@parkingyou.nl. Check of een strip één dag of één keer in- en uitrijden is."
+    },
+    {
+      "id": "IG-021",
+      "title": "Rondjes rijden kost ook geld",
+      "pillar": "P2",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Rondjes rijden is ook betalen.",
+      "body": [
+        "Regels: 'Benzine' · 'Tijd' · 'Humeur'",
+        "Slot: 'Reserveer vooraf. Rijd direct naar je plek.'"
+      ],
+      "caption": "Elke keer rondjes rijden voor een plekje kost je benzine, tijd en een beetje van je goede humeur.\n\nReserveer vooraf en rijd direct naar je plek.\n\nLink in bio.\n\n#parkeren #stadsleven #ParkingYou",
+      "assets": [
+        "py-atom-picto-car",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-022",
+      "title": "P+R Schiedam: €3,64 per dag",
+      "pillar": "P2",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "SCE"
+      ],
+      "timing": "Evergreen (doordeweeks)",
+      "hook": "Met de trein naar Rotterdam? Parkeer voor €3,64.",
+      "body": [
+        "Opbouw van py-app-poster-pr-mandelapark: P+R-symbool, prijs €3,64 per dag",
+        "Kleine regel: 'Ma tot vr 05:15 tot 19:00, met in- en uitchecken'"
+      ],
+      "caption": "Laat de file naar Rotterdam aan je voorbijgaan. Parkeer bij P+R Schiedam Centrum en pak de trein.\n\n💶 €3,64 per dag\n🕔 Maandag tot vrijdag, 05:15 tot 19:00\n🚆 Voorwaarde: je reist met de trein en checkt in en uit op een Nederlands station\n\n#Schiedam #PplusR #Rotterdam #forenzen #ParkingYou",
+      "assets": [
+        "py-comp-symbol-pr",
+        "py-app-poster-pr-mandelapark"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-023",
+      "title": "Straat of garage? Een sketch",
+      "pillar": "P2",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "BLO",
+        "CRU",
+        "ZEE"
+      ],
+      "timing": "Evergreen",
+      "hook": "Twee vrienden, één afspraak in Amsterdam.",
+      "body": [
+        "Figuur A (figure-walk) zoekt een plek, tekst 'Rondje 3...'",
+        "Figuur B (figure-wave) zwaait vanaf de garage, telefoon met QR",
+        "A betaalt aan de automaat, B is al binnen (figure-dance)",
+        "Slot: 'Wie was er eerder?'"
+      ],
+      "caption": "Twee vrienden, dezelfde afspraak in Amsterdam. De een zoekt een plek op straat, de ander had er gisteren al een gereserveerd. Raad eens wie als eerste aan tafel zat.\n\nReserveer vooraf via de link in bio.\n\n#Amsterdam #parkeren #herkenbaar #ParkingYou",
+      "assets": [
+        "py-atom-figure-walk",
+        "py-atom-figure-wave",
+        "py-atom-figure-dance",
+        "py-atom-illustration-phone-qr"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-024",
+      "title": "Naar de film? Pathé-tarief",
+      "pillar": "P2",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "STA",
+        "PED",
+        "SCE",
+        "LPL"
+      ],
+      "timing": "Evergreen (piek: herfst, kerstvakantie)",
+      "hook": "Naar de film? Dan parkeer je voor een paar euro.",
+      "body": [
+        "Dia 1: kop + popcorn-achtige illustratie (eigen)",
+        "Dia 2: Pathé Ypenburg: €4,75",
+        "Dia 3: Pathé Ede: €4,50",
+        "Dia 4: Pathé Schiedam: €3,75 (maximaal 4 uur)",
+        "Dia 5: 'Zo werkt het: valideer je parkeerticket bij de bioscoop'",
+        "Dia 6: CTA"
+      ],
+      "caption": "Filmavond? Bij een aantal Pathé-bioscopen parkeer je met een speciaal bezoekerstarief.\n\n🎬 Ypenburg €4,75\n🎬 Ede €4,50\n🎬 Schiedam €3,75\n\nVergeet niet je parkeerticket te valideren bij de bioscoop.\n\n#Pathé #filmavond #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-illustration-card-barcode"
+      ],
+      "price_check": true,
+      "notes": "Pathé is een merknaam van een partner: check of vermelding en logo mogen. Lentse plas (Nijmegen) staat ook met Pathé-tarief in de kennisbank, eerst bevestigen."
+    },
+    {
+      "id": "IG-025",
+      "title": "Philips Stadion: €15 of €12,50",
+      "pillar": "P2",
+      "format": "Reel",
+      "template": "R2",
+      "locations": [
+        "PSV"
+      ],
+      "timing": "Evergreen",
+      "hook": "€2,50 korting voor één klik.",
+      "body": [
+        "Rijen: 'Ter plaatse €15' · 'Online €12,50'"
+      ],
+      "caption": "Bij het Philips Stadion betaal je ter plaatse €15 per dag. Reserveer je online, dan is het €12,50.\n\nJe plek staat klaar als je aankomt.\n\nLink in bio.\n\n#Eindhoven #PhilipsStadion #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-price-bubble-speech"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-026",
+      "title": "5 manieren om goedkoper te parkeren",
+      "pillar": "P2",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "5 manieren om minder te betalen voor parkeren.",
+      "body": [
+        "Dia 1: kop",
+        "Dia 2: Vroegboeken (tot 1/3 goedkoper)",
+        "Dia 3: Online reserveren in plaats van ter plaatse",
+        "Dia 4: Strippenkaart voor 2 of 3 dagen per week",
+        "Dia 5: Avond- en weekendabonnement",
+        "Dia 6: P+R en de trein",
+        "Dia 7: 'Sla deze op' + CTA"
+      ],
+      "caption": "Bewaar deze voor je volgende rit de stad in 📌\n\nParkeren hoeft niet de duurste post van je dagje uit te zijn. Swipe voor 5 manieren om minder te betalen 👉\n\n#besparen #parkeren #tips #ParkingYou",
+      "assets": [
+        "py-atom-icon-calendar",
+        "py-atom-illustration-card-pas",
+        "py-comp-symbol-pr"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-027",
+      "title": "Artis-leden parkeren voor €15",
+      "pillar": "P2",
+      "format": "Post",
+      "template": "S4",
+      "locations": [
+        "PLA"
+      ],
+      "timing": "Evergreen",
+      "hook": "Artis-lid? Dan parkeer je voor €15 per dag.",
+      "body": [
+        "Typografisch: 'Artis-lid?' wit, '€15 per dag' PY-Aqua, subregel 'Plantage, naast de ingang'"
+      ],
+      "caption": "Heb je een Artis-abonnement? Dan parkeer je bij Plantage voor €15 per dag. Met een los ticket is het €17,50.\n\nEn kom je vaker? Er is ook een maandabonnement voor Artis-leden.\n\n#Artis #Amsterdam #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-headline-two-colour"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-028",
+      "title": "Reserveren in 3 stappen",
+      "pillar": "P3",
+      "format": "Reel",
+      "template": "R4",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Zo heb je je plek binnen een minuut.",
+      "body": [
+        "Stap 1: 'Kies je locatie en tijd' (phone-qr)",
+        "Stap 2: 'Betaal online' (contactless-hand)",
+        "Stap 3: 'Rijd in met je code of kenteken' (reader-qr), slagboom open, figure-bags-cheer"
+      ],
+      "caption": "Reserveren bij ParkingYou kost minder tijd dan dit filmpje.\n\n1️⃣ Kies je locatie en tijd\n2️⃣ Betaal online\n3️⃣ Rijd in met je code of kenteken\n\nLink in bio.\n\n#parkeren #handig #ParkingYou",
+      "assets": [
+        "py-atom-illustration-phone-qr",
+        "py-atom-illustration-contactless-hand",
+        "py-atom-illustration-reader-qr",
+        "py-atom-figure-bags-cheer"
+      ],
+      "price_check": false,
+      "notes": "Stap 3 per locatie checken: QR, kenteken of pas."
+    },
+    {
+      "id": "IG-029",
+      "title": "De slagboom kent je al",
+      "pillar": "P3",
+      "format": "Reel",
+      "template": "R4",
+      "locations": [
+        "TDG",
+        "B1",
+        "STA"
+      ],
+      "timing": "Evergreen",
+      "hook": "De slagboom gaat open. Zonder kaartje.",
+      "body": [
+        "Shot: auto rijdt aan, kenteken zichtbaar, slagboom opent",
+        "Tekst: 'Kentekenherkenning'",
+        "Locaties: TD Gebouw Eindhoven, B1 Amsterdam, Ypenburg"
+      ],
+      "caption": "Geen kaartje trekken, geen pasje zoeken. Op een aantal locaties herkent de camera je kenteken en gaat de slagboom vanzelf open.\n\n📍 TD Gebouw, Eindhoven\n📍 B1, Amsterdam\n📍 Stationsweg Ypenburg, Den Haag\n\n#kentekenherkenning #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-sign-camera",
+        "py-atom-picto-car"
+      ],
+      "price_check": false,
+      "notes": "Uitleggen wat er nodig is (reservering of abonnement gekoppeld aan kenteken)."
+    },
+    {
+      "id": "IG-030",
+      "title": "Zo scan je je code bij de zuil",
+      "pillar": "P3",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Je hebt een reservering. En nu?",
+      "body": [
+        "Dia 1: kop",
+        "Dia 2: sticker 'Scan hier je code' (py-app-sticker-terminal-scan-code-qr)",
+        "Dia 3: houd je telefoon met de QR voor de lezer",
+        "Dia 4: 'Wacht tot alle lampjes groen zijn' (py-app-sticker-terminal-wacht-lampjes)",
+        "Dia 5: 'Lukt het niet? Druk 3 seconden op de infoknop' (py-app-sticker-terminal-druk-3-seconden)",
+        "Dia 6: CTA"
+      ],
+      "caption": "Eerste keer met een reservering bij ons? Zo kom je binnen 👉\n\nDe stickers op de zuil zie je ook in deze carrousel, dus je herkent ze meteen.\n\n#parkeren #howto #ParkingYou",
+      "assets": [
+        "py-app-sticker-terminal-scan-code-qr",
+        "py-app-sticker-terminal-wacht-lampjes",
+        "py-app-sticker-terminal-druk-3-seconden",
+        "py-atom-illustration-reader-qr"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-031",
+      "title": "Bankpas: 3 seconden voorhouden",
+      "pillar": "P3",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Waarom doet de automaat niks? Tel tot drie.",
+      "body": [
+        "Figuur tikt pas kort tegen de lezer, rood kruis",
+        "Teller 1, 2, 3 met contactless-hand",
+        "Groen vinkje, slagboom open, figure-jump"
+      ],
+      "caption": "Pas even snel tegen de lezer tikken en er gebeurt niks? Houd je bankpas minimaal 3 seconden voor de lezer. Dan werkt het wel 😉\n\n#parkeren #tip #ParkingYou",
+      "assets": [
+        "py-atom-illustration-contactless-hand",
+        "py-app-sticker-terminal-bankpas-voorhouden",
+        "py-atom-figure-jump"
+      ],
+      "price_check": false,
+      "notes": "Gebaseerd op de terminalsticker 'Bankpas minimaal 3 seconden voorhouden'."
+    },
+    {
+      "id": "IG-032",
+      "title": "Navigeer naar de inrit",
+      "pillar": "P3",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Je navigatie brengt je naar het gebouw. Je moet naar de inrit.",
+      "body": [
+        "Regel 1: 'Zet het adres van de inrit in je navigatie'",
+        "Regel 2: 'Dat staat in je bevestiging'",
+        "Regel 3: 'Volg daarna de blauwe borden' (routebord)"
+      ],
+      "caption": "Veel mensen rijden een rondje om de garage omdat de navigatie naar het hoofdadres gaat. Gebruik het adres van de inrit uit je bevestigingsmail en volg daarna onze blauwe borden.\n\n#parkeren #tip #ParkingYou",
+      "assets": [
+        "py-prod-routebord-auto-600-front",
+        "py-atom-arrow-right-circle"
+      ],
+      "price_check": false,
+      "notes": "Check of de bevestigingsmail het inrit-adres vermeldt (kennisbank: locatie_specificatie.inrit_straat)."
+    },
+    {
+      "id": "IG-033",
+      "title": "Waar staat mijn auto ook alweer?",
+      "pillar": "P3",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Waar stond je auto ook alweer?",
+      "body": [
+        "Beeld: niveau-aanduiding en sectiecode (tag-level, tag-section)",
+        "Tip: 'Maak een foto van het niveau en de sectie'",
+        "Slot: figure-point wijst naar de auto"
+      ],
+      "caption": "Herkenbaar? Na een middag shoppen weet je niet meer op welke verdieping je auto staat. Maak bij het uitstappen een foto van het niveau en de sectiecode op de kolom. Scheelt zoeken 😅\n\n#parkeren #tip #herkenbaar #ParkingYou",
+      "assets": [
+        "py-atom-tag-level-bubble-gradient",
+        "py-atom-tag-section-1a",
+        "py-atom-figure-point"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-034",
+      "title": "Past je auto? Check de doorrijhoogte",
+      "pillar": "P3",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "CRU",
+        "B1",
+        "P1ZUI"
+      ],
+      "timing": "Seizoen (juni tot augustus, dakkoffers en campers)",
+      "hook": "Dakkoffer op de auto? Check dit eerst.",
+      "body": [
+        "Dia 1: kop + hoogtebalk",
+        "Dia 2: wat is doorrijhoogte",
+        "Dia 3: Cruquius 2,70 m",
+        "Dia 4: B1 Amsterdam 2,40 m",
+        "Dia 5: Let op: sommige garages zijn 1,90 m (Heerhugowaard P1)",
+        "Dia 6: 'Twijfel? Kijk op de locatiepagina'"
+      ],
+      "caption": "Op vakantie met een dakkoffer? Meet je auto voordat je een garage in rijdt. De doorrijhoogte staat op de hoogtebalk bij de inrit en op de locatiepagina.\n\nSwipe voor een paar voorbeelden 👉\n\n#vakantie #dakkoffer #parkeren #ParkingYou",
+      "assets": [
+        "py-prod-hoogtebalk-gaffel",
+        "py-atom-rvv-max-height"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-035",
+      "title": "Betalen zoals jij wilt",
+      "pillar": "P3",
+      "format": "Reel",
+      "template": "R4",
+      "locations": [
+        "HOF",
+        "BLO",
+        "CRU",
+        "ZEE",
+        "PAR2"
+      ],
+      "timing": "Evergreen",
+      "hook": "Pin, contactloos of via een app.",
+      "body": [
+        "Stap 1: payment-pin-hand",
+        "Stap 2: payment-contactless",
+        "Stap 3: partner-easypark",
+        "Slot: slagboom open"
+      ],
+      "caption": "Bij het uitrijden betaal je met je pinpas, contactloos of op een aantal locaties met de EasyPark-app.\n\n#parkeren #betalen #ParkingYou",
+      "assets": [
+        "py-atom-payment-pin-hand",
+        "py-atom-payment-contactless",
+        "py-atom-partner-easypark"
+      ],
+      "price_check": false,
+      "notes": "Betaalmerken zijn third-party: officiële bestanden gebruiken. Per locatie checken welke betaalwijzen er zijn."
+    },
+    {
+      "id": "IG-036",
+      "title": "Storing? Wij helpen je",
+      "pillar": "P3",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen (ook als vaste story-highlight)",
+      "hook": "Gaat de slagboom niet open? Bel ons.",
+      "body": [
+        "Opbouw van py-comp-box-storing-contact: 'Storing?' + 085 401 16 47 + automaatnummer-uitleg"
+      ],
+      "caption": "Werkt de betaalautomaat of slagboom niet? Bel 085 401 16 47 en noem het automaatnummer op de sticker. Dan weten we direct waar je staat.\n\n#parkeren #service #ParkingYou",
+      "assets": [
+        "py-comp-box-storing-contact",
+        "py-app-sticker-terminal-automaatnummer",
+        "py-atom-badge-icon-headset-navy"
+      ],
+      "price_check": false,
+      "notes": "In de print staan twee nummers (085 401 16 47 en 085 21 30 422). Eén nummer kiezen voor social."
+    },
+    {
+      "id": "IG-037",
+      "title": "Koningsdag: aftellen",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R6",
+      "locations": [
+        "DLLG",
+        "PSV",
+        "HOF",
+        "BLO",
+        "P2MAN",
+        "P1BEL"
+      ],
+      "timing": "Seizoen (post 10 en 3 dagen voor 27 april)",
+      "hook": "Nog 10 nachtjes oranje.",
+      "body": [
+        "Kalender bladert naar 27 april",
+        "Steden: Eindhoven, Rotterdam, Amsterdam, Almere, Zoetermeer",
+        "Prijsregel per stad of 'Reserveer vooraf'"
+      ],
+      "caption": "Koningsdag komt eraan 🧡 Parkeer je auto vooraf en ga zorgeloos de stad in.\n\n📍 Eindhoven · Rotterdam · Amsterdam · Almere · Zoetermeer\n\nReserveer via de link in bio.\n\n#Koningsdag #Koningsdag2027 #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-calendar-date"
+      ],
+      "price_check": true,
+      "notes": "Eén versie per stad werkt beter dan één landelijke (vorig jaar 196 bereik op de landelijke reel)."
+    },
+    {
+      "id": "IG-038",
+      "title": "Marathon: langs de kant staan",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R3",
+      "locations": [
+        "HOF"
+      ],
+      "timing": "Seizoen (NN Marathon Rotterdam, april; ook Eindhoven en Amsterdam in oktober)",
+      "hook": "Supporteren bij de marathon? Parkeer op loopafstand.",
+      "body": [
+        "Bestemmingen: Coolsingel (start/finish), Hofplein",
+        "figure-walk loopt naar de finish",
+        "Prijsregel vroegboeken"
+      ],
+      "caption": "Langs de kant staan bij de marathon is het mooiste wat er is, als je tenminste weet waar je je auto laat.\n\n📍 Parking Hofplein, op loopafstand van de route\n🔒 Reserveer vooraf, dan staat je plek klaar\n\nLink in bio.\n\n#NNMarathon #Rotterdam #marathon #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-figure-walk",
+        "py-comp-pill-list-destinations"
+      ],
+      "price_check": true,
+      "notes": "Hergebruik van de goed lopende reel van april 2026 (bereik 209). Loopminuten naar start/finish laten meten."
+    },
+    {
+      "id": "IG-039",
+      "title": "GLOW: op loopafstand van de route",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R3",
+      "locations": [
+        "PSV",
+        "DLLG",
+        "TDG",
+        "PBE",
+        "EVO"
+      ],
+      "timing": "Seizoen (GLOW, november)",
+      "hook": "Waar parkeer je tijdens GLOW?",
+      "body": [
+        "Bestemmingen: Philips Stadion 1 min · DLL 3 min · TD-Gebouw 4 min · Bedrijfsschool 8 min · Evoluon 15 min",
+        "Prijsregel: '€15 vooraf, €20 aan de slagboom'"
+      ],
+      "caption": "Waar parkeer je tijdens @gloweindhoven? Op 1 tot 15 minuten lopen van de route 👇\n\n📍 Philips Stadion · 1 minuut\n📍 DLL · 3 minuten\n📍 TD-Gebouw · 4 minuten\n📍 Bedrijfsschool · 8 minuten\n📍 Evoluon · 15 minuten\n\nReserveer vooraf voor €15 per avond (ter plaatse €20).\n\n#GLOWEindhoven #Eindhoven #lichtfestival #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-pill-list-destinations",
+        "py-atom-mark-glow",
+        "py-atom-figure-walk"
+      ],
+      "price_check": true,
+      "notes": "De statische versie liep in oktober 2026 (bereik 56). Als reel herhalen. GLOW-merk: alleen met akkoord partner."
+    },
+    {
+      "id": "IG-040",
+      "title": "Carnaval: Salaai!",
+      "pillar": "P4",
+      "format": "Post",
+      "template": "S4",
+      "locations": [
+        "DLLG",
+        "DLLP"
+      ],
+      "timing": "Seizoen (carnaval, februari)",
+      "hook": "Lampegat roept. Je auto staat droog.",
+      "body": [
+        "Typografisch in oranje en blauw (PY-Oranje als accent)",
+        "Kop: 'Te gezellig?' / 'Je auto wacht hier veilig'"
+      ],
+      "caption": "Met carnaval wil je genieten, geen parkeerplek zoeken 🎉\n\nBij DLL Garage parkeer je centraal en ondergronds. Zeker van je plek, zeker van je prijs.\n\nReserveer via de link in bio. Salaai! 🧡💙\n\n#Carnaval #Lampegat #Eindhoven #ParkingYou",
+      "assets": [
+        "py-comp-headline-two-colour",
+        "py-tok-color-oranje"
+      ],
+      "price_check": true,
+      "notes": "Bouwt voort op campagne 'Te gezellig? Je auto wacht hier veilig!' (februari 2026)."
+    },
+    {
+      "id": "IG-041",
+      "title": "Lichtfestival in Amsterdam",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R6",
+      "locations": [
+        "PLA",
+        "CRU",
+        "ZEE"
+      ],
+      "timing": "Seizoen (Amsterdam Light Festival, eind november tot half januari)",
+      "hook": "53 avonden licht in Amsterdam.",
+      "body": [
+        "Kalender: start eind november",
+        "Locaties: Plantage, Cruquius, Zeeburgerkade",
+        "Regel: 'Avondje lichtkunst? Parkeer vooraf'"
+      ],
+      "caption": "Het Amsterdam Light Festival is terug. Elke avond lichtkunst langs de grachten, vanaf ongeveer 17:00.\n\nParkeer vooraf bij Plantage, Cruquius of Zeeburgerkade en loop of tram naar de route.\n\n#AmsterdamLightFestival #Amsterdam #lichtkunst #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-calendar-date"
+      ],
+      "price_check": true,
+      "notes": "Loop- of tramtijd naar de route per locatie checken voordat je het in beeld zet."
+    },
+    {
+      "id": "IG-042",
+      "title": "Sinterklaas komt met de boot",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "DLLG",
+        "PSV",
+        "BLO",
+        "CRU"
+      ],
+      "timing": "Seizoen (intocht, half november)",
+      "hook": "De Sint komt met de boot. Jij met de auto?",
+      "body": [
+        "Figuren: gezin (picto-family) zwaait, figure-wave",
+        "Regel: 'Intocht Eindhoven en Amsterdam'",
+        "Slot: 'Reserveer je plek, dan ben je op tijd voor de boot'"
+      ],
+      "caption": "De Sint komt met de boot, jij met de auto? Reserveer je plek vooraf en sta op tijd langs de kant 🎁\n\n📍 Eindhoven en Amsterdam\n\nLink in bio.\n\n#Sinterklaas #intocht #Eindhoven #Amsterdam #ParkingYou",
+      "assets": [
+        "py-atom-picto-family",
+        "py-atom-figure-wave"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-043",
+      "title": "Oud en nieuw bij de Erasmusbrug",
+      "pillar": "P4",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "HOF"
+      ],
+      "timing": "Seizoen (jaarwisseling)",
+      "hook": "Vuurwerk kijken, auto blijft staan.",
+      "body": [
+        "Prijsposter: 'Nachttarief €15' Hofplein",
+        "Regel: '00:00 tot 09:00'"
+      ],
+      "caption": "Oud en nieuw in Rotterdam en de vuurwerkshow bij de Erasmusbrug zien? Laat je auto rustig staan in Hofplein. Het nachttarief is €15 (00:00 tot 09:00).\n\nRijd niet met een drankje op, de auto staat er morgen nog.\n\n#oudennieuw #Rotterdam #Erasmusbrug #ParkingYou",
+      "assets": [
+        "py-comp-price-badge-circle"
+      ],
+      "price_check": true,
+      "notes": "Checken of de garage in de nacht van 31 december open is en of het nachttarief dan geldt."
+    },
+    {
+      "id": "IG-044",
+      "title": "Dutch Design Week",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R3",
+      "locations": [
+        "DLLG",
+        "TDG",
+        "PBE",
+        "PSV"
+      ],
+      "timing": "Seizoen (DDW, oktober)",
+      "hook": "Dutch Design Week? Parkeer midden tussen de locaties.",
+      "body": [
+        "Bestemmingen: Strijp-S, Klokgebouw, centrum (minuten laten meten)",
+        "Prijsregel vroegboeken €12"
+      ],
+      "caption": "Negen dagen design in Eindhoven. Parkeer vooraf bij een van onze locaties en loop zo naar de expo's.\n\n🗓️ Vroegboeken vanaf €12 per dag\n\nLink in bio.\n\n#DDW #DutchDesignWeek #Eindhoven #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-pill-list-destinations",
+        "py-atom-figure-walk"
+      ],
+      "price_check": true,
+      "notes": "Loopminuten per DDW-locatie meten voordat de props gevuld worden."
+    },
+    {
+      "id": "IG-045",
+      "title": "Evenement? Weet wat je betaalt",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen (inzetten in evenementweken)",
+      "hook": "Evenement in de stad? Dan kan het tarief anders zijn.",
+      "body": [
+        "Beeld: tariefbord evenement (py-app-panel-tarief-evenement)",
+        "Regel: 'Op drukke dagen geldt soms een vast inrijdtarief'",
+        "Slot: 'Reserveer vooraf, dan weet je precies wat je betaalt'"
+      ],
+      "caption": "Op grote evenementdagen geldt bij sommige locaties een vast inrijdtarief. Wil je vooraf weten waar je aan toe bent? Reserveer je plek online, dan zie je de prijs meteen.\n\n#evenement #parkeren #ParkingYou",
+      "assets": [
+        "py-app-panel-tarief-evenement",
+        "py-comp-price-bubble-speech"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-046",
+      "title": "Evenementen deze maand",
+      "pillar": "P4",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen (maandelijks, eerste week van de maand)",
+      "hook": "Dit gebeurt er deze maand bij onze locaties.",
+      "body": [
+        "Dia per evenement: datum (calendar-date), naam, stad, dichtstbijzijnde locatie",
+        "Bron: Evenementen in het dashboard (bron 'stad')",
+        "Laatste dia: 'Sla op en tag wie je meeneemt'"
+      ],
+      "caption": "Bewaar deze voor je agenda 📌\n\nDe leukste evenementen van <maand> bij onze locaties, en waar je het makkelijkst parkeert. Swipe 👉\n\n#uitagenda #<stad> #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-calendar-date",
+        "py-atom-icon-location-pin"
+      ],
+      "price_check": true,
+      "notes": "Maandelijks vullen uit dashboard.events. Werkt ook als nieuwsbrief-blok."
+    },
+    {
+      "id": "IG-047",
+      "title": "Festivalzomer Rotterdam",
+      "pillar": "P4",
+      "format": "Reel",
+      "template": "R6",
+      "locations": [
+        "HOF",
+        "EUR",
+        "SHO"
+      ],
+      "timing": "Seizoen (juli tot september)",
+      "hook": "Zomer in Rotterdam. Festival na festival.",
+      "body": [
+        "Kalender: North Sea Jazz, Zomercarnaval, Wereldhavendagen",
+        "Locaties: Hofplein, Europoint, Shopping Center"
+      ],
+      "caption": "North Sea Jazz, Zomercarnaval, Wereldhavendagen: Rotterdam staat de hele zomer aan. Parkeer vooraf en ga zonder gedoe de stad in.\n\nLink in bio.\n\n#Rotterdam #festival #zomer #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-calendar-date"
+      ],
+      "price_check": true,
+      "notes": "Per festival de dichtstbijzijnde locatie kiezen; Ahoy ligt niet bij Europoint."
+    },
+    {
+      "id": "IG-048",
+      "title": "Laden terwijl je shopt",
+      "pillar": "P5",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "DLLG",
+        "EVO",
+        "PBE",
+        "BLO",
+        "ZEE",
+        "PAR2",
+        "DBL"
+      ],
+      "timing": "Evergreen",
+      "hook": "Je auto laadt. Jij shopt.",
+      "body": [
+        "Regels met picto-ev: Eindhoven · Amsterdam · Rijswijk · Rotterdam",
+        "Slot: 'Check de laadpalen op de locatiepagina'"
+      ],
+      "caption": "Elektrisch rijden en de stad in? Op veel van onze locaties staan laadpalen, dus je auto laadt terwijl jij boodschappen doet.\n\n🔌 Onder andere DLL Garage, Evoluon, Bos en Lommerplantsoen, Zeeburgerkade en Parking At the Park\n\n#elektrischrijden #laadpaal #EV #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-picto-ev",
+        "py-atom-icon-plug-ring",
+        "py-atom-sign-ev-allowed-green"
+      ],
+      "price_check": false,
+      "notes": "Aantal laadpunten per locatie ontbreekt in de kennisbank (plekken_laden leeg). Geen aantallen noemen tot dat gevuld is."
+    },
+    {
+      "id": "IG-049",
+      "title": "Regen? Je stapt droog uit",
+      "pillar": "P5",
+      "format": "Post",
+      "template": "S2",
+      "locations": [
+        "HOF",
+        "CRU",
+        "ZEE",
+        "PAR2",
+        "EUR",
+        "DLLG"
+      ],
+      "timing": "Seizoen (oktober tot maart, regenachtige dagen)",
+      "hook": "Het regent. Jij stapt droog uit.",
+      "body": [
+        "Foto: auto in een droge garage, regen bij de inrit",
+        "Lijst van overdekte locaties met symbol-p-roof"
+      ],
+      "caption": "Het regent weer eens ☔ Parkeer overdekt en stap droog uit.\n\nOverdekte locaties: Hofplein, Europoint (Rotterdam), Cruquius, Zeeburgerkade (Amsterdam), DLL Garage (Eindhoven), Parking At the Park (Rijswijk).\n\n#regen #herfst #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-symbol-p-roof"
+      ],
+      "price_check": false,
+      "notes": "Plan op een regendag uit de backlog: dan is het actueel."
+    },
+    {
+      "id": "IG-050",
+      "title": "Auto op slot, spullen mee",
+      "pillar": "P5",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Even snel weg? Doe dit eerst.",
+      "body": [
+        "figure-walk loopt weg, tas ligt op de stoel (rood)",
+        "Terug: icon-car-lock, tas mee",
+        "Slot: 'Zie je iets verdachts? Bel 112.'"
+      ],
+      "caption": "Een tas op de achterbank is een uitnodiging. Doe je auto op slot en neem waardevolle spullen mee, ook als je maar even weg bent.\n\nZie je iets verdachts? Bel 112.\n\n#veiligheid #tip #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-icon-car-lock",
+        "py-app-sticker-waarschuwing-diefstal",
+        "py-atom-figure-walk"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-051",
+      "title": "Zeker van je plek",
+      "pillar": "P5",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen (inzetten voor drukke weekenden)",
+      "hook": "Druk in de stad? Jouw plek is al geregeld.",
+      "body": [
+        "Display 'VOL' (py-atom-display-volvrij-vrij variant) springt naar 'GERESERVEERD'",
+        "Regel: 'Met een reservering heb je een plek, ook als het druk is'"
+      ],
+      "caption": "Zaterdag, mooi weer, iedereen gaat de stad in. Met een reservering hoef je niet te hopen op een plekje, die is al voor je geregeld.\n\nLink in bio.\n\n#parkeren #weekend #zekerheid #ParkingYou",
+      "assets": [
+        "py-prod-display-volvrij",
+        "py-atom-display-volvrij-vrij"
+      ],
+      "price_check": false,
+      "notes": "Belofte laten bevestigen: is een reservering een gegarandeerde plek, ook als het display 'vol' toont?"
+    },
+    {
+      "id": "IG-052",
+      "title": "Familiedag: parkeren naast de dierentuin",
+      "pillar": "P5",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "PLA",
+        "DBL"
+      ],
+      "timing": "Seizoen (schoolvakanties)",
+      "hook": "Dagje dierentuin? Hier parkeer je ernaast.",
+      "body": [
+        "Dia 1: kop + picto-family",
+        "Dia 2: Artis Amsterdam: Plantage, €17,50 met Artis-ticket",
+        "Dia 3: Diergaarde Blijdorp Rotterdam: 1.200 plekken, €12,50 per dag",
+        "Dia 4: tip: kom voor 10:00 in de vakantie",
+        "Dia 5: CTA"
+      ],
+      "caption": "Schoolvakantie, dagje dierentuin 🦒 Bij Artis en Blijdorp parkeer je naast de ingang.\n\nSwipe voor de prijzen 👉\n\n#dagjeuit #dierentuin #Artis #Blijdorp #ParkingYou",
+      "assets": [
+        "py-atom-picto-family",
+        "py-atom-figure-wave"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-053",
+      "title": "Winterochtend zonder ijskrabber",
+      "pillar": "P5",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "HOF",
+        "EUR",
+        "CRU",
+        "ZEE"
+      ],
+      "timing": "Seizoen (december tot februari, vorstdagen)",
+      "hook": "-3 graden. En jij hoeft niet te krabben.",
+      "body": [
+        "Figuur krabt een bevroren ruit (buiten)",
+        "Wissel naar garage: figure-wave, ruit is schoon",
+        "Slot: abonnement in een overdekte garage"
+      ],
+      "caption": "Vorst op de ruiten? Niet als je auto 's nachts in een overdekte garage staat ❄️\n\nVraag naar een abonnement bij een van onze overdekte locaties.\n\n#winter #vorst #parkeren #abonnement #ParkingYou",
+      "assets": [
+        "py-atom-figure-wave",
+        "py-atom-symbol-p-roof"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-054",
+      "title": "Elke dag naar kantoor? Reken even mee",
+      "pillar": "P6",
+      "format": "Reel",
+      "template": "R2",
+      "locations": [
+        "PSV"
+      ],
+      "timing": "Evergreen (piek: september en januari)",
+      "hook": "20 werkdagen x €15. Of €135.",
+      "body": [
+        "Rij 1: '20 dagen x €15 = €300'",
+        "Rij 2: 'Office-abonnement = €135 per maand'",
+        "Bubbel: 'Je bespaart €165'",
+        "Regel: Philips Stadion, Eindhoven"
+      ],
+      "caption": "Werk je elke dag in Eindhoven? 20 dagen parkeren voor €15 is €300 per maand. Met een Office-abonnement bij het Philips Stadion betaal je €135.\n\nDat is €165 per maand minder.\n\nVraag een abonnement aan via de link in bio.\n\n#Eindhoven #forenzen #abonnement #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-price-bubble-speech",
+        "py-atom-illustration-card-pas"
+      ],
+      "price_check": true,
+      "notes": "Check wat 'Office' precies dekt (dagen, tijden) en of servicekosten bovenop de €135 komen."
+    },
+    {
+      "id": "IG-055",
+      "title": "Avond- en weekendabonnement",
+      "pillar": "P6",
+      "format": "Post",
+      "template": "S1",
+      "locations": [
+        "P1ZUI",
+        "P2MID",
+        "BLO",
+        "CRU"
+      ],
+      "timing": "Evergreen",
+      "hook": "Overdag weg, 's avonds en in het weekend een vaste plek.",
+      "body": [
+        "Prijsposter: 'Avond & weekend' + prijs vanaf",
+        "Locaties met prijs"
+      ],
+      "caption": "Woon of werk je in de stad en heb je vooral 's avonds en in het weekend een plek nodig? Daar is het avond- en weekendabonnement voor.\n\n📍 Heerhugowaard: €39,42 per maand\n📍 Amsterdam (Bos en Lommer, Cruquius): €205 per maand\n\n#abonnement #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-price-badge-circle"
+      ],
+      "price_check": true,
+      "notes": "Bedragen zijn excl. of incl. btw? Checken voordat het in beeld gaat."
+    },
+    {
+      "id": "IG-056",
+      "title": "Welk abonnement past bij jou?",
+      "pillar": "P6",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "24/7, Office of avond en weekend: welk abonnement past bij jou?",
+      "body": [
+        "Dia 1: kop als keuzevraag",
+        "Dia 2: 24/7: altijd toegang",
+        "Dia 3: Office: voor werkdagen",
+        "Dia 4: Avond en weekend",
+        "Dia 5: Bewoners: voor mensen uit de buurt",
+        "Dia 6: 'Twijfel? Stuur ons een DM'"
+      ],
+      "caption": "Elke dag naar kantoor, alleen 's avonds thuis, of woon je om de hoek? We hebben een abonnement voor elk ritme. Swipe en kies 👉\n\nTwijfel je? Stuur ons een DM met je locatie, dan rekenen we het voor je uit.\n\n#abonnement #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-illustration-card-pas",
+        "py-atom-icon-calendar"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-057",
+      "title": "Bewoner? Je vaste plek om de hoek",
+      "pillar": "P6",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "EUR",
+        "PBE",
+        "BLO",
+        "HOL",
+        "ONY"
+      ],
+      "timing": "Evergreen",
+      "hook": "Weer een rondje om het blok voor je eigen straat?",
+      "body": [
+        "Figuur rijdt rondjes in de wijk (figure-walk met auto)",
+        "Wissel: pasje (card-pas), slagboom open",
+        "Slot: 'Bewonersabonnement vanaf €85 per maand'"
+      ],
+      "caption": "Elke avond zoeken naar een plek in je eigen straat? Met een bewonersabonnement heb je je vaste plek om de hoek.\n\n🏠 Vanaf €85 per maand (onder andere Philips Bedrijfsschool, Eindhoven, en Parking De Holland, Dordrecht)\n\nLink in bio.\n\n#bewoners #parkeren #abonnement #ParkingYou",
+      "assets": [
+        "py-atom-illustration-card-pas",
+        "py-atom-figure-walk"
+      ],
+      "price_check": true,
+      "notes": ""
+    },
+    {
+      "id": "IG-058",
+      "title": "Parkeren voor je hele team",
+      "pillar": "P6",
+      "format": "Post",
+      "template": "S5",
+      "locations": [
+        "P1ZUI",
+        "P2MID",
+        "VHE"
+      ],
+      "timing": "Evergreen (B2B, ook voor LinkedIn)",
+      "hook": "Je team groeit. De parkeerplaats ook.",
+      "body": [
+        "Foto: kantoorpand + garage",
+        "Kop in balk onderin"
+      ],
+      "caption": "Heeft je bedrijf meerdere plekken nodig voor medewerkers of bezoekers? We regelen bedrijfsabonnementen op verschillende locaties, bijvoorbeeld in Heerhugowaard vanaf €79,14 per maand.\n\nStuur ons een DM of mail naar info@parkingyou.nl.\n\n#zakelijk #bedrijfsparkeren #parkeren #ParkingYou",
+      "assets": [
+        "py-comp-bar-footer-callout"
+      ],
+      "price_check": true,
+      "notes": "Sluit aan op de B2B-aanpak van 'Vliegend Hert: van 50% naar volledig bezet'."
+    },
+    {
+      "id": "IG-059",
+      "title": "Geen pasje nodig",
+      "pillar": "P6",
+      "format": "Reel",
+      "template": "R4",
+      "locations": [
+        "TDG",
+        "B1",
+        "STA"
+      ],
+      "timing": "Evergreen",
+      "hook": "Abonnee? Je kenteken is je pasje.",
+      "body": [
+        "Stap 1: auto rijdt aan",
+        "Stap 2: camera leest kenteken (sign-camera)",
+        "Stap 3: slagboom open"
+      ],
+      "caption": "Op locaties met kentekenherkenning is je kenteken je toegangspas. Geen pasje kwijt, geen kaartje vergeten.\n\n#abonnement #kentekenherkenning #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-sign-camera",
+        "py-atom-picto-car"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-060",
+      "title": "Een dag met onze ParkingHost",
+      "pillar": "P7",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Wie zorgt dat alles werkt als jij parkeert?",
+      "body": [
+        "Echte video van een host: ronde, stickers controleren, storing oplossen",
+        "Overlay: figure-cap-wave en figure-cap-point als illustratie",
+        "Slot: 'Zie je onze host? Zeg gerust hoi'"
+      ],
+      "caption": "Maak kennis met onze ParkingHosts 👋 Ze lopen hun ronde, controleren borden en automaten en helpen je als er iets misgaat.\n\nZie je er een? Zeg gerust hoi.\n\n#achterdeschermen #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-figure-cap-wave",
+        "py-atom-figure-cap-point"
+      ],
+      "price_check": false,
+      "notes": "Toestemming van de host voor beeld."
+    },
+    {
+      "id": "IG-061",
+      "title": "Van ontwerp tot bord",
+      "pillar": "P7",
+      "format": "Carrousel",
+      "template": "S3",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Hoe ziet een nieuwe locatie eruit voordat hij opengaat?",
+      "body": [
+        "Dia 1: kop",
+        "Dia 2: handboek-pagina (overview)",
+        "Dia 3: portaal-ontwerp (py-prod-portaal-2baans-luxe)",
+        "Dia 4: pyloon (py-prod-pyloon-laag-front-qr)",
+        "Dia 5: foto van het echte bord",
+        "Dia 6: 'Welke vind jij het mooist?'"
+      ],
+      "caption": "Elke ParkingYou-locatie krijgt dezelfde blauwe borden, van portaal tot pyloon. Swipe van ontwerp naar het echte bord 👉\n\nWelke vind jij het mooist?\n\n#ontwerp #wayfinding #achterdeschermen #ParkingYou",
+      "assets": [
+        "py-prod-portaal-2baans-luxe",
+        "py-prod-pyloon-laag-front-qr",
+        "py-prod-routebord-auto-1000-front"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-062",
+      "title": "Vooruit of achteruit inparkeren?",
+      "pillar": "P7",
+      "format": "Reel",
+      "template": "R7",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Vooruit of achteruit inparkeren?",
+      "body": [
+        "Twee kolommen: 'Vooruit' en 'Achteruit' met picto-car gedraaid",
+        "Regel: 'Laat het weten in de reacties'"
+      ],
+      "caption": "De eeuwige discussie in elke garage: parkeer jij vooruit of achteruit in? Laat het weten in de reacties 👇\n\n#parkeren #discussie #ParkingYou",
+      "assets": [
+        "py-atom-picto-car",
+        "py-atom-arrow-up-circle"
+      ],
+      "price_check": false,
+      "notes": "Reageer op elke reactie in het eerste uur."
+    },
+    {
+      "id": "IG-063",
+      "title": "Paaseieren zoeken",
+      "pillar": "P7",
+      "format": "Post",
+      "template": "S5",
+      "locations": [
+        "DLLG",
+        "PSV"
+      ],
+      "timing": "Seizoen (Pasen)",
+      "hook": "We hebben 3 ParkingYou-eieren verstopt.",
+      "body": [
+        "Foto: ei met ParkingYou-sticker op een herkenbare plek in de stad"
+      ],
+      "caption": "🥚 We hebben 3 ParkingYou-eieren verstopt in <stad>. Vind je er een? Dan zit er een code op waarmee je gratis parkeert bij je volgende reservering.\n\nGevonden? Laat het weten in de reacties (zonder de plek te verklappen).\n\n#Pasen #paaseieren #<stad> #ParkingYou",
+      "assets": [],
+      "price_check": false,
+      "notes": "Herhaling van de actie van april 2026 (bereik 107). Actievoorwaarden en codes klaarzetten."
+    },
+    {
+      "id": "IG-064",
+      "title": "Welk parkeertype ben jij?",
+      "pillar": "P7",
+      "format": "Reel",
+      "template": "R5",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen",
+      "hook": "Welk parkeertype ben jij?",
+      "body": [
+        "Type 1: De rondjesrijder (figure-walk, rondjes)",
+        "Type 2: De last-minute boeker (figure-jump, telefoon)",
+        "Type 3: De vroegboeker (figure-dance, €)",
+        "Type 4: De 'ik weet niet meer waar hij staat' (figure-point)",
+        "Slot: 'Tag een rondjesrijder'"
+      ],
+      "caption": "De rondjesrijder, de last-minute boeker, de vroegboeker of degene die zijn auto nooit meer terugvindt. Welk parkeertype ben jij? 😄\n\nTag iemand die zich hierin herkent.\n\n#herkenbaar #parkeren #ParkingYou",
+      "assets": [
+        "py-atom-figure-walk",
+        "py-atom-figure-jump",
+        "py-atom-figure-dance",
+        "py-atom-figure-point"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-065",
+      "title": "The other way of parking",
+      "pillar": "P7",
+      "format": "Post",
+      "template": "S4",
+      "locations": [
+        "*"
+      ],
+      "timing": "Evergreen (geschikt als pinned post)",
+      "hook": "The other way of parking.",
+      "body": [
+        "Opbouw van py-app-brand-background-tagline: beeldmerk + tagline gecentreerd op PY-Blauw"
+      ],
+      "caption": "Parkeren kan ook gewoon makkelijk zijn. Vooraf je plek vastleggen, weten wat je betaalt, en zonder gedoe de stad in.\n\nDat is wat wij bedoelen met the other way of parking.\n\n📍 Locaties in Amsterdam, Rotterdam, Eindhoven, Den Haag, Almere, Zoetermeer en meer\n\n#ParkingYou #parkeren",
+      "assets": [
+        "py-app-brand-background-tagline",
+        "py-comp-tagline-lockup-reverse"
+      ],
+      "price_check": false,
+      "notes": ""
+    },
+    {
+      "id": "IG-066",
+      "title": "Nieuwe locatie: sjabloon",
+      "pillar": "P7",
+      "format": "Reel",
+      "template": "R1",
+      "locations": [
+        "*"
+      ],
+      "timing": "Bij elke opening",
+      "hook": "Nieuw: ParkingYou <locatie>.",
+      "body": [
+        "Intro: 'Nieuw' in PY-Oranje",
+        "Bord wordt opgehangen (echte video) of portaal-ontwerp vult zich",
+        "Feiten + openingsprijs",
+        "CTA"
+      ],
+      "caption": "Nieuw bij ParkingYou: <locatie> in <stad> 🎉\n\n🅿️ <aantal> plekken\n<feit 2>\n💶 <prijs>\n\nReserveer je plek via de link in bio.\n\n#<stad> #nieuw #parkeren #ParkingYou",
+      "assets": [
+        "py-prod-portaal-1baans-luxe",
+        "py-tok-color-oranje"
+      ],
+      "price_check": true,
+      "notes": "Eerste inzet: WTC Almere (campagne november 2026)."
+    }
+  ]
+}
