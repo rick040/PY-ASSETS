@@ -1,0 +1,53 @@
+{
+  "itemId": "IG-039",
+  "hook": {
+    "headline": "Waar parkeer je\ntijdens *GLOW?*",
+    "partner": "GLOW Eindhoven",
+    "partnerLabel": "Official parking partner"
+  },
+  "route": {
+    "title": "Op *1 tot 15 min*\nlopen van de route",
+    "destinations": [
+      {
+        "name": "Philips Stadion",
+        "minutes": 1
+      },
+      {
+        "name": "DLL",
+        "minutes": 3
+      },
+      {
+        "name": "TD-Gebouw",
+        "minutes": 4
+      },
+      {
+        "name": "Bedrijfsschool",
+        "minutes": 8
+      },
+      {
+        "name": "Evoluon",
+        "minutes": 15
+      }
+    ]
+  },
+  "price": {
+    "headline": "Reserveer vooraf\nvoor *€15*",
+    "amount": 15,
+    "label": "per avond",
+    "note": "Rijd je gewoon aan? Dan betaal je €20."
+  },
+  "cta": {
+    "headline": "Reserveer\n*je plek*",
+    "button": "Reserveer online",
+    "url": "voordeligparkeren.nl",
+    "tagline": "The other way of parking"
+  },
+  "timing": {
+    "hook": 3,
+    "route": 5,
+    "price": 3.2,
+    "cta": 3.4,
+    "transition": 0.5
+  },
+  "showSafeZones": false
+}

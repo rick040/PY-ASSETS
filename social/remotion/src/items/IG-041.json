@@ -1,0 +1,48 @@
+{
+  "itemId": "IG-041",
+  "hook": {
+    "headline": "Amsterdam\ngaat *weer aan.*",
+    "from": "2026-11-06",
+    "to": "2026-11-26",
+    "countdown": "Nog *{n} dagen*",
+    "sparkles": true
+  },
+  "event": {
+    "name": "*Amsterdam*\n*Light Festival*",
+    "lines": [
+      {
+        "icon": "py-atom-icon-calendar",
+        "text": "*26 nov* t/m *17 jan*"
+      },
+      {
+        "icon": "clock",
+        "text": "Elke avond vanaf *±17:00*"
+      }
+    ],
+    "locations": [
+      "Plantage",
+      "Cruquius",
+      "Zeeburgerkade"
+    ]
+  },
+  "price": {
+    "headline": "Parkeer vooraf\nvanaf *€17,50*",
+    "amount": 17.5,
+    "label": "per dag",
+    "note": "Vroegboeken bij Cruquius en Zeeburgerkade"
+  },
+  "cta": {
+    "headline": "Reserveer\n*je plek*",
+    "button": "Reserveer online",
+    "url": "voordeligparkeren.nl",
+    "tagline": "The other way of parking"
+  },
+  "timing": {
+    "hook": 3.4,
+    "event": 3.8,
+    "price": 3.2,
+    "cta": 3.4,
+    "transition": 0.5
+  },
+  "showSafeZones": false
+}

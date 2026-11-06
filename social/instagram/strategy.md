@@ -100,7 +100,7 @@ When there is nothing planned, pick from the library with these rules, in order:
 * Colours: PY-Blauw `#1A3580` as the main background, PY-Aqua `#32B9CD` for keywords and accents, white text. PY-Oranje `#F08300` only as a rare accent (new location, carnaval). The blue to aqua verloop for backgrounds.
 * Type: Ubuntu only. Key phrase Bold, supporting words Regular on the same line (observed rule 2 in `docs/print-rules.md`).
 * Shapes: the speech bubble (`py-atom-shape-bubble-*`) as photo frame and price label, pills for destinations, the figure set (`py-atom-figure-*`) for people. These are the same shapes people see on the signs at the location; that recognition is the point.
-* Logo on blue, gradient or photo: white with the aqua dot only. Never the navy ring fill of the `-reverse` logo files.
+* Logo on navy or a photo: white with the aqua dot. On light blue: all white with a white dot. Never the navy ring fill of the `-reverse` logo files.
 * Reels: 1080 x 1920, important text outside the top 250 px and bottom 330 px, frame 0 is never empty (it is often the cover), everything readable without sound, end with url-chevron "parkingyou.nl" and the logo.
 * Feed versions of reels: 1080 x 1350 (4:5).
 
@@ -115,8 +115,8 @@ The 39 reels in the library use only 7 templates. Build the templates once; ever
 | R7 | Kinetische tekst | 7 | 3 (built) |
 | R2 | Prijsrol | 4 | 4 (built) |
 | R4 | Drie stappen | 4 | 5 (built) |
-| R3 | Looproute | 3 | 6 |
-| R6 | Aftelkalender | 3 | 7 |
+| R3 | Looproute | 3 | 6 (built) |
+| R6 | Aftelkalender | 3 | 7 (built) |
 
 R1, R5 and R7 together cover 25 reels. The scene plans, props and PY-ASSETS IDs per template are in `content-library.json` (`templates`) and the brand reference for building is `brand-parkingyou.md`.
 

@@ -27,7 +27,7 @@ export const BeatScene: React.FC<{ p: FiguursketchProps; index: number; dur: num
     <Backdrop kind="light" seed={`r5b${index}`}>
       <Stage>
         <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
-          <TopLogo width={320} start={-20} dark />
+          <TopLogo width={320} start={-20} />
         </div>
         <div style={{ position: "absolute", left: 60, top: 130, fontFamily: FONT, fontSize: 46, fontWeight: 500, letterSpacing: "0.08em", color: BRAND.aqua }}>
           {index + 1} / {p.beats.length}

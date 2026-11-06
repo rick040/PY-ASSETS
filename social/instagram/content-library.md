@@ -1354,7 +1354,7 @@ Reserveer vooraf voor €15 per avond (ter plaatse €20).
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** De statische versie liep in oktober 2026 (bereik 56). Als reel herhalen. GLOW-merk: alleen met akkoord partner.
+**Notes:** Gerenderd met Remotion (template R3): social/remotion/renders/IG-039-glow-looproute-reel.mp4 en -feed.mp4. Loopminuten en prijzen (€15 vooraf, €20 ter plaatse) uit de eigen GLOW-posts van oktober en november 2026. De statische versie liep in oktober 2026 (bereik 56). Als reel herhalen. GLOW-merk: alleen met akkoord partner.
 
 ### IG-040 Carnaval: Salaai!
 
@@ -1411,7 +1411,7 @@ Parkeer vooraf bij Plantage, Cruquius of Zeeburgerkade en loop of tram naar de r
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Loop- of tramtijd naar de route per locatie checken voordat je het in beeld zet.
+**Notes:** Gerenderd met Remotion (template R6): social/remotion/renders/IG-041-amsterdam-light-festival-reel.mp4 en -feed.mp4. Aftellen vanaf 6 november ("Nog 20 dagen"); wordt hij later gepost, zet hook.from op de postdatum. Vroegboekprijs €17,50 (Cruquius, Zeeburgerkade) gecontroleerd in de kennisbank. Loop- of tramtijd naar de route per locatie checken voordat je het in beeld zet.
 
 ### IG-042 Sinterklaas komt met de boot
 

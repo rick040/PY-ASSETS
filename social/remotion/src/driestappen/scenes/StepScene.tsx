@@ -27,7 +27,7 @@ export const StepScene: React.FC<{ p: DrieStappenProps; index: number; dur: numb
     <Backdrop kind="light" seed={`r4s${index}`}>
       <Stage>
         <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
-          <TopLogo width={320} start={-20} dark />
+          <TopLogo width={320} start={-20} />
         </div>
         {/* progress */}
         <div style={{ position: "absolute", right: 60, top: 170, display: "flex", gap: 14 }}>

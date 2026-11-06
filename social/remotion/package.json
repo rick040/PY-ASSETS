@@ -27,7 +27,13 @@
     "still:ig-018": "remotion still PY-R2-IG-018-Reel renders/IG-018-rijswijk-drie-prijzen-cover.png --frame=45 --props=src/items/IG-018.json",
     "render:ig-028": "remotion render PY-R4-IG-028-Reel renders/IG-028-reserveren-in-3-stappen-reel.mp4 --props=src/items/IG-028.json",
     "render:ig-028:feed": "remotion render PY-R4-IG-028-Feed renders/IG-028-reserveren-in-3-stappen-feed.mp4 --props=src/items/IG-028.json",
-    "still:ig-028": "remotion still PY-R4-IG-028-Reel renders/IG-028-reserveren-in-3-stappen-cover.png --frame=45 --props=src/items/IG-028.json"
+    "still:ig-028": "remotion still PY-R4-IG-028-Reel renders/IG-028-reserveren-in-3-stappen-cover.png --frame=45 --props=src/items/IG-028.json",
+    "render:ig-039": "remotion render PY-R3-IG-039-Reel renders/IG-039-glow-looproute-reel.mp4 --props=src/items/IG-039.json",
+    "render:ig-039:feed": "remotion render PY-R3-IG-039-Feed renders/IG-039-glow-looproute-feed.mp4 --props=src/items/IG-039.json",
+    "still:ig-039": "remotion still PY-R3-IG-039-Reel renders/IG-039-glow-looproute-cover.png --frame=70 --props=src/items/IG-039.json",
+    "render:ig-041": "remotion render PY-R6-IG-041-Reel renders/IG-041-amsterdam-light-festival-reel.mp4 --props=src/items/IG-041.json",
+    "render:ig-041:feed": "remotion render PY-R6-IG-041-Feed renders/IG-041-amsterdam-light-festival-feed.mp4 --props=src/items/IG-041.json",
+    "still:ig-041": "remotion still PY-R6-IG-041-Reel renders/IG-041-amsterdam-light-festival-cover.png --frame=75 --props=src/items/IG-041.json"
   },
   "dependencies": {
     "@remotion/animation-utils": "^4.0.534",

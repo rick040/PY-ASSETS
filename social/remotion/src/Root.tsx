@@ -11,7 +11,13 @@ import { PrijsrolAd } from "./prijsrol/PrijsrolAd";
 import { prijsrolSchema, prijsrolDefaults, prijsrolTotal, PrijsrolProps } from "./prijsrol/schema";
 import { DrieStappenAd } from "./driestappen/DrieStappenAd";
 import { drieStappenSchema, drieStappenDefaults, drieStappenTotal, DrieStappenProps } from "./driestappen/schema";
+import { LooprouteAd } from "./looproute/LooprouteAd";
+import { looprouteSchema, looprouteDefaults, looprouteTotal, LooprouteProps } from "./looproute/schema";
+import { AftelkalenderAd } from "./aftelkalender/AftelkalenderAd";
+import { aftelkalenderSchema, aftelkalenderDefaults, aftelkalenderTotal, AftelkalenderProps } from "./aftelkalender/schema";
 import ig002 from "./items/IG-002.json";
+import ig039 from "./items/IG-039.json";
+import ig041 from "./items/IG-041.json";
 import ig028 from "./items/IG-028.json";
 import ig017 from "./items/IG-017.json";
 import ig018 from "./items/IG-018.json";
@@ -36,6 +42,10 @@ const PrijsrolMB = withMotionBlur(PrijsrolAd);
 const DrieStappenMB = withMotionBlur(DrieStappenAd);
 const FiguursketchMB = withMotionBlur(FiguursketchAd);
 const KinetischMB = withMotionBlur(KinetischAd);
+const LooprouteMB = withMotionBlur(LooprouteAd);
+const AftelkalenderMB = withMotionBlur(AftelkalenderAd);
+const r3: Array<[string, LooprouteProps]> = [["Template", looprouteDefaults], ["IG-039", ig039 as LooprouteProps]];
+const r6: Array<[string, AftelkalenderProps]> = [["Template", aftelkalenderDefaults], ["IG-041", ig041 as AftelkalenderProps]];
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -53,6 +63,13 @@ export const RemotionRoot: React.FC = () => (
         )),
       )}
     </Folder>
+    <Folder name="R3-Looproute">
+      {r3.flatMap(([id, props]) =>
+        SIZES.map((s) => (
+          <Composition key={id + s.suffix} id={`PY-R3-${id}-${s.suffix}`} component={LooprouteMB} schema={looprouteSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: looprouteTotal(p.timing) })} durationInFrames={looprouteTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
+        )),
+      )}
+    </Folder>
     <Folder name="R4-Drie-stappen">
       {r4.flatMap(([id, props]) =>
         SIZES.map((s) => (
@@ -64,6 +81,13 @@ export const RemotionRoot: React.FC = () => (
       {r5.flatMap(([id, props]) =>
         SIZES.map((s) => (
           <Composition key={id + s.suffix} id={`PY-R5-${id}-${s.suffix}`} component={FiguursketchMB} schema={figuursketchSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: figuursketchTotal(p) })} durationInFrames={figuursketchTotal(props)} fps={FPS} width={s.width} height={s.height} />
+        )),
+      )}
+    </Folder>
+    <Folder name="R6-Aftelkalender">
+      {r6.flatMap(([id, props]) =>
+        SIZES.map((s) => (
+          <Composition key={id + s.suffix} id={`PY-R6-${id}-${s.suffix}`} component={AftelkalenderMB} schema={aftelkalenderSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: aftelkalenderTotal(p.timing) })} durationInFrames={aftelkalenderTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
     </Folder>

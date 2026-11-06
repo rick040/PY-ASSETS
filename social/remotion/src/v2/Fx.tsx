@@ -69,3 +69,30 @@ export const Skyline: React.FC<{ start: number; width: number; figures?: string[
     </div>
   );
 };
+
+/** Twinkling points of light (light festivals, evenings): soft glow, each with its own noise-driven flicker. */
+export const Sparkles: React.FC<{ count?: number; colors?: string[]; seed?: string; area?: { x: number; y: number; w: number; h: number } }> = ({ count = 46, colors = ["#FFFFFF", BRAND.aqua, "#FFD38A"], seed = "sp", area }) => {
+  const frame = useCurrentFrame();
+  const { width, height } = useVideoConfig();
+  const A = area ?? { x: 0, y: 0, w: width, h: height };
+  return (
+    <svg width={width} height={height} style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+      <defs>
+        {colors.map((c, i) => (
+          <radialGradient key={i} id={`${seed}g${i}`}>
+            <stop offset="0%" stopColor={c} stopOpacity={1} />
+            <stop offset="35%" stopColor={c} stopOpacity={0.5} />
+            <stop offset="100%" stopColor={c} stopOpacity={0} />
+          </radialGradient>
+        ))}
+      </defs>
+      {new Array(count).fill(0).map((_, i) => {
+        const x = A.x + random(`${seed}x${i}`) * A.w;
+        const y = A.y + random(`${seed}y${i}`) * A.h;
+        const r = 10 + random(`${seed}r${i}`) * 34;
+        const tw = 0.5 + 0.5 * Math.sin(frame / (6 + random(`${seed}s${i}`) * 10) + random(`${seed}p${i}`) * 6.28);
+        return <circle key={i} cx={x} cy={y + Math.sin(frame / 40 + i) * 6} r={r * (0.7 + 0.3 * tw)} fill={`url(#${seed}g${i % colors.length})`} opacity={0.25 + 0.75 * tw} />;
+      })}
+    </svg>
+  );
+};

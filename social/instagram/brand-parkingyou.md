@@ -26,8 +26,8 @@ Use this for every new reel or post; the Remotion kit in `social/remotion/src/v2
 
 * Headlines: very large, white, sentence case, short lines; key words **Bold** in the same colour (weight contrast, not colour). On light backgrounds navy.
 * Backgrounds: photo with a dark gradient, flat PY-Blauw, the cyan-to-blue GLOW gradient, or pale blue. Never flat white.
-* Small logo on top (white with aqua dot).
-* Button "Reserveer online": aqua pill with a white arrow circle on the left. Second style: navy pill "Bekijk locaties" with the arrow circle on the right.
+* Small logo on top. On navy or a photo: white with the aqua dot. On light blue (the GLOW gradient): all white with a white dot. On the pale blue background: the colour logo. Never the navy ring fill.
+* Button "Reserveer online": aqua pill with the arrow circle from the library (`py-atom-arrow-right-circle`) on the left. Second style: navy pill "Bekijk locaties" with the arrow circle on the right.
 * Url line "**voordelig**parkeren.nl" with the aqua chevron.
 * Price: round badge, white with navy italic numerals (cents small and raised) or aqua with white; slightly rotated.
 * Location: white pill, navy pin, navy name.

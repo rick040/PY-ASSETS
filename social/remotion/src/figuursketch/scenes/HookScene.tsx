@@ -34,7 +34,7 @@ export const LineUp: React.FC<{ p: FiguursketchProps; frame: number; fps: number
 const Head: React.FC<{ text: string; dur: number; delay: number }> = ({ text, dur, delay }) => (
   <>
     <div style={{ position: "absolute", left: 0, right: 0, top: 0, display: "flex", justifyContent: "center" }}>
-      <TopLogo width={320} start={-20} dark />
+      <TopLogo width={320} start={-20} />
     </div>
     <div style={{ position: "absolute", left: 60, top: 140 }}>
       <Title text={text} color={BRAND.blauw} maxSize={150} width={960} delay={delay} end={dur} />

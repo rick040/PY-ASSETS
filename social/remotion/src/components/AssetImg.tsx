@@ -4,7 +4,7 @@ import { Img, staticFile } from "remotion";
 /** Reverse logos: always use the "-open" variant (white and aqua only, no navy ring fill), for example py-atom-logo-horizontal-reverse-open. */
 /** Loads an element from PY-ASSETS by its ID (py-atom-*, py-comp-*, py-prod-*). `tint: "white"` recolours a one-colour mark. */
 export const assetUrl = (id: string) => {
-  if (id.endsWith("-open")) return staticFile(`py/derived/${id}.svg`);
+  if (id.endsWith("-open") || id.endsWith("-whitedot")) return staticFile(`py/derived/${id}.svg`);
   const level = id.split("-")[1];
   return staticFile(`py/svg/${level}/${id}.svg`);
 };

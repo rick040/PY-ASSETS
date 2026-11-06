@@ -1,9 +1,13 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { AbsoluteFill, Img, OffthreadVideo, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { noise2D } from "@remotion/noise";
 import { BRAND } from "../theme";
 
 export type BackdropKind = "navy" | "glow" | "light" | "photo";
+
+/** The current background, so brand marks can pick the right version (for example the all-white logo on light blue). */
+const BackdropContext = createContext<BackdropKind>("navy");
+export const useBackdrop = () => useContext(BackdropContext);
 
 /** Soft light that drifts slowly (noise driven), so a background is never static. */
 const Light: React.FC<{ seed: string; color: string; size: number; x: number; y: number; opacity: number }> = ({ seed, color, size, x, y, opacity }) => {
@@ -43,6 +47,7 @@ export const Backdrop: React.FC<{ kind: BackdropKind; media?: string; mediaType?
   const zoom = interpolate(frame, [0, durationInFrames], [1.06, 1.16]);
   const pan = interpolate(frame, [0, durationInFrames], [-1.5, 1.5]);
   return (
+    <BackdropContext.Provider value={kind}>
     <AbsoluteFill style={{ backgroundColor: kind === "light" ? "#E4EEF4" : BRAND.blauw, overflow: "hidden" }}>
       {kind === "glow" && (
         <>
@@ -73,5 +78,6 @@ export const Backdrop: React.FC<{ kind: BackdropKind; media?: string; mediaType?
       {children}
       <Grain opacity={kind === "light" ? 0.04 : 0.07} />
     </AbsoluteFill>
+    </BackdropContext.Provider>
   );
 };

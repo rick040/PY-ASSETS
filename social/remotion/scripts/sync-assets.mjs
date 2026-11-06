@@ -19,5 +19,10 @@ for (const id of ["py-atom-logo-horizontal-reverse", "py-atom-logo-stacked-rever
   const open = svg.replace(/fill="#1A3580"/gi, 'fill="none"');
   if (open === svg) throw new Error(`${id}: no PY-Blauw fill found, check the source`);
   writeFileSync(resolve(out, "derived", `${id}-open.svg`), open);
+  // Brand rule (Rick, 6 November 2026): on light blue backgrounds the logo is all white with a white dot.
+  // The library's white logo has a hole where the dot is, so this variant fills the dot white instead.
+  const whiteDot = open.replace(/fill="#32B9CD"/gi, 'fill="#FFFFFF"');
+  if (whiteDot === open) throw new Error(`${id}: no aqua dot found, check the source`);
+  writeFileSync(resolve(out, "derived", `${id}-whitedot.svg`), whiteDot);
 }
 console.log("synced svg/, fonts/ and tokens.json to public/py (+ open reverse logos in public/py/derived)");

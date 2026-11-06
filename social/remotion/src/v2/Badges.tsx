@@ -4,6 +4,7 @@ import { noise2D } from "@remotion/noise";
 import { BRAND, FONT } from "../theme";
 import { AssetImg } from "../components/AssetImg";
 import { enter } from "./ease";
+import { useBackdrop } from "./Backdrop";
 
 /** Splits 7.5 into "€7" and ",50"; whole numbers stay "€15". */
 const split = (n: number) => {
@@ -51,13 +52,20 @@ export const PlacePill: React.FC<{ name: string; start: number; height?: number;
   );
 };
 
-/** Small logo at the top, white with the aqua dot (open reverse logo, never the navy fill). */
-export const TopLogo: React.FC<{ start?: number; width?: number; dark?: boolean }> = ({ start = -10, width = 300, dark = false }) => {
+/**
+ * Small logo at the top. Brand rules (Rick, November 2026):
+ * - light blue (the cyan GLOW gradient): all white with a white dot (derived -whitedot file; the library's white logo has a hole there);
+ * - navy and photo: white with the aqua dot (open reverse logo), never the navy ring fill;
+ * - the pale "light" backdrop: the colour logo, because white disappears on it.
+ */
+export const TopLogo: React.FC<{ start?: number; width?: number }> = ({ start = -10, width = 300 }) => {
   const frame = useCurrentFrame();
+  const kind = useBackdrop();
   const p = enter(frame, start, 18);
+  const id = kind === "glow" ? "py-atom-logo-horizontal-reverse-whitedot" : kind === "light" ? "py-atom-logo-horizontal-color" : "py-atom-logo-horizontal-reverse-open";
   return (
     <div style={{ opacity: p, transform: `translateY(${(1 - p) * -14}px)` }}>
-      <AssetImg id={dark ? "py-atom-logo-horizontal-color" : "py-atom-logo-horizontal-reverse-open"} width={width} />
+      <AssetImg id={id} width={width} />
     </div>
   );
 };
