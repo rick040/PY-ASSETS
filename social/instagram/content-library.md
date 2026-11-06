@@ -330,6 +330,8 @@ Reserveer via de link in bio.
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-004-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026.
+
 ### IG-005 Eindhoven: zes plekken in één overzicht
 
 **Carrousel** · template S3 Uitleg-carrousel · locations: DLLG, DLLP, TDG, PBE, PSV, EVO · Evergreen
@@ -549,7 +551,7 @@ Een dag tussen de olifanten en ijsberen begint met een plek voor de auto. Bij Di
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Blijdorp is niet online reserveerbaar: geen 'reserveer'-CTA, wel 'route in bio' of locatielink.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-011-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Blijdorp is niet online reserveerbaar: geen 'reserveer'-CTA, wel 'route in bio' of locatielink.
 
 ### IG-012 Evoluon: parkeren bij de vliegende schotel
 
@@ -609,7 +611,7 @@ Werk je in of rond het WTC Almere? In de ondergrondse garage P2 Mandela parkeer 
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Prijs laten bevestigen: P1 Carlton naast de deur staat op €30 per dag. Sluit aan op de campagne 'WTC opening, Almere'.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-013-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Open check: Prijs €6 per dag staat zo in de kennisbank (P2 Mandela WTC); laat bevestigen voordat je post. Prijs laten bevestigen: P1 Carlton naast de deur staat op €30 per dag. Sluit aan op de campagne 'WTC opening, Almere'.
 
 ### IG-014 Zoetermeer: eerste 2 uur gratis
 
@@ -672,7 +674,7 @@ Boodschappen in Middenwaard of een afspraak in het centrum? Je betaalt per 12 mi
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Doorrijhoogte P1 Zuidtangent is 1,90 m: niet adverteren voor busjes.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-015-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Doorrijhoogte P1 Zuidtangent is 1,90 m: niet adverteren voor busjes.
 
 ### IG-016 Plek van de week: sjabloon
 
@@ -798,6 +800,8 @@ Link in bio.
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-019-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026.
+
 ### IG-020 Strippenkaart: wanneer is hij slim?
 
 **Carrousel** · template S3 Uitleg-carrousel · locations: EVO, DLLG, BLO, PAR2 · Evergreen
@@ -886,6 +890,8 @@ Laat de file naar Rotterdam aan je voorbijgaan. Parkeer bij P+R Schiedam Centrum
 **Assets:** `py-comp-symbol-pr`, `py-app-poster-pr-mandelapark`
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
+
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-022-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026.
 
 ### IG-023 Straat of garage? Een sketch
 
@@ -1024,6 +1030,8 @@ En kom je vaker? Er is ook een maandabonnement voor Artis-leden.
 **Assets:** `py-comp-headline-two-colour`
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
+
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-027-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026.
 
 ## P3 Zo geregeld (Easy to use, 15%)
 
@@ -1256,7 +1264,7 @@ Werkt de betaalautomaat of slagboom niet? Bel 085 401 16 47 en noem het automaat
 
 **Assets:** `py-comp-box-storing-contact`, `py-app-sticker-terminal-automaatnummer`, `py-atom-badge-icon-headset-navy`
 
-**Notes:** In de print staan twee nummers (085 401 16 47 en 085 21 30 422). Eén nummer kiezen voor social.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-036-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Open check: Nummer 085 401 16 47 (zoals op de terminalstickers); in de print staat ook 085 21 30 422. Kies er één. In de print staan twee nummers (085 401 16 47 en 085 21 30 422). Eén nummer kiezen voor social.
 
 ## P4 Erbij zijn (Events and city life, 15%)
 
@@ -1383,7 +1391,7 @@ Reserveer via de link in bio. Salaai! 🧡💙
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Bouwt voort op campagne 'Te gezellig? Je auto wacht hier veilig!' (februari 2026).
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-040-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Bouwt voort op campagne 'Te gezellig? Je auto wacht hier veilig!' (februari 2026).
 
 ### IG-041 Lichtfestival in Amsterdam
 
@@ -1466,7 +1474,7 @@ Rijd niet met een drankje op, de auto staat er morgen nog.
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Checken of de garage in de nacht van 31 december open is en of het nachttarief dan geldt.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-043-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Open check: Checken of Hofplein in de nacht van 31 december open is en het nachttarief dan geldt. Checken of de garage in de nacht van 31 december open is en of het nachttarief dan geldt.
 
 ### IG-044 Dutch Design Week
 
@@ -1626,7 +1634,7 @@ Overdekte locaties: Hofplein, Europoint (Rotterdam), Cruquius, Zeeburgerkade (Am
 
 **Assets:** `py-atom-symbol-p-roof`
 
-**Notes:** Plan op een regendag uit de backlog: dan is het actueel.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-049-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Plan op een regendag uit de backlog: dan is het actueel.
 
 ### IG-050 Auto op slot, spullen mee
 
@@ -1790,7 +1798,7 @@ Woon of werk je in de stad en heb je vooral 's avonds en in het weekend een plek
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Bedragen zijn excl. of incl. btw? Checken voordat het in beeld gaat.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-055-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Open check: Prijzen per maand zoals in de kennisbank (btw 21 procent, servicekosten €5 apart); check of de bedragen incl. of excl. btw zijn. Bedragen zijn excl. of incl. btw? Checken voordat het in beeld gaat.
 
 ### IG-056 Welk abonnement past bij jou?
 
@@ -1872,7 +1880,7 @@ Stuur ons een DM of mail naar info@parkingyou.nl.
 
 **Prijs check:** check the price in `kennisbank.tarief` before posting.
 
-**Notes:** Sluit aan op de B2B-aanpak van 'Vliegend Hert: van 50% naar volledig bezet'.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-058-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Open check: Prijs per maand zoals in de kennisbank; check incl. of excl. btw. Contact: info@parkingyou.nl. Sluit aan op de B2B-aanpak van 'Vliegend Hert: van 50% naar volledig bezet'.
 
 ### IG-059 Geen pasje nodig
 
@@ -1996,7 +2004,7 @@ Gevonden? Laat het weten in de reacties (zonder de plek te verklappen).
 #Pasen #paaseieren #<stad> #ParkingYou
 ```
 
-**Notes:** Herhaling van de actie van april 2026 (bereik 107). Actievoorwaarden en codes klaarzetten.
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-063-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026. Open check: Actie met echte eieren en codes; actievoorwaarden en codes klaarzetten voor Pasen. Herhaling van de actie van april 2026 (bereik 107). Actievoorwaarden en codes klaarzetten.
 
 ### IG-064 Welk parkeertype ben jij?
 
@@ -2049,6 +2057,8 @@ Dat is wat wij bedoelen met the other way of parking.
 ```
 
 **Assets:** `py-app-brand-background-tagline`, `py-comp-tagline-lockup-reverse`
+
+**Notes:** Gerenderd als statische post: social/remotion/renders/posts/IG-065-*.png (feed-stijl). Prijzen gecontroleerd in de kennisbank op 6 november 2026.
 
 ### IG-066 Nieuwe locatie: sjabloon
 

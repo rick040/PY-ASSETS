@@ -108,6 +108,10 @@ renders/                      delivered MP4s and covers (in git)
 public/py/                    synced copy of svg/, fonts/, tokens.json (git-ignored)
 ```
 
+## Static posts
+
+`src/posts/Posts.tsx` holds the 15 static feed posts (1080 x 1350) from the library, one function per post, built from the same kit as the reels. `npm run render:posts` renders them all to `renders/posts/<id>-<slug>.png` (one bundle, about 25 seconds). They are stills of frame 110 of a short composition, when every entrance has finished; in Studio they are in the folder `Posts`. When you add a post, also add its id and file slug to `src/posts/meta.mjs`.
+
 ## Rendered items (feed style, 30 fps, motion blur)
 
 | Item | Template | Length | Scenes |

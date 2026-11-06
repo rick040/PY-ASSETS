@@ -33,7 +33,8 @@
     "still:ig-039": "remotion still PY-R3-IG-039-Reel renders/IG-039-glow-looproute-cover.png --frame=70 --props=src/items/IG-039.json",
     "render:ig-041": "remotion render PY-R6-IG-041-Reel renders/IG-041-amsterdam-light-festival-reel.mp4 --props=src/items/IG-041.json",
     "render:ig-041:feed": "remotion render PY-R6-IG-041-Feed renders/IG-041-amsterdam-light-festival-feed.mp4 --props=src/items/IG-041.json",
-    "still:ig-041": "remotion still PY-R6-IG-041-Reel renders/IG-041-amsterdam-light-festival-cover.png --frame=75 --props=src/items/IG-041.json"
+    "still:ig-041": "remotion still PY-R6-IG-041-Reel renders/IG-041-amsterdam-light-festival-cover.png --frame=75 --props=src/items/IG-041.json",
+    "render:posts": "node scripts/sync-assets.mjs && node scripts/render-posts.mjs"
   },
   "dependencies": {
     "@remotion/animation-utils": "^4.0.534",

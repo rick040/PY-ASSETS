@@ -15,6 +15,7 @@ import { LooprouteAd } from "./looproute/LooprouteAd";
 import { looprouteSchema, looprouteDefaults, looprouteTotal, LooprouteProps } from "./looproute/schema";
 import { AftelkalenderAd } from "./aftelkalender/AftelkalenderAd";
 import { aftelkalenderSchema, aftelkalenderDefaults, aftelkalenderTotal, AftelkalenderProps } from "./aftelkalender/schema";
+import { Post, POSTS, STILL_FRAME } from "./posts/Posts";
 import ig002 from "./items/IG-002.json";
 import ig039 from "./items/IG-039.json";
 import ig041 from "./items/IG-041.json";
@@ -90,6 +91,11 @@ export const RemotionRoot: React.FC = () => (
           <Composition key={id + s.suffix} id={`PY-R6-${id}-${s.suffix}`} component={AftelkalenderMB} schema={aftelkalenderSchema} defaultProps={props} calculateMetadata={({ props: p }) => ({ durationInFrames: aftelkalenderTotal(p.timing) })} durationInFrames={aftelkalenderTotal(props.timing)} fps={FPS} width={s.width} height={s.height} />
         )),
       )}
+    </Folder>
+    <Folder name="Posts">
+      {Object.keys(POSTS).map((id) => (
+        <Composition key={id} id={`PY-POST-${id}`} component={Post} defaultProps={{ id }} durationInFrames={STILL_FRAME + 1} fps={FPS} width={1080} height={1350} />
+      ))}
     </Folder>
     <Folder name="R7-Kinetische-tekst">
       {r7.flatMap(([id, props]) =>
