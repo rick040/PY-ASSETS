@@ -1,0 +1,65 @@
+/* ParkingYou 2027 figure kit. Every guideline figure links this file so all chapters share one look.
+   Load order in a figure: <link rel="stylesheet" href="../../kit/kit.css"> (path relative to the figure). */
+@import url("../../tokens/tokens.css");
+
+@font-face {
+  font-family: 'Ubuntu Sans';
+  src: url('../../fonts/UbuntuSans[wdth,wght].ttf') format('truetype');
+  font-weight: 100 800; font-stretch: 75% 100%; font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../../../fonts/Ubuntu-Regular.ttf') format('truetype'); font-weight: 400;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../../../fonts/Ubuntu-Bold.ttf') format('truetype'); font-weight: 700;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: var(--py-font-sans); color: var(--py-text-default); background: transparent; -webkit-font-smoothing: antialiased; }
+
+/* The figure: one per HTML file. Set width and height inline. The renderer screenshots exactly this element. */
+.fig { position: relative; overflow: hidden; background: var(--py-surface-default); }
+.fig--subtle { background: var(--py-surface-subtle); }
+.fig--brand { background: var(--py-surface-brand); color: var(--py-text-on-brand); }
+.fig--garage { background: #24272C; color: #FFFFFF; } /* context only: dark concrete behind signage mock-ups */
+
+/* Figure annotation style (labels, measurements, captions inside a figure) */
+.note { font: 600 13px/18px var(--py-font-sans); color: var(--py-text-muted); letter-spacing: 0.01em; }
+.note--on-dark { color: #C2C7CF; }
+.eyebrow { font: 700 13px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--py-text-muted); }
+.measure { position: absolute; border-color: #C4281C; border-style: dashed; border-width: 0; }
+.measure-label { position: absolute; font: 700 12px/14px var(--py-font-sans); color: #C4281C; background: #FFFFFF; padding: 1px 4px; border-radius: 3px; }
+
+/* Do and don't markers */
+.do, .dont { display: inline-flex; align-items: center; gap: 6px; font: 700 14px/18px var(--py-font-sans); }
+.do { color: var(--py-color-aqua-700); }
+.dont { color: var(--py-color-red-600); }
+.do::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--py-color-aqua-700); }
+.dont::before { content: ""; width: 14px; height: 14px; border-radius: 3px; background: var(--py-color-red-600); }
+
+/* Wordmark as live text, only for small mock-ups; finals use the logo SVGs */
+.wordmark { font-family: 'Ubuntu', sans-serif; font-weight: 400; letter-spacing: 0; }
+.wordmark b { font-weight: 700; }
+
+/* Swatch */
+.swatch { border-radius: var(--py-radius-m); }
+
+/* Screen type styles */
+.t-display-xl { font: var(--py-type-display-xl); letter-spacing: -0.01em; }
+.t-display-l { font: var(--py-type-display-l); letter-spacing: -0.01em; }
+.t-heading-xl { font: var(--py-type-heading-xl); }
+.t-heading-l { font: var(--py-type-heading-l); }
+.t-heading-m { font: var(--py-type-heading-m); }
+.t-heading-s { font: var(--py-type-heading-s); }
+.t-body-l { font: var(--py-type-body-l); }
+.t-body-m { font: var(--py-type-body-m); }
+.t-body-s { font: var(--py-type-body-s); }
+.t-label-m { font: var(--py-type-label-m); letter-spacing: 0.01em; }
+.t-label-s { font: var(--py-type-label-s); letter-spacing: 0.02em; }
+.t-numeric-xl { font: var(--py-type-numeric-xl); font-variant-numeric: tabular-nums; }
+.t-numeric-m { font: var(--py-type-numeric-m); font-variant-numeric: tabular-nums; }
+.tnum { font-variant-numeric: tabular-nums; }
+.condensed { font-stretch: 75%; }
