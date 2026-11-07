@@ -93,6 +93,8 @@ Let op: de witte partner- en betaalmerken in `svg/atom/` zijn uit drukwerk gehaa
 
 ## Voorgestelde waarden
 
+Goedgekeurd door de creative director: zie besluiten D18 en D20 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+
 Niet gebruiken in finals tot de creative director ze goedkeurt.
 
 | Waarde | Voorstel | Reden |

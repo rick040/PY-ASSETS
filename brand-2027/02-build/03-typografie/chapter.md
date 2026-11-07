@@ -146,6 +146,8 @@ Er zijn geen licentiekosten. Leveranciers krijgen contouren of de benoemde stati
 
 ## Voorgestelde waarden
 
+Goedgekeurd door de creative director: zie besluiten D25 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+
 Voorstellen van B2; de creative director beslist.
 
 | Onderwerp | Voorstel | Waarom |

@@ -1,13 +1,13 @@
 # 09 UI/UX
 
-Dit hoofdstuk zegt hoe ParkingYou eruitziet en werkt op een scherm: de website, de boekflow en de PWA met je ticket. Alles komt uit de core spec en `tokens.json`. Waar een component een maat nodig heeft die daar niet in staat, staat die onderaan onder Voorgestelde waarden. Die waarden zijn nog niet goedgekeurd.
+Dit hoofdstuk zegt hoe ParkingYou eruitziet en werkt op een scherm: de website, de boekflow en de PWA met je ticket. Alles komt uit de core spec en `tokens.json`. De componentmaten staan in de core spec (besluiten D4 tot en met D14) en in het tokenbestand.
 
 ## Principes voor schermen
 
 1. **Eén hoofdknop per scherm.** Er is altijd één ding dat je hier het liefst doet. Dat is de hoofdknop. De rest is tweede keus of een link.
 2. **Oranje is boeken en betalen.** De hoofdknop in de boek- en betaalroute is oranje met PY-Diep tekst: zoeken, reserveren, betalen. Staat er op een scherm niets te boeken of te betalen, dan is navy de hoofdknop (ticket bekijken, route plannen). Oranje zie je verder alleen bij een prijs.
 3. **Navy is de tweede keus.** Navy met witte tekst is de secundaire knop. De link (onderstreept, `text.link`) is voor alles wat minder belangrijk is.
-4. **De bubbel alleen op een moment dat telt.** Een prijs, een niveau, beschikbaarheid of een bevestiging. Eén bubbel per scherm. Nooit als knop, kaartpin, avatar of in elke kaart van een lijst.
+4. **De bubbel alleen op een moment dat telt.** Een prijs, een niveau, beschikbaarheid of een bevestiging. Eén bubbel per scherm. Nooit als knop, avatar of in elke kaart van een lijst. Op een kaart is de kleine navy bubbel van 24 px wel de pin, met een witte P of prijs erin; daar telt de regel van één bubbel niet.
 5. **Kleur nooit alleen.** Vrij, Vol en Gesloten staan altijd als woord, met kleur en een icoon erbij. Een fout staat in woorden onder het veld.
 6. **Rustig en vlak.** Wit en `surface.subtle` als ondergrond, kaarten met radius 16, schaduw alleen op kaarten en vaste balken, nooit op de bubbel of het logo.
 
@@ -109,7 +109,7 @@ Kleur volgt de taak: navy rijden en niveau, aqua lopen en bevestiging, oranje al
 
 ![Meldingen, toast, lege staat, filterchips en labels](figures/feedback-chips.png)
 
-Meldingen: tekst in `text.default`, kleur in het icoon en een rand links. Fout krijgt `feedback.error-bg`. Een fout die je zelf oplost staat bij het veld. Een toast (`surface.inverse`) is voor een bevestiging, nooit voor een fout. Een lege staat zegt wat hier komt, wat je kunt doen, en heeft één knop. Filterchips zijn knoppen met `aria-pressed`; labels zijn geen knoppen.
+Meldingen: tekst in `text.default`, kleur in het icoon en een rand van 1 px rondom. Fout krijgt `feedback.error-bg`. Een fout die je zelf oplost staat bij het veld. Een toast (`surface.inverse`) is voor een bevestiging, nooit voor een fout. Een lege staat zegt wat hier komt, wat je kunt doen, en heeft één knop. Filterchips zijn knoppen met `aria-pressed`; labels zijn geen knoppen.
 
 ### Navigatie
 
@@ -169,7 +169,6 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 ## Open punten
 
 - Adres van Parking Philips Stadion, live beschikbaarheid en servicekosten zijn nog onbekend en staan als [placeholder].
-- Een kaart met locaties: de bubbel mag geen pin zijn (één per scherm). Welke pin dan? Voorstel: een ronde marker zonder merkvorm, uit te werken met B3.
 - In donkere modus zijn `surface.subtle` en `surface.raised` allebei blue.800. Een gekozen staat in `subtle` op een kaart verdwijnt. Wij stappen dan terug naar `surface.default`; de generator kan dit beter oplossen met een eigen token.
 - Welke schermen van Aeroparker kunnen we stylen, en ondersteunt de PWA een ticket zonder bereik?
 
@@ -180,7 +179,7 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 | Eén oranje hoofdknop per scherm, in de boek- en betaalroute | Twee oranje knoppen, of oranje voor "Inloggen" of navigatie |
 | Navy als hoofdknop op een scherm zonder boeken of betalen | Een navy knop op een navy vlak |
 | Status als woord, kleur en icoon | Een gekleurde stip zonder woord |
-| Eén bubbel per scherm, voor prijs, niveau, beschikbaarheid of bevestiging | De bubbel als pin, knop, avatar of in elke kaart |
+| Eén bubbel per scherm, voor prijs, niveau, beschikbaarheid of bevestiging | De bubbel als knop, avatar of in elke kaart (de kaartpin is de enige uitzondering) |
 | Label boven het veld, fout eronder in woorden | Alleen een rode rand, of een placeholder als label |
 | Componenten lezen semantische tokens | Hexwaarden of primitieven in een component |
 | Raakvlak 44 x 44 | Icoonknoppen of chips kleiner dan 44 |
@@ -188,6 +187,8 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 | QR-code donker op wit, ook in donkere modus | QR-code in aqua of op navy |
 
 ## Voorgestelde waarden
+
+Goedgekeurd in de core spec als besluiten D4 tot en met D14; de waarden staan nu in het tokenbestand. De tabel blijft als uitleg.
 
 Deze waarden staan niet in de core spec. Ze zijn in de figuren gebruikt om het te kunnen laten zien, en wachten op goedkeuring van de creative director.
 
@@ -202,13 +203,13 @@ Deze waarden staan niet in de core spec. Ze zijn in de figuren gebruikt om het t
 | Onderbalk PWA | 64 px plus veilige zone | Tab 44 hoog met icoon plus woord. |
 | Chip | 36 px zichtbaar, raakvlak 44 | Rustiger in een rij; doelgrootte blijft 44. |
 | Label (tag) | 28 px | Geen knop, dus kleiner mag. |
-| Melding | rand links 4 px | Kleur zonder gekleurde tekst. |
+| Melding | rand 1 px rondom (besluit D10) | Kleur zonder gekleurde tekst. |
 | Voortgangsbalk | 4 px, `radius.pill` | Dun, de tekst "Stap 2 van 3" draagt de informatie. |
 | Kentekenveld | NL-band 36 px breed, spatiëring 0,08 em | Herkenbaar als kenteken zonder de gele plaat na te maken. |
 | Foto-verhouding | 3:2, kaartfoto 96 x 96 | Onze eigen foto's zijn 3:2; één verhouding voor alle locaties. |
 | Cijfer in bubbel 24 | 12 px, 800 | `label-s` is 600; de core spec vraagt 800 voor cijfers in de bubbel. |
 | Prijs in bubbel 104 | 20/26, 800 | `numeric-m` is 700; zelfde reden. |
-| Toastduur | 4 tot 6 s | Lang genoeg om te lezen, kort genoeg om niet in de weg te zitten. |
+| Toastduur | minimaal 6 s; met een actie sluit hij niet vanzelf (besluit D12) | Lang genoeg om te lezen (WCAG 2.2.1). |
 | `action.secondary-bg-pressed` | licht blue.800 (14,73:1 met wit), donker aqua.600 (5,43:1 met PY-Diep) | Ontbreekt in `tokens.json`; nodig voor de ingedrukte staat. |
 | `surface.code`, `text.on-code` | neutral.0 en blue.900 in beide modi | De QR-code moet in elke modus donker op wit staan. |
 | Componentlaag | `button.primary.bg` → `action.primary-bg`, `button.secondary.bg` → `action.secondary-bg`, `input.border` → `border.strong`, `input.bg` en `card.bg` → `surface.raised`, `status.free.fg` → `status.free`, `focus.ring.color` → `focus.ring` | Derde laag in de generator, zodat code en Figma dezelfde namen gebruiken. |

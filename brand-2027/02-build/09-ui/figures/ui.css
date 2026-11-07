@@ -1,31 +1,21 @@
 /* ParkingYou 2027, chapter 09 UI/UX: component styles for the figures.
    Components read semantic tokens only (var(--py-surface-*), --py-text-*, --py-action-* ...).
-   Values marked PROPOSAL are listed in chapter.md "Voorgestelde waarden" and wait for CD approval. */
+   Component values were approved in core-spec D4 to D14. */
 
+/* Component values approved in core-spec D4, D5, D7 (now in tokens.css as --py-size-*, --py-type-label-l and semantic tokens).
+   The short aliases below keep the figure CSS readable. */
 :root, [data-theme="dark"] {
-  /* PROPOSAL component values */
-  --pyx-control-h: 48px;          /* button and input height */
-  --pyx-control-h-lg: 56px;       /* main button at the bottom of a phone screen, licence plate field */
-  --pyx-focus-w: 3px;             /* focus ring width */
-  --pyx-focus-offset: 2px;        /* gap between component and ring */
-  --pyx-border-w: 1px;            /* input border at rest */
-  --pyx-border-w-strong: 2px;     /* hover, focus, error */
-  --pyx-topbar-h: 56px;
-  --pyx-topbar-h-desktop: 72px;
-  --pyx-bottombar-h: 64px;
-  --pyx-chip-h: 36px;             /* visual height; hit area stays 44 */
-  --pyx-type-label-l: 600 16px/24px var(--py-font-sans); /* button label */
-}
-:root {
-  /* PROPOSAL semantic tokens missing from tokens.json */
-  --py-action-secondary-bg-pressed: var(--py-color-blue-800);
-  --py-surface-code: var(--py-color-neutral-0);
-  --py-text-on-code: var(--py-color-blue-900);
-}
-[data-theme="dark"] {
-  --py-action-secondary-bg-pressed: var(--py-color-aqua-600);
-  --py-surface-code: var(--py-color-neutral-0);
-  --py-text-on-code: var(--py-color-blue-900);
+  --pyx-control-h: var(--py-size-button-height);
+  --pyx-control-h-lg: var(--py-size-button-height-large);
+  --pyx-focus-w: var(--py-size-focus-ring-width);
+  --pyx-focus-offset: var(--py-size-focus-ring-offset);
+  --pyx-border-w: var(--py-size-border-width);
+  --pyx-border-w-strong: var(--py-size-border-width-strong);
+  --pyx-topbar-h: var(--py-size-topbar-height-phone);
+  --pyx-topbar-h-desktop: var(--py-size-topbar-height-desktop);
+  --pyx-bottombar-h: var(--py-size-bottombar-height);
+  --pyx-chip-h: var(--py-size-chip-height);
+  --pyx-type-label-l: var(--py-type-label-l);
 }
 
 .ic { flex: none; display: block; }
@@ -119,7 +109,7 @@
 
 /* ---------- Alerts and feedback ---------- */
 .alert { display: flex; gap: var(--py-space-3); padding: var(--py-space-4); border-radius: var(--py-radius-m); background: var(--py-surface-subtle);
-  color: var(--py-text-default); font: var(--py-type-body-s); box-shadow: inset 4px 0 0 var(--alert-c); }
+  color: var(--py-text-default); font: var(--py-type-body-s); box-shadow: inset 0 0 0 1px var(--alert-c); } /* D10: full 1 px outline, no side bar */
 .alert > .ic { color: var(--alert-c); }
 .alert b { display: block; font: var(--py-type-label-m); margin-bottom: 2px; }
 .alert--error { --alert-c: var(--py-feedback-error); background: var(--py-feedback-error-bg); }

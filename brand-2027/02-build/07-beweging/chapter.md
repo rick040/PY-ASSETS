@@ -96,6 +96,8 @@ Beweeg alleen wat verandert, één ding tegelijk. Wat van onder komt, gaat naar 
 
 ## Voorgestelde waarden
 
+Goedgekeurd door de creative director: zie besluiten D16 en D19 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+
 Niet gebruiken in finals tot de creative director ze goedkeurt.
 
 | Waarde | Voorstel | Reden |

@@ -83,6 +83,8 @@ De maten in de voorbeelden (kop op 13u, foto 10u of 13u hoog) zijn een startpunt
 
 ## Voorgestelde waarden
 
+Goedgekeurd door de creative director: zie besluiten D15 tot en met D17 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+
 Niet gebruiken in finals tot de creative director ze goedkeurt.
 
 | Waarde | Voorstel | Reden |

@@ -274,6 +274,9 @@ Bilingual signage: Dutch first, English below at the same size, regular weight, 
 | D24 | 2026-11-07 | B2 | PY-Diep text on orange in print below 12 pt is set in K 100 (6.39:1) | PY-Diep is outside the FOGRA39 gamut; four-colour small text registers badly |
 | D25 | 2026-11-07 | B2 | Bilingual signs: both lines with line height equal to the font size, 0.5u clear space between the two line boxes; condensed width never on screen | Makes "0.5u" measurable |
 
+| D26 | 2026-11-07 | B4 | Photography craft values: focal length 24 to 35 mm for places, 50 mm for people and details; f/8 places, f/2.8 to f/4 people; camera height 1.2 m in driving lanes; white balance daylight 5200 to 5600 K, at most 200 K cooler in post; ratios 3:2, 16:9, 1:1, 4:5, 9:16; calm area for text at least one third of the frame; export JPEG sRGB 3000 px long side, print 300 ppi at final size; alt text under 125 characters; licence plates always unrecognisable | Makes section 9 shootable and checkable |
+| D27 | 2026-11-07 | B4 | Photo bubble in a desktop header may be 240 px wide (photo only, no text, still the one bubble) | At 104 px a place detail is not recognisable on desktop |
+
 Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037 (dE 5.4); Pantone 3597 C or 287 C for PY-Blauw; all translucent colours on a lit panel by day and night.
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

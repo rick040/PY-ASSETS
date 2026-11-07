@@ -114,6 +114,8 @@ Bestaand drukwerk mag op. Wil Rick hem houden, dan als losse regel in de layout,
 
 ## Voorgestelde waarden
 
+Goedgekeurd door de creative director: zie besluiten D1 en D2 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+
 Niet gebruiken in definitief werk tot de creative director akkoord geeft. De figuren laten het voorstel zien.
 
 | Waarde | Voorstel | Reden |
