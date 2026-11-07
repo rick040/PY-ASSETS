@@ -93,7 +93,7 @@ Op een lichtbak of portaal blijft het vlak navy en draagt de bubbel de taak: aqu
 De voetganger en de loper lijken op elkaar: allebei een poppetje met de bubbel als hoofd. Toch doen ze iets heel anders.
 
 - **Een pictogram zegt waar iets is.** Het hoort bij de tekst en de pijl, op het 48-raster, in één kleur. Hetzelfde teken op elk bord en in de app, zo vaak als de route vraagt. Het mag in een bubbel.
-- **Een parkeerder zegt wie wij zijn.** Het is een van de negen handboekfiguren, ongewijzigd, met het hoofd in PY-Aqua (op een aqua grond in één kleur navy). Eén per vlak, altijd op een lijn: een tekstbasislijn, een rand van het vlak of een vloerlijn. Nooit in een bubbel, nooit als routeteken, nooit op een veiligheids-, RVV- of ISO 7010-bord.
+- **Een parkeerder zegt wie wij zijn.** Het is een van de negen handboekfiguren, ongewijzigd en in één kleur: navy op licht en op aqua, wit op navy. Eén per vlak, altijd op een lijn: een tekstbasislijn, een rand van het vlak of een vloerlijn. Nooit in een bubbel, nooit als routeteken, nooit op een veiligheids-, RVV- of ISO 7010-bord.
 
 Op een voetgangersbord mogen ze samen staan. Het pictogram zit in de module met de naam en de pijl; de loper staat groot op de onderrand, hooguit 60 procent van de hoogte, en kijkt de route op. Het bord heeft dan twee eigen elementen: de pijl en de parkeerder. Een stem als scheiding past er dan niet meer bij.
 
@@ -153,7 +153,7 @@ Goedgekeurd: zie besluit D37 in de core spec.
 - **Don't:** een Tabler-pijl, chevron of caret, ook niet in een lijst of keuzelijst.
 - **Don't:** de pijl draaien in een andere hoek dan 45 graden, uitrekken of hertekenen.
 - **Don't:** een parkeerder als routepictogram, in een bubbel of met een tekstballon.
-- **Don't:** een pictogram met een aqua hoofd; dat is een parkeerder.
+- **Don't:** een parkeerder als routepictogram, of een parkeerder in twee kleuren.
 - **Don't:** een pictogram met een eigen rand of bubbelvorm in een bubbel zetten.
 - **Don't:** twee sets door elkaar (Tabler en Lucide, of handboek en hertekend) op één vlak.
 - **Don't:** RVV-tekens, betaalmerken of partnerlogo's natekenen, inkleuren of in een bubbel zetten.

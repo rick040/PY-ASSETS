@@ -10,7 +10,7 @@ We zijn niet opnieuw begonnen. Het logo, het beeldmerk, ons blauw, de hoekige pi
 
 ## Een merk met een gezicht
 
-Kijk naar de poppetjes uit ons handboek: hun hoofd heeft dezelfde vorm als ons beeldmerk. Dat maken we nu zichtbaar. Het hoofd is altijd aqua, net als de stip in het logo. Zo wordt het logo een mens: de loper bij de voetgangersingang, de zwaaier die je welkom heet, de gastheer met pet die je de weg wijst.
+Kijk naar de poppetjes uit ons handboek: hun hoofd heeft dezelfde vorm als ons beeldmerk. Dat is ons gezicht. Zo wordt het logo een mens: de loper bij de voetgangersingang, de zwaaier die je welkom heet, de gastheer met pet die je de weg wijst.
 
 Daaromheen staan vier andere eigen elementen. Samen zijn het er vijf, en elk heeft één taak.
 
@@ -78,7 +78,7 @@ Alle waarden in deze gids komen uit één bron: de core spec en het tokenbestand
 
 - Doe: begin bij het tokenbestand, niet bij een oude PDF of een Canva-ontwerp.
 - Doe: kies per vlak het logo en hooguit twee eigen elementen.
-- Doe: laat een parkeerder altijd op een lijn staan.
+- Doe: laat een parkeerder altijd op een lijn staan, in één kleur.
 - Niet: oranje buiten de betaalplekken in de garage.
 - Niet: het logo of de bubbel draaien, uitrekken of hertekenen.
 - Niet: witte tekst op aqua of oranje.

@@ -50,10 +50,10 @@
     let s = `<rect width="1080" height="${H}" fill="#1A3580"/>`;
     s += PYSOC.logo(108, top) + glowLogo(108 + 195.6 + 54, top, 54);
     s += PYSOC.eyebrow(108, top + 243, 'GLOW Eindhoven');
-    const b1 = top + 378, lh = 96;
-    s += PYS.stem(108, b1 - 62 - 12, 2 * lh, '#32B9CD');
+    const b1 = top + 378, lh = 90 * 50 / 48;
+    s += PYS.stem(108, b1 - lh + 12, 2 * lh, '#32B9CD');
     const tx = 108 + PYS.stemW(2 * lh) + 0.6 * lh;
-    s += T(tx, b1, 'Waar parkeren', 90) + T(tx, b1 + lh, 'tijdens <tspan font-weight="700">GLOW</tspan>?', 90);
+    s += T(tx, b1, 'Waar parkeren', 90) + T(tx, b1 + lh, 'tijdens <tspan font-weight="800">GLOW</tspan>?', 90);
     s += T(108, b1 + 2 * lh + 70, 'Avond parkeren vanaf € 15,00 per dag.', 31) + T(108, b1 + 2 * lh + 116, 'DLL Garage en Philips Stadion.', 31);
     s += T(108, b1 + 2 * lh + 190, 'Reserveer je plek op parkingyou.nl', 31, { w: 700 });
     s += `<rect x="108" y="${rule}" width="864" height="5.4" fill="${A}"/>`;

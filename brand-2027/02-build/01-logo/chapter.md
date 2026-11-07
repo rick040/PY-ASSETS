@@ -77,7 +77,7 @@ De huidige Maashaven-lockup heeft een kleiner woordmerk dan het echte logo. Bij 
 
 ## Het logo en de parkeerders
 
-Het hoofd van onze parkeerders heeft de vorm van het beeldmerk. Dat is bewust: zo wordt het logo een mens. Het hoofd is altijd aqua, net als de stip in het logo. Twee regels houden het logo heel:
+Het hoofd van onze parkeerders heeft de vorm van het beeldmerk. Dat is bewust: zo wordt het logo een mens. Een parkeerder is altijd één kleur, het hoofd dus ook. Twee regels houden het logo heel:
 
 - Een parkeerder krijgt nooit het hele logo als hoofd, geen ring en geen stip. Alleen de bubbelvorm.
 - Een parkeerder staat nooit tegen het logo aan. Houd de vrije ruimte van 0,5x aan, ook naar het poppetje toe.

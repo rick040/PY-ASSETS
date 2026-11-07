@@ -84,7 +84,6 @@
   --py-vak-mine: var(--py-color-aqua-100);
   --py-vak-mine-on-brand: var(--py-color-blue-600);
   --py-vak-mine-edge: var(--py-color-aqua-500);
-  --py-figure-head: var(--py-color-aqua-500);
   --py-figure-body: var(--py-color-blue-700);
   --py-bubble-navy: var(--py-color-blue-700);
   --py-bubble-aqua: var(--py-color-aqua-500);
@@ -221,7 +220,6 @@
   --py-vak-mine: var(--py-color-blue-600);
   --py-vak-mine-on-brand: var(--py-color-blue-600);
   --py-vak-mine-edge: var(--py-color-aqua-500);
-  --py-figure-head: var(--py-color-aqua-500);
   --py-figure-body: var(--py-color-neutral-0);
   --py-bubble-navy: var(--py-color-blue-700);
   --py-bubble-aqua: var(--py-color-aqua-500);

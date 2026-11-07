@@ -16,7 +16,7 @@ and the creative director decides. Until approved, a proposed value is not used 
 |---|---|---|
 | 1 | Direction | A Bubbel, with the task colours of C. C's route line is not adopted. |
 | 2 | Main button | **(v2)** PY-Blauw with white text (11.26:1); on dark surfaces PY-Aqua with PY-Diep text. Orange is used only for paying in the garage. |
-| 3 | Stick figures | **(v2)** Back, as "de parkeerders", with the beeldmerk bubble as head in aqua (section 4b). |
+| 3 | Stick figures | **(v2)** Back, as "de parkeerders", one colour; their head has the shape of the beeldmerk bubble (section 4b, D41). |
 | 4 | Canva | Values and templates are delivered; the Canva brand kit is not written to. (Default, Rick may change at Gate 2.) |
 | 5 | Live site palette, voordeligparkeren.nl | In scope of the rollout plan. |
 | 6 | Logo | Unchanged geometry. The reverse logo becomes official; a navy one-colour version is added for aqua and orange grounds. **(v2)** The logo and every bubble are never rotated. |
@@ -29,7 +29,7 @@ and the creative director decides. Until approved, a proposed value is not used 
 
 The guideline states these in Dutch, in this wording.
 
-1. **Een merk met een gezicht.** Onze parkeerders dragen het beeldmerk als hoofd: het logo wordt een mens. We praten met je, niet over je.
+1. **Een merk met een gezicht.** Het hoofd van onze parkeerders heeft de vorm van ons beeldmerk: het logo wordt een mens. We praten met je, niet over je.
 2. **Kleur betekent iets.** Navy is het merk en rijden. Aqua is ons accent en lopen. Oranje zie je alleen waar je betaalt. We gebruiken kleur niet als versiering.
 3. **Leesbaar eerst.** Licht tegen donker, groot genoeg, in elke garage en op elk scherm. Elke tekstkleur haalt WCAG 2.2 AA.
 4. **Rustig en vlak.** Veel wit, grote letters, vlakke kleur. Per vlak het logo en hooguit twee van onze elementen. Geen verloop, geen schaduw op merkvormen.
@@ -104,14 +104,14 @@ Five elements, each with one task. **Per surface: the logo plus at most two of t
 
 | Element | Task | Source |
 |---|---|---|
-| De parkeerders | the brand's face; people, welcome, moments | `svg/atom/py-atom-figure-*`; kit `figure-*-duo*.svg` |
+| De parkeerders | the brand's face; people, welcome, moments | `svg/atom/py-atom-figure-*`; kit `figure-*-navy.svg`, `figure-*-white.svg` |
 | De stem (halve boog) | opens a message; separates modules on signs | `svg/atom/py-atom-shape-bracket-arc` (arc only); kit `arc.svg` |
 | Het vak | background: a parking deck from above, one bay is yours | drawn from the rules below |
 | De bubbel | price, level, availability | section 4 |
 | De hoekige pijl | direction | `svg/atom/py-atom-arrow-*-plain`; kit `arrow-*` |
 
 **De parkeerders.** The nine handbook figures, drawing unchanged: loper (walk), zwaaier (wave), wijzer (point), danser (dance), springer (jump), shopper (bags-walk), juichende shopper (bags-cheer), gastheer wijst (cap-point), gastheer zwaait (cap-wave).
-- Colour: their head is the beeldmerk bubble and is always PY-Aqua. Body PY-Blauw on white and light grounds (`figure-*-duo.svg`), white on PY-Blauw (`figure-*-duo-white.svg`). On PY-Aqua grounds: one colour PY-Blauw (`figure-*-navy.svg`). One-colour production: one colour.
+- Colour **(D41)**: always one colour. PY-Blauw on white and light grounds and on PY-Aqua (`figure-*-navy.svg`), white on PY-Blauw (`figure-*-white.svg`). The head keeps its beeldmerk bubble shape in the same colour; it is never coloured separately.
 - Size: height 3u to 8u in layouts; on a pedestrian sign up to 60 percent of the face height; on screen 48 to 160 px.
 - Always standing on a line: a text baseline, a rule of 0.1u, a format edge, or the floor line of a scene. Never floating, never rotated, never cut off.
 - One figure per surface. May be mirrored to face the route or the text. Never inside a bubble, never with a speech text, never in safety, RVV or ISO 7010 signs, never as a pictogram for a route (pictograms stay the 48 grid set).
@@ -331,5 +331,7 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 
 | D39 | 2026-11-07 | Type | Stem text block = lines x line height, gap 0.3x measured from the arc's open tips to the first letter; on signs 0.3x on both sides of the stem; page headline steps: desktop display-xl, tablet display-l, phone heading-xl, with `space.9` above on desktop and `space.7` on phone; poster headline leading = size x 50/48; key phrase weight 800 in display, 700 in heading, rest 400; the key phrase may break onto its own line after the stem | Makes de stem measurable |
 | D40 | 2026-11-07 | CD | Het vak in u formats: pitch 4u, bay length 6u to 8u; jouw vak closed by a stop line on which its figure stands | At 1.5u a 3u bubble or figure did not fit; a figure must stand on a line |
+
+| D41 | 2026-11-07 | Rick | Parkeerders one colour: no aqua head. Navy on light and aqua grounds, white on navy. Supersedes the aqua head of D32 | "Ik vind de blauwe hoofden van de stick figure niet mooi, houd het 1 kleur" |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

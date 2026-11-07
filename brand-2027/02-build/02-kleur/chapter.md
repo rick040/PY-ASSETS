@@ -29,10 +29,9 @@ Dat is een richtwaarde over een reeks vlakken, geen rekensom per vlak. Een poste
 
 ## Aqua: ons accent, en lopen
 
-Buiten de garage is aqua het accent van het merk. Je ziet het op vier plekken, en nergens anders als vlak:
+Buiten de garage is aqua het accent van het merk. Je ziet het op drie plekken, en nergens anders als vlak:
 
 - **De stem**: de halve boog die een kop opent. Aqua op wit en op navy, navy op aqua (`voice.arc`).
-- **Het hoofd van een parkeerder**: altijd aqua, want het is het beeldmerk (`figure.head`). Op een aqua grond wordt de hele figuur navy.
 - **De randen van jouw vak**: de twee zijlijnen van het ene vak dat van jou is (`vak.mine-edge`).
 - **Een aqua bubbel** op een navy vlak, met PY-Blauw erin.
 
@@ -113,10 +112,9 @@ De stem, het vak en de parkeerders hebben hun eigen semantische tokens. Componen
 | `vak.mine` | aqua.100 | blue.600 | vulling van jouw vak op licht |
 | `vak.mine-on-brand` | blue.600 | blue.600 | vulling van jouw vak op navy |
 | `vak.mine-edge` | aqua.500 | aqua.500 | de twee zijlijnen van jouw vak, dubbele dikte |
-| `figure.head` | aqua.500 | aqua.500 | hoofd van een parkeerder |
 | `figure.body` | blue.700 | wit | lijf van een parkeerder |
 
-De stem, het vak en het hoofd zijn vorm, geen informatie. Ze hoeven geen 3:1 te halen en dragen nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Het vak is bewust zacht: neutral.200 op wit is 1,31:1, blue.400 op navy 3,17:1. Het is achtergrond, en er staat nooit tekst op. Op schermen: steek 72 px, lijnen 2 px en 144 tot 192 px lang, randen van jouw vak 4 px (besluit D35). De lijn onder een parkeerder is 2 px in `figure.body`.
+De stem en het vak zijn vorm, geen informatie. Ze hoeven geen 3:1 te halen en dragen nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Het vak is bewust zacht: neutral.200 op wit is 1,31:1, blue.400 op navy 3,17:1. Het is achtergrond, en er staat nooit tekst op. Op schermen: steek 72 px, lijnen 2 px en 144 tot 192 px lang, randen van jouw vak 4 px (besluit D35). De lijn onder een parkeerder is 2 px in `figure.body`.
 
 ![Tokens voor de stem, het vak en de parkeerders, in licht en donker](figures/identity-tokens.png)
 
@@ -186,7 +184,7 @@ Uit het onderzoek naar de garage: NEN 2443 vraagt gemiddeld 75 lux, oudere garag
 
 ## Donkere modus
 
-In donkere modus is PY-Diep de ondergrond en is tekst wit (18,16:1). Navy werkt daar niet als tekst of rand (1,61:1); merktekst en links worden aqua.300 (11,01:1). De hoofdknop wordt aqua met PY-Diep (7,74:1), de tweede knop krijgt een rand en tekst in aqua.300. De stem blijft aqua (7,74:1 op PY-Diep). Het vak krijgt lijnen in blue.400 en jouw vak een vulling in blue.600, met aqua randen. Parkeerders krijgen een wit lijf en houden hun aqua hoofd. Alle waarden staan in `tokens.json` onder `modes.dark`; de schermen zelf komen uit het hoofdstuk digitaal.
+In donkere modus is PY-Diep de ondergrond en is tekst wit (18,16:1). Navy werkt daar niet als tekst of rand (1,61:1); merktekst en links worden aqua.300 (11,01:1). De hoofdknop wordt aqua met PY-Diep (7,74:1), de tweede knop krijgt een rand en tekst in aqua.300. De stem blijft aqua (7,74:1 op PY-Diep). Het vak krijgt lijnen in blue.400 en jouw vak een vulling in blue.600, met aqua randen. Parkeerders worden helemaal wit, in één kleur. Alle waarden staan in `tokens.json` onder `modes.dark`; de schermen zelf komen uit het hoofdstuk digitaal.
 
 ## Productie
 
@@ -255,7 +253,7 @@ Translucente folie oogt doorgelicht anders dan op het staal. Kies lichtbakkleur 
 | Doen | Niet doen |
 |---|---|
 | Veel wit; navy als merkvlak; per vlak één accent | Elk vlak vol kleur omdat het kan |
-| Aqua als de stem, het hoofd van een parkeerder of de randen van jouw vak | Aqua als tekstkleur op wit of als knop op een licht scherm |
+| Aqua als de stem of de randen van jouw vak; parkeerders altijd in één kleur | Aqua als tekstkleur op wit of als knop op een licht scherm |
 | Oranje alleen bij betalen in de garage: automaat, tarief, storing | Oranje knoppen, prijzen, strepen of vlakken op scherm, in druk of op social |
 | De hoofdknop navy met witte tekst, op donker aqua met PY-Diep | Een oranje "Reserveer"-knop |
 | In de garage kleur kiezen op taak: rijden navy, lopen aqua, betalen oranje | Aqua of oranje gebruiken omdat het vrolijk staat |

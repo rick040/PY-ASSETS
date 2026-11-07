@@ -119,8 +119,7 @@ SEMANTIC = {
         "mine-edge": ("aqua.500", "aqua.500", "Jouw vak side lines, double weight."),
     },
     "figure": {
-        "head": ("aqua.500", "aqua.500", "Parkeerders: head, always aqua (one-colour navy on aqua grounds)."),
-        "body": ("blue.700", "neutral.0", "Parkeerders: body on light / on navy."),
+        "body": ("blue.700", "neutral.0", "Parkeerders, one colour (D41): navy on light and aqua grounds / white on navy."),
     },
     "bubble": {
         "navy": ("blue.700", "blue.700", "Bubble fill; content neutral.0."),
