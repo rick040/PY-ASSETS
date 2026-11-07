@@ -28,3 +28,14 @@ brand-2027/02-build/<NN-name>/
 node brand-2027/tools/render.mjs brand-2027/02-build/<NN-name>/figures/
 ```
 Renders every `.html` in the folder to a `.png` beside it at 2x. Look at the PNG before you hand it in.
+
+## Version 2 assets (Gate 2, variant 1 with own identity)
+
+- `figure-<name>-duo.svg`: parkeerder, PY-Blauw body, PY-Aqua head (on white and light grounds)
+- `figure-<name>-duo-white.svg`: white body, PY-Aqua head (on PY-Blauw)
+- `figure-<name>-navy.svg` / `-white.svg`: one colour (navy on PY-Aqua; white for one-colour production)
+  Names: walk (loper), wave (zwaaier), point (wijzer), dance (danser), jump (springer), bags-walk (shopper), bags-cheer (juicher), cap-point (gastheer wijst), cap-wave (gastheer zwaait)
+- `arc.svg`: de stem (half arc). Inline it to set the colour and use `vector-effect="non-scaling-stroke"` with stroke = 1/25 of its height.
+- `arrow-plain-white.svg`, `arrow-plain-navy.svg` (points right; rotate in 45 degree steps), `arrow-downleft-*.svg`: de hoekige pijl
+- Het vak is drawn per figure with inline SVG lines (rules in core-spec section 4b).
+- Reference: `00-core/figures/identity-elements.png`. Never rotate the logo or a bubble.

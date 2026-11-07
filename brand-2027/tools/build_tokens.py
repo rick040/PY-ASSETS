@@ -90,14 +90,14 @@ SEMANTIC = {
         "ring-on-brand": ("aqua.500", "aqua.500", "Focus outline on surface.brand."),
     },
     "action": {
-        "primary-bg": ("orange.500", "orange.500", "Pay and book: the main button."),
-        "primary-bg-hover": ("orange.400", "orange.400", "Hover state of the main button."),
-        "primary-bg-pressed": ("orange.600", "orange.600", "Pressed state of the main button."),
-        "primary-fg": ("blue.900", "blue.900", "Text and icon on the main button."),
-        "secondary-bg": ("blue.700", "aqua.500", "Second button."),
-        "secondary-bg-hover": ("blue.600", "aqua.400", "Hover state of the second button."),
-        "secondary-bg-pressed": ("blue.800", "aqua.600", "Pressed state of the second button."),
-        "secondary-fg": ("neutral.0", "blue.900", "Text on the second button."),
+        "primary-bg": ("blue.700", "aqua.500", "The main button (D33): navy, aqua on dark."),
+        "primary-bg-hover": ("blue.600", "aqua.400", "Hover state of the main button."),
+        "primary-bg-pressed": ("blue.800", "aqua.600", "Pressed state of the main button."),
+        "primary-fg": ("neutral.0", "blue.900", "Text and arrow on the main button."),
+        "secondary-bg": ("neutral.0", "blue.900", "Second button: outline style, ground."),
+        "secondary-bg-hover": ("blue.50", "blue.800", "Hover state of the second button."),
+        "secondary-bg-pressed": ("blue.100", "blue.850", "Pressed state of the second button."),
+        "secondary-fg": ("blue.700", "aqua.300", "Text, arrow and 2 px outline of the second button."),
     },
     "task": {
         "drive-bg": ("blue.700", "blue.700", "Rijden: car routes, portals, entrances, levels."),
@@ -107,10 +107,24 @@ SEMANTIC = {
         "pay-bg": ("orange.500", "orange.500", "Betalen en let op: terminals, tariffs, faults."),
         "pay-fg": ("blue.900", "blue.900", "Content on pay-bg."),
     },
+    "voice": {
+        "arc": ("aqua.500", "aqua.500", "De stem (half arc) on white and navy; on aqua grounds use blue.700."),
+    },
+    "vak": {
+        "line": ("neutral.200", "blue.400", "Het vak: bay lines (light ground / navy ground)."),
+        "line-on-brand": ("blue.400", "blue.400", "Het vak on surface.brand."),
+        "mine": ("aqua.100", "blue.600", "Jouw vak fill."),
+        "mine-on-brand": ("blue.600", "blue.600", "Jouw vak fill on surface.brand."),
+        "mine-edge": ("aqua.500", "aqua.500", "Jouw vak side lines, double weight."),
+    },
+    "figure": {
+        "head": ("aqua.500", "aqua.500", "Parkeerders: head, always aqua (one-colour navy on aqua grounds)."),
+        "body": ("blue.700", "neutral.0", "Parkeerders: body on light / on navy."),
+    },
     "bubble": {
         "navy": ("blue.700", "blue.700", "Bubble fill; content neutral.0."),
         "aqua": ("aqua.500", "aqua.500", "Bubble fill; content blue.700."),
-        "orange": ("orange.500", "orange.500", "Bubble fill (pay only); content blue.900."),
+        "orange": ("orange.500", "orange.500", "Bubble fill: payment signs in the garage only (D31); content blue.900."),
         "white": ("neutral.0", "neutral.0", "Bubble fill; content blue.700."),
     },
     "status": {
@@ -274,6 +288,7 @@ def build():
     # verloop
     tokens["gradient"] = {"verloop": {
         "$type": "gradient",
+        "$deprecated": "Retired in v2 (D31): no gradients. Kept only to document the old handbook verloop.",
         "$description": "Marketing only (screen headers, printed posters and panels). Never in wayfinding, cut vinyl, powder coat or lightbox film. Text only on the navy part (0 to 45 percent).",
         "$value": [{"color": "{color.blue.700}", "position": 0}, {"color": "{color.blue.700}", "position": 0.45},
                    {"color": "{color.aqua.500}", "position": 1}],
@@ -337,7 +352,6 @@ def build():
     for group, items in SEMANTIC.items():
         for name, (light, dark, desc) in items.items():
             lines.append("  %s: var(--py-color-%s);" % (var(group, name), light.replace(".", "-")))
-    lines.append("  --py-gradient-verloop: linear-gradient(135deg, #1A3580 0%, #1A3580 45%, #32B9CD 100%);")
     for k, v in SPACE:
         lines.append("  --py-space-%s: %dpx;" % (k, v))
     for k, v, d in RADIUS:

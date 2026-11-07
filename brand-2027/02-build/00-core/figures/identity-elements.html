@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Eigen elementen</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+.row { display: flex; gap: 32px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--py-border-subtle); }
+.lbl { width: 230px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; }
+.lbl b { font: 800 20px/1.2 var(--py-font-sans); color: var(--py-text-brand); }
+.lbl span { font: 400 14px/1.4 var(--py-font-sans); color: var(--py-text-muted); }
+.line { height: 2px; background: var(--py-color-blue-700); }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 990px; padding: 48px 56px; display: flex; flex-direction: column">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 10px">
+    <div class="eyebrow">Eigen elementen · per vlak het logo plus hooguit twee</div>
+  </div>
+
+  <div class="row">
+    <div class="lbl"><b>De parkeerders</b><span>Het beeldmerk als hoofd, altijd aqua. Staan altijd op een lijn.</span></div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 0">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 0 12px">
+        <img src="../../kit/assets/figure-walk-duo.svg" alt="" style="height: 96px">
+        <img src="../../kit/assets/figure-wave-duo.svg" alt="" style="height: 96px">
+        <img src="../../kit/assets/figure-point-duo.svg" alt="" style="height: 96px">
+        <img src="../../kit/assets/figure-dance-duo.svg" alt="" style="height: 92px">
+        <img src="../../kit/assets/figure-jump-duo.svg" alt="" style="height: 98px">
+        <img src="../../kit/assets/figure-bags-walk-duo.svg" alt="" style="height: 96px">
+        <img src="../../kit/assets/figure-bags-cheer-duo.svg" alt="" style="height: 98px">
+        <img src="../../kit/assets/figure-cap-point-duo.svg" alt="" style="height: 100px">
+        <img src="../../kit/assets/figure-cap-wave-duo.svg" alt="" style="height: 100px">
+      </div>
+      <div class="line"></div>
+      <div style="display: flex; justify-content: space-between; padding: 6px 4px 0" class="note"><span>loper</span><span>zwaaier</span><span>wijzer</span><span>danser</span><span>springer</span><span>shopper</span><span>juicher</span><span>gastheer wijst</span><span>gastheer zwaait</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="lbl"><b>Op elke grond</b><span>Navy lijf op licht, wit lijf op navy, één kleur navy op aqua.</span></div>
+    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+      <div style="height: 140px; border-radius: 12px; background: var(--py-color-blue-50); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; position: relative"><img src="../../kit/assets/figure-wave-duo.svg" alt="" style="height: 100px; position: relative"><div style="position: absolute; left: 30px; right: 30px; bottom: 18px; height: 2px; background: #1A3580"></div></div>
+      <div style="height: 140px; border-radius: 12px; background: var(--py-color-blue-700); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; position: relative"><img src="../../kit/assets/figure-wave-duo-white.svg" alt="" style="height: 100px; position: relative"><div style="position: absolute; left: 30px; right: 30px; bottom: 18px; height: 2px; background: #FFFFFF"></div></div>
+      <div style="height: 140px; border-radius: 12px; background: var(--py-color-aqua-500); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; position: relative"><img src="../../kit/assets/figure-wave-navy.svg" alt="" style="height: 100px; position: relative"><div style="position: absolute; left: 30px; right: 30px; bottom: 18px; height: 2px; background: #1A3580"></div></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="lbl"><b>De stem</b><span>De halve boog opent een boodschap. Nooit gesloten, nooit rechts.</span></div>
+    <div style="flex-grow: 1; display: flex; gap: 56px; align-items: center">
+      <div style="display: flex; gap: 22px; align-items: stretch">
+        <svg viewBox="0 0 10 45.44" width="20" height="104" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="4.2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
+        <div style="color: var(--py-text-brand); font-size: 46px; line-height: 1.05"><div style="font-weight: 800">Jouw plek,</div><div style="font-weight: 400">zonder gedoe.</div></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px" class="note"><span>hoogte = het tekstblok</span><span>lijn = 1/25 van de hoogte</span><span>afstand tot de tekst = 0,3 x de hoogte</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="lbl"><b>Het vak</b><span>Een parkeerdek van bovenaf. Eén vak is van jou.</span></div>
+    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+      <div style="height: 150px; border-radius: 12px; background: var(--py-color-blue-700); position: relative; overflow: hidden">
+        <svg viewBox="0 0 420 150" width="100%" height="150" preserveAspectRatio="xMinYMin slice" style="position: absolute; left: 0; top: 0" aria-hidden="true"><g stroke="#6F86C8" stroke-width="2"><line x1="24" y1="0" x2="24" y2="110"></line><line x1="96" y1="0" x2="96" y2="110"></line><line x1="168" y1="0" x2="168" y2="110"></line><line x1="240" y1="0" x2="240" y2="110"></line><line x1="312" y1="0" x2="312" y2="110"></line><line x1="384" y1="0" x2="384" y2="110"></line><line x1="0" y1="134" x2="420" y2="134" stroke-dasharray="16 13"></line></g><rect x="168" y="0" width="72" height="110" fill="#2B4A9E"></rect><line x1="168" y1="0" x2="168" y2="110" stroke="#32B9CD" stroke-width="4"></line><line x1="240" y1="0" x2="240" y2="110" stroke="#32B9CD" stroke-width="4"></line></svg>
+        <img src="../../kit/assets/figure-bags-cheer-duo-white.svg" alt="" style="position: absolute; left: 175px; top: 36px; height: 52px">
+      </div>
+      <div style="height: 150px; border-radius: 12px; background: #FFFFFF; border: 1px solid var(--py-border-subtle); position: relative; overflow: hidden">
+        <svg viewBox="0 0 420 150" width="100%" height="150" preserveAspectRatio="xMinYMin slice" style="position: absolute; left: 0; top: 0" aria-hidden="true"><g stroke="#DDE1E7" stroke-width="2"><line x1="24" y1="40" x2="24" y2="150"></line><line x1="96" y1="40" x2="96" y2="150"></line><line x1="168" y1="40" x2="168" y2="150"></line><line x1="240" y1="40" x2="240" y2="150"></line><line x1="312" y1="40" x2="312" y2="150"></line><line x1="384" y1="40" x2="384" y2="150"></line><line x1="0" y1="16" x2="420" y2="16" stroke-dasharray="16 13"></line></g><rect x="96" y="40" width="72" height="110" fill="#E3F6F9"></rect><line x1="96" y1="40" x2="96" y2="150" stroke="#32B9CD" stroke-width="4"></line><line x1="168" y1="40" x2="168" y2="150" stroke="#32B9CD" stroke-width="4"></line></svg>
+        <div style="position: absolute; left: 106px; top: 60px; width: 52px; height: 63px"><svg viewBox="0 0 36 43.423" width="52" height="63" aria-hidden="true"><path d="M18 0C8.059 0 0 8.058 0 17.999C0 34.701 16.691 43.074 16.691 43.074C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.999C36 8.058 27.941 0 18 0Z" fill="#1A3580"/></svg><div class="tnum" style="position: absolute; left: 0; top: 0; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 800; font-size: 13px">€ 15</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="border-bottom: 0">
+    <div class="lbl"><b>Bubbel en pijl</b><span>De bubbel staat altijd rechtop. De hoekige pijl wijst, in stappen van 45°.</span></div>
+    <div style="flex-grow: 1; display: flex; gap: 40px; align-items: center">
+      <div style="position: relative; width: 84px; height: 101px"><svg viewBox="0 0 36 43.423" width="84" height="101" aria-hidden="true"><path d="M18 0C8.059 0 0 8.058 0 17.999C0 34.701 16.691 43.074 16.691 43.074C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.999C36 8.058 27.941 0 18 0Z" fill="#1A3580"/></svg><div class="t-numeric-m" style="position: absolute; left: 0; top: 0; width: 84px; height: 84px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: 800; font-size: 34px">-1</div></div>
+      <div style="display: flex; gap: 22px; align-items: center">
+        <img src="../../kit/assets/arrow-plain-navy.svg" alt="" style="width: 54px">
+        <img src="../../kit/assets/arrow-plain-navy.svg" alt="" style="width: 54px; transform: rotate(-45deg)">
+        <img src="../../kit/assets/arrow-plain-navy.svg" alt="" style="width: 54px; transform: rotate(-90deg)">
+        <img src="../../kit/assets/arrow-plain-navy.svg" alt="" style="width: 54px; transform: rotate(-135deg)">
+        <img src="../../kit/assets/arrow-plain-navy.svg" alt="" style="width: 54px; transform: rotate(180deg)">
+        <img src="../../kit/assets/arrow-downleft-navy.svg" alt="" style="width: 54px">
+      </div>
+      <div class="note" style="display: flex; flex-direction: column; gap: 6px"><span class="dont">bubbel draaien</span><span class="dont">pijl in een cirkel</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
