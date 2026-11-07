@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Routeborden met taakkleur</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<style>
+  .lab { position: absolute; font: 700 15px/20px var(--py-font-sans); color: #FFFFFF; }
+  .lab span { font-weight: 400; color: #C2C7CF; }
+  .col { position: absolute; top: 740px; width: 340px; font: 400 14px/20px var(--py-font-sans); color: #FFFFFF; }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 12px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: #C2C7CF; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width: 1200px; height: 900px">
+  <div class="eyebrow" style="position: absolute; left: 60px; top: 36px; color: #C2C7CF">Routeborden · pil 200 mm hoog · schaal 1:12,5</div>
+
+  <!-- 1 user unit = 1 mm, 0.8 px per mm -->
+  <svg style="position: absolute; left: 60px; top: 100px" width="1080" height="616" viewBox="0 0 1350 770">
+    <!-- ROW 1: rijden 1000 -->
+    <g transform="translate(0 0)">
+      <rect width="1000" height="200" rx="100" fill="#1A3580"/>
+      <svg data-p="car" data-anchor="center" x="60" y="40" width="120" height="120" style="color:#FFFFFF"></svg>
+      <text x="220" y="135" font-family="Ubuntu Sans" font-weight="700" font-size="101" letter-spacing="1" fill="#FFFFFF">Uitrit</text>
+      <path data-b="130" data-x="735" data-y="35" data-rot="-90" fill="#FFFFFF"/>
+      <g transform="translate(800 100) translate(-39 -39) scale(3.25)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#1A3580" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <!-- measures -->
+      <g stroke="#C4281C" stroke-width="3" fill="none"><path d="M1030 0V200M1018 0H1042M1018 200H1042"/><path d="M545 65V135M535 65H555M535 135H555"/></g>
+    </g>
+    <!-- ROW 2: rijden 600 + betalen 600 -->
+    <g transform="translate(0 270)">
+      <rect width="600" height="200" rx="100" fill="#1A3580"/>
+      <svg data-p="accessible" data-anchor="center" x="60" y="40" width="120" height="120" style="color:#FFFFFF"></svg>
+      <svg data-p="ev" data-anchor="center" x="200" y="40" width="120" height="120" style="color:#FFFFFF"></svg>
+      <path data-b="80" data-x="430" data-y="60" data-rot="180" fill="#FFFFFF"/>
+      <g transform="translate(470 100) rotate(-90) translate(-24 -24) scale(2)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#1A3580" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+    <g transform="translate(680 270)">
+      <rect width="600" height="200" rx="100" fill="#F08300"/>
+      <svg data-p="payment-machine" data-anchor="center" x="60" y="40" width="120" height="120" style="color:#0D142E"></svg>
+      <text x="200" y="135" font-family="Ubuntu Sans" font-weight="700" font-size="101" letter-spacing="1" fill="#0D142E">Betalen</text>
+    </g>
+    <!-- ROW 3: lopen 1000 -->
+    <g transform="translate(0 540)">
+      <rect width="1000" height="200" rx="100" fill="#32B9CD"/>
+      <svg data-p="pedestrian" data-anchor="center" x="60" y="40" width="120" height="120" style="color:#1A3580"></svg>
+      <text x="200" y="135" font-family="Ubuntu Sans" font-weight="700" font-size="101" letter-spacing="1" fill="#1A3580">Uitgang</text>
+      <svg data-p="lift" data-anchor="center" x="610" y="40" width="120" height="120" style="color:#1A3580"></svg>
+      <path data-b="130" data-x="782" data-y="35" data-rot="135" fill="#FFFFFF"/>
+      <g transform="translate(847 100) rotate(-135) translate(-39 -39) scale(3.25)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#1A3580" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <g stroke="#C4281C" stroke-width="3" fill="none"><path d="M0 230H1000M0 218V242M1000 218V242"/></g>
+    </g>
+  </svg>
+  <div class="measure-label" style="left: 900px; top: 172px">200</div>
+  <div class="measure-label" style="left: 510px; top: 140px">kap 70 · 7 m</div>
+  <div class="measure-label" style="left: 440px; top: 707px">1000 mm</div>
+
+  <div class="lab" style="left: 900px; top: 108px">Rijden · navy<br><span>1000 x 200, wit op PY-Blauw</span></div>
+  <div class="lab" style="left: 60px; top: 262px">Rijden · navy <span>600 x 200</span></div>
+  <div class="lab" style="left: 604px; top: 262px">Betalen · oranje <span>600 x 200, PY-Diep op PY-Oranje</span></div>
+  <div class="lab" style="left: 900px; top: 540px">Lopen · aqua<br><span>1000 x 200, PY-Blauw op PY-Aqua</span></div>
+
+  <div class="col" style="left: 60px">
+    <div class="h">Maat en grid</div>
+    Pil 200 hoog, radius 100, breedte 600, 800 of 1000. u = 10 mm, marge 2u. Maximaal vijf modules; meer is een tweede bord.
+  </div>
+  <div class="col" style="left: 430px">
+    <div class="h">Letter en pictogram</div>
+    <b>Tekst</b> Bold, kap 70 mm (font 101 mm), leesbaar tot 7 m. <b>Pictogram</b> in een vak van 120 x 120 (12u). <b>Bubbel</b> wit, 13u = 130 mm, pijl in PY-Blauw, punt wijst mee. Pijl omhoog of omlaag: 8u, anders valt de punt buiten de marge.
+  </div>
+  <div class="col" style="left: 800px">
+    <div class="h">Materiaal</div>
+    Aluminium sandwichpaneel, full colour folie met <b>matte</b> laminaat, kern RAL 9006, 10 mm terug. Taakkleur als volle grond mag op bedrukt bord. Achterzijde rijbord: RVV C2 (verboden in te rijden).
+  </div>
+</div>
+</body>
+</html>

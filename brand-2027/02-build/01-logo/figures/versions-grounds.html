@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: versies op ondergronden</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px 16px; }
+  .tile { height: 200px; border-radius: var(--py-radius-m); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .tile img.logo { width: 150px; position: relative; }
+  .cap { margin-top: 10px; }
+  .cap b { display: block; font: 700 14px/18px var(--py-font-sans); color: var(--py-text-default); }
+  .line { border: 1px solid var(--py-border-subtle); }
+  .photo { background-size: cover; }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 660px; padding: 56px; display: flex; flex-direction: column; gap: 28px">
+  <div class="eyebrow">Logo · vijf versies, elk op zijn eigen ondergrond</div>
+  <div class="grid">
+    <div><div class="tile line" style="background: #FFFFFF"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt=""></div>
+      <div class="cap note"><b>Kleur op wit</b>logo-*-color</div></div>
+    <div><div class="tile" style="background: var(--py-color-blue-50)"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt=""></div>
+      <div class="cap note"><b>Kleur op blue.50</b>logo-*-color</div></div>
+    <div><div class="tile photo" style="background-image: url('../../kit/photos/py-photo-dll-garage.jpg'); background-size: 700px auto; background-position: -360px 0; align-items: flex-start; padding-top: 34px"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt=""></div>
+      <div class="cap note"><b>Kleur op lichte foto</b>alleen op een rustig, licht vlak</div></div>
+    <div><div class="tile" style="background: #1A3580"><img class="logo" src="../../kit/assets/logo-horizontal-reverse.svg" alt=""></div>
+      <div class="cap note"><b>Reverse op PY-Blauw</b>logo-*-reverse</div></div>
+    <div><div class="tile" style="background: #0D142E"><img class="logo" src="../../kit/assets/logo-horizontal-reverse.svg" alt=""></div>
+      <div class="cap note"><b>Reverse op PY-Diep</b>logo-*-reverse</div></div>
+
+    <div><div class="tile photo" style="background-image: url('../../kit/photos/py-photo-city-tower.jpg'); background-size: 1050px auto; background-position: -330px -1200px"><img class="logo" src="../../kit/assets/logo-horizontal-reverse.svg" alt=""></div>
+      <div class="cap note"><b>Reverse op donkere foto</b>alleen op een rustig, donker vlak</div></div>
+    <div><div class="tile" style="background: #32B9CD"><img class="logo" src="../../kit/assets/logo-horizontal-navy.svg" alt=""></div>
+      <div class="cap note"><b>Navy op PY-Aqua</b>logo-*-navy (nieuw)</div></div>
+    <div><div class="tile" style="background: #F08300"><img class="logo" src="../../kit/assets/logo-horizontal-navy.svg" alt=""></div>
+      <div class="cap note"><b>Navy op PY-Oranje</b>logo-*-navy (nieuw)</div></div>
+    <div><div class="tile" style="background: #1A3580"><img class="logo" src="../../kit/assets/logo-horizontal-white.svg" alt=""></div>
+      <div class="cap note"><b>Wit, één kleur</b>alleen folie, gravure, laser</div></div>
+    <div><div class="tile line" style="background: #FFFFFF"><img class="logo" src="../../kit/assets/logo-horizontal-black.svg" alt=""></div>
+      <div class="cap note"><b>Zwart, één kleur</b>alleen zwarte eenkleurendruk</div></div>
+  </div>
+</div>
+</body>
+</html>

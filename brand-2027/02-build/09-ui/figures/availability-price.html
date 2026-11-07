@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Beschikbaarheid, prijs en de bubbel in UI</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<link rel="stylesheet" href="ui.css">
+<style>
+  .col { display: flex; flex-direction: column; gap: 16px; }
+  .panel { border-radius: var(--py-radius-l); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+  .light { background: var(--py-surface-default); box-shadow: inset 0 0 0 1px var(--py-border-subtle); }
+  .dark { background: var(--py-surface-default); }
+  .size { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .size .cap { text-align: center; }
+  .rule { display: flex; gap: 8px; font: var(--py-type-body-s); }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 860px; padding: 48px 56px; display: flex; flex-direction: column; gap: 36px">
+  <div class="eyebrow">Beschikbaarheid, prijs en de bubbel als UI-element</div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px">
+    <!-- availability -->
+    <div class="col">
+      <div class="t-heading-s">Beschikbaarheid: woord, kleur en icoon</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+        <div class="panel light">
+          <span class="status status--free"><i data-i="check-circle" data-s="20"></i>Vrij</span>
+          <span class="status status--full"><i data-i="minus-circle" data-s="20"></i>Vol</span>
+          <span class="status status--closed"><i data-i="lock" data-s="20"></i>Gesloten</span>
+        </div>
+        <div class="panel dark" data-theme="dark">
+          <span class="status status--free"><i data-i="check-circle" data-s="20"></i>Vrij</span>
+          <span class="status status--full"><i data-i="minus-circle" data-s="20"></i>Vol</span>
+          <span class="status status--closed"><i data-i="lock" data-s="20"></i>Gesloten</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: flex-end">
+        <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="aqua">Vrij</span><span class="cap">aqua · navy</span></div>
+        <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="orange">Vol</span><span class="cap">oranje · diep</span></div>
+        <div class="cap" style="max-width: 250px; padding-bottom: 28px">Als moment op de locatiepagina mag Vrij of Vol in een bubbel van 64. Gesloten nooit: het woord is te lang (8 tekens) en er is geen grijze bubbel.</div>
+      </div>
+    </div>
+
+    <!-- price -->
+    <div class="col">
+      <div class="t-heading-s">Prijs</div>
+      <div class="panel light" style="gap: 20px">
+        <div style="display: flex; gap: 32px; align-items: flex-end">
+          <div><div class="cap">Groot · numeric-xl</div><div class="t-numeric-xl" style="color: var(--py-text-default)">€ 12,50</div><div class="t-body-s" style="color: var(--py-text-muted)">dagtarief met reservering</div></div>
+          <div><div class="cap">In een kaart · numeric-m</div><span class="price"><span class="price__amt">€ 12,50</span><span class="price__unit">per dag</span></span></div>
+        </div>
+        <table class="t-body-m tnum" style="border-collapse: collapse; width: 100%">
+          <tr style="box-shadow: inset 0 -1px 0 var(--py-border-subtle)"><td style="padding: 8px 0">Los parkeren</td><td style="text-align: right; font-weight: 700">€ 1,50 <span class="price__unit" style="font-weight: 400">per 30 min</span></td></tr>
+          <tr style="box-shadow: inset 0 -1px 0 var(--py-border-subtle)"><td style="padding: 8px 0">Dagtarief</td><td style="text-align: right; font-weight: 700">€ 15,00</td></tr>
+          <tr><td style="padding: 8px 0">Dagtarief met reservering</td><td style="text-align: right; font-weight: 700">€ 12,50</td></tr>
+        </table>
+      </div>
+      <div class="rule"><span class="do">Wel</span><span>€ 12,50 · spatie na €, komma, tabular cijfers, eenheid erbij</span></div>
+      <div class="rule"><span class="dont">Niet</span><span>€12,50 · € 12,- · 12.50 EUR · prijs in oranje tekst op wit (2,64:1)</span></div>
+    </div>
+  </div>
+
+  <!-- bubble sizes -->
+  <div class="col">
+    <div class="t-heading-s">De bubbel in UI: vier maten, alleen voor prijs, niveau, beschikbaarheid of bevestiging</div>
+    <div style="display: grid; grid-template-columns: repeat(5, 150px) 1fr; gap: 16px; align-items: end">
+      <div class="size"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">0</span></span><span class="cap"><b>24</b><br>niveau in een regel</span></div>
+      <div class="size"><span class="bub" data-size="40" data-fill="aqua"><i data-i="check" data-s="24"></i></span><span class="cap"><b>40</b><br>bevestiging in een rij</span></div>
+      <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="aqua">Vrij</span><span class="cap"><b>64</b><br>beschikbaarheid, niveau</span></div>
+      <div class="size"><span class="bub" data-size="104" data-fill="orange"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span><span class="cap"><b>104</b><br>prijs op de locatiepagina</span></div>
+      <div class="size"><span class="bub" data-size="104" data-fill="aqua"><i data-i="check" data-s="32"></i></span><span class="cap"><b>104</b><br>bevestiging na betalen</span></div>
+      <div class="col" style="gap: 10px; padding-bottom: 4px">
+        <div class="rule"><span class="do">Wel</span><span>één bubbel per scherm</span></div>
+        <div class="rule"><span class="do">Wel</span><span>vrije ruimte 8 px (24, 40) of 16 px (64, 104)</span></div>
+        <div class="rule"><span class="dont">Niet</span><span>als kaartpin, knop of avatar</span></div>
+        <div class="rule"><span class="dont">Niet</span><span>in elke kaart van een lijst</span></div>
+        <div class="rule"><span class="dont">Niet</span><span>met schaduw of meer dan 6 tekens</span></div>
+      </div>
+    </div>
+    <div class="cap">Kleur volgt de taak: navy rijden en niveau, aqua lopen en bevestiging, oranje alleen geld. Pop-in alleen bij bevestiging: 0,9 naar 1, easing.bubble, duration.expressive. Bij reduced motion: fade 120 ms.</div>
+  </div>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>

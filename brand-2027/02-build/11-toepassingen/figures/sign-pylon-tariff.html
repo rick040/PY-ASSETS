@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Pyloon en tariefstrook</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<style>
+  .col { position: absolute; width: 330px; font: 400 14px/20px var(--py-font-sans); color: #FFFFFF; }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 12px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: #C2C7CF; margin-bottom: 6px; }
+  text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width: 1200px; height: 900px">
+  <div class="eyebrow" style="position: absolute; left: 60px; top: 36px; color: #C2C7CF">Informatiepyloon voorzijde · paneel 400 x 1000 mm · schaal 1:13</div>
+
+  <!-- pylon panel, 1 unit = 1 mm, 0.75 px/mm -->
+  <svg style="position: absolute; left: 60px; top: 80px" width="345" height="790" viewBox="-30 0 460 1053">
+    <rect x="-30" y="1000" width="20" height="53" fill="#AEAEAE"/><rect x="410" y="1000" width="20" height="53" fill="#AEAEAE"/>
+    <rect x="0" y="0" width="400" height="1000" fill="#FFFFFF"/>
+    <!-- header -->
+    <rect x="0" y="0" width="400" height="200" fill="#1A3580"/>
+    <image href="../../kit/assets/symbol-p-roof.svg" x="40" y="40" height="120" width="93.6" preserveAspectRatio="xMinYMin meet"/>
+    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="160" y="40" height="50" width="181" preserveAspectRatio="xMinYMin meet"/>
+    <text x="160" y="160" font-weight="700" font-size="36" letter-spacing="0.36" fill="#FFFFFF">Maashaven</text>
+    <!-- section bars and content -->
+    <g font-size="17" fill="#1D1D1B">
+      <rect x="0" y="220" width="400" height="30" fill="#1A3580"/><text x="40" y="241" font-weight="700" fill="#FFFFFF">Openingstijden</text>
+      <text x="40" y="280">Ma t/m vr</text><text x="360" y="280" text-anchor="end">07:00 tot 23:00</text>
+      <text x="40" y="303">Zaterdag</text><text x="360" y="303" text-anchor="end">09:00 tot 18:00</text>
+      <text x="40" y="326">Zondag</text><text x="360" y="326" text-anchor="end">09:00 tot 17:00</text>
+
+      <rect x="0" y="350" width="400" height="30" fill="#1A3580"/><text x="40" y="371" font-weight="700" fill="#FFFFFF">Tarieven</text>
+      <!-- deelfolie 110 x 400 -->
+      <rect x="0" y="380" width="400" height="110" fill="#F08300"/>
+      <g fill="#0D142E">
+        <text x="40" y="408">Per 60 minuten</text><text x="360" y="408" text-anchor="end">€ 8,00</text>
+        <text x="40" y="430">Dagtarief</text><text x="360" y="430" text-anchor="end">€ 50,00</text>
+        <text x="40" y="452">Verloren kaart</text><text x="360" y="452" text-anchor="end">€ 50,00</text>
+        <text x="40" y="474" font-weight="700">Dagtarief met reservering</text><text x="360" y="474" text-anchor="end" font-weight="700">€ 25,00</text>
+      </g>
+
+      <rect x="0" y="510" width="400" height="30" fill="#1A3580"/><text x="40" y="531" font-weight="700" fill="#FFFFFF">Betalen</text>
+      <g fill="none" stroke="#AEAEAE" stroke-width="2">
+        <rect x="40" y="555" width="68" height="44" rx="4"/><rect x="124" y="555" width="68" height="44" rx="4"/><rect x="208" y="555" width="68" height="44" rx="4"/><rect x="292" y="555" width="68" height="44" rx="4"/>
+      </g>
+
+      <rect x="0" y="620" width="400" height="30" fill="#1A3580"/><text x="40" y="641" font-weight="700" fill="#FFFFFF">Storing of calamiteit</text>
+      <text x="40" y="680">Bel <tspan font-weight="700">085 401 16 47</tspan></text>
+
+      <rect x="0" y="705" width="400" height="30" fill="#1A3580"/><text x="40" y="726" font-weight="700" fill="#FFFFFF">Reserveren</text>
+      <rect x="40" y="750" width="120" height="120" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="2"/>
+      <text x="100" y="816" text-anchor="middle" font-size="17" fill="#767B86">[QR]</text>
+      <text x="180" y="772" font-weight="700">Reserveer</text>
+      <text x="180" y="794">je plek online</text>
+      <text x="180" y="816">en betaal minder</text>
+      <text x="40" y="910">Algemene voorwaarden:</text>
+      <text x="40" y="933">parkingyou.nl/algemene-voorwaarden</text>
+    </g>
+    <rect x="40" y="40" width="320" height="920" fill="none" stroke="#32B9CD" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.9"/>
+  </svg>
+
+  <!-- tariff strip detail, 1.6 px per mm -->
+  <div class="eyebrow" style="position: absolute; left: 470px; top: 92px; color: #C2C7CF">Tariefstrook (deelfolie) 110 x 400 mm · schaal 1:2,5</div>
+  <svg style="position: absolute; left: 470px; top: 130px" width="680" height="200" viewBox="0 0 425 125">
+    <rect x="0" y="0" width="400" height="110" fill="#F08300"/>
+    <g font-size="17" fill="#0D142E">
+      <text x="40" y="28">Per 60 minuten</text><text x="360" y="28" text-anchor="end">€ 8,00</text>
+      <text x="40" y="50">Dagtarief</text><text x="360" y="50" text-anchor="end">€ 50,00</text>
+      <text x="40" y="72">Verloren kaart</text><text x="360" y="72" text-anchor="end">€ 50,00</text>
+      <text x="40" y="94" font-weight="700">Dagtarief met reservering</text><text x="360" y="94" text-anchor="end" font-weight="700">€ 25,00</text>
+    </g>
+    <g stroke="#C4281C" stroke-width="0.8" fill="none"><path d="M410 0V110M406 0H414M406 110H414"/><path d="M375 16V28M371 16H379M371 28H379"/><path d="M0 117H400M0 113V121M400 113V121"/></g>
+  </svg>
+  <div class="measure-label" style="left: 1110px; top: 210px">110</div>
+  <div class="measure-label" style="left: 1080px; top: 150px">kap 12</div>
+  <div class="measure-label" style="left: 780px; top: 317px">400</div>
+
+  <div class="col" style="left: 470px; top: 370px; width: 320px">
+    <div class="h">Pyloon</div>
+    Paneel 400 x 1000, u = 20 mm, marge 2u. Kop navy met P met dak (120 mm) en logo; locatienaam Bold, kap 25 mm (font 36 mm, 2,5 m). Alle andere tekst kap 12 mm (font 17 mm): het minimum op elk bord, leesbaar op 1 m. Kopbalken vlak navy, geen verloop. Aluminium sandwichpaneel, full colour folie, <b>mat</b>. Staanders RVS, RAL 9006.
+  </div>
+  <div class="col" style="left: 830px; top: 370px; width: 320px">
+    <div class="h">Tariefstrook</div>
+    Losse folie van 110 x 400, zodat een prijswijziging alleen deze strook kost. PY-Oranje met PY-Diep (6,87:1). Vier regels, steek 22 mm, tabelcijfers rechts uitgelijnd. De rij met de beste prijs Bold, niet in een andere kleur. Prijs altijd als € 8,00: spatie, komma, geen ",-".
+  </div>
+  <div class="col" style="left: 470px; top: 600px; width: 680px">
+    <div class="h">Kleur en contrast</div>
+    Wit op PY-Blauw 11,26:1 · PY-Zwart op wit · PY-Diep op PY-Oranje 6,87:1, ook de voorwaarden: geen tekst onder kap 12 mm. Betaalvakken 68 x 44 mm. Betaal- en partnermerken komen als aangeleverd bestand, nooit nagetekend. Data: Parking Maashaven, Rotterdam.
+  </div>
+</div>
+</body>
+</html>

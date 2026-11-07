@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: vrije ruimte</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .abs { position: absolute; }
+  .zone { position: absolute; background: var(--py-color-blue-50); outline: 1.5px dashed #C4281C; }
+  svg.ov { position: absolute; left: 0; top: 0; }
+  .ml { transform: translate(-50%, -50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<!-- x = beeldmerk width. Horizontal: 4.369x by 1.206x. Stacked: 3.073x by 1.972x. Beeldmerk: 1x by 1.206x. Clear space 0.5x. -->
+<div class="fig" style="width: 1200px; height: 540px">
+  <div class="eyebrow abs" style="left: 56px; top: 56px">Logo · vrije ruimte 0,5x rondom, x = breedte van het beeldmerk</div>
+
+  <!-- Horizontal, x = 110 px: logo 480.6 x 132.7, zone 590.6 x 242.7 -->
+  <div class="zone" style="left: 56px; top: 150px; width: 590.6px; height: 242.7px"></div>
+  <img class="abs" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="left: 111px; top: 205px; width: 480.6px">
+
+  <!-- Stacked, x = 60 px: logo 184.4 x 118.3, zone 244.4 x 178.3 -->
+  <div class="zone" style="left: 740px; top: 150px; width: 244.4px; height: 178.3px"></div>
+  <img class="abs" src="../../kit/assets/logo-stacked-color.svg" alt="" style="left: 770px; top: 180px; width: 184.4px">
+
+  <!-- Beeldmerk, x = 60 px: 60 x 72.4, zone 120 x 132.4 -->
+  <div class="zone" style="left: 1024px; top: 150px; width: 120px; height: 132.4px"></div>
+  <img class="abs" src="../../kit/assets/logo-beeldmerk-color.svg" alt="" style="left: 1054px; top: 180px; width: 60px">
+
+  <svg class="ov" width="1200" height="540" aria-hidden="true">
+    <g stroke="#C4281C" stroke-width="1.5" fill="none">
+      <!-- x over beeldmerk -->
+      <line x1="111" y1="185" x2="221" y2="185"/><line x1="111" y1="179" x2="111" y2="191"/><line x1="221" y1="179" x2="221" y2="191"/>
+      <line x1="111" y1="191" x2="111" y2="205" stroke-dasharray="3 3"/><line x1="221" y1="191" x2="221" y2="205" stroke-dasharray="3 3"/>
+      <!-- 0.5x left -->
+      <line x1="56" y1="300" x2="111" y2="300"/><line x1="56" y1="294" x2="56" y2="306"/><line x1="111" y1="294" x2="111" y2="306"/>
+      <!-- 0.5x right -->
+      <line x1="591.6" y1="300" x2="646.6" y2="300"/><line x1="591.6" y1="294" x2="591.6" y2="306"/><line x1="646.6" y1="294" x2="646.6" y2="306"/>
+      <!-- 0.5x top -->
+      <line x1="420" y1="150" x2="420" y2="205"/><line x1="414" y1="150" x2="426" y2="150"/><line x1="414" y1="205" x2="426" y2="205"/>
+      <!-- 0.5x bottom -->
+      <line x1="420" y1="337.7" x2="420" y2="392.7"/><line x1="414" y1="337.7" x2="426" y2="337.7"/><line x1="414" y1="392.7" x2="426" y2="392.7"/>
+      <!-- logo bounding box -->
+      <rect x="111" y="205" width="480.6" height="132.7" stroke-dasharray="2 4" stroke-width="1"/>
+      <!-- stacked: x -->
+      <line x1="832" y1="170" x2="892" y2="170"/><line x1="832" y1="165" x2="832" y2="175"/><line x1="892" y1="165" x2="892" y2="175"/>
+      <line x1="740" y1="250" x2="770" y2="250"/>
+      <!-- beeldmerk: x -->
+      <line x1="1054" y1="170" x2="1114" y2="170"/><line x1="1054" y1="165" x2="1054" y2="175"/><line x1="1114" y1="165" x2="1114" y2="175"/>
+      <line x1="1024" y1="216" x2="1054" y2="216"/>
+    </g>
+  </svg>
+  <div class="measure-label ml" style="left: 166px; top: 172px">x</div>
+  <div class="measure-label ml" style="left: 83.5px; top: 320px">0,5x</div>
+  <div class="measure-label ml" style="left: 619px; top: 320px">0,5x</div>
+  <div class="measure-label ml" style="left: 452px; top: 177px">0,5x</div>
+  <div class="measure-label ml" style="left: 452px; top: 365px">0,5x</div>
+  <div class="measure-label ml" style="left: 862px; top: 158px">x</div>
+  <div class="measure-label ml" style="left: 1084px; top: 158px">x</div>
+  <div class="measure-label ml" style="left: 755px; top: 234px">0,5x</div>
+  <div class="measure-label ml" style="left: 1039px; top: 234px">0,5x</div>
+
+  <div class="t-heading-s abs" style="left: 56px; top: 420px">Liggend</div>
+  <div class="note abs" style="left: 56px; top: 450px; width: 560px">Meet x aan het beeldmerk in de lockup die je gebruikt. De vrije ruimte telt vanaf de buitenkant van het logo, ook onder de punt. Niets komt in dit vlak: geen tekst, geen rand, geen formaatrand, geen bubbel.</div>
+  <div class="t-heading-s abs" style="left: 740px; top: 356px">Staand</div>
+  <div class="t-heading-s abs" style="left: 1024px; top: 356px">Beeldmerk</div>
+  <div class="note abs" style="left: 740px; top: 420px; width: 404px">Zelfde regel voor elke lockup en elke versie: 0,5x aan alle kanten. Het is een minimum; meer ruimte mag altijd.</div>
+</div>
+</body>
+</html>

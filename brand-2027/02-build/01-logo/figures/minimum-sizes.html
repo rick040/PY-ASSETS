@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: minimale maten</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .row { display: grid; grid-template-columns: 1fr 1fr 0.7fr 1.2fr; gap: 16px; }
+  .card { height: 400px; border: 1px solid var(--py-border-subtle); border-radius: var(--py-radius-m); position: relative; }
+  .big { position: absolute; left: 0; right: 24px; top: 24px; height: 170px; display: flex; align-items: center; justify-content: flex-end; }
+  .real { position: absolute; left: 24px; right: 24px; top: 214px; height: 70px; border-top: 1px solid var(--py-border-subtle); display: flex; align-items: center; gap: 12px; }
+  .lab { position: absolute; left: 24px; right: 24px; bottom: 20px; }
+  .lab b { display: block; font: 700 20px/26px var(--py-font-sans); margin-bottom: 4px; }
+  .rel { position: relative; }
+  .vm { position: absolute; top: 0; bottom: 0; border-left: 1.5px solid #C4281C; }
+  .vm::before, .vm::after { content: ""; position: absolute; left: -6px; width: 11px; border-top: 1.5px solid #C4281C; }
+  .vm::before { top: 0; } .vm::after { bottom: 0; }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 560px; padding: 56px; display: flex; flex-direction: column; gap: 28px">
+  <div class="eyebrow">Logo · minimale maten (vergroot 2x boven de lijn, ware grootte eronder)</div>
+  <div class="row">
+    <div class="card">
+      <div class="big"><div class="rel"><img src="../../kit/assets/logo-horizontal-color.svg" alt="" style="height: 48px; display: block"><div class="vm" style="left: -16px"></div><div class="measure-label" style="left: -64px; top: 16px">24 px</div></div></div>
+      <div class="real"><img src="../../kit/assets/logo-horizontal-color.svg" alt="" style="height: 24px"><span class="note">ware grootte</span></div>
+      <div class="lab"><b>Liggend</b><div class="note">Beeldmerk 24 px hoog op scherm, 7 mm in druk.</div></div>
+    </div>
+    <div class="card">
+      <div class="big"><div class="rel"><img src="../../kit/assets/logo-stacked-color.svg" alt="" style="height: 96px; display: block"><div class="vm" style="left: -16px"></div><div class="measure-label" style="left: -64px; top: 40px">48 px</div></div></div>
+      <div class="real"><img src="../../kit/assets/logo-stacked-color.svg" alt="" style="height: 48px"><span class="note">ware grootte</span></div>
+      <div class="lab"><b>Staand</b><div class="note">Hele lockup 48 px hoog op scherm, 14 mm in druk.</div></div>
+    </div>
+    <div class="card">
+      <div class="big"><div class="rel"><img src="../../kit/assets/logo-beeldmerk-color.svg" alt="" style="height: 32px; display: block"><div class="vm" style="left: -16px"></div><div class="measure-label" style="left: -64px; top: 8px">16 px</div></div></div>
+      <div class="real"><img src="../../kit/assets/logo-beeldmerk-color.svg" alt="" style="height: 16px"><span class="note">ware grootte</span></div>
+      <div class="lab"><b>Beeldmerk los</b><div class="note">16 px hoog op scherm, 5 mm in druk.</div></div>
+    </div>
+    <div class="card">
+      <div style="position: absolute; left: 24px; right: 24px; top: 24px; height: 260px; background: #1A3580; border-radius: 0">
+        <img src="../../kit/assets/logo-beeldmerk-reverse.svg" alt="" style="position: absolute; left: 44px; top: 60px; height: 100px">
+        <svg width="100" height="80" viewBox="0 0 100 80" fill="none" style="position: absolute; left: 170px; top: 50px">
+          <text x="0" y="51.6" font-family="Ubuntu Sans" font-weight="700" font-size="60" fill="#FFFFFF" letter-spacing="0.6">P1</text>
+        </svg>
+        <div class="vm" style="left: 24px; top: 60px; height: 100px; bottom: auto"></div>
+        <div class="measure-label" style="left: 18px; top: 168px">H</div>
+        <div class="vm" style="left: 156px; top: 60px; height: 41.6px; bottom: auto"></div>
+        <div class="measure-label" style="left: 150px; top: 110px">h</div>
+        <div class="note note--on-dark" style="position: absolute; left: 24px; bottom: 16px; right: 16px">H 100 · h 41,6 · 100 ≥ 83,2</div>
+      </div>
+      <div class="lab"><b>Bewegwijzering</b><div class="note">Beeldmerk minstens 2 x de kapitaalhoogte van de grootste tekst op dat bordvlak: H&nbsp;≥&nbsp;2h.</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

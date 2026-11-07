@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Entreelichtbak 1000 x 1000</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<style>
+  .spec { font: 400 14px/20px var(--py-font-sans); color: #FFFFFF; }
+  .spec b { font-weight: 700; }
+  .spec dt { font: 700 12px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: #C2C7CF; margin-top: 14px; }
+  .spec dd { margin: 2px 0 0 0; }
+  .m { font: 700 12px/14px var(--py-font-sans); fill: #C4281C; }
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width: 1200px; height: 900px">
+  <div class="eyebrow" style="position: absolute; left: 64px; top: 40px; color: #C2C7CF">Entreelichtbak · 1000 x 1000 mm · schaal 1:16,7</div>
+
+  <!-- elevation in mm: 1 user unit = 1 mm, drawn at 0.6 px per mm -->
+  <svg style="position: absolute; left: 40px; top: 90px" width="720" height="780" viewBox="-66.7 -50 1200 1300">
+    <!-- wall and spacer (koker 40 x 70) -->
+    <rect x="-66.7" y="-50" width="40" height="1300" fill="#2B2F36"/>
+    <rect x="-26.7" y="160" width="26.7" height="70" fill="#AEAEAE"/>
+    <rect x="-26.7" y="770" width="26.7" height="70" fill="#AEAEAE"/>
+    <!-- frame RAL 5002 and face -->
+    <rect x="0" y="0" width="1000" height="1000" fill="#1A3580"/>
+    <rect x="6" y="6" width="988" height="988" fill="none" stroke="#12245A" stroke-width="12"/>
+    <!-- logo: beeldmerk height 200 = 2 x cap 100 -->
+    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="100" y="100" height="200" width="724.4" preserveAspectRatio="xMinYMin meet"/>
+    <!-- P with roof, 8u = 400 mm -->
+    <image href="../../kit/assets/symbol-p-roof.svg" x="100" y="350" height="400" width="312" preserveAspectRatio="xMinYMin meet"/>
+    <!-- white bubble 5u = 250 mm, tail points to the entrance (down left), content upright -->
+    <path data-b="250" data-x="625" data-y="375" data-rot="45" fill="#FFFFFF"/>
+    <g transform="translate(750 500)">
+      <g transform="rotate(135) translate(-75 -75) scale(6.25)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#1A3580" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+    <!-- location name, cap 100 mm, font 144 mm -->
+    <text x="100" y="900" font-family="Ubuntu Sans" font-weight="700" font-size="144.3" letter-spacing="1.4" fill="#FFFFFF">Fellenoord</text>
+
+    <!-- grid: margin 2u -->
+    <rect x="100" y="100" width="800" height="800" fill="none" stroke="#32B9CD" stroke-width="2" stroke-dasharray="8 8" opacity="0.7"/>
+
+    <!-- measures -->
+    <g stroke="#C4281C" stroke-width="2.5" fill="none">
+      <path d="M0 1060H1000M0 1045V1075M1000 1045V1075"/>
+      <path d="M1060 0V1000M1045 0H1075M1045 1000H1075"/>
+      <path d="M940 800V900M925 800H955M925 900H955"/>
+      <path d="M50 100V300M35 100H65M35 300H65"/>
+      <path d="M430 350V750M415 350H445M415 750H445"/>
+    </g>
+    <g class="m" font-size="22" font-family="Ubuntu Sans" font-weight="700" fill="#FF8A80">
+    </g>
+  </svg>
+  <!-- measure labels in px (svg offset 40,90; scale 0.6; origin shift 66.7,50) -->
+  <div class="measure-label" style="left: 310px; top: 760px">1000 mm</div>
+  <div class="measure-label" style="left: 708px; top: 420px">1000</div>
+  <div class="measure-label" style="left: 600px; top: 642px">kap 100 mm · 10 m</div>
+  <div class="measure-label" style="left: 38px; top: 248px">200</div>
+  <div class="measure-label" style="left: 330px; top: 425px">P 400 = 8u</div>
+  <div class="measure-label" style="left: 492px; top: 540px">bubbel 5u = 250</div>
+
+  <div class="spec" style="position: absolute; left: 790px; top: 90px; width: 360px">
+    <div style="font: 700 24px/30px var(--py-font-sans)">Uitsteeklichtbak bij de entree</div>
+    <div style="color: #C2C7CF; margin-top: 6px">Navy front, wit P met dak, witte bubbel met pijl naar de ingang. Taak: rijden.</div>
+    <dl style="margin: 8px 0 0 0">
+      <dt>Formaat en grid</dt>
+      <dd>1000 x 1000 x 100 mm, u = 50 mm, marge 2u = 100 mm.</dd>
+      <dt>Letterhoogtes</dt>
+      <dd><b>Locatienaam</b> Bold, kaphoogte 100 mm (font 144 mm), leesbaar tot 10 m. Lange namen: Condensed Bold, zelfde kaphoogte.<br><b>Beeldmerk</b> 200 mm hoog, 2 x de kaphoogte.<br><b>P met dak</b> 400 mm (8u), voor het zicht van ver.</dd>
+      <dt>Bubbel</dt>
+      <dd>Wit, 5u breed, PY-Blauw pijl. Punt in stappen van 45°, wijst naar de ingang.</dd>
+      <dt>Materiaal</dt>
+      <dd>Opaal beeldplaat met blockoutfolie: alleen wit en de beeldmerkkleuren lichten op. Profiel en kader poedercoat RAL 5002 (dichtstbij), mat. Interne LED. Geen verloop.</dd>
+      <dt>Kleur</dt>
+      <dd>PY-Blauw #1A3580 · CMYK 100 83 0 17 · RAL 5002. Wit. Aqua alleen in de stip van het logo.</dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>

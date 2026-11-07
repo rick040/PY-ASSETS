@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: vier lockups</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { height: 248px; border: 1px solid var(--py-border-subtle); border-radius: var(--py-radius-m); position: relative; }
+  .stage { position: absolute; left: 0; right: 0; top: 0; height: 176px; display: flex; align-items: center; justify-content: center; }
+  .label { position: absolute; left: 24px; right: 24px; bottom: 20px; display: flex; justify-content: space-between; align-items: baseline; }
+  .tag { font: 700 11px/14px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF; background: var(--py-color-blue-700); padding: 3px 8px; border-radius: 999px; margin-left: 8px; vertical-align: 2px; }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 640px; padding: 56px; display: flex; flex-direction: column; gap: 28px">
+  <div class="eyebrow">Logo · vier lockups, x = breedte van het beeldmerk</div>
+  <div class="grid">
+    <div class="card">
+      <div class="stage"><img src="../../kit/assets/logo-horizontal-color.svg" alt="parkingyou liggend" style="width: 350px"></div>
+      <div class="label"><div class="t-heading-s">Liggend<span class="tag">standaard</span></div><div class="note">4,37x breed · 1,21x hoog · logo-horizontal-*</div></div>
+    </div>
+    <div class="card">
+      <div class="stage"><img src="../../kit/assets/logo-stacked-color.svg" alt="parkingyou staand" style="width: 172px"></div>
+      <div class="label"><div class="t-heading-s">Staand</div><div class="note">3,07x breed · 1,97x hoog · logo-stacked-*</div></div>
+    </div>
+    <div class="card">
+      <div class="stage"><img src="../../kit/assets/logo-beeldmerk-color.svg" alt="beeldmerk" style="width: 70px"></div>
+      <div class="label"><div class="t-heading-s">Beeldmerk los</div><div class="note">1x breed · 1,21x hoog · logo-beeldmerk-*</div></div>
+    </div>
+    <div class="card">
+      <div class="stage"><img src="../../kit/assets/logo-wordmark-color.svg" alt="woordmerk" style="width: 246px"></div>
+      <div class="label"><div class="t-heading-s">Woordmerk los</div><div class="note">alleen als het beeldmerk al op hetzelfde vlak staat</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

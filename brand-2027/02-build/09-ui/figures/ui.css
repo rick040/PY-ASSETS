@@ -1,0 +1,185 @@
+/* ParkingYou 2027, chapter 09 UI/UX: component styles for the figures.
+   Components read semantic tokens only (var(--py-surface-*), --py-text-*, --py-action-* ...).
+   Values marked PROPOSAL are listed in chapter.md "Voorgestelde waarden" and wait for CD approval. */
+
+:root, [data-theme="dark"] {
+  /* PROPOSAL component values */
+  --pyx-control-h: 48px;          /* button and input height */
+  --pyx-control-h-lg: 56px;       /* main button at the bottom of a phone screen, licence plate field */
+  --pyx-focus-w: 3px;             /* focus ring width */
+  --pyx-focus-offset: 2px;        /* gap between component and ring */
+  --pyx-border-w: 1px;            /* input border at rest */
+  --pyx-border-w-strong: 2px;     /* hover, focus, error */
+  --pyx-topbar-h: 56px;
+  --pyx-topbar-h-desktop: 72px;
+  --pyx-bottombar-h: 64px;
+  --pyx-chip-h: 36px;             /* visual height; hit area stays 44 */
+  --pyx-type-label-l: 600 16px/24px var(--py-font-sans); /* button label */
+}
+:root {
+  /* PROPOSAL semantic tokens missing from tokens.json */
+  --py-action-secondary-bg-pressed: var(--py-color-blue-800);
+  --py-surface-code: var(--py-color-neutral-0);
+  --py-text-on-code: var(--py-color-blue-900);
+}
+[data-theme="dark"] {
+  --py-action-secondary-bg-pressed: var(--py-color-aqua-600);
+  --py-surface-code: var(--py-color-neutral-0);
+  --py-text-on-code: var(--py-color-blue-900);
+}
+
+.ic { flex: none; display: block; }
+[data-theme] { color: var(--py-text-default); }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--py-space-2);
+  min-height: var(--pyx-control-h); min-width: 44px; padding: 0 var(--py-space-5); border: 0; border-radius: var(--py-radius-pill);
+  font: var(--pyx-type-label-l); font-family: var(--py-font-sans); cursor: pointer; white-space: nowrap; text-decoration: none;
+  transition: background-color var(--py-duration-fast) var(--py-easing-standard); }
+.btn--lg { min-height: var(--pyx-control-h-lg); padding: 0 var(--py-space-6); }
+.btn--block { width: 100%; }
+.btn--primary { background: var(--py-action-primary-bg); color: var(--py-action-primary-fg); }
+.btn--primary.is-hover { background: var(--py-action-primary-bg-hover); }
+.btn--primary.is-pressed { background: var(--py-action-primary-bg-pressed); }
+.btn--secondary { background: var(--py-action-secondary-bg); color: var(--py-action-secondary-fg); }
+.btn--secondary.is-hover { background: var(--py-action-secondary-bg-hover); }
+.btn--secondary.is-pressed { background: var(--py-action-secondary-bg-pressed); }
+.btn--tertiary { background: transparent; color: var(--py-text-link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 0 var(--py-space-3); }
+.btn--tertiary.is-hover { text-decoration-thickness: 2px; }
+.btn--tertiary.is-pressed { background: var(--py-surface-subtle); }
+.btn:disabled, .btn.is-disabled { background: var(--py-surface-subtle); color: var(--py-text-muted); box-shadow: inset 0 0 0 1px var(--py-border-subtle); cursor: not-allowed; }
+.btn--tertiary:disabled { background: transparent; box-shadow: none; text-decoration: none; }
+.is-focus, :focus-visible { outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
+.on-brand .is-focus { outline-color: var(--py-focus-ring-on-brand); }
+.btn--icon { width: 44px; min-width: 44px; height: 44px; min-height: 44px; padding: 0; background: transparent; color: inherit; }
+
+/* ---------- Form fields ---------- */
+.field { display: flex; flex-direction: column; gap: var(--py-space-2); min-width: 0; }
+.field > label, .label { font: var(--py-type-label-m); color: var(--py-text-default); }
+.hint { font: var(--py-type-body-s); color: var(--py-text-muted); margin: 0; }
+.err { display: flex; gap: var(--py-space-2); align-items: flex-start; font: var(--py-type-body-s); color: var(--py-feedback-error); margin: 0; }
+.err .ic { margin-top: 0; }
+.control { display: flex; align-items: center; gap: var(--py-space-2); height: var(--pyx-control-h); padding: 0 var(--py-space-4);
+  background: var(--py-surface-raised); color: var(--py-text-default); border-radius: var(--py-radius-m);
+  box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-strong); }
+.control .ic { color: var(--py-text-muted); }
+.control input, .control select { flex: 1; min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: inherit; font: var(--py-type-body-m); font-family: var(--py-font-sans); padding: 0; appearance: none; -webkit-appearance: none; }
+.control input::placeholder { color: var(--py-text-muted); opacity: 1; }
+.control.is-hover { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-border-strong); }
+.control.is-focus { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-focus-ring); outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
+.control.is-error { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-feedback-error); }
+.control.is-error .ic { color: var(--py-feedback-error); }
+.control.is-disabled { background: var(--py-surface-subtle); color: var(--py-text-muted); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-subtle); }
+.tnum, .control input.tnum { font-variant-numeric: tabular-nums; }
+
+/* Licence plate: Dutch format, NL band in brand navy, no imitation of the yellow plate */
+.plate { display: flex; align-items: stretch; height: var(--pyx-control-h-lg); border-radius: var(--py-radius-m); overflow: hidden;
+  background: var(--py-surface-raised); box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-border-strong); }
+.plate__nl { flex: none; width: 36px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px;
+  background: var(--py-surface-brand); color: var(--py-text-on-brand); font: var(--py-type-label-s); }
+.plate input { flex: 1; min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: var(--py-text-default); padding: 0 var(--py-space-4);
+  font: var(--py-type-heading-m); font-family: var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.plate input::placeholder { color: var(--py-text-muted); opacity: 1; }
+.plate.is-focus { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-focus-ring); outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
+.plate.is-error { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-feedback-error); }
+.plate--display { height: auto; box-shadow: none; background: var(--py-surface-raised); }
+.plate--display .plate__val { padding: var(--py-space-2) var(--py-space-4); font: var(--py-type-heading-l); letter-spacing: 0.08em; color: var(--py-text-default); font-variant-numeric: tabular-nums; }
+
+/* Checkbox and radio: 24 px box inside a 44 px row */
+.check { display: flex; align-items: center; gap: var(--py-space-3); min-height: 44px; font: var(--py-type-body-m); color: var(--py-text-default); }
+.check input { appearance: none; -webkit-appearance: none; flex: none; width: 24px; height: 24px; margin: 0; background: var(--py-surface-raised);
+  box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-border-strong); border-radius: var(--py-radius-s); display: grid; place-items: center; }
+.check input[type=radio] { border-radius: 50%; }
+.check input:checked { background: var(--py-action-secondary-bg); box-shadow: none; }
+.check input[type=checkbox]:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); background-size: 20px; background-repeat: no-repeat; background-position: center; }
+[data-theme="dark"] .check input[type=checkbox]:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D142E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); }
+.check input[type=radio]:checked { background: var(--py-surface-raised); box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-secondary-bg), inset 0 0 0 6px var(--py-surface-raised), inset 0 0 0 12px var(--py-action-secondary-bg); }
+.check input.is-focus { outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
+.check input.is-error { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-feedback-error); }
+.check input:disabled { background: var(--py-surface-subtle); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-subtle); }
+.check.is-disabled { color: var(--py-text-muted); }
+.option { border-radius: var(--py-radius-m); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-strong); padding: 0 var(--py-space-4); background: var(--py-surface-raised); }
+.option.is-selected { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-secondary-bg); }
+
+/* ---------- Status, price, chips ---------- */
+.status { display: inline-flex; align-items: center; gap: 6px; font: var(--py-type-label-m); }
+.status--free { color: var(--py-status-free); }
+.status--full { color: var(--py-status-full); }
+.status--closed { color: var(--py-status-closed); }
+.price { display: inline-flex; align-items: baseline; gap: 6px; }
+.price__amt { font: var(--py-type-numeric-m); font-variant-numeric: tabular-nums; color: var(--py-text-default); }
+.price__unit { font: var(--py-type-body-s); color: var(--py-text-muted); }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: var(--pyx-chip-h); padding: 0 var(--py-space-4); border-radius: var(--py-radius-pill);
+  font: var(--py-type-label-m); color: var(--py-text-default); background: var(--py-surface-raised); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-strong); border: 0; font-family: var(--py-font-sans); }
+.chip.is-selected { background: var(--py-action-secondary-bg); color: var(--py-action-secondary-fg); box-shadow: none; }
+.tag { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 var(--py-space-3); border-radius: var(--py-radius-pill);
+  font: var(--py-type-label-s); color: var(--py-text-brand); background: var(--py-surface-subtle); }
+.fact { display: flex; gap: var(--py-space-2); align-items: center; font: var(--py-type-body-s); color: var(--py-text-default); }
+.fact .ic { color: var(--py-text-brand); }
+
+/* ---------- Alerts and feedback ---------- */
+.alert { display: flex; gap: var(--py-space-3); padding: var(--py-space-4); border-radius: var(--py-radius-m); background: var(--py-surface-subtle);
+  color: var(--py-text-default); font: var(--py-type-body-s); box-shadow: inset 4px 0 0 var(--alert-c); }
+.alert > .ic { color: var(--alert-c); }
+.alert b { display: block; font: var(--py-type-label-m); margin-bottom: 2px; }
+.alert--error { --alert-c: var(--py-feedback-error); background: var(--py-feedback-error-bg); }
+.alert--warning { --alert-c: var(--py-feedback-warning); }
+.alert--success { --alert-c: var(--py-feedback-success); }
+.alert--info { --alert-c: var(--py-feedback-info); }
+.toast { display: flex; gap: var(--py-space-3); align-items: center; padding: var(--py-space-3) var(--py-space-4); border-radius: var(--py-radius-m);
+  background: var(--py-surface-inverse); color: var(--py-surface-default); font: var(--py-type-body-s); box-shadow: var(--py-shadow-2); }
+
+/* ---------- Cards ---------- */
+.card { background: var(--py-surface-raised); border-radius: var(--py-radius-l); box-shadow: var(--py-shadow-1), inset 0 0 0 1px var(--py-border-subtle); overflow: hidden; }
+.loc { display: flex; gap: var(--py-space-3); padding: var(--py-space-3); align-items: stretch; }
+.loc__img { flex: none; width: 96px; height: 96px; border-radius: var(--py-radius-m); background-size: cover; background-position: center; }
+.loc__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.loc__name { font: var(--py-type-heading-s); color: var(--py-text-default); margin: 0; }
+.loc__meta { font: var(--py-type-body-s); color: var(--py-text-muted); }
+.loc__foot { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; }
+
+/* ---------- Phone frame and navigation ---------- */
+.phone { width: 390px; height: 844px; position: relative; overflow: hidden; flex: none; border-radius: var(--py-radius-xl);
+  background: var(--py-surface-default); color: var(--py-text-default); box-shadow: var(--py-shadow-3), 0 0 0 1px var(--py-border-subtle);
+  display: flex; flex-direction: column; font: var(--py-type-body-m); }
+.sb { height: 44px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; font: var(--py-type-label-m); }
+.sb__icons { display: flex; gap: 6px; align-items: center; }
+.sb__bat { width: 24px; height: 12px; border-radius: 3px; box-shadow: inset 0 0 0 1.5px currentColor; position: relative; }
+.sb__bat::after { content: ""; position: absolute; left: 3px; top: 3px; width: 14px; height: 6px; border-radius: 1px; background: currentColor; }
+.sb__sig { display: flex; gap: 2px; align-items: flex-end; height: 12px; }
+.sb__sig i { width: 3px; background: currentColor; border-radius: 1px; display: block; }
+.topbar { height: var(--pyx-topbar-h); flex: none; display: flex; align-items: center; gap: var(--py-space-1); padding: 0 var(--py-space-1) 0 var(--py-space-4); }
+.topbar--flow { padding: 0 var(--py-space-1); }
+.topbar__title { flex: 1; font: var(--pyx-type-label-l); text-align: center; }
+.topbar__logo { height: 26px; display: block; }
+.bottombar { height: calc(var(--pyx-bottombar-h) + 20px); flex: none; display: flex; padding: 0 var(--py-space-2) 20px;
+  background: var(--py-surface-raised); box-shadow: inset 0 1px 0 var(--py-border-subtle); }
+.tab { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font: var(--py-type-label-s); color: var(--py-text-muted); border: 0; background: transparent; font-family: var(--py-font-sans); }
+.tab__pill { width: 56px; height: 32px; border-radius: var(--py-radius-pill); display: grid; place-items: center; }
+.tab.is-active { color: var(--py-text-brand); }
+.tab.is-active .tab__pill { background: var(--py-surface-subtle); }
+[data-theme="dark"] .tab.is-active .tab__pill { background: var(--py-surface-default); } /* dark: subtle equals raised, so step down */
+.footer { flex: none; padding: var(--py-space-3) var(--py-space-4) 28px; background: var(--py-surface-raised); box-shadow: var(--py-shadow-2), inset 0 1px 0 var(--py-border-subtle);
+  display: flex; flex-direction: column; gap: var(--py-space-3); }
+.footer__row { display: flex; justify-content: space-between; align-items: baseline; }
+.steps { display: flex; gap: var(--py-space-1); }
+.steps span { flex: 1; height: 4px; border-radius: var(--py-radius-pill); background: var(--py-border-subtle); }
+.steps span.on { background: var(--py-action-secondary-bg); }
+.scroll { flex: 1; overflow: hidden; }
+.pad { padding: 0 var(--py-space-4); }
+.h-step { font: var(--py-type-label-s); color: var(--py-text-muted); }
+.row { display: flex; gap: var(--py-space-3); }
+.row > * { flex: 1; }
+.kv { display: flex; justify-content: space-between; gap: var(--py-space-3); font: var(--py-type-body-s); padding: var(--py-space-2) 0; }
+.kv dt { color: var(--py-text-muted); margin: 0; }
+.kv dd { margin: 0; text-align: right; font-weight: 600; }
+.divider { height: 1px; background: var(--py-border-subtle); }
+.photo { background-size: cover; background-position: center; }
+.home-ind { position: absolute; bottom: 8px; left: 50%; width: 134px; margin-left: -67px; height: 5px; border-radius: var(--py-radius-pill); background: var(--py-text-default); opacity: .9; }
+
+/* Figure helpers */
+.cap { font: 600 13px/18px var(--py-font-sans); color: var(--py-text-muted); }
+.cap b { color: var(--py-text-default); }
+.tok { font: 500 12px/16px ui-monospace, "SFMono-Regular", Menlo, monospace; color: var(--py-text-muted); }
+.ann { position: absolute; font: 700 12px/14px var(--py-font-sans); color: #C4281C; }
+.ann-line { position: absolute; border: 0 dashed #C4281C; }
