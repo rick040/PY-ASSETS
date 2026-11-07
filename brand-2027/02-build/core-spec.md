@@ -102,12 +102,12 @@ The bubble is the outer silhouette of the beeldmerk (path in `kit/assets/bubble.
 | Name | HEX | RGB | CMYK | RAL (nearest) | Token |
 |---|---|---|---|---|---|
 | PY-Blauw | #1A3580 | 26 53 128 | 100 83 0 17 | 5002 | `color.blue.700` |
-| PY-Aqua | #32B9CD | 50 185 205 | 69 0 21 0 | 6027 (leans green) | `color.aqua.500` |
+| PY-Aqua | #32B9CD | 50 185 205 | 69 0 21 0 | RAL Design 220 70 35 (D23; 6027 retired) | `color.aqua.500` |
 | PY-Oranje | #F08300 | 240 131 0 | 0 57 100 0 | 2003 | `color.orange.500` |
-| PY-Diep (new name) | #0D142E | 13 20 46 | proposal by B2 | proposal by B2 | `color.blue.900` |
+| PY-Diep (new name) | #0D142E | 13 20 46 | 100 83 0 80 (D23) | 5004 (D23) | `color.blue.900` |
 | PY-Grijs | #AEAEAE | 174 174 174 | 0 0 0 42 | 9006 (hardware) | `color.neutral.400` |
 | PY-Zwart | #1D1D1B | 29 29 27 | 0 0 0 100 | 9005 | `color.neutral.900` |
-| Wit | #FFFFFF | 255 255 255 | 0 0 0 0 | 9016 or 9010 (B2) | `color.neutral.0` |
+| Wit | #FFFFFF | 255 255 255 | 0 0 0 0 | 9016 (D23) | `color.neutral.0` |
 
 The live site colours #192AA2, #0AD3E6, #FF8400 and the Canva colours #344F9E, #76C8DB are retired. The measured gradient stop #097BAE is retired.
 Full scales (50 to 900 for blue, aqua, orange, neutral; red 100, 600, 700) are in `tokens.json`. Print uses brand colours and their tints only.
@@ -234,7 +234,7 @@ Bilingual signage: Dutch first, English below at the same size, regular weight, 
 
 | Item | Owner |
 |---|---|
-| Pantone and vinyl (Oracal 751/8500, 3M) references, CMYK for PY-Diep and tints, RAL for white | B2 proposes, CD approves |
+| Pantone and vinyl references, CMYK for PY-Diep and tints, RAL for white | done: D23, in tokens.json `$extensions` |
 | Logo misuse set, lockups with location names | B1 |
 | Pictogram redraw plan, UI icon set choice | B3 |
 | Photo shot list, AI prompt template | B4 |
@@ -269,5 +269,11 @@ Bilingual signage: Dutch first, English below at the same size, regular weight, 
 | D20 | 2026-11-07 | B3 | UI icons: Tabler Icons 3.50 (MIT, licence text ships with site and app), stroke 2 px at every size (16 to 32), never the `brand-` icons | Matches 24 grid, 2 px stroke, round joins and 2 px safe zone |
 | D21 | 2026-11-07 | B3 | Old handbook shapes: keep volvlak (the bubble), afbeeldingsmasker (photo bubble), pill (route boards, buttons, chips), P with roof (entrances); change level bubble, section tag and column band to flat navy with bubble content; retire gradient bubble, circle, pill on gradient, separator arc, bracket arc with slogan, 5 percent watermark, stick figures | One signature shape; no white on aqua; no RVV look-alikes |
 | D22 | 2026-11-07 | CD | A background bubble counts as the one bubble on that surface | Keeps "one bubble per surface" simple |
+
+| D23 | 2026-11-07 | B2 | Production codes per colour (CMYK FOGRA39, Pantone C and U, RAL, opaque and translucent vinyl) as listed in `tokens.json` `$extensions.nl.parkingyou.production`; PY-Diep CMYK 100 83 0 80; print tints 50 to 300 with CMYK; aqua RAL Design 220 70 35, and aqua on signs preferably as printed vinyl with matte laminate on Dibond; white RAL 9016; PY-Diep RAL 5004. All matches by CIEDE2000, to be confirmed on physical swatches and a lit test panel | Ends the 15-blue drift; RAL 6027 was dE 10.2 from PY-Aqua |
+| D24 | 2026-11-07 | B2 | PY-Diep text on orange in print below 12 pt is set in K 100 (6.39:1) | PY-Diep is outside the FOGRA39 gamut; four-colour small text registers badly |
+| D25 | 2026-11-07 | B2 | Bilingual signs: both lines with line height equal to the font size, 0.5u clear space between the two line boxes; condensed width never on screen | Makes "0.5u" measurable |
+
+Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037 (dE 5.4); Pantone 3597 C or 287 C for PY-Blauw; all translucent colours on a lit panel by day and night.
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

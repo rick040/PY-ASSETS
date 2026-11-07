@@ -32,12 +32,34 @@ PRIMITIVES = {
 # Production data for the brand colours. CMYK and RAL from handbook 1.3 (RAL is best match only).
 # Pantone and vinyl stay null until the colour chapter (B2) proposes and the core spec approves them.
 PRODUCTION = {
-    ("blue", "700"): {"name": "PY-Blauw", "cmyk": [100, 83, 0, 17], "ral": "5002", "ralMatch": "nearest, not exact (handbook 1.3)"},
-    ("aqua", "500"): {"name": "PY-Aqua", "cmyk": [69, 0, 21, 0], "ral": "6027", "ralMatch": "nearest, leans green (handbook 1.3)"},
-    ("orange", "500"): {"name": "PY-Oranje", "cmyk": [0, 57, 100, 0], "ral": "2003", "ralMatch": "nearest (handbook 1.3)"},
-    ("neutral", "400"): {"name": "PY-Grijs", "cmyk": [0, 0, 0, 42], "ral": "9006", "ralMatch": "hardware colour (handbook 1.3)"},
-    ("neutral", "900"): {"name": "PY-Zwart", "cmyk": [0, 0, 0, 100], "ral": "9005", "ralMatch": "nearest (handbook 1.3)"},
-    ("blue", "900"): {"name": "PY-Diep", "cmyk": None, "ral": None, "ralMatch": None},
+    # CMYK: handbook 1.3 for brand colours; PY-Diep and tints by FOGRA39 conversion (B2, D23). Pantone, RAL, vinyl: nearest by
+    # CIEDE2000 (B2, D23). All matches must be confirmed on physical swatches and a lit test panel before production.
+    ("blue", "700"): {"name": "PY-Blauw", "cmyk": [100, 83, 0, 17], "ral": "5002", "ralMatch": "nearest, dE 4.5",
+                      "pantone": {"coated": "3597 C (alt. 287 C)", "uncoated": "280 U"},
+                      "vinyl": {"opaque": "Oracal 751C-049 King blue", "translucent": "Oracal 8500-006 Intensive blue or 3M 3630-157 Sultan Blue"}},
+    ("aqua", "500"): {"name": "PY-Aqua", "cmyk": [69, 0, 21, 0], "ral": "RAL Design 220 70 35", "ralMatch": "dE 1.7; RAL Classic 6027 retired (dE 10.2)",
+                      "pantone": {"coated": "3115 C", "uncoated": "3115 U"},
+                      "vinyl": {"opaque": "none standard: print on white vinyl with matte laminate", "translucent": "none standard: print on 3M IJ3630-20"}},
+    ("orange", "500"): {"name": "PY-Oranje", "cmyk": [0, 57, 100, 0], "ral": "2003", "ralMatch": "dE 7.5; test RAL 1037 (dE 5.4) on the sample boards",
+                        "pantone": {"coated": "144 C", "uncoated": "144 U"},
+                        "vinyl": {"opaque": "3M 100-717 Light Orange (unverified)", "translucent": "3M 3630-74 Kumquat Orange"}},
+    ("neutral", "400"): {"name": "PY-Grijs", "cmyk": [0, 0, 0, 42], "ral": "9006", "ralMatch": "hardware colour",
+                         "pantone": {"coated": "Cool Gray 5 C", "uncoated": "Cool Gray 5 U"},
+                         "vinyl": {"opaque": "Oracal 751C-724 Ice grey", "translucent": "Oracal 8500-076 Telegrey"}},
+    ("neutral", "900"): {"name": "PY-Zwart", "cmyk": [0, 0, 0, 100], "ral": "9005", "ralMatch": "nearest",
+                         "pantone": {"coated": "419 C or K 100", "uncoated": "K 100"},
+                         "vinyl": {"opaque": "Oracal 751C-070M matt", "translucent": "Oracal 8500-070 Black"}},
+    ("blue", "900"): {"name": "PY-Diep", "cmyk": [100, 83, 0, 80], "ral": "5004", "ralMatch": "dE 9.1, outside FOGRA39 gamut",
+                      "pantone": {"coated": "5255 C", "uncoated": None},
+                      "vinyl": {"opaque": "Oracal 751C-590 Blueberry", "translucent": None}},
+    ("neutral", "0"): {"name": "Wit", "cmyk": [0, 0, 0, 0], "ral": "9016", "ralMatch": "dE 4.5, LRV 87",
+                       "pantone": None, "vinyl": {"opaque": "Oracal 751C-010M matt", "translucent": "Oracal 8500-010 White"}},
+}
+# Print tints (screens of the brand colour), FOGRA39 (B2, D23). Print uses steps 50 to 300 only.
+TINT_CMYK = {
+    ("blue", "50"): [5, 3, 2, 0], ("blue", "100"): [10, 6, 2, 0], ("blue", "200"): [24, 15, 2, 0], ("blue", "300"): [44, 30, 2, 0],
+    ("aqua", "50"): [8, 0, 3, 0], ("aqua", "100"): [16, 0, 5, 0], ("aqua", "200"): [30, 0, 9, 0], ("aqua", "300"): [50, 0, 15, 0],
+    ("orange", "50"): [0, 5, 11, 0], ("orange", "100"): [0, 13, 25, 0], ("orange", "200"): [0, 25, 49, 0],
 }
 
 # ---------------------------------------------------------------- semantic colour (light, dark)
@@ -228,7 +250,9 @@ def build():
                 t["$description"] = prod["name"]
                 t["$extensions"] = {"nl.parkingyou.production": {
                     "cmyk": prod["cmyk"], "ral": prod["ral"], "ralMatch": prod["ralMatch"],
-                    "pantone": None, "vinyl": None}}
+                    "pantone": prod["pantone"], "vinyl": prod["vinyl"]}}
+            elif (scale, step) in TINT_CMYK:
+                t["$extensions"] = {"nl.parkingyou.production": {"cmyk": TINT_CMYK[(scale, step)], "use": "print tint"}}
             grp[step] = t
         tokens["color"][scale] = grp
     # semantic colour
