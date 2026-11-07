@@ -126,7 +126,7 @@ Het logo staat op een vaste url (bijvoorbeeld de site of een cdn), niet als bijl
 
 ## Voorgestelde waarden
 
-Deze waarden staan niet in de core spec. Ze worden pas gebruikt als ze zijn goedgekeurd.
+Goedgekeurd: zie besluiten D28 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
 
 | Waarde | Voorstel | Reden |
 |---|---|---|
@@ -141,5 +141,5 @@ Deze waarden staan niet in de core spec. Ze worden pas gebruikt als ze zijn goed
 **Open vragen**
 - KvK-nummer, btw-nummer, IBAN en een algemeen telefoonnummer staan niet in de repository. Nu staan ze als [placeholder].
 - De bedrijfsnaam staat als "ParkingYou BV" op het oude briefpapier en als "ParkingYou B.V." elders. Wij gebruiken ParkingYou B.V.; graag bevestigen.
-- CMYK van PY-Blauw voor ongestreken papier: B2 levert de conversie naar FOGRA52. Tot die tijd gebruiken we 100 83 0 17 en beoordelen we op een proef.
+- CMYK van PY-Blauw voor ongestreken papier (FOGRA52): de drukker converteert; tot die tijd 100 83 0 17 en beoordelen op een proef.
 - Gaat de brief ooit in een vensterenvelop? Dan maken we een tweede envelop, het adresvak staat al goed.

@@ -255,7 +255,7 @@ sunset colours, HDR look, illustration.
 
 ## Voorgestelde waarden
 
-Goedgekeurd door de creative director: zie besluiten D26 en D27 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+Goedgekeurd: zie besluiten D26 en D27 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
 
 
 | Waarde | Voorstel | Reden |

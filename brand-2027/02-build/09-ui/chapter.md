@@ -43,7 +43,7 @@ In donkere modus is de pagina PY-Diep (`blue.900`), zijn vlakken `blue.800`, wor
 
 ## Componenten
 
-Alle componenten zijn gebouwd met echte `<button>`, `<input>`, `<label>` en `<select>`. Iconen zijn outline, 24-raster, 2 px lijn (tijdelijk, tot B3 de iconenset kiest).
+Alle componenten zijn gebouwd met echte `<button>`, `<input>`, `<label>` en `<select>`. Iconen zijn outline, 24-raster, 2 px lijn (Tabler Icons, zie het hoofdstuk Iconografie).
 
 ### Knoppen
 
@@ -189,8 +189,6 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 ## Voorgestelde waarden
 
 Goedgekeurd in de core spec als besluiten D4 tot en met D14; de waarden staan nu in het tokenbestand. De tabel blijft als uitleg.
-
-Deze waarden staan niet in de core spec. Ze zijn in de figuren gebruikt om het te kunnen laten zien, en wachten op goedkeuring van de creative director.
 
 | Waarde | Voorstel | Reden |
 |---|---|---|

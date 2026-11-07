@@ -124,9 +124,7 @@ Druk in CMYK (FOGRA39 gestreken of FOGRA52 ongestreken) met 3 mm afloop. Drukwer
 
 ## Voorgestelde waarden
 
-Goedgekeurd door de creative director: zie besluiten D23 tot en met D25 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
-
-Dit zijn voorstellen van B2. De creative director beslist. Tot dan worden ze niet in finals gebruikt.
+Goedgekeurd: zie besluiten D23 tot en met D25 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
 
 **Methode.** ΔE is CIEDE2000, zelf berekend. Voor RAL en folie: merkkleur van sRGB naar CIELab D65 en vergeleken met de gepubliceerde Lab- of sRGB-waarde. Voor Pantone: merkkleur naar CIELab D50 (Bradford) en vergeleken met de Lab-waarden uit de PANTONE+ Solid Coated en Uncoated V3 kleurboeken (X-Rite 2014). Waar de nieuwere Pantone-waarden ook te vinden waren (colorxs.com) staat de tweede ΔE erbij. Een ΔE uit schermdata vervangt nooit een fysiek staal: elke keuze wordt gecontroleerd met de Pantone-waaiers, de RAL K7 en de folie-stalen.
 

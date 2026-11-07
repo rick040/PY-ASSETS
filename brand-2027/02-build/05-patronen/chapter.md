@@ -61,7 +61,7 @@ Nooit in bewegwijzering, snijfolie, poedercoating, lichtbakfolie of in een bubbe
 
 ## Mensen: foto in plaats van stokfiguur
 
-De negen stokfiguren uit het handboek (zwaaien, tassen, pet) gebruiken we niet meer in nieuw werk. Borden die al hangen, blijven hangen tot ze om een andere reden worden vervangen. Mensen tonen we alleen in eigen foto's: echte mensen bij onze eigen ingangen en straten, natuurlijke kleur, geen stock. De shotlist komt uit het fotografiehoofdstuk (B4).
+De negen stokfiguren uit het handboek (zwaaien, tassen, pet) gebruiken we niet meer in nieuw werk. Borden die al hangen, blijven hangen tot ze om een andere reden worden vervangen. Mensen tonen we alleen in eigen foto's: echte mensen bij onze eigen ingangen en straten, natuurlijke kleur, geen stock. De shotlist staat in het hoofdstuk Fotografie en beeld.
 
 De voetganger als pictogram blijft. Dat is een bord, geen illustratie.
 
@@ -91,7 +91,6 @@ De voetganger als pictogram blijft. Dat is een bord, geen illustratie.
 ## Open vragen
 
 - Telt de achtergrondbubbel mee als "de" bubbel van een vlak? Wij nemen aan van wel.
-- P met dak en de kolomband: bevestigen bij het hoofdstuk bewegwijzering (B6).
 
 ## Do's en don'ts
 
