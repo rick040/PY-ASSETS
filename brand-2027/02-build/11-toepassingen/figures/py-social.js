@@ -10,17 +10,18 @@ const PYSOC = (() => {
 
   // Het vak on PY-Blauw: bays running in from the bottom edge (H) for len px; pitch 1.5u, line 0.05u; jouw vak at bay index k.
   function vak(H, len, k, figName, standY, o = {}) {
-    const pitch = 1.5 * u, lw = 0.05 * u, top = H - len;
-    let s = `<g stroke="${C.line}" stroke-width="${lw}">`;
+    const pitch = 1.5 * u, lw = 0.05 * u, top = H - len, light = !!o.light;
+    const lineC = light ? '#DDE1E7' : C.line, mineC = light ? '#E3F6F9' : C.mine, ink = light ? C.navy : C.white;
+    let s = `<g stroke="${lineC}" stroke-width="${lw}">`;
     for (let x = 27; x <= W; x += pitch) s += `<line x1="${x}" y1="${top}" x2="${x}" y2="${H}"/>`;
     s += `<line x1="0" y1="${top - 0.5 * u}" x2="${W}" y2="${top - 0.5 * u}" stroke-dasharray="${0.3 * u} ${0.25 * u}"/></g>`;
     const x0 = 27 + k * pitch;
-    s += `<rect x="${x0}" y="${top}" width="${pitch}" height="${len}" fill="${C.mine}"/>`;
+    s += `<rect x="${x0}" y="${top}" width="${pitch}" height="${len}" fill="${mineC}"/>`;
     s += `<g stroke="${C.aqua}" stroke-width="${2 * lw}"><line x1="${x0}" y1="${top}" x2="${x0}" y2="${H}"/><line x1="${x0 + pitch}" y1="${top}" x2="${x0 + pitch}" y2="${H}"/></g>`;
     if (figName) {
       const h = 2.2 * u, fw = PYS.figW(figName, h);
-      s += `<rect x="${x0 + 0.2 * u}" y="${standY}" width="${pitch - 0.4 * u}" height="${0.1 * u}" fill="${C.white}"/>`;
-      s += PYS.fig(figName, x0 + (pitch - fw) / 2, standY, h, C.white, o);
+      s += `<rect x="${x0 + 0.2 * u}" y="${standY}" width="${pitch - 0.4 * u}" height="${0.1 * u}" fill="${ink}"/>`;
+      s += PYS.fig(figName, x0 + (pitch - fw) / 2, standY, h, ink, { flip: o.flip });
     }
     return s;
   }
@@ -36,18 +37,20 @@ const PYSOC = (() => {
     const reel = fmt === 'reel', H = reel ? 1920 : 1350, dy = reel ? 162 : 0; // reel: key content starts at 5u (270) instead of 2u
     let s = `<rect width="${W}" height="${H}" fill="${C.navy}"/>`;
     if (type === 'aanbod') {
-      const d = o.data || {}, t = dy + 60;
-      s += logo(M, M + dy);
-      s += eyebrow(M, 351 + t, d.eyebrow || 'Parking Hofplein');
-      s += T(M, 486 + t, d.l1 || 'Jouw vak', 117, { w: 700 });
-      s += T(M, 608 + t, d.l2 || 'staat klaar.', 117);
-      s += T(M, 748 + t, d.price || '€ 7,50', 78, { w: 800 }) + T(M + (d.priceW || 231), 748 + t, d.unit || 'per dag', 31);
-      s += T(M, 806 + t, d.body || 'Midden in Rotterdam, de hele dag.', 31);
-      s += T(M, 892 + t, d.cta || 'Reserveer je plek op parkingyou.nl', 31, { w: 700 });
+      const d = o.data || {}, t = dy + 60, light = d.ground !== 'navy';
+      const ink = light ? C.navy : C.white, accent = light ? '#127C8C' : C.aqua;
+      if (light) s = `<rect width="${W}" height="${H}" fill="#FFFFFF"/>`;
+      s += light ? `<image href="../../kit/assets/logo-horizontal-color.svg" x="${M}" y="${M + dy}" height="54" width="195.6"/>` : logo(M, M + dy);
+      s += eyebrow(M, 351 + t, d.eyebrow || 'Parking Hofplein', accent);
+      s += T(M, 486 + t, d.l1 || 'Jouw vak', 117, { w: 700, c: ink });
+      s += T(M, 608 + t, d.l2 || 'staat klaar.', 117, { c: ink });
+      s += T(M, 748 + t, d.price || '€ 7,50', 78, { w: 800, c: ink }) + T(M + (d.priceW || 231), 748 + t, d.unit || 'per dag', 31, { c: ink });
+      s += T(M, 806 + t, d.body || 'Midden in Rotterdam, de hele dag.', 31, { c: light ? '#1D1D1B' : C.white });
+      s += T(M, 892 + t, d.cta || 'Reserveer je plek op parkingyou.nl', 31, { w: 700, c: ink });
       // jouw vak (k = 1) starts on the left margin, under the headline
       const k = d.k === undefined ? 1 : d.k;
-      if (reel) s += vak(H, 340 + 4 * u, k, d.fig || 'cap-wave', 1566, { flip: d.flip });
-      else s += vak(H, 4 * u, k, d.fig || 'cap-wave', 1296, { flip: d.flip });
+      if (reel) s += vak(H, 340 + 4 * u, k, d.fig || 'cap-wave', 1566, { flip: d.flip, light });
+      else s += vak(H, 4 * u, k, d.fig || 'cap-wave', 1296, { flip: d.flip, light });
     }
     if (type === 'locatie') {
       const ph = reel ? 918 : 648;
