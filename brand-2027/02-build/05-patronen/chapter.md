@@ -224,6 +224,8 @@ In de garage betekent kleur iets. De elementen dragen die betekenis.
 
 ## Voorgestelde waarden
 
+Goedgekeurd: zie besluit D43 in de core spec.
+
 | Waarde | Voorstel | Reden |
 |---|---|---|
 | Plaats van de rijbaan | op 2u van het einde van de vaklijnen (scherm 48 px) | De core spec geeft de streep, niet de plek. Op 2u leest het als rijbaan en blijft er ruimte voor de kop eronder. |
@@ -235,7 +237,7 @@ In de garage betekent kleur iets. De elementen dragen die betekenis.
 - Gespiegelde figuren: mogen we `-flip`-versies (lijf gespiegeld, hoofd zoals in het logo) in de kit zetten, zodat niemand zelf gaat knippen?
 - Borden met een pijl, een bubbel en scheidingen: wij lezen "hooguit twee elementen" ook voor borden, dus dan scheiden met ruimte en niet met de stem. Klopt dat?
 - Mag jouw vak leeg blijven (bijvoorbeeld op een kaartachterkant)? Wij nemen aan van wel.
-- Prijzen in de figuren (€ 12,50, € 3) zijn voorbeelden, geen echte tarieven.
+- Prijzen in de figuren zijn € 12,50 (Parking Philips Stadion, dagtarief met reservering) of [prijs], geen verzonnen tarieven.
 
 ## Do's en don'ts
 

@@ -172,7 +172,7 @@
 .voice { display: flex; align-items: stretch; }            /* de stem, drawn by ui.js left of .voice__text */
 .voice__text { flex: 1; min-width: 0; }
 .floor { position: relative; box-shadow: inset 0 calc(-1 * var(--pyx-border-w-strong)) 0 var(--py-figure-body); } /* the line a parkeerder stands on: 2 px in the body colour */
-.parkeerder { display: block; flex: none; }                 /* <img> from kit/assets/figure-*-duo*.svg, alt="" */
+.parkeerder { display: block; flex: none; }                 /* <img> from kit/assets/figure-*-navy.svg or -white.svg, alt="" */
 
 /* Figure helpers */
 .cap { font: 600 13px/18px var(--py-font-sans); color: var(--py-text-muted); }

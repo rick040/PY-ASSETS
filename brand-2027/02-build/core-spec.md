@@ -336,4 +336,6 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 
 | D42 | 2026-11-07 | Applications | On signs the stem as separator is as high as the arrow or pictogram next to it (portal: beeldmerk height), 0.3x air on both sides; on PY-Oranje signs the stem is PY-Diep; welcome wall 3000 x 1000 mm (cap height 100, stem 300, zwaaier 600 mm); newsletter header 272 px (supersedes the 88 px of D30) | Completes section 4b for signs and the newsletter |
 
+| D43 | 2026-11-07 | Patterns | Lane line of het vak 2u from the end of the bay lines (48 px on screen); gastheer and wijzer: 0.5u between hand and the text or arrow, hand at the height of the first line; mirrored figures in the kit (`figure-*-navy-flip.svg`, `-white-flip.svg`) mirror the body only, the head keeps the logo orientation; "logo plus at most two elements" also applies to signs; a parkeerder stands in jouw vak only in a deck running from the top edge, a deck from the bottom edge holds a bubble; jouw vak may stay empty; example prices that are not real tariffs are written [prijs] | Completes section 4b |
+
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

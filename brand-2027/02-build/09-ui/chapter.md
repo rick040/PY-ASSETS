@@ -221,7 +221,7 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 
 ## Voorgestelde waarden
 
-Alleen waarden die nog niet in de core spec of `tokens.json` staan. Tot ze zijn goedgekeurd, gelden ze als voorstel; de figuren tonen ze om de regel zichtbaar te maken.
+Goedgekeurd: zie besluiten D4 tot en met D14 en D35 in de core spec. De tabel blijft als uitleg.
 
 | Waarde | Voorstel | Reden |
 |---|---|---|
