@@ -10,9 +10,9 @@ const PYS = (() => {
   const arrow = (x, y, s, deg, col) => { const cx = x + s / 2, cy = y + s / 2;
     return `<g transform="rotate(${deg} ${cx} ${cy})"><svg data-p="arrow" x="${x}" y="${y}" width="${s}" height="${s}" color="${col}"></svg></g>`; };
   const picto = (n, x, y, s, col) => `<svg data-p="${n}" data-anchor="center" x="${x}" y="${y}" width="${s}" height="${s}" style="color:${col}"></svg>`;
-  // a parkeerder standing with its feet on y (baseline); head colour default aqua; mono = one colour
+  // a parkeerder standing with its feet on y (baseline); one colour (D41), the whole figure takes col
   const fig = (n, x, base, h, col, o = {}) => { const w = h * aspect('fig-' + n);
-    return `<svg data-p="fig-${n}" ${o.flip ? 'data-flip="1"' : ''} ${o.head ? `data-head="${o.head}"` : ''} x="${x}" y="${base - h}" width="${w.toFixed(2)}" height="${h}" color="${col}"></svg>`; };
+    return `<svg data-p="fig-${n}" ${o.flip ? 'data-flip="1"' : ''} x="${x}" y="${base - h}" width="${w.toFixed(2)}" height="${h}" color="${col}"></svg>`; };
   const figW = (n, h) => h * aspect('fig-' + n);
   const text = (x, y, s, size, col, o = {}) => `<text x="${x}" y="${y}" font-family="Ubuntu Sans" font-weight="${o.w || 700}" font-size="${size}" letter-spacing="${(size * 0.01).toFixed(2)}" fill="${col}" ${o.anchor ? `text-anchor="${o.anchor}"` : ''} style="font-variant-numeric:tabular-nums">${s}</text>`;
 
@@ -28,7 +28,7 @@ const PYS = (() => {
       if (m[0] === 'arrow') return [arrow(x, y0, box, m[1], fg), box];
       if (m[0] === 'stem') return [stem(x + 0.3 * box, y0, box, stemCol), stemW(box) + 0.6 * box];
       if (m[0] === 'gap') return ['', m[1]];
-      if (m[0] === 'fig') { const h = base - 20; return [fig(m[1], x, base, h, fg, Object.assign({ head: o.head }, m[2] || {})), figW(m[1], h)]; }
+      if (m[0] === 'fig') { const h = base - 20; return [fig(m[1], x, base, h, fg, m[2] || {}), figW(m[1], h)]; }
       if (m[0] === 'text') return [text(x, base, m[1], font, fg), 0];
     };
     let x = x0;

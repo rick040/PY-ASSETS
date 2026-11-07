@@ -56,7 +56,7 @@ const PYSOC = (() => {
       s += light ? `<image href="../../kit/assets/logo-horizontal-color.svg" x="${M}" y="${ly}" height="54" width="195.6"/>` : logo(M, ly);
     }
     if (type === 'locatie') {
-      // white ground under the photo: de stem in PY-Aqua, the loper navy with aqua head
+      // white ground under the photo: de stem in PY-Aqua, the loper in navy
       s = `<rect width="${W}" height="${H}" fill="#FFFFFF"/>`;
       const ph = reel ? 918 : 648;
       s += `<image href="../../kit/photos/py-photo-philips-stadion.jpg" x="0" y="0" width="${W}" height="${ph}" preserveAspectRatio="xMidYMid slice"/>`;
