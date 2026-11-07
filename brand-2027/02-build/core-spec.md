@@ -239,3 +239,13 @@ Bilingual signage: Dutch first, English below at the same size, regular weight, 
 | Photo shot list, AI prompt template | B4 |
 | Component specs, booking flow, dark mode screens | B5 |
 | Sign family dimensions with cap heights from 6.3 | B6 |
+
+## 13. Decisions log (proposals approved by the creative director)
+
+| # | Date | From | Value | Reason |
+|---|---|---|---|---|
+| D1 | 2026-11-07 | B1 | Location lockup: name size 0.4x (cap height 0.28x), Ubuntu Sans Bold; construction A (name under the wordmark, left edge on the stem of the p) is default, B (one line, 0.5x after "you") for wide formats | 0.5x crowds the descenders of p and g and overpowers the wordmark; 0.4x keeps x = 2.5 x name size, so signage sizing still follows section 6.3 |
+| D2 | 2026-11-07 | B1 | Favicon: no separate 16 px drawing; browsers scale the SVG or the 32 px PNG | A 16 px beeldmerk is 8.7 px high, below the 16 px minimum; a redraw would be a new logo shape |
+| D3 | 2026-11-07 | CD | Philips Stadion kit photo: licence plates blurred; rule "kentekens altijd onherkenbaar" | Privacy (AVG); raised by B4 |
+
+Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).
