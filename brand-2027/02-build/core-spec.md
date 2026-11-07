@@ -334,4 +334,6 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 
 | D41 | 2026-11-07 | Rick | Parkeerders one colour: no aqua head. Navy on light and aqua grounds, white on navy. Supersedes the aqua head of D32 | "Ik vind de blauwe hoofden van de stick figure niet mooi, houd het 1 kleur" |
 
+| D42 | 2026-11-07 | Applications | On signs the stem as separator is as high as the arrow or pictogram next to it (portal: beeldmerk height), 0.3x air on both sides; on PY-Oranje signs the stem is PY-Diep; welcome wall 3000 x 1000 mm (cap height 100, stem 300, zwaaier 600 mm); newsletter header 272 px (supersedes the 88 px of D30) | Completes section 4b for signs and the newsletter |
+
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

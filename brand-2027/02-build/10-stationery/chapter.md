@@ -27,13 +27,13 @@ Alle drukwerk in CMYK met 3 mm afloop. Logo's en figuren als bestand, nooit nage
 
 | Kleur | HEX | CMYK | Gebruik in dit hoofdstuk |
 |---|---|---|---|
-| PY-Blauw | #1A3580 | 100 83 0 17 | logo, namen, koppen, voet, de lijn onder de gastheer, het lijf van de parkeerder, vol vlak op de voorkant van het kaartje |
-| PY-Aqua | #32B9CD | 69 0 21 0 | de stem, het hoofd van de parkeerder, de stip in het logo |
+| PY-Blauw | #1A3580 | 100 83 0 17 | logo, namen, koppen, voet, de lijn onder de gastheer, de parkeerder, vol vlak op de voorkant van het kaartje |
+| PY-Aqua | #32B9CD | 69 0 21 0 | de stem en de stip in het logo |
 | PY-Zwart | #1D1D1B | 0 0 0 100 | lopende tekst |
 | PY-Grijs | #AEAEAE | 0 0 0 42 | haarlijnen in tabellen, vouwteken |
 | Wit | #FFFFFF | papier | grond |
 
-PY-Aqua is hier nooit tekst: aqua op wit haalt het contrast niet. Als lijn en als hoofd van de parkeerder is het een accent, en zo gebruiken we het.
+PY-Aqua is hier nooit tekst: aqua op wit haalt het contrast niet. Als de lijn van de stem is het ons accent, en meer aqua komt er niet op.
 
 Op ongestreken papier (FOGRA52) zakt PY-Blauw in en wordt het iets doffer. Dezelfde CMYK-waarde geeft op gestreken papier (FOGRA39) een vollere navy. Kies per product één papier en laat de drukker een proef draaien naast de huidige visitekaartjes.
 
@@ -51,7 +51,7 @@ Op ongestreken papier (FOGRA52) zakt PY-Blauw in en wordt het iets doffer. Dezel
 - **De stem** opent naam en functie. Hoogte = de twee regels samen, 19 + 14 pt = 11,6 mm. Afstand van de punten van de boog tot de eerste letter 0,3 x 11,6 = 3,5 mm. De lijn is 1/25 van de hoogte, maar nooit dunner dan 0,5 mm; hier dus 0,5 mm. De stem hangt in kolom 1, de tekst begint op kolom 2.
 - **Contact** in print-small 8/11 pt: telefoon, e-mail, site (Bold PY-Blauw) en adres (PY-Blauw). Tabelcijfers in telefoonnummers.
 - **De contactlijn.** Op de ondermarge loopt een lijn van 0,1u (0,28 mm) in PY-Blauw over de volle breedte.
-- **De gastheer wijst** staat rechts op die lijn, 4u = 11 mm hoog, gespiegeld zodat hij naar je gegevens wijst. Navy lijf, aqua hoofd.
+- **De gastheer wijst** staat rechts op die lijn, 4u = 11 mm hoog, gespiegeld zodat hij naar je gegevens wijst. Hij is één kleur: PY-Blauw, ook zijn hoofd.
 
 Vaste gegevens uit de repository: ParkingYou B.V., Victoriapark 4, 5611 BM Eindhoven, info@parkingyou.nl, parkingyou.nl. Naam, functie, telefoonnummer en persoonlijk e-mailadres zijn velden: [Voornaam Achternaam], [Functie], [telefoonnummer], [voornaam]@parkingyou.nl.
 
@@ -123,7 +123,7 @@ Logo en stem staan op een vaste url (de site of een cdn), niet als bijlage.
 | py-email-signature.html | handtekening, inline stijl |
 | py-logo-mail@2x.png | logo voor mail, 280 x 96 px met wit vlak |
 | py-stem-mail@2x.png | de stem voor mail, 18 x 80 px, PY-Aqua, transparant |
-| py-figure-cap-point-duo.svg | de gastheer wijst, uit de kit, voor kaartje en briefpapier |
+| figure-cap-point-navy.svg | de gastheer wijst, uit de kit, één kleur PY-Blauw, voor kaartje en briefpapier |
 
 De maten van adresvak, vouwteken, gegevensblok, mail-logo en papier zijn eerder goedgekeurd (besluit D28) en blijven staan.
 

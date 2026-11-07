@@ -1,64 +1,88 @@
 # Toepassingen
 
-Dit hoofdstuk laat zien hoe het systeem werkt waar klanten ons tegenkomen: in de garage, op de automaat, op de pas, in hun feed en mailbox, en op de bus en de jas van onze mensen. Alles komt uit dezelfde bouwstenen: PY-Blauw, de drie taakkleuren, Ubuntu Sans, de format unit u en de bubbel.
+Dit hoofdstuk laat zien hoe het systeem werkt waar klanten ons tegenkomen: in de garage, op de automaat, op de pas, in hun feed en mailbox, en op de bus en de jas van onze mensen. Alles komt uit dezelfde bouwstenen: PY-Blauw, de drie taakkleuren, Ubuntu Sans, de format unit u, en onze vijf eigen elementen: de parkeerders, de stem, het vak, de bubbel en de hoekige pijl.
 
-Twee regels sturen bijna elke beslissing hieronder:
+Drie regels sturen bijna elke beslissing hieronder:
 
-- **Kleur betekent iets.** Navy is rijden en het merk, aqua is lopen, oranje is betalen en let op.
+- **Kleur betekent iets.** Navy is rijden en het merk, aqua is lopen, oranje is betalen. Oranje zie je alleen bij de automaat, op de tariefstrook en op de stickers van de automaat. Niet op posters, niet in social, niet op de bus.
+- **Per vlak het logo plus hooguit twee elementen.** Een routebord heeft de stem en de pijl. Een social post het vak en één parkeerder. Meer is drukte.
 - **Letterhoogte volgt de leesafstand.** Op borden is de kaphoogte 10 mm per meter leesafstand, met 12 mm als minimum. Fontgrootte = kaphoogte / 0,693.
 
-Alle borden hebben een **mat** laminaat of een matte afwerking. Geen verloop in de garage, geen schaduw op merkvormen.
+Alle borden zijn vlak en **mat**. Geen verloop, geen schaduw op merkvormen. Lichtbakken en portalen hebben een navy front.
 
 ## De bordenfamilie
 
 ![Bordenfamilie in de garage, alles op één schaal](figures/signage-family.png)
 
-Buiten werken de P met dak en de locatienaam op afstand. Binnen wijzen navy borden de auto de weg, aqua borden de voetganger, en oranje staat alleen bij de automaat en de tarieven. Maten komen uit het handboek, tenzij anders vermeld.
+Buiten werken de P met dak en de locatienaam op afstand. Binnen wijzen navy borden de auto de weg, aqua borden de voetganger, en oranje staat alleen bij de automaat en de tarieven. De familie herken je aan drie dingen die overal terugkomen:
 
-| Bord | Maat (mm) | u (mm) | Kaphoogte grootste tekst | Leesafstand | Overige maten | Materiaal en afwerking | Kleur |
-|---|---|---|---|---|---|---|---|
-| Entreelichtbak | 1000 x 1000 x 100 | 50 | 100 (font 144) | 10 m | beeldmerk 200, P met dak 400, bubbel 5u | opaal beeldplaat met blockoutfolie, LED, profiel RAL 5002, mat | navy front, wit, witte bubbel |
-| Portaal 1-baans | plaat 520 (luxe) of 500 (standaard) x breedte rijstrook | 26 | 125 (font 180) | 12,5 m | beeldmerk 250, P met dak 416 | aluminium 2 mm met folie en mat laminaat, of heldere plaat met blockout en LED | navy, wit |
-| Hoogtebalk | 2000, 2500 of 3000 x 90 | 4,5 | 40 (font 58) | 4 m | banden 250 | aluminium RAL 9010, rode folie 3M 580-72, zwarte retroreflecterende letters | rood en wit, geen merkkleur |
-| Routebord rijden | 200 x 600, 800 of 1000, radius 100 | 10 | 70 (font 101) | 7 m | pictogram 120, bubbel 13u (8u bij pijl omhoog of omlaag) | sandwichpaneel, full colour folie, mat laminaat | PY-Blauw, wit |
-| Routebord lopen | 200 x 1000 | 10 | 70 (font 101) | 7 m | als rijden | als rijden | PY-Aqua, PY-Blauw, witte bubbel |
-| Bord betaalautomaat | 200 x 600 | 10 | 70 (font 101) | 7 m | pictogram 120 | als rijden | PY-Oranje, PY-Diep |
-| Niveauaanduiding | 420 x 350 | 17,5 | 78 (font 112) | 7,8 m | bubbel 13u = 227,5 | sandwichpaneel op kern RAL 9006, mat | navy, witte bubbel, cijfer PY-Blauw |
-| Kolomband sectie | 300 x omtrek kolom | 15 | 66 (font 95) | 6,5 m | bubbel 13u = 195, één per vlak | muurfolie, UV-print, mat laminaat | navy, witte bubbel |
-| Pyloon voorzijde | 400 x 1000 | 20 | 25 (font 36) naam, 12 (font 17) rest | 2,5 m en 1 m | P met dak 120, kopbalken 30 | sandwichpaneel, folie, mat; RVS staanders RAL 9006 | navy, wit, oranje strook |
-| Tariefstrook (deelfolie) | 110 x 400 | 5,5 | 12 (font 17) | 1 m | vier regels, steek 22 | folie, mat laminaat | PY-Oranje, PY-Diep |
+- **De hoekige pijl.** Altijd de handboekpijl, los op de grond, in de inhoudskleur, in stappen van 45°. Op borden is hij 2 x de kaphoogte (2k). Een schuine pijl is dezelfde pijl gedraaid, dus even lang. Nooit in een bubbel, nooit in een cirkel.
+- **De stem als scheiding.** Tussen twee modules (P en pijl, pijl en pictogram, pictogram en tekst) staat de halve boog. Hij is zo hoog als de pijl of het pictogram ernaast, de lijn is 1/25 van die hoogte, met 0,3 x die hoogte lucht aan beide kanten. PY-Aqua op navy, PY-Blauw op aqua.
+- **De bubbel rechtop.** Voor niveaus en secties, nooit gedraaid, nooit met een pijl erin.
+
+Pictogrammen krijgen op hetzelfde bord een tekenvlak van 2k, net als de pijl. De parkeerders komen op borden alleen als merkmoment: de loper op de voetgangersingang en op routeborden naar een bestemming buiten de garage, de zwaaier op de welkomstwand. Waar een pictogram nodig is (uitgang, lift, trap, toilet) blijft het pictogram en komt er geen figuur.
+
+| Bord | Maat (mm) | u (mm) | Kap grootste tekst | Leesafstand | Pijl (2k) | Overige maten | Materiaal en afwerking | Kleur |
+|---|---|---|---|---|---|---|---|---|
+| Entreelichtbak inrit | 1000 x 1000 x 100 | 50 | 100 (font 144) | 10 m | 200 | beeldmerk 200, P met dak 400, stem 200 | opaal beeldplaat met blockoutfolie, LED, profiel RAL 5002, mat | navy front, wit, stem aqua |
+| Entreelichtbak voetgangers | 1000 x 1000 x 100 | 50 | 100 (font 144) | 10 m | 200 | beeldmerk 200, loper 540 | als inrit | navy front, wit |
+| Portaal 1-baans | plaat 520 (luxe) of 500 (standaard) x breedte rijstrook | 26 | 125 (font 180) | 12,5 m | geen | beeldmerk 250, P met dak 416, stem 250 | aluminium 2 mm met folie en mat laminaat, of heldere plaat met blockout en LED | navy, wit, stem aqua |
+| Hoogtebalk | 2000, 2500 of 3000 x 90 | 4,5 | 40 (font 58) | 4 m | geen | banden 250 | aluminium RAL 9010, rode folie 3M 580-72, zwarte retroreflecterende letters | rood en wit, geen merkkleur |
+| Routebord rijden | 200 x 600, 800 of 1000, radius 100 | 10 | 70 (font 101) | 7 m | 140 | pictogram 140, stem 140 | sandwichpaneel, full colour folie, mat laminaat | PY-Blauw, wit, stem aqua |
+| Routebord lopen | 200 x 1000 | 10 | 70 (font 101) | 7 m | 140 | als rijden; loper 115 bij bestemmingen buiten | als rijden | PY-Aqua, PY-Blauw |
+| Bord betaalautomaat | 200 x 800 of 1000 | 10 | 70 (font 101) | 7 m | 140 | pictogram 140, stem 140 | als rijden | PY-Oranje, PY-Diep |
+| Niveauaanduiding | 420 x 350 | 17,5 | 78 (font 112) | 7,8 m | geen | bubbel 13u = 227,5 | sandwichpaneel op kern RAL 9006, mat | navy, witte bubbel, cijfer PY-Blauw |
+| Kolomband sectie | 300 x omtrek kolom | 15 | 66 (font 95) | 6,5 m | geen | bubbel 13u = 195, één per vlak | muurfolie, UV-print, mat laminaat | navy, witte bubbel |
+| Welkomstwand | 3000 x 1000 (voorstel) | 50 | 100 (font 144) | 10 m | geen | beeldmerk 200, stem 300, zwaaier 600 | muurfolie of spandoek, mat | navy, wit, stem aqua |
+| Pyloon voorzijde | 400 x 1000 | 20 | 25 (font 36) naam, 12 (font 17) rest | 2,5 m en 1 m | geen | P met dak 120, kopbalken 30 | sandwichpaneel, folie, mat; RVS staanders RAL 9006 | navy, wit, oranje tariefstrook |
+| Tariefstrook (deelfolie) | 110 x 400 | 5,5 | 12 (font 17) | 1 m | geen | vier regels, steek 22 | folie, mat laminaat | PY-Oranje, PY-Diep |
+
+Kaphoogtes van entree, portaal, route, niveau en kolom zijn eerder goedgekeurd (besluit D29) en blijven staan.
 
 ## Entreelichtbak
 
-![Entreelichtbak 1000 x 1000 met kaphoogtes](figures/key-entrance-sign.png)
+![Entreelichtbak inrit en voetgangersingang](figures/key-entrance-sign.png)
 
-De lichtbak bij de entree is het eerste dat je van ons ziet. Het front blijft navy; alleen wit en de kleuren van het beeldmerk lichten op. Bovenaan het omgekeerde logo, met een beeldmerk van 200 mm: twee keer de kaphoogte van de locatienaam. In het midden de P met dak, 400 mm hoog, voor het zicht van ver. Daarnaast een witte bubbel van 5u met een pijl in PY-Blauw; de punt wijst in stappen van 45° naar de ingang, de pijl wijst mee. Onderaan de locatienaam in Bold met een kaphoogte van 100 mm, leesbaar tot 10 m. Past een naam niet binnen de marge van 2u, gebruik dan Condensed Bold met dezelfde kaphoogte.
+De lichtbak bij de entree is het eerste dat je van ons ziet. Het front is navy; alleen wit en aqua lichten op.
 
-De lichtbak hangt haaks op de gevel, onderkant minimaal 2500 mm boven de grond.
+**Inrit.** Bovenaan het omgekeerde logo met een beeldmerk van 200 mm: twee keer de kaphoogte van de locatienaam. Daaronder drie modules op één lijn: de P met dak (400 mm, 8u), de stem in PY-Aqua en de hoekige pijl. Pijl en stem zijn 200 mm, 2 x de kaphoogte; de stem krijgt 60 mm lucht aan elke kant en een lijn van 8 mm. De pijl wijst naar de inrit, in stappen van 45°. Onderaan de locatienaam in Bold met een kaphoogte van 100 mm, leesbaar tot 10 m.
+
+**Voetgangersingang.** Zelfde front, zelfde logo. Hier staat de loper: wit, 540 mm hoog (54 procent van het front, maximaal 60), met zijn voeten op de basislijn van "Ingang". De pijl staat los ernaast. Geen stem op dit front: logo, loper en pijl is het maximum. Moet er een pictogram komen, dan vervalt de loper.
+
+Past een naam niet binnen de marge van 2u, gebruik dan Condensed Bold met dezelfde kaphoogte. De lichtbak hangt haaks op de gevel, onderkant minimaal 2500 mm boven de grond.
 
 ## Portaal en hoogtebalk
 
 ![Portaal 1-baans met hoogtebalk](figures/sign-portal.png)
 
-Het portaal leest de bestuurder in de aanrijroute, dus van verder weg: kaphoogte 125 mm, 12,5 m. Het beeldmerk staat los, 250 mm hoog; het volledige logo staat al op de lichtbak. Het oude aqua P-blok met de gebogen rand verdwijnt: het portaal is helemaal navy met een witte P met dak. De Vol/Vrij-display en de RVV-borden zijn producten van derden. Ze krijgen een eigen vak en nooit een merkkleur ernaast als versiering.
+Het portaal leest de bestuurder in de aanrijroute, dus van verder weg: kaphoogte 125 mm, 12,5 m. Het portaal is helemaal navy: P met dak, de stem, het beeldmerk en de locatienaam. De stem is zo hoog als het beeldmerk (250 mm), met 75 mm lucht aan elke kant. Het volledige logo staat al op de lichtbak, hier is het beeldmerk genoeg. Geen bubbel, geen pijl, geen aqua vlak. De Vol/Vrij-display en de RVV-borden zijn producten van derden. Ze krijgen een eigen vak en nooit een merkkleur ernaast als versiering.
 
 De hoogtebalk blijft rood en wit zoals de norm vraagt, met de echte doorrijhoogte van de garage, hier Parking Philips Stadion met 2,00 m. Alleen de letter wordt Ubuntu Sans Bold.
 
 ## Routeborden
 
-![Routeborden voor rijden, lopen en betalen](figures/sign-route-boards.png)
+![Routeborden rijden, lopen, merkmoment en betalen](figures/sign-route-boards.png)
 
-Het routebord blijft een pil van 200 mm hoog. Nieuw is dat de kleur de taak draagt: navy voor de auto, aqua voor de voetganger, oranje bij de automaat. Tekst en pictogrammen staan in de vaste kleurparen: wit op navy, PY-Blauw op aqua, PY-Diep op oranje. De pijl zit in een witte bubbel van 13u, met de punt in de looprichting. Voor een pijl omhoog of omlaag gebruik je 8u, anders valt de punt buiten de marge.
+Het routebord blijft een pil van 200 mm hoog. De kleur draagt de taak: navy voor de auto, aqua voor de voetganger, oranje bij de automaat. Tekst, pijl en pictogram staan in de vaste kleurparen: wit op navy, PY-Blauw op aqua, PY-Diep op oranje.
 
-Een tweetalige tekst past niet op 200 mm bij 70 mm kaphoogte. Routeborden zijn daarom Nederlands met pictogrammen; Engels staat op pyloon, stickers en de borden waar je stilstaat.
+- **Pijl en pictogram** krijgen een vak van 2 x de kaphoogte: 140 x 140 mm.
+- **De stem** scheidt de modules: 140 mm hoog, lijn 5,6 mm, 42 mm lucht aan elke kant. PY-Aqua op navy, PY-Blauw op aqua, PY-Diep op oranje (voorstel, zie hieronder).
+- **De pijl** wijst naar links, omhoog of schuin omhoog: dan staat hij vooraan. Wijst hij naar rechts, dan achteraan.
+- **Merkmoment.** Op een aqua bord naar een bestemming buiten de garage (centrum, station, stadion) mag de loper het pictogram vervangen. Hij is één kleur PY-Blauw, 115 mm hoog, en staat op de basislijn van de tekst. Dan geen stem: loper en pijl zijn de twee elementen.
+
+Een tweetalige tekst past niet op 200 mm bij 70 mm kaphoogte. Routeborden zijn daarom Nederlands met pictogrammen; Engels staat op pyloon, stickers en de borden waar je stilstaat. Hooguit vijf modules per bord; meer is een tweede bord.
 
 ## Niveau en sectie
 
 ![Niveauaanduiding en kolomband](figures/sign-level-section.png)
 
-Het niveau staat in een witte bubbel van 13u op een navy paneel. Eén maat voor alle niveaus (font 112 mm, kap 78 mm), zodat ook "−1" in het inhoudsvlak van 60 procent past. Gebruik een minteken, geen streepje.
+Het niveau staat in een witte bubbel van 13u op een navy paneel. De bubbel staat altijd rechtop, net als het beeldmerk. Eén maat voor alle niveaus (font 112 mm, kap 78 mm), zodat ook "−1" in het inhoudsvlak van 60 procent past. Gebruik een minteken, geen streepje.
 
-De kolomband wordt een vlakke navy band met op elk kolomvlak één witte bubbel met niveau en sectie, "1A". Het oude verloop met wit op aqua verdwijnt.
+De kolomband is een vlakke navy band met op elk kolomvlak één witte bubbel met niveau en sectie, "1A". Het oude verloop met wit op aqua verdwijnt.
+
+## Welkomstwand
+
+De welkomstwand bij de voetgangersingang of de lift is de plek waar we hallo zeggen. Navy, het omgekeerde logo, de stem voor "Welkom bij / **Parking Philips Stadion**" (kap 100 mm, de stem 300 mm hoog) en de zwaaier van 600 mm, die op een witte lijn van 0,1u staat en naar de tekst kijkt. Je ziet hem in de bordenfamilie hierboven. Geen pijl en geen pictogram op deze wand: hij wijst niet, hij verwelkomt.
 
 ## Pyloon en tariefstrook
 
@@ -72,106 +96,119 @@ Voorbeelddata: Parking Maashaven, Rotterdam (openingstijden, tarieven en de QR n
 
 ![Terminalstickers in oranje](figures/sign-terminal-stickers.png)
 
-Op de automaat is oranje de kleur van alles wat je doet: pas voorhouden, code scannen, knop indrukken, en storing. Het automaatnummer is informatie en blijft navy. De stickers houden hun bestaande maten van het stickervel. Op oranje staat geen bubbel: daar is geen vaste kleurcombinatie voor.
-
-Stickers lees je op armlengte. Ze volgen de printschaal (32, 22 en 15 pt) in plaats van het bordminimum van 12 mm. Dat is een voorstel, zie hieronder.
+Op de automaat is oranje de kleur van alles wat je doet om te betalen: pas voorhouden, code scannen, knop indrukken, en storing. Het automaatnummer is informatie en blijft navy. De pijl op "Scan hier je pas" is de hoekige pijl in PY-Diep, 2 x de kaphoogte van "Scan hier je pas" (22 pt, kap 5,4 mm, pijl 10,8 mm), los op de sticker. Op oranje staat geen bubbel. De stickers houden hun bestaande maten van het stickervel. Ze volgen de printschaal (32, 22 en 15 pt) in plaats van het bordminimum van 12 mm, en hebben een hoek van 3,18 mm (besluit D29).
 
 ## Posters en stickers
 
 ![Posters A2 en A3, raam-, NFC- en laadpaalsticker](figures/posters-stickers.png)
 
-**Posters.** Marge 2u, 6 kolommen. Kop met kaphoogte 1u tot 2u, tekst 0,3u tot 0,5u. Eén bubbel per poster. De A2 (u = 21 mm) gebruikt de foto in de bubbel, met de tekst op het navy vlak eronder. De A3 "let op" (u = 14,85 mm) staat op PY-Oranje met PY-Diep en het navy logo, zonder uitroepteken. QR altijd donker op wit.
+**Posters.** Marge 2u, 6 kolommen. Kop met kaphoogte 1u tot 2u, regelafstand = fontgrootte x 50/48, het kernwoord ExtraBold. Tekst 0,3u tot 0,5u. Geen oranje: ook een melding is navy op wit.
 
-**Stickers.** De raamsticker (136 x 46) en de NFC-sticker (rond 70) volgen de printschaal. NFC is boeken, dus oranje met PY-Diep. De laadpaalsticker (250 x 300) lees je van 1,8 m: kap 18 mm, Nederlands boven, Engels eronder even groot, gescheiden door een aqua lijn. Polymeer vinyl, mat gelamineerd, ThruCut-contour.
+- **A2 marketing** (u = 21 mm): eigen foto als rechthoek bovenaan, wit vlak eronder. De stem opent de kop "**Parkeren** vanuit je broekzak." De wijzer (4u = 84 mm) staat op een lijn van 0,1u en wijst naar de QR. QR altijd donker op wit.
+- **A3 melding** (u = 14,85 mm): wit, de stem voor "Let op.", de boodschap, en onderaan het telefoonnummer. Geen figuur, geen uitroepteken. Oranje is alleen voor een storing aan de automaat zelf.
+
+**Stickers.** De raamsticker (136 x 46) en de NFC-sticker (rond 70) zijn navy en volgen de printschaal. Op de raamsticker opent de stem de tekst. De laadpaalsticker (250 x 300) lees je van 1,8 m: kap 18 mm, Nederlands boven, Engels eronder even groot, met 0,5u ertussen. Polymeer vinyl, mat gelamineerd, ThruCut-contour.
 
 ## Abonnementspas
 
 ![Abonnementspas ID-1 voor en achter](figures/key-subscription-card.png)
 
-ID-1, 85,6 x 54 mm, hoek 3,18 mm, u = 2,7 mm. De voorkant is navy met het omgekeerde logo (beeldmerk 3u = 8,1 mm), een fotobubbel van de eigen locatie (13u) en de locatienaam in print-h2 22 pt Bold. De achterkant is wit met de velden van de huidige pas: Abonnementsnummer en Kenteken, plus een vak voor een scancode als de pas er een heeft, het storingsnummer en de site. PVC 0,76 mm, mat overlay, FOGRA39.
+ID-1, 85,6 x 54 mm, hoek 3,18 mm, u = 2,7 mm. Dit is de pas die je elke dag in je hand hebt, dus hij zegt wat een abonnement is: een vaste plek.
+
+**Voorzijde.** Navy. Bovenaan loopt **het vak** 7u vanaf de bovenrand in: vakken van 4u (10,8 mm), lijnen van 0,05u in blue.400. Jouw vak ligt op de linkermarge, gevuld met blue.600, met aqua zijlijnen en een aqua stoplijn. Op die stoplijn staat **de zwaaier**, wit, 3u = 8,1 mm. Daaronder het omgekeerde logo (beeldmerk 3u = 8,1 mm), "Abonnement" als eyebrow in PY-Aqua en de locatienaam in print-h2 22 pt Bold.
+
+**Achterzijde.** Wit met de velden van de huidige pas: Abonnementsnummer en Kenteken, een vak voor een scancode als de pas er een heeft, het storingsnummer en de site. PVC 0,76 mm, mat overlay, FOGRA39.
 
 ## Social
 
-![Social post, aanbod en prijs](figures/key-social-post.png)
+![Social post: aanbod met het vak en de gastheer](figures/key-social-post.png)
 
 ![Drie templates in twee formaten](figures/social-templates.png)
 
-Post 4:5 (1080 x 1350) en reel of story 9:16 (1080 x 1920), beide u = 54 px, marge 108 px. In 9:16 blijven de bovenste 250 px en de onderste 340 px vrij van tekst en logo.
+Post 4:5 (1080 x 1350) en reel 9:16 (1080 x 1920), beide u = 54 px, marge 108 px. In een reel blijven de bovenste 250 px en de onderste 340 px vrij van tekst en logo; sleutelinhoud staat tussen 5u en 29u.
 
-| Template | Grond | Bubbel | Kop | Tekst |
+Elk template gebruikt het logo plus twee elementen, en altijd precies één parkeerder:
+
+| Template | Grond | Elementen | Parkeerder | Kop |
 |---|---|---|---|---|
-| Aanbod en prijs | PY-Blauw | oranje, 8u, prijs in PY-Diep | font 117 px (kap 1,5u) | 31 px (kap 0,4u) |
-| Locatie | foto boven, PY-Blauw onder | aqua, 5u, pictogram lopen | font 78 px (kap 1u) | 31 px |
-| Evenement | PY-Blauw | foto, 8u | font 90 px | 31 px |
+| Aanbod | PY-Blauw | het vak, 7u vanaf de bovenrand (reel 8u), jouw vak op de linkermarge | gastheer zwaait op de stoplijn, 5u (reel 3u) | "**Jouw vak** staat klaar.", font 117 (kap 1,5u) |
+| Locatie | eigen foto boven, wit onder | de stem voor de locatienaam | loper, 3u, op een lijn van 0,1u naast "9 minuten lopen" | font 78, twee regels |
+| Evenement | PY-Blauw | de stem voor de kop | danser, 6u, op een lijn van 0,1u | font 90, drie regels |
 
-De kernzin is Bold, de rest Regular. Tekst nooit op de foto en nooit in de fotobubbel. Eén bubbel per beeld. Voorbeelddata: Parking Hofplein € 7,50 per dag; Parking Philips Stadion, 700 plekken, 9 minuten lopen naar het centrum, doorrijhoogte 2,00 m.
+De prijs is gewone tekst (€ 7,50, ExtraBold, met "per dag" ernaast), geen bubbel en nooit oranje. Het kernwoord is ExtraBold, de rest Regular; na het kernwoord mag de regel breken. Regelafstand van koppen = fontgrootte x 50/48. Tekst nooit op de foto. Het logo staat in het aanbod onderaan, omdat het vak de bovenrand heeft.
+
+**De beste post** is het aanbod: het vak loopt van boven het beeld in, en in jouw vak staat de gastheer met zijn hand omhoog. Dat is ParkingYou in één beeld: een plek die van jou is, en iemand die je welkom heet. Voorbeelddata: Parking Hofplein € 7,50 per dag; Parking Philips Stadion, 700 plekken, 9 minuten lopen naar het centrum, doorrijhoogte 2,00 m.
+
+In een reel wisselt de parkeerder van houding met een harde knip (bijvoorbeeld loper naar zwaaier), nooit met bewegende armen, en elke houding blijft minstens 1 s staan.
 
 ## Nieuwsbrief
 
-![Nieuwsbrief 600 px](figures/newsletter.png)
+![Nieuwsbrief 600 px met het vak in de kop](figures/newsletter.png)
 
-Eén kolom van 600 px, opgebouwd uit vaste blokken: preheader, kop met logo, hero-foto, hero-tekst op navy met de oranje hoofdknop, twee inhoudsblokken, één uitgelicht blok met een bubbel, en een navy voet met afmeldlink. Letter: heading-l 32/38, heading-m 24/30, body-m 16/24. Ubuntu Sans als webfont, Arial als terugval. Eén hoofdknop en één bubbel per mail.
+Eén kolom van 600 px, opgebouwd uit vaste blokken: preheader, kop met het vak, hero-foto, hero-tekst op wit met de hoofdknop, twee inhoudsblokken, één uitgelicht blok en een navy voet met afmeldlink.
+
+**De kop** is PY-Blauw, 272 px hoog. Het vak loopt 168 px vanaf de bovenrand in: vakken van 72 px, lijnen van 2 px, rijstrook gestippeld 14/12. Jouw vak ligt boven het logo, met aqua zijlijnen en stoplijn van 4 px; daarop staat de zwaaier van 96 px. Het omgekeerde logo (32 px) staat eronder. Daarmee heeft de mail zijn twee elementen: verder geen bubbel en geen stem.
+
+**De hoofdknop** is PY-Blauw met witte tekst, 48 px hoog, pil. Eén hoofdknop per mail. Letter: heading-l 32/38, heading-m 24/30, body-m 16/24. Ubuntu Sans als webfont, Arial als terugval. De kop gaat als één PNG op 2x met alt-tekst, zodat Outlook hem goed toont.
 
 ## Campagne: GLOW Eindhoven
 
 ![GLOW: post, reel en routebord](figures/campaign-glow.png)
 
-Een campagne leent ons systeem en laat het staan. De grond blijft PY-Blauw, de letter Ubuntu Sans, de bubbel blijft de enige vorm en oranje blijft de knop en de prijs. De campagne mag één accentkleur meebrengen: als streep onder de kop of als kader om het partnerlogo, nooit als grond, nooit voor tekst, nooit in de bubbel en nooit in de garage. Het partnerlogo staat los naast of onder het onze, even hoog als ons beeldmerk. Copy uit de huidige GLOW-pagina: "Waar parkeren tijdens GLOW?" en avond parkeren vanaf € 15,00 per dag. Het routebord houdt het bestaande A3-formaat met drie pijlen in cirkels.
+Een campagne leent ons systeem en laat het staan. De grond blijft PY-Blauw, de letter Ubuntu Sans, en onze elementen blijven de dragers: de stem opent "Waar parkeren / tijdens **GLOW**?" en de shopper loopt naar het feest. Geen oranje, geen knop in campagnekleur.
+
+De campagne mag één campagnekleur meebrengen, als lijn of kader, hooguit 5 procent van het vlak (besluit D30). Wij geven hem de mooiste plek die er is: de lijn waar de parkeerder op loopt. Daarnaast mag hij een lijn onder een kop zijn of een kader om het partnerlogo. Nooit als grond, nooit voor tekst, nooit in een bubbel en nooit in de garage. Het partnerlogo staat los naast het onze, even hoog als ons beeldmerk.
+
+Het routebord (A3, 297 x 420) houdt zijn formaat. De bestemmingen staan met de hoekige pijl (2 x de kaphoogte), de stem en de naam op een rij. Geen pijlen in cirkels en geen witte pillen meer. Copy uit de huidige GLOW-pagina: "Waar parkeren tijdens GLOW?" en avond parkeren vanaf € 15,00 per dag.
 
 ## Servicebus en kleding
 
 ![Servicebus en kleding](figures/vehicle-workwear.png)
 
-**Bus.** Navy wrap of af fabriek zo dicht mogelijk bij RAL 5002. Eén grote aqua bubbel, afgesneden door de achterkant, nooit over ramen of wielkasten. Logo omgekeerd met beeldmerk 400 mm, url Bold met kap 100 mm (10 m), storingsnummer kap 70 mm. Achterdeur: alles op de linkerdeur, niets over de naad.
+**Bus.** Navy wrap of af fabriek zo dicht mogelijk bij RAL 5002. Omgekeerd logo met beeldmerk 400 mm. Daaronder opent de stem de url (Bold, kap 100 mm, 10 m) en het storingsnummer (kap 70 mm). Op een witte lijn van 0,1u staat de gastheer wijst, wit, 800 mm (7u), en wijst naar het nummer. Op de linkerzijde dezelfde opbouw; de gastheer kijkt altijd naar de tekst. Nooit iets over ramen, naden of wielkasten. Achterdeur: alleen logo, url (kap 50 mm) en nummer op de linkerdeur, niets over de naad.
 
-**Kleding.** Navy polo met het omgekeerde logo geborduurd op de linkerborst en groot op de rug. Jas met hoge zichtbaarheid volgens EN ISO 20471 klasse 2 of 3: fluorescerend oranje of geel als achtergrondmateriaal (normkleur, geen PY-Oranje), schouderstuk navy. Het merk staat alleen op het navy deel, nooit op de reflecterende banden, en nooit zo groot dat het fluorvlak onder het minimum van de klasse komt.
-
-## Do's en don'ts
-
-**Doen**
-- Reken elke kaphoogte uit de leesafstand: 10 mm per meter, minimaal 12 mm op een bord.
-- Maak het beeldmerk op een bord minstens twee keer zo hoog als de grootste kaphoogte.
-- Gebruik alleen wit op PY-Blauw, PY-Blauw op PY-Aqua en PY-Diep op PY-Oranje op borden.
-- Laat de punt van de bubbel de weg wijzen in stappen van 45°; houd inhoud rechtop.
-- Werk mat af. Test een set proefborden in een echte garage onder het eigen licht.
-- Zet echte prijzen, tijden en nummers neer, met tabelcijfers.
-
-**Niet doen**
-- Geen verloop in de garage, op folie, poedercoat of lichtbakfilm.
-- Geen witte tekst op aqua of oranje.
-- Geen volledig aqua of oranje lichtbakfront: de taakkleur zit in de bubbel.
-- Geen merkkleur op of naast RVV- en veiligheidsborden, en geen merk op reflecterende banden.
-- Niet meer dan één bubbel per vlak onder 1 m, nooit tekst in een fotobubbel, nooit het logo in een bubbel.
-- Geen campagnekleur als grond of tekstkleur.
-- Geen stoktekeningen in nieuw werk.
+**Kleding.** Navy polo met het omgekeerde logo geborduurd op de linkerborst (80 mm breed) en groot op de rug (250 mm). Jas met hoge zichtbaarheid volgens EN ISO 20471 klasse 2 of 3: fluorescerend oranje of geel als achtergrondmateriaal (normkleur, geen PY-Oranje), schouderstuk navy. Het merk staat alleen op het navy deel, nooit op de reflecterende banden, en nooit zo groot dat het fluorvlak onder het minimum van de klasse komt. Geen parkeerder op kleding.
 
 ## Voorgestelde waarden
 
-Goedgekeurd: zie besluiten D29 en D30 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
+Goedgekeurd: zie besluit D42 in de core spec.
 
 | Waarde | Voorstel | Reden |
 |---|---|---|
-| Letter op terminal- en partnerstickers | printschaal: kernwoord 32 of 22 pt, uitleg minimaal 15 pt, in plaats van kap 12 mm | Stickers zijn 13 tot 43 mm hoog en worden op armlengte gelezen; 12 mm kap past er niet op. |
-| Hoekradius stickers | 3,18 mm (zoals de pas) | De stickers hadden negen verschillende radii. Eén waarde, al in de spec voor passen. |
-| Kolomband hoogte | onderkant 1800 mm boven de vloer, gelijk in de hele garage | Boven de autodaken, onder lage plafonds; nu is de hoogte niet vastgelegd. |
-| Pyloon betaalvakken | 68 x 44 mm per merk, vier per rij | Merken van derden krijgen een vast, gelijk vak. |
-| Pyloon tariefregels | steek 22 mm, vier regels op 110 mm | Volgt uit het minimum van 12 mm kap. |
-| Hoogtebalk letter | kap 40 mm (font 58 mm), Ubuntu Sans Bold | De huidige letter is onbekend; 40 mm volgt uit 4 m leesafstand. |
-| Hoogtebalk tekstvlak | tekst op een wit middenvlak van vijf banden breed | Zwarte letters over rode banden zijn slecht leesbaar. Alleen na check met de norm. |
-| Laadpaalsticker | kap 18 mm, NL en EN, aqua scheidingslijn 1 mm | Leesbaar op 1,8 m, past op 250 x 300. |
-| Nieuwsbrief blokmaten | preheader 36, kop 88, hero 600 x 280, knop 48 px hoog | Vaste blokken maken het template herbruikbaar; knop boven 44 px. |
-| Campagne-accent | één accentkleur, alleen als lijn of kader, hooguit 5 procent van het vlak, contrast gecontroleerd | Een campagne mag herkenbaar zijn zonder ons systeem te breken. |
-| Co-branding | partnerlogo even hoog als ons beeldmerk, vrije ruimte 1x ertussen, geen scheidingslijn | Gelijkwaardig maar los van elkaar. |
-| Bus | beeldmerk 400 mm, url kap 100 mm, nummer kap 70 mm, achterdeur url kap 50 mm | Leesbaar in het verkeer; busmaat 5000 x 2300 is een aanname. |
-| Kleding | borstlogo 80 mm breed, ruglogo 250 mm breed op 100 mm onder de kraag | Gangbare maten voor borduur- en transferwerk. |
-| Posterpapier | binnen 170 g/m² silk FOGRA39, garage blueback 115 g/m² of polyester met mat laminaat | Vocht en licht in de garage. |
+| Hoogte van de stem op borden | zo hoog als de pijl of het pictogram ernaast (op routeborden 140 mm, op de lichtbak 200 mm); op het portaal zo hoog als het beeldmerk (250 mm) | De core spec zegt hoe dik en hoe ver, niet hoe hoog de stem als scheiding is. Even hoog als de kleinste module houdt de rij rustig en past binnen de marge. |
+| Stem op PY-Oranje | PY-Diep, de inhoudskleur van oranje | De core spec noemt alleen navy en aqua. Op het betaalbord moet de familie doorlopen; PY-Diep haalt 6,87:1. |
+| Welkomstwand | 3000 x 1000 mm, u = 50, kap 100 mm, stem 300 mm, zwaaier 600 mm op een lijn van 0,1u | Wandbanners staan in de brief, maar zonder maat. Dit formaat past op een standaard wandvlak bij lift of ingang. |
+| Kop van de nieuwsbrief | 272 px hoog (was 88 px in besluit D30): vak 168 px, rijstrook, logo-rij | Het vak met een parkeerder van 96 px past niet in 88 px. |
 
-**Open vragen**
+## Open vragen
+
 - Er zijn twee storingsnummers: 085 401 16 47 (automaat, pyloon, posters) en 085 21 30 422 (spandoek). Wij gebruiken het eerste. Welk nummer is juist?
 - Is er een algemeen telefoonnummer voor de bus, naast het storingsnummer?
 - Heeft de abonnementspas een scancode, en zo ja welk type?
 - Welke Vol/Vrij-display komt in het portaal, en in welke ledkleur?
-- Welk busmodel rijdt er; daarna maken we de wrap op ware maat.
-- Fluor oranje of fluor geel voor de jassen? Oranje botst minder met PY-Oranje als het naast elkaar komt.
+- Welk busmodel rijdt er; daarna maken we de wrap op ware maat (5000 x 2300 is een aanname).
+- Fluor oranje of fluor geel voor de jassen? Geel botst niet met PY-Oranje als het naast elkaar komt.
 - GLOW-logo en campagnekleur moeten van de organisatie komen.
+- Bij welke garages komt een welkomstwand, en is een voetgangersingang met de loper overal toegestaan, of eist de gemeente of de eigenaar ergens een pictogram?
 - PY-Diep is CMYK 100 83 0 80 en RAL 5004 (besluit D23). Kleine tekst onder 12 pt op oranje drukwerk zet je in K 100 (besluit D24).
+
+## Do's en don'ts
+
+**Doen**
+- Reken elke kaphoogte uit de leesafstand: 10 mm per meter, minimaal 12 mm op een bord. Maak de pijl 2 x de kaphoogte.
+- Zet de stem tussen modules op een bord, zo hoog als de pijl of het pictogram, met 0,3 x die hoogte lucht aan elke kant.
+- Laat de hoekige pijl los staan, in de inhoudskleur, in stappen van 45°.
+- Zet de bubbel rechtop, voor niveau en sectie.
+- Gebruik de loper op een voetgangersingang of bord naar buiten, de zwaaier bij welkom, de gastheer bij contactgegevens. Altijd op een lijn, één per vlak.
+- Laat in social het vak van boven inlopen, met de parkeerder op de stoplijn van jouw vak.
+- Gebruik alleen wit op PY-Blauw, PY-Blauw op PY-Aqua en PY-Diep op PY-Oranje op borden. Werk mat af en test een set proefborden onder het eigen licht.
+
+**Niet doen**
+- Geen oranje buiten de automaat, de tariefstrook en de stickers van de automaat: niet op posters, social, nieuwsbrief, campagne of bus.
+- Geen pijl in een bubbel of cirkel, geen gedraaide bubbel, geen pijl uit een iconenset.
+- Geen verloop in de garage, op folie, poedercoat of lichtbakfilm. Geen volledig aqua of oranje lichtbakfront.
+- Geen parkeerder op een bord waar een pictogram nodig is, en nooit in veiligheids- of RVV-borden.
+- Geen zwevende, gedraaide of afgesneden parkeerder, en nooit meer dan één per vlak.
+- Geen vak op wegwijzers of achter tekst.
+- Niet meer dan het logo plus twee elementen per vlak.
+- Geen witte tekst op aqua of oranje, geen campagnekleur als grond of tekstkleur, geen merk op reflecterende banden.
