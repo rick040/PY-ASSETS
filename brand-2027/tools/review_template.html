@@ -1,0 +1,90 @@
+<title>ParkingYou 2027 Gate 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wdth,wght@75..100,300..800&display=swap">
+<style>
+/* Layout: sticky chapter rail left of one reading column; stacks above the column on phones. Brand tokens from core-spec. */
+:root {
+  --navy: #1A3580; --aqua: #32B9CD; --aqua-text: #127C8C; --orange: #F08300; --deep: #0D142E;
+  --bg: #FFFFFF; --bg-subtle: #F4F6FB; --fg: #1D1D1B; --muted: #5E6470; --line: #DDE1E7; --heading: #1A3580; --link: #1A3580;
+  --fig-bg: #FFFFFF;
+  --sans: "Ubuntu Sans", Ubuntu, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0D142E; --bg-subtle: #101C44; --fg: #FFFFFF; --muted: #C2C7CF; --line: #2B4A9E; --heading: #86D6E2; --link: #86D6E2;
+  --fig-bg: #FFFFFF; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0D142E; --bg-subtle: #101C44; --fg: #FFFFFF; --muted: #C2C7CF; --line: #2B4A9E; --heading: #86D6E2; --link: #86D6E2;
+  --fig-bg: #FFFFFF; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--sans); }
+a { color: var(--link); }
+a:focus-visible { outline: 3px solid var(--aqua); outline-offset: 2px; }
+.tnum { font-variant-numeric: tabular-nums; }
+.top { background: var(--navy); color: #FFFFFF; }
+.top-inner { max-width: 1240px; margin: 0 auto; padding-block: 40px 36px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; }
+.top h1 { margin: 0; font-size: clamp(32px, 5vw, 56px); line-height: 1.02; font-weight: 800; text-wrap: balance; }
+.top h1 span { font-weight: 400; }
+.top p { margin: 8px 0 0; color: #FFFFFF; max-width: 60ch; }
+.top .meta { font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: #FFFFFF; display: flex; align-items: center; gap: 10px; }
+.top svg { flex: none; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 32px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; }
+nav.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; }
+nav.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+nav.rail a { display: flex; gap: 10px; padding: 7px 10px; border-radius: 8px; text-decoration: none; color: var(--fg); font-size: 15px; }
+nav.rail a:hover { background: var(--bg-subtle); }
+nav.rail .n { color: var(--muted); min-width: 1.4em; }
+.rail-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px 10px; }
+main { min-width: 0; }
+.notes { background: var(--bg-subtle); border-radius: 16px; padding: 24px 28px; margin-bottom: 56px; }
+.notes h2 { margin-top: 0; }
+.chapter { padding-top: 24px; margin-bottom: 64px; border-top: 1px solid var(--line); }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h2 { font-size: 36px; line-height: 1.1; font-weight: 800; color: var(--heading); margin: 6px 0 20px; text-wrap: balance; }
+h3 { font-size: 22px; line-height: 1.25; font-weight: 700; color: var(--heading); margin: 36px 0 10px; text-wrap: balance; }
+h4 { font-size: 17px; font-weight: 700; margin: 24px 0 6px; }
+.chapter p, .chapter li, .notes p, .notes li { max-width: 68ch; }
+.chapter ul, .chapter ol { padding-left: 1.3em; }
+.chapter li + li { margin-top: 4px; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.88em; background: var(--bg-subtle); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: var(--bg-subtle); padding: 16px; border-radius: 10px; overflow-x: auto; }
+pre code { background: none; padding: 0; overflow-wrap: normal; }
+figure { margin: 24px 0 28px; }
+figure img { display: block; width: 100%; height: auto; background: var(--fig-bg); border-radius: 12px; border: 1px solid var(--line); }
+figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.table { overflow-x: auto; margin: 16px 0 24px; }
+table { border-collapse: collapse; font-size: 14px; min-width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; vertical-align: top; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+th { font-weight: 700; color: var(--heading); white-space: nowrap; }
+.missing { color: var(--muted); font-style: normal; }
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  nav.rail { position: static; }
+  nav.rail ol { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  nav.rail a { background: var(--bg-subtle); font-size: 14px; padding: 6px 10px; }
+  h2 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div>
+      <div class="meta"><svg viewBox="0 0 14.583 17.59" width="22" height="27" aria-hidden="true"><path d="M7.292 0C3.265 0 0 3.264 0 7.291C0 14.057 6.761 17.449 6.761 17.449C6.993 17.59 7.292 17.422 7.292 17.15L7.292 14.582C11.319 14.582 14.583 11.318 14.583 7.291C14.583 3.264 11.319 0 7.292 0" fill="#FFFFFF"/><path d="M7.292 11.667C4.875 11.667 2.916 9.708 2.916 7.292C2.916 4.875 4.875 2.917 7.292 2.917C9.708 2.917 11.667 4.875 11.667 7.292C11.667 9.708 9.708 11.667 7.292 11.667" fill="#1A3580"/><path d="M5.906 7.292C5.906 6.527 6.526 5.906 7.292 5.906C8.057 5.906 8.677 6.527 8.677 7.292C8.677 8.057 8.057 8.677 7.292 8.677C6.526 8.677 5.906 8.057 5.906 7.292" fill="#32B9CD"/></svg>Huisstijl 2027 · Gate 2</div>
+      <h1>Alle hoofdstukken <span>met beeld</span></h1>
+      <p>Richting Bubbel met taakkleuren. {{CHAPTERS}} hoofdstukken, {{FIGS}} figuren. Kijk, reageer, en geef akkoord voor de samenvoeging.</p>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <nav class="rail" aria-label="Hoofdstukken">
+    <p class="rail-title">Hoofdstukken</p>
+    <ol>
+      <li><a href="#gate2"><span class="n">·</span>Wat ik van je nodig heb</a></li>
+      {{NAV}}
+    </ol>
+  </nav>
+  <main>
+    <section class="notes" id="gate2">{{NOTES}}</section>
+    {{SECTIONS}}
+  </main>
+</div>
