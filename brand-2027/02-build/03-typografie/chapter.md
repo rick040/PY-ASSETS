@@ -55,7 +55,7 @@ De stem is de halve boog uit het oude handboek, zonder de slogan die er vroeger 
 - **Kleur.** PY-Aqua op wit en op PY-Blauw (`voice.arc`), PY-Blauw op PY-Aqua. Nooit oranje.
 - **Aantal.** Eén per vlak in een layout. Op borden zoveel als er modules te scheiden zijn.
 - **Op borden** is de stem geen opener maar een scheiding tussen modules, bijvoorbeeld tussen pijl en tekst of pictogram en pijl. Zelfde regels: hoogte gelijk aan het tekstblok ernaast, lijn 1/25, afstand 0,3 maal de hoogte aan beide kanten.
-- **In beweging** tekent de boog zich van boven naar beneden (320 ms, `duration.slow`, `easing.enter`).
+- **In beweging** tekent de boog zich van boven naar beneden (`duration.slow`, `easing.enter`); daarna komt de tekst in beeld, samen 440 ms. Bij beperkte beweging komen boog en tekst samen in beeld. Details in het hoofdstuk beweging.
 
 De stem telt als een van de eigen elementen. Per vlak staan het logo en hooguit twee elementen: de stem met een parkeerder, of de stem met de hoekige pijl in de knop, maar niet ook nog het vak en een bubbel.
 
@@ -144,7 +144,7 @@ Eén regel: **10 mm kapitaalhoogte per meter leesafstand**. Het korps is de kapi
 | 20 m | 200 mm | 289 mm |
 | 30 m | 300 mm | 433 mm |
 
-Op borden: Bold 700 voor woorden, ExtraBold 800 voor cijfers, letterafstand 0,01 em, links uitgelijnd, nooit uitgevuld. Weinig woorden: wie met 20 km/u rijdt, heeft een bord dat op 20 m leesbaar is ongeveer 3,6 seconden in beeld. Dat zijn een paar woorden. De hoekige pijl staat los op het bord; de stem scheidt pijl en tekst, met dezelfde hoogte als het tekstblok. De maten van de borden zelf staan in het hoofdstuk bewegwijzering.
+Op borden: Bold 700 voor woorden, ExtraBold 800 voor cijfers, letterafstand 0,01 em, links uitgelijnd, nooit uitgevuld. Weinig woorden: wie met 20 km/u rijdt, heeft een bord dat op 20 m leesbaar is ongeveer 3,6 seconden in beeld. Dat zijn een paar woorden. De hoekige pijl staat los op het bord, twee keer de kapitaalhoogte hoog (op een bord voor 10 m dus 200 mm); de stem scheidt pijl en tekst, met dezelfde hoogte als het tekstblok. De maten van de borden zelf staan in het hoofdstuk bewegwijzering.
 
 ![Lettergrootte per leesafstand, en een rijroutebord op schaal](figures/signage-sizing.png)
 
@@ -186,7 +186,7 @@ Er zijn geen licentiekosten. Leveranciers krijgen contouren of de benoemde stati
 
 ## Voorgestelde waarden
 
-Goedgekeurd en verwerkt: besluit D25 (tweetalige regels, smal nooit op schermen) in de core spec.
+Goedgekeurd en verwerkt: besluiten D25 en D39 in de core spec.
 
 | Onderwerp | Voorstel | Waarom |
 |---|---|---|

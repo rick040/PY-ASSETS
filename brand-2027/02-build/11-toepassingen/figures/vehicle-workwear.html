@@ -5,6 +5,7 @@
 <title>Servicebus en kleding</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
 <style>
   text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
   .lab { position: absolute; font: 700 14px/18px var(--py-font-sans); color: #1A3580; }
@@ -15,7 +16,7 @@
 </style>
 </head>
 <body>
-<div class="fig fig--subtle" style="width: 1200px; height: 965px">
+<div class="fig fig--subtle" style="width: 1200px; height: 1010px">
   <div class="eyebrow" style="position: absolute; left: 50px; top: 30px">Servicebus · zijkant en achterkant · bestelbus middenklasse, circa 5000 x 2300 mm (aanname)</div>
   <svg width="0" height="0" style="position:absolute"><defs>
     <pattern id="hv" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="24" height="24" fill="#FFFFFF"/><rect width="12" height="24" fill="#DDE1E7"/></pattern>
@@ -23,25 +24,27 @@
   </defs></svg>
 
   <!-- van side, 1 unit = 1 mm, 0.15 px/mm -->
-  <div class="lab" style="left: 50px; top: 60px">Zijkant <span>rechterzijde; links dezelfde opbouw, bubbel ook achteraan, niet gespiegeld</span></div>
+  <div class="lab" style="left: 50px; top: 60px">Zijkant <span>rechterzijde; links dezelfde opbouw, de gastheer kijkt altijd naar de tekst</span></div>
   <svg style="position: absolute; left: 50px; top: 86px" width="765" height="352" viewBox="0 0 5100 2350">
     <g clip-path="url(#vanclip)">
       <rect width="5100" height="2100" fill="#1A3580"/>
-      <path data-b="1500" data-x="-500" data-y="100" fill="#32B9CD"/>
     </g>
     <path d="M3950 250L4150 250L4600 880L3950 880Z" fill="#434852"/>
     <path d="M3880 200V2000" stroke="#12245A" stroke-width="14"/>
     <image href="../../kit/assets/logo-horizontal-reverse.svg" x="1250" y="400" height="400" width="1449"/>
-    <text x="1250" y="1220" font-size="144" font-weight="700" fill="#FFFFFF">parkingyou.nl</text>
-    <text x="1250" y="1440" font-size="101" fill="#FFFFFF">Storing? Bel <tspan font-weight="700">085 401 16 47</tspan></text>
+    <text x="1427" y="1220" font-size="144" font-weight="700" fill="#FFFFFF">parkingyou.nl</text>
+    <text x="1427" y="1400" font-size="101" fill="#FFFFFF">Storing? Bel <tspan font-weight="700">085 401 16 47</tspan></text>
+    <g id="vanel"></g>
+    <rect x="1250" y="1560" width="2300" height="11.5" fill="#FFFFFF"/>
     <rect x="4850" y="1700" width="200" height="300" fill="#2B2F36"/>
     <rect x="-50" y="1850" width="250" height="150" fill="#2B2F36"/>
     <circle cx="900" cy="1960" r="340" fill="#1D1D1B"/><circle cx="900" cy="1960" r="170" fill="#AEAEAE"/>
     <circle cx="4150" cy="1960" r="340" fill="#1D1D1B"/><circle cx="4150" cy="1960" r="170" fill="#AEAEAE"/>
     <rect x="-50" y="2300" width="5150" height="20" fill="#C2C7CF"/>
-    <g stroke="#C4281C" stroke-width="12" fill="none"><path d="M2250 1120V1220M2220 1120H2280M2220 1220H2280"/></g>
+    <g stroke="#C4281C" stroke-width="12" fill="none"><path d="M2427 1120V1220M2397 1120H2457M2397 1220H2457"/></g>
   </svg>
-  <div class="measure-label" style="left: 384px; top: 250px">kap 100 · 10 m</div>
+  <div class="measure-label" style="left: 360px; top: 330px">url kap 100 · 10 m</div>
+  <div class="measure-label" style="left: 470px; top: 160px">gastheer 800 = 7u</div>
 
   <!-- van rear -->
   <div class="lab" style="left: 860px; top: 60px">Achterkant <span>alles op de linkerdeur</span></div>
@@ -102,7 +105,7 @@
 
   <div class="col" style="left: 50px; top: 800px; width: 360px">
     <div class="h">Bus</div>
-    Navy wrap (gegoten folie, mat of zijdeglans) of af fabriek zo dicht mogelijk bij RAL 5002. Eén aqua bubbel, groot en afgesneden door de achterkant, nooit over ramen. Logo omgekeerd; url Bold, kap 100 mm (10 m); storingsnummer kap 70 mm. Achterdeur: niets over de naad, url kap 50 mm.
+    Navy wrap (gegoten folie, mat) of af fabriek zo dicht mogelijk bij RAL 5002. Logo omgekeerd, beeldmerk 400 mm. <b>De stem</b> opent url en storingsnummer (340 mm hoog). <b>De gastheer wijst</b> (800 mm, 7u) staat op een witte lijn van 0,1u en wijst naar het nummer. Nooit over ramen, naden of wielkasten. url Bold kap 100 mm (10 m), nummer kap 70 mm. Achterdeur: alleen logo en tekst, url kap 50 mm.
   </div>
   <div class="col" style="left: 440px; top: 800px; width: 340px">
     <div class="h">Polo</div>
@@ -113,5 +116,9 @@
     Achtergrondmateriaal fluor oranje of geel volgens EN ISO 20471, schouderstuk navy. Logo alleen op het navy deel, nooit op of over de reflectiebanden en niet zo groot dat het fluorvlak onder het minimum van de klasse komt.
   </div>
 </div>
+<script>
+  // van side: u = 2300 / 20 = 115. Stem 340 high opens url + number; gastheer wijst 800 on the 0.1u rule, mirrored to face the text
+  PYS.mount('vanel', PYS.stem(1250, 1090, 340, '#32B9CD') + PYS.fig('cap-point', 2950, 1560, 800, '#FFFFFF', { flip: true }));
+</script>
 </body>
 </html>

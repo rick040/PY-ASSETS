@@ -123,8 +123,8 @@ Five elements, each with one task. **Per surface: the logo plus at most two of t
 - On signs: the separator between modules (P and arrow, pictogram and text), same stroke as above, PY-Aqua on navy, PY-Blauw on aqua.
 - One per surface in layouts; on signs as many separators as there are module breaks.
 
-**Het vak.** A parking deck seen from above. Vertical bay lines at a pitch of 1.5u (screen: 72 px), line weight 0.05u (screen 2 px), running in from the top or bottom edge for 3u to 4u, with an optional dashed lane line (dash 0.3u, gap 0.25u).
-- Exactly one bay is "jouw vak": filled `vak.mine`, its two side lines in PY-Aqua at double weight. It holds one figure or one bubble, nothing else.
+**Het vak.** A parking deck seen from above. Vertical bay lines at a pitch of 4u (screen: 72 px), line weight 0.05u (screen 2 px), running in from the top or bottom edge for 6u to 8u (screen 144 to 192 px), with an optional dashed lane line (dash 0.3u, gap 0.25u). **(D40)**
+- Exactly one bay is "jouw vak": filled `vak.mine`, its two side lines in PY-Aqua at double weight, closed at its open end by a stop line (same weight, PY-Aqua). It holds one figure standing on that stop line, or one bubble, nothing else. **(D40)**
 - Colours: on PY-Blauw lines `blue.400`, jouw vak `blue.600`; on white lines `neutral.200`, jouw vak `aqua.100`.
 - Use: social, newsletter header, card backs, posters, screen headers and empty states. Never on wayfinding signs or behind text.
 
@@ -190,7 +190,7 @@ Groups: `surface` (default, subtle, raised, brand, inverse), `text` (default, mu
   Condensed (wdth 75) only for signage names that do not fit at normal width; never in running text.
 - **Fallback:** "Ubuntu Sans", Ubuntu, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif. Office and email: Arial.
 - **Rules:** sentence case; no italics; no all caps except eyebrows of at most 3 words (letter spacing 0.08 em); tabular figures for prices, times, levels.
-  The voice pattern stays: the key phrase bold, the rest regular, in one line ("**Parkeren** zonder gedoe.").
+  The voice pattern stays: the key phrase bold, the rest regular, in one line ("**Parkeren** zonder gedoe."); when the stem opens it, the line may break after the key phrase. **(D39)**
 
 ### 6.1 Screen scale (px, size/line height, weight)
 
@@ -328,5 +328,8 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 
 | D37 | 2026-11-07 | Icons | Arrow on signs 2 x cap height (2k), pictogram drawing area on the same sign 2k; arrow to label gap 8 px in buttons, 4 px in links; diagonal arrow scaled to the length of the straight one; external link arrow points 45 degrees up-right; labelled buttons: arrow at cap height, icon-only back button 16 px (D35), both rules apply | Completes section 4b for the arrow |
 | D38 | 2026-11-07 | Motion | Arrow slide 4 px on screen, 0.5u in reels; text fades in after the stem draws (440 ms in total); a parkeerder pose holds at least 1 s, at most one cut per scene; a reel may open with the stem or the bubble pop in the first 0.6 s; under reduced motion stem and text fade in together and the arrow does not slide | Completes section 8 |
+
+| D39 | 2026-11-07 | Type | Stem text block = lines x line height, gap 0.3x measured from the arc's open tips to the first letter; on signs 0.3x on both sides of the stem; page headline steps: desktop display-xl, tablet display-l, phone heading-xl, with `space.9` above on desktop and `space.7` on phone; poster headline leading = size x 50/48; key phrase weight 800 in display, 700 in heading, rest 400; the key phrase may break onto its own line after the stem | Makes de stem measurable |
+| D40 | 2026-11-07 | CD | Het vak in u formats: pitch 4u, bay length 6u to 8u; jouw vak closed by a stop line on which its figure stands | At 1.5u a 3u bubble or figure did not fit; a figure must stand on a line |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

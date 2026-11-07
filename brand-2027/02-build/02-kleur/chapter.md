@@ -61,7 +61,7 @@ Oranje staat **niet** op schermen, in druk, in marketing, op social, in nieuwsbr
 | een accentstreep of -vlak in druk en social | de stem in aqua |
 | oranje tekst bij een actie | gewoon PY-Blauw, met het sleutelwoord vet |
 
-Op schermen blijft orange.700 (#B35A00) alleen als tekstkleur voor de status "Vol" en voor waarschuwingen, altijd met het woord erbij (4,80:1 op wit). Dat is een statuskleur, geen merkoranje, en nooit een vlak of knop.
+Op schermen blijft orange.700 (#B35A00) alleen als tekst- of icoonkleur voor de status "Vol" en voor waarschuwingen, altijd met het woord erbij (4,80:1 op wit; besluit D36). Dat is een statuskleur, geen merkoranje, en nooit een vlak of knop.
 
 ![Oranje: wel bij betalen in de garage, niet daarbuiten](figures/orange-garage.png)
 
@@ -85,7 +85,7 @@ In de garage heeft elke kleur één taak. We gebruiken kleur niet als versiering
 
 ## Knoppen
 
-De hoofdknop is PY-Blauw met witte tekst. Op donkere vlakken wordt hij aqua met PY-Diep. De tweede knop is een witte knop met een rand van 2 px in PY-Blauw. Oranje knoppen bestaan niet meer. De hoekige pijl in een knop staat op de kapitaalhoogte van het label, in de kleur van het label.
+De hoofdknop is PY-Blauw met witte tekst. Op donkere vlakken wordt hij aqua met PY-Diep. De tweede knop is een witte knop met een rand van 2 px in PY-Blauw (`action.secondary-border`); in donkere modus zijn rand en tekst aqua.300. Oranje knoppen bestaan niet meer. De hoekige pijl in een knop staat op de kapitaalhoogte van het label, 8 px na het label, in de kleur van het label.
 
 | Token | Licht | Donker | Contrast licht / donker |
 |---|---|---|---|
@@ -95,6 +95,7 @@ De hoofdknop is PY-Blauw met witte tekst. Op donkere vlakken wordt hij aqua met 
 | `action.secondary-bg` / `-fg` | wit / blue.700 | blue.900 / aqua.300 | 11,26 / 11,01 |
 | `action.secondary-bg-hover` | blue.50 | blue.800 | 10,41 / 8,93 |
 | `action.secondary-bg-pressed` | blue.100 | blue.850 | 9,52 / 10,01 |
+| `action.secondary-border` | blue.700 | aqua.300 | rand van 2 px |
 
 Alle verhoudingen zijn de tekstkleur van de knop op de grond van de knop, opnieuw berekend.
 
@@ -115,7 +116,7 @@ De stem, het vak en de parkeerders hebben hun eigen semantische tokens. Componen
 | `figure.head` | aqua.500 | aqua.500 | hoofd van een parkeerder |
 | `figure.body` | blue.700 | wit | lijf van een parkeerder |
 
-De stem, het vak en het hoofd zijn vorm, geen informatie. Ze hoeven geen 3:1 te halen en dragen nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Het vak is bewust zacht: neutral.200 op wit is 1,31:1, blue.400 op navy 3,17:1. Het is achtergrond, en er staat nooit tekst op.
+De stem, het vak en het hoofd zijn vorm, geen informatie. Ze hoeven geen 3:1 te halen en dragen nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Het vak is bewust zacht: neutral.200 op wit is 1,31:1, blue.400 op navy 3,17:1. Het is achtergrond, en er staat nooit tekst op. Op schermen: steek 72 px, lijnen 2 px en 144 tot 192 px lang, randen van jouw vak 4 px (besluit D35). De lijn onder een parkeerder is 2 px in `figure.body`.
 
 ![Tokens voor de stem, het vak en de parkeerders, in licht en donker](figures/identity-tokens.png)
 

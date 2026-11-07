@@ -44,7 +44,7 @@ WCAG 2.x relative luminance. Text pairs need 4.5:1, UI and large text 3:1. Gener
 |---|---|---|
 | #FFFFFF on #1A3580 | 11.26:1 | white on PY-Blauw: all signage text |
 | #1A3580 on #32B9CD | 4.80:1 | PY-Blauw on PY-Aqua: walk signs, aqua bubble |
-| #0D142E on #F08300 | 6.87:1 | PY-Diep on PY-Oranje: pay signs, main button |
+| #0D142E on #F08300 | 6.87:1 | PY-Diep on PY-Oranje: payment signs in the garage only |
 | #1A3580 on #FFFFFF | 11.26:1 | PY-Blauw on white: print text |
 | #FFFFFF on #32B9CD | 2.34:1 | white on PY-Aqua: NOT allowed |
 | #FFFFFF on #F08300 | 2.64:1 | white on PY-Oranje: NOT allowed |

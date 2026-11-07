@@ -402,7 +402,7 @@ def build():
     rows += ["", "## Brand pairs used on print and signage", "", "| Pair | Ratio | Use |", "|---|---|---|"]
     for a, b, use in [("#FFFFFF", "#1A3580", "white on PY-Blauw: all signage text"),
                       ("#1A3580", "#32B9CD", "PY-Blauw on PY-Aqua: walk signs, aqua bubble"),
-                      ("#0D142E", "#F08300", "PY-Diep on PY-Oranje: pay signs, main button"),
+                      ("#0D142E", "#F08300", "PY-Diep on PY-Oranje: payment signs in the garage only"),
                       ("#1A3580", "#FFFFFF", "PY-Blauw on white: print text"),
                       ("#FFFFFF", "#32B9CD", "white on PY-Aqua: NOT allowed"),
                       ("#FFFFFF", "#F08300", "white on PY-Oranje: NOT allowed"),

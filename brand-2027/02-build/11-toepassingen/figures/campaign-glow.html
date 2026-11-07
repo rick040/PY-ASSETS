@@ -5,6 +5,8 @@
 <title>Campagne GLOW Eindhoven</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<script src="py-social.js"></script>
 <style>
   text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
   .lab { position: absolute; font: 700 14px/18px var(--py-font-sans); color: #1A3580; }
@@ -12,80 +14,67 @@
   .col { position: absolute; width: 350px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
   .col b { font-weight: 700; }
   .col .h { font: 700 12px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--py-text-muted); margin-bottom: 6px; }
+  .sh { position: absolute; display: block; box-shadow: 0 1px 2px rgba(13,20,46,0.10), 0 8px 24px rgba(13,20,46,0.08); }
 </style>
 </head>
 <body>
-<div class="fig fig--subtle" style="width: 1200px; height: 800px">
+<div class="fig fig--subtle" style="width: 1200px; height: 860px">
   <div class="eyebrow" style="position: absolute; left: 50px; top: 30px">Campagne · GLOW Eindhoven · de campagne leent het systeem, het systeem blijft staan</div>
-  <svg width="0" height="0" style="position:absolute">
-    <defs>
-      <pattern id="acc" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="#FFFFFF"/><rect width="8" height="16" fill="#C2C7CF"/></pattern>
-      <pattern id="acc2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#FFFFFF"/><rect width="3" height="6" fill="#C2C7CF"/></pattern>
-    </defs>
-  </svg>
+  <div class="lab" style="left: 50px; top: 60px">Post 4:5 <span>1080 x 1350</span></div>
+  <div class="lab" style="left: 490px; top: 60px">Reel 9:16 <span>eindkaart</span></div>
+  <div class="lab" style="left: 810px; top: 60px">Routebord A3 <span>297 x 420 · straat</span></div>
+  <svg class="sh" id="post" style="left: 50px; top: 86px" width="410" height="512.5" viewBox="0 0 1080 1350"></svg>
+  <svg class="sh" id="reel" style="left: 490px; top: 86px" width="288" height="512" viewBox="0 0 1080 1920"></svg>
+  <svg class="sh" id="board" style="left: 810px; top: 86px" width="362" height="512" viewBox="0 0 297 420"></svg>
+  <div class="note" style="position: absolute; left: 50px; top: 612px; width: 1100px">Grijs = de plek van de campagnekleur, die de organisatie aanlevert. Hier draagt hij alleen de lijn waar de shopper op loopt, de lijn onder de kop van het bord en het kader om het partnerlogo.</div>
 
-  <!-- post 4:5 -->
-  <div class="lab" style="left: 50px; top: 62px">Post 4:5 <span>1080 x 1350</span></div>
-  <svg style="position: absolute; left: 50px; top: 88px" width="378" height="472.5" viewBox="0 0 1080 1350">
-    <rect width="1080" height="1350" fill="#1A3580"/>
-    <clipPath id="g1"><path data-b="432" data-x="540" data-y="108"/></clipPath>
-    <image href="../../kit/photos/py-photo-evoluon.jpg" x="440" y="108" width="640" height="521" preserveAspectRatio="xMidYMid slice" clip-path="url(#g1)"/>
-    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="108" y="108" height="54" width="196"/>
-    <rect x="108" y="216" width="196" height="54" fill="url(#acc)"/>
-    <text x="206" y="250" text-anchor="middle" font-size="22" font-weight="700" fill="#5E6470">[GLOW-logo]</text>
-    <rect x="108" y="700" width="108" height="10" fill="url(#acc)"/>
-    <text x="108" y="800" font-size="90" fill="#FFFFFF">Waar parkeren</text>
-    <text x="108" y="895" font-size="90" fill="#FFFFFF">tijdens <tspan font-weight="700">GLOW</tspan>?</text>
-    <text x="108" y="980" font-size="31" fill="#FFFFFF">Avond parkeren vanaf € 15,00 per dag.</text>
-    <text x="108" y="1022" font-size="31" fill="#FFFFFF">DLL Garage en Philips Stadion.</text>
-    <rect x="108" y="1090" width="420" height="96" rx="48" fill="#F08300"/>
-    <text x="318" y="1150" text-anchor="middle" font-size="34" font-weight="700" fill="#0D142E">Reserveer je plek</text>
-  </svg>
-
-  <!-- story 9:16 -->
-  <div class="lab" style="left: 470px; top: 62px">Reel 9:16 <span>eindkaart</span></div>
-  <svg style="position: absolute; left: 470px; top: 88px" width="266" height="472.9" viewBox="0 0 1080 1920">
-    <rect width="1080" height="1920" fill="#1A3580"/>
-    <path data-b="702" data-x="540" data-y="900" data-line="#32B9CD"/>
-    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="108" y="304" height="81" width="293"/>
-    <text x="108" y="520" font-size="52" font-weight="700" fill="#FFFFFF">×</text>
-    <rect x="108" y="560" width="293" height="81" fill="url(#acc)"/>
-    <text x="254" y="612" text-anchor="middle" font-size="30" font-weight="700" fill="#5E6470">[GLOW-logo]</text>
-    <rect x="108" y="740" width="108" height="10" fill="url(#acc)"/>
-    <text x="108" y="850" font-size="78" fill="#FFFFFF">Reserveer je plek</text>
-    <text x="108" y="940" font-size="78" font-weight="700" fill="#FFFFFF">voor GLOW.</text>
-    <text x="108" y="1030" font-size="40" fill="#FFFFFF">parkingyou.nl</text>
-    <rect x="0" y="0" width="1080" height="250" fill="#C4281C" opacity="0.25"/><rect x="0" y="1580" width="1080" height="340" fill="#C4281C" opacity="0.25"/>
-  </svg>
-
-  <!-- event route sign A3 -->
-  <div class="lab" style="left: 780px; top: 62px">Routebord A3 <span>297 x 420 · bestaand formaat</span></div>
-  <svg style="position: absolute; left: 780px; top: 88px" width="335" height="473.7" viewBox="0 0 297 420">
-    <rect width="297" height="420" fill="#1A3580"/>
-    <image href="../../kit/assets/symbol-p-roof.svg" x="29.7" y="29.7" height="89" width="69.4"/>
-    <text x="115" y="80" font-size="25" font-weight="700" fill="#FFFFFF">Parkeren</text>
-    <text x="115" y="110" font-size="25" fill="#FFFFFF">GLOW</text>
-    <rect x="29.7" y="136" width="44.5" height="3" fill="url(#acc2)"/>
-    <g font-size="17" font-weight="700" fill="#1A3580">
-      <g transform="translate(29.7 170)"><rect width="237.6" height="52" rx="26" fill="#FFFFFF"/><circle cx="26" cy="26" r="20" fill="#1A3580"/><g transform="translate(26 26) rotate(180) translate(-14 -14) scale(1.1667)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><text x="60" y="32.5">Philips Stadion</text></g>
-      <g transform="translate(29.7 236)"><rect width="237.6" height="52" rx="26" fill="#FFFFFF"/><circle cx="26" cy="26" r="20" fill="#1A3580"/><g transform="translate(26 26) rotate(-90) translate(-14 -14) scale(1.1667)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><text x="60" y="32.5">DLL Garage</text></g>
-      <g transform="translate(29.7 302)"><rect width="237.6" height="52" rx="26" fill="#FFFFFF"/><circle cx="26" cy="26" r="20" fill="#1A3580"/><g transform="translate(26 26) rotate(-90) translate(-14 -14) scale(1.1667)"><path d="M5 12H19M12 5L19 12L12 19" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><text x="60" y="32.5">TD-gebouw</text></g>
-    </g>
-    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="29.7" y="372" height="18.3" width="66.3"/>
-  </svg>
-
-  <div class="col" style="left: 50px; top: 600px">
+  <div class="col" style="left: 50px; top: 670px">
     <div class="h">Wat blijft</div>
-    PY-Blauw als grond, Ubuntu Sans, de taakkleuren en één bubbel per vlak. Oranje blijft de knop en de prijs. Ons logo staat altijd op zijn eigen plek met vrije ruimte; het partnerlogo komt ernaast of eronder, even hoog als het beeldmerk, nooit in een bubbel.
+    PY-Blauw als grond, Ubuntu Sans, het logo op zijn eigen plek. Onze elementen blijven de dragers: <b>de stem</b> opent de kop, <b>de shopper</b> (de parkeerder voor stad en evenement) loopt naar het feest. Geen oranje, geen knop in campagnekleur.
   </div>
-  <div class="col" style="left: 430px; top: 600px">
+  <div class="col" style="left: 430px; top: 670px">
     <div class="h">Wat de campagne mag</div>
-    Eén campagnekleur als accent (gestreept vlak in deze figuur): een streep onder de kop, een kader om het partnerlogo. Nooit als grond, nooit voor tekst, nooit in de bubbel, nooit in de garage. Eigen campagnefoto's van het evenement in de fotobubbel of als rechthoek.
+    Eén campagnekleur, als lijn of kader, hooguit 5 procent van het vlak: de lijn waar de parkeerder op staat, een lijn onder een kop, een kader om het partnerlogo. Nooit als grond, nooit voor tekst, nooit in een bubbel, nooit in de garage. Partnerlogo even hoog als ons beeldmerk, 1x ertussen.
   </div>
-  <div class="col" style="left: 810px; top: 600px; width: 340px">
+  <div class="col" style="left: 810px; top: 670px; width: 340px">
     <div class="h">Data en copy</div>
-    "Waar parkeren tijdens GLOW?" en "vanaf € 15,00 per dag" komen van de huidige GLOW-pagina; bestemmingen van het bestaande GLOW-bord. Het GLOW-logo en de campagnekleur leveren de organisatie aan. Op het routebord geen bubbels: drie pijlen in cirkels, zoals nu.
+    "Waar parkeren tijdens GLOW?" en "vanaf € 15,00 per dag" komen van de huidige GLOW-pagina; bestemmingen van het bestaande GLOW-bord. Op het bord staan de pijlen los (2 x de kaphoogte), met de stem tussen pijl en naam. Geen cirkels.
   </div>
 </div>
+<script>
+  const A = '#C2C7CF'; // placeholder for [campagnekleur]
+  const T = PYSOC.T;
+  const glowLogo = (x, y, h) => `<rect x="${x}" y="${y}" width="${h * 2.6}" height="${h}" fill="none" stroke="${A}" stroke-width="${h / 18}"/><text x="${x + h * 1.3}" y="${y + h * 0.62}" text-anchor="middle" font-family="Ubuntu Sans" font-size="${h * 0.36}" fill="#C2C7CF">[GLOW-logo]</text>`;
+  function card(H, reel) {
+    const top = reel ? 270 : 108, rule = reel ? 1566 : 1242;
+    let s = `<rect width="1080" height="${H}" fill="#1A3580"/>`;
+    s += PYSOC.logo(108, top) + glowLogo(108 + 195.6 + 54, top, 54);
+    s += PYSOC.eyebrow(108, top + 243, 'GLOW Eindhoven');
+    const b1 = top + 378, lh = 96;
+    s += PYS.stem(108, b1 - 62 - 12, 2 * lh, '#32B9CD');
+    const tx = 108 + PYS.stemW(2 * lh) + 0.6 * lh;
+    s += T(tx, b1, 'Waar parkeren', 90) + T(tx, b1 + lh, 'tijdens <tspan font-weight="700">GLOW</tspan>?', 90);
+    s += T(108, b1 + 2 * lh + 70, 'Avond parkeren vanaf € 15,00 per dag.', 31) + T(108, b1 + 2 * lh + 116, 'DLL Garage en Philips Stadion.', 31);
+    s += T(108, b1 + 2 * lh + 190, 'Reserveer je plek op parkingyou.nl', 31, { w: 700 });
+    s += `<rect x="108" y="${rule}" width="864" height="5.4" fill="${A}"/>`;
+    s += PYS.fig('bags-walk', 972 - PYS.figW('bags-walk', 216), rule, 216, '#FFFFFF');
+    return s;
+  }
+  PYS.mount('post', card(1350, false));
+  PYS.mount('reel', card(1920, true) + '<rect x="0" y="0" width="1080" height="250" fill="#C4281C" opacity="0.28"/><rect x="0" y="1580" width="1080" height="340" fill="#C4281C" opacity="0.28"/>');
+  // A3 route board, u = 14.85, margin 29.7; header P + name; rows: arrow 2k | stem | name, cap 15 (font 21.6), arrow 30
+  let b = `<rect width="297" height="420" fill="#1A3580"/>`;
+  b += `<svg data-p="p-roof" x="29.7" y="29.7" width="62.4" height="80" style="color:#FFFFFF"></svg>`;
+  b += PYS.text(110, 64, 'Parkeren', 30.3, '#FFFFFF') + PYS.text(110, 100, 'GLOW', 30.3, '#FFFFFF', { w: 400 });
+  b += `<rect x="29.7" y="128" width="237.6" height="1.5" fill="${A}"/>`;
+  const rows = [['Philips Stadion', 180], ['DLL Garage', -90], ['TD-gebouw', -90]];
+  rows.forEach((r, i) => {
+    // cap 15 (font 21.6), arrow 2k = 30, stem 30 with 9 air on each side
+    const y = 165 + i * 58;
+    b += PYS.arrow(29.7, y, 30, r[1], '#FFFFFF') + PYS.stem(29.7 + 30 + 9, y, 30, '#32B9CD') + PYS.text(29.7 + 30 + 18 + PYS.stemW(30), y + 22.5, r[0], 21.6, '#FFFFFF');
+  });
+  b += `<image href="../../kit/assets/logo-horizontal-reverse.svg" x="29.7" y="375.6" height="14.85" width="53.8"/>`;
+  PYS.mount('board', b);
+</script>
 </body>
 </html>
