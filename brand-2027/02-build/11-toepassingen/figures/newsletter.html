@@ -5,30 +5,34 @@
 <title>Nieuwsbrief 600 px</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
 <style>
   .mail { position: absolute; left: 60px; top: 80px; width: 600px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(13,20,46,0.08); }
   .mail * { font-family: 'Ubuntu Sans', Arial, sans-serif; }
-  .btn { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; background: #F08300; color: #0D142E; font-weight: 700; font-size: 16px; }
+  .btn { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; background: #1A3580; color: #FFFFFF; font-weight: 700; font-size: 16px; }
   .lnk { color: #1A3580; font-weight: 700; text-decoration: underline; font-size: 16px; }
   .ann { position: absolute; left: 700px; width: 450px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); border-left: 2px solid #C4281C; padding-left: 12px; }
   .ann b { font-weight: 700; }
 </style>
 </head>
 <body>
-<div class="fig fig--subtle" style="width: 1200px; height: 1380px">
+<div class="fig fig--subtle" style="width: 1200px; height: 1420px">
   <div class="eyebrow" style="position: absolute; left: 60px; top: 36px">Nieuwsbrief · 600 px breed · één kolom, blokken van 600</div>
   <div class="mail">
     <div style="height: 36px; background: #F4F6FB; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; font-size: 12px; color: #5E6470">
       <span>[Preheader: één zin over de inhoud]</span><span style="text-decoration: underline">Bekijk online</span></div>
-    <div style="height: 88px; display: flex; align-items: center; padding: 0 32px"><img src="../../kit/assets/logo-horizontal-color.svg" style="height: 32px" alt="parkingyou"></div>
+    <div style="height: 216px; background: #1A3580; position: relative">
+      <svg id="vak" width="600" height="216" viewBox="0 0 600 216" style="position: absolute; left: 0; top: 0"></svg>
+      <img src="../../kit/assets/logo-horizontal-reverse.svg" style="position: absolute; left: 32px; top: 28px; height: 32px" alt="parkingyou">
+      <div style="position: absolute; right: 32px; top: 36px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #32B9CD">NIEUWSBRIEF [MAAND]</div>
+    </div>
     <div style="height: 280px; background: url('../../kit/photos/py-photo-dll-garage.jpg') center / cover"></div>
-    <div style="background: #1A3580; padding: 32px 32px 40px">
-      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #32B9CD">NIEUWSBRIEF [MAAND]</div>
-      <div style="font-size: 32px; line-height: 38px; color: #FFFFFF; margin-top: 12px"><b>Voordelig parkeren</b> zonder gedoe?</div>
-      <div style="font-size: 16px; line-height: 24px; color: #FFFFFF; margin-top: 16px; width: 480px">[Twee zinnen over het aanbod van deze maand. Concreet: welke garage, welke prijs, tot wanneer.]</div>
+    <div style="padding: 32px 32px 40px">
+      <div style="font-size: 32px; line-height: 38px; color: #1A3580"><b>Voordelig parkeren</b> zonder gedoe?</div>
+      <div style="font-size: 16px; line-height: 24px; color: #1D1D1B; margin-top: 16px; width: 480px">[Twee zinnen over het aanbod van deze maand. Concreet: welke garage, welke prijs, tot wanneer.]</div>
       <div style="margin-top: 24px"><span class="btn">Reserveer je plek</span></div>
     </div>
-    <div style="padding: 40px 32px 8px; display: flex; gap: 24px">
+    <div style="padding: 8px 32px 8px; display: flex; gap: 24px; border-top: 1px solid #DDE1E7; margin: 0 32px; padding-left: 0; padding-right: 0; padding-top: 32px">
       <div style="width: 256px">
         <div style="font-size: 24px; line-height: 30px; font-weight: 700; color: #1A3580">Abonnement</div>
         <div style="font-size: 16px; line-height: 24px; color: #1D1D1B; margin-top: 8px">Je vaste plek in de garage, voor minimaal 3 maanden.</div>
@@ -41,7 +45,7 @@
       </div>
     </div>
     <div style="margin: 32px; padding: 24px; background: #F4F6FB; display: flex; gap: 24px; align-items: center">
-      <div data-w="104" data-img="../../kit/photos/py-photo-evoluon.jpg" data-imgx="-14" data-imgw="64"></div>
+      <div style="width: 104px; height: 104px; flex: none; background: url('../../kit/photos/py-photo-evoluon.jpg') center / cover"></div>
       <div>
         <div style="font-size: 20px; line-height: 26px; font-weight: 700; color: #1A3580">[Evenement] in Eindhoven</div>
         <div style="font-size: 16px; line-height: 24px; color: #1D1D1B; margin-top: 6px">[Datum]. Reserveer vooraf, dan weet je zeker dat je een plek hebt.</div>
@@ -57,13 +61,22 @@
   </div>
 
   <div class="ann" style="top: 96px"><b>Preheader</b> 36 px, body-s 12 px op blue.50. Altijd een link naar de webversie.</div>
-  <div class="ann" style="top: 160px"><b>Kop</b> 88 px, wit, logo in kleur 32 px hoog (minimum 24 px). Logo als PNG op 2x, alt-tekst "parkingyou".</div>
-  <div class="ann" style="top: 300px"><b>Hero-foto</b> 600 x 280, eigen garage of straat. Geen tekst in de foto, geen kleurfilter.</div>
-  <div class="ann" style="top: 500px"><b>Hero-tekst</b> op PY-Blauw. Eyebrow 12 px aqua (4,80:1), kop heading-l 32/38 (key phrase Bold), tekst body-m 16/24 wit. Hoofdknop oranje met PY-Diep, 48 px hoog, pil. Eén hoofdknop per mail.</div>
-  <div class="ann" style="top: 760px"><b>Blokken</b> wit, padding 32 px, twee kolommen van 256 px met 24 px tussenruimte; op mobiel onder elkaar. Kop heading-m 24/30 PY-Blauw, tekst body-m, link PY-Blauw onderstreept.</div>
-  <div class="ann" style="top: 930px"><b>Uitgelicht</b> op blue.50 met één bubbel van 104 px: hier de foto van de plek. Eén bubbel per mail.</div>
-  <div class="ann" style="top: 1110px"><b>Voet</b> PY-Blauw, logo omgekeerd 24 px, bedrijfsgegevens en afmeldlink (verplicht) in body-s 14/20 wit.</div>
-  <div class="ann" style="top: 1220px; border-left-color: #32B9CD"><b>Techniek</b> Tabellen, inline stijl, max 600 px. Font: "Ubuntu Sans" als webfont waar het werkt, anders Arial. Achtergrondkleur ook als bgcolor, zodat Outlook navy toont. Mailchimp-template: <i style="font-style: normal; font-weight: 700">py-newsletter-600.html</i>.</div>
+  <div class="ann" style="top: 150px"><b>Kop met het vak</b> 216 px, PY-Blauw. Logo omgekeerd 32 px hoog. Vakken van 72 px met lijnen van 2 px in blue.400, die 144 px vanaf de onderrand inlopen (voorstel). Jouw vak (blue.600, zijlijnen aqua 4 px) staat onder het logo, met de zwaaier van 96 px op een witte lijn van 2 px. Logo plus het vak plus één parkeerder: verder geen elementen in deze mail.</div>
+  <div class="ann" style="top: 410px"><b>Hero-foto</b> 600 x 280, eigen garage of straat. Geen tekst in de foto, geen kleurfilter.</div>
+  <div class="ann" style="top: 590px"><b>Hero-tekst</b> op wit. Kop heading-l 32/38 PY-Blauw, key phrase Bold. Tekst body-m 16/24. Hoofdknop PY-Blauw met witte tekst, 48 px hoog, pil. Eén hoofdknop per mail.</div>
+  <div class="ann" style="top: 790px"><b>Blokken</b> wit, twee kolommen van 256 px met 24 px tussenruimte; op mobiel onder elkaar. Kop heading-m 24/30 PY-Blauw, link PY-Blauw onderstreept.</div>
+  <div class="ann" style="top: 960px"><b>Uitgelicht</b> op blue.50 met een foto als rechthoek van 104 px. Geen bubbel: de mail heeft zijn twee elementen al in de kop.</div>
+  <div class="ann" style="top: 1120px"><b>Voet</b> PY-Blauw, logo omgekeerd 24 px, bedrijfsgegevens en afmeldlink (verplicht) in body-s 14/20 wit.</div>
+  <div class="ann" style="top: 1260px; border-left-color: #32B9CD"><b>Techniek</b> Tabellen, inline stijl, max 600 px. Font: "Ubuntu Sans" als webfont waar het werkt, anders Arial. Achtergrondkleur ook als bgcolor, zodat Outlook navy toont. De kop met het vak gaat als één PNG op 2x (1200 x 432) met alt-tekst. Mailchimp-template: <i style="font-style: normal; font-weight: 700">py-newsletter-600.html</i>.</div>
 </div>
+<script>
+  // het vak, screen: pitch 72, line 2, bays 144 px from the bottom edge, jouw vak under the logo (x 32 to 104)
+  let v = '<g stroke="#6F86C8" stroke-width="2">';
+  for (let x = 32; x <= 600; x += 72) v += `<line x1="${x}" y1="72" x2="${x}" y2="216"/>`;
+  v += '<line x1="0" y1="56" x2="600" y2="56" stroke-dasharray="16 13"/></g>';
+  v += '<rect x="32" y="72" width="72" height="144" fill="#2B4A9E"/><g stroke="#32B9CD" stroke-width="4"><line x1="32" y1="72" x2="32" y2="216"/><line x1="104" y1="72" x2="104" y2="216"/></g>';
+  v += '<rect x="42" y="198" width="52" height="2" fill="#FFFFFF"/>' + PYS.fig('wave', 68 - PYS.figW('wave', 96) / 2, 198, 96, '#FFFFFF');
+  PYS.mount('vak', v);
+</script>
 </body>
 </html>

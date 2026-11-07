@@ -5,6 +5,8 @@
 <title>Abonnementspas ID-1</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<script src="py-social.js"></script>
 <style>
   text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
   .col { position: absolute; width: 330px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
@@ -18,24 +20,19 @@
   <div style="position: absolute; left: 57px; top: 72px; font: 700 15px/20px var(--py-font-sans); color: #1A3580">Voorzijde</div>
   <div style="position: absolute; left: 630px; top: 72px; font: 700 15px/20px var(--py-font-sans); color: #1A3580">Achterzijde</div>
 
-  <!-- 1 unit = 1 mm, 6 px per mm -->
+  <!-- 1 unit = 1 mm, 6 px per mm; het vak is drawn in format units (u = 54 units = 2,7 mm, scale 0.05) -->
   <svg style="position: absolute; left: 57px; top: 100px" width="514" height="360" viewBox="0 0 85.6 60">
-    <defs>
-      <clipPath id="card1"><rect width="85.6" height="54" rx="3.18"/></clipPath>
-      <clipPath id="pb"><path data-b="35.1" data-x="45.1" data-y="5.4"/></clipPath>
-    </defs>
+    <defs><clipPath id="card1"><rect width="85.6" height="54" rx="3.18"/></clipPath></defs>
     <g clip-path="url(#card1)">
       <rect width="85.6" height="54" fill="#1A3580"/>
-      <image href="../../kit/photos/py-photo-evoluon.jpg" x="35" y="5.4" width="58" height="42.33" preserveAspectRatio="xMidYMid slice" clip-path="url(#pb)"/>
+      <g id="vak1" transform="scale(0.05)"></g>
       <image href="../../kit/assets/logo-horizontal-reverse.svg" x="5.4" y="5.4" height="8.1" width="29.34" preserveAspectRatio="xMinYMin meet"/>
-      <text x="5.4" y="40.5" font-size="3.53" fill="#FFFFFF">Abonnement</text>
-      <text x="5.4" y="48.6" font-size="7.76" font-weight="700" fill="#FFFFFF">Evoluon</text>
-      <!-- grid -->
-      <rect x="5.4" y="5.4" width="74.8" height="43.2" fill="none" stroke="#32B9CD" stroke-width="0.18" stroke-dasharray="0.8 0.6"/>
+      <text x="5.4" y="26.3" font-size="2.82" font-weight="700" letter-spacing="0.23" fill="#32B9CD">ABONNEMENT</text>
+      <text x="5.4" y="34.2" font-size="7.76" font-weight="700" fill="#FFFFFF">Evoluon</text>
     </g>
-    <g stroke="#C4281C" stroke-width="0.2" fill="none"><path d="M45.1 57H80.2M45.1 56V58M80.2 56V58"/></g>
+    <g stroke="#C4281C" stroke-width="0.2" fill="none"><path d="M5.4 57H9.45M5.4 56V58M9.45 56V58"/></g>
   </svg>
-  <div class="measure-label" style="left: 400px; top: 432px">bubbel 13u = 35,1</div>
+  <div class="measure-label" style="left: 70px; top: 456px">jouw vak 1,5u = 4,05 mm · zwaaier 2,2u = 5,9 mm</div>
 
   <svg style="position: absolute; left: 630px; top: 100px" width="514" height="360" viewBox="0 0 85.6 60">
     <defs><clipPath id="card2"><rect width="85.6" height="54" rx="3.18"/></clipPath></defs>
@@ -60,7 +57,7 @@
 
   <div class="col" style="left: 57px; top: 500px">
     <div class="h">Voorzijde</div>
-    PY-Blauw vol, logo omgekeerd met beeldmerk 8,1 mm (3u, boven het minimum van 7 mm). Fotobubbel van de eigen locatie, 13u, zonder tekst. "Abonnement" print-body 10 pt, locatienaam print-h2 22 pt Bold. Eén bubbel; het logo staat er los van.
+    PY-Blauw vol, logo omgekeerd met beeldmerk 8,1 mm (3u). "Abonnement" als eyebrow in PY-Aqua, locatienaam print-h2 22 pt Bold. Onderaan <b>het vak</b>: vakken van 1,5u die 4u vanaf de onderrand inlopen. Jouw vak staat op de marge, onder de naam, en daarin staat <b>de zwaaier</b> op een lijn van 0,1u. Jij hebt hier een vaste plek.
   </div>
   <div class="col" style="left: 430px; top: 500px">
     <div class="h">Achterzijde</div>
@@ -71,5 +68,6 @@
     PVC-kaart 0,76 mm, CMYK offset of retransfer, FOGRA39 (gestreken). <b>Mat</b> overlay, zodat de kaart in een slagboomlezer niet spiegelt. 3 mm afloop, hoek 3,18 mm volgens ISO/IEC 7810. Bestandsnaam: py-card-abonnement-[locatie]-front.pdf en -back.pdf.
   </div>
 </div>
+<script>PYS.mount('vak1', PYSOC.vak(1080, 216, 1, 'wave', 1026, { w: 1712 }));</script>
 </body>
 </html>

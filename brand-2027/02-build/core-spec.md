@@ -326,4 +326,7 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 | D35 | 2026-11-07 | UI | Screen values: het vak u = 48 px (pitch 72, lines 144 to 192 px, jouw vak edges 4 px, lane dash 14 gap 12); line under a figure 2 px in `figure.body`; token `action.secondary-border`; back arrow in an icon-only button 16 px | Screen version of section 4b |
 | D36 | 2026-11-07 | CD | Status "Vol" keeps `orange.700` as text or icon colour with the word; it is not an orange fill and stays allowed on screen | Status needs a distinct colour; meaning is carried by the word |
 
+| D37 | 2026-11-07 | Icons | Arrow on signs 2 x cap height (2k), pictogram drawing area on the same sign 2k; arrow to label gap 8 px in buttons, 4 px in links; diagonal arrow scaled to the length of the straight one; external link arrow points 45 degrees up-right; labelled buttons: arrow at cap height, icon-only back button 16 px (D35), both rules apply | Completes section 4b for the arrow |
+| D38 | 2026-11-07 | Motion | Arrow slide 4 px on screen, 0.5u in reels; text fades in after the stem draws (440 ms in total); a parkeerder pose holds at least 1 s, at most one cut per scene; a reel may open with the stem or the bubble pop in the first 0.6 s; under reduced motion stem and text fade in together and the arrow does not slide | Completes section 8 |
+
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).
