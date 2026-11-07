@@ -111,6 +111,7 @@
   --py-shadow-2: 0px 6px 18px 0px rgba(13, 20, 46, 0.10);
   --py-shadow-3: 0px 16px 40px 0px rgba(13, 20, 46, 0.16);
   --py-duration-instant: 0ms;
+  --py-duration-reduced: 120ms;
   --py-duration-fast: 120ms;
   --py-duration-moderate: 200ms;
   --py-duration-slow: 320ms;
@@ -218,4 +219,4 @@
   --py-feedback-warning: var(--py-color-orange-300);
   --py-feedback-info: var(--py-color-aqua-300);
 }
-@media (prefers-reduced-motion: reduce) { :root { --py-duration-fast: 0ms; --py-duration-moderate: 0ms; --py-duration-slow: 0ms; --py-duration-expressive: 0ms; } }
+@media (prefers-reduced-motion: reduce) { :root { --py-duration-moderate: 0ms; --py-duration-slow: 0ms; --py-duration-expressive: 0ms; } }  /* fast and reduced stay: a 120 ms fade replaces movement */

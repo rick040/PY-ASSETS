@@ -261,4 +261,13 @@ Bilingual signage: Dutch first, English below at the same size, regular weight, 
 | D13 | 2026-11-07 | CD | Map markers: the 24 px navy bubble with a white P or price is the map pin; the one-bubble rule applies to layouts, not to map data | A pin is what the shape already is; one per location on the map |
 | D14 | 2026-11-07 | CD | Orange icon-only buttons are not allowed (2.64:1 against white) | B5 finding |
 
+| D15 | 2026-11-07 | B3 | Screen breakpoints: phone up to 767, tablet 768 to 1199, desktop 1200 and up; desktop side margin at least 32 px (`space.6`) | Completes section 3 |
+| D16 | 2026-11-07 | B3 | Reels: key content between 5u and 29u from the top; captions on 26.5u to 29u; end card stacked logo 6u high with the web address; opening bubble pop in the first 0.6 s | Concrete version of the 250/340 px safe zones (u = 54 px) |
+| D17 | 2026-11-07 | B3 | Small print (business card and smaller) uses the print type scale, not the u rule for type | 0.3u on a business card is 0.8 mm cap height |
+| D18 | 2026-11-07 | B3 | Pictogram construction: guide shapes circle 40, square 36, upright 32 x 40, landscape 40 x 32 on the 48 grid; smallest gap 2 units; limbs arms 4.5, legs 5, torso 6.5; frame line 3. Pictograms placed in a bubble lose their own ring or bubble (info, payment, toilet, EV) | One drawing logic; no shape inside the same shape |
+| D19 | 2026-11-07 | B3 | Motion: bubble pop = scale 0.9 to 1 plus tail settle (starts turned 45 degrees, rotates around the circle centre to 0 with `easing.bubble` in 600 ms, overshoot about 1.3 degrees), opacity 0 to 1 with `duration.fast` and `easing.enter`. New token `duration.reduced` 120 ms; under reduced motion only moderate, slow and expressive go to 0 | Makes "tail settles last" concrete; fixes the generator that zeroed the 120 ms fade |
+| D20 | 2026-11-07 | B3 | UI icons: Tabler Icons 3.50 (MIT, licence text ships with site and app), stroke 2 px at every size (16 to 32), never the `brand-` icons | Matches 24 grid, 2 px stroke, round joins and 2 px safe zone |
+| D21 | 2026-11-07 | B3 | Old handbook shapes: keep volvlak (the bubble), afbeeldingsmasker (photo bubble), pill (route boards, buttons, chips), P with roof (entrances); change level bubble, section tag and column band to flat navy with bubble content; retire gradient bubble, circle, pill on gradient, separator arc, bracket arc with slogan, 5 percent watermark, stick figures | One signature shape; no white on aqua; no RVV look-alikes |
+| D22 | 2026-11-07 | CD | A background bubble counts as the one bubble on that surface | Keeps "one bubble per surface" simple |
+
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

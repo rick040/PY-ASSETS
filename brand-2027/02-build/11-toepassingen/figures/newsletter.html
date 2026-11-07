@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Nieuwsbrief 600 px</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<style>
+  .mail { position: absolute; left: 60px; top: 80px; width: 600px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(13,20,46,0.08); }
+  .mail * { font-family: 'Ubuntu Sans', Arial, sans-serif; }
+  .btn { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; background: #F08300; color: #0D142E; font-weight: 700; font-size: 16px; }
+  .lnk { color: #1A3580; font-weight: 700; text-decoration: underline; font-size: 16px; }
+  .ann { position: absolute; left: 700px; width: 450px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); border-left: 2px solid #C4281C; padding-left: 12px; }
+  .ann b { font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="fig fig--subtle" style="width: 1200px; height: 1380px">
+  <div class="eyebrow" style="position: absolute; left: 60px; top: 36px">Nieuwsbrief · 600 px breed · één kolom, blokken van 600</div>
+  <div class="mail">
+    <div style="height: 36px; background: #F4F6FB; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; font-size: 12px; color: #5E6470">
+      <span>[Preheader: één zin over de inhoud]</span><span style="text-decoration: underline">Bekijk online</span></div>
+    <div style="height: 88px; display: flex; align-items: center; padding: 0 32px"><img src="../../kit/assets/logo-horizontal-color.svg" style="height: 32px" alt="parkingyou"></div>
+    <div style="height: 280px; background: url('../../kit/photos/py-photo-dll-garage.jpg') center / cover"></div>
+    <div style="background: #1A3580; padding: 32px 32px 40px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #32B9CD">NIEUWSBRIEF [MAAND]</div>
+      <div style="font-size: 32px; line-height: 38px; color: #FFFFFF; margin-top: 12px"><b>Voordelig parkeren</b> zonder gedoe?</div>
+      <div style="font-size: 16px; line-height: 24px; color: #FFFFFF; margin-top: 16px; width: 480px">[Twee zinnen over het aanbod van deze maand. Concreet: welke garage, welke prijs, tot wanneer.]</div>
+      <div style="margin-top: 24px"><span class="btn">Reserveer je plek</span></div>
+    </div>
+    <div style="padding: 40px 32px 8px; display: flex; gap: 24px">
+      <div style="width: 256px">
+        <div style="font-size: 24px; line-height: 30px; font-weight: 700; color: #1A3580">Abonnement</div>
+        <div style="font-size: 16px; line-height: 24px; color: #1D1D1B; margin-top: 8px">Je vaste plek in de garage, voor minimaal 3 maanden.</div>
+        <div style="margin-top: 12px"><span class="lnk">Bekijk abonnementen</span></div>
+      </div>
+      <div style="width: 256px">
+        <div style="font-size: 24px; line-height: 30px; font-weight: 700; color: #1A3580">ParkingPass</div>
+        <div style="font-size: 16px; line-height: 24px; color: #1D1D1B; margin-top: 8px">10 of 25 keer parkeren, met één pas.</div>
+        <div style="margin-top: 12px"><span class="lnk">Bekijk de ParkingPass</span></div>
+      </div>
+    </div>
+    <div style="margin: 32px; padding: 24px; background: #F4F6FB; display: flex; gap: 24px; align-items: center">
+      <div data-w="104" data-img="../../kit/photos/py-photo-evoluon.jpg" data-imgx="-14" data-imgw="64"></div>
+      <div>
+        <div style="font-size: 20px; line-height: 26px; font-weight: 700; color: #1A3580">[Evenement] in Eindhoven</div>
+        <div style="font-size: 16px; line-height: 24px; color: #1D1D1B; margin-top: 6px">[Datum]. Reserveer vooraf, dan weet je zeker dat je een plek hebt.</div>
+        <div style="margin-top: 8px"><span class="lnk">Bekijk de garages</span></div>
+      </div>
+    </div>
+    <div style="background: #1A3580; padding: 32px; color: #FFFFFF; font-size: 14px; line-height: 20px">
+      <img src="../../kit/assets/logo-horizontal-reverse.svg" style="height: 24px" alt="parkingyou">
+      <div style="margin-top: 16px">ParkingYou B.V. · Victoriapark 4 · 5611 BM Eindhoven</div>
+      <div style="margin-top: 4px">Storing? Bel 085 401 16 47 · info@parkingyou.nl</div>
+      <div style="margin-top: 16px"><u>Afmelden</u> · <u>Voorkeuren</u> · <u>Privacy</u></div>
+    </div>
+  </div>
+
+  <div class="ann" style="top: 96px"><b>Preheader</b> 36 px, body-s 12 px op blue.50. Altijd een link naar de webversie.</div>
+  <div class="ann" style="top: 160px"><b>Kop</b> 88 px, wit, logo in kleur 32 px hoog (minimum 24 px). Logo als PNG op 2x, alt-tekst "parkingyou".</div>
+  <div class="ann" style="top: 300px"><b>Hero-foto</b> 600 x 280, eigen garage of straat. Geen tekst in de foto, geen kleurfilter.</div>
+  <div class="ann" style="top: 500px"><b>Hero-tekst</b> op PY-Blauw. Eyebrow 12 px aqua (4,80:1), kop heading-l 32/38 (key phrase Bold), tekst body-m 16/24 wit. Hoofdknop oranje met PY-Diep, 48 px hoog, pil. Eén hoofdknop per mail.</div>
+  <div class="ann" style="top: 760px"><b>Blokken</b> wit, padding 32 px, twee kolommen van 256 px met 24 px tussenruimte; op mobiel onder elkaar. Kop heading-m 24/30 PY-Blauw, tekst body-m, link PY-Blauw onderstreept.</div>
+  <div class="ann" style="top: 930px"><b>Uitgelicht</b> op blue.50 met één bubbel van 104 px: hier de foto van de plek. Eén bubbel per mail.</div>
+  <div class="ann" style="top: 1110px"><b>Voet</b> PY-Blauw, logo omgekeerd 24 px, bedrijfsgegevens en afmeldlink (verplicht) in body-s 14/20 wit.</div>
+  <div class="ann" style="top: 1220px; border-left-color: #32B9CD"><b>Techniek</b> Tabellen, inline stijl, max 600 px. Font: "Ubuntu Sans" als webfont waar het werkt, anders Arial. Achtergrondkleur ook als bgcolor, zodat Outlook navy toont. Mailchimp-template: <i style="font-style: normal; font-weight: 700">py-newsletter-600.html</i>.</div>
+</div>
+</body>
+</html>

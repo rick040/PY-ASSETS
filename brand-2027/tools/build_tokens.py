@@ -153,7 +153,7 @@ RADIUS = [("none", 0, "Signage panels, photos in layouts."), ("s", 4, "Tags, sma
 SHADOW = [("1", "0 1 2 0 0.08", "Hairline lift: inputs on subtle surfaces."),
           ("2", "0 6 18 0 0.10", "Cards."),
           ("3", "0 16 40 0 0.16", "Sheets, dialogs, menus.")]
-DURATION = [("instant", 0, "Reduced motion."), ("fast", 120, "Hover, press, small state changes."),
+DURATION = [("instant", 0, "No movement."), ("reduced", 120, "The fade that replaces motion under prefers-reduced-motion (D19)."), ("fast", 120, "Hover, press, small state changes."),
             ("moderate", 200, "Expand, collapse, sheet in."), ("slow", 320, "Page level changes."),
             ("expressive", 600, "The bubble: brand moments in reels and splash only.")]
 EASING = [("standard", [0.2, 0, 0, 1], "Default for UI movement."),
@@ -340,7 +340,7 @@ def build():
         for name, (light, dark, desc) in items.items():
             lines.append("  %s: var(--py-color-%s);" % (var(group, name), dark.replace(".", "-")))
     lines.append("}")
-    lines.append("@media (prefers-reduced-motion: reduce) { :root { --py-duration-fast: 0ms; --py-duration-moderate: 0ms; --py-duration-slow: 0ms; --py-duration-expressive: 0ms; } }")
+    lines.append("@media (prefers-reduced-motion: reduce) { :root { --py-duration-moderate: 0ms; --py-duration-slow: 0ms; --py-duration-expressive: 0ms; } }  /* fast and reduced stay: a 120 ms fade replaces movement */")
     with open(os.path.join(OUT, "tokens.css"), "w") as f:
         f.write("\n".join(lines) + "\n")
 
