@@ -5,9 +5,9 @@ WCAG 2.x relative luminance. Text pairs need 4.5:1, UI and large text 3:1. Gener
 | Foreground | Background | Light | Dark | Need | Result |
 |---|---|---|---|---|---|
 | text.default | surface.default | 16.88:1 | 18.16:1 | 4.5:1 | pass |
-| text.default | surface.subtle | 15.61:1 | 14.73:1 | 4.5:1 | pass |
+| text.default | surface.subtle | 15.61:1 | 16.51:1 | 4.5:1 | pass |
 | text.muted | surface.default | 5.94:1 | 10.69:1 | 4.5:1 | pass |
-| text.muted | surface.subtle | 5.50:1 | 8.67:1 | 4.5:1 | pass |
+| text.muted | surface.subtle | 5.50:1 | 9.72:1 | 4.5:1 | pass |
 | text.brand | surface.default | 11.26:1 | 11.01:1 | 4.5:1 | pass |
 | text.link | surface.default | 11.26:1 | 11.01:1 | 4.5:1 | pass |
 | text.aqua | surface.default | 4.90:1 | 11.01:1 | 4.5:1 | pass |
@@ -22,6 +22,10 @@ WCAG 2.x relative luminance. Text pairs need 4.5:1, UI and large text 3:1. Gener
 | action.primary-fg | action.primary-bg-pressed | 4.72:1 | 4.72:1 | 4.5:1 | pass |
 | action.secondary-fg | action.secondary-bg | 11.26:1 | 7.74:1 | 4.5:1 | pass |
 | action.secondary-fg | action.secondary-bg-hover | 8.15:1 | 9.17:1 | 4.5:1 | pass |
+| action.secondary-fg | action.secondary-bg-pressed | 14.73:1 | 5.43:1 | 4.5:1 | pass |
+| text.on-code | surface.code | 18.16:1 | 18.16:1 | 4.5:1 | pass |
+| status.free | surface.raised | 4.90:1 | 8.93:1 | 4.5:1 | pass |
+| status.full | surface.raised | 4.80:1 | 7.88:1 | 4.5:1 | pass |
 | task.drive-fg | task.drive-bg | 11.26:1 | 11.26:1 | 4.5:1 | pass |
 | task.walk-fg | task.walk-bg | 4.80:1 | 4.80:1 | 4.5:1 | pass |
 | task.pay-fg | task.pay-bg | 6.87:1 | 6.87:1 | 4.5:1 | pass |

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Locatiepagina desktop</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<link rel="stylesheet" href="ui.css">
+<style>
+  .wrap { width: 1200px; margin: 0 auto; }
+  .dnav a { font: var(--py-type-label-m); color: var(--py-text-default); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+  .dnav a.is-active { color: var(--py-text-brand); box-shadow: inset 0 -3px 0 var(--py-action-secondary-bg); }
+  .grid12 { display: grid; grid-template-columns: 690px 486px; column-gap: 24px; align-items: start; }
+  table.tar { width: 100%; border-collapse: collapse; font: var(--py-type-body-m); }
+  table.tar td { padding: 12px 0; box-shadow: inset 0 -1px 0 var(--py-border-subtle); }
+  table.tar td:last-child { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .crumb a { color: var(--py-text-link); }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1440px; height: 1000px">
+  <header style="height: 72px; box-shadow: inset 0 -1px 0 var(--py-border-subtle)">
+    <div class="wrap" style="height: 72px; display: flex; align-items: center; gap: 32px">
+      <img src="../../kit/assets/logo-horizontal-color.svg" alt="ParkingYou" style="height: 32px">
+      <nav class="dnav" aria-label="Hoofdmenu" style="display: flex; gap: 28px; margin-left: 16px"><a href="#" class="is-active" aria-current="page">Locaties</a><a href="#">Abonnementen</a><a href="#">ParkingPass</a><a href="#">Zakelijk</a></nav>
+      <span style="flex: 1"></span>
+      <a class="btn btn--tertiary" href="#"><i data-i="ticket" data-s="20"></i>Mijn tickets</a>
+      <a class="btn btn--tertiary" href="#"><i data-i="user" data-s="20"></i>Inloggen</a>
+    </div>
+  </header>
+  <main class="wrap" style="padding-top: 24px">
+    <nav class="crumb t-body-s" aria-label="Kruimelpad" style="color: var(--py-text-muted); margin-bottom: 16px"><a href="#">Locaties</a> / <a href="#">Eindhoven</a> / Parking Philips Stadion</nav>
+    <div class="grid12">
+      <div style="display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span class="status status--free"><i data-i="check-circle" data-s="16"></i>Vrij</span>
+          <h1 class="t-heading-xl" style="margin: 0">Parking Philips Stadion</h1>
+          <div class="t-body-m" style="color: var(--py-text-muted)">[adres], Eindhoven</div>
+        </div>
+        <div class="photo" role="img" aria-label="Ingang van Parking Philips Stadion" style="height: 460px; border-radius: var(--py-radius-l); background-image: url('../../kit/photos/py-photo-philips-stadion.jpg')"></div>
+        <div style="display: flex; gap: 40px">
+          <span class="fact t-body-m"><i data-i="car" data-s="24"></i>700 plekken</span>
+          <span class="fact t-body-m"><i data-i="height" data-s="24"></i>Doorrijhoogte 2,00 m</span>
+          <span class="fact t-body-m"><i data-i="walk" data-s="24"></i>9 min naar centrum</span>
+          <span class="fact t-body-m"><i data-i="clock" data-s="24"></i>24 uur open</span>
+        </div>
+        <section>
+          <h2 class="t-heading-m" style="margin: 0 0 8px">Tarieven</h2>
+          <table class="tar">
+            <tr><td>Los parkeren</td><td>€ 1,50 <span class="price__unit" style="font-weight: 400">per 30 min</span></td></tr>
+            <tr><td>Dagtarief</td><td>€ 15,00</td></tr>
+            <tr><td>Dagtarief met reservering</td><td>€ 12,50</td></tr>
+          </table>
+        </section>
+      </div>
+      <aside class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; box-shadow: var(--py-shadow-2), inset 0 0 0 1px var(--py-border-subtle); margin-top: 106px">
+        <h2 class="t-heading-m" style="margin: 0">Reserveer je plek</h2>
+        <div style="display: flex; gap: 16px; align-items: center">
+          <span class="bub" data-size="104" data-fill="orange"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span>
+          <div class="t-body-s" style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 20px"><b class="t-label-m">Dagtarief met reservering</b><span style="color: var(--py-text-muted)">Je bespaart € 2,50 op het dagtarief.</span></div>
+        </div>
+        <div class="field"><span class="label" id="da">Aankomst</span><div class="row"><div class="control" style="flex: 1.4"><i data-i="calendar" data-s="20"></i><input class="tnum" aria-labelledby="da" value="za 14 nov 2026"></div><div class="control"><i data-i="clock" data-s="20"></i><input class="tnum" aria-label="Aankomsttijd" value="10:00"></div></div></div>
+        <div class="field"><span class="label" id="dv">Vertrek</span><div class="row"><div class="control" style="flex: 1.4"><i data-i="calendar" data-s="20"></i><input class="tnum" aria-labelledby="dv" value="za 14 nov 2026"></div><div class="control"><i data-i="clock" data-s="20"></i><input class="tnum" aria-label="Vertrektijd" value="18:00"></div></div></div>
+        <div class="divider"></div>
+        <div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight: 400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div>
+        <button class="btn btn--primary btn--lg btn--block">Reserveer je plek</button>
+        <p class="hint" style="text-align: center">Je kenteken is je ticket. Je hoeft niets te printen.</p>
+      </aside>
+    </div>
+  </main>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>

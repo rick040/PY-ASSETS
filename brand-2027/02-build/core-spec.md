@@ -171,6 +171,7 @@ Groups: `surface` (default, subtle, raised, brand, inverse), `text` (default, mu
 | body-l | 18 | 28 | 400 |
 | body-m | 16 | 24 | 400 |
 | body-s | 14 | 20 | 400 |
+| label-l | 16 | 24 | 600 (button labels, D5) |
 | label-m | 14 | 20 | 600 |
 | label-s | 12 | 16 | 600 |
 | numeric-xl | 56 | 60 | 800, tabular |
@@ -247,5 +248,17 @@ Bilingual signage: Dutch first, English below at the same size, regular weight, 
 | D1 | 2026-11-07 | B1 | Location lockup: name size 0.4x (cap height 0.28x), Ubuntu Sans Bold; construction A (name under the wordmark, left edge on the stem of the p) is default, B (one line, 0.5x after "you") for wide formats | 0.5x crowds the descenders of p and g and overpowers the wordmark; 0.4x keeps x = 2.5 x name size, so signage sizing still follows section 6.3 |
 | D2 | 2026-11-07 | B1 | Favicon: no separate 16 px drawing; browsers scale the SVG or the 32 px PNG | A 16 px beeldmerk is 8.7 px high, below the 16 px minimum; a redraw would be a new logo shape |
 | D3 | 2026-11-07 | CD | Philips Stadion kit photo: licence plates blurred; rule "kentekens altijd onherkenbaar" | Privacy (AVG); raised by B4 |
+
+| D4 | 2026-11-07 | B5 | Component sizes: button and input 48 px, large 56 px; chip 36 px (hit area 44); tag 28 px; top bar 56 px phone, 72 px desktop; bottom bar 64 px plus safe area; focus ring 3 px, offset 2 px; borders 1 px, 2 px on hover, focus, error; progress bar 4 px; licence plate NL band 36 px, letter spacing 0.08 em; thumbnails 96 x 96, photos 3:2. In tokens as `component.size.*` | Needed for components; all meet the 44 px target size |
+| D5 | 2026-11-07 | B5 | Type style `label-l` 16/24, weight 600, for button labels | Buttons need 16 px; body-m is 400 |
+| D6 | 2026-11-07 | B5 | Numbers inside a bubble are weight 800 at every size, also at 12 and 20 px | Matches section 4 (content weight 800) |
+| D7 | 2026-11-07 | B5 | New semantic tokens `action.secondary-bg-pressed` (blue.800 / aqua.600), `surface.code` and `text.on-code` (white and blue.900 in both themes) | Pressed state; QR codes must stay dark on light in dark mode |
+| D8 | 2026-11-07 | CD | New primitive `blue.850` #101C44; dark `surface.subtle` = blue.850 so subtle and raised differ in dark mode | B5 finding: both were blue.800 |
+| D9 | 2026-11-07 | CD | Status colours (Vrij, Vol, Gesloten) only on `surface.default` or `surface.raised`, never on `surface.subtle` | B5 finding: status.full on subtle is 4.44:1 |
+| D10 | 2026-11-07 | CD | Rejected: alerts with a 4 px coloured left border. Alerts use icon, title and `feedback.error-bg` style tint, full outline 1 px | A coloured side bar is decoration without meaning and reads as a template trope |
+| D11 | 2026-11-07 | CD | Component token tier in the generator (`component.button.*`, `input.*`, `card.*`, `ticket.*`, `size.*`) | Three-tier architecture from R5 |
+| D12 | 2026-11-07 | CD | Toasts stay at least 6 s; a toast with an action never closes on its own | WCAG 2.2.1 timing |
+| D13 | 2026-11-07 | CD | Map markers: the 24 px navy bubble with a white P or price is the map pin; the one-bubble rule applies to layouts, not to map data | A pin is what the shape already is; one per location on the map |
+| D14 | 2026-11-07 | CD | Orange icon-only buttons are not allowed (2.64:1 against white) | B5 finding |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

@@ -18,7 +18,7 @@ OUT = os.path.join(ROOT, "tokens")
 # ---------------------------------------------------------------- primitives
 PRIMITIVES = {
     "blue": {"50": "#F4F6FB", "100": "#E8ECF6", "200": "#C9D2EA", "300": "#9AAAD6", "400": "#6F86C8",
-             "500": "#4561B0", "600": "#2B4A9E", "700": "#1A3580", "800": "#12245A", "900": "#0D142E"},
+             "500": "#4561B0", "600": "#2B4A9E", "700": "#1A3580", "800": "#12245A", "850": "#101C44", "900": "#0D142E"},
     "aqua": {"50": "#F0FAFC", "100": "#E3F6F9", "200": "#BDE9F0", "300": "#86D6E2", "400": "#5CC7D7",
              "500": "#32B9CD", "600": "#1E9AAD", "700": "#127C8C", "800": "#0E6170", "900": "#0A3F49"},
     "orange": {"50": "#FFF5E8", "100": "#FFE6C7", "200": "#FFCC8F", "300": "#FAAE52", "400": "#F59A26",
@@ -44,10 +44,11 @@ PRODUCTION = {
 SEMANTIC = {
     "surface": {
         "default": ("neutral.0", "blue.900", "Page and screen background."),
-        "subtle": ("blue.50", "blue.800", "Quiet sections, input wells, table stripes."),
+        "subtle": ("blue.50", "blue.850", "Quiet sections, input wells, table stripes."),
         "raised": ("neutral.0", "blue.800", "Cards and sheets above the page."),
         "brand": ("blue.700", "blue.700", "Navy brand field: headers, social, cards, signage faces."),
         "inverse": ("blue.900", "neutral.0", "Strongest contrast field."),
+        "code": ("neutral.0", "neutral.0", "Behind QR and barcodes: always light, in every theme."),
     },
     "text": {
         "default": ("neutral.900", "neutral.0", "Body text."),
@@ -56,6 +57,7 @@ SEMANTIC = {
         "on-brand": ("neutral.0", "neutral.0", "Text on surface.brand."),
         "link": ("blue.700", "aqua.300", "Links, always underlined."),
         "aqua": ("aqua.700", "aqua.300", "Aqua as text colour on light surfaces."),
+        "on-code": ("blue.900", "blue.900", "QR and barcode modules on surface.code."),
     },
     "border": {
         "subtle": ("neutral.200", "blue.600", "Dividers and card edges (decorative)."),
@@ -72,6 +74,7 @@ SEMANTIC = {
         "primary-fg": ("blue.900", "blue.900", "Text and icon on the main button."),
         "secondary-bg": ("blue.700", "aqua.500", "Second button."),
         "secondary-bg-hover": ("blue.600", "aqua.400", "Hover state of the second button."),
+        "secondary-bg-pressed": ("blue.800", "aqua.600", "Pressed state of the second button."),
         "secondary-fg": ("neutral.0", "blue.900", "Text on the second button."),
     },
     "task": {
@@ -102,6 +105,24 @@ SEMANTIC = {
     },
 }
 
+# component tier (D11): components read these; they alias semantic tokens
+COMPONENT = {
+    "button": {"primary.bg": "action.primary-bg", "primary.bg-hover": "action.primary-bg-hover",
+               "primary.bg-pressed": "action.primary-bg-pressed", "primary.fg": "action.primary-fg",
+               "secondary.bg": "action.secondary-bg", "secondary.bg-hover": "action.secondary-bg-hover",
+               "secondary.bg-pressed": "action.secondary-bg-pressed", "secondary.fg": "action.secondary-fg",
+               "focus-ring": "focus.ring"},
+    "input": {"bg": "surface.default", "fg": "text.default", "border": "border.strong", "border-error": "feedback.error",
+              "label": "text.default", "hint": "text.muted"},
+    "card": {"bg": "surface.raised", "border": "border.subtle", "title": "text.brand", "meta": "text.muted"},
+    "ticket": {"code-bg": "surface.code", "code-fg": "text.on-code"},
+}
+COMPONENT_SIZE = {"button-height": 48, "button-height-large": 56, "input-height": 48, "input-height-large": 56,
+                  "chip-height": 36, "tag-height": 28, "hit-area-min": 44, "topbar-height-phone": 56,
+                  "topbar-height-desktop": 72, "bottombar-height": 64, "focus-ring-width": 3, "focus-ring-offset": 2,
+                  "border-width": 1, "border-width-strong": 2, "progress-height": 4, "plate-band-width": 36,
+                  "thumb-size": 96}
+
 # pairs that carry text or UI meaning: (fg, bg, kind) with kind text (4.5) or ui (3.0) or large (3.0)
 PAIRS = [
     ("text.default", "surface.default", "text"), ("text.default", "surface.subtle", "text"),
@@ -113,7 +134,8 @@ PAIRS = [
     ("focus.ring-on-brand", "surface.brand", "ui"),
     ("action.primary-fg", "action.primary-bg", "text"), ("action.primary-fg", "action.primary-bg-hover", "text"),
     ("action.primary-fg", "action.primary-bg-pressed", "text"), ("action.secondary-fg", "action.secondary-bg", "text"),
-    ("action.secondary-fg", "action.secondary-bg-hover", "text"),
+    ("action.secondary-fg", "action.secondary-bg-hover", "text"), ("action.secondary-fg", "action.secondary-bg-pressed", "text"),
+    ("text.on-code", "surface.code", "text"), ("status.free", "surface.raised", "text"), ("status.full", "surface.raised", "text"),
     ("task.drive-fg", "task.drive-bg", "text"), ("task.walk-fg", "task.walk-bg", "text"),
     ("task.pay-fg", "task.pay-bg", "text"),
     ("status.free", "surface.default", "text"), ("status.full", "surface.default", "text"),
@@ -151,6 +173,7 @@ TYPE_SCREEN = [
     ("body-l", 18, 28, 400, 0, 100, False),
     ("body-m", 16, 24, 400, 0, 100, False),
     ("body-s", 14, 20, 400, 0, 100, False),
+    ("label-l", 16, 24, 600, 0, 100, False),
     ("label-m", 14, 20, 600, 0.01, 100, False),
     ("label-s", 12, 16, 600, 0.02, 100, False),
     ("numeric-xl", 56, 60, 800, 0, 100, True),
@@ -215,6 +238,15 @@ def build():
             grp[name] = {"$value": "{color.%s}" % light, "$description": desc,
                          "$extensions": {"nl.parkingyou.modes": {"dark": "{color.%s}" % dark}}}
         tokens["semantic"][group] = grp
+    # component tier
+    comp = {}
+    for c, items in COMPONENT.items():
+        grp = {"$type": "color"}
+        for name, ref in items.items():
+            grp[name] = {"$value": "{semantic.%s}" % ref}
+        comp[c] = grp
+    comp["size"] = {"$type": "dimension", **{k: {"$value": {"value": v, "unit": "px"}} for k, v in COMPONENT_SIZE.items()}}
+    tokens["component"] = comp
     # verloop
     tokens["gradient"] = {"verloop": {
         "$type": "gradient",
@@ -296,6 +328,12 @@ def build():
     lines.append("  --py-font-sans: %s;" % ", ".join("'%s'" % f if " " in f else f for f in FONT_STACK))
     for name, size, lh, wt, ls, wd, num in TYPE_SCREEN:
         lines.append("  --py-type-%s: %d %dpx/%dpx var(--py-font-sans);" % (name, wt, size, lh))
+    for c, items in COMPONENT.items():
+        for name, ref in items.items():
+            g, n = ref.split(".", 1)
+            lines.append("  --py-%s-%s: var(--py-%s-%s);" % (c, name.replace(".", "-"), g, n))
+    for k, v in COMPONENT_SIZE.items():
+        lines.append("  --py-size-%s: %dpx;" % (k, v))
     lines.append("}")
     lines.append("[data-theme=\"dark\"] {")
     for group, items in SEMANTIC.items():

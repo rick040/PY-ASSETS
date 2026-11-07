@@ -82,7 +82,7 @@
 .plate input::placeholder { color: var(--py-text-muted); opacity: 1; }
 .plate.is-focus { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-focus-ring); outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
 .plate.is-error { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-feedback-error); }
-.plate--display { height: auto; box-shadow: none; background: var(--py-surface-raised); }
+.plate--display { height: auto; background: var(--py-surface-raised); }
 .plate--display .plate__val { padding: var(--py-space-2) var(--py-space-4); font: var(--py-type-heading-l); letter-spacing: 0.08em; color: var(--py-text-default); font-variant-numeric: tabular-nums; }
 
 /* Checkbox and radio: 24 px box inside a 44 px row */
