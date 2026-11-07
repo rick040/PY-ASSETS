@@ -2,7 +2,7 @@
 
 ## Wat het logo is
 
-Het logo is het beeldmerk (een bubbel met ring en aqua stip) plus het woordmerk "parkingyou", getekend, niet getypt. Het blijft zoals het is: mensen kennen het van de lichtbak, de pas en de site. Nieuw is alleen dat de reverse versie officieel wordt en dat er een navy versie bijkomt voor aqua en oranje.
+Het logo is het beeldmerk (een bubbel met ring en aqua stip) plus het woordmerk "parkingyou", getekend, niet getypt. Het blijft zoals het is: mensen kennen het van de lichtbak, de pas en de site. Nieuw is alleen dat de reverse versie officieel wordt en dat er een navy versie bijkomt voor aqua en oranje. Het logo draait nooit, en de bubbel ook niet.
 
 We meten alles in **x**: de breedte van het beeldmerk in de lockup die je gebruikt.
 
@@ -29,7 +29,7 @@ Stel de delen nooit zelf samen; gebruik de bestanden.
 | Navy, één kleur (nieuw) | PY-Aqua, PY-Oranje, eenkleurige navy druk | `logo-*-navy.svg` |
 | Zwart, één kleur | alleen eenkleurige zwarte druk | `logo-*-black.svg` |
 
-Op een foto zoek je een rustig vlak. Licht: kleurversie. Donker: reverse. Is de foto overal druk, zet het logo dan op een navy vlak naast de foto, niet op een donkere laag erover. Op het verloop alleen de reverse versie, op het navy deel.
+Op een foto zoek je een rustig vlak. Licht: kleurversie. Donker: reverse. Is de foto overal druk, zet het logo dan op een navy vlak naast de foto, niet op een donkere laag erover.
 
 ## Vrije ruimte
 
@@ -75,6 +75,15 @@ Maat kiezen: begin bij de naam. x = 2,5 keer de lettergrootte van de naam.
 
 De huidige Maashaven-lockup heeft een kleiner woordmerk dan het echte logo. Bij de volgende druk vervangen we die door deze opbouw.
 
+## Het logo en de parkeerders
+
+Het hoofd van onze parkeerders heeft de vorm van het beeldmerk. Dat is bewust: zo wordt het logo een mens. Het hoofd is altijd aqua, net als de stip in het logo. Twee regels houden het logo heel:
+
+- Een parkeerder krijgt nooit het hele logo als hoofd, geen ring en geen stip. Alleen de bubbelvorm.
+- Een parkeerder staat nooit tegen het logo aan. Houd de vrije ruimte van 0,5x aan, ook naar het poppetje toe.
+
+Meer over de parkeerders staat in het hoofdstuk Patronen en designelementen.
+
 ## Tagline "The other way of parking"
 
 **Advies: stoppen met de tagline als lockup.**
@@ -105,7 +114,8 @@ Bestaand drukwerk mag op. Wil Rick hem houden, dan als losse regel in de layout,
 - Doe: de versie die bij de ondergrond hoort.
 - Doe: 0,5x vrij rondom, boven de minimale maat.
 - Doe: locatienaam volgens opbouw A of B.
-- Niet: uitrekken, draaien, omlijnen, schaduw of andere kleuren.
+- Niet: uitrekken, draaien, omlijnen, schaduw of andere kleuren. Ook de bubbel draai je nooit.
+- Niet: het hele logo als hoofd van een parkeerder.
 - Niet: het woordmerk opnieuw typen.
 - Niet: beeldmerk en woordmerk los schalen of verschuiven.
 - Niet: het logo in een bubbel, of het beeldmerk als bubbel.

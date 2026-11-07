@@ -47,7 +47,7 @@ Plekken eerst. Mensen alleen als ze iets laten zien: aankomen, uitstappen, de we
 - Een kleurlaag over de foto, in blauw of welke kleur dan ook.
 - Donkere, sombere garages in marketing.
 - AI-beeld van een echte ParkingYou-locatie, of AI-mensen die doen alsof ze klant zijn.
-- Emoji, clip-art en poppetjes op of naast de foto.
+- Emoji en clip-art bij een foto, en parkeerders op een foto. Onze parkeerders staan op een vlak naast de foto, nooit erin of eroverheen.
 - Andere merken en logo's prominent in beeld, behalve partners en officiële verkeersborden als context.
 
 ## Uitsnede en plaatsing
@@ -250,7 +250,7 @@ sunset colours, HDR look, illustration.
 - Geen donkere, sombere garages in marketing.
 - Geen AI-beeld van onze locaties of AI-mensen als klant.
 - Geen tekst, prijs of pictogram in een fotobubbel.
-- Geen emoji, clip-art of poppetjes bij een foto.
+- Geen emoji of clip-art bij een foto, en geen parkeerder op de foto zelf.
 - Geen leesbare kentekens.
 
 ## Voorgestelde waarden
