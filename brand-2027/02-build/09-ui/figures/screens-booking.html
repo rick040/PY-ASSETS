@@ -5,14 +5,17 @@
 <title>Boekflow telefoon</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <link rel="stylesheet" href="ui.css">
+<style>
+  .elems { font: var(--py-type-label-s); color: var(--py-text-muted); letter-spacing: 0.02em; }
+</style>
 </head>
 <body>
 <!-- phone screens 390 x 844; edit this HTML directly -->
 <div class="fig fig--subtle" style="width: 1792px; height: 1066px; padding: 48px 56px; display: flex; flex-direction: column; gap: 24px">
   <div class="eyebrow">Boekflow in drie stappen plus bevestiging · telefoon 390 x 844</div>
-  <div style="display: flex; gap: 40px; align-items: flex-start"><div style="display:flex; flex-direction:column; gap:16px"><div class="t-label-m" style="color: var(--py-text-default)">3a Wanneer</div><div class="phone">
+  <div style="display: flex; gap: 40px; align-items: flex-start"><div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">3a Wanneer</div><div class="elems">pijl</div></div><div class="phone">
   <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
-  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand)"><i data-i="chevron-left"></i></button><span class="topbar__title">Reserveren</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
+  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand); font: var(--pyx-type-label-l)"><i data-pijl="left"></i></button><span class="topbar__title">Reserveren</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
   <div class="pad" style="padding-bottom: 8px"><div class="steps" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span class="on"></span><span class=""></span><span class=""></span></div><div class="h-step" style="margin-top: 8px">Stap 1 van 3 · Wanneer</div></div>
   <div class="scroll pad" style="padding-top: 16px; display: flex; flex-direction: column; gap: 20px">
     <div><h1 class="t-heading-m" style="margin: 0">Wanneer wil je parkeren?</h1><div class="fact" style="margin-top: 6px; color: var(--py-text-muted)"><i data-i="pin" data-s="16"></i>Parking Philips Stadion</div></div>
@@ -24,9 +27,9 @@
     </dl>
     <div class="alert alert--info"><i data-i="info"></i><div><b>Je kenteken is je ticket</b>Je hoeft niets te printen.</div></div>
   </div>
-  <div class="footer"><div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight:400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div><button class="btn btn--primary btn--lg btn--block">Ga verder</button></div><div class="home-ind"></div></div></div><div style="display:flex; flex-direction:column; gap:16px"><div class="t-label-m" style="color: var(--py-text-default)">3b Kenteken en gegevens</div><div class="phone">
+  <div class="footer"><div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight:400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div><button class="btn btn--primary btn--lg btn--block">Ga verder <i data-pijl="right"></i></button></div><div class="home-ind"></div></div></div><div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">3b Kenteken en gegevens</div><div class="elems">pijl</div></div><div class="phone">
   <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
-  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand)"><i data-i="chevron-left"></i></button><span class="topbar__title">Reserveren</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
+  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand); font: var(--pyx-type-label-l)"><i data-pijl="left"></i></button><span class="topbar__title">Reserveren</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
   <div class="pad" style="padding-bottom: 8px"><div class="steps" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="2"><span class="on"></span><span class="on"></span><span class=""></span></div><div class="h-step" style="margin-top: 8px">Stap 2 van 3 · Kenteken en gegevens</div></div>
   <div class="scroll pad" style="padding-top: 16px; display: flex; flex-direction: column; gap: 20px">
     <h1 class="t-heading-m" style="margin: 0">Je kenteken en e-mail</h1>
@@ -38,9 +41,9 @@
       <p class="hint">Hier sturen we je ticket naartoe.</p></div>
     <label class="check"><input type="checkbox" checked>Bewaar kenteken en e-mail voor de volgende keer</label>
   </div>
-  <div class="footer"><div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight:400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div><button class="btn btn--primary btn--lg btn--block">Ga verder</button></div><div class="home-ind"></div></div></div><div style="display:flex; flex-direction:column; gap:16px"><div class="t-label-m" style="color: var(--py-text-default)">3c Betalen</div><div class="phone">
+  <div class="footer"><div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight:400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div><button class="btn btn--primary btn--lg btn--block">Ga verder <i data-pijl="right"></i></button></div><div class="home-ind"></div></div></div><div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">3c Betalen</div><div class="elems">pijl</div></div><div class="phone">
   <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
-  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand)"><i data-i="chevron-left"></i></button><span class="topbar__title">Reserveren</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
+  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand); font: var(--pyx-type-label-l)"><i data-pijl="left"></i></button><span class="topbar__title">Reserveren</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
   <div class="pad" style="padding-bottom: 8px"><div class="steps" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="3"><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="h-step" style="margin-top: 8px">Stap 3 van 3 · Betalen</div></div>
   <div class="scroll pad" style="padding-top: 16px; display: flex; flex-direction: column; gap: 20px">
     <h1 class="t-heading-m" style="margin: 0">Controleer en betaal</h1>
@@ -59,22 +62,22 @@
     </fieldset>
     <p class="hint">Door te betalen ga je akkoord met de <a href="#" style="color: var(--py-text-link)">voorwaarden</a>.</p>
   </div>
-  <div class="footer"><div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight:400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div><button class="btn btn--primary btn--lg btn--block"><i data-i="lock" data-s="20"></i>Betaal € 12,50</button></div><div class="home-ind"></div></div></div><div style="display:flex; flex-direction:column; gap:16px"><div class="t-label-m" style="color: var(--py-text-default)">3d Bevestiging</div><div class="phone">
+  <div class="footer"><div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight:400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div><button class="btn btn--primary btn--lg btn--block"><i data-i="lock" data-s="20"></i>Betaal € 12,50</button></div><div class="home-ind"></div></div></div><div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">3d Bevestiging</div><div class="elems">stem · springer</div></div><div class="phone">
   <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
   <div class="topbar topbar--flow"><span style="width:44px"></span><span class="topbar__title">Reservering</span><button class="btn btn--icon" aria-label="Sluiten" style="color: var(--py-text-brand)"><i data-i="x"></i></button></div>
-  <div class="scroll pad" style="padding-top: 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
-    <span class="bub" data-size="104" data-fill="aqua" role="img" aria-label="Gelukt"><i data-i="check" data-s="32"></i></span>
-    <h1 class="t-heading-l" style="margin: 16px 0 0" tabindex="-1">Je plek is gereserveerd</h1>
+  <div class="scroll pad" style="padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+    <div class="voice"><h1 class="voice__text t-heading-l" style="margin: 0" tabindex="-1"><b>Je plek</b><br><span style="font-weight: 400">is gereserveerd.</span></h1></div>
     <p class="t-body-m" style="margin: 0; color: var(--py-text-muted)">Je ticket staat in de app en in je mail. Rij gewoon naar binnen: je kenteken is je ticket.</p>
-    <dl class="card" style="margin: 16px 0 0; padding: 4px 16px; width: 100%; text-align: left">
+    <dl class="card" style="margin: 8px 0 0; padding: 4px 16px; width: 100%">
       <div class="kv"><dt>Locatie</dt><dd>Parking Philips Stadion</dd></div>
       <div class="kv" style="box-shadow: inset 0 1px 0 var(--py-border-subtle)"><dt>Wanneer</dt><dd class="tnum">za 14 nov, 10:00 tot 18:00</dd></div>
       <div class="kv" style="box-shadow: inset 0 1px 0 var(--py-border-subtle)"><dt>Kenteken</dt><dd>XX-123-X</dd></div>
       <div class="kv" style="box-shadow: inset 0 1px 0 var(--py-border-subtle)"><dt>Betaald</dt><dd class="tnum">€ 12,50</dd></div>
     </dl>
   </div>
-  <div class="footer"><button class="btn btn--secondary btn--lg btn--block"><i data-i="ticket" data-s="20"></i>Bekijk je ticket</button><button class="btn btn--tertiary btn--block" style="min-height: 44px"><i data-i="calendar-plus" data-s="20"></i>Zet in je agenda</button></div><div class="home-ind"></div></div></div></div>
-  <div class="cap">Totaal en hoofdknop staan vast onderaan. Het veld met focus scrollt altijd boven die balk (WCAG 2.4.11). Kenteken en e-mail typ je één keer; stap 3 en het ticket nemen ze over (3.3.7).</div>
+  <div style="position: relative; flex: none; height: 0"><img class="parkeerder" src="../../kit/assets/figure-jump-duo.svg" alt="" style="position: absolute; right: 32px; bottom: 0; height: 128px"></div>
+  <div class="footer"><button class="btn btn--primary btn--lg btn--block"><i data-i="ticket" data-s="20"></i>Bekijk je ticket</button><button class="btn btn--tertiary btn--block" style="min-height: 44px"><i data-i="calendar-plus" data-s="20"></i>Zet in je agenda</button></div><div class="home-ind"></div></div></div></div>
+  <div class="cap">Totaal en hoofdknop staan vast onderaan; "Ga verder" krijgt de hoekige pijl, "Betaal" niet. Het veld met focus scrollt altijd boven die balk (WCAG 2.4.11). Kenteken en e-mail typ je één keer (3.3.7). De bevestiging: de stem opent de kop, de springer staat op de rand van de knoppenbalk. Geen bubbel, geen confetti.</div>
 </div>
 <script src="ui.js"></script>
 </body>

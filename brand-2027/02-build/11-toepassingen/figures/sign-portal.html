@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-<div class="fig fig--garage" style="width: 1200px; height: 740px">
+<div class="fig fig--garage" style="width: 1200px; height: 760px">
   <div class="eyebrow" style="position: absolute; left: 56px; top: 36px; color: #C2C7CF">Portaal 1-baans · beeldplaat 3300 x 520 mm · hoogtebalk 2500 x 90 mm</div>
 
   <svg style="position: absolute; left: 30px; top: 70px" width="1140" height="405" viewBox="-160 -100 3800 1350">
@@ -26,9 +26,11 @@
     <!-- P with roof, 16u = 416 -->
     <image href="../../kit/assets/symbol-p-roof.svg" x="52" y="92" height="416" width="324.5" preserveAspectRatio="xMinYMin meet"/>
     <!-- beeldmerk reverse 250 = 2 x cap -->
-    <image href="../../kit/assets/logo-beeldmerk-reverse.svg" x="480" y="175" height="250" width="207.3" preserveAspectRatio="xMinYMin meet"/>
+    <!-- de stem scheidt P en naam: zo hoog als het beeldmerk (250), lijn 10, lucht 0,3 x 250 = 75 -->
+    <svg data-p="arc" x="451.5" y="175" width="55" height="250" color="#32B9CD"></svg>
+    <image href="../../kit/assets/logo-beeldmerk-reverse.svg" x="581.5" y="175" height="250" width="207.3" preserveAspectRatio="xMinYMin meet"/>
     <!-- name cap 125, font 180 -->
-    <text x="765" y="362.5" font-family="Ubuntu Sans" font-weight="700" font-size="180.4" letter-spacing="1.8" fill="#FFFFFF">Philips Stadion</text>
+    <text x="866" y="362.5" font-family="Ubuntu Sans" font-weight="700" font-size="180.4" letter-spacing="1.8" fill="#FFFFFF">Philips Stadion</text>
     <!-- display Vol / Vrij (supplier product) -->
     <rect x="2330" y="200" width="400" height="200" fill="#1D1D1B"/>
     <text x="2530" y="318" text-anchor="middle" font-family="Ubuntu Sans" font-weight="600" font-size="52" fill="#767B86">[display]</text>
@@ -60,7 +62,7 @@
       <path d="M3520 40V560M3490 40H3550M3490 560H3550"/>
       <path d="M760 1080V1080"/>
       <path d="M2290 237.5V362.5M2270 237.5H2310M2270 362.5H2310"/>
-      <path d="M480 470H687M480 450V490M687 450V490"/>
+      <path d="M581.5 470H788.8M581.5 450V490M788.8 450V490"/>
       <path d="M400 1060H2900M400 1035V1085M2900 1035V1085"/>
       <path d="M3000 900V990M2980 900H3020M2980 990H3020"/>
     </g>
@@ -69,7 +71,8 @@
   <div class="measure-label" style="left: 520px; top: 76px">3300 mm (breedte per rijstrook)</div>
   <div class="measure-label" style="left: 1100px; top: 200px">520</div>
   <div class="measure-label" style="left: 668px; top: 140px">kap 125 · 12,5 m</div>
-  <div class="measure-label" style="left: 220px; top: 238px">beeldmerk 250 hoog</div>
+  <div class="measure-label" style="left: 232px; top: 238px">beeldmerk 250 hoog</div>
+  <div class="measure-label" style="left: 196px; top: 96px">stem 250</div>
   <div class="measure-label" style="left: 505px; top: 400px">2500 mm, banden 250</div>
   <div class="measure-label" style="left: 975px; top: 352px">90 · kap 40</div>
   <div class="note note--on-dark" style="position: absolute; left: 60px; top: 492px; width: 1080px">Hoogtebalk blijft rood en wit volgens de norm (RAL 9010, rode folie 3M 580-72, zwarte retroreflecterende snijletters). Geen merkkleur. Waarde uit de echte doorrijhoogte, hier Parking Philips Stadion (2,00 m). Tekstlaag zoals handboek 3.5, nu in Ubuntu Sans Bold.</div>
@@ -84,7 +87,7 @@
   </div>
   <div class="col" style="left: 800px">
     <div class="h">Wat niet op het portaal staat</div>
-    Geen bubbel, geen verloop en geen aqua vlak meer. De Vol/Vrij-display en de RVV-borden zijn producten van derden: ze krijgen een eigen vak en geen merkkleur ernaast als versiering.
+    Geen bubbel, geen pijl, geen verloop en geen aqua vlak. Wel de stem in PY-Aqua tussen P en naam: zo hoog als het beeldmerk (250 mm), lijn 10 mm (1/25), 75 mm lucht aan elke kant (0,3 x de hoogte). De Vol/Vrij-display en de RVV-borden zijn producten van derden: ze krijgen een eigen vak en geen merkkleur ernaast als versiering.
   </div>
 </div>
 </body>

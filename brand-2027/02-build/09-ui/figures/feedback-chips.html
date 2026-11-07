@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<title>Meldingen, lege staat en chips</title>
+<title>Meldingen, toast en chips</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <link rel="stylesheet" href="ui.css">
 <style>
@@ -11,8 +11,8 @@
 </style>
 </head>
 <body>
-<div class="fig" style="width: 1200px; height: 800px; padding: 48px 56px; display: flex; flex-direction: column; gap: 32px">
-  <div class="eyebrow">Meldingen, lege staat, chips en labels</div>
+<div class="fig" style="width: 1200px; height: 790px; padding: 48px 56px; display: flex; flex-direction: column; gap: 32px">
+  <div class="eyebrow">Meldingen, toast, chips en labels</div>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px">
     <div class="col">
       <div class="t-heading-s">Meldingen</div>
@@ -20,22 +20,13 @@
       <div class="alert alert--warning"><i data-i="warning"></i><div><b>Doorrijhoogte 2,00 m</b><p>Is je auto hoger, met dakkoffer of een bus? Dan past hij hier niet.</p></div></div>
       <div class="alert alert--success" role="status"><i data-i="check-circle"></i><div><b>Kenteken bewaard</b><p>De volgende keer hoef je het niet meer te typen.</p></div></div>
       <div class="alert alert--info"><i data-i="info"></i><div><b>Je kenteken is je ticket</b><p>De camera bij de slagboom leest je kenteken. De slagboom gaat vanzelf open.</p></div></div>
-      <div class="cap">Tekst altijd in text.default. De kleur zit in het icoon en de rand van 1 px (feedback.*). Fout krijgt feedback.error-bg. Een fout die je zelf kunt oplossen staat bij het veld, niet bovenaan.</div>
+      <div class="cap">Tekst altijd in text.default. De kleur zit in het icoon en de rand van 1 px (feedback.*). Fout krijgt feedback.error-bg. Waarschuwing en de status Vol zijn oranje.700 (4,80:1): de enige plek waar oranje op een scherm komt, en dan alleen als icoon, rand of tekst. Een fout die je zelf kunt oplossen staat bij het veld. Geen parkeerder in een melding.</div>
     </div>
     <div class="col" style="gap: 28px">
       <div class="col" style="gap: 12px">
         <div class="t-heading-s">Toast</div>
         <div class="toast" role="status" style="align-self: flex-start"><i data-i="check" data-s="20"></i>Ticket staat in je agenda</div>
         <div class="cap">surface.inverse · minimaal 6 seconden · nooit voor een fout</div>
-      </div>
-      <div class="col" style="gap: 12px">
-        <div class="t-heading-s">Lege staat</div>
-        <div class="card" style="padding: 32px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
-          <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--py-surface-subtle); color: var(--py-text-brand); display: grid; place-items: center; margin-bottom: 8px"><i data-i="ticket" data-s="32"></i></div>
-          <div class="t-heading-s">Je hebt nog geen tickets</div>
-          <div class="t-body-s" style="color: var(--py-text-muted); max-width: 320px">Reserveer een plek. Je ticket staat dan hier, ook als je geen bereik hebt in de garage.</div>
-          <button class="btn btn--primary" style="margin-top: 12px">Zoek een plek</button>
-        </div>
       </div>
       <div class="col" style="gap: 12px">
         <div class="t-heading-s">Filterchips en labels</div>
@@ -50,7 +41,20 @@
           <span class="tag"><i data-i="height" data-s="16"></i>2,00 m</span>
           <span class="tag"><i data-i="car" data-s="16"></i>700 plekken</span>
         </div>
-        <div class="cap">Chip: knop, 36 hoog, raakvlak 44, gekozen = action.secondary. Label: geen knop, 28 hoog, surface.subtle met text.brand (10,41:1).</div>
+        <div class="cap">Chip: knop, 36 hoog, raakvlak 44, gekozen = action.primary (navy, wit, 11,26:1). Label: geen knop, 28 hoog, surface.subtle met text.brand (10,41:1).</div>
+      </div>
+      <div class="col" style="gap: 12px">
+        <div class="t-heading-s">Donker</div>
+        <div data-theme="dark" style="background: var(--py-surface-default); border-radius: var(--py-radius-l); padding: 20px; display: flex; flex-direction: column; gap: 16px">
+          <div class="toast" role="status" style="align-self: flex-start"><i data-i="check" data-s="20"></i>Ticket staat in je agenda</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap">
+            <button class="chip is-selected" aria-pressed="true"><i data-i="check" data-s="16"></i>Nu open</button>
+            <button class="chip" aria-pressed="false">Reserveren</button>
+            <button class="chip" aria-pressed="false"><i data-i="ev" data-s="16"></i>Laden</button>
+          </div>
+          <div class="alert alert--warning"><i data-i="warning"></i><div><b>Doorrijhoogte 2,00 m</b><p>Is je auto hoger? Dan past hij hier niet.</p></div></div>
+        </div>
+        <div class="cap">Donker: toast wit met PY-Diep, gekozen chip aqua met PY-Diep (7,74:1), waarschuwing oranje.300 (9,72:1).</div>
       </div>
     </div>
   </div>

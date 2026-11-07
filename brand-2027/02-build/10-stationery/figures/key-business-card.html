@@ -8,52 +8,77 @@
 <style>
   text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
   .lab { position: absolute; font: 700 15px/20px var(--py-font-sans); color: #1A3580; }
-  .col { position: absolute; width: 330px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
+  .lab span { font-weight: 400; color: var(--py-text-muted); }
+  .col { position: absolute; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
   .col b { font-weight: 700; }
   .col .h { font: 700 12px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--py-text-muted); margin-bottom: 6px; }
+  .card { position: absolute; box-shadow: 0 1px 2px rgba(13,20,46,0.10), 0 8px 24px rgba(13,20,46,0.08); }
 </style>
 </head>
 <body>
-<div class="fig fig--subtle" style="width: 1200px; height: 780px">
+<div class="fig fig--subtle" style="width: 1200px; height: 880px">
   <div class="eyebrow" style="position: absolute; left: 60px; top: 34px">Visitekaartje · 85 x 55 mm · u = 2,75 mm · marge 2u · 12 kolommen</div>
-  <div class="lab" style="left: 60px; top: 68px">Voorzijde</div>
-  <div class="lab" style="left: 630px; top: 68px">Achterzijde</div>
-  <svg style="position:absolute;left:60px;top:96px" width="510" height="330.0" viewBox="0 0 85 55"><defs><clipPath id="f1"><rect width="85" height="55"/></clipPath></defs><g clip-path="url(#f1)"><rect width="85" height="55" fill="#1A3580"/>
-<path data-b="35.75" data-x="58" data-y="-8" data-line="#32B9CD"/>
-<image href="../../kit/assets/logo-horizontal-reverse.svg" x="5.5" y="5.5" height="8.25" width="29.88"/>
-<text x="5.5" y="49.5" font-size="3.53" font-weight="700" fill="#FFFFFF">parkingyou.nl</text></g></svg>
-  <svg style="position:absolute;left:630px;top:96px" width="510" height="330.0" viewBox="0 0 85 55"><defs><clipPath id="b1"><rect width="85" height="55"/></clipPath></defs><g clip-path="url(#b1)"><rect width="85" height="55" fill="#FFFFFF"/>
-<image href="../../kit/assets/logo-beeldmerk-color.svg" x="74.94" y="5.5" height="5.5" width="4.56"/>
-<text x="5.5" y="11" font-size="5.29" font-weight="700" fill="#1A3580">[Voornaam Achternaam]</text>
-<text x="5.5" y="16.5" font-size="3.53" fill="#1D1D1B">[Functie]</text>
-<g font-size="2.82" fill="#1D1D1B">
-<text x="5.5" y="34.4">[telefoonnummer]</text>
-<text x="5.5" y="38.28">[voornaam]@parkingyou.nl</text>
-<text x="5.5" y="42.16" font-weight="700" fill="#1A3580">parkingyou.nl</text>
-<text x="5.5" y="49.5" fill="#1A3580">ParkingYou B.V. · Victoriapark 4 · 5611 BM Eindhoven</text>
-</g></g><rect width="85" height="55" fill="none" stroke="#C2C7CF" stroke-width="0.15"/></svg>
-  <div class="lab" style="left: 60px; top: 444px; font-size: 13px; color: #5E6470">Grid: marge 5,5 mm, kolom 3,65 mm, tussenruimte 2,75 mm</div>
-  <svg style="position:absolute;left:60px;top:470px" width="255" height="165.0" viewBox="0 0 85 55"><defs><clipPath id="f2"><rect width="85" height="55"/></clipPath></defs><g clip-path="url(#f2)"><rect width="85" height="55" fill="#1A3580"/>
-<path data-b="35.75" data-x="58" data-y="-8" data-line="#32B9CD"/>
-<image href="../../kit/assets/logo-horizontal-reverse.svg" x="5.5" y="5.5" height="8.25" width="29.88"/>
-<text x="5.5" y="49.5" font-size="3.53" font-weight="700" fill="#FFFFFF">parkingyou.nl</text><g fill="#32B9CD" opacity="0.18"><rect x="5.500" y="5.5" width="3.646" height="44"/><rect x="11.896" y="5.5" width="3.646" height="44"/><rect x="18.292" y="5.5" width="3.646" height="44"/><rect x="24.688" y="5.5" width="3.646" height="44"/><rect x="31.083" y="5.5" width="3.646" height="44"/><rect x="37.479" y="5.5" width="3.646" height="44"/><rect x="43.875" y="5.5" width="3.646" height="44"/><rect x="50.271" y="5.5" width="3.646" height="44"/><rect x="56.667" y="5.5" width="3.646" height="44"/><rect x="63.063" y="5.5" width="3.646" height="44"/><rect x="69.458" y="5.5" width="3.646" height="44"/><rect x="75.854" y="5.5" width="3.646" height="44"/></g><rect x="5.5" y="5.5" width="74" height="44" fill="none" stroke="#C4281C" stroke-width="0.18" stroke-dasharray="0.8 0.6"/></g></svg>
-  <svg style="position:absolute;left:335px;top:470px" width="255" height="165.0" viewBox="0 0 85 55"><defs><clipPath id="b2"><rect width="85" height="55"/></clipPath></defs><g clip-path="url(#b2)"><rect width="85" height="55" fill="#FFFFFF"/>
-<image href="../../kit/assets/logo-beeldmerk-color.svg" x="74.94" y="5.5" height="5.5" width="4.56"/>
-<text x="5.5" y="11" font-size="5.29" font-weight="700" fill="#1A3580">[Voornaam Achternaam]</text>
-<text x="5.5" y="16.5" font-size="3.53" fill="#1D1D1B">[Functie]</text>
-<g font-size="2.82" fill="#1D1D1B">
-<text x="5.5" y="34.4">[telefoonnummer]</text>
-<text x="5.5" y="38.28">[voornaam]@parkingyou.nl</text>
-<text x="5.5" y="42.16" font-weight="700" fill="#1A3580">parkingyou.nl</text>
-<text x="5.5" y="49.5" fill="#1A3580">ParkingYou B.V. · Victoriapark 4 · 5611 BM Eindhoven</text>
-</g><g fill="#32B9CD" opacity="0.18"><rect x="5.500" y="5.5" width="3.646" height="44"/><rect x="11.896" y="5.5" width="3.646" height="44"/><rect x="18.292" y="5.5" width="3.646" height="44"/><rect x="24.688" y="5.5" width="3.646" height="44"/><rect x="31.083" y="5.5" width="3.646" height="44"/><rect x="37.479" y="5.5" width="3.646" height="44"/><rect x="43.875" y="5.5" width="3.646" height="44"/><rect x="50.271" y="5.5" width="3.646" height="44"/><rect x="56.667" y="5.5" width="3.646" height="44"/><rect x="63.063" y="5.5" width="3.646" height="44"/><rect x="69.458" y="5.5" width="3.646" height="44"/><rect x="75.854" y="5.5" width="3.646" height="44"/></g><rect x="5.5" y="5.5" width="74" height="44" fill="none" stroke="#C4281C" stroke-width="0.18" stroke-dasharray="0.8 0.6"/></g><rect width="85" height="55" fill="none" stroke="#C2C7CF" stroke-width="0.15"/></svg>
-  <div class="col" style="left: 630px; top: 444px; width: 510px">
-    <div class="h">Letter</div>
-    Naam print-h3 15 pt Bold in PY-Blauw. Functie print-body 10 pt. Contact print-small 8/11 pt, de site Bold in PY-Blauw. Adres print-small in PY-Blauw. Tabelcijfers in telefoonnummers.
-    <div class="h" style="margin-top: 16px">Vorm en kleur</div>
-    Voor: PY-Blauw, logo omgekeerd met beeldmerk 8,25 mm (3u, minimum 7 mm). Eén bubbel als lijn in aqua, 13u, lijn 1/30 van de breedte, afgesneden door de rand; de punt blijft zichtbaar. Achter: wit, beeldmerk in kleur 5,5 mm (2u, minimum 5 mm).
-    <div class="h" style="margin-top: 16px">Papier en bestand</div>
-    Voorkeur: ongestreken 350 g/m², FOGRA52, 2 x 4/0 CMYK. Alternatief: gestreken mat 400 g/m², FOGRA39, voor een vollere navy. 3 mm afloop. Bestand: py-businesscard-[naam].pdf, template py-businesscard-85x55.indd.
+  <div class="lab" style="left: 60px; top: 68px">Voorzijde <span>PY-Blauw, logo omgekeerd</span></div>
+  <div class="lab" style="left: 630px; top: 68px">Achterzijde <span>wit, de stem en de gastheer</span></div>
+
+  <!-- FRONT -->
+  <svg class="card" style="left:60px;top:100px" width="510" height="330" viewBox="0 0 85 55">
+    <rect width="85" height="55" fill="#1A3580"/>
+    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="5.5" y="23.375" height="8.25" width="29.88"/>
+  </svg>
+
+  <!-- BACK -->
+  <svg class="card" style="left:630px;top:100px" width="510" height="330" viewBox="0 0 85 55">
+    <rect width="85" height="55" fill="#FFFFFF"/>
+    <svg data-p="arc" data-sw="2.61" x="7.38" y="9.8" width="1.91" height="8.7" color="#32B9CD"></svg>
+    <text x="11.9" y="13.5" font-size="5.29" font-weight="700" fill="#1A3580">[Voornaam Achternaam]</text>
+    <text x="11.9" y="18.5" font-size="3.53" fill="#1D1D1B">[Functie]</text>
+    <g font-size="2.82" fill="#1D1D1B">
+      <text x="11.9" y="35.0">[telefoonnummer]</text>
+      <text x="11.9" y="38.88">[voornaam]@parkingyou.nl</text>
+      <text x="11.9" y="42.76" font-weight="700" fill="#1A3580">parkingyou.nl</text>
+      <text x="11.9" y="46.64" fill="#1A3580">Victoriapark 4, 5611 BM Eindhoven</text>
+    </g>
+    <rect x="5.5" y="49.36" width="74" height="0.275" fill="#1A3580"/>
+    <svg data-p="fig-cap-point" data-flip="1" x="72.9" y="38.36" width="6.21" height="11" color="#1A3580"></svg>
+  </svg>
+
+  <!-- CONSTRUCTION -->
+  <div class="lab" style="left: 60px; top: 462px">Opbouw achterzijde <span>raster, de stem en de lijn</span></div>
+  <svg style="position:absolute;left:60px;top:494px" width="510" height="330" viewBox="0 0 85 55">
+    <rect width="85" height="55" fill="#FFFFFF" stroke="#C2C7CF" stroke-width="0.15"/>
+    <g fill="#32B9CD" opacity="0.14"><rect x="5.500" y="5.5" width="3.646" height="44"/><rect x="11.896" y="5.5" width="3.646" height="44"/><rect x="18.292" y="5.5" width="3.646" height="44"/><rect x="24.688" y="5.5" width="3.646" height="44"/><rect x="31.083" y="5.5" width="3.646" height="44"/><rect x="37.479" y="5.5" width="3.646" height="44"/><rect x="43.875" y="5.5" width="3.646" height="44"/><rect x="50.271" y="5.5" width="3.646" height="44"/><rect x="56.667" y="5.5" width="3.646" height="44"/><rect x="63.063" y="5.5" width="3.646" height="44"/><rect x="69.458" y="5.5" width="3.646" height="44"/><rect x="75.854" y="5.5" width="3.646" height="44"/></g>
+    <svg data-p="arc" data-sw="2.61" x="7.38" y="9.8" width="1.91" height="8.7" color="#32B9CD"></svg>
+    <text x="11.9" y="13.5" font-size="5.29" font-weight="700" fill="#1A3580">[Voornaam Achternaam]</text>
+    <text x="11.9" y="18.5" font-size="3.53" fill="#1D1D1B">[Functie]</text>
+    <g font-size="2.82" fill="#1D1D1B">
+      <text x="11.9" y="35.0">[telefoonnummer]</text>
+      <text x="11.9" y="38.88">[voornaam]@parkingyou.nl</text>
+      <text x="11.9" y="42.76" font-weight="700" fill="#1A3580">parkingyou.nl</text>
+      <text x="11.9" y="46.64" fill="#1A3580">Victoriapark 4, 5611 BM Eindhoven</text>
+    </g>
+    <rect x="5.5" y="49.36" width="74" height="0.275" fill="#1A3580"/>
+    <svg data-p="fig-cap-point" data-flip="1" x="72.9" y="38.36" width="6.21" height="11" color="#1A3580"></svg>
+    <g stroke="#C4281C" stroke-width="0.18" fill="none">
+      <rect x="5.5" y="5.5" width="74" height="44" stroke-dasharray="0.8 0.6"/>
+      <path d="M5.2 9.8H6.4M5.2 18.5H6.4M5.8 9.8V18.5"/>
+      <path d="M71.6 38.36H70.4M71.6 49.5H70.4M71 38.36V49.5"/>
+    </g>
+    <g font-size="1.9" font-weight="700" fill="#C4281C">
+      <text x="0.8" y="25">stem = blokhoogte 8,7</text>
+      <text x="49" y="36.6">gastheer 4u = 11 mm</text>
+      <text x="40" y="52.6">lijn 0,1u op de ondermarge</text>
+    </g>
+  </svg>
+
+  <div class="col" style="left: 630px; top: 466px; width: 510px">
+    <div class="h">Voorzijde</div>
+    Vol PY-Blauw met alleen het omgekeerde logo, links op de marge en verticaal in het midden. Beeldmerk 3u = 8,25 mm (minimum 7 mm). Verder niets: de voorkant is het merk, de achterkant de mens.
+    <div class="h" style="margin-top: 14px">Achterzijde</div>
+    <b>De stem</b> opent de naam: even hoog als naam en functie samen (8,7 mm), afstand 0,3 x de hoogte, lijn 0,5 mm (het minimum; 1/25 zou 0,35 mm zijn). Naam print-h3 15 pt Bold PY-Blauw, functie 10 pt. Contact print-small 8/11 pt, tabelcijfers.
+    <b>De gastheer wijst</b> staat rechts op de contactlijn (0,1u, PY-Blauw) en wijst naar je gegevens, gespiegeld zodat hij naar de tekst kijkt. Hoogte 4u = 11 mm.
+    <div class="h" style="margin-top: 14px">Papier en bestand</div>
+    Ongestreken 350 g/m², FOGRA52, 4/4 CMYK; alternatief gestreken mat 400 g/m², FOGRA39. 3 mm afloop. py-businesscard-85x55.indd, per persoon py-businesscard-[naam].pdf.
   </div>
 </div>
 </body>

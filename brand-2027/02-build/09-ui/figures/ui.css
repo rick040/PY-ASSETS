@@ -1,6 +1,6 @@
 /* ParkingYou 2027, chapter 09 UI/UX: component styles for the figures.
    Components read semantic tokens only (var(--py-surface-*), --py-text-*, --py-action-* ...).
-   Component values were approved in core-spec D4 to D14. */
+   Component values were approved in core-spec D4 to D13. Main button navy (D33), second button outline. No orange on screen. */
 
 /* Component values approved in core-spec D4, D5, D7 (now in tokens.css as --py-size-*, --py-type-label-l and semantic tokens).
    The short aliases below keep the figure CSS readable. */
@@ -31,12 +31,14 @@
 .btn--primary { background: var(--py-action-primary-bg); color: var(--py-action-primary-fg); }
 .btn--primary.is-hover { background: var(--py-action-primary-bg-hover); }
 .btn--primary.is-pressed { background: var(--py-action-primary-bg-pressed); }
-.btn--secondary { background: var(--py-action-secondary-bg); color: var(--py-action-secondary-fg); }
+.btn--secondary { background: var(--py-action-secondary-bg); color: var(--py-action-secondary-fg); box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-secondary-fg); } /* outline: 2 px in the label colour */
 .btn--secondary.is-hover { background: var(--py-action-secondary-bg-hover); }
 .btn--secondary.is-pressed { background: var(--py-action-secondary-bg-pressed); }
 .btn--tertiary { background: transparent; color: var(--py-text-link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 0 var(--py-space-3); }
 .btn--tertiary.is-hover { text-decoration-thickness: 2px; }
 .btn--tertiary.is-pressed { background: var(--py-surface-subtle); }
+.pijl { flex: none; display: inline-block; vertical-align: baseline; } /* de hoekige pijl: cap height of the label, on the baseline */
+.btn .pijl { margin-left: 0; }
 .btn:disabled, .btn.is-disabled { background: var(--py-surface-subtle); color: var(--py-text-muted); box-shadow: inset 0 0 0 1px var(--py-border-subtle); cursor: not-allowed; }
 .btn--tertiary:disabled { background: transparent; box-shadow: none; text-decoration: none; }
 .is-focus, :focus-visible { outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
@@ -80,16 +82,16 @@
 .check input { appearance: none; -webkit-appearance: none; flex: none; width: 24px; height: 24px; margin: 0; background: var(--py-surface-raised);
   box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-border-strong); border-radius: var(--py-radius-s); display: grid; place-items: center; }
 .check input[type=radio] { border-radius: 50%; }
-.check input:checked { background: var(--py-action-secondary-bg); box-shadow: none; }
+.check input:checked { background: var(--py-action-primary-bg); box-shadow: none; }
 .check input[type=checkbox]:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); background-size: 20px; background-repeat: no-repeat; background-position: center; }
 [data-theme="dark"] .check input[type=checkbox]:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D142E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); }
-.check input[type=radio]:checked { background: var(--py-surface-raised); box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-secondary-bg), inset 0 0 0 6px var(--py-surface-raised), inset 0 0 0 12px var(--py-action-secondary-bg); }
+.check input[type=radio]:checked { background: var(--py-surface-raised); box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-primary-bg), inset 0 0 0 6px var(--py-surface-raised), inset 0 0 0 12px var(--py-action-primary-bg); }
 .check input.is-focus { outline: var(--pyx-focus-w) solid var(--py-focus-ring); outline-offset: var(--pyx-focus-offset); }
 .check input.is-error { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-feedback-error); }
 .check input:disabled { background: var(--py-surface-subtle); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-subtle); }
 .check.is-disabled { color: var(--py-text-muted); }
 .option { border-radius: var(--py-radius-m); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-strong); padding: 0 var(--py-space-4); background: var(--py-surface-raised); }
-.option.is-selected { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-secondary-bg); }
+.option.is-selected { box-shadow: inset 0 0 0 var(--pyx-border-w-strong) var(--py-action-primary-bg); }
 
 /* ---------- Status, price, chips ---------- */
 .status { display: inline-flex; align-items: center; gap: 6px; font: var(--py-type-label-m); }
@@ -101,7 +103,7 @@
 .price__unit { font: var(--py-type-body-s); color: var(--py-text-muted); }
 .chip { display: inline-flex; align-items: center; gap: 6px; height: var(--pyx-chip-h); padding: 0 var(--py-space-4); border-radius: var(--py-radius-pill);
   font: var(--py-type-label-m); color: var(--py-text-default); background: var(--py-surface-raised); box-shadow: inset 0 0 0 var(--pyx-border-w) var(--py-border-strong); border: 0; font-family: var(--py-font-sans); }
-.chip.is-selected { background: var(--py-action-secondary-bg); color: var(--py-action-secondary-fg); box-shadow: none; }
+.chip.is-selected { background: var(--py-action-primary-bg); color: var(--py-action-primary-fg); box-shadow: none; }
 .tag { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 var(--py-space-3); border-radius: var(--py-radius-pill);
   font: var(--py-type-label-s); color: var(--py-text-brand); background: var(--py-surface-subtle); }
 .fact { display: flex; gap: var(--py-space-2); align-items: center; font: var(--py-type-body-s); color: var(--py-text-default); }
@@ -148,13 +150,12 @@
 .tab__pill { width: 56px; height: 32px; border-radius: var(--py-radius-pill); display: grid; place-items: center; }
 .tab.is-active { color: var(--py-text-brand); }
 .tab.is-active .tab__pill { background: var(--py-surface-subtle); }
-[data-theme="dark"] .tab.is-active .tab__pill { background: var(--py-surface-default); } /* dark: subtle equals raised, so step down */
 .footer { flex: none; padding: var(--py-space-3) var(--py-space-4) 28px; background: var(--py-surface-raised); box-shadow: var(--py-shadow-2), inset 0 1px 0 var(--py-border-subtle);
   display: flex; flex-direction: column; gap: var(--py-space-3); }
 .footer__row { display: flex; justify-content: space-between; align-items: baseline; }
 .steps { display: flex; gap: var(--py-space-1); }
 .steps span { flex: 1; height: 4px; border-radius: var(--py-radius-pill); background: var(--py-border-subtle); }
-.steps span.on { background: var(--py-action-secondary-bg); }
+.steps span.on { background: var(--py-action-primary-bg); }
 .scroll { flex: 1; overflow: hidden; }
 .pad { padding: 0 var(--py-space-4); }
 .h-step { font: var(--py-type-label-s); color: var(--py-text-muted); }
@@ -166,6 +167,12 @@
 .divider { height: 1px; background: var(--py-border-subtle); }
 .photo { background-size: cover; background-position: center; }
 .home-ind { position: absolute; bottom: 8px; left: 50%; width: 134px; margin-left: -67px; height: 5px; border-radius: var(--py-radius-pill); background: var(--py-text-default); opacity: .9; }
+
+/* ---------- Own elements on screen (core spec 4b) ---------- */
+.voice { display: flex; align-items: stretch; }            /* de stem, drawn by ui.js left of .voice__text */
+.voice__text { flex: 1; min-width: 0; }
+.floor { position: relative; box-shadow: inset 0 calc(-1 * var(--pyx-border-w-strong)) 0 var(--py-figure-body); } /* the line a parkeerder stands on: 2 px in the body colour */
+.parkeerder { display: block; flex: none; }                 /* <img> from kit/assets/figure-*-duo*.svg, alt="" */
 
 /* Figure helpers */
 .cap { font: 600 13px/18px var(--py-font-sans); color: var(--py-text-muted); }

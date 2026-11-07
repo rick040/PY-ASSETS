@@ -97,7 +97,8 @@ SEMANTIC = {
         "secondary-bg": ("neutral.0", "blue.900", "Second button: outline style, ground."),
         "secondary-bg-hover": ("blue.50", "blue.800", "Hover state of the second button."),
         "secondary-bg-pressed": ("blue.100", "blue.850", "Pressed state of the second button."),
-        "secondary-fg": ("blue.700", "aqua.300", "Text, arrow and 2 px outline of the second button."),
+        "secondary-fg": ("blue.700", "aqua.300", "Text and arrow of the second button."),
+        "secondary-border": ("blue.700", "aqua.300", "2 px outline of the second button (D35)."),
     },
     "task": {
         "drive-bg": ("blue.700", "blue.700", "Rijden: car routes, portals, entrances, levels."),

@@ -71,6 +71,7 @@
   --py-action-secondary-bg-hover: var(--py-color-blue-50);
   --py-action-secondary-bg-pressed: var(--py-color-blue-100);
   --py-action-secondary-fg: var(--py-color-blue-700);
+  --py-action-secondary-border: var(--py-color-blue-700);
   --py-task-drive-bg: var(--py-color-blue-700);
   --py-task-drive-fg: var(--py-color-neutral-0);
   --py-task-walk-bg: var(--py-color-aqua-500);
@@ -207,6 +208,7 @@
   --py-action-secondary-bg-hover: var(--py-color-blue-800);
   --py-action-secondary-bg-pressed: var(--py-color-blue-850);
   --py-action-secondary-fg: var(--py-color-aqua-300);
+  --py-action-secondary-border: var(--py-color-aqua-300);
   --py-task-drive-bg: var(--py-color-blue-700);
   --py-task-drive-fg: var(--py-color-neutral-0);
   --py-task-walk-bg: var(--py-color-aqua-500);

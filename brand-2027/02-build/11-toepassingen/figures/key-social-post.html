@@ -4,8 +4,12 @@
 <meta charset="utf-8">
 <title>Social post aanbod</title>
 <link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<script src="py-social.js"></script>
 </head>
 <body>
-<div class="fig" style="width: 1080px; height: 1350px"><svg width="1080" height="1350.0" viewBox="0 0 1080 1350" style="display:block;font-family:'Ubuntu Sans'"><rect width="1080" height="1350" fill="#1A3580"/><image href="../../kit/assets/logo-horizontal-reverse.svg" x="108" y="108" height="54" width="195.6"/><text x="108" y="324" font-size="24" font-weight="700" fill="#32B9CD" text-anchor="start" letter-spacing="1.9" >PARKING HOFPLEIN</text><text x="108" y="459" font-size="117" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" >Parkeren</text><text x="108" y="581" font-size="117" font-weight="400" fill="#FFFFFF" text-anchor="start" letter-spacing="0" >midden in</text><text x="108" y="703" font-size="117" font-weight="400" fill="#FFFFFF" text-anchor="start" letter-spacing="0" >de stad.</text><path d="M18 0C8.059 0 0 8.058 0 17.999C0 34.701 16.691 43.074 16.691 43.074C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.999C36 8.058 27.941 0 18 0Z" transform="translate(540 721) scale(12.0) rotate(0 18 18)" fill="#F08300"/><text x="756" y="899" font-size="31" font-weight="600" fill="#0D142E" text-anchor="middle" letter-spacing="0" >per dag</text><text x="756" y="979" font-size="84" font-weight="800" fill="#0D142E" text-anchor="middle" letter-spacing="0" style="font-variant-numeric:tabular-nums">€ 7,50</text><text x="108" y="1150" font-size="31" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" >Reserveer je plek</text><text x="108" y="1192" font-size="31" font-weight="400" fill="#FFFFFF" text-anchor="start" letter-spacing="0" >parkingyou.nl</text><text x="108" y="1234" font-size="24" font-weight="400" fill="#FFFFFF" text-anchor="start" letter-spacing="0" >Niet op wedstrijddagen.</text></svg></div>
+<div class="fig" style="width: 1080px; height: 1350px"><svg id="p" width="1080" height="1350" viewBox="0 0 1080 1350" style="display:block"></svg></div>
+<script>PYS.mount('p', PYSOC.post('aanbod', 'post'));</script>
 </body>
 </html>

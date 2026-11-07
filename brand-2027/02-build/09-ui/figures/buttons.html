@@ -9,31 +9,31 @@
   .grid { display: grid; grid-template-columns: 170px repeat(6, 1fr); column-gap: 16px; row-gap: 20px; align-items: center; }
   .grid .h { font: var(--py-type-label-s); color: var(--py-text-muted); letter-spacing: 0.02em; }
   .rowlab b { display: block; font: var(--py-type-label-m); color: var(--py-text-default); }
-  .navyband { background: var(--py-surface-brand); color: var(--py-text-on-brand); border-radius: var(--py-radius-l); padding: 20px 24px; display: flex; gap: 24px; align-items: center; }
+  .navyband { background: var(--py-surface-brand); color: var(--py-text-on-brand); border-radius: var(--py-radius-l); padding: 20px 24px; display: flex; gap: 20px; align-items: center; }
+  .pj { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px; align-items: center; }
+  .pj .cell { display: flex; gap: 16px; align-items: center; }
+  .bad { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 24px; border-radius: var(--py-radius-pill); background: var(--py-action-primary-bg); color: var(--py-action-primary-fg); font: var(--py-type-label-l); }
 </style>
 </head>
 <body>
-<div class="fig" style="width: 1200px; height: 790px; padding: 48px 56px; display: flex; flex-direction: column; gap: 36px">
-  <div class="eyebrow">Knoppen · drie soorten, zes staten</div>
+<div class="fig" style="width: 1200px; height: 980px; padding: 48px 56px; display: flex; flex-direction: column; gap: 36px">
+  <div class="eyebrow">Knoppen · drie soorten, zes staten, de hoekige pijl</div>
 
   <!-- anatomy -->
-  <div style="display: flex; gap: 72px; align-items: center">
-    <div style="position: relative; width: 420px; height: 150px">
-      <button class="btn btn--primary btn--lg" style="position: absolute; left: 40px; top: 46px; width: 300px">Reserveer je plek <i data-i="arrow" data-s="20"></i></button>
-      <!-- height -->
+  <div style="display: flex; gap: 64px; align-items: center">
+    <div style="position: relative; width: 430px; height: 150px">
+      <button class="btn btn--primary btn--lg" style="position: absolute; left: 40px; top: 46px; width: 300px">Reserveer je plek <i data-pijl="right"></i></button>
       <div class="ann-line" style="left: 360px; top: 46px; height: 56px; border-left-width: 1px"></div>
       <div class="ann" style="left: 368px; top: 66px">56</div>
-      <!-- padding -->
       <div class="ann-line" style="left: 40px; top: 118px; width: 32px; border-top-width: 1px"></div>
       <div class="ann" style="left: 42px; top: 124px">32</div>
-      <!-- radius -->
       <div class="ann" style="left: 0; top: 20px">radius.pill</div>
-      <div class="ann" style="left: 196px; top: 20px">label 16/24 · 600</div>
-      <div class="ann" style="left: 296px; top: 124px">icoon 20 · gap 8</div>
+      <div class="ann" style="left: 150px; top: 20px">label 16/24 · 600</div>
+      <div class="ann" style="left: 214px; top: 124px">pijl = hoofdletterhoogte 11 · gap 8</div>
     </div>
     <div style="display: flex; flex-direction: column; gap: 12px; max-width: 560px">
       <div class="t-heading-s">Eén hoofdknop per scherm</div>
-      <div class="t-body-s" style="color: var(--py-text-muted)">Oranje is de hoofdknop van de boek- en betaalroute: zoeken, reserveren, betalen. Navy is de tweede keus, of de hoofdknop op een scherm zonder boek- of betaalactie. De linkknop is voor alles wat minder belangrijk is.</div>
+      <div class="t-body-s" style="color: var(--py-text-muted)">De hoofdknop is PY-Blauw met witte tekst, op elk scherm: zoeken, reserveren, betalen, je ticket bekijken. De tweede knop is een omlijning: wit vlak, rand en tekst 2 px PY-Blauw. De linkknop is voor alles wat minder belangrijk is. Oranje komt op een scherm niet voor.</div>
       <div style="display: flex; gap: 16px; align-items: center">
         <button class="btn btn--primary btn--lg">Groot 56</button>
         <button class="btn btn--secondary">Standaard 48</button>
@@ -57,33 +57,49 @@
     <button class="btn btn--primary" aria-busy="true"><i data-i="spinner" data-s="20"></i>Bezig</button>
 
     <div class="rowlab"><b>Secundair</b><span class="tok">action.secondary-*</span></div>
-    <button class="btn btn--secondary">Plan je route</button>
-    <button class="btn btn--secondary is-hover">Plan je route</button>
-    <button class="btn btn--secondary is-focus">Plan je route</button>
-    <button class="btn btn--secondary is-pressed">Plan je route</button>
-    <button class="btn btn--secondary" disabled>Plan je route</button>
+    <button class="btn btn--secondary">Wijzig</button>
+    <button class="btn btn--secondary is-hover">Wijzig</button>
+    <button class="btn btn--secondary is-focus">Wijzig</button>
+    <button class="btn btn--secondary is-pressed">Wijzig</button>
+    <button class="btn btn--secondary" disabled>Wijzig</button>
     <button class="btn btn--secondary" aria-busy="true"><i data-i="spinner" data-s="20"></i>Bezig</button>
 
     <div class="rowlab"><b>Link</b><span class="tok">text.link</span></div>
-    <div><button class="btn btn--tertiary">Wijzig</button></div>
-    <div><button class="btn btn--tertiary is-hover">Wijzig</button></div>
-    <div><button class="btn btn--tertiary is-focus">Wijzig</button></div>
-    <div><button class="btn btn--tertiary is-pressed">Wijzig</button></div>
-    <div><button class="btn btn--tertiary" disabled>Wijzig</button></div>
+    <div><button class="btn btn--tertiary">Bekijk alles</button></div>
+    <div><button class="btn btn--tertiary is-hover">Bekijk alles</button></div>
+    <div><button class="btn btn--tertiary is-focus">Bekijk alles</button></div>
+    <div><button class="btn btn--tertiary is-pressed">Bekijk alles</button></div>
+    <div><button class="btn btn--tertiary" disabled>Bekijk alles</button></div>
     <div class="cap">geen</div>
   </div>
 
-  <div class="navyband on-brand">
-    <div style="width: 150px"><b class="t-label-m">Op navy</b><br><span class="tok" style="color: var(--py-color-neutral-300)">focus.ring-on-brand</span></div>
-    <button class="btn btn--primary">Reserveer je plek</button>
-    <button class="btn btn--primary is-focus">Reserveer je plek</button>
-    <span class="t-body-s" style="max-width: 480px">Op een navy vlak blijft de hoofdknop oranje. De focusring wordt aqua (4,80:1 op navy). Een navy knop op navy kan niet; gebruik dan de linkknop in wit.</span>
+  <!-- the arrow -->
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <div class="t-heading-s">De hoekige pijl in knop en link</div>
+    <div class="pj">
+      <div class="cell"><button class="btn btn--primary">Ga verder <i data-pijl="right"></i></button><a class="btn btn--tertiary" href="#">Bekijk alles <i data-pijl="right"></i></a><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand); box-shadow: inset 0 0 0 1px var(--py-border-subtle)"><i data-pijl="left" style="font-size: 16px"></i></button></div>
+      <div class="cell"><span class="do">Wel</span><span class="t-body-s">Achter het label, op de basislijn, zo hoog als een hoofdletter (0,693 em). Alleen bij een richting of een volgende stap. Kleur = de tekstkleur van de knop. In de terugknop zo hoog als een hoofdletter van de titel.</span></div>
+      <div class="cell">
+        <span class="bad">Ga verder <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6l-6 6"/></svg></span>
+        <span class="bad">Ga verder <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 18l6 -6M13 6l6 6"/></svg></span>
+        <span class="bad">Ga verder <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M13 9l3 3l-3 3"/></svg></span>
+      </div>
+      <div class="cell"><span class="dont">Niet</span><span class="t-body-s">Een chevron, een lijnpijl uit de iconenset of een pijl in een cirkel. Geen pijl op elke knop: "Betaal" en "Zoek een plek" hebben er geen nodig.</span></div>
+    </div>
   </div>
 
-  <div class="t-body-s" style="color: var(--py-text-muted); display: flex; gap: 40px">
-    <span><b style="color: var(--py-text-default)">Contrast label:</b> 6,87 / 8,24 / 4,72 (oranje), 11,26 / 8,15 (navy)</span>
-    <span><b style="color: var(--py-text-default)">Focus:</b> ring 3 px, 2 px los van de knop, focus.ring</span>
-    <span><b style="color: var(--py-text-default)">Fout:</b> een knop heeft geen foutstaat; de fout staat bij het veld</span>
+  <div class="navyband" data-theme="dark">
+    <div style="width: 170px"><b class="t-label-m">Op navy en donker</b><br><span class="tok" style="color: var(--py-color-neutral-300)">action.* donker</span></div>
+    <button class="btn btn--primary">Reserveer je plek <i data-pijl="right"></i></button>
+    <button class="btn btn--primary is-focus">Reserveer je plek <i data-pijl="right"></i></button>
+    <button class="btn btn--secondary" style="background: transparent">Wijzig</button>
+    <span class="t-body-s" style="max-width: 330px">Op een navy vlak en in donkere modus wordt de hoofdknop aqua met PY-Diep tekst (7,74:1). De tweede knop krijgt een aqua.300 rand en tekst. Focusring aqua.</span>
+  </div>
+
+  <div class="t-body-s" style="color: var(--py-text-muted); display: flex; gap: 36px">
+    <span><b style="color: var(--py-text-default)">Contrast label:</b> primair 11,26 / 8,15 / 14,73 (licht), 7,74 / 9,17 / 5,43 (donker); secundair 11,26 / 10,41 / 9,52 (licht), 11,01 / 8,93 / 10,01 (donker)</span>
+    <span><b style="color: var(--py-text-default)">Focus:</b> ring 3 px, 2 px los, focus.ring</span>
+    <span><b style="color: var(--py-text-default)">Fout:</b> een knop heeft geen foutstaat</span>
   </div>
 </div>
 <script src="ui.js"></script>

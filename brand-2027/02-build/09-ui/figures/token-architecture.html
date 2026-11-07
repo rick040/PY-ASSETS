@@ -16,53 +16,58 @@
 </style>
 </head>
 <body>
-<div class="fig fig--subtle" style="width: 1200px; height: 960px; padding: 48px 56px; display: flex; flex-direction: column; gap: 28px">
+<div class="fig fig--subtle" style="width: 1200px; height: 1050px; padding: 48px 56px; display: flex; flex-direction: column; gap: 28px">
   <div class="eyebrow">Tokenarchitectuur · drie lagen, twee modi</div>
   <div class="chain">
     <div class="colh"><span class="t-heading-s">1 Primitief</span><span class="cap">De waarde, nooit in een component.</span></div><div></div>
     <div class="colh"><span class="t-heading-s">2 Semantisch</span><span class="cap">De betekenis. Licht en donker (vakjes: licht, donker).</span></div><div></div>
     <div class="colh"><span class="t-heading-s">3 Component</span><span class="cap">Waar het zit. Leest alleen semantisch.</span></div>
     
-    <div class="box"><span class="sw" style="background: var(--py-color-orange-500)"></span><div><div class="tk">color.orange.500</div><div class="cap">#F08300</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><span class="sw" style="background: var(--py-action-primary-bg)"></span><span class="sw" data-theme="dark" style="background: var(--py-action-primary-bg)"></span><div><div class="tk">action.primary-bg</div><div class="cap">licht orange.500 · donker orange.500</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><div><div class="tk">button.primary.bg</div><div class="cap">Hoofdknop</div></div></div>
-    <div class="box"><span class="sw" style="background: var(--py-color-blue-900)"></span><div><div class="tk">color.blue.900</div><div class="cap">#0D142E</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><span class="sw" style="background: var(--py-action-primary-fg)"></span><span class="sw" data-theme="dark" style="background: var(--py-action-primary-fg)"></span><div><div class="tk">action.primary-fg</div><div class="cap">licht blue.900 · donker blue.900</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><div><div class="tk">button.primary.fg</div><div class="cap">Label hoofdknop</div></div></div>
     <div class="box"><span class="sw" style="background: var(--py-color-blue-700)"></span><div><div class="tk">color.blue.700</div><div class="cap">#1A3580</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><span class="sw" style="background: var(--py-action-secondary-bg)"></span><span class="sw" data-theme="dark" style="background: var(--py-action-secondary-bg)"></span><div><div class="tk">action.secondary-bg</div><div class="cap">licht blue.700 · donker aqua.500</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><div><div class="tk">button.secondary.bg</div><div class="cap">Tweede knop</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><span class="sw" style="background: var(--py-action-primary-bg)"></span><span class="sw" data-theme="dark" style="background: var(--py-action-primary-bg)"></span><div><div class="tk">action.primary-bg</div><div class="cap">licht blue.700 · donker aqua.500</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><div><div class="tk">button.primary.bg</div><div class="cap">Hoofdknop, gekozen chip, vinkje</div></div></div>
     <div class="box"><span class="sw" style="background: var(--py-color-neutral-0)"></span><div><div class="tk">color.neutral.0</div><div class="cap">#FFFFFF</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><span class="sw" style="background: var(--py-action-primary-fg)"></span><span class="sw" data-theme="dark" style="background: var(--py-action-primary-fg)"></span><div><div class="tk">action.primary-fg</div><div class="cap">licht neutral.0 · donker blue.900</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><div><div class="tk">button.primary.fg</div><div class="cap">Label en pijl in de hoofdknop</div></div></div>
+    <div class="box"><span class="sw" style="background: var(--py-color-blue-700)"></span><div><div class="tk">color.blue.700</div><div class="cap">#1A3580</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><span class="sw" style="background: var(--py-action-secondary-fg)"></span><span class="sw" data-theme="dark" style="background: var(--py-action-secondary-fg)"></span><div><div class="tk">action.secondary-fg</div><div class="cap">licht blue.700 · donker aqua.300</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><div><div class="tk">button.secondary.fg</div><div class="cap">Tekst en rand 2 px, tweede knop</div></div></div>
+    <div class="box"><span class="sw" style="background: var(--py-color-neutral-0)"></span><div><div class="tk">color.neutral.0</div><div class="cap">#FFFFFF</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
     <div class="box"><span class="sw" style="background: var(--py-surface-raised)"></span><span class="sw" data-theme="dark" style="background: var(--py-surface-raised)"></span><div><div class="tk">surface.raised</div><div class="cap">licht neutral.0 · donker blue.800</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
     <div class="box"><div><div class="tk">card.bg, input.bg</div><div class="cap">Kaart, veld</div></div></div>
     <div class="box"><span class="sw" style="background: var(--py-color-neutral-500)"></span><div><div class="tk">color.neutral.500</div><div class="cap">#767B86</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
     <div class="box"><span class="sw" style="background: var(--py-border-strong)"></span><span class="sw" data-theme="dark" style="background: var(--py-border-strong)"></span><div><div class="tk">border.strong</div><div class="cap">licht neutral.500 · donker blue.400</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
     <div class="box"><div><div class="tk">input.border</div><div class="cap">Rand van een veld</div></div></div>
-    <div class="box"><span class="sw" style="background: var(--py-color-aqua-700)"></span><div><div class="tk">color.aqua.700</div><div class="cap">#127C8C</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><span class="sw" style="background: var(--py-status-free)"></span><span class="sw" data-theme="dark" style="background: var(--py-status-free)"></span><div><div class="tk">status.free</div><div class="cap">licht aqua.700 · donker aqua.300</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><div><div class="tk">status.free.fg</div><div class="cap">Vrij</div></div></div>
+    <div class="box"><span class="sw" style="background: var(--py-color-aqua-500)"></span><div><div class="tk">color.aqua.500</div><div class="cap">#32B9CD</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><span class="sw" style="background: var(--py-voice-arc)"></span><span class="sw" data-theme="dark" style="background: var(--py-voice-arc)"></span><div><div class="tk">voice.arc</div><div class="cap">licht en donker aqua.500</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><div><div class="tk">de stem</div><div class="cap">Boog voor de kop, alleen op sleutelschermen</div></div></div>
+    <div class="box"><span class="sw" style="background: var(--py-color-aqua-100)"></span><div><div class="tk">color.aqua.100</div><div class="cap">#E3F6F9</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><span class="sw" style="background: var(--py-vak-mine)"></span><span class="sw" data-theme="dark" style="background: var(--py-vak-mine)"></span><div><div class="tk">vak.mine</div><div class="cap">licht aqua.100 · donker blue.600</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><div><div class="tk">jouw vak</div><div class="cap">Lege staat; op navy vak.mine-on-brand</div></div></div>
     <div class="box"><span class="sw" style="background: var(--py-color-blue-900)"></span><div><div class="tk">color.blue.900</div><div class="cap">#0D142E</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
     <div class="box"><span class="sw" style="background: var(--py-focus-ring)"></span><span class="sw" data-theme="dark" style="background: var(--py-focus-ring)"></span><div><div class="tk">focus.ring</div><div class="cap">licht blue.900 · donker aqua.500</div></div></div>
-    <div class="arr"><i data-i="arrow" data-s="20"></i></div>
-    <div class="box"><div><div class="tk">focus.ring.color</div><div class="cap">Focus op alles</div></div></div>
+    <div class="arr"><i data-pijl="right" data-s="14"></i></div>
+    <div class="box"><div><div class="tk">button.focus-ring</div><div class="cap">Focus op alles</div></div></div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 12px">
-    <div class="t-heading-s">De negen semantische groepen in tokens.json</div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px"><div class="grp"><div class="tk" style="color: var(--py-text-brand)">surface</div><div class="cap" style="font-weight: 500">default, subtle, raised, brand, inverse</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">text</div><div class="cap" style="font-weight: 500">default, muted, brand, on-brand, link, aqua</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">border</div><div class="cap" style="font-weight: 500">subtle, strong</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">focus</div><div class="cap" style="font-weight: 500">ring, ring-on-brand</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">action</div><div class="cap" style="font-weight: 500">primary-bg, -hover, -pressed, -fg; secondary-bg, -hover, -fg</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">task</div><div class="cap" style="font-weight: 500">drive, walk, pay (bg en fg)</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">bubble</div><div class="cap" style="font-weight: 500">navy, aqua, orange, white</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">status</div><div class="cap" style="font-weight: 500">free, full, closed</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">feedback</div><div class="cap" style="font-weight: 500">error, error-bg, success, warning, info</div></div></div>
-    <div class="cap">Donker = dezelfde namen, andere waarde: <span class="tk" style="font-size: 12px">[data-theme="dark"]</span> in tokens.css, <span class="tk" style="font-size: 12px">$extensions.nl.parkingyou.modes.dark</span> in tokens.json. Componenttokens en drie ontbrekende semantische tokens staan in Voorgestelde waarden.</div>
+    <div class="t-heading-s">De twaalf semantische groepen in tokens.json</div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px"><div class="grp"><div class="tk" style="color: var(--py-text-brand)">surface</div><div class="cap" style="font-weight: 500">default, subtle, raised, brand, inverse, code</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">text</div><div class="cap" style="font-weight: 500">default, muted, brand, on-brand, link, aqua, on-code</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">border</div><div class="cap" style="font-weight: 500">subtle, strong</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">focus</div><div class="cap" style="font-weight: 500">ring, ring-on-brand</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">action</div><div class="cap" style="font-weight: 500">primary-bg, -hover, -pressed, -fg; secondary-bg, -hover, -pressed, -fg</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">task</div><div class="cap" style="font-weight: 500">drive, walk, pay (bg en fg)</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">bubble</div><div class="cap" style="font-weight: 500">navy, aqua, orange (alleen garage), white</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">status</div><div class="cap" style="font-weight: 500">free, full, closed</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">feedback</div><div class="cap" style="font-weight: 500">error, error-bg, success, warning, info</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">voice</div><div class="cap" style="font-weight: 500">arc (de stem)</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">vak</div><div class="cap" style="font-weight: 500">line, line-on-brand, mine, mine-on-brand, mine-edge</div></div><div class="grp"><div class="tk" style="color: var(--py-text-brand)">figure</div><div class="cap" style="font-weight: 500">head, body (de parkeerders)</div></div></div>
+    <div class="cap">Donker = dezelfde namen, andere waarde: <span class="tk" style="font-size: 12px">[data-theme="dark"]</span> in tokens.css, <span class="tk" style="font-size: 12px">$extensions.nl.parkingyou.modes.dark</span> in tokens.json. De componentlaag staat in tokens.json onder component.*. De pijlen in dit schema zijn de hoekige pijl.</div>
   </div>
 </div>
 <script src="ui.js"></script>

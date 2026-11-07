@@ -323,4 +323,7 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 | D33 | 2026-11-07 | CD | Main button PY-Blauw with white text; on dark surfaces PY-Aqua with PY-Diep text; secondary button outline PY-Blauw. Supersedes decision 2 of Gate 1 | Less orange |
 | D34 | 2026-11-07 | CD | Superseded: D19 tail settle (no rotation), D21 (bracket arc and stick figures return; separator arc's role taken by the stem), D14 (orange buttons no longer exist), D13 stays (map pin is an upright bubble) | Consistency with D31 |
 
+| D35 | 2026-11-07 | UI | Screen values: het vak u = 48 px (pitch 72, lines 144 to 192 px, jouw vak edges 4 px, lane dash 14 gap 12); line under a figure 2 px in `figure.body`; token `action.secondary-border`; back arrow in an icon-only button 16 px | Screen version of section 4b |
+| D36 | 2026-11-07 | CD | Status "Vol" keeps `orange.700` as text or icon colour with the word; it is not an orange fill and stays allowed on screen | Status needs a distinct colour; meaning is carried by the word |
+
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

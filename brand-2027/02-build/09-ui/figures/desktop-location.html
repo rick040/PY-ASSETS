@@ -8,7 +8,7 @@
 <style>
   .wrap { width: 1200px; margin: 0 auto; }
   .dnav a { font: var(--py-type-label-m); color: var(--py-text-default); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
-  .dnav a.is-active { color: var(--py-text-brand); box-shadow: inset 0 -3px 0 var(--py-action-secondary-bg); }
+  .dnav a.is-active { color: var(--py-text-brand); box-shadow: inset 0 -3px 0 var(--py-text-brand); }
   .grid12 { display: grid; grid-template-columns: 690px 486px; column-gap: 24px; align-items: start; }
   table.tar { width: 100%; border-collapse: collapse; font: var(--py-type-body-m); }
   table.tar td { padding: 12px 0; box-shadow: inset 0 -1px 0 var(--py-border-subtle); }
@@ -55,14 +55,14 @@
       <aside class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; box-shadow: var(--py-shadow-2), inset 0 0 0 1px var(--py-border-subtle); margin-top: 106px">
         <h2 class="t-heading-m" style="margin: 0">Reserveer je plek</h2>
         <div style="display: flex; gap: 16px; align-items: center">
-          <span class="bub" data-size="104" data-fill="orange"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span>
+          <span class="bub" data-size="104" data-fill="navy"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span>
           <div class="t-body-s" style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 20px"><b class="t-label-m">Dagtarief met reservering</b><span style="color: var(--py-text-muted)">Je bespaart € 2,50 op het dagtarief.</span></div>
         </div>
         <div class="field"><span class="label" id="da">Aankomst</span><div class="row"><div class="control" style="flex: 1.4"><i data-i="calendar" data-s="20"></i><input class="tnum" aria-labelledby="da" value="za 14 nov 2026"></div><div class="control"><i data-i="clock" data-s="20"></i><input class="tnum" aria-label="Aankomsttijd" value="10:00"></div></div></div>
         <div class="field"><span class="label" id="dv">Vertrek</span><div class="row"><div class="control" style="flex: 1.4"><i data-i="calendar" data-s="20"></i><input class="tnum" aria-labelledby="dv" value="za 14 nov 2026"></div><div class="control"><i data-i="clock" data-s="20"></i><input class="tnum" aria-label="Vertrektijd" value="18:00"></div></div></div>
         <div class="divider"></div>
         <div class="footer__row"><span class="t-label-m">Totaal <span class="price__unit" style="font-weight: 400">incl. btw</span></span><span class="price__amt">€ 12,50</span></div>
-        <button class="btn btn--primary btn--lg btn--block">Reserveer je plek</button>
+        <button class="btn btn--primary btn--lg btn--block">Reserveer je plek <i data-pijl="right"></i></button>
         <p class="hint" style="text-align: center">Je kenteken is je ticket. Je hoeft niets te printen.</p>
       </aside>
     </div>

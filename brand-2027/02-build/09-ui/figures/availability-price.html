@@ -13,6 +13,7 @@
   .size { display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .size .cap { text-align: center; }
   .rule { display: flex; gap: 8px; font: var(--py-type-body-s); }
+  .map { position: relative; width: 132px; height: 100px; border-radius: var(--py-radius-m); background: var(--py-color-neutral-100); overflow: hidden; }
 </style>
 </head>
 <body>
@@ -36,9 +37,9 @@
         </div>
       </div>
       <div style="display: flex; gap: 24px; align-items: flex-end">
-        <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="aqua">Vrij</span><span class="cap">aqua · navy</span></div>
-        <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="orange">Vol</span><span class="cap">oranje · diep</span></div>
-        <div class="cap" style="max-width: 250px; padding-bottom: 28px">Als moment op de locatiepagina mag Vrij of Vol in een bubbel van 64. Gesloten nooit: het woord is te lang (8 tekens) en er is geen grijze bubbel.</div>
+        <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="navy">Vrij</span><span class="cap">navy · wit</span></div>
+        <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="navy">Vol</span><span class="cap">navy · wit</span></div>
+        <div class="cap" style="max-width: 250px; padding-bottom: 28px">Als moment op de locatiepagina mag Vrij of Vol in een navy bubbel van 64. Het woord draagt de betekenis, niet de vulling. Gesloten nooit: 8 tekens is te lang.</div>
       </div>
     </div>
 
@@ -57,28 +58,28 @@
         </table>
       </div>
       <div class="rule"><span class="do">Wel</span><span>€ 12,50 · spatie na €, komma, tabular cijfers, eenheid erbij</span></div>
-      <div class="rule"><span class="dont">Niet</span><span>€12,50 · € 12,- · 12.50 EUR · prijs in oranje tekst op wit (2,64:1)</span></div>
+      <div class="rule"><span class="dont">Niet</span><span>€12,50 · € 12,- · 12.50 EUR · een prijs in oranje, als tekst of bubbel</span></div>
     </div>
   </div>
 
   <!-- bubble sizes -->
   <div class="col">
-    <div class="t-heading-s">De bubbel in UI: vier maten, alleen voor prijs, niveau, beschikbaarheid of bevestiging</div>
+    <div class="t-heading-s">De bubbel in UI: vier maten, altijd rechtop, voor prijs, niveau, beschikbaarheid of een geldig ticket</div>
     <div style="display: grid; grid-template-columns: repeat(5, 150px) 1fr; gap: 16px; align-items: end">
+      <div class="size"><div class="map" role="img" aria-label="Kaart met drie pins"><span style="position: absolute; left: 58px; top: 0; width: 8px; height: 100%; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 0; top: 46px; width: 100%; height: 8px; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 20px; top: 10px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 92px; top: 18px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 76px; top: 62px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span></div><span class="cap"><b>24</b><br>kaartpin met P (D13)</span></div>
       <div class="size"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">0</span></span><span class="cap"><b>24</b><br>niveau in een regel</span></div>
-      <div class="size"><span class="bub" data-size="40" data-fill="aqua"><i data-i="check" data-s="24"></i></span><span class="cap"><b>40</b><br>bevestiging in een rij</span></div>
-      <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="aqua">Vrij</span><span class="cap"><b>64</b><br>beschikbaarheid, niveau</span></div>
-      <div class="size"><span class="bub" data-size="104" data-fill="orange"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span><span class="cap"><b>104</b><br>prijs op de locatiepagina</span></div>
-      <div class="size"><span class="bub" data-size="104" data-fill="aqua"><i data-i="check" data-s="32"></i></span><span class="cap"><b>104</b><br>bevestiging na betalen</span></div>
+      <div class="size"><span style="display: flex; justify-content: center; width: 132px; height: 96px; background: var(--py-surface-brand); border-radius: var(--py-radius-m); overflow: hidden"><span style="display: grid; place-items: center; width: 72px; height: 96px; background: var(--py-vak-mine-on-brand); box-shadow: inset 4px 0 0 var(--py-vak-mine-edge), inset -4px 0 0 var(--py-vak-mine-edge)"><span class="bub" data-size="40" data-fill="aqua"><i data-i="check" data-s="24"></i></span></span></span><span class="cap"><b>40</b><br>geldig, in jouw vak op navy</span></div>
+      <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="navy">Vrij</span><span class="cap"><b>64</b><br>beschikbaarheid, niveau</span></div>
+      <div class="size"><span class="bub" data-size="104" data-fill="navy"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span><span class="cap"><b>104</b><br>prijs op de locatiepagina</span></div>
       <div class="col" style="gap: 10px; padding-bottom: 4px">
         <div class="rule"><span class="do">Wel</span><span>één bubbel per scherm</span></div>
         <div class="rule"><span class="do">Wel</span><span>vrije ruimte 8 px (24, 40) of 16 px (64, 104)</span></div>
         <div class="rule"><span class="dont">Niet</span><span>als knop of avatar (kaartpin: zie D13)</span></div>
         <div class="rule"><span class="dont">Niet</span><span>in elke kaart van een lijst</span></div>
-        <div class="rule"><span class="dont">Niet</span><span>met schaduw of meer dan 6 tekens</span></div>
+        <div class="rule"><span class="dont">Niet</span><span>gedraaid, oranje, met een pijl erin</span></div>
       </div>
     </div>
-    <div class="cap">Kleur volgt de taak: navy rijden en niveau, aqua lopen en bevestiging, oranje alleen geld. Pop-in alleen bij bevestiging: 0,9 naar 1, easing.bubble, duration.expressive. Bij reduced motion: fade 120 ms.</div>
+    <div class="cap">Vulling volgt de grond: navy op wit en licht, aqua op navy en in donkere modus. Oranje bestaat alleen op de betaalautomaat in de garage, niet op een scherm. De punt wijst altijd omlaag. Pop-in als het ticket geldig wordt: 0,9 naar 1, easing.bubble, duration.expressive, geen draaiing; bij reduced motion een fade van 120 ms.</div>
   </div>
 </div>
 <script src="ui.js"></script>

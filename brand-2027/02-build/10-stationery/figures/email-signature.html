@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>E-mailhandtekening</title>
 <link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
 <style>
   .client { position: absolute; width: 640px; border-radius: 8px; padding: 28px 20px; font-family: Arial, sans-serif; }
   .sig td { font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; padding: 0; vertical-align: top; }
@@ -23,8 +24,7 @@
   <div class="client" style="left: 50px; top: 94px; background: #FFFFFF; border: 1px solid #DDE1E7">
     <div style="font-size: 14px; line-height: 20px; color: #1D1D1B">Met vriendelijke groet,</div>
     <table class="sig" cellpadding="0" cellspacing="0" style="margin-top: 16px; width: 600px; border-collapse: collapse">
-      <tr><td style="font-weight: 700; color: #1A3580">[Voornaam Achternaam]</td></tr>
-      <tr><td style="color: #1D1D1B">[Functie]</td></tr>
+      <tr><td><table cellpadding="0" cellspacing="0" style="border-collapse: collapse"><tr><td style="width: 9px; padding-right: 12px; vertical-align: top"><i data-p="arc" style="height: 40px; color: #32B9CD; display: block"></i></td><td style="vertical-align: top"><div style="font-weight: 700; color: #1A3580">[Voornaam Achternaam]</div><div style="color: #1D1D1B">[Functie]</div></td></tr></table></td></tr>
       <tr><td style="padding-top: 16px"><img src="../../kit/assets/logo-horizontal-color.svg" style="height: 32px; display: block" alt="parkingyou"></td></tr>
       <tr><td style="padding-top: 12px; color: #1D1D1B">[telefoonnummer] · <span style="color: #1A3580; text-decoration: underline">[voornaam]@parkingyou.nl</span> · <span style="color: #1A3580; font-weight: 700; text-decoration: underline">parkingyou.nl</span></td></tr>
       <tr><td style="padding-top: 4px; font-size: 12px; line-height: 16px; color: #5E6470">ParkingYou B.V. · Victoriapark 4 · 5611 BM Eindhoven</td></tr>
@@ -35,8 +35,7 @@
   <div class="client" style="left: 50px; top: 396px; background: #2B2F36; border: 1px solid #434852">
     <div style="font-size: 14px; line-height: 20px; color: #EEF0F3">Met vriendelijke groet,</div>
     <table class="sig" cellpadding="0" cellspacing="0" style="margin-top: 16px; width: 600px; border-collapse: collapse">
-      <tr><td style="font-weight: 700; color: #9AAAD6">[Voornaam Achternaam]</td></tr>
-      <tr><td style="color: #EEF0F3">[Functie]</td></tr>
+      <tr><td><table cellpadding="0" cellspacing="0" style="border-collapse: collapse"><tr><td style="width: 9px; padding-right: 12px; vertical-align: top"><i data-p="arc" style="height: 40px; color: #32B9CD; display: block"></i></td><td style="vertical-align: top"><div style="font-weight: 700; color: #9AAAD6">[Voornaam Achternaam]</div><div style="color: #EEF0F3">[Functie]</div></td></tr></table></td></tr>
       <tr><td style="padding-top: 16px"><div style="display: inline-block; background: #FFFFFF; padding: 8px 12px; border-radius: 4px"><img src="../../kit/assets/logo-horizontal-color.svg" style="height: 32px; display: block" alt="parkingyou"></div></td></tr>
       <tr><td style="padding-top: 12px; color: #EEF0F3">[telefoonnummer] · <span style="color: #9AAAD6; text-decoration: underline">[voornaam]@parkingyou.nl</span> · <span style="color: #9AAAD6; font-weight: 700; text-decoration: underline">parkingyou.nl</span></td></tr>
       <tr><td style="padding-top: 4px; font-size: 12px; line-height: 16px; color: #C2C7CF">ParkingYou B.V. · Victoriapark 4 · 5611 BM Eindhoven</td></tr>
@@ -48,9 +47,11 @@
   style="max-width:600px;font-family:Arial,
   sans-serif;font-size:14px;line-height:20px;
   color:#1D1D1B"&gt;
- &lt;tr&gt;&lt;td style="font-weight:bold;
-   color:#1A3580"&gt;[Voornaam Achternaam]&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;[Functie]&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;img src="https://[cdn]/py-stem-mail@2x.png"
+   width="9" height="40" alt="" style="display:block;
+   float:left;margin-right:12px;border:0"&gt;
+  &lt;b style="color:#1A3580"&gt;[Voornaam Achternaam]&lt;/b&gt;
+  &lt;br&gt;[Functie]&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td style="padding-top:16px"&gt;
   &lt;img src="https://[cdn]/py-logo-mail@2x.png"
    width="140" height="48" alt="parkingyou"
@@ -70,7 +71,7 @@
 
   <div class="col" style="left: 730px; top: 560px; width: 420px">
     <div class="h">Regels</div>
-    Arial 14/20 px, naam Bold PY-Blauw, links PY-Blauw onderstreept, adres 12/16 px neutral.600. Logo: PNG op 2x (280 x 96 px, getoond als 140 x 48 px), beeldmerk 32 px. Geen banners, geen citaten, geen sociale iconen. Eén handtekening voor iedereen. Bestand: py-email-signature.html plus py-logo-mail@2x.png.
+    Arial 14/20 px. De stem opent naam en functie: PNG op 2x (18 x 80 px, getoond als 9 x 40 px), PY-Aqua, afstand 12 px. Naam Bold PY-Blauw, links PY-Blauw onderstreept, adres 12/16 px neutral.600. Logo: PNG op 2x (280 x 96 px, getoond als 140 x 48 px), beeldmerk 32 px. Geen banners, geen citaten, geen sociale iconen. Eén handtekening voor iedereen. Bestanden: py-email-signature.html, py-logo-mail@2x.png, py-stem-mail@2x.png.
   </div>
 </div>
 </body>
