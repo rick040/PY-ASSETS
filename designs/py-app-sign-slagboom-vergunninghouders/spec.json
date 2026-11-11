@@ -36,16 +36,16 @@
   "py-tok-color-wit",
   "py-tok-type-ubuntu-bold",
   "py-tok-type-ubuntu-regular",
-  "py-atom-symbol-p-roof",
+  "py-atom-symbol-p-plain",
   "py-atom-logo-horizontal-white",
   "py-atom-picto-tow-away (new, drawn in build.py)"
  ],
  "status": "new",
  "layout_mm": {
-  "size_nl": 37.41,
-  "size_en": 23.2,
-  "text_x": 150.26,
-  "avail": 472.13
+  "size_nl": 38.02,
+  "size_en": 23.57,
+  "text_x": 142.6,
+  "avail": 479.79
  },
- "notes": "New barrier plate in the ParkingYou house style: navy PY-Blauw field, white P with roof, aqua dividers, Dutch line in Ubuntu Bold white, English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 125 mm is estimated from the photo (the old plate is about 8 : 1 next to the boom); measure the old plate and the mounting holes before ordering, then change TRIM in build.py and rebuild. Mounting holes are not marked (position depends on the bracket). Material proposal: 3 mm aluminium dibond, printed and laminated, double sided if the plate is seen from both approaches."
+ "notes": "New barrier plate in the ParkingYou house style: navy PY-Blauw field, white plain P (no roof, not a garage), aqua dividers, Dutch line in Ubuntu Bold white, English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 125 mm is estimated from the photo (the old plate is about 8 : 1 next to the boom); measure the old plate and the mounting holes before ordering, then change TRIM in build.py and rebuild. Mounting holes are not marked (position depends on the bracket). Material proposal: 3 mm aluminium dibond, printed and laminated, double sided if the plate is seen from both approaches."
 }

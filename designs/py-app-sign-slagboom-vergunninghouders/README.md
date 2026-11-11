@@ -11,7 +11,7 @@ Vervangt het generieke bord "P Private parking / Parking only for permit holders
 | `spec.json` | Maten, variabelen, gebruikte bouwstenen |
 | `build.py` | Bouwt alles opnieuw: `python3 -I designs/py-app-sign-slagboom-vergunninghouders/build.py` |
 
-Opbouw: PY-Blauw vlak, witte P met dak, aqua scheidingslijnen, "Alleen vergunninghouders" in Ubuntu Bold wit,
+Opbouw: PY-Blauw vlak, witte platte P (zonder dak, het is geen garage), aqua scheidingslijnen, "Alleen vergunninghouders" in Ubuntu Bold wit,
 "Permit holders only" in Ubuntu Regular PY-Aqua, wit wegsleep-pictogram (nieuw getekend), wit liggend logo.
 
 Open punten voor bestellen:

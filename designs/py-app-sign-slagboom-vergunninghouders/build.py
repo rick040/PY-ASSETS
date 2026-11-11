@@ -1,7 +1,7 @@
 """New design: slagboombord "Alleen vergunninghouders" (replaces the generic "Private parking / Parking only for permit holders" plate).
 
 Built from library elements (no source print file exists, this is a new design):
-  py-atom-symbol-p-roof (white P with roof), py-atom-logo-horizontal-white, tokens blauw / aqua / wit, Ubuntu Bold and Regular.
+  py-atom-symbol-p-plain (white plain P, no roof: this is an open air private parking, not a garage), py-atom-logo-horizontal-white, tokens blauw / aqua / wit, Ubuntu Bold and Regular.
 The tow away pictogram is drawn here (new, white on navy).
 
 Run from the repo root:
@@ -72,9 +72,9 @@ def build():
     d.rect(-BLEED, -BLEED, W + BLEED, H + BLEED, fill=NAVY, gid="bleed-background", variable="background-colour", example=NAVY)
 
     cy = H / 2
-    # 1. P with roof, white
-    with d.group("py-atom-symbol-p-roof"):
-        p_box = d.place("py-atom-symbol-p-roof", MARGIN, cy, h=H * 0.70, anchor="cl")
+    # 1. plain P, white (no roof: the roof marks a garage, this is an open air terrain)
+    with d.group("py-atom-symbol-p-plain"):
+        p_box = d.place("py-atom-symbol-p-plain", MARGIN + 4, cy, h=H * 0.60, anchor="cl")
     # aqua divider
     div1 = p_box[2] + 26
     d.line(div1, H * 0.20, div1, H * 0.80, stroke=AQUA, sw=2.0, cap="round", gid="divider-left")
@@ -138,7 +138,7 @@ def main():
         "built_from": d.built_from + ["py-atom-picto-tow-away (new, drawn in build.py)"],
         "status": "new",
         "layout_mm": {k: round(v, 2) for k, v in info.items()},
-        "notes": ("New barrier plate in the ParkingYou house style: navy PY-Blauw field, white P with roof, aqua dividers, Dutch line in Ubuntu Bold white, "
+        "notes": ("New barrier plate in the ParkingYou house style: navy PY-Blauw field, white plain P (no roof, not a garage), aqua dividers, Dutch line in Ubuntu Bold white, "
                   "English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 125 mm is estimated "
                   "from the photo (the old plate is about 8 : 1 next to the boom); measure the old plate and the mounting holes before ordering, then change "
                   "TRIM in build.py and rebuild. Mounting holes are not marked (position depends on the bracket). Material proposal: 3 mm aluminium dibond, "
