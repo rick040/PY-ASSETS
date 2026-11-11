@@ -1,0 +1,51 @@
+{
+ "id": "py-app-sign-slagboom-vergunninghouders",
+ "name_nl": "Bord slagboom vergunninghouders",
+ "type": "sign",
+ "origin": "new design",
+ "replaces": "generic plate 'P Private parking / Parking only for permit holders' with tow away pictogram, on the manual barrier",
+ "template": {
+  "trim_mm": [
+   1000.0,
+   125.0
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   1006.0,
+   131.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 8.0,
+   "note": "proposal"
+  }
+ },
+ "variables": {
+  "default": {
+   "background-colour": "#1A3580",
+   "line-nl": "Alleen vergunninghouders",
+   "line-en": "Permit holders only"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-tok-type-ubuntu-regular",
+  "py-atom-symbol-p-roof",
+  "py-atom-logo-horizontal-white",
+  "py-atom-picto-tow-away (new, drawn in build.py)"
+ ],
+ "status": "new",
+ "layout_mm": {
+  "size_nl": 37.41,
+  "size_en": 23.2,
+  "text_x": 150.26,
+  "avail": 472.13
+ },
+ "notes": "New barrier plate in the ParkingYou house style: navy PY-Blauw field, white P with roof, aqua dividers, Dutch line in Ubuntu Bold white, English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 125 mm is estimated from the photo (the old plate is about 8 : 1 next to the boom); measure the old plate and the mounting holes before ordering, then change TRIM in build.py and rebuild. Mounting holes are not marked (position depends on the bracket). Material proposal: 3 mm aluminium dibond, printed and laminated, double sided if the plate is seen from both approaches."
+}
