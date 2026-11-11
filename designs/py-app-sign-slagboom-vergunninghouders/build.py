@@ -24,9 +24,15 @@ ID = "py-app-sign-slagboom-vergunninghouders"
 NAME = "Bord slagboom vergunninghouders"
 NAVY, AQUA, WHITE = "#1A3580", "#32B9CD", "#FFFFFF"
 
-TRIM = (1000.0, 125.0)   # ASSUMPTION: estimated from the photo of the old plate (about 8 : 1); measure before ordering
+TRIM = (1000.0, 200.0)   # ASSUMPTION: from the photo of the blank mounting plate (about 5 : 1); measure before ordering
 BLEED = 3.0
-RADIUS = 8.0             # corner radius of the plate (proposal)
+RADIUS = 0.0             # square corners, as the blank plate in the photo
+# The plate hangs in front of the boom and is screwed to it along a line in the lower part of the plate.
+# All content stays in the band above it; the band below CONTENT_H stays plain navy for the screws.
+CONTENT_H = 140.0
+BAND_Y = 146.0           # content stays above this line; below it are the screws (plate is navy all over)
+HOLES = ((123.0, 164.0), (555.0, 164.0), (917.0, 164.0))  # ASSUMPTION: screw positions estimated from the photo (x from the left, y from the top, mm)
+HOLE_D = 6.0             # proposal; match the screws
 MARGIN = 30.0            # left and right inner margin
 
 COPY = {
@@ -71,23 +77,25 @@ def build():
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-regular")
     d.rect(-BLEED, -BLEED, W + BLEED, H + BLEED, fill=NAVY, gid="bleed-background", variable="background-colour", example=NAVY)
 
-    cy = H / 2
+    # no content below BAND_Y: that part of the plate (same navy) is screwed to the boom
+    Z = BAND_Y
+    cy = Z / 2 + 3
     # 1. plain P, white (no roof: the roof marks a garage, this is an open air terrain)
     with d.group("py-atom-symbol-p-plain"):
-        p_box = d.place("py-atom-symbol-p-plain", MARGIN + 4, cy, h=H * 0.60, anchor="cl")
+        p_box = d.place("py-atom-symbol-p-plain", MARGIN + 4, cy, h=Z * 0.60, anchor="cl")
     # aqua divider
     div1 = p_box[2] + 26
-    d.line(div1, H * 0.20, div1, H * 0.80, stroke=AQUA, sw=2.0, cap="round", gid="divider-left")
+    d.line(div1, Z * 0.20 + 3, div1, Z * 0.80 + 3, stroke=AQUA, sw=2.0, cap="round", gid="divider-left")
 
     # 4. logo, right aligned
     logo_w = 150.0
     with d.group("py-atom-logo-horizontal-white"):
         logo_box = d.place("py-atom-logo-horizontal-white", W - MARGIN, cy, w=logo_w, anchor="cr")
     div2 = logo_box[0] - 28
-    d.line(div2, H * 0.20, div2, H * 0.80, stroke=AQUA, sw=2.0, cap="round", gid="divider-right")
+    d.line(div2, Z * 0.20 + 3, div2, Z * 0.80 + 3, stroke=AQUA, sw=2.0, cap="round", gid="divider-right")
 
     # 3. tow away pictogram, left of the right divider
-    tow_h = H * 0.50
+    tow_h = Z * 0.50
     tow_w = tow_h * 100 / 56
     tow_x = div2 - 28 - tow_w
     tow_pictogram(d, tow_x, cy - tow_h / 2 - 1.5, tow_h)
@@ -105,6 +113,9 @@ def build():
         d.text(tx, base_nl + shift, COPY["line-nl"], size=size_nl, fill=WHITE, weight=700, variable="line-nl", gid="line-nl")
         d.text(tx, base_en + shift, COPY["line-en"], size=size_en, fill=AQUA, weight=400, variable="line-en", gid="line-en")
 
+    with d.group("mounting-holes", data_purpose="screw positions to the boom, estimated; not printed"):
+        for hx, hy in HOLES:
+            d.circle(hx, hy, HOLE_D / 2, fill=None, stroke="#ED308A", sw=0.353)
     d.cut_contour(0, 0, W, H, rx=RADIUS)
     d.guides(W, H)
     return d, dict(size_nl=size_nl, size_en=size_en, text_x=tx, avail=avail)
@@ -122,7 +133,12 @@ def main():
     prev = svg.replace('data-spot="ThruCut"', 'data-spot="ThruCut" visibility="hidden"')
     prev = prev.replace(f'<rect x="0" y="0" width="{fmt(W + 2 * BLEED)}" height="{fmt(H + 2 * BLEED)}" fill="{NAVY}"',
                         f'<rect x="{fmt(BLEED)}" y="{fmt(BLEED)}" width="{fmt(W)}" height="{fmt(H)}" rx="{fmt(RADIUS)}" fill="{NAVY}"')
-    cairosvg.svg2png(bytestring=prev.encode(), write_to=os.path.join(HERE, "preview.png"), output_width=2400, background_color="white")
+    prev = prev.replace('fill="none" stroke="#ED308A"', 'fill="#C9CCD1" stroke="#8A8F98"')
+    png = os.path.join(HERE, "preview.png")
+    cairosvg.svg2png(bytestring=prev.encode(), write_to=png, output_width=2400, background_color="white")
+    from PIL import Image  # crop the bleed so the preview shows the trimmed plate only
+    im = Image.open(png); k = im.size[0] / (W + 2 * BLEED); b = round(BLEED * k)
+    im.crop((b, b, im.size[0] - b, im.size[1] - b)).save(png)
     cairosvg.svg2pdf(bytestring=svg.encode(), write_to=os.path.join(HERE, "proof.pdf"))
 
     spec = {
@@ -133,15 +149,17 @@ def main():
         "replaces": "generic plate 'P Private parking / Parking only for permit holders' with tow away pictogram, on the manual barrier",
         "template": {"trim_mm": list(TRIM), "bleed_mm": BLEED, "size_with_bleed_mm": [TRIM[0] + 2 * BLEED, TRIM[1] + 2 * BLEED],
                      "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
-                     "cut_contour": {"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": RADIUS, "note": "proposal"}},
+                     "cut_contour": {"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": RADIUS, "note": "square corners as the blank plate"}},
         "variables": {"default": {"background-colour": NAVY, **COPY}},
         "built_from": d.built_from + ["py-atom-picto-tow-away (new, drawn in build.py)"],
         "status": "new",
         "layout_mm": {k: round(v, 2) for k, v in info.items()},
         "notes": ("New barrier plate in the ParkingYou house style: navy PY-Blauw field, white plain P (no roof, not a garage), aqua dividers, Dutch line in Ubuntu Bold white, "
-                  "English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 125 mm is estimated "
-                  "from the photo (the old plate is about 8 : 1 next to the boom); measure the old plate and the mounting holes before ordering, then change "
-                  "TRIM in build.py and rebuild. Mounting holes are not marked (position depends on the bracket). Material proposal: 3 mm aluminium dibond, "
+                  "English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 200 mm is estimated "
+                  "from the photo of the blank mounting plate (about 5 : 1). The plate hangs in front of the boom and is screwed to it in the lower part: all content "
+                  "stays above y 146 mm, the navy part below holds the three screws (whole plate is PY-Blauw) (group mounting-holes, magenta rings, not printed; positions "
+                  "x 123, 555 and 917 mm at y 164 mm are estimated from the photo). Measure plate and screw positions before ordering, then change TRIM and HOLES "
+                  "in build.py and rebuild. Material proposal: 3 mm aluminium dibond, "
                   "printed and laminated, double sided if the plate is seen from both approaches."),
     }
     json.dump(spec, open(os.path.join(HERE, "spec.json"), "w", encoding="utf8"), indent=1, ensure_ascii=False)

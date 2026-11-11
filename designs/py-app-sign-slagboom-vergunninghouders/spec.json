@@ -7,20 +7,20 @@
  "template": {
   "trim_mm": [
    1000.0,
-   125.0
+   200.0
   ],
   "bleed_mm": 3.0,
   "size_with_bleed_mm": [
    1006.0,
-   131.0
+   206.0
   ],
   "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
   "cut_contour": {
    "spot": "ThruCut",
    "stroke_pt": 1,
    "inset_mm": 0.2,
-   "corner_radius_mm": 8.0,
-   "note": "proposal"
+   "corner_radius_mm": 0.0,
+   "note": "square corners as the blank plate"
   }
  },
  "variables": {
@@ -42,10 +42,10 @@
  ],
  "status": "new",
  "layout_mm": {
-  "size_nl": 38.02,
-  "size_en": 23.57,
-  "text_x": 142.6,
-  "avail": 479.79
+  "size_nl": 35.78,
+  "size_en": 22.19,
+  "text_x": 152.11,
+  "avail": 451.54
  },
- "notes": "New barrier plate in the ParkingYou house style: navy PY-Blauw field, white plain P (no roof, not a garage), aqua dividers, Dutch line in Ubuntu Bold white, English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 125 mm is estimated from the photo (the old plate is about 8 : 1 next to the boom); measure the old plate and the mounting holes before ordering, then change TRIM in build.py and rebuild. Mounting holes are not marked (position depends on the bracket). Material proposal: 3 mm aluminium dibond, printed and laminated, double sided if the plate is seen from both approaches."
+ "notes": "New barrier plate in the ParkingYou house style: navy PY-Blauw field, white plain P (no roof, not a garage), aqua dividers, Dutch line in Ubuntu Bold white, English line in Ubuntu Regular PY-Aqua, white tow away pictogram, white horizontal logo. ASSUMPTION: trim 1000 x 200 mm is estimated from the photo of the blank mounting plate (about 5 : 1). The plate hangs in front of the boom and is screwed to it in the lower part: all content stays above y 146 mm, the navy part below holds the three screws (whole plate is PY-Blauw) (group mounting-holes, magenta rings, not printed; positions x 123, 555 and 917 mm at y 164 mm are estimated from the photo). Measure plate and screw positions before ordering, then change TRIM and HOLES in build.py and rebuild. Material proposal: 3 mm aluminium dibond, printed and laminated, double sided if the plate is seen from both approaches."
 }
