@@ -20,7 +20,7 @@ and the creative director decides. Until approved, a proposed value is not used 
 | 4 | Canva | Values and templates are delivered; the Canva brand kit is not written to. (Default, Rick may change at Gate 2.) |
 | 5 | Live site palette, voordeligparkeren.nl | In scope of the rollout plan. |
 | 6 | Logo | Unchanged geometry. The reverse logo becomes official; a navy one-colour version is added for aqua and orange grounds. **(v2)** The logo and every bubble are never rotated. |
-| 7 | Variant (v2) | Variant 1 "Rustig": more white, larger type, one accent per surface, plus five own elements (section 4b). |
+| 7 | Variant (v2) | Variant 1 "Rustig": more white, larger type, one accent per surface, plus four own elements (section 4b, D44). |
 | 8 | Arrow (v2) | The angular arrow from the repo (`py-atom-arrow-*-plain`) is the main arrow everywhere an arrow appears. |
 | 9 | Half arc (v2) | Back, as "de stem" (section 4b). |
 | 10 | Verloop (v2) | Retired. All colour is flat. |
@@ -336,5 +336,6 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 | D43 | 2026-11-07 | Patterns | Lane line of het vak 2u from the end of the bay lines (48 px on screen); gastheer and wijzer: 0.5u between hand and the text or arrow, hand at the height of the first line; mirrored figures in the kit (`figure-*-navy-flip.svg`, `-white-flip.svg`) mirror the body only, the head keeps the logo orientation; "logo plus at most two elements" also applies to signs; a parkeerder stands in jouw vak only in a deck running from the top edge, a deck from the bottom edge holds a bubble; jouw vak may stay empty; example prices that are not real tariffs are written [prijs] | Completes section 4b |
 
 | D44 | 2026-11-12 | Rick | Het vak retired: four own elements (parkeerders, stem, bubbel, hoekige pijl); backgrounds flat PY-Blauw or white. Supersedes the vak parts of D32, D35, D40 and D43 and the `vak.*` tokens | "ga voor A" (option A: weg ermee) |
+| D45 | 2026-11-12 | CD | Newsletter header 180 px high (was 272 px, which only served het vak): logo 32 px, stem with heading-m, zwaaier 96 px on a 2 px line. PWA ticket header: flat PY-Blauw band with the stem and the springer; the aqua check bubble is dropped (third element). Short figure line runs `space.4` (16 px) past the figure on both sides | Follows D44 |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

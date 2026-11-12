@@ -2,14 +2,14 @@
 
 Dit hoofdstuk gaat over alles wat we op papier en in de mail meesturen: visitekaartje, briefpapier, factuur, offerte, envelop en e-mailhandtekening. Het zijn kleine dingen, maar klanten, garage-eigenaren en leveranciers zien ze elke week. Ze moeten er net zo rustig en herkenbaar uitzien als een bord in de garage, en net zo duidelijk van ons zijn.
 
-De basis is kort. Wit papier, PY-Blauw voor het merk en de koppen, Ubuntu Sans uit de printschaal, en het raster van de format unit u (korte zijde gedeeld door 20). Oranje komt in dit hoofdstuk niet voor: oranje is voor betalen in de garage, en een factuur is geen automaat.
+De basis is kort. Wit papier zonder patroon, PY-Blauw voor het merk en de koppen, Ubuntu Sans uit de printschaal, en het raster van de format unit u (korte zijde gedeeld door 20). Oranje komt in dit hoofdstuk niet voor: oranje is voor betalen in de garage, en een factuur is geen automaat.
 
 Wat het drukwerk van ons maakt, zijn twee van onze eigen elementen:
 
 - **De stem.** De halve boog opent een boodschap: je naam op het visitekaartje, het onderwerp van een brief, het woord "Factuur". Hij staat links van de tekst, is zo hoog als de regels die hij opent en staat op 0,3 x zijn hoogte van de eerste letter, gemeten vanaf de punten van de boog.
 - **De gastheer.** Een parkeerder met pet, die naar je gegevens wijst. Hij staat op de achterkant van het visitekaartje en, als je wilt, in de voet van het briefpapier. Altijd op een lijn, nooit zwevend.
 
-Per vlak gebruiken we het logo plus hooguit deze twee. Geen bubbel, geen vak en geen pijl op kantoordrukwerk.
+Per vlak gebruiken we het logo plus hooguit deze twee. Geen bubbel en geen pijl op kantoordrukwerk.
 
 ## De set in één tabel
 
@@ -62,7 +62,7 @@ Vaste gegevens uit de repository: ParkingYou B.V., Victoriapark 4, 5611 BM Eindh
 A4 staand, 6 kolommen van 19,25 mm met 10,5 mm tussenruimte, marge 21 mm.
 
 - **Logo** in kleur linksboven, beeldmerk 1,5u = 15,75 mm hoog.
-- **Adresvak** op 4,5u (47,25 mm) van boven, 84 x 42 mm. Zo past de brief later ook in een vensterenvelop.
+- **Adresveld** op 4,5u (47,25 mm) van boven, 84 x 42 mm. Zo past de brief later ook in een vensterenvelop.
 - **Datum en kenmerk** op 10u van boven: labels print-small 8 pt SemiBold PY-Blauw, waarden 8 pt.
 - **Onderwerp** in print-h2 22/26 pt Bold PY-Blauw, één regel. **De stem** opent het onderwerp: 26 pt = 9,2 mm hoog, lijn 0,5 mm, 2,8 mm tot de eerste letter. De stem hangt in de marge, zodat de tekst op de marge blijft.
 - **Lopende tekst** in print-body 10/14 pt, PY-Zwart, links uitgelijnd, nooit uitgevuld.
@@ -72,7 +72,7 @@ A4 staand, 6 kolommen van 19,25 mm met 10,5 mm tussenruimte, marge 21 mm.
 
 In Word werkt het briefpapier met Arial: 10 pt tekst, 22 pt Bold onderwerp. Logo, stem, voet en gastheer staan vast in de kop- en voettekst van het sjabloon, zodat niemand ze kan verschuiven. De stem staat in het sjabloon als vaste afbeelding naast de onderwerpregel.
 
-**Envelop.** De envelop van 220 x 156 mm blijft, het is een bestaand formaat. u = 7,8 mm, marge 15,6 mm. Voorzijde: linksboven het logo in kleur met beeldmerk 2u = 15,6 mm, daaronder de afzender op één regel in print-small PY-Blauw. Rechtsboven blijft het portvak vrij, rechtsonder het vak voor adres of etiket; daar komt niets van ons. Achterzijde: op de rand van de klep loopt de loper, 3u = 23,4 mm, met parkingyou.nl ernaast. Zo zie je ook aan de achterkant van wie de brief komt.
+**Envelop.** De envelop van 220 x 156 mm blijft, het is een bestaand formaat. u = 7,8 mm, marge 15,6 mm. Voorzijde: linksboven het logo in kleur met beeldmerk 2u = 15,6 mm, daaronder de afzender op één regel in print-small PY-Blauw. Rechtsboven blijft de plek voor de postzegel vrij, rechtsonder de plek voor adres of etiket; daar komt niets van ons. Achterzijde: op de rand van de klep loopt de loper, 3u = 23,4 mm, met parkingyou.nl ernaast. Zo zie je ook aan de achterkant van wie de brief komt.
 
 Het huidige bestand is RGB en zegt PDF/X-1a te zijn. Het nieuwe bestand is echt CMYK, PDF/X-4 of X-1a, zonder snijtekens; die zet de drukker.
 
@@ -84,13 +84,13 @@ Zelfde raster, logo en voet als het briefpapier, zonder gastheer: op een factuur
 
 **Kop.** "Factuur" of "Offerte" in print-h1 32/36 pt Bold PY-Blauw, op de plek van het onderwerp, geopend door de stem (36 pt = 12,7 mm hoog, lijn 0,5 mm).
 
-**Gegevensblok.** Klantadres links in het adresvak. Rechts, vanaf kolom 4, de labels in 8 pt SemiBold PY-Blauw (Factuurnummer, Factuurdatum, Vervaldatum, Klantnummer) met de waarden rechts uitgelijnd in 10 pt. Voor de offerte: Offertenummer, Datum, Geldig tot, Contact.
+**Gegevensblok.** Klantadres links in het adresveld. Rechts, vanaf kolom 4, de labels in 8 pt SemiBold PY-Blauw (Factuurnummer, Factuurdatum, Vervaldatum, Klantnummer) met de waarden rechts uitgelijnd in 10 pt. Voor de offerte: Offertenummer, Datum, Geldig tot, Contact.
 
 **Tabel.** Kolommen Omschrijving, Aantal, Prijs, Bedrag incl. btw. Kopregel in print-small 8 pt Bold PY-Blauw met een lijn van 0,5 pt in PY-Blauw eronder. Regels in print-body 10/14 pt met een haarlijn van 0,25 pt in PY-Grijs. Getallen rechts uitgelijnd met tabelcijfers, zodat de komma's onder elkaar staan. Bedragen als € 50,00: spatie na het euroteken, komma, nooit ",-". Geen gekleurde rijen, geen oranje bedragen.
 
 **Totaal.** Totaal excl. btw en btw in 10 pt, het totaal in print-h3 15 pt Bold PY-Blauw. Daaronder één betaalzin: "Betaal € [bedrag] binnen [14] dagen op [IBAN] t.n.v. ParkingYou B.V. Zet [factuurnummer] in de omschrijving."
 
-De voorbeeldfactuur rekent met echte tarieven: dagtarief Parking Hofplein € 7,50, per 60 minuten Parking Maashaven € 8,00 en verloren kaart € 50,00. De offerte laat de producten zien (Abonnement, ParkingPass, Waardekaarten) met bedragen als [placeholder]. Onder de offerte staat een akkoordvak met Naam, Datum en Handtekening.
+De voorbeeldfactuur rekent met echte tarieven: dagtarief Parking Hofplein € 7,50, per 60 minuten Parking Maashaven € 8,00 en verloren kaart € 50,00. De offerte laat de producten zien (Abonnement, ParkingPass, Waardekaarten) met bedragen als [placeholder]. Onder de offerte staat een akkoordblok met Naam, Datum en Handtekening.
 
 Komt de factuur uit een boekhoudpakket, dan leveren we een html- of Word-sjabloon met dezelfde maten en de stem als vaste afbeelding. Kan het pakket geen eigen letter, dan Arial.
 
@@ -118,14 +118,14 @@ Logo en stem staan op een vaste url (de site of een cdn), niet als bijlage.
 | py-letterhead-a4.indd en py-letterhead-a4-print.pdf | voorbedrukt briefpapier, met en zonder gastheer |
 | py-letterhead-a4.dotx | Word-sjabloon met Arial, logo, stem en voet vast |
 | py-invoice-a4.dotx en py-invoice-a4.html | factuur, voor Word en voor het boekhoudpakket |
-| py-quote-a4.dotx | offerte met akkoordvak |
+| py-quote-a4.dotx | offerte met akkoordblok |
 | py-envelope-220x156.pdf | envelop voor en achter, CMYK |
 | py-email-signature.html | handtekening, inline stijl |
 | py-logo-mail@2x.png | logo voor mail, 280 x 96 px met wit vlak |
 | py-stem-mail@2x.png | de stem voor mail, 18 x 80 px, PY-Aqua, transparant |
 | figure-cap-point-navy.svg | de gastheer wijst, uit de kit, één kleur PY-Blauw, voor kaartje en briefpapier |
 
-De maten van adresvak, vouwteken, gegevensblok, mail-logo en papier zijn eerder goedgekeurd (besluit D28) en blijven staan.
+De maten van adresveld, vouwteken, gegevensblok, mail-logo en papier zijn eerder goedgekeurd (besluit D28) en blijven staan.
 
 ## Open vragen
 
@@ -133,7 +133,7 @@ De maten van adresvak, vouwteken, gegevensblok, mail-logo en papier zijn eerder 
 - De bedrijfsnaam staat als "ParkingYou BV" op het oude briefpapier en als "ParkingYou B.V." elders. Wij gebruiken ParkingYou B.V.; graag bevestigen.
 - CMYK van PY-Blauw voor ongestreken papier (FOGRA52): de drukker converteert; tot die tijd 100 83 0 17 en beoordelen op een proef.
 - Willen we de gastheer standaard in de voet van het briefpapier, of alleen op brieven aan klanten?
-- Gaat de brief ooit in een vensterenvelop? Dan maken we een tweede envelop, het adresvak staat al goed.
+- Gaat de brief ooit in een vensterenvelop? Dan maken we een tweede envelop, het adresveld staat al goed.
 
 ## Do's en don'ts
 
@@ -149,7 +149,7 @@ De maten van adresvak, vouwteken, gegevensblok, mail-logo en papier zijn eerder 
 - Geen oranje op briefpapier, factuur, offerte, envelop of handtekening.
 - Geen stem rechts van de tekst, geen tweede stem die de zin afsluit, geen stem dunner dan 0,5 mm.
 - Geen zwevende of afgesneden parkeerder, en nooit meer dan één per vlak. Geen parkeerder op factuur, offerte of in de mail.
-- Geen bubbel, geen vak en geen pijl op kantoordrukwerk.
+- Geen bubbel en geen pijl op kantoordrukwerk.
 - Geen verloop, schaduw of foto op het briefpapier.
 - Geen tekst in PY-Aqua op wit, geen tweede blauw: de oude adresregel in CMYK 100 85,5 22,3 4 vervalt.
 - Geen eigen lettertype in Word of mail: Ubuntu Sans in drukwerk, Arial in Office en mail.
