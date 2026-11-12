@@ -1,0 +1,502 @@
+[
+ {
+  "chapter": 1,
+  "src": "02-build/00-intro/figures/identity-elements.png",
+  "alt": "Eigen elementen"
+ },
+ {
+  "chapter": 1,
+  "src": "02-build/00-intro/figures/what-changes.png",
+  "alt": "Wat verandert"
+ },
+ {
+  "chapter": 1,
+  "src": "02-build/00-intro/figures/principles.png",
+  "alt": "Merkprincipes"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/lockups.png",
+  "alt": "Lockups"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/versions-grounds.png",
+  "alt": "Versies op ondergronden"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/clear-space.png",
+  "alt": "Vrije ruimte"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/minimum-sizes.png",
+  "alt": "Minimale maten"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/location-construction.png",
+  "alt": "Opbouw locatielockup"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/location-examples.png",
+  "alt": "Locatielockups in gebruik"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/app-icon.png",
+  "alt": "App-icoon en favicon"
+ },
+ {
+  "chapter": 2,
+  "src": "02-build/01-logo/figures/misuse.png",
+  "alt": "Zo niet"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/palette-roles.png",
+  "alt": "Merkkleuren, hun taak en hun aandeel"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/proportions.png",
+  "alt": "Verhouding: wit en papier 47, navy 38, aqua 13 procent, met drie voorbeelden"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/aqua-roles.png",
+  "alt": "De rollen van aqua, en wat aqua niet doet"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/orange-garage.png",
+  "alt": "Oranje: wel bij betalen in de garage, niet daarbuiten"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/task-signs.png",
+  "alt": "Taakkleuren op borden, en dezelfde borden met alleen lichtheid"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/action-buttons.png",
+  "alt": "Hoofdknop en tweede knop in licht en donker"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/identity-tokens.png",
+  "alt": "Tokens voor de stem en de parkeerders, in licht en donker"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/geen-verloop.png",
+  "alt": "Oude borden met verloop en hun vlakke vervanging"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/scales.png",
+  "alt": "Volledige schalen"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/contrast-matrix.png",
+  "alt": "Contrastmatrix"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/not-allowed.png",
+  "alt": "Niet toegestaan"
+ },
+ {
+  "chapter": 3,
+  "src": "02-build/02-kleur/figures/production-table.png",
+  "alt": "Productietabel per kleur"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/specimen.png",
+  "alt": "Ubuntu Sans: gewichten, breedte en tekenset"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/de-stem.png",
+  "alt": "De stem: opbouw, één tot drie regels, kleuren en wat niet mag"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/stem-sizes.png",
+  "alt": "De stem op scherm, in druk en op een routebord, met de waarden"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/headlines.png",
+  "alt": "Een paginakop op desktop en telefoon"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/screen-scale.png",
+  "alt": "Schermschaal op ware grootte"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/print-scale.png",
+  "alt": "Drukwerkschaal en posterberekening"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/signage-sizing.png",
+  "alt": "Lettergrootte per leesafstand, en een rijroutebord op schaal"
+ },
+ {
+  "chapter": 4,
+  "src": "02-build/03-typografie/figures/voice-numbers.png",
+  "alt": "Sleutelwoord vet, tabelcijfers en notaties"
+ },
+ {
+  "chapter": 5,
+  "src": "02-build/04-grid/figures/formaat-eenheid.png",
+  "alt": "De formaateenheid u en de tabel met de formaten"
+ },
+ {
+  "chapter": 5,
+  "src": "02-build/04-grid/figures/voorbeelden-print.png",
+  "alt": "Visitekaartje voor en achter, A4 poster en lichtbak op hun grid"
+ },
+ {
+  "chapter": 5,
+  "src": "02-build/04-grid/figures/voorbeelden-social.png",
+  "alt": "Post en reel met vrije zones"
+ },
+ {
+  "chapter": 5,
+  "src": "02-build/04-grid/figures/schermgrids.png",
+  "alt": "Telefoon, tablet en desktop met hun kolommen"
+ },
+ {
+  "chapter": 5,
+  "src": "02-build/04-grid/figures/layoutpatronen.png",
+  "alt": "Vijf standaardpatronen op een post"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/parkeerders-cast.png",
+  "alt": "De negen parkeerders met naam en rol"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/parkeerders-grond.png",
+  "alt": "Kleur per grond en de vier lijnen"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/parkeerders-maat.png",
+  "alt": "Maat, spiegelen en één per vlak"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/parkeerders-samenspel.png",
+  "alt": "Gastheer, wijzer, loper en juicher in gebruik"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/parkeerders-niet.png",
+  "alt": "De parkeerders: wat nooit"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/stem.png",
+  "alt": "De stem: opbouw, maten, gronden en borden"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/bubbel-in-gebruik.png",
+  "alt": "De bubbel in gebruik: zes regels"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/bubbel-niet.png",
+  "alt": "De bubbel: wat nooit"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/pijl.png",
+  "alt": "De hoekige pijl: richtingen, kleuren, knoppen en wat nooit"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/vlakke-grond.png",
+  "alt": "Vlakke grond op pas, nieuwsbrief, ticketkop en lege staat"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/combinaties.png",
+  "alt": "Combineren: drie goede en drie foute voorbeelden"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/taakkleuren.png",
+  "alt": "Taakkleuren met bubbel, bord en parkeerder"
+ },
+ {
+  "chapter": 6,
+  "src": "02-build/05-patronen/figures/oude-vormen.png",
+  "alt": "Oude vormen naast hun 2027-versie"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/pijl-constructie.png",
+  "alt": "De hoekige pijl: constructie, acht richtingen en kleur per grond"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/pijl-gebruik.png",
+  "alt": "De pijl op borden, in knoppen en links, en wat nooit mag"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/raster.png",
+  "alt": "Raster en constructie van pictogram en UI-icoon"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/hertekening.png",
+  "alt": "Vier hertekeningen naast het origineel"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/toepassing.png",
+  "alt": "Pictogrammen in bubbels en op taakgronden"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/pictogram-of-parkeerder.png",
+  "alt": "Pictogram of parkeerder: twee taken, nooit verwisselen"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/ui-iconen.png",
+  "alt": "UI-iconen: set, maten en gebruik"
+ },
+ {
+  "chapter": 7,
+  "src": "02-build/06-iconografie/figures/derde-partijen.png",
+  "alt": "Merken van anderen: wel en niet"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/tokens.png",
+  "alt": "Principes, duur en easing"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/bubbel-pop.png",
+  "alt": "De bubbelpop als storyboard"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/stem-tekent.png",
+  "alt": "De stem tekent zich"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/parkeerder-wissel.png",
+  "alt": "De parkeerders: van loper naar juicher en van zwaaier naar wijzer"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/pijl-schuift.png",
+  "alt": "De pijl schuift in zijn eigen richting"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/reduced-motion.png",
+  "alt": "Reduced motion: fade in plaats van pop"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/reel-structuur.png",
+  "alt": "Opbouw van een reel van 10 seconden, in twee uitvoeringen"
+ },
+ {
+  "chapter": 8,
+  "src": "02-build/07-beweging/figures/ui-overgangen.png",
+  "alt": "Bottom sheet: storyboard en tabel"
+ },
+ {
+  "chapter": 9,
+  "src": "02-build/08-fotografie/figures/style-board.png",
+  "alt": "Stijlbord met eigen locatiefoto's"
+ },
+ {
+  "chapter": 9,
+  "src": "02-build/08-fotografie/figures/crop-placement.png",
+  "alt": "Volle uitsnede, rechthoek en bubbelmasker"
+ },
+ {
+  "chapter": 9,
+  "src": "02-build/08-fotografie/figures/text-on-photo.png",
+  "alt": "Tekst op foto: wel en niet"
+ },
+ {
+  "chapter": 9,
+  "src": "02-build/08-fotografie/figures/bubble-mask.png",
+  "alt": "Foto in de bubbel: wel en niet"
+ },
+ {
+  "chapter": 9,
+  "src": "02-build/08-fotografie/figures/shot-list.png",
+  "alt": "Shotlijst eerste opnamedag"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/screens-key.png",
+  "alt": "Hoofdschermen: de stem en de zwaaier op home, bubbel en pijl op de locatiepagina, de stem en de springer op het ticket"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/token-architecture.png",
+  "alt": "Tokenarchitectuur: primitief, semantisch, component, licht en donker"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/buttons.png",
+  "alt": "Knoppen: primair, secundair en link in zes staten, de hoekige pijl, op navy en donker"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/form-fields.png",
+  "alt": "Tekstveld, datum en tijd, keuzelijst, kentekenveld, vinkje en rondje met hun staten"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/location-card.png",
+  "alt": "Locatiekaart: anatomie, drie staten en grote variant"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/availability-price.png",
+  "alt": "Beschikbaarheid, prijsweergave, de kaartpin en de bubbel in vier maten"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/feedback-chips.png",
+  "alt": "Meldingen, toast, filterchips en labels, licht en donker"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/empty-error.png",
+  "alt": "Lege staat met de zwaaier en foutscherm met de gastheer"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/navigation.png",
+  "alt": "Bovenbalk, onderbalk voor de PWA en desktopbalk"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/screens-booking.png",
+  "alt": "Boekflow: wanneer, kenteken en gegevens, betalen, bevestiging met de springer"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/desktop-location.png",
+  "alt": "Locatiepagina Parking Philips Stadion op desktop"
+ },
+ {
+  "chapter": 10,
+  "src": "02-build/09-ui/figures/dark-mode.png",
+  "alt": "Locatiepagina en ticket in donkere modus"
+ },
+ {
+  "chapter": 11,
+  "src": "02-build/10-stationery/figures/key-business-card.png",
+  "alt": "Visitekaartje voor- en achterzijde met opbouw"
+ },
+ {
+  "chapter": 11,
+  "src": "02-build/10-stationery/figures/letterhead-envelope.png",
+  "alt": "Briefpapier A4, envelop voor en achter"
+ },
+ {
+  "chapter": 11,
+  "src": "02-build/10-stationery/figures/invoice-quote.png",
+  "alt": "Factuur en offerte A4"
+ },
+ {
+  "chapter": 11,
+  "src": "02-build/10-stationery/figures/email-signature.png",
+  "alt": "E-mailhandtekening licht en donker, met html"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/signage-family.png",
+  "alt": "Bordenfamilie in de garage, alles op één schaal"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/key-entrance-sign.png",
+  "alt": "Entreelichtbak inrit en voetgangersingang"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/sign-portal.png",
+  "alt": "Portaal 1-baans met hoogtebalk"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/sign-route-boards.png",
+  "alt": "Routeborden rijden, lopen, merkmoment en betalen"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/sign-level-section.png",
+  "alt": "Niveauaanduiding en kolomband"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/sign-pylon-tariff.png",
+  "alt": "Informatiepyloon en tariefstrook"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/sign-terminal-stickers.png",
+  "alt": "Terminalstickers in oranje"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/posters-stickers.png",
+  "alt": "Posters A2 en A3, raam-, NFC- en laadpaalsticker"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/key-subscription-card.png",
+  "alt": "Abonnementspas ID-1 voor en achter"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/key-social-post.png",
+  "alt": "Social post: aanbod met de stem en de gastheer"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/social-templates.png",
+  "alt": "Drie templates in twee formaten"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/newsletter.png",
+  "alt": "Nieuwsbrief 600 px met de stem en de zwaaier in de kop"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/campaign-glow.png",
+  "alt": "GLOW: post, reel en routebord"
+ },
+ {
+  "chapter": 12,
+  "src": "02-build/11-toepassingen/figures/vehicle-workwear.png",
+  "alt": "Servicebus en kleding"
+ }
+]
