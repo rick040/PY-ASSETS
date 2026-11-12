@@ -410,6 +410,57 @@ def bord_wide(style, Wd=790.0, Hd=1510.0):
     return d
 
 
+def bord_zuil(style, Wd=790.0, Hd=1510.0):
+    """Free-standing info column in the style of the ParkingYou info column (header with pin and location name, section bars per topic, foot plate),
+    with the subscribers copy. Face 790 x 1400 mm on a foot plate of 110 mm (found sign 79 x 151 cm, assumed to include the foot)."""
+    wit = style == "wit"
+    main = NAVY if wit else WHITE
+    barfill = NAVY if wit else AQUA
+    bartxt = WHITE if wit else NAVY
+    pid = f"py-prod-zuil-abonnees-balken-{int(Wd)}x{int(Hd)}-{style}"
+    d = Doc(pid, f"Zuil Alleen voor abonnees met sectiebalken {int(Wd)} x {int(Hd)}, {'wit' if wit else 'blauw'}", tight=True)
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
+    FOOT = 110.0
+    FH = Hd - FOOT                   # face height
+    M = 60.0
+    with d.group("face"):
+        d.rect(0, 0, Wd, FH, fill=WHITE if wit else NAVY, gid="panel")
+    with d.group("header"):
+        d.rect(0, 0, Wd, 230, fill=NAVY if wit else AQUA, gid="header-bar")
+        d.place("py-atom-logo-beeldmerk-white", M, 66, h=100, anchor="tl")
+        name = "Locatienaam"
+        d.text(M + 100 * 24 / 28.949 + 40, 66 + 100 * 0.78, name, size=84, fill=WHITE, weight=700, gid="location-name", variable="location name")
+
+    def bar(y, title, gid):
+        with d.group(gid):
+            d.rect(24, y, Wd - 24, y + 110, fill=barfill, gid="bar")
+            d.text(M, y + 55 + 0.35 * 62, title, size=62, fill=bartxt, weight=700, variable=gid)
+
+    rsz = min(60.0, 490.0 / max(text_width(t, 1.0, 500) for t in ("Geen abonnement =", "No subscription =")))
+
+    def row(y, lines, gid):
+        with d.group(gid):
+            d.place("py-atom-icon-warning-triangle", M, y + 46, w=150, anchor="tl", recolor={"#71CBDF": NAVY if wit else AQUA})
+            for i, t in enumerate(lines):
+                d.text(250, y + 100 + i * rsz * 1.3, t, size=rsz, fill=main, weight=500)
+
+    bar(275, "Alleen voor abonnees!", "title-nl")
+    row(385, ("Geen abonnement =", "Geen toegang."), "row-nl")
+    bar(655, "Subscribers only!", "title-en")
+    row(765, ("No subscription =", "No access."), "row-en")
+    bar(1035, "Bij storingen / Faults", "title-fault")
+    num = "085 21 30 422"
+    nsz = 640.0 / text_width(num, 1.0, 700)
+    d.text(Wd / 2 - text_width(num, nsz, 700) / 2, 1145 + 0.693 * nsz + 50, num, size=nsz, fill=main, weight=700, gid="phone-number", variable="phone-number")
+    with d.group("edge"):
+        d.rect(0, FH - 34, Wd, FH, fill=AQUA, gid="edge-band")
+    with d.group("foot"):
+        d.rect(8, FH, Wd - 8, Hd, fill=NAVY, rx=14, gid="foot-plate")
+        d.rect(8, FH, Wd - 8, FH + 8, fill=AQUA, gid="foot-line")
+    d.variables["title-nl"] = "Alleen voor abonnees!"
+    return d
+
+
 def main():
     no_json = "--no-json" in sys.argv
     built = {}
@@ -417,6 +468,7 @@ def main():
     jobs += [("prod", zuil2(st, m)) for m in ("public", "abonnee") for st in ("blauw", "wit")]
     jobs += [("prod", bord(st)) for st in ("blauw", "wit")]
     jobs += [("prod", bord_wide(st)) for st in ("blauw", "wit")]
+    jobs += [("prod", bord_zuil(st)) for st in ("blauw", "wit")]
     for lvl, d in jobs:
         p = os.path.join(ROOT, "svg", lvl, d.id + ".svg")
         open(p, "w", encoding="utf8").write(d.svg())
@@ -475,6 +527,13 @@ def main():
             notes="NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). "
                   "Layout made for the wide format: P symbol left and logo with location right in the header, headlines centred across the full width, sub lines on one line, "
                   "large fault number, spare height shared evenly, thin PY-Aqua edge. Same copy and order as py-prod-bord-abonnees-*. Proposal.")
+    for st in ("blauw", "wit"):
+        meta[f"py-prod-zuil-abonnees-balken-790x1510-{st}"] = dict(
+            name_nl=f"Zuil Alleen voor abonnees met sectiebalken 790 x 1510, {'wit met blauwe balken' if st == 'wit' else 'PY-Blauw met aqua balken'}",
+            category="zuil", variables=["location name", "title-nl", "title-en", "title-fault", "phone-number"],
+            notes="NEW DESIGN (not in the handbook): free-standing info column in the layout of the ParkingYou info column (header bar with pin and location name, "
+                  "section bars per topic, foot plate). Face 790 x 1400 mm plus foot plate 110 mm (the found sign of 79 x 151 cm is assumed to include its foot). "
+                  "Same copy as py-prod-bord-abonnees-*, one section bar per topic with the warning triangle beside the sub lines. Proposal.")
     rows = {e["id"]: i for i, e in enumerate(man["elements"])}
     for eid, (lvl, d) in built.items():
         svg = open(os.path.join(ROOT, "svg", lvl, eid + ".svg"), encoding="utf8").read()

@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 274,
+ "count": 276,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -10565,6 +10565,96 @@
    ],
    "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). Layout made for the wide format: P symbol left and logo with location right in the header, headlines centred across the full width, sub lines on one line, large fault number, spare height shared evenly, thin PY-Aqua edge. Same copy and order as py-prod-bord-abonnees-*. Proposal.",
    "svg": "svg/prod/py-prod-bord-abonnees-790x1510-wit.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-abonnees-balken-790x1510-blauw",
+   "name_nl": "Zuil Alleen voor abonnees met sectiebalken 790 x 1510, PY-Blauw met aqua balken",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 790.0,
+    "height": 1510.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    }
+   ],
+   "variables": [
+    "location name",
+    "title-nl",
+    "title-en",
+    "title-fault",
+    "phone-number"
+   ],
+   "built_from": [
+    "py-atom-logo-beeldmerk-white",
+    "py-atom-icon-warning-triangle"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook): free-standing info column in the layout of the ParkingYou info column (header bar with pin and location name, section bars per topic, foot plate). Face 790 x 1400 mm plus foot plate 110 mm (the found sign of 79 x 151 cm is assumed to include its foot). Same copy as py-prod-bord-abonnees-*, one section bar per topic with the warning triangle beside the sub lines. Proposal.",
+   "svg": "svg/prod/py-prod-zuil-abonnees-balken-790x1510-blauw.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-zuil-abonnees-balken-790x1510-wit",
+   "name_nl": "Zuil Alleen voor abonnees met sectiebalken 790 x 1510, wit met blauwe balken",
+   "level": "prod",
+   "category": "zuil",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 790.0,
+    "height": 1510.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    }
+   ],
+   "variables": [
+    "location name",
+    "title-nl",
+    "title-en",
+    "title-fault",
+    "phone-number"
+   ],
+   "built_from": [
+    "py-atom-logo-beeldmerk-white",
+    "py-atom-icon-warning-triangle"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook): free-standing info column in the layout of the ParkingYou info column (header bar with pin and location name, section bars per topic, foot plate). Face 790 x 1400 mm plus foot plate 110 mm (the found sign of 79 x 151 cm is assumed to include its foot). Same copy as py-prod-bord-abonnees-*, one section bar per topic with the warning triangle beside the sub lines. Proposal.",
+   "svg": "svg/prod/py-prod-zuil-abonnees-balken-790x1510-wit.svg",
    "origin": "design"
   }
  ],
