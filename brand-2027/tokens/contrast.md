@@ -17,6 +17,7 @@ WCAG 2.x relative luminance. Text pairs need 4.5:1, UI and large text 3:1. Gener
 | border.strong | surface.default | 4.24:1 | 5.12:1 | 3.0:1 | pass |
 | focus.ring | surface.default | 18.16:1 | 7.74:1 | 3.0:1 | pass |
 | focus.ring-on-brand | surface.brand | 4.80:1 | 4.80:1 | 3.0:1 | pass |
+| text.on-inverse | surface.inverse | 18.16:1 | 18.16:1 | 4.5:1 | pass |
 | action.primary-fg | action.primary-bg | 11.26:1 | 7.74:1 | 4.5:1 | pass |
 | action.primary-fg | action.primary-bg-hover | 8.15:1 | 9.17:1 | 4.5:1 | pass |
 | action.primary-fg | action.primary-bg-pressed | 14.73:1 | 5.43:1 | 4.5:1 | pass |

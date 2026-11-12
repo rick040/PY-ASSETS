@@ -69,7 +69,7 @@ Examples: business card 85 x 55 mm, u = 2.75 mm. A4, u = 10.5 mm. A2, u = 21 mm.
 Layout grid: phone 4 columns, 16 px gutter, 16 px margin; tablet (768) 8 columns, 24 px gutter, 32 px margin; desktop (1200+) 12 columns, 24 px gutter, max content width 1200 px.
 Touch targets at least 44 x 44 px (WCAG 2.5.8 asks 24; we use 44).
 
-**Radius.** `radius.none` 0 (signage panels, photos in layouts), `s` 4, `m` 8 (inputs), `l` 16 (cards, sheets), `xl` 24, `pill` 999 (buttons, chips, route boards).
+**Radius.** `radius.none` 0 (signage panels, photos in print and layouts; D48: photo thumbnails inside screen cards take `radius.m`), `s` 4, `m` 8 (inputs), `l` 16 (cards, sheets), `xl` 24, `pill` 999 (buttons, chips, route boards).
 Print: cards and passes follow ISO/IEC 7810 ID-1 corner radius 3.18 mm. Signage panels: square corners, except route boards (pill, as today).
 
 **Elevation (screen only).** `shadow.1`, `shadow.2`, `shadow.3`, all PY-Diep based (see tokens). Never on the bubble, the logo or print.
@@ -90,7 +90,7 @@ The bubble is the outer silhouette of the beeldmerk (path in `kit/assets/bubble.
 | white `bubble.white` #FFFFFF | PY-Blauw | on navy, aqua and photo grounds; outline 1/30 of width in PY-Blauw on white grounds |
 | photo | none | people and places, never text inside |
 
-- **Content.** One item: a level ("-1", "0", "2"), a section ("1A"), a price, one pictogram, or one word of at most 6 characters ("Vrij", "Info"). **(v2)** No arrows in a bubble: arrows stand alone.
+- **Content.** One item: a level ("−1" with a real minus sign, "0", "2"), a section ("1A"), a price (the amount only; "per dag" stands next to the bubble, D48), one pictogram, or one word of at most 6 characters ("Vrij", "Info"). **(v2)** No arrows in a bubble: arrows stand alone.
   Content sits centred in the circle part, inside a square of 60 percent of the width. Numbers use tabular figures, weight 800.
 - **(v2) Always upright.** The bubble is the beeldmerk's silhouette, so like the logo it is never rotated or mirrored. Direction is shown by the angular arrow, never by the tail.
 - **Count.** One bubble per surface. Two on surfaces of 1 m or more in either direction, or on multi-panel layouts (pylon, overview board), never touching.
@@ -110,12 +110,12 @@ Four elements, each with one task (D44: het vak is retired). **Per surface: the 
 | De bubbel | price, level, availability | section 4 |
 | De hoekige pijl | direction | `svg/atom/py-atom-arrow-*-plain`; kit `arrow-*` |
 
-**De parkeerders.** The nine handbook figures, drawing unchanged: loper (walk), zwaaier (wave), wijzer (point), danser (dance), springer (jump), shopper (bags-walk), juichende shopper (bags-cheer), gastheer wijst (cap-point), gastheer zwaait (cap-wave).
+**De parkeerders.** The nine handbook figures, drawing unchanged: loper (walk), zwaaier (wave), wijzer (point), danser (dance), springer (jump), shopper (bags-walk), juicher (bags-cheer), gastheer wijst (cap-point), gastheer zwaait (cap-wave).
 - Colour **(D41)**: always one colour. PY-Blauw on white and light grounds and on PY-Aqua (`figure-*-navy.svg`), white on PY-Blauw (`figure-*-white.svg`). The head keeps its beeldmerk bubble shape in the same colour; it is never coloured separately.
 - Size: height 3u to 8u in layouts; on a pedestrian sign up to 60 percent of the face height; on screen 48 to 160 px.
 - Always standing on a line: a text baseline, a rule of 0.1u, a format edge, or the floor line of a scene. Never floating, never rotated, never cut off.
 - One figure per surface. May be mirrored to face the route or the text. Never inside a bubble, never with a speech text, never in safety, RVV or ISO 7010 signs, never as a pictogram for a route (pictograms stay the 48 grid set).
-- Roles: loper on pedestrian routes and entrances; zwaaier for welcome and goodbye; wijzer and gastheer wijst next to an arrow or contact details; springer and juichende shopper for confirmations and deals; shopper for city and event campaigns; danser for events only.
+- Roles: loper on pedestrian routes and entrances; zwaaier for welcome and goodbye; wijzer and gastheer wijst next to an arrow or contact details; springer and juicher for confirmations and deals; shopper for city and event campaigns; danser for events only.
 
 **De stem (halve boog).** The arc from handbook 1.4 (bracket arc), without the slogan.
 - Opens a message: placed left of a headline or a key line, its height equal to the text block it opens (one to three lines), gap 0.3x its height. Never closed by a second arc, never on the right.
@@ -186,7 +186,7 @@ Groups: `surface` (default, subtle, raised, brand, inverse), `text` (default, mu
 - **Weights in use:** Regular 400, Medium 500 (UI only), SemiBold 600 (labels), Bold 700, ExtraBold 800 (display, numbers in bubbles).
   Condensed (wdth 75) only for signage names that do not fit at normal width; never in running text.
 - **Fallback:** "Ubuntu Sans", Ubuntu, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif. Office and email: Arial.
-- **Rules:** sentence case; no italics; no all caps except eyebrows of at most 3 words (letter spacing 0.08 em); tabular figures for prices, times, levels.
+- **Rules:** sentence case; no italics; no all caps except eyebrows of at most 3 words (letter spacing 0.08 em); figure labels in the guideline are sentence case (D48); tabular figures for prices, times, levels.
   The voice pattern stays: the key phrase bold, the rest regular, in one line ("**Parkeren** zonder gedoe."); when the stem opens it, the line may break after the key phrase. **(D39)**
 
 ### 6.1 Screen scale (px, size/line height, weight)
@@ -338,5 +338,7 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 | D44 | 2026-11-12 | Rick | Het vak retired: four own elements (parkeerders, stem, bubbel, hoekige pijl); backgrounds flat PY-Blauw or white. Supersedes the vak parts of D32, D35, D40 and D43 and the `vak.*` tokens | "ga voor A" (option A: weg ermee) |
 | D45 | 2026-11-12 | CD | Newsletter header 180 px high (was 272 px, which only served het vak): logo 32 px, stem with heading-m, zwaaier 96 px on a 2 px line. PWA ticket header: flat PY-Blauw band with the stem and the springer; the aqua check bubble is dropped (third element). Short figure line runs `space.4` (16 px) past the figure on both sides | Follows D44 |
 | D46 | 2026-11-12 | CD | Short figure line in print and on u-formats: 0.1u thick, over the full columns the parkeerder touches | Follows D44/D45 |
+| D47 | 2026-11-12 | CD | Independent review fixes, part 1. Business card: the Stationery version is the only one (front flat PY-Blauw with the reverse logo only; back white with the stem, name, contact block and gastheer wijst). Stem on signs: as high as the arrow or pictogram next to it (D42), also in Typografie. On orange payment signs the stem and arrow are PY-Diep; no parkeerder. Route boards are pills (200 mm, cap 70, read at 7 m, Dutch only). Back arrow in the UI: 16 px in a 44 x 44 px target. HTML newsletter: Ubuntu Sans as webfont with Arial fallback; Arial only in Office files and the e-mail signature. Aqua is never a text colour on navy: labels on PY-Blauw are white | Review H1, H4, M1, M2, M4, M15 |
+| D48 | 2026-11-12 | CD | Independent review fixes, part 2. Photo thumbnails in screen cards take `radius.m` (exception to square photo corners, screen only). The bubble holds the amount only; "per dag" stands next to it. Until Rick confirms the service number, every figure shows `[storingsnummer]`; phone placeholder is `[telefoonnummer]`. Gastheer figures: the -flip files mirror the body and the cap brim, the bubble head keeps the logo orientation, so a mirrored gastheer looks toward the text. Figure labels (eyebrows) in the guideline are sentence case. Name: juicher (bags-cheer). Level digits use a real minus sign (−1). Tail of the bubble points to the bottom left. The entrance lightbox respects the logo clear space (0.5x). Invented prices in figures are written [prijs]; only the sourced € 12,50 (Philips Stadion) stays | Review M3 to M18, L1, L4, L7, L8 |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

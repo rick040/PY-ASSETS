@@ -56,6 +56,7 @@
   --py-text-muted: var(--py-color-neutral-600);
   --py-text-brand: var(--py-color-blue-700);
   --py-text-on-brand: var(--py-color-neutral-0);
+  --py-text-on-inverse: var(--py-color-neutral-0);
   --py-text-link: var(--py-color-blue-700);
   --py-text-aqua: var(--py-color-aqua-700);
   --py-text-on-code: var(--py-color-blue-900);
@@ -187,6 +188,7 @@
   --py-text-muted: var(--py-color-neutral-300);
   --py-text-brand: var(--py-color-aqua-300);
   --py-text-on-brand: var(--py-color-neutral-0);
+  --py-text-on-inverse: var(--py-color-blue-900);
   --py-text-link: var(--py-color-aqua-300);
   --py-text-aqua: var(--py-color-aqua-300);
   --py-text-on-code: var(--py-color-blue-900);

@@ -77,6 +77,7 @@ SEMANTIC = {
         "muted": ("neutral.600", "neutral.300", "Secondary text, captions, labels."),
         "brand": ("blue.700", "aqua.300", "Headings and brand text."),
         "on-brand": ("neutral.0", "neutral.0", "Text on surface.brand."),
+        "on-inverse": ("neutral.0", "blue.900", "Text on surface.inverse (toast)."),
         "link": ("blue.700", "aqua.300", "Links, always underlined."),
         "aqua": ("aqua.700", "aqua.300", "Aqua as text colour on light surfaces."),
         "on-code": ("blue.900", "blue.900", "QR and barcode modules on surface.code."),
@@ -160,7 +161,7 @@ PAIRS = [
     ("text.aqua", "surface.default", "text"), ("text.on-brand", "surface.brand", "text"),
     ("text.default", "surface.raised", "text"), ("text.muted", "surface.raised", "text"),
     ("border.strong", "surface.default", "ui"), ("focus.ring", "surface.default", "ui"),
-    ("focus.ring-on-brand", "surface.brand", "ui"),
+    ("focus.ring-on-brand", "surface.brand", "ui"), ("text.on-inverse", "surface.inverse", "text"),
     ("action.primary-fg", "action.primary-bg", "text"), ("action.primary-fg", "action.primary-bg-hover", "text"),
     ("action.primary-fg", "action.primary-bg-pressed", "text"), ("action.secondary-fg", "action.secondary-bg", "text"),
     ("action.secondary-fg", "action.secondary-bg-hover", "text"), ("action.secondary-fg", "action.secondary-bg-pressed", "text"),
@@ -278,14 +279,7 @@ def build():
         comp[c] = grp
     comp["size"] = {"$type": "dimension", **{k: {"$value": {"value": v, "unit": "px"}} for k, v in COMPONENT_SIZE.items()}}
     tokens["component"] = comp
-    # verloop
-    tokens["gradient"] = {"verloop": {
-        "$type": "gradient",
-        "$deprecated": "Retired in v2 (D31): no gradients. Kept only to document the old handbook verloop.",
-        "$description": "Marketing only (screen headers, printed posters and panels). Never in wayfinding, cut vinyl, powder coat or lightbox film. Text only on the navy part (0 to 45 percent).",
-        "$value": [{"color": "{color.blue.700}", "position": 0}, {"color": "{color.blue.700}", "position": 0.45},
-                   {"color": "{color.aqua.500}", "position": 1}],
-        "$extensions": {"nl.parkingyou.gradient": {"angleDeg": 135, "fallback": "{color.blue.700}"}}}}
+    # verloop: retired (D31), not emitted (review L32)
     # dimension families
     tokens["space"] = {"$type": "dimension", **{k: {"$value": {"value": v, "unit": "px"}} for k, v in SPACE}}
     tokens["radius"] = {"$type": "dimension", **{k: {"$value": {"value": v, "unit": "px"}, "$description": d} for k, v, d in RADIUS}}
@@ -315,13 +309,14 @@ def build():
             ext["fontVariantNumeric"] = "tabular-nums"
         t["$extensions"] = {"nl.parkingyou.type": ext}
         typo[name] = t
-    for name, size, lead, wt in TYPE_PRINT:
-        typo[name] = {"$value": {"fontFamily": "{font.family.sans}", "fontSize": {"value": size, "unit": "px"},
-                                 "fontWeight": wt, "letterSpacing": {"value": 0, "unit": "px"},
-                                 "lineHeight": round(lead / size, 4)},
-                      "$description": "Print: fontSize is in pt (DTCG has no pt unit; value carries pt).",
-                      "$extensions": {"nl.parkingyou.type": {"unit": "pt"}}}
     tokens["typography"] = typo
+    # print type: DTCG has no pt unit, so print sizes live outside `typography` as plain numbers in pt (review M19)
+    pr = {"$description": "Print type scale. Sizes and leading in pt (points). Not for screens; use `typography` there."}
+    for name, size, lead, wt in TYPE_PRINT:
+        pr[name] = {"size-pt": {"$type": "number", "$value": size},
+                    "leading-pt": {"$type": "number", "$value": lead},
+                    "weight": {"$type": "fontWeight", "$value": wt}}
+    tokens["print-type"] = pr
     # signage cap height rule
     tokens["signage"] = {
         "$description": "Signage legibility: cap height 10 mm per metre reading distance. Ubuntu Sans cap height is 0.693 em, so font size in mm = cap height / 0.693.",

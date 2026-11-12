@@ -75,9 +75,13 @@ def main():
         # demote headings one level so the guide has one H1
         chapter = re.sub(r"^(#{2,5}) ", lambda m: "#" + m.group(1) + " ", chapter, flags=re.M)
         guide.append("## %d. %s\n\n%s\n" % (n, title, chapter))
-    guide.append("## 13. Do's en don'ts\n\nPer onderwerp de belangrijkste regels. Twijfel je, dan geldt het hoofdstuk zelf, en daarna de core spec.\n\n"
+    guide.append("## 13. Do's en don'ts\n\nPer onderwerp de belangrijkste regels. Twijfel je, dan gelden de basisregels in `core-spec.md`.\n\n"
                  + "\n\n".join(re.sub(r"^## ", "### ", d) for d in dos) + "\n")
     guide.append(open(os.path.join(ROOT, "03-guide", "bijlagen.md"), encoding="utf-8").read())
+    for extra in ("02-kleur/bronnen.md",):
+        path = os.path.join(BUILD, extra)
+        if os.path.exists(path):
+            guide.append(open(path, encoding="utf-8").read())
     open(os.path.join(OUT, "ParkingYou-huisstijl-2027.md"), "w", encoding="utf-8").write("\n".join(guide))
     open(os.path.join(OUT, "werkpunten.md"), "w", encoding="utf-8").write(
         "# Werkpunten uit de hoofdstukken\n\nVoorstellen en open vragen die de bouwers in hun hoofdstuk zetten. Ze staan niet in de gids. Wat is goedgekeurd, staat als besluit in de core spec.\n\n" + "\n\n".join(work) + "\n")

@@ -29,7 +29,7 @@ body { font-family: var(--py-font-sans); color: var(--py-text-default); backgrou
 /* Figure annotation style (labels, measurements, captions inside a figure) */
 .note { font: 600 13px/18px var(--py-font-sans); color: var(--py-text-muted); letter-spacing: 0.01em; }
 .note--on-dark { color: #C2C7CF; }
-.eyebrow { font: 700 13px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--py-text-muted); }
+.eyebrow { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: var(--py-text-muted); }
 .measure { position: absolute; border-color: #C4281C; border-style: dashed; border-width: 0; }
 .measure-label { position: absolute; font: 700 12px/14px var(--py-font-sans); color: #C4281C; background: #FFFFFF; padding: 1px 4px; border-radius: 3px; }
 

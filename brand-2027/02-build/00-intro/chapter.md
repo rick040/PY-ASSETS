@@ -69,15 +69,15 @@ We praten zoals we parkeren: zonder gedoe. Kort, concreet en vriendelijk. En als
 
 ## Hoe je deze gids gebruikt
 
-De hoofdstukken volgen de volgorde waarin je een ontwerp opbouwt: logo, kleur, letter, grid, de eigen elementen, iconen, beweging, beeld, en daarna de toepassingen. Achterin staan de tokens, de bestanden en wie je kunt bellen.
+De hoofdstukken volgen de volgorde waarin je een ontwerp opbouwt: logo, kleur, letter, grid, de eigen elementen, iconen, beweging, beeld, en daarna de toepassingen. Achterin staan de tokens, de bestanden en bij wie je terechtkunt met vragen.
 
-Alle waarden in deze gids komen uit één bron: de core spec en het tokenbestand in de repository PY-ASSETS (map `brand-2027/`). Twijfel je, dan wint dat bestand. Mis je iets of wil je een nieuwe waarde, vraag het dan aan wie het merk beheert. Verzin geen eigen kleur of maat.
+Alle waarden in deze gids komen uit één bron: de basisregels (`core-spec.md`) en het tokenbestand in de map `brand-2027` van PY-ASSETS. Twijfel je, dan winnen de basisregels. Mis je iets of wil je een nieuwe waarde, vraag het dan aan wie het merk beheert. Verzin geen eigen kleur of maat.
 
 ## Do's en don'ts
 
-- Doe: begin bij het tokenbestand, niet bij een oude PDF of een Canva-ontwerp.
-- Doe: kies per vlak het logo en hooguit twee eigen elementen.
-- Doe: laat een parkeerder altijd op een lijn staan, in één kleur.
-- Niet: oranje buiten de betaalplekken in de garage.
-- Niet: het logo of de bubbel draaien, uitrekken of hertekenen.
-- Niet: witte tekst op aqua of oranje.
+- **Wel:** begin bij het tokenbestand, niet bij een oude PDF of een Canva-ontwerp.
+- **Wel:** kies per vlak het logo en hooguit twee eigen elementen.
+- **Wel:** laat een parkeerder altijd op een lijn staan, in één kleur.
+- **Niet:** oranje buiten de betaalplekken in de garage.
+- **Niet:** het logo of de bubbel draaien, uitrekken of hertekenen.
+- **Niet:** witte tekst op aqua of oranje.
