@@ -37,5 +37,4 @@ Renders every `.html` in the folder to a `.png` beside it at 2x. Look at the PNG
   Names: walk (loper), wave (zwaaier), point (wijzer), dance (danser), jump (springer), bags-walk (shopper), bags-cheer (juicher), cap-point (gastheer wijst), cap-wave (gastheer zwaait)
 - `arc.svg`: de stem (half arc). Inline it to set the colour and use `vector-effect="non-scaling-stroke"` with stroke = 1/25 of its height.
 - `arrow-plain-white.svg`, `arrow-plain-navy.svg` (points right; rotate in 45 degree steps), `arrow-downleft-*.svg`: de hoekige pijl
-- Het vak is drawn per figure with inline SVG lines (rules in core-spec section 4b).
 - Reference: `00-core/figures/identity-elements.png`. Never rotate the logo or a bubble.

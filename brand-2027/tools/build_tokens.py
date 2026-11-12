@@ -111,13 +111,6 @@ SEMANTIC = {
     "voice": {
         "arc": ("aqua.500", "aqua.500", "De stem (half arc) on white and navy; on aqua grounds use blue.700."),
     },
-    "vak": {
-        "line": ("neutral.200", "blue.400", "Het vak: bay lines (light ground / navy ground)."),
-        "line-on-brand": ("blue.400", "blue.400", "Het vak on surface.brand."),
-        "mine": ("aqua.100", "blue.600", "Jouw vak fill."),
-        "mine-on-brand": ("blue.600", "blue.600", "Jouw vak fill on surface.brand."),
-        "mine-edge": ("aqua.500", "aqua.500", "Jouw vak side lines, double weight."),
-    },
     "figure": {
         "body": ("blue.700", "neutral.0", "Parkeerders, one colour (D41): navy on light and aqua grounds / white on navy."),
     },

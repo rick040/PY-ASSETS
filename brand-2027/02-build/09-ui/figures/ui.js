@@ -6,9 +6,7 @@
 // 3. <span class="bub" data-size="64" data-fill="navy">content</span> -> the bubble (path from kit/assets/bubble.svg, never redrawn, never rotated)
 // 4. <div class="voice"><div class="voice__text">...</div></div> -> de stem (kit/assets/arc.svg) left of the text block:
 //    height = text block, stroke = 1/25 of the height (at least 1.5 px), gap = 0.3 x the height.
-// 5. <div class="vak" data-ground="brand|light" data-h="144" data-shift="0">one bubble or one figure</div> -> het vak
-//    (bay pitch 72, line 2 px, jouw vak filled with aqua side lines at double weight, lines run in from the top edge)
-// 6. <div class="qr" data-size="132"></div> -> placeholder QR pattern (not a real code)
+// 5. <div class="qr" data-size="132"></div> -> placeholder QR pattern (not a real code)
 (function () {
   const P = {
     search: '<circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/>',
@@ -74,26 +72,6 @@
     el.style.cssText += `;position:relative;display:inline-block;flex:none;width:${w}px;height:${h.toFixed(1)}px;color:${INK[f]}`;
     el.innerHTML = `<svg viewBox="${vb}" width="${w}" height="${h.toFixed(1)}" style="position:absolute;left:0;top:0" aria-hidden="true"><path d="${BP}" style="fill:${FILL[f]};${stroke}"/></svg>` +
       `<span class="bub__c" style="position:absolute;left:0;top:0;width:${w}px;height:${w}px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">${inner}</span>`;
-  });
-
-  // Het vak: bay lines from the top edge, pitch 72, line 2 px; jouw vak filled, side lines aqua at 4 px; content centred in jouw vak.
-  document.querySelectorAll('.vak').forEach(el => {
-    const W = el.offsetWidth, H = +(el.dataset.h || 144), pitch = 72, brand = el.dataset.ground === 'brand';
-    const line = brand ? 'var(--py-vak-line-on-brand)' : 'var(--py-vak-line)';
-    const mine = brand ? 'var(--py-vak-mine-on-brand)' : 'var(--py-vak-mine)';
-    const x0 = ((W / 2 - pitch / 2) % pitch + pitch) % pitch;
-    const m = Math.round((W / 2 - pitch / 2 - x0) / pitch) + (+(el.dataset.shift || 0));
-    const mx = x0 + m * pitch;
-    let s = `<rect x="${mx}" y="0" width="${pitch}" height="${H}" fill="${mine}"/>`;
-    for (let x = x0; x <= W; x += pitch) {
-      const isEdge = Math.abs(x - mx) < 1 || Math.abs(x - mx - pitch) < 1;
-      s += isEdge ? '' : `<rect x="${x - 1}" y="0" width="2" height="${H}" fill="${line}"/>`;
-    }
-    s += `<rect x="${mx - 2}" y="0" width="4" height="${H}" fill="var(--py-vak-mine-edge)"/><rect x="${mx + pitch - 2}" y="0" width="4" height="${H}" fill="var(--py-vak-mine-edge)"/>`;
-    const inner = el.innerHTML;
-    el.style.cssText += `;position:relative;height:${H}px;flex:none`;
-    el.innerHTML = `<svg width="${W}" height="${H}" style="position:absolute;left:0;top:0" aria-hidden="true">${s}</svg>` +
-      `<div style="position:absolute;left:${mx}px;top:0;width:${pitch}px;height:${H}px;display:flex;align-items:center;justify-content:center">${inner}</div>`;
   });
 
   document.querySelectorAll('.qr').forEach(el => {

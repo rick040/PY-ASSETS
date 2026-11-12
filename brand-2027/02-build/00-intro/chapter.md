@@ -12,15 +12,14 @@ We zijn niet opnieuw begonnen. Het logo, het beeldmerk, ons blauw, de hoekige pi
 
 Kijk naar de poppetjes uit ons handboek: hun hoofd heeft dezelfde vorm als ons beeldmerk. Dat is ons gezicht. Zo wordt het logo een mens: de loper bij de voetgangersingang, de zwaaier die je welkom heet, de gastheer met pet die je de weg wijst.
 
-Daaromheen staan vier andere eigen elementen. Samen zijn het er vijf, en elk heeft één taak.
+Daaromheen staan drie andere eigen elementen. Samen zijn het er vier, en elk heeft één taak.
 
 ![Eigen elementen](figures/identity-elements.png)
 
 | Element | Taak |
 |---|---|
 | De parkeerders | ons gezicht: mensen, welkom, momenten |
-| De stem | de halve boog opent wat we zeggen; op borden scheidt hij de vakken |
-| Het vak | een parkeerdek van bovenaf, en één vak is van jou |
+| De stem | de halve boog opent wat we zeggen; op borden scheidt hij de onderdelen |
 | De bubbel | draagt een prijs, een niveau of beschikbaarheid |
 | De hoekige pijl | wijst de weg |
 

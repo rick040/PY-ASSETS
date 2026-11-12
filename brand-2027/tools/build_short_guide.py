@@ -24,7 +24,7 @@ FIGS = {
     "layoutpatronen": "04-grid/figures/layoutpatronen.png",
     "parkeerders-cast": "05-patronen/figures/parkeerders-cast.png",
     "stem": "05-patronen/figures/stem.png",
-    "vak": "05-patronen/figures/vak.png",
+    "combinaties": "05-patronen/figures/combinaties.png",
     "pijl-constructie": "06-iconografie/figures/pijl-constructie.png",
     "style-board": "08-fotografie/figures/style-board.png",
     "screens-key": "09-ui/figures/screens-key.png",

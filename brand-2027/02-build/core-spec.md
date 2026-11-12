@@ -24,6 +24,7 @@ and the creative director decides. Until approved, a proposed value is not used 
 | 8 | Arrow (v2) | The angular arrow from the repo (`py-atom-arrow-*-plain`) is the main arrow everywhere an arrow appears. |
 | 9 | Half arc (v2) | Back, as "de stem" (section 4b). |
 | 10 | Verloop (v2) | Retired. All colour is flat. |
+| 11 | Het vak | Retired after Gate 2, round 2 (D44): four own elements, flat backgrounds. |
 
 ## 1. Brand principles
 
@@ -94,19 +95,18 @@ The bubble is the outer silhouette of the beeldmerk (path in `kit/assets/bubble.
 - **(v2) Always upright.** The bubble is the beeldmerk's silhouette, so like the logo it is never rotated or mirrored. Direction is shown by the angular arrow, never by the tail.
 - **Count.** One bubble per surface. Two on surfaces of 1 m or more in either direction, or on multi-panel layouts (pylon, overview board), never touching.
 - **Clear space.** 1u around the bubble (screen: 8 px for 24 and 40 px bubbles, 16 px for larger).
-- **(v2) No background bubble.** Large decorative bubbles are retired; that role goes to "het vak" (section 4b).
+- **(v2) No background bubble.** Large decorative bubbles are retired; backgrounds are flat PY-Blauw or white (D44).
 - **Never:** gradient fill, shadow, 3D, pattern fill, text longer than 6 characters, the logo inside, two bubbles overlapping, a bubble as a photo frame with text over it, a bubble in safety or RVV signs.
 - **Motion (v2).** The bubble pops in: scale 0.9 to 1 with `easing.bubble`, `duration.expressive` 600 ms, no rotation. Brand moments only (reel open and close, app splash, confirmation). Under reduced motion: fade 0 to 1 in 120 ms.
 
 ## 4b. Own elements (v2)
 
-Five elements, each with one task. **Per surface: the logo plus at most two of them.** Reference figure: `00-core/figures/identity-elements.png`.
+Four elements, each with one task (D44: het vak is retired). **Per surface: the logo plus at most two of them.** Reference figure: `00-core/figures/identity-elements.png`.
 
 | Element | Task | Source |
 |---|---|---|
 | De parkeerders | the brand's face; people, welcome, moments | `svg/atom/py-atom-figure-*`; kit `figure-*-navy.svg`, `figure-*-white.svg` |
 | De stem (halve boog) | opens a message; separates modules on signs | `svg/atom/py-atom-shape-bracket-arc` (arc only); kit `arc.svg` |
-| Het vak | background: a parking deck from above, one bay is yours | drawn from the rules below |
 | De bubbel | price, level, availability | section 4 |
 | De hoekige pijl | direction | `svg/atom/py-atom-arrow-*-plain`; kit `arrow-*` |
 
@@ -123,10 +123,7 @@ Five elements, each with one task. **Per surface: the logo plus at most two of t
 - On signs: the separator between modules (P and arrow, pictogram and text), same stroke as above, PY-Aqua on navy, PY-Blauw on aqua.
 - One per surface in layouts; on signs as many separators as there are module breaks.
 
-**Het vak.** A parking deck seen from above. Vertical bay lines at a pitch of 4u (screen: 72 px), line weight 0.05u (screen 2 px), running in from the top or bottom edge for 6u to 8u (screen 144 to 192 px), with an optional dashed lane line (dash 0.3u, gap 0.25u). **(D40)**
-- Exactly one bay is "jouw vak": filled `vak.mine`, its two side lines in PY-Aqua at double weight, closed at its open end by a stop line (same weight, PY-Aqua). It holds one figure standing on that stop line, or one bubble, nothing else. **(D40)**
-- Colours: on PY-Blauw lines `blue.400`, jouw vak `blue.600`; on white lines `neutral.200`, jouw vak `aqua.100`.
-- Use: social, newsletter header, card backs, posters, screen headers and empty states. Never on wayfinding signs or behind text.
+**Backgrounds (D44).** Flat PY-Blauw or white (paper `blue.50` for quiet sections). No pattern, no deck, no decorative shape. The stem and one parkeerder carry the identity on social, cards, newsletter, posters, screen headers and empty states.
 
 **De hoekige pijl.** The handbook arrow (`py-atom-arrow-right-plain`, `-downleft-plain`), rotated in steps of 45 degrees. Colour = the content colour of its ground. Stands alone, never in a circle or bubble. In buttons and links at the cap height of the label. Tabler icons are used for everything else, never for arrows.
 
@@ -163,7 +160,7 @@ Full scales (50 to 900 for blue, aqua, orange, neutral; red 100, 600, 700) are i
 - Status always uses a word next to the colour (Vrij, Vol, Gesloten). Colour alone never carries meaning.
 
 **(v2) Marketing, screen and print.** Approximate share of a layout: white and paper (`blue.50`) 47, PY-Blauw 38, PY-Aqua 13, orange 0 percent (garage payment only, about 2 percent of a signage set).
-Aqua appears as the stem, the head of a parkeerder, jouw vak lines, a bubble or a small accent. Outside the garage, aqua is the brand accent; inside the garage aqua always means walking.
+Aqua appears as the stem, a bubble on navy or a small accent. Outside the garage, aqua is the brand accent; inside the garage aqua always means walking.
 
 **(v2) Verloop retired.** No gradients anywhere. Existing gradient signs are replaced by flat PY-Blauw at their next renewal.
 
@@ -337,5 +334,7 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 | D42 | 2026-11-07 | Applications | On signs the stem as separator is as high as the arrow or pictogram next to it (portal: beeldmerk height), 0.3x air on both sides; on PY-Oranje signs the stem is PY-Diep; welcome wall 3000 x 1000 mm (cap height 100, stem 300, zwaaier 600 mm); newsletter header 272 px (supersedes the 88 px of D30) | Completes section 4b for signs and the newsletter |
 
 | D43 | 2026-11-07 | Patterns | Lane line of het vak 2u from the end of the bay lines (48 px on screen); gastheer and wijzer: 0.5u between hand and the text or arrow, hand at the height of the first line; mirrored figures in the kit (`figure-*-navy-flip.svg`, `-white-flip.svg`) mirror the body only, the head keeps the logo orientation; "logo plus at most two elements" also applies to signs; a parkeerder stands in jouw vak only in a deck running from the top edge, a deck from the bottom edge holds a bubble; jouw vak may stay empty; example prices that are not real tariffs are written [prijs] | Completes section 4b |
+
+| D44 | 2026-11-12 | Rick | Het vak retired: four own elements (parkeerders, stem, bubbel, hoekige pijl); backgrounds flat PY-Blauw or white. Supersedes the vak parts of D32, D35, D40 and D43 and the `vak.*` tokens | "ga voor A" (option A: weg ermee) |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).
