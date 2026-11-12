@@ -42,7 +42,7 @@ text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
   <image href="../../kit/assets/figure-cap-point-navy-flip.svg" x="72.9" y="38.36" width="6.21" height="11" preserveAspectRatio="xMinYMax meet"/>
   <rect x="5.5" y="5.5" width="74" height="44" fill="none" stroke="rgba(196,40,28,0.8)" stroke-width="0.25" stroke-dasharray="0.8 0.6"/>
 </svg>
-<div class="abs cap" style="left:56px;top:562px;width:360px"><b>Visitekaartje 85 x 55 mm</b>, voor en achter, zoals in hoofdstuk 11, Stationery. u = 2,75 mm, liggend dus 12 kolommen. Voorkant: alleen het omgekeerde logo, beeldmerk 3u. Achterkant: de stem opent naam en functie, de gastheer wijst op de contactlijn. Tekst volgt de drukwerkschaal.</div>
+<div class="abs cap" style="left:56px;top:562px;width:360px"><b>Visitekaartje 85 x 55 mm</b> uit hoofdstuk 11, Stationery. u = 2,75 mm, 12 kolommen. Voor: alleen het omgekeerde logo, beeldmerk 3u. Achter: de stem opent naam en functie, de gastheer wijst op de contactlijn.</div>
 
 <!-- 2. A4 poster, 2 px per mm, shown at 0,78. u = 10,5 mm = 21 px, margin 42 px, 6 columns of 38,5 px.
      Headline cap 1,5u = 15,75 mm: font 22,73 mm = 45,45 px, leading x 50/48 = 47,35 px, two lines = 94,7 px.
@@ -73,7 +73,9 @@ text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
 <script>
   let cols = '';
   for (let i = 0; i < 6; i++) cols += `<rect x="${(100 + i * 141.667).toFixed(2)}" y="100" width="91.67" height="800" fill="#32B9CD" opacity="0.12"/>`;
-  PYS.mount('lightbox', PYS.entrance('walk', 'Ingang') + cols +
+  // grid columns under the content: right after the navy face
+  const face = PYS.entrance('walk', 'Ingang'), cut = face.indexOf('/>') + 2;
+  PYS.mount('lightbox', face.slice(0, cut) + cols + face.slice(cut) +
     '<rect x="100" y="100" width="800" height="800" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="14 10"/>');
 </script>
 </body>

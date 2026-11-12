@@ -1,5 +1,6 @@
 // ParkingYou 2027 figure helpers (chapters Stationery and Toepassingen). Kit assets inlined so they take any token colour.
 // Rebuilt from kit/assets (v2): pictograms, p-roof, de hoekige pijl (arrow, arrow-downleft), de stem (arc), de parkeerders (fig-<name>).
+// euro: the redrawn Betalen pictogram without ring, from 06-iconografie/pictogrammen/picto-48-payment-machine.svg (viewBox = its 40 unit drawing area).
 // Usage in HTML:  <i data-p="arrow" style="height:40px;color:#fff;transform:rotate(90deg)"></i>
 //                <i data-p="fig-cap-point" data-head="#32B9CD" data-flip="1" style="height:120px;color:#1A3580"></i>  (one colour, D41: the whole figure takes color)
 //                <i data-p="arc" style="height:80px;color:#32B9CD"></i>  (stroke = 1/25 of the height; data-sw sets a minimum in viewBox units)
