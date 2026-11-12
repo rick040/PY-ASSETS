@@ -147,7 +147,7 @@
  {
   "chapter": 4,
   "src": "02-build/03-typografie/figures/signage-sizing.png",
-  "alt": "Lettergrootte per leesafstand, en een rijroutebord op schaal"
+  "alt": "Lettergrootte per leesafstand, en een routebord op schaal"
  },
  {
   "chapter": 4,
@@ -162,7 +162,7 @@
  {
   "chapter": 5,
   "src": "02-build/04-grid/figures/voorbeelden-print.png",
-  "alt": "Visitekaartje voor en achter, A4 poster en lichtbak op hun grid"
+  "alt": "Visitekaartje voor en achter, A4 poster en entreelichtbak op hun grid"
  },
  {
   "chapter": 5,
@@ -302,7 +302,7 @@
  {
   "chapter": 8,
   "src": "02-build/07-beweging/figures/parkeerder-wissel.png",
-  "alt": "De parkeerders: van loper naar juicher en van zwaaier naar wijzer"
+  "alt": "De parkeerders: bijvoorbeeld van loper naar juicher en van zwaaier naar wijzer"
  },
  {
   "chapter": 8,
@@ -312,7 +312,7 @@
  {
   "chapter": 8,
   "src": "02-build/07-beweging/figures/reduced-motion.png",
-  "alt": "Reduced motion: fade in plaats van pop"
+  "alt": "Minder beweging: fade in plaats van pop"
  },
  {
   "chapter": 8,
