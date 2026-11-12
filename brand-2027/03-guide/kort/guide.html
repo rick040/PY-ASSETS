@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>ParkingYou huisstijl 2027, kort</title>
+<link rel="stylesheet" href="../../02-build/kit/kit.css">
+<style>
+@page { size: 297mm 210mm; margin: 0; }
+html, body { margin: 0; padding: 0; background: #FFFFFF; }
+body { font-family: var(--py-font-sans); color: #1D1D1B; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 297mm; height: 210mm; position: relative; overflow: hidden; page-break-after: always; break-after: page; box-sizing: border-box; padding: 16mm 16mm 18mm; background: #FFFFFF; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font: 600 7.5pt/1 var(--py-font-sans); color: #5E6470; letter-spacing: 0.02em; }
+.foot b { color: #1A3580; }
+.grid { display: grid; grid-template-columns: 96mm minmax(0, 1fr); gap: 11mm; height: 100%; }
+.text { display: flex; flex-direction: column; gap: 4mm; min-width: 0; }
+.eyebrow { font: 700 7.5pt/1 var(--py-font-sans); letter-spacing: 0.1em; text-transform: uppercase; color: #5E6470; }
+.title { display: flex; gap: 3.2mm; align-items: stretch; }
+.title svg { flex: none; }
+h1 { margin: 0; font-size: 26pt; line-height: 1.02; font-weight: 800; color: #1A3580; }
+h1 span { font-weight: 400; display: block; }
+p { margin: 0; font-size: 9.5pt; line-height: 1.45; }
+ul { margin: 0; padding-left: 4.2mm; display: flex; flex-direction: column; gap: 1.6mm; }
+li { font-size: 9pt; line-height: 1.4; }
+li b, p b { color: #1A3580; }
+.rule { background: #F4F6FB; border-radius: 3mm; padding: 3.5mm 4mm; font-size: 8.8pt; line-height: 1.4; }
+.rule b { color: #1A3580; }
+.fig { display: flex; flex-direction: column; justify-content: center; gap: 4mm; min-width: 0; min-height: 0; }
+.fig img { display: block; max-width: 100%; max-height: 168mm; object-fit: contain; margin: 0 auto; border-radius: 2mm; }
+.fig.two img { max-height: 80mm; }
+.cap { font: 600 7.5pt/1.3 var(--py-font-sans); color: #5E6470; text-align: center; }
+table { border-collapse: collapse; width: 100%; font-size: 7.4pt; font-variant-numeric: tabular-nums; }
+td.nw, .nw td { white-space: nowrap; }
+th, td { text-align: left; padding: 1.6mm 1.8mm; border-bottom: 0.25mm solid #DDE1E7; vertical-align: top; }
+th { color: #1A3580; font-weight: 700; }
+.sw { display: inline-block; width: 3.4mm; height: 3.4mm; border-radius: 0.8mm; vertical-align: -0.6mm; margin-right: 1.4mm; box-shadow: inset 0 0 0 0.2mm rgba(0,0,0,0.15); }
+.cover { background: #1A3580; color: #FFFFFF; padding: 0; }
+.cols2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10mm; }
+.dd h3 { margin: 0 0 2.5mm; font-size: 12pt; color: #1A3580; }
+.dd li { font-size: 9pt; }
+.yes::marker { color: #127C8C; }
+.no::marker { color: #C4281C; }
+</style>
+</head>
+<body>
+
+<!-- 1 Cover -->
+<section class="page cover">
+  <img src="../../02-build/kit/assets/logo-horizontal-reverse.svg" alt="parkingyou" style="position: absolute; left: 22mm; top: 22mm; width: 62mm">
+  <div style="position: absolute; left: 22mm; top: 72mm; display: flex; gap: 6mm; align-items: stretch">
+    <svg viewBox="0 0 10 45.44" width="18mm" height="62mm" preserveAspectRatio="none" aria-hidden="true" style="width: 13.6mm; height: 62mm"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="2.4mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
+    <div style="color: #FFFFFF">
+      <div style="font-size: 54pt; line-height: 1; font-weight: 800">Huisstijl 2027</div>
+      <div style="font-size: 30pt; line-height: 1.1; font-weight: 400; margin-top: 3mm">Jouw plek, zonder gedoe.</div>
+      <div style="font-size: 11pt; line-height: 1.4; margin-top: 7mm; max-width: 140mm">De korte versie: de regels en beelden die je nodig hebt om ParkingYou overal hetzelfde te laten zien, van een reel tot een bord boven de inrit.</div>
+    </div>
+  </div>
+  <img src="../../02-build/kit/assets/figure-wave-white.svg" alt="" style="position: absolute; right: 40mm; bottom: 30mm; height: 62mm">
+  <div style="position: absolute; right: 22mm; bottom: 29.6mm; width: 70mm; height: 0.8mm; background: #FFFFFF"></div>
+  <div style="position: absolute; left: 22mm; bottom: 16mm; font-size: 8.5pt; color: #FFFFFF; letter-spacing: 0.02em">Variant 1 Rustig · concept voor Gate 2 · november 2026</div>
+</section>
+
+<!-- 2 Waarom en principes -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">01 · Introductie</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Eén merk,<span>overal hetzelfde.</span></h1></div>
+      <p>Tot nu toe had elke plek een eigen versie van ons merk: de website een ander blauw dan de borden, Canva weer een ander, en in ons drukwerk zitten vijftien blauwen. Deze gids maakt daar één taal van.</p>
+      <p>We zijn niet opnieuw begonnen. Het logo, het beeldmerk, ons blauw, de hoekige pijl, de halve boog en de poppetjes blijven. We geven ze elk één taak, maken het rustiger, en leggen alles vast in één bron.</p>
+      <ul>
+        <li><b>Minder oranje.</b> Alleen nog waar je betaalt in de garage.</li>
+        <li><b>Rustiger.</b> Meer wit, grote letters, geen verloop.</li>
+        <li><b>Leesbaar.</b> Elke tekstkleur haalt WCAG 2.2 AA.</li>
+        <li><b>Het logo draait nooit.</b> De richting komt van de pijl.</li>
+      </ul>
+    </div>
+    <div class="fig"><img src="img/principles.jpg" alt="Vijf merkprincipes"><div class="cap">Vijf merkprincipes: een merk met een gezicht, kleur betekent iets, leesbaar eerst, rustig en vlak, echt.</div></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>2</span></div>
+</section>
+
+<!-- 3 Eigen elementen -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">02 · Eigen elementen</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Vijf elementen,<span>elk één taak.</span></h1></div>
+      <table>
+        <tr><th>Element</th><th>Taak</th></tr>
+        <tr><td><b>De parkeerders</b></td><td>ons gezicht: welkom, mensen, momenten</td></tr>
+        <tr><td><b>De stem</b></td><td>de halve boog opent wat we zeggen; op borden scheidt hij de vakken</td></tr>
+        <tr><td><b>Het vak</b></td><td>een parkeerdek van bovenaf; één vak is van jou</td></tr>
+        <tr><td><b>De bubbel</b></td><td>prijs, niveau of beschikbaarheid</td></tr>
+        <tr><td><b>De hoekige pijl</b></td><td>wijst de weg</td></tr>
+      </table>
+      <div class="rule"><b>De regel:</b> per vlak het logo plus hooguit twee van deze elementen. Dan blijft het rustig, en herken je ons toch meteen.</div>
+    </div>
+    <div class="fig"><img src="img/identity-elements.jpg" alt="De vijf eigen elementen"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>3</span></div>
+</section>
+
+<!-- 4 Logo -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">03 · Logo</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Het logo<span>blijft zoals het is.</span></h1></div>
+      <p>Beeldmerk plus woordmerk "parking<b>you</b>", altijd uit de logobestanden, nooit getypt. Liggend is standaard; staand, beeldmerk alleen en woordmerk alleen zijn varianten.</p>
+      <ul>
+        <li><b>Vrije ruimte:</b> 0,5x rondom, x = breedte van het beeldmerk.</li>
+        <li><b>Minimaal:</b> liggend beeldmerk 24 px of 7 mm hoog; beeldmerk alleen 16 px of 5 mm.</li>
+        <li><b>Grond:</b> kleur op wit, reverse op navy, navy op aqua.</li>
+        <li><b>Nooit:</b> draaien, uitrekken, omlijnen, schaduw, andere kleuren, in een bubbel.</li>
+      </ul>
+    </div>
+    <div class="fig two"><img src="img/lockups.jpg" alt="Lockups"><img src="img/versions-grounds.jpg" alt="Versies per grond"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>4</span></div>
+</section>
+
+<!-- 5 Kleur -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">04 · Kleur</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Kleur<span>betekent iets.</span></h1></div>
+      <p>Navy is het merk en rijden. Aqua is ons accent en lopen. Oranje zie je alleen waar je betaalt in de garage. Daaromheen veel wit: ongeveer 47 wit, 38 navy, 13 aqua.</p>
+      <table>
+        <tr class="nw"><th>Kleur</th><th>HEX</th><th>CMYK</th><th>RAL</th><th>Pantone</th></tr>
+        <tr class="nw"><td><span class="sw" style="background: #1A3580"></span>PY-Blauw</td><td>#1A3580</td><td>100 83 0 17</td><td>5002</td><td>3597 C</td></tr>
+        <tr class="nw"><td><span class="sw" style="background: #32B9CD"></span>PY-Aqua</td><td>#32B9CD</td><td>69 0 21 0</td><td>Design 220 70 35</td><td>3115 C</td></tr>
+        <tr class="nw"><td><span class="sw" style="background: #F08300"></span>PY-Oranje</td><td>#F08300</td><td>0 57 100 0</td><td>2003</td><td>144 C</td></tr>
+        <tr class="nw"><td><span class="sw" style="background: #0D142E"></span>PY-Diep</td><td>#0D142E</td><td>100 83 0 80</td><td>5004</td><td>5255 C</td></tr>
+        <tr class="nw"><td><span class="sw" style="background: #FFFFFF"></span>Wit</td><td>#FFFFFF</td><td>0 0 0 0</td><td>9016</td><td></td></tr>
+      </table>
+      <div class="rule"><b>Tekst mag:</b> wit op navy (11,26:1), navy op aqua (4,80:1), PY-Diep op oranje (6,87:1). <b>Nooit:</b> wit op aqua of oranje, aqua of oranje als tekst op wit.</div>
+      <p style="font-size: 7.5pt; color: #5E6470">RAL en Pantone zijn dichtstbijzijnde waarden; eerst testen op proefborden in een echte garage.</p>
+    </div>
+    <div class="fig"><img src="img/palette-roles.jpg" alt="Kleuren en rollen"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>5</span></div>
+</section>
+
+<!-- 6 Typografie -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">05 · Typografie</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Ubuntu Sans,<span>en de stem.</span></h1></div>
+      <p><b>Ubuntu Sans</b> is de variabele opvolger van de letter die we al gebruiken. Gratis, Ubuntu Font Licence. Het logo blijft getekend in Ubuntu.</p>
+      <ul>
+        <li><b>De kernzin vet, de rest gewoon:</b> "<b>Jouw plek</b>, zonder gedoe."</li>
+        <li><b>De stem</b> opent een kop: zo hoog als het tekstblok, lijn 1/25 van die hoogte, 0,3x ruimte tot de tekst.</li>
+        <li>Zinsletters, geen cursief. Tabelcijfers voor prijzen, tijden en niveaus.</li>
+        <li><b>Op borden:</b> 10 mm hoofdletterhoogte per meter leesafstand; minimaal 12 mm.</li>
+        <li><b>Office en mail:</b> Arial als vervanger.</li>
+      </ul>
+    </div>
+    <div class="fig"><img src="img/de-stem.jpg" alt="De stem in de typografie"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>6</span></div>
+</section>
+
+<!-- 7 Grid -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">06 · Grid en layout</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Eén maat<span>voor elk formaat.</span></h1></div>
+      <p>De eenheid <b>u</b> is de korte zijde van het formaat gedeeld door 20. Zo schaalt alles mee, van visitekaartje (u = 2,75 mm) tot lichtbak (u = 50 mm) en post (u = 54 px).</p>
+      <ul>
+        <li><b>Marge</b> 2u rondom, <b>tussenruimte</b> 1u.</li>
+        <li><b>Kolommen:</b> 6 staand en vierkant, 12 liggend.</li>
+        <li><b>Scherm:</b> basis 4 px; raakvlakken minimaal 44 px.</li>
+        <li><b>Reels:</b> bovenste 250 px en onderste 340 px vrij houden.</li>
+      </ul>
+      <div class="rule">Vijf vaste patronen: stem + kop, vak + kop, foto + navy veld, parkeerder op de lijn, en info.</div>
+    </div>
+    <div class="fig"><img src="img/layoutpatronen.jpg" alt="Vijf layoutpatronen"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>7</span></div>
+</section>
+
+<!-- 8 Parkeerders -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">07 · De parkeerders</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Een merk<span>met een gezicht.</span></h1></div>
+      <p>De negen poppetjes uit het handboek. Hun hoofd heeft de vorm van ons beeldmerk: zo wordt het logo een mens.</p>
+      <ul>
+        <li><b>Altijd één kleur:</b> navy op licht en op aqua, wit op navy.</li>
+        <li><b>Altijd op een lijn:</b> een tekstregel, een rand of de vloer. Nooit zwevend.</li>
+        <li><b>Eén per vlak.</b> Spiegelen mag, draaien nooit.</li>
+        <li><b>Rollen:</b> loper bij de voetgangersingang, zwaaier bij welkom, gastheer bij contact, springer bij een bevestiging.</li>
+        <li><b>Nooit</b> in een bubbel, op een foto, of in een veiligheids- of RVV-bord.</li>
+      </ul>
+    </div>
+    <div class="fig"><img src="img/parkeerders-cast.jpg" alt="De negen parkeerders"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>8</span></div>
+</section>
+
+<!-- 9 Stem en vak -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">08 · De stem en het vak</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>De stem<span>en het vak.</span></h1></div>
+      <p><b>De stem</b> is de halve boog uit het handboek. Hij opent een boodschap, als een aanhalingsteken dat nooit sluit. Op borden scheidt hij de vakken. Aqua op wit en navy, navy op aqua.</p>
+      <p><b>Het vak</b> is een parkeerdek van bovenaf. Eén vak is van jou: gevuld, met aqua randen en een stoplijn. Daarin staat één parkeerder of één bubbel, nooit meer.</p>
+      <ul>
+        <li>Vak: steek 4u (scherm 72 px), lijn 0,05u, vakken 6u tot 8u lang.</li>
+        <li>Het vak is achtergrond voor social, pas, nieuwsbrief en tickets. Nooit op een wegwijsbord, nooit achter tekst.</li>
+      </ul>
+    </div>
+    <div class="fig two"><img src="img/stem.jpg" alt="De stem"><img src="img/vak.jpg" alt="Het vak"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>9</span></div>
+</section>
+
+<!-- 10 Pijl en bubbel -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">09 · De pijl en de bubbel</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>De pijl wijst,<span>de bubbel draagt.</span></h1></div>
+      <p><b>De hoekige pijl</b> uit het handboek is de enige pijl: op borden, in knoppen, in links en in social. In stappen van 45 graden, altijd los.</p>
+      <ul>
+        <li>Op borden 2 keer de hoofdletterhoogte; in knoppen zo hoog als een hoofdletter van het label.</li>
+        <li>Nooit in een cirkel of bubbel, nooit een chevron.</li>
+      </ul>
+      <p><b>De bubbel</b> is de vorm van het beeldmerk. Hij draagt een prijs, een niveau of beschikbaarheid.</p>
+      <ul>
+        <li>Breedte 3u, 5u, 8u of 13u; scherm 24, 40, 64 of 104 px.</li>
+        <li><b>Staat altijd rechtop,</b> net als het logo. Geen pijl erin.</li>
+      </ul>
+    </div>
+    <div class="fig two"><img src="img/pijl-constructie.jpg" alt="De hoekige pijl"><img src="img/bubble-anatomy.jpg" alt="De bubbel"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>10</span></div>
+</section>
+
+<!-- 11 Fotografie -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">10 · Fotografie</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Echte plekken,<span>echt licht.</span></h1></div>
+      <p>Onze eigen garages, ingangen en straten, en echte mensen die aankomen of weggaan. Daglicht of schoon garagelicht, natuurlijke kleur.</p>
+      <ul>
+        <li><b>Geen</b> stockfoto's, kleurfilters, donkere verlopen of AI-beelden van echte locaties.</li>
+        <li>Tekst nooit op een drukke plek; zet hem op een navy vlak naast de foto.</li>
+        <li>Kentekens altijd onherkenbaar. Toestemming van mensen op beeld vastleggen.</li>
+        <li>De bubbel als fotomasker: alleen een mens of een detail, geen tekst erin.</li>
+      </ul>
+    </div>
+    <div class="fig"><img src="img/style-board.jpg" alt="Fotostijl"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>11</span></div>
+</section>
+
+<!-- 12 Scherm -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">11 · Op het scherm</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Eén knop,<span>één stap.</span></h1></div>
+      <ul>
+        <li><b>Hoofdknop</b> navy met witte tekst en de hoekige pijl; op donker aqua met PY-Diep. Eén per scherm.</li>
+        <li><b>Tweede knop:</b> wit met een rand van 2 px in navy.</li>
+        <li>Knoppen en velden 48 px hoog, groot 56 px; focusring 3 px.</li>
+        <li><b>Status</b> altijd met het woord: Vrij, Vol, Gesloten.</li>
+        <li>Geen oranje op het scherm. Donkere modus uit dezelfde tokens.</li>
+        <li>Alle tekst haalt WCAG 2.2 AA; de boekflow valt onder de European Accessibility Act.</li>
+      </ul>
+    </div>
+    <div class="fig"><img src="img/screens-key.jpg" alt="Home, locatie en ticket"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>12</span></div>
+</section>
+
+<!-- 13 Garage -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">12 · In de garage</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Kleur per taak,<span>licht tegen donker.</span></h1></div>
+      <table>
+        <tr><th>Taak</th><th>Grond</th><th>Inhoud</th></tr>
+        <tr><td><span class="sw" style="background: #1A3580"></span>Rijden</td><td>PY-Blauw</td><td>wit</td></tr>
+        <tr><td><span class="sw" style="background: #32B9CD"></span>Lopen</td><td>PY-Aqua</td><td>PY-Blauw</td></tr>
+        <tr><td><span class="sw" style="background: #F08300"></span>Betalen</td><td>PY-Oranje</td><td>PY-Diep</td></tr>
+      </table>
+      <ul>
+        <li>Lichtbakken en portalen blijven navy; de taakkleur zit dan in de bubbel.</li>
+        <li>Hoofdletterhoogte 10 mm per meter: entree 100 mm, portaal 125 mm, routebord 70 mm.</li>
+        <li>Mat laminaat op elk bord. Geen verloop. Veiligheids- en RVV-borden blijven neutraal.</li>
+      </ul>
+    </div>
+    <div class="fig"><img src="img/key-entrance-sign.jpg" alt="Entreelichtbak"></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>13</span></div>
+</section>
+
+<!-- 14 Print en social -->
+<section class="page">
+  <div class="eyebrow">13 · Print en social</div>
+  <div class="title" style="margin-top: 4mm"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Jouw vak<span>staat klaar.</span></h1></div>
+  <div style="display: grid; grid-template-columns: 0.62fr 1fr 1fr; gap: 8mm; margin-top: 8mm; align-items: start">
+    <div class="fig"><img src="img/key-social-post.jpg" alt="Social post" style="max-height: 118mm"><div class="cap">Social post 4:5: het vak en de gastheer</div></div>
+    <div class="fig"><img src="img/key-subscription-card.jpg" alt="Abonnementspas" style="max-height: 118mm"><div class="cap">Abonnementspas: het vak met de zwaaier</div></div>
+    <div class="fig"><img src="img/key-business-card.jpg" alt="Visitekaartje" style="max-height: 118mm"><div class="cap">Visitekaartje: de stem en de gastheer</div></div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>14</span></div>
+</section>
+
+<!-- 15 Do's en don'ts -->
+<section class="page">
+  <div class="eyebrow">14 · Do's en don'ts</div>
+  <div class="title" style="margin-top: 4mm"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Zo wel,<span>zo niet.</span></h1></div>
+  <div class="cols2 dd" style="margin-top: 8mm">
+    <div>
+      <h3>Wel</h3>
+      <ul>
+        <li class="yes">Begin bij het tokenbestand, niet bij een oude PDF of Canva.</li>
+        <li class="yes">Per vlak het logo plus hooguit twee eigen elementen.</li>
+        <li class="yes">Veel wit, grote letters, de kernzin vet.</li>
+        <li class="yes">Laat de stem een belangrijke kop openen.</li>
+        <li class="yes">Zet een parkeerder altijd op een lijn, in één kleur.</li>
+        <li class="yes">Gebruik de hoekige pijl voor elke richting.</li>
+        <li class="yes">Gebruik echte prijzen en eigen foto's.</li>
+        <li class="yes">Schrijf je en jij, kort en concreet.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Niet</h3>
+      <ul>
+        <li class="no">Oranje buiten de betaalplekken in de garage.</li>
+        <li class="no">Het logo of de bubbel draaien, uitrekken of hertekenen.</li>
+        <li class="no">Witte tekst op aqua of oranje.</li>
+        <li class="no">Een verloop, schaduw of kleurfilter.</li>
+        <li class="no">Een pijl in een cirkel of bubbel, of een chevron.</li>
+        <li class="no">Een parkeerder in twee kleuren, zwevend of op een foto.</li>
+        <li class="no">Oude kleuren van de website of Canva overnemen.</li>
+        <li class="no">Emoji, gedachtestreepjes of uitroeptekens op borden.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>15</span></div>
+</section>
+
+<!-- 16 Bestanden -->
+<section class="page">
+  <div class="grid">
+    <div class="text">
+      <div class="eyebrow">15 · Bestanden en status</div>
+      <div class="title"><svg viewBox="0 0 10 45.44" style="width: 5.4mm; height: 24.5mm" aria-hidden="true"><path d="M9.393 0.453C6.631 3.303 4.396 6.696 2.852 10.463C1.307 14.231 0.453 18.373 0.453 22.721C0.453 27.069 1.307 31.211 2.852 34.978C4.396 38.746 6.631 42.139 9.393 44.988" fill="none" stroke="#32B9CD" stroke-width="1mm" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><h1>Alles staat<span>op één plek.</span></h1></div>
+      <p>Alle waarden komen uit één bron in de repository PY-ASSETS, map <b>brand-2027/</b>. Twijfel je, dan wint die bron.</p>
+      <ul>
+        <li><b>core-spec</b>: alle regels en besluiten.</li>
+        <li><b>tokens.json</b>: kleuren, maten en letters, met CMYK, RAL, Pantone en folie.</li>
+        <li><b>Logo's, poppetjes, pijl en boog</b>: de kit met SVG-bestanden.</li>
+        <li><b>Ubuntu Sans</b>: de lettertypebestanden.</li>
+        <li>De volledige gids met alle hoofdstukken komt in fase 3.</li>
+      </ul>
+    </div>
+    <div class="text" style="justify-content: center">
+      <div class="rule" style="font-size: 9.5pt">
+        <b>Status: concept.</b> Deze korte gids hoort bij Gate 2, tweede ronde. Nog open:
+        <ul style="margin-top: 2.5mm">
+          <li>de tagline "The other way of parking" als vaste lockup;</li>
+          <li>het juiste storingsnummer;</li>
+          <li>proefborden in een echte garage voor oranje, blauw en lichtbakfolie;</li>
+          <li>fotograaf, eerste shootlocatie en toestemmingen;</li>
+          <li>KvK, btw, IBAN en een algemeen telefoonnummer.</li>
+        </ul>
+      </div>
+      <div style="display: flex; align-items: flex-end; gap: 6mm; margin-top: 8mm">
+        <img src="../../02-build/kit/assets/figure-cap-point-navy.svg" alt="" style="height: 34mm">
+        <div style="flex-grow: 1; border-bottom: 0.5mm solid #1A3580; padding-bottom: 2mm; font-size: 10pt; line-height: 1.5">
+          <div><b style="color: #1A3580">Vragen over het merk?</b></div>
+          <div>[naam merkbeheerder] · [e-mail] · parkingyou.nl</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>parkingyou</b> huisstijl 2027 · kort</span><span>16</span></div>
+</section>
+
+</body>
+</html>
