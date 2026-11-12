@@ -27,3 +27,15 @@ Grote vlakken navy en aqua. Halve boog als echte halve cirkel, dik (1u), aangesn
 ## Wat ik daarna doe
 
 Na de keuze: core spec bijwerken (rollen oranje, pijl, boog, poppetjes, bubbel zonder rotatie), tokens opnieuw bouwen, de hoofdstukken en figuren aanpassen, en Gate 2 opnieuw laten zien.
+
+## Na Gate 2, tweede ronde (2026-11-12)
+
+Rick: "oke ik vindt dat "vak"gedeelte in branding niet echt iets. Ik wil dat we dit wegdoen, of iets anders voor verzinnen aub."
+
+Het vak vervalt. Drie opties op het canvas (bord "Vervanger voor het vak"), telkens op social post, abonnementspas en ticketkop:
+
+- **A Weg ermee:** vier elementen; vlak navy of wit als achtergrond.
+- **B Het dak:** de dakvorm boven de P van onze borden, los gebruikt als onderdak voor één parkeerder of één prijs.
+- **C De stoeprand:** de lijn onder de parkeerders loopt van rand tot rand; de pijl wijst over die lijn.
+
+Status: wacht op Ricks keuze. Daarna core spec, tokens, hoofdstukken, figuren en de korte pdf aanpassen.
