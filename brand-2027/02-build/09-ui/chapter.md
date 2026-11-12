@@ -217,7 +217,7 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 - `status.full` is oranje.700, dezelfde waarde als `feedback.warning`. Wij houden het als tekst en icoon, zoals een waarschuwing. Als oranje op het scherm helemaal weg moet, kan Vol `text.default` met het streep-icoon worden (16,88:1); dat is een keuze voor de core spec.
 - Welke schermen van Aeroparker kunnen we stylen, en ondersteunt de PWA een ticket zonder bereik?
 - Het ticket heeft geen bubbel meer: de kop draagt de stem en de springer, "geldig" staat als woord. Daarmee heeft de bubbel van 40 geen vast scherm. Voorstel: houden voor het niveau van je plek, als de PWA dat later toont. Graag een besluit.
-- De pop-in van de bubbel had op het scherm alleen "het ticket wordt geldig" als moment. Nu is dat het openen van de app, zoals de core spec noemt. Klopt dat met het hoofdstuk Beweging?
+- Opgelost: de pop-in van de bubbel hoort nu bij het openen van de app. Dat klopt met het hoofdstuk Beweging, waar het opstartscherm een merkmoment is.
 - De terugpijl op hoofdletterhoogte van de titel is 11 px. Dat volgt de regel, maar is klein naast iconen van 24. Testen met gebruikers; zie Voorgestelde waarden.
 
 ## Voorgestelde waarden

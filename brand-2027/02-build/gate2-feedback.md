@@ -39,3 +39,5 @@ Het vak vervalt. Drie opties op het canvas (bord "Vervanger voor het vak"), telk
 - **C De stoeprand:** de lijn onder de parkeerders loopt van rand tot rand; de pijl wijst over die lijn.
 
 Status: wacht op Ricks keuze. Daarna core spec, tokens, hoofdstukken, figuren en de korte pdf aanpassen.
+
+**Besluit (2026-11-12):** Rick kiest A ("ga voor A"). Het vak is weg (D44). Vervolgkeuzes D45 (nieuwsbriefkop 180 px, ticketkop zonder bubbel, korte lijn 16 px uitsteek op scherm) en D46 (korte lijn in print over de kolommen die de parkeerder raakt) liggen ter bevestiging bij Rick.

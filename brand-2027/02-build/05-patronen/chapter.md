@@ -1,6 +1,6 @@
 # Patronen en designelementen
 
-ParkingYou heeft vijf eigen elementen. Elk heeft één taak, en samen maken ze een vlak herkenbaar als ParkingYou, ook zonder logo. Het hart is de parkeerder: een poppetje uit ons eigen handboek, met een hoofd in de vorm van het beeldmerk. Zo wordt het logo een mens.
+ParkingYou heeft vier eigen elementen: de parkeerders, de stem, de bubbel en de hoekige pijl. Elk heeft één taak, en samen maken ze een vlak herkenbaar als ParkingYou, ook zonder logo. Het hart is de parkeerder: een poppetje uit ons eigen handboek, met een hoofd in de vorm van het beeldmerk. Zo wordt het logo een mens.
 
 De vuistregel voor alles in dit hoofdstuk: **per vlak het logo plus hooguit twee elementen.** Meer is druk, minder mag altijd.
 
@@ -8,11 +8,10 @@ De vuistregel voor alles in dit hoofdstuk: **per vlak het logo plus hooguit twee
 |---|---|---|
 | De parkeerders | het gezicht van het merk: mensen, welkom, momenten | `kit/assets/figure-*-navy.svg`, `figure-*-white.svg` |
 | De stem | opent een boodschap; scheidt modules op borden | `kit/assets/arc.svg` |
-| Het vak | achtergrond: een parkeerdek van bovenaf, één vak is van jou | getekend volgens de regels hieronder |
 | De bubbel | prijs, niveau, beschikbaarheid | `kit/assets/bubble.svg` |
 | De hoekige pijl | richting | `kit/assets/arrow-plain-*.svg`, `arrow-downleft-*.svg` |
 
-Alles is vlak. Geen verloop, geen schaduw, geen 3D. Oranje zie je alleen waar je in de garage betaalt.
+Alles staat op een vlakke grond: PY-Blauw of wit, en papier (`blue.50`) voor rustige delen. Geen patroon, geen verloop, geen schaduw, geen 3D. Oranje zie je alleen waar je in de garage betaalt.
 
 ## De parkeerders
 
@@ -52,7 +51,7 @@ Een parkeerder staat altijd ergens op. Dat maakt hem een mens en geen sticker. E
 
 1. **De basislijn van een kop.** De voeten staan op dezelfde lijn als de letters.
 2. **Een lijn van 0,1u**, in de kleur van de tekst.
-3. **De rand van het formaat**, bijvoorbeeld de onderrand van een bord of van jouw vak.
+3. **De rand van het formaat**, bijvoorbeeld de onderrand van een bord, of de ondermarge van een post of pas.
 4. **De vloerlijn van een scène**, over de hele breedte, in reels en illustraties.
 
 Nooit zwevend, nooit gekanteld, nooit afgesneden. De springer staat op één voet; die voet staat op de lijn.
@@ -103,34 +102,6 @@ Nooit een tweede boog rechts om de tekst te sluiten. Nooit rechts van de tekst. 
 
 ![De stem: opbouw, maten, gronden en borden](figures/stem.png)
 
-## Het vak
-
-Een parkeerdek van bovenaf, met één vak dat van jou is. Het vak zegt "jouw plek" zonder één woord. Het is de achtergrond van het merk en neemt de rol over van de oude grote achtergrondbubbel.
-
-**Opbouw in u**
-
-| Onderdeel | Op formaat | Op scherm |
-|---|---|---|
-| Steek tussen de vaklijnen | 4u | 72 px |
-| Lijndikte | 0,05u | 2 px |
-| Lengte van de vaklijnen, vanaf de boven- of onderrand | 6u tot 8u | 144 tot 192 px |
-| Jouw vak: zijlijnen en stoplijn | PY-Aqua, 0,1u | PY-Aqua, 4 px |
-| Rijbaan (mag weg): streep en tussenruimte | 0,3u en 0,25u | 14 en 12 px |
-
-- **Over de hele breedte.** De lijnen lopen van rand tot rand en staan op de steek, met één lijn op de marge.
-- **Precies één jouw vak**, gevuld met `vak.mine`, zijlijnen in aqua op dubbele dikte. Aan de open kant sluit een stoplijn het vak af, in dezelfde dikte en kleur.
-- **Kleuren op PY-Blauw:** lijnen `blue.400`, jouw vak `blue.600`.
-- **Kleuren op wit:** lijnen `neutral.200`, jouw vak `aqua.100`.
-- **Inhoud van jouw vak:** één parkeerder of één bubbel, verder niets, in het midden van het vak. De parkeerder staat op de stoplijn; dat kan dus alleen in een dek vanaf de bovenrand. Een bubbel mag in elk dek. Kies de maat zo dat de inhoud binnen het vak blijft: een bubbel van 3u, een parkeerder van 3u tot 5u hoog (scherm: bubbel 40 px, parkeerder 48 tot 64 px).
-
-![Het vak: opbouw, op navy en op wit](figures/vak.png)
-
-**Waar je het gebruikt:** social posts, de nieuwsbriefkop, de achterkant van visitekaartjes en passen, posters, schermkoppen in de app en lege staten ("Nog geen reserveringen").
-
-**Waar nooit:** op bewegwijzering, achter tekst, met twee jouw vakken.
-
-![Het vak in gebruik en wat nooit](figures/vak-gebruik.png)
-
 ## De bubbel
 
 De bubbel is het silhouet van het beeldmerk. Je tekent hem nooit opnieuw en vervormt hem nooit; je schaalt hem alleen in zijn geheel. Het bronbestand is `kit/assets/bubble.svg`.
@@ -159,22 +130,32 @@ De pijl uit het handboek is de enige pijl. Op borden, in knoppen, in links, op s
 
 ![De hoekige pijl: richtingen, kleuren, knoppen en wat nooit](figures/pijl.png)
 
+## Vlakke grond
+
+De grond is altijd vlak: PY-Blauw of wit, en papier (`blue.50`) voor rustige delen. Er ligt niets achter de tekst: geen patroon, geen verloop, geen grote bubbel, geen decoratieve vorm. Het beeld komt van de elementen zelf.
+
+- **De stem en één parkeerder dragen het merk.** De stem opent de kop, de parkeerder staat op een korte lijn en kijkt naar de tekst. Zo werkt het op social, de abonnementspas, de nieuwsbriefkop, de achterkant van kaarten, posters, schermkoppen en lege staten.
+- **Een prijs, sectie of niveau staat in de bubbel.** Bijvoorbeeld "1A" bij je reservering of de prijs op een poster. Telt de stem al mee en staat er een parkeerder, dan komt het niveau in de tekst, niet in een derde element.
+- **De korte lijn** heeft de kleur van de parkeerder. Op scherm is hij 2 px dik (`figure.body`) en steekt hij aan beide kanten 16 px (`space.4`) uit. In print en op u-formaten is hij 0,1u dik en loopt hij over de kolommen die de parkeerder raakt. Een lijn over de hele breedte mag ook: dat is de vloerlijn van een scène.
+- **Navy of wit wissel je per vlak af.** Over een reeks is dat ongeveer 47 procent wit en licht, 38 procent PY-Blauw en 13 procent aqua.
+
+![Vlakke grond op pas, nieuwsbrief, ticketkop en lege staat](figures/vlakke-grond.png)
+
 ## Combineren: het logo plus hooguit twee
 
-Elk vlak krijgt het logo en hooguit twee van de vijf elementen. Het logo telt niet mee. Dat houdt het rustig en laat elk element zijn werk doen.
+Elk vlak krijgt het logo en hooguit twee van de vier elementen. Het logo telt niet mee. Eén element mag altijd; twee is het maximum. Dat houdt het rustig en laat elk element zijn werk doen.
 
 **Combinaties die werken**
 
 | Combinatie | Wanneer |
 |---|---|
-| Stem + parkeerder | welkom, campagne, de nieuwsbrief: de stem opent de kop, de parkeerder staat op de lijn |
-| Vak + bubbel | jouw plek, je reservering, het vaknummer in de app |
-| Vak + parkeerder | social, kaartachterkant, lege staat |
+| Stem + parkeerder | welkom, campagne, social, de nieuwsbrief, de achterkant van kaarten, lege staten: de stem opent de kop, de parkeerder staat op de lijn |
+| Stem + bubbel | jouw plek, je reservering, een prijs of tijd bij een kop: de stem opent de kop, de bubbel draagt de sectie, het niveau of de prijs |
 | Parkeerder + pijl | ingang, route, "kijk hier": de wijzer of gastheer wijst, de pijl leidt verder |
-| Stem + bubbel | prijs of tijd bij een kop, bijvoorbeeld een poster voor een evenement |
+| Parkeerder + bubbel | een deal of bevestiging: de juicher staat op de lijn, de prijs staat in de bubbel ernaast |
 | Pijl + bubbel of pijl + stem | borden in de garage |
 
-**Wat niet werkt:** alles tegelijk, twee parkeerders op één vlak, het vak achter de tekst, een pijl in de bubbel.
+**Wat niet werkt:** alles tegelijk, twee parkeerders op één vlak, een patroon of vorm achter de tekst, een gesloten stem, een pijl in de bubbel.
 
 Op borden geldt dezelfde regel. Een bord met een pijl en een bubbel scheidt de modules met ruimte, niet met de stem.
 
@@ -216,27 +197,30 @@ In de garage betekent kleur iets. De elementen dragen die betekenis.
 | Bubbel met verloop | Vervalt | Geen verloop meer. |
 | Cirkel | Vervalt | Een ronde blauwe vorm met pijl lijkt op een RVV-gebodsbord. De bubbel neemt zijn taken over. |
 | Pil op verloop | Vervalt | Knoppen staan op een vlakke grond. |
-| Watermerk beeldmerk 5% | Vervalt | Verdwijnt in druk en in de garage. Het vak neemt die rol over. |
-| Grote achtergrondbubbel | Vervalt | Groot beeld komt nu van het vak. |
+| Watermerk beeldmerk 5% | Vervalt | Verdwijnt in druk en in de garage. De grond is vlak. |
+| Grote achtergrondbubbel | Vervalt | De grond is vlak navy of wit. Eén parkeerder op een lijn en de stem dragen het beeld. |
 | Verloop blauw naar aqua | Vervalt | Alles is vlak. Bestaande borden worden bij vervanging vlak PY-Blauw. |
 
 ![Oude vormen naast hun 2027-versie](figures/oude-vormen.png)
 
 ## Voorgestelde waarden
 
-Goedgekeurd: zie besluit D43 in de core spec.
+Nieuw voorstel:
 
 | Waarde | Voorstel | Reden |
 |---|---|---|
-| Plaats van de rijbaan | op 2u van het einde van de vaklijnen (scherm 48 px) | De core spec geeft de streep, niet de plek. Op 2u leest het als rijbaan en blijft er ruimte voor de kop eronder. |
+| Lengte van de korte lijn in print en op u-formaten | over de volle kolommen die de parkeerder raakt | Besluit D45 geeft de schermlengte (16 px aan beide kanten). Voor u-formaten ontbreekt een lengte; op de kolommen ligt de lijn op het grid en blijft hij kort. |
+
+Al goedgekeurd (besluit D43 in de core spec):
+
+| Waarde | Voorstel | Reden |
+|---|---|---|
 | Gastheer en wijzer: afstand | 0,5u tussen hand en tekst of pijl; hand op de hoogte van de eerste regel | Dichterbij lijkt het of hij de tekst vastpakt; verder weg valt het verband weg. |
 | Gespiegelde parkeerder | alleen het lijf spiegelen, het hoofd niet; als kitbestanden `figure-*-navy-flip.svg` en `figure-*-white-flip.svg` | De core spec staat spiegelen toe, maar het hoofd heeft de vorm van de bubbel en die spiegelt nooit. In de figuren is het hoofd terug op zijn plek gezet. |
 
 ## Open vragen
 
-- Gespiegelde figuren: mogen we `-flip`-versies (lijf gespiegeld, hoofd zoals in het logo) in de kit zetten, zodat niemand zelf gaat knippen?
-- Borden met een pijl, een bubbel en scheidingen: wij lezen "hooguit twee elementen" ook voor borden, dus dan scheiden met ruimte en niet met de stem. Klopt dat?
-- Mag jouw vak leeg blijven (bijvoorbeeld op een kaartachterkant)? Wij nemen aan van wel.
+- De korte lijn in print en op u-formaten (zie Voorgestelde waarden): akkoord met "over de kolommen die hij raakt"? In de figuren voor pas, visitekaartje en post is het zo getekend.
 - Prijzen in de figuren zijn € 12,50 (Parking Philips Stadion, dagtarief met reservering) of [prijs], geen verzonnen tarieven.
 
 ## Do's en don'ts
@@ -245,10 +229,10 @@ Goedgekeurd: zie besluit D43 in de core spec.
 - **Do:** kies de parkeerder bij de rol: loper bij lopen, zwaaier bij welkom, juicher bij een bevestiging.
 - **Do:** zet elke parkeerder op een lijn, en laat hem naar de tekst of de route kijken.
 - **Do:** laat de stem een kop openen, links, even hoog als het tekstblok.
-- **Do:** gebruik het vak als achtergrond, met precies één jouw vak, afgesloten met de stoplijn.
+- **Do:** houd de grond vlak: PY-Blauw of wit, `blue.50` voor rustige delen. Laat de stem en één parkeerder het beeld dragen.
 - **Do:** geef richting met de hoekige pijl, los naast de bubbel of de tekst.
 - **Don't:** een parkeerder draaien, laten zweven, afsnijden of twee op één vlak.
 - **Don't:** de bubbel draaien of spiegelen, of er een pijl in zetten.
-- **Don't:** het vak achter tekst of op bewegwijzering.
+- **Don't:** een patroon, verloop, grote bubbel of andere decoratieve vorm als achtergrond.
 - **Don't:** oranje buiten de garage, en verloop nergens.
 - **Don't:** merkkleuren of elementen in of naast veiligheids- en RVV-borden.

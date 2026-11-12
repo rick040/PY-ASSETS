@@ -29,11 +29,10 @@ node brand-2027/tools/render.mjs brand-2027/02-build/<NN-name>/figures/
 ```
 Renders every `.html` in the folder to a `.png` beside it at 2x. Look at the PNG before you hand it in.
 
-## Version 2 assets (Gate 2, variant 1 with own identity)
+## Version 2 assets (Gate 2, variant 1 with own identity, D41 to D46)
 
-- `figure-<name>-duo.svg`: parkeerder, PY-Blauw body, PY-Aqua head (on white and light grounds)
-- `figure-<name>-duo-white.svg`: white body, PY-Aqua head (on PY-Blauw)
-- `figure-<name>-navy.svg` / `-white.svg`: one colour (navy on PY-Aqua; white for one-colour production)
+- `figure-<name>-navy.svg` / `-white.svg`: one colour (D41). Navy on white, light and PY-Aqua grounds; white on PY-Blauw. The `-duo` files are kept as one-colour aliases for older figures; do not use them in new work.
+- `figure-<name>-navy-flip.svg` / `-white-flip.svg`: mirrored body, head keeps the logo orientation (D43).
   Names: walk (loper), wave (zwaaier), point (wijzer), dance (danser), jump (springer), bags-walk (shopper), bags-cheer (juicher), cap-point (gastheer wijst), cap-wave (gastheer zwaait)
 - `arc.svg`: de stem (half arc). Inline it to set the colour and use `vector-effect="non-scaling-stroke"` with stroke = 1/25 of its height.
 - `arrow-plain-white.svg`, `arrow-plain-navy.svg` (points right; rotate in 45 degree steps), `arrow-downleft-*.svg`: de hoekige pijl

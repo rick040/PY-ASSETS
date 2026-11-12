@@ -1,6 +1,6 @@
-## Gate 2, tweede ronde
+## Gate 2, derde ronde
 
-Variant 1 "Rustig" met eigen identiteit, en de parkeerders in één kleur. Alle twaalf hoofdstukken zijn omgewerkt. Elke tekstkleur is opnieuw doorgerekend en haalt WCAG 2.2 AA, licht en donker.
+Variant 1 "Rustig" met eigen identiteit, de parkeerders in één kleur, en het vak is eruit. Alle twaalf hoofdstukken zijn omgewerkt. Elke tekstkleur is opnieuw doorgerekend en haalt WCAG 2.2 AA, licht en donker.
 
 **Wat er sinds de vorige Gate 2 is veranderd**
 
@@ -8,11 +8,13 @@ Variant 1 "Rustig" met eigen identiteit, en de parkeerders in één kleur. Alle 
 - **De hoekige pijl** uit de repo is de enige pijl, overal, nooit in een cirkel of bubbel.
 - **Het logo en de bubbel draaien nooit.** De richting komt van de pijl.
 - **De parkeerders** zijn terug, in één kleur. Hun hoofd heeft de vorm van ons beeldmerk: dat is ons gezicht.
-- **De stem**, de halve boog uit het handboek, opent elke belangrijke kop. Op borden scheidt hij de vakken.
-- **Het vak**: een parkeerdek van bovenaf, één vak is van jou. Achtergrond voor social, de pas en de nieuwsbrief.
+- **De stem**, de halve boog uit het handboek, opent elke belangrijke kop. Op borden scheidt hij de onderdelen.
+- **Het vak is weg** (jouw keuze A). Nog vier eigen elementen: parkeerders, stem, bubbel en hoekige pijl. De achtergrond is vlak PY-Blauw of wit; de stem en één parkeerder op een lijn maken het van ons. Social, de pas, de nieuwsbrief en het ticket zijn zo opnieuw getekend.
 - **Per vlak** het logo plus hooguit twee van deze elementen. Geen verloop meer.
 
 **Wat ik van je nodig heb**
+
+0. Akkoord op de kleine keuzes die ik zelf maakte na het weghalen van het vak: de nieuwsbriefkop wordt 180 px hoog in plaats van 272 px, en de lijn onder een parkeerder loopt in print over de kolommen die hij raakt.
 
 1. Akkoord op de hoofdstukken, of wat er anders moet. Daarna voeg ik alles samen tot één gids in Docs, met een onafhankelijke controle erbij.
 2. De tagline "The other way of parking" als vaste lockup: schrappen? Mijn advies is ja.

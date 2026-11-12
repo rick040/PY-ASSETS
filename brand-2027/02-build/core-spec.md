@@ -337,5 +337,6 @@ Open for the sample-board test: orange powder coat RAL 2003 (dE 7.5) or RAL 1037
 
 | D44 | 2026-11-12 | Rick | Het vak retired: four own elements (parkeerders, stem, bubbel, hoekige pijl); backgrounds flat PY-Blauw or white. Supersedes the vak parts of D32, D35, D40 and D43 and the `vak.*` tokens | "ga voor A" (option A: weg ermee) |
 | D45 | 2026-11-12 | CD | Newsletter header 180 px high (was 272 px, which only served het vak): logo 32 px, stem with heading-m, zwaaier 96 px on a 2 px line. PWA ticket header: flat PY-Blauw band with the stem and the springer; the aqua check bubble is dropped (third element). Short figure line runs `space.4` (16 px) past the figure on both sides | Follows D44 |
+| D46 | 2026-11-12 | CD | Short figure line in print and on u-formats: 0.1u thick, over the full columns the parkeerder touches | Follows D44/D45 |
 
 Pending Rick (Gate 2): drop the tagline lockup "The other way of parking" (B1 recommends: English, fails contrast in colour, unreadable at logo size).

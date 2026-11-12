@@ -58,7 +58,7 @@ Op schermen rekenen we niet in u maar in pixels, met een basis van 4 px. Ruimte 
 | Tablet | 768 tot 1199 px | 8 | 24 px | 32 px |
 | Desktop | 1200 px en breder | 12 | 24 px | minstens 32 px; inhoud max. 1200 px, gecentreerd |
 
-Raakvlakken zijn minstens 44 x 44 px. Kaarten hebben `radius.l` (16), invoervelden `radius.m` (8), knoppen en chips `radius.pill`. Een parkeerder op scherm is 48 tot 160 px hoog en staat op een lijn van 2 px in `figure.body`.
+Raakvlakken zijn minstens 44 x 44 px. Kaarten hebben `radius.l` (16), invoervelden `radius.m` (8), knoppen en chips `radius.pill`. Een parkeerder op scherm is 48 tot 160 px hoog en staat op een lijn van 2 px in `figure.body`, die aan beide kanten 16 px (`space.4`) uitsteekt.
 
 ![Telefoon, tablet en desktop met hun kolommen](figures/schermgrids.png)
 
