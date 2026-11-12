@@ -2,7 +2,7 @@
 
 Dit hoofdstuk gaat over alles wat we op papier en in de mail meesturen: visitekaartje, briefpapier, factuur, offerte, envelop en e-mailhandtekening. Het zijn kleine dingen, maar klanten, garage-eigenaren en leveranciers zien ze elke week. Ze moeten er net zo rustig en herkenbaar uitzien als een bord in de garage, en net zo duidelijk van ons zijn.
 
-De basis is kort. Wit papier zonder patroon, PY-Blauw voor het merk en de koppen, Ubuntu Sans uit de printschaal, en het raster van de format unit u (korte zijde gedeeld door 20). Oranje komt in dit hoofdstuk niet voor: oranje is voor betalen in de garage, en een factuur is geen automaat.
+De basis is kort. Wit papier zonder patroon, PY-Blauw voor het merk en de koppen, Ubuntu Sans uit de printschaal, en het raster van de formaateenheid u (korte zijde gedeeld door 20). Oranje komt in dit hoofdstuk niet voor: oranje is voor betalen in de garage, en een factuur is geen automaat.
 
 Wat het drukwerk van ons maakt, zijn twee van onze eigen elementen:
 
@@ -35,6 +35,8 @@ Alle drukwerk in CMYK met 3 mm afloop. Logo's en figuren als bestand, nooit nage
 
 PY-Aqua is hier nooit tekst: aqua op wit haalt het contrast niet. Als de lijn van de stem is het ons accent, en meer aqua komt er niet op.
 
+Een witte lijn die uit een navy vlak gespaard wordt, op een kaartje of een pas, is minimaal 0,3 mm. Dunner loopt hij dicht in de druk.
+
 Op ongestreken papier (FOGRA52) zakt PY-Blauw in en wordt het iets doffer. Dezelfde CMYK-waarde geeft op gestreken papier (FOGRA39) een vollere navy. Kies per product één papier en laat de drukker een proef draaien naast de huidige visitekaartjes.
 
 ## Visitekaartje
@@ -47,13 +49,13 @@ Op ongestreken papier (FOGRA52) zakt PY-Blauw in en wordt het iets doffer. Dezel
 
 **Achterzijde.** Wit. De achterkant is de mens.
 
-- **Naam en functie.** Naam in print-h3 15/19 pt Bold PY-Blauw, functie in print-body 10/14 pt PY-Zwart, links op kolom 2.
+- **Naam en functie.** Naam in print-h3 15/19 pt Bold PY-Blauw, functie in print-body 10/14 pt PY-Zwart, links op kolom 2. Een naam tot ongeveer 24 tekens past op één regel tot de rechtermarge. Is hij langer, breek hem dan over twee regels, bijvoorbeeld tussen voornaam en achternaam; de stem groeit mee tot de drie regels samen. Nooit een kleinere letter, nooit een afgesneden naam.
 - **De stem** opent naam en functie. Hoogte = de twee regels samen, 19 + 14 pt = 11,6 mm. Afstand van de punten van de boog tot de eerste letter 0,3 x 11,6 = 3,5 mm. De lijn is 1/25 van de hoogte, maar nooit dunner dan 0,5 mm; hier dus 0,5 mm. De stem hangt in kolom 1, de tekst begint op kolom 2.
 - **Contact** in print-small 8/11 pt: telefoon, e-mail, site (Bold PY-Blauw) en adres (PY-Blauw). Tabelcijfers in telefoonnummers.
-- **De contactlijn.** Op de ondermarge loopt een lijn van 0,1u (0,28 mm) in PY-Blauw over de volle breedte.
+- **De contactlijn.** Op de ondermarge loopt een lijn van 0,1u (0,28 mm) in PY-Blauw over de volle breedte, van marge tot marge. Het is een vloerlijn: de contactgegevens en de gastheer staan er samen op. Daarom is hij langer dan de korte lijn die alleen onder een parkeerder staat.
 - **De gastheer wijst** staat rechts op die lijn, 4u = 11 mm hoog, gespiegeld zodat hij naar je gegevens wijst. Hij is één kleur: PY-Blauw, ook zijn hoofd.
 
-Vaste gegevens uit de repository: ParkingYou B.V., Victoriapark 4, 5611 BM Eindhoven, info@parkingyou.nl, parkingyou.nl. Naam, functie, telefoonnummer en persoonlijk e-mailadres zijn velden: [Voornaam Achternaam], [Functie], [telefoonnummer], [voornaam]@parkingyou.nl.
+Vaste gegevens: ParkingYou B.V., Victoriapark 4, 5611 BM Eindhoven, info@parkingyou.nl, parkingyou.nl. Naam, functie, telefoonnummer en persoonlijk e-mailadres zijn velden: [Voornaam Achternaam], [Functie], [telefoonnummer], [voornaam]@parkingyou.nl.
 
 ## Briefpapier en envelop
 
@@ -86,11 +88,11 @@ Zelfde raster, logo en voet als het briefpapier, zonder gastheer: op een factuur
 
 **Gegevensblok.** Klantadres links in het adresveld. Rechts, vanaf kolom 4, de labels in 8 pt SemiBold PY-Blauw (Factuurnummer, Factuurdatum, Vervaldatum, Klantnummer) met de waarden rechts uitgelijnd in 10 pt. Voor de offerte: Offertenummer, Datum, Geldig tot, Contact.
 
-**Tabel.** Kolommen Omschrijving, Aantal, Prijs, Bedrag incl. btw. Kopregel in print-small 8 pt Bold PY-Blauw met een lijn van 0,5 pt in PY-Blauw eronder. Regels in print-body 10/14 pt met een haarlijn van 0,25 pt in PY-Grijs. Getallen rechts uitgelijnd met tabelcijfers, zodat de komma's onder elkaar staan. Bedragen als € 50,00: spatie na het euroteken, komma, nooit ",-". Geen gekleurde rijen, geen oranje bedragen.
+**Tabel.** Kolommen Omschrijving, Aantal, Prijs, Bedrag incl. btw. Kopregel in print-small 8 pt Bold PY-Blauw met een lijn van 0,5 pt in PY-Blauw eronder. Regels in print-body 10/14 pt met een haarlijn van 0,25 pt in PY-Grijs. Getallen rechts uitgelijnd met tabelcijfers, zodat de komma's onder elkaar staan. Bedragen als € 12,50: spatie na het euroteken, komma, twee decimalen, nooit ",-". Geen gekleurde rijen, geen oranje bedragen.
 
 **Totaal.** Totaal excl. btw en btw in 10 pt, het totaal in print-h3 15 pt Bold PY-Blauw. Daaronder één betaalzin: "Betaal € [bedrag] binnen [14] dagen op [IBAN] t.n.v. ParkingYou B.V. Zet [factuurnummer] in de omschrijving."
 
-De voorbeeldfactuur rekent met echte tarieven: dagtarief Parking Hofplein € 7,50, per 60 minuten Parking Maashaven € 8,00 en verloren kaart € 50,00. De offerte laat de producten zien (Abonnement, ParkingPass, Waardekaarten) met bedragen als [placeholder]. Onder de offerte staat een akkoordblok met Naam, Datum en Handtekening.
+De voorbeeldfactuur rekent met het dagtarief met reservering van Philips Stadion: 20 x € 12,50 = € 250,00. De andere regels staan als [prijs] en [bedrag]. De offerte laat de producten zien (Abonnement, ParkingPass, Waardekaarten) met [prijs] en [bedrag]. Onder de offerte staat een akkoordblok met Naam, Datum en Handtekening.
 
 Komt de factuur uit een boekhoudpakket, dan leveren we een html- of Word-sjabloon met dezelfde maten en de stem als vaste afbeelding. Kan het pakket geen eigen letter, dan Arial.
 
@@ -125,11 +127,9 @@ Logo en stem staan op een vaste url (de site of een cdn), niet als bijlage.
 | py-stem-mail@2x.png | de stem voor mail, 18 x 80 px, PY-Aqua, transparant |
 | figure-cap-point-navy.svg | de gastheer wijst, uit de kit, één kleur PY-Blauw, voor kaartje en briefpapier |
 
-De maten van adresveld, vouwteken, gegevensblok, mail-logo en papier zijn eerder goedgekeurd (besluit D28) en blijven staan.
-
 ## Open vragen
 
-- KvK-nummer, btw-nummer, IBAN en een algemeen telefoonnummer staan niet in de repository. Nu staan ze als [placeholder].
+- KvK-nummer, btw-nummer, IBAN en een algemeen telefoonnummer zijn nog niet bekend. Nu staan ze als [nummer] en [telefoonnummer].
 - De bedrijfsnaam staat als "ParkingYou BV" op het oude briefpapier en als "ParkingYou B.V." elders. Wij gebruiken ParkingYou B.V.; graag bevestigen.
 - CMYK van PY-Blauw voor ongestreken papier (FOGRA52): de drukker converteert; tot die tijd 100 83 0 17 en beoordelen op een proef.
 - Willen we de gastheer standaard in de voet van het briefpapier, of alleen op brieven aan klanten?
@@ -137,19 +137,18 @@ De maten van adresveld, vouwteken, gegevensblok, mail-logo en papier zijn eerder
 
 ## Do's en don'ts
 
-**Doen**
-- Gebruik het logo uit de bestanden, in kleur op wit en omgekeerd op PY-Blauw.
-- Open de naam, het onderwerp of het woord "Factuur" met de stem, zo hoog als de regels die hij opent, met 0,3 x die hoogte tot de eerste letter.
-- Zet de gastheer altijd op een lijn: de contactlijn op het kaartje, de voetlijn op de brief. Laat hem naar de gegevens wijzen.
-- Zet tekst in PY-Zwart of PY-Blauw. Koppen en namen in PY-Blauw.
-- Gebruik tabelcijfers en rechts uitgelijnde bedragen in elke tabel. Schrijf bedragen als € 12,50.
-- Houd de marge van 2u aan, ook in Word. Laat een drukproef maken op het gekozen papier.
-
-**Niet doen**
-- Geen oranje op briefpapier, factuur, offerte, envelop of handtekening.
-- Geen stem rechts van de tekst, geen tweede stem die de zin afsluit, geen stem dunner dan 0,5 mm.
-- Geen zwevende of afgesneden parkeerder, en nooit meer dan één per vlak. Geen parkeerder op factuur, offerte of in de mail.
-- Geen bubbel en geen pijl op kantoordrukwerk.
-- Geen verloop, schaduw of foto op het briefpapier.
-- Geen tekst in PY-Aqua op wit, geen tweede blauw: de oude adresregel in CMYK 100 85,5 22,3 4 vervalt.
-- Geen eigen lettertype in Word of mail: Ubuntu Sans in drukwerk, Arial in Office en mail.
+- **Wel:** gebruik het logo uit de bestanden, in kleur op wit en omgekeerd op PY-Blauw.
+- **Wel:** open de naam, het onderwerp of het woord "Factuur" met de stem, zo hoog als de regels die hij opent, met 0,3 x die hoogte tot de eerste letter.
+- **Wel:** zet de gastheer altijd op een lijn: de contactlijn op het kaartje, de voetlijn op de brief. Laat hem naar de gegevens wijzen.
+- **Wel:** zet tekst in PY-Zwart of PY-Blauw. Koppen en namen in PY-Blauw.
+- **Wel:** gebruik tabelcijfers en rechts uitgelijnde bedragen in elke tabel. Schrijf bedragen als € 12,50.
+- **Wel:** breek een lange naam over twee regels en laat de stem meegroeien.
+- **Wel:** houd de marge van 2u aan, ook in Word. Laat een drukproef maken op het gekozen papier.
+- **Niet:** oranje op briefpapier, factuur, offerte, envelop of handtekening.
+- **Niet:** een stem rechts van de tekst, een tweede stem die de zin afsluit, of een stem dunner dan 0,5 mm.
+- **Niet:** een zwevende of afgesneden parkeerder, of meer dan één per vlak. Geen parkeerder op factuur, offerte of in de mail.
+- **Niet:** een bubbel of een pijl op kantoordrukwerk.
+- **Niet:** verloop, schaduw of foto op het briefpapier.
+- **Niet:** tekst in PY-Aqua op wit, of een tweede blauw: de oude adresregel in CMYK 100 85,5 22,3 4 vervalt.
+- **Niet:** een witte lijn uit navy die dunner is dan 0,3 mm.
+- **Niet:** een ander lettertype: Ubuntu Sans in drukwerk, Arial in Word, PowerPoint, Outlook en de e-mailhandtekening.

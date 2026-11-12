@@ -95,7 +95,7 @@ De halve boog uit het handboek, zonder de slogan. Hij opent een boodschap, zoals
 - **De kop mag breken** na de vette kernwoorden: "**Welkom**" op de eerste regel, "in [garage]." op de tweede. Het vette deel is ExtraBold 800 in grote koppen en Bold 700 in kleinere koppen, de rest Regular.
 - **Kleur:** PY-Aqua op wit en op PY-Blauw; PY-Blauw op PY-Aqua; PY-Diep op oranje (alleen op betaalborden in de garage).
 - **Aantal:** één per vlak in layouts.
-- **Op borden** scheidt de stem de modules: pijl, pictogram, tekst. Even hoog als de modules, zelfde lijndikte (1/25), aan beide kanten 0,3h ruimte. Aqua op navy, PY-Blauw op aqua en PY-Diep op oranje. Zoveel als er overgangen zijn.
+- **Op borden** scheidt de stem de modules: pijl, pictogram, tekst. Even hoog als de pijl of het pictogram ernaast, zelfde lijndikte (1/25), aan beide kanten 0,3h ruimte. Aqua op navy, PY-Blauw op aqua en PY-Diep op oranje. Zoveel als er overgangen zijn.
 - **In beweging** tekent de stem zich van boven naar beneden; daarna komt de tekst.
 
 Nooit een tweede boog rechts om de tekst te sluiten. Nooit rechts van de tekst. Nooit dikker dan h/25. Geen cursieve slogan in de boog.
