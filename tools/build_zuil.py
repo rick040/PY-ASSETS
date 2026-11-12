@@ -320,15 +320,17 @@ def bord(style, s=43.0):
     return d
 
 
-def bord_k(style, k, Wd, Hd):
-    """Subscribers panel at its own size (Wd x Hd mm), the 400 x 1000 layout of bord() scaled by k and centred, with a full-width header."""
+def bord_wide(style, Wd=790.0, Hd=1510.0):
+    """Subscribers panel for a wide sign (found sign 79 x 151 cm): P symbol left and logo with location right in the header, big centred headlines
+    across the full width, sub lines on one line, big fault number, spare height shared evenly between the blocks."""
     wit = style == "wit"
     main = NAVY if wit else WHITE
+    M = 60.0
     cx = Wd / 2
     pid = f"py-prod-bord-abonnees-{int(Wd)}x{int(Hd)}-{style}"
     d = Doc(pid, f"Bord Alleen voor abonnees {int(Wd)} x {int(Hd)}, {'wit' if wit else 'blauw'}", tight=True)
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-gradient-verloop", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
-    HB, BAND = 230.0 * k, 100.0 * k
+    HB, BAND = 330.0, 140.0
     if wit:
         d.defs["py-zuil-edge"] = (
             '<linearGradient id="py-zuil-edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="%g" y2="0">'
@@ -339,67 +341,72 @@ def bord_k(style, k, Wd, Hd):
             '<stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/>'
             '<stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % (HB, HB - BAND))
 
-    def hp(pts):   # header curve of bord(), x stretched to the width, y scaled by k
-        x = lambda v: v * Wd / 400
-        y = lambda v: v * k
-        (a, b), (c1, c2, c3, c4, c5, c6), (e1, e2, e3, e4, e5, e6) = pts
-        return (f"M0 0H{Wd:g}V{y(a):.1f}C{x(c1):.1f} {y(c2):.1f} {x(c3):.1f} {y(c4):.1f} {x(c5):.1f} {y(c6):.1f}"
-                f"S{x(e1):.1f} {y(e2):.1f} 0 {y(e4):.1f}Z")
+    def curve(ys, x_scale=Wd / 400, y_scale=1.5):   # header curve of bord(), stretched to this width
+        a, c2, c4, c6, e2, e4 = [v * y_scale for v in ys]
+        x = lambda v: v * x_scale
+        return f"M0 0H{Wd:g}V{a:.1f}C{x(340):.1f} {c2:.1f} {x(220):.1f} {c4:.1f} {x(140):.1f} {c6:.1f}S{x(30):.1f} {e2:.1f} 0 {e4:.1f}Z"
 
     with d.group("body"):
         d.rect(0, 0, Wd, Hd, fill=WHITE if wit else NAVY, gid="panel")
     with d.group("header"):
         if wit:
-            d.path(hp(((218, 0), (340, 222, 220, 224, 140, 224), (30, 223, 0, 223, 0, 0))), (0, 0, Wd, 224 * k), fill="url(#py-zuil-edge)", gid="header-edge")
-            d.path(hp(((206, 0), (340, 210, 220, 212, 140, 212), (30, 211, 0, 210, 0, 0))), (0, 0, Wd, 212 * k), fill=NAVY, gid="header-navy")
+            d.path(curve((218, 222, 224, 224, 223, 223)), (0, 0, Wd, 336), fill="url(#py-zuil-edge)", gid="header-edge")
+            d.path(curve((206, 210, 212, 212, 211, 210)), (0, 0, Wd, 318), fill=NAVY, gid="header-navy")
+            hend = 336.0
         else:
             d.rect(0, 0, Wd, HB, fill=AQUA, gid="header-aqua")
             d.rect(0, HB - BAND, Wd, HB, fill="url(#py-zuil-verloop)", gid="header-verloop")
-        d.place("py-atom-symbol-p-roof", cx, 22 * k, w=130 * k, anchor="tc")
-    s = 43.0 * k
+            hend = HB
+        d.place("py-atom-symbol-p-roof", M, 34, w=210, anchor="tl")
+    with d.group("header-lockup"):
+        box = d.place("py-atom-logo-horizontal-white", Wd - M, 82, w=360, anchor="tr")
+        ls = 150.0 / 1.0
+        sz = 40.0
+        t = "Locatienaam"
+        d.text(Wd - M - text_width(t, sz, 700), box[3] + 62, t, size=sz, fill=WHITE, weight=700, gid="location-name", variable="location name")
+
+    # --- text sizes
     nl, en = ("Alleen voor", "abonnees!"), ("Subscribers", "only!")
-    subs = (("Geen abonnement =", "Geen toegang."), ("No subscription =", "No access."))
-    ssz = 0.62 * s
-    y = 262.0 * k
-    with d.group("warning"):
-        d.place("py-atom-icon-warning-triangle", cx, y, w=66 * k, anchor="tc", gid="warning-triangle", recolor={"#71CBDF": NAVY if wit else AQUA})
-    y += 66 * k * 302.706 / 346.786 + 12 * k + s * 0.75
-    with d.group("headline", data_variable="headline"):
-        for t in nl:
-            d.text(cx - text_width(t, s, 700) / 2, y, t, size=s, fill=main, weight=700)
-            y += s * 1.2
-    y += ssz * 0.2
-    with d.group("subline-nl", data_variable="subline-nl"):
-        for t in subs[0]:
-            d.text(cx - text_width(t, ssz, 500) / 2, y, t, size=ssz, fill=main, weight=500)
-            y += ssz * 1.3
-    y += s * 0.2
-    d.rect(cx - 50 * k, y, cx + 50 * k, y + 2.5 * k, fill=AQUA, gid="language-divider")
-    y += 2.5 * k + s * 0.2 + s * 0.75
-    with d.group("headline-en"):
-        for t in en:
-            d.text(cx - text_width(t, s, 700) / 2, y, t, size=s, fill=main, weight=700)
-            y += s * 1.2
-    y += ssz * 0.2
-    with d.group("subline-en", data_variable="subline-en"):
-        for t in subs[1]:
-            d.text(cx - text_width(t, ssz, 500) / 2, y, t, size=ssz, fill=main, weight=500)
-            y += ssz * 1.3
-    d.variables["headline"] = "Alleen voor abonnees! / Subscribers only!"
-    d.variables["subline-nl"] = "Geen abonnement = Geen toegang."
-    d.variables["subline-en"] = "No subscription = No access."
+    subs = ("Geen abonnement = Geen toegang.", "No subscription = No access.")
     num = "085 21 30 422"
-    nsz = 34.0 * k
-    y += s * 0.55
-    d.text(cx - text_width(num, nsz, 700) / 2, y, num, size=nsz, fill=main, weight=700, gid="phone-number", variable="phone-number")
-    assert y < 850 * k, (y, 850 * k)
-    d.rect(0, 862 * k, Wd, 862 * k + 3.5 * k, fill=AQUA, gid="divider")
-    with d.group("lockup"):
-        d.place("py-atom-logo-stacked-color" if wit else "py-atom-logo-stacked-white", cx, 880 * k, w=100 * k, anchor="tc")
-        ls = 140.0 * k / text_width("Locatienaam", 1.0, 700)
-        d.text(cx - 70.0 * k, 972 * k, "Locatienaam", size=ls, fill=main, weight=700, gid="location-name", variable="location name")
+    sH = 640.0 / max(text_width(t, 1.0, 700) for t in nl + en)
+    ssz = 670.0 / text_width(subs[0], 1.0, 500)
+    nsz = 560.0 / text_width(num, 1.0, 700)
+    tri_w = 150.0
+    tri_h = tri_w * 302.706 / 346.786
+    cap = 0.693
+    head_h = cap * sH + 1.2 * sH
+    sub_h = cap * ssz
+    sub_gap = 1.7 * ssz
+    foot_top = Hd - 40.0
+    content = tri_h + head_h + sub_gap + sub_h + 3.5 + head_h + sub_gap + sub_h + cap * nsz
+    weights = [1.0, 0.7, 1.0, 1.0, 1.0, 1.0]
+    g = (foot_top - hend - content) / sum(weights)
+    assert g > 20, g
+    y = hend + g * weights[0]
+    with d.group("warning"):
+        d.place("py-atom-icon-warning-triangle", cx, y, w=tri_w, anchor="tc", gid="warning-triangle", recolor={"#71CBDF": NAVY if wit else AQUA})
+    y += tri_h + g * weights[1]
+    with d.group("headline", data_variable="headline"):
+        base = y + cap * sH
+        for i, t in enumerate(nl):
+            d.text(cx - text_width(t, sH, 700) / 2, base + i * 1.2 * sH, t, size=sH, fill=main, weight=700)
+    y += head_h + sub_gap
+    d.text(cx - text_width(subs[0], ssz, 500) / 2, y + sub_h, subs[0], size=ssz, fill=main, weight=500, gid="subline-nl", variable="subline-nl")
+    y += sub_h + g * weights[2]
+    d.rect(M, y, Wd - M, y + 3.5, fill=AQUA, gid="language-divider")
+    y += 3.5 + g * weights[3]
+    with d.group("headline-en"):
+        base = y + cap * sH
+        for i, t in enumerate(en):
+            d.text(cx - text_width(t, sH, 700) / 2, base + i * 1.2 * sH, t, size=sH, fill=main, weight=700)
+    y += head_h + sub_gap
+    d.text(cx - text_width(subs[1], ssz, 500) / 2, y + sub_h, subs[1], size=ssz, fill=main, weight=500, gid="subline-en", variable="subline-en")
+    y += sub_h + g * weights[4]
+    d.text(cx - text_width(num, nsz, 700) / 2, y + cap * nsz, num, size=nsz, fill=main, weight=700, gid="phone-number", variable="phone-number")
+    d.variables["headline"] = "Alleen voor abonnees! / Subscribers only!"
     with d.group("plinth"):
-        d.rect(0, 985 * k, Wd, Hd, fill=AQUA, gid="plinth-plate")
+        d.rect(0, foot_top, Wd, Hd, fill=AQUA, gid="plinth-plate")
     return d
 
 
@@ -409,7 +416,7 @@ def main():
     jobs = [("comp", comp_counter()), ("prod", zuil(True)), ("prod", zuil(False))]
     jobs += [("prod", zuil2(st, m)) for m in ("public", "abonnee") for st in ("blauw", "wit")]
     jobs += [("prod", bord(st)) for st in ("blauw", "wit")]
-    jobs += [("prod", bord_k(st, 1.51, 790.0, 1510.0)) for st in ("blauw", "wit")]
+    jobs += [("prod", bord_wide(st)) for st in ("blauw", "wit")]
     for lvl, d in jobs:
         p = os.path.join(ROOT, "svg", lvl, d.id + ".svg")
         open(p, "w", encoding="utf8").write(d.svg())
@@ -466,7 +473,8 @@ def main():
             name_nl=f"Bord Alleen voor abonnees 790 x 1510, {'wit met blauwe header' if st == 'wit' else 'PY-Blauw met aqua header'}",
             category="bord", variables=["headline", "subline-nl", "subline-en", "phone-number", "location name"],
             notes="NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). "
-                  "The 400 x 1000 layout of py-prod-bord-abonnees-* scaled by 1.51 and centred, header and edges full width. Same copy and order. Proposal.")
+                  "Layout made for the wide format: P symbol left and logo with location right in the header, headlines centred across the full width, sub lines on one line, "
+                  "large fault number, spare height shared evenly, thin PY-Aqua edge. Same copy and order as py-prod-bord-abonnees-*. Proposal.")
     rows = {e["id"]: i for i, e in enumerate(man["elements"])}
     for eid, (lvl, d) in built.items():
         svg = open(os.path.join(ROOT, "svg", lvl, eid + ".svg"), encoding="utf8").read()

@@ -10507,13 +10507,13 @@
    ],
    "built_from": [
     "py-atom-symbol-p-roof",
-    "py-atom-icon-warning-triangle",
-    "py-atom-logo-stacked-white"
+    "py-atom-logo-horizontal-white",
+    "py-atom-icon-warning-triangle"
    ],
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). The 400 x 1000 layout of py-prod-bord-abonnees-* scaled by 1.51 and centred, header and edges full width. Same copy and order. Proposal.",
+   "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). Layout made for the wide format: P symbol left and logo with location right in the header, headlines centred across the full width, sub lines on one line, large fault number, spare height shared evenly, thin PY-Aqua edge. Same copy and order as py-prod-bord-abonnees-*. Proposal.",
    "svg": "svg/prod/py-prod-bord-abonnees-790x1510-blauw.svg",
    "origin": "design"
   },
@@ -10557,13 +10557,13 @@
    ],
    "built_from": [
     "py-atom-symbol-p-roof",
-    "py-atom-icon-warning-triangle",
-    "py-atom-logo-stacked-color"
+    "py-atom-logo-horizontal-white",
+    "py-atom-icon-warning-triangle"
    ],
    "tags": [
     "new-design"
    ],
-   "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). The 400 x 1000 layout of py-prod-bord-abonnees-* scaled by 1.51 and centred, header and edges full width. Same copy and order. Proposal.",
+   "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). Layout made for the wide format: P symbol left and logo with location right in the header, headlines centred across the full width, sub lines on one line, large fault number, spare height shared evenly, thin PY-Aqua edge. Same copy and order as py-prod-bord-abonnees-*. Proposal.",
    "svg": "svg/prod/py-prod-bord-abonnees-790x1510-wit.svg",
    "origin": "design"
   }
