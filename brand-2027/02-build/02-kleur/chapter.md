@@ -37,7 +37,7 @@ Buiten de garage is aqua het accent van het merk. Je ziet het op drie manieren, 
 
 In de garage betekent aqua altijd lopen: voetgangersroutes, lift, trap, uitgang naar de straat. Daar is aqua wel een vlak, met PY-Blauw als inhoud.
 
-Aqua is nooit tekstkleur op wit (2,34:1); gebruik dan aqua.700 (4,90:1). Wit op aqua mag ook niet (2,34:1). Op een licht scherm is de hoofdknop navy, niet aqua.
+Aqua is nooit tekstkleur op wit (2,34:1); gebruik dan aqua.700 (4,90:1). Wit op aqua mag ook niet (2,34:1). Op PY-Blauw is aqua ook geen tekstkleur: labels en tekst op navy zijn wit. Op een licht scherm is de hoofdknop navy, niet aqua.
 
 ![De rollen van aqua, en wat aqua niet doet](figures/aqua-roles.png)
 
@@ -60,7 +60,7 @@ Oranje staat **niet** op schermen, in druk, in marketing, op social, in nieuwsbr
 | een accentstreep of -vlak in druk en social | de stem in aqua |
 | oranje tekst bij een actie | gewoon PY-Blauw, met het sleutelwoord vet |
 
-Op schermen blijft orange.700 (#B35A00) alleen als tekst- of icoonkleur voor de status "Vol" en voor waarschuwingen, altijd met het woord erbij (4,80:1 op wit; besluit D36). Dat is een statuskleur, geen merkoranje, en nooit een vlak of knop.
+Op schermen blijft orange.700 (#B35A00) alleen als tekst- of icoonkleur voor de status "Vol" en voor waarschuwingen, altijd met het woord erbij (4,80:1 op wit). Dat is een statuskleur, geen merkoranje, en nooit een vlak of knop.
 
 ![Oranje: wel bij betalen in de garage, niet daarbuiten](figures/orange-garage.png)
 
@@ -76,7 +76,7 @@ In de garage heeft elke kleur één taak. We gebruiken kleur niet als versiering
 
 - Lichtbakken en portalen blijven navy. Op een verlicht vlak zit de taakkleur in de bubbel, nooit in een volledig aqua of oranje vlak.
 - Geprinte borden (Dibond, wandfolie) mogen de taakkleur als hele ondergrond hebben.
-- Op borden scheidt de stem de modules, bijvoorbeeld pictogram en pijl. Hij heeft de inhoudskleur van het bord: aqua op navy, PY-Blauw op aqua.
+- Op borden scheidt de stem de modules, bijvoorbeeld pictogram en pijl. Kleur van de stem: aqua op navy, PY-Blauw op aqua, en PY-Diep op oranje. Die laatste komt alleen op betaalborden voor; daar zijn stem en pijl PY-Diep en staat er geen parkeerder.
 - De pijl is altijd de hoekige pijl uit het handboek, los, nooit in een cirkel of bubbel.
 - Hoogtebalken houden rood en wit. Vluchtwegborden (ISO 7010, NEN 3011) en verkeersborden (RVV) krijgen nooit merkkleur, en merkkleur staat er ook niet als versiering naast.
 
@@ -96,7 +96,7 @@ De hoofdknop is PY-Blauw met witte tekst. Op donkere vlakken wordt hij aqua met 
 | `action.secondary-bg-pressed` | blue.100 | blue.850 | 9,52 / 10,01 |
 | `action.secondary-border` | blue.700 | aqua.300 | rand van 2 px |
 
-Alle verhoudingen zijn de tekstkleur van de knop op de grond van de knop, opnieuw berekend.
+Alle verhoudingen zijn de tekstkleur van de knop op de grond van de knop.
 
 ![Hoofdknop en tweede knop in licht en donker](figures/action-buttons.png)
 
@@ -109,7 +109,7 @@ De stem en de parkeerders hebben hun eigen semantische tokens. Componenten en te
 | `voice.arc` | aqua.500 | aqua.500 | de stem; op een aqua grond blue.700 |
 | `figure.body` | blue.700 | wit | lijf van een parkeerder |
 
-De stem is vorm, geen informatie. Hij hoeft geen 3:1 te halen en draagt nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Een parkeerder in blue.700 op wit haalt 11,26:1, wit op PY-Diep 18,16:1. Hij staat altijd op een lijn: op schermen 2 px in `figure.body` (besluit D35), in druk 0,1u. De grond eronder is vlak: wit, papier, PY-Blauw, of in donkere modus PY-Diep.
+De stem is vorm, geen informatie. Hij hoeft geen 3:1 te halen en draagt nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Een parkeerder in blue.700 op wit haalt 11,26:1, wit op PY-Diep 18,16:1. Hij staat altijd op een lijn: op schermen 2 px in `figure.body`, in druk 0,1u. De grond eronder is vlak: wit, papier, PY-Blauw, of in donkere modus PY-Diep.
 
 ![Tokens voor de stem en de parkeerders, in licht en donker](figures/identity-tokens.png)
 
@@ -138,7 +138,7 @@ Blauw, aqua, oranje en neutraal lopen van 50 tot 900, rood heeft 100, 600 en 700
 
 ## Welke combinaties mogen
 
-Tekst heeft 4,5:1 nodig. Grote tekst (24 px, of 19 px vet; in druk 18 pt, of 14 pt vet) en UI-grafiek hebben 3:1 nodig. Alle verhoudingen in dit hoofdstuk zijn opnieuw berekend met de WCAG 2.x-formule (relatieve luminantie, sRGB) en vergeleken met `tokens/contrast.md`: 33 paren in licht en donker, grootste afwijking 0,005. Alles komt overeen.
+Tekst heeft 4,5:1 nodig. Grote tekst (24 px, of 19 px vet; in druk 18 pt, of 14 pt vet) en UI-grafiek hebben 3:1 nodig. Alle verhoudingen in dit hoofdstuk volgen de WCAG 2.x-formule en komen overeen met de tokens.
 
 | Paar | Verhouding | Gebruik |
 |---|---|---|
@@ -169,46 +169,49 @@ Op borden gebruiken we alleen wit op PY-Blauw, PY-Blauw op PY-Aqua en PY-Diep op
 
 ## Kleur onder garagelicht
 
-Uit het onderzoek naar de garage: NEN 2443 vraagt gemiddeld 75 lux, oudere garages zijn op 40 lux of minder gebouwd. Op een navy bord is dat zo weinig licht dat het oog kleuren slecht scheidt. Natriumlicht maakt het erger: navy en aqua worden allebei donker, oranje bijna wit. Alleen het verschil in lichtheid tussen tekst en vlak blijft over. Daarom:
+Een garage is donker. NEN 2443 vraagt gemiddeld 75 lux, en oudere garages zijn op 40 lux of minder gebouwd. Op een navy bord is dat zo weinig licht dat het oog kleuren slecht scheidt. Natriumlicht maakt het erger: navy en aqua worden allebei donker, oranje bijna wit. Alleen het verschil in lichtheid tussen tekst en vlak blijft over. Daarom:
 
 - Op borden alleen de drie paren hierboven; elk heeft een groot lichtheidsverschil.
 - Een woord of pictogram draagt de betekenis, de kleur helpt alleen.
-- Elke bordface krijgt mat laminaat, tegen spiegelingen van lampen.
+- Elk bordvlak krijgt mat laminaat, tegen spiegelingen van lampen.
 - Geprinte lichtbakfolie wordt vaak dubbel geprint en oogt overdag donkerder.
 - Voor de kleuren definitief zijn, testen we één set proefborden in een echte garage, onder het eigen licht (LED, TL en waar het nog hangt natrium).
 
 ## Donkere modus
 
-In donkere modus is PY-Diep de ondergrond en is tekst wit (18,16:1). Navy werkt daar niet als tekst of rand (1,61:1); merktekst en links worden aqua.300 (11,01:1). De hoofdknop wordt aqua met PY-Diep (7,74:1), de tweede knop krijgt een rand en tekst in aqua.300. De stem blijft aqua (7,74:1 op PY-Diep). Parkeerders worden helemaal wit, in één kleur. Alle waarden staan in `tokens.json` onder `modes.dark`; de schermen zelf komen uit het hoofdstuk digitaal.
+In donkere modus is PY-Diep de ondergrond en is tekst wit (18,16:1). Navy werkt daar niet als tekst of rand (1,61:1); merktekst en links worden aqua.300 (11,01:1). De hoofdknop wordt aqua met PY-Diep (7,74:1), de tweede knop krijgt een rand en tekst in aqua.300. De stem blijft aqua (7,74:1 op PY-Diep). Parkeerders worden helemaal wit, in één kleur. Alle waarden staan in `tokens.json` onder `modes.dark`. De schermen zelf staan in hoofdstuk 10, UI/UX.
 
 ## Productie
 
-Druk in CMYK (FOGRA39 gestreken of FOGRA52 ongestreken) met 3 mm afloop. Drukwerk gebruikt alleen de merkkleuren en hun lichte tinten; zo voorkomen we de 15 blauwen en 5 aqua's die nu in omloop zijn. Borden gaan via de RIP van de leverancier met de RAL- en foliereferenties hieronder. Oranje produceren we alleen nog voor betaalborden, tariefborden en automaten. De referenties zijn gekozen in besluit D23 van de core spec; elke keuze wordt nog bevestigd op een fysiek staal en een proefbord.
+Druk in CMYK (FOGRA39 gestreken of FOGRA52 ongestreken) met 3 mm afloop. Drukwerk gebruikt alleen de merkkleuren en hun lichte tinten 50 tot 300; zo voorkomen we de 15 blauwen en 5 aqua's die nu in omloop zijn. Borden gaan via de RIP van de leverancier met de RAL- en foliereferenties hieronder. Oranje produceren we alleen voor betaalborden, tariefborden en automaten. Bevestig elke referentie op een fysiek staal en een proefbord voordat je produceert.
 
 ![Productietabel per kleur](figures/production-table.png)
 
-**Methode.** ΔE is CIEDE2000, zelf berekend. Voor RAL en folie: merkkleur van sRGB naar CIELab D65 en vergeleken met de gepubliceerde Lab- of sRGB-waarde. Voor Pantone: merkkleur naar CIELab D50 (Bradford) en vergeleken met de Lab-waarden uit de PANTONE+ Solid Coated en Uncoated V3 kleurboeken (X-Rite 2014). Waar de nieuwere Pantone-waarden ook te vinden waren (colorxs.com) staat de tweede ΔE erbij. Een ΔE uit schermdata vervangt nooit een fysiek staal: elke keuze wordt gecontroleerd met de Pantone-waaiers, de RAL K7 en de folie-stalen.
+Per kleur kozen we de referentie die het dichtst bij de merkkleur ligt. Het getal ΔE is dat kleurverschil: hoe lager, hoe dichter bij de merkkleur. Voor de rekenmethode, de profielen en de bronnen: zie hoofdstuk 14, Bijlagen.
 
-**CMYK.** Omgerekend met het ICC-profiel Coated FOGRA39 (ISO 12647-2:2004), uit de output intent van `source/print/15728501-1.pdf`, via LittleCMS (Pillow ImageCms), relatief colorimetrisch met zwartpuntcompensatie. De ΔE is de terugrekening via hetzelfde profiel.
+**CMYK** (gestreken papier, FOGRA39).
 
 | Kleur | CMYK | ΔE | Toelichting |
 |---|---|---|---|
-| PY-Diep | 100 83 0 80 | 4,8 | PY-Blauw plus 80 K, totaal 263 procent inkt. Valt buiten FOGRA39; het beste haalbare is 4,5. Directe ICC-omrekening geeft 100 93 47 66 (ΔE 7,7). |
-| PY-Diep, tekst kleiner dan 12 pt op oranje | K 100 | n.v.t. | Drie platen op kleine tekst geven pasproblemen. PY-Zwart op oranje haalt 6,39:1. Komt alleen nog voor op betaalstickers. |
-| blue.50 / 100 / 200 / 300 | 5 3 2 0 / 10 6 2 0 / 24 15 2 0 / 44 30 2 0 | 1,0 / 1,0 / 0,5 / 1,0 | ICC-omrekening |
+| PY-Blauw | 100 83 0 17 | 2,9 | handboekwaarde, blijft |
+| PY-Aqua | 69 0 21 0 | 0,5 | handboekwaarde, blijft |
+| PY-Oranje | 0 57 100 0 | 1,3 | handboekwaarde, blijft; alleen voor betalen |
+| PY-Diep | 100 83 0 80 | 4,8 | PY-Blauw plus 80 K. PY-Diep ligt buiten wat CMYK kan drukken; het best haalbare is ΔE 4,5. |
+| PY-Diep, tekst kleiner dan 12 pt op oranje | K 100 | n.v.t. | Drie platen op kleine tekst geven pasproblemen. PY-Zwart op oranje haalt 6,39:1. Komt alleen voor op betaalstickers. |
+| blue.50 / 100 / 200 / 300 | 5 3 2 0 / 10 6 2 0 / 24 15 2 0 / 44 30 2 0 | 1,0 / 1,0 / 0,5 / 1,0 | |
 | aqua.50 / 100 / 200 / 300 | 8 0 3 0 / 16 0 5 0 / 30 0 9 0 / 50 0 15 0 | 0,4 / 1,2 / 2,0 / 2,1 | raster van PY-Aqua (12, 23, 44, 72 procent); aqua.300 vervangt de vijf losse lichte aqua's in oud drukwerk |
-| orange.50 / 100 / 200 | 0 5 11 0 / 0 13 25 0 / 0 25 49 0 | 0,0 / 0,7 / 0,8 | ICC-omrekening; in drukwerk nu niet meer nodig |
+| orange.50 / 100 / 200 | 0 5 11 0 / 0 13 25 0 / 0 25 49 0 | 0,0 / 0,7 / 0,8 | in drukwerk niet meer nodig |
 
-Ter controle: de handboekwaarden rekenen goed terug. PY-Blauw 100 83 0 17 geeft ΔE 2,9, PY-Aqua 69 0 21 0 geeft 0,5, PY-Oranje 0 57 100 0 geeft 1,3. Die blijven staan. FOGRA52 (ongestreken) is nog niet omgerekend, omdat het profiel niet te downloaden was; de drukker rekent dat om vanuit de sRGB- of Lab-waarden.
+Voor ongestreken papier (FOGRA52) rekent de drukker om vanuit de sRGB- of Lab-waarden.
 
 **Pantone.**
 
 | Kleur | Coated | Uncoated |
 |---|---|---|
-| PY-Blauw | 3597 C (ΔE 2,1; nieuwere data 5,4). Alternatief 287 C (5,8; 4,8) | 280 U (6,7); ongestreken haalt dit blauw niet |
-| PY-Aqua | 3115 C (3,6; nieuwere data 2,1). Alternatief 2227 C (2,4; 4,2) | 3115 U (2,4) |
-| PY-Oranje | 144 C (2,8; 4,4). Alternatief 716 C (2,9; 3,9) | 144 U (5,6) |
-| PY-Diep | 5255 C (4,3; 6,9) | geen bruikbare match (282 U 16,6) |
+| PY-Blauw | 3597 C (ΔE 2,1); alternatief 287 C (5,8) | 280 U (6,7); ongestreken haalt dit blauw niet |
+| PY-Aqua | 3115 C (3,6); alternatief 2227 C (2,4) | 3115 U (2,4) |
+| PY-Oranje | 144 C (2,8); alternatief 716 C (2,9) | 144 U (5,6) |
+| PY-Diep | 5255 C (4,3) | geen bruikbare match |
 | PY-Grijs | Cool Gray 5 C (2,1) | Cool Gray 5 U (2,4) |
 | PY-Zwart | 419 C (3,1); in de praktijk K 100 | K 100 |
 
@@ -216,44 +219,45 @@ Ter controle: de handboekwaarden rekenen goed terug. PY-Blauw 100 83 0 17 geeft 
 
 | Kleur | Was | Nu |
 |---|---|---|
-| PY-Aqua | RAL 6027 Lichtgrün, ΔE 10,2, te groen | RAL Design 220 70 35 Ferienblau, ΔE 1,7. Geen RAL Classic komt binnen ΔE 9. Voor borden met aqua liever geprinte folie met mat laminaat op Dibond; poedercoat in aqua alleen waar het echt moet, in RAL Design. |
-| PY-Oranje | RAL 2003, ΔE 7,5 | RAL 2003 houden, maar RAL 1037 Sonnengelb (ΔE 5,4) meenemen in de proefborden. Alleen voor automaten en betaalborden. |
-| PY-Diep | geen | RAL 5004 Schwarzblau, ΔE 9,1; alleen als het echt gelakt moet worden |
-| Wit | geen | RAL 9016 Verkehrsweiß, ΔE 4,5, hoogste lichtreflectie (LRV 87) van de witten |
 | PY-Blauw | RAL 5002, ΔE 4,5 | houden; nog steeds de beste RAL Classic |
+| PY-Aqua | RAL 6027 Lichtgrün, ΔE 10,2, te groen | RAL Design 220 70 35 Ferienblau, ΔE 1,7. Geen RAL Classic komt dichtbij. Voor borden met aqua liever geprinte folie met mat laminaat op Dibond; poedercoat in aqua alleen waar het echt moet, in RAL Design. |
+| PY-Oranje | RAL 2003, ΔE 7,5 | RAL 2003 houden, en RAL 1037 Sonnengelb (ΔE 5,4) meenemen in de proefborden. Alleen voor automaten en betaalborden. |
+| PY-Diep | geen | RAL 5004 Schwarzblau, ΔE 9,1; alleen als het echt gelakt moet worden |
+| Wit | geen | RAL 9016 Verkehrsweiß, ΔE 4,5; het wit dat het meeste licht terugkaatst (LRV 87) |
 
 **Folie.** Oracal 751C is glanzend, behalve wit en zwart, die ook mat bestaan (010M, 070M). Voor matte borden is printen met mat laminaat de standaard; snijfolie alleen voor één kleur op een vlak.
 
 | Kleur | Opaak | Translucent (lichtbak) |
 |---|---|---|
 | PY-Blauw | Oracal 751C-049 King blue (ΔE 1,9) | Oracal 8500-006 Intensive blue (2,9) of 3M 3630-157 Sultan Blue |
-| PY-Aqua | geen standaardkleur (beste: 751C-599 Pastel turquoise, 8,6). Printen, of maatkleur aanvragen | geen standaardkleur in 8500 of 3630. Printen op translucente printfolie (3M IJ3630-20), of maatkleur (3M levert 3630 op kleur) |
-| PY-Oranje | 751C heeft niets binnen ΔE 9. 3M Scotchcal 100-717 Light Orange (ongeveer 3, hexwaarde niet officieel) | 3M 3630-74 Kumquat Orange (simuleert Pantone 151 C, ΔE 4,2); alleen voor de bubbel bij de betaalplek |
+| PY-Aqua | geen standaardkleur (beste: 751C-599 Pastel turquoise, 8,6). Printen, of een maatkleur aanvragen | geen standaardkleur in 8500 of 3630. Printen op translucente printfolie (3M IJ3630-20), of een maatkleur (3M levert 3630 op kleur) |
+| PY-Oranje | 751C heeft niets dat dichtbij komt. 3M Scotchcal 100-717 Light Orange (ongeveer 3; vraag een staal) | 3M 3630-74 Kumquat Orange (ΔE 4,2); alleen voor de bubbel bij de betaalplek |
 | PY-Diep | Oracal 751C-590 Blueberry (2,3) | geen; geen lichtbakkleur |
 | PY-Grijs | Oracal 751C-724 Ice grey (3,2) | Oracal 8500-076 Telegrey (5,5) |
 | PY-Zwart | Oracal 751C-070M Black mat (4,6) | Oracal 8500-070 Black (3,7) |
 | Wit | Oracal 751C-010M White mat (3,1) | Oracal 8500-010 White (5,2) |
 
-Translucente folie oogt doorgelicht anders dan op het staal. Kies lichtbakkleur altijd op een proefvlak in de lichtbak, bij dag en bij nacht.
-
-**Bronnen.**
-- Pantone Lab: PANTONE+ Solid Coated en Uncoated V3, via [jacobbubu/color-books](https://github.com/jacobbubu/color-books); controle via [colorxs.com](https://www.colorxs.com/color/pantone-3115-c) en [Pantone color finder 3597 C](https://www.pantone.com/color-finder/3597-c).
-- RAL Classic Lab: [List of RAL colours, Wikipedia](https://en.wikipedia.org/wiki/List_of_RAL_colours). RAL Design: [RAL 220 70 35](https://ralcolorchart.com/ral-design/ral-220-70-35).
-- Oracal sRGB-waarden: [Orafol 751C](https://www.orafol.com/en/europe/products/oracal-751c-high-performance-cast), [Orafol 8500](https://orafol.com/en/europe/products/oracal-8500-translucent-cal).
-- 3M: [productbulletin 3630/3730](https://www.wensco.com/customer/docs/skudocs/3M_3630_3730_productbulletin.pdf) (namen en Pantone-simulaties), [productkaart 3630](https://www.sirvisual.com/Attachment/100/Product%20Card%203630.pdf) (maatkleuren, IJ3630-20), [kleurkaart 100](https://multimedia.3m.com/mws/media/653312O/color-card-100.pdf). De hexwaarde van 100-717 komt uit [Colorly](https://github.com/jpederson/Colorly) (MIT) en is niet officieel.
-- Garagelicht: `01-research/R4-physical-environment.md`. Drukdrift: `docs/print-rules.md` 1 en 7.1.
+Translucente folie oogt doorgelicht anders dan op het staal. Kies een lichtbakkleur altijd op een proefvlak in de lichtbak, bij dag en bij nacht.
 
 ## Do's en don'ts
 
-| Doen | Niet doen |
-|---|---|
-| Veel wit; navy als merkvlak; per vlak één accent | Elk vlak vol kleur omdat het kan |
-| Aqua als de stem, een bubbel op navy of een klein accent; parkeerders altijd in één kleur | Aqua als tekstkleur op wit of als knop op een licht scherm |
-| Oranje alleen bij betalen in de garage: automaat, tarief, storing | Oranje knoppen, prijzen, strepen of vlakken op scherm, in druk of op social |
-| De hoofdknop navy met witte tekst, op donker aqua met PY-Diep | Een oranje "Reserveer"-knop |
-| In de garage kleur kiezen op taak: rijden navy, lopen aqua, betalen oranje | Aqua of oranje gebruiken omdat het vrolijk staat |
-| Op aqua altijd PY-Blauw, op oranje altijd PY-Diep | Wit op aqua of oranje |
-| Status met een woord | Alleen een gekleurde stip |
-| Alles vlak; oude verloopborden bij vervanging vlak PY-Blauw | Een verloop, ook niet "alleen in marketing" |
-| De tokens `voice.arc`, `figure.*` en `action.*` gebruiken | Kleuren uit een oud bestand pipetten |
-| Mat laminaat en een proefbord in de garage | Kleur goedkeuren op een scherm |
+- **Wel:** veel wit; navy als merkvlak; per vlak één accent.
+- **Wel:** aqua als de stem, een bubbel op navy of een klein accent; parkeerders altijd in één kleur.
+- **Wel:** oranje alleen bij betalen in de garage: automaat, tarief, storing.
+- **Wel:** de hoofdknop navy met witte tekst, op donker aqua met PY-Diep.
+- **Wel:** in de garage kleur kiezen op taak: rijden navy, lopen aqua, betalen oranje.
+- **Wel:** op aqua altijd PY-Blauw, op oranje altijd PY-Diep.
+- **Wel:** status met een woord.
+- **Wel:** alles vlak; oude verloopborden bij vervanging vlak PY-Blauw.
+- **Wel:** de tokens `voice.arc`, `figure.*` en `action.*` gebruiken.
+- **Wel:** mat laminaat en een proefbord in de garage.
+- **Niet:** elk vlak vol kleur omdat het kan.
+- **Niet:** aqua als tekstkleur op wit of op navy, of als knop op een licht scherm.
+- **Niet:** oranje knoppen, prijzen, strepen of vlakken op scherm, in druk of op social.
+- **Niet:** een oranje "Reserveer"-knop.
+- **Niet:** aqua of oranje gebruiken omdat het vrolijk staat.
+- **Niet:** wit op aqua of oranje.
+- **Niet:** status met alleen een gekleurde stip.
+- **Niet:** een verloop, ook niet "alleen in marketing".
+- **Niet:** kleuren uit een oud bestand pipetten.
+- **Niet:** kleur goedkeuren op een scherm.

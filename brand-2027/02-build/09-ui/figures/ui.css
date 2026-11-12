@@ -1,8 +1,8 @@
 /* ParkingYou 2027, chapter 09 UI/UX: component styles for the figures.
    Components read semantic tokens only (var(--py-surface-*), --py-text-*, --py-action-* ...).
-   Component values were approved in core-spec D4 to D13. Main button navy (D33), second button outline. No orange on screen. */
+   Main button navy, second button outline. No orange on screen. */
 
-/* Component values approved in core-spec D4, D5, D7 (now in tokens.css as --py-size-*, --py-type-label-l and semantic tokens).
+/* Component values (in tokens.css as --py-size-*, --py-type-label-l and semantic tokens).
    The short aliases below keep the figure CSS readable. */
 :root, [data-theme="dark"] {
   --pyx-control-h: var(--py-size-button-height);
@@ -111,15 +111,15 @@
 
 /* ---------- Alerts and feedback ---------- */
 .alert { display: flex; gap: var(--py-space-3); padding: var(--py-space-4); border-radius: var(--py-radius-m); background: var(--py-surface-subtle);
-  color: var(--py-text-default); font: var(--py-type-body-s); box-shadow: inset 0 0 0 1px var(--alert-c); } /* D10: full 1 px outline, no side bar */
+  color: var(--py-text-default); font: var(--py-type-body-s); box-shadow: inset 0 0 0 1px var(--alert-c); } /* full 1 px outline, no side bar */
 .alert > .ic { color: var(--alert-c); }
 .alert b { display: block; font: var(--py-type-label-m); margin-bottom: 2px; }
 .alert--error { --alert-c: var(--py-feedback-error); background: var(--py-feedback-error-bg); }
-.alert--warning { --alert-c: var(--py-feedback-warning); }
+.alert--warning { --alert-c: var(--py-feedback-warning); box-shadow: inset 0 0 0 1px var(--py-border-strong); } /* orange.700 only as icon or text, never as a border */
 .alert--success { --alert-c: var(--py-feedback-success); }
 .alert--info { --alert-c: var(--py-feedback-info); }
 .toast { display: flex; gap: var(--py-space-3); align-items: center; padding: var(--py-space-3) var(--py-space-4); border-radius: var(--py-radius-m);
-  background: var(--py-surface-inverse); color: var(--py-surface-default); font: var(--py-type-body-s); box-shadow: var(--py-shadow-2); }
+  background: var(--py-surface-inverse); color: var(--py-text-on-inverse); font: var(--py-type-body-s); box-shadow: var(--py-shadow-2); }
 
 /* ---------- Cards ---------- */
 .card { background: var(--py-surface-raised); border-radius: var(--py-radius-l); box-shadow: var(--py-shadow-1), inset 0 0 0 1px var(--py-border-subtle); overflow: hidden; }

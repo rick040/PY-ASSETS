@@ -2,7 +2,7 @@
 
 Beweging helpt je zien wat er verandert. Meer hoeft het niet te doen. We hebben twee soorten: productief voor alles in de interface, en expressief voor een paar merkmomenten. Alle waarden komen uit de tokens. Dit hoofdstuk laat beweging zien als storyboard: losse beelden op vaste tijden, geen video.
 
-Eén regel geldt overal: **het logo en de bubbel draaien nooit.** De punt van de bubbel wijst altijd naar beneden, zoals in het beeldmerk. Richting komt van de hoekige pijl.
+Eén regel geldt overal: **het logo en de bubbel draaien nooit.** De punt van de bubbel wijst altijd naar linksonder, zoals in het beeldmerk. Richting komt van de hoekige pijl.
 
 ## Twee soorten beweging
 
@@ -20,7 +20,7 @@ Expressief is zeldzaam; daardoor valt het op. Per vlak gebruik je het logo plus 
 
 | Token | Waarde | Gebruik |
 |---|---|---|
-| `duration.reduced` | 120 ms | de fade die beweging vervangt onder reduced motion |
+| `duration.reduced` | 120 ms | de fade die beweging vervangt bij minder beweging |
 | `duration.fast` | 120 ms | hover, druk, kleine statuswissel, dekking bij een pop |
 | `duration.moderate` | 200 ms | uitklappen, sheet in, de pijl schuift |
 | `duration.slow` | 320 ms | paginawissel, de stem tekent zich |
@@ -34,7 +34,7 @@ Expressief is zeldzaam; daardoor valt het op. Per vlak gebruik je het logo plus 
 
 ## De bubbelpop
 
-De bubbel popt in: hij schaalt van 0,9 naar 1 in 600 ms met `easing.bubble`. Hij draait niet; de punt wijst van het eerste tot het laatste beeld naar beneden.
+De bubbel popt in: hij schaalt van 0,9 naar 1 in 600 ms met `easing.bubble`. Hij draait niet; de punt wijst van het eerste tot het laatste beeld naar linksonder.
 
 1. **Schaal** van 0,9 naar 1, vanuit het midden van de cirkel, 600 ms, `easing.bubble`.
 2. **Dekking** van 0 naar 1 in de eerste 120 ms (`duration.fast`, `easing.enter`). Anders staat de bubbel op 0 ms al zichtbaar op 0,9.
@@ -55,7 +55,7 @@ De stem opent een boodschap, en in beweging doet hij dat letterlijk: eerst de bo
 
 Samen duurt het 440 ms. Door `easing.enter` staat de boog na 80 ms al voor tweederde; het oog ziet een snelle haal en een rustige landing. De stem tekent zich één keer per vlak, op het moment dat de boodschap begint. Nooit terug laten lopen, nooit opnieuw tekenen bij elke regel.
 
-Kleuren zoals in de core spec: aqua op wit en op PY-Blauw, PY-Blauw op aqua.
+De kleuren zijn die van de stem in hoofdstuk 6, Patronen en designelementen: aqua op wit en op PY-Blauw, PY-Blauw op aqua.
 
 ![De stem tekent zich](figures/stem-tekent.png)
 
@@ -63,14 +63,14 @@ Kleuren zoals in de core spec: aqua op wit en op PY-Blauw, PY-Blauw op aqua.
 
 Een parkeerder beweegt niet zoals een tekenfilm. Hij wisselt van houding met een **harde knip**: het ene beeld, dan meteen het andere, zonder tussenbeelden.
 
-- **Twee bestaande figuren.** Altijd uit de kit, ongewijzigd. De vaste paren: **loper naar juicher** (aankomen, gelukt) en **zwaaier naar wijzer** (hallo, daar is het). Shopper naar juicher werkt ook, zoals in Remotion-verhaal 2.
+- **Twee bestaande figuren.** Altijd uit de kit, ongewijzigd. Je kiest het paar bij het moment. Bijvoorbeeld: **loper naar juicher** (aankomen, gelukt), **loper naar springer** (je reservering is bevestigd), **zwaaier naar wijzer** (hallo, daar is het) of **shopper naar juicher**, zoals in Remotion-verhaal 2.
 - **Zelfde plek.** De voeten staan voor en na de knip op dezelfde plek op dezelfde lijn. Zo zie je één persoon die iets doet, niet twee personen.
 - **Tijd.** Elke houding blijft minstens 1 s staan. De knip valt op een nieuwe ondertitel of een maat van de muziek. Hooguit één wissel per scène.
 - **Nooit:** armen of benen animeren, kantelen, draaien, overvloeien, laten springen of van de lijn laten zweven. Ook geen loopje over het beeld.
 
-Een knip is geen beweging. Onder reduced motion verandert er dus niets.
+Een knip is geen beweging. Bij minder beweging verandert er dus niets.
 
-![De parkeerders: van loper naar juicher en van zwaaier naar wijzer](figures/parkeerder-wissel.png)
+![De parkeerders: bijvoorbeeld van loper naar juicher en van zwaaier naar wijzer](figures/parkeerder-wissel.png)
 
 ## De pijl schuift
 
@@ -85,9 +85,9 @@ Op schermen en borden in de garage beweegt de pijl nooit; daar leidt beweging be
 
 ![De pijl schuift in zijn eigen richting](figures/pijl-schuift.png)
 
-## Reduced motion
+## Minder beweging
 
-Als iemand in zijn systeem minder beweging heeft gekozen (`prefers-reduced-motion`), dan:
+Als iemand in zijn systeem minder beweging heeft gekozen (de instelling reduced motion, in code `prefers-reduced-motion`), dan:
 
 - **UI**: `duration.moderate`, `slow` en `expressive` worden 0 ms. `duration.fast` en `duration.reduced` blijven 120 ms, zodat een korte fade de beweging vervangt. Dat regelt `tokens.css` al. Laadindicatoren mogen blijven draaien; dat is informatie.
 - **Bubbel**: geen schaal, alleen dekking van 0 naar 1 in `duration.reduced`.
@@ -96,9 +96,9 @@ Als iemand in zijn systeem minder beweging heeft gekozen (`prefers-reduced-motio
 - **De pijl**: schuift niet. Komt hij in beeld, dan met de fade.
 - **Video en carrousels** spelen niet vanzelf.
 
-Los van reduced motion geldt: alles wat langer dan 5 seconden vanzelf beweegt (video, carrousel, geanimeerde banner) krijgt een zichtbare pauzeknop van minstens 44 x 44 px.
+Los van die instelling geldt: alles wat langer dan 5 seconden vanzelf beweegt (video, carrousel, geanimeerde banner) krijgt een zichtbare pauzeknop van minstens 44 x 44 px.
 
-![Reduced motion: fade in plaats van pop](figures/reduced-motion.png)
+![Minder beweging: fade in plaats van pop](figures/reduced-motion.png)
 
 ## Reels
 
@@ -109,7 +109,7 @@ Los van reduced motion geldt: alles wat langer dan 5 seconden vanzelf beweegt (v
 - **Verhaal**: de boodschap in beeld en tekst. Hier zit de knip van de parkeerder of het moment dat de pijl inschuift naar de actie. Eigen locaties in beeld, nooit tekst over een drukke plek.
 - **Eindkaart** 1,5 seconde: logo gestapeld, 6u hoog, stil, op PY-Blauw, met het webadres eronder in regular.
 - **Ondertitels** altijd aan. Kapitaalhoogte 0,4u (21,6 px op 1080 breed), wit op PY-Blauw of PY-Blauw op wit, op 26,5u tot 29u.
-- **Vrije zones**: boven 250 px en onder 340 px geen belangrijke inhoud (zie Grid en layout). Kop en beeld tussen 5u en 29u.
+- **Vrije zones**: boven 250 px en onder 340 px geen belangrijke inhoud (zie hoofdstuk 5, Grid en layout). Kop en beeld tussen 5u en 29u.
 - **Kleur**: veel wit, PY-Blauw en aqua als accent. Geen oranje, geen verloop.
 
 De bestaande Remotion-verhalen in `remotion/` gebruiken nog het oude tokenbestand, het verloop, een grote achtergrondbubbel, een figuur in een bubbel en een figuur die huppelt. Bij de volgende versie gaan ze over op `tokens.json` van 2027, deze opbouw en de eindkaart. De knip van shopper naar juicher in verhaal 2 blijft; het huppelen en de bubbel eromheen vervallen.
@@ -148,17 +148,17 @@ Goedgekeurd: zie besluit D38 in de core spec.
 
 ## Do's en don'ts
 
-- **Do:** UI-beweging altijd uit de tokens, nooit een losse waarde in code.
-- **Do:** de bubbelpop, de stem en de knip alleen op merkmomenten: reel open en dicht, splash, bevestiging.
-- **Do:** de parkeerder met een harde knip tussen twee kitfiguren, voeten op dezelfde plek.
-- **Do:** de pijl een klein stukje laten schuiven in zijn eigen richting, één keer of op hover.
-- **Do:** test elke animatie met reduced motion aan.
-- **Do:** ondertitels in elke reel, ook als er geen gesproken tekst is.
-- **Don't:** de bubbel of het logo draaien, kantelen, knipperen of steeds opnieuw laten poppen.
-- **Don't:** een pijl draaien naar een nieuwe richting, laten stuiteren of in een cirkel laten bewegen.
-- **Don't:** armen of benen van een parkeerder animeren, of figuren laten overvloeien of springen.
-- **Don't:** de stem terug laten lopen of bij elke regel opnieuw tekenen.
-- **Don't:** overshoot of stuiter in de UI. Die hoort alleen bij de bubbel.
-- **Don't:** autoplay langer dan 5 s zonder pauzeknop.
-- **Don't:** beweging in bewegwijzering of op schermen in de garage die de aandacht van bestuurders trekt.
-- **Don't:** reels langer dan 15 s, met meer dan één boodschap of met meer dan twee eigen elementen.
+- **Wel:** UI-beweging altijd uit de tokens, nooit een losse waarde in code.
+- **Wel:** de bubbelpop, de stem en de knip alleen op merkmomenten: reel open en dicht, opstartscherm, bevestiging.
+- **Wel:** de parkeerder met een harde knip tussen twee kitfiguren, voeten op dezelfde plek.
+- **Wel:** de pijl een klein stukje laten schuiven in zijn eigen richting, één keer of op hover.
+- **Wel:** test elke animatie met minder beweging aan.
+- **Wel:** ondertitels in elke reel, ook als er geen gesproken tekst is.
+- **Niet:** de bubbel of het logo draaien, kantelen, knipperen of steeds opnieuw laten poppen.
+- **Niet:** een pijl draaien naar een nieuwe richting, laten stuiteren of in een cirkel laten bewegen.
+- **Niet:** armen of benen van een parkeerder animeren, of figuren laten overvloeien of springen.
+- **Niet:** de stem terug laten lopen of bij elke regel opnieuw tekenen.
+- **Niet:** overshoot of stuiter in de UI. Die hoort alleen bij de bubbel.
+- **Niet:** autoplay langer dan 5 s zonder pauzeknop.
+- **Niet:** beweging in bewegwijzering of op schermen in de garage die de aandacht van bestuurders trekt.
+- **Niet:** reels langer dan 15 s, met meer dan één boodschap of met meer dan twee eigen elementen.

@@ -25,9 +25,9 @@ De negen figuren uit het handboek komen terug, met een onveranderde tekening. Hu
 | Zwaaier | `figure-wave` | welkom en tot ziens |
 | Wijzer | `figure-point` | naast een pijl of contactgegevens |
 | Danser | `figure-dance` | alleen voor evenementen (GLOW, wedstrijddagen) |
-| Springer | `figure-jump` | bevestigingen en deals |
+| Springer | `figure-jump` | bevestigingen en aanbiedingen |
 | Shopper | `figure-bags-walk` | campagnes voor stad en evenement |
-| Juicher | `figure-bags-cheer` | bevestigingen en deals |
+| Juicher | `figure-bags-cheer` | bevestigingen en aanbiedingen |
 | Gastheer wijst | `figure-cap-point` | naast een pijl of contactgegevens |
 | Gastheer zwaait | `figure-cap-wave` | welkom waar onze mensen staan |
 
@@ -62,8 +62,8 @@ Nooit zwevend, nooit gekanteld, nooit afgesneden. De springer staat op één voe
 
 - **Maat in layouts:** 3u tot 8u hoog, gemeten van voet tot bovenkant hoofd of pet. Op scherm 48 tot 160 px. Kleiner wordt het hoofd een stip: laat de parkeerder dan weg.
 - **Op een voetgangersbord:** hooguit 60 procent van de hoogte van het vlak, op de onderrand.
-- **Richting:** een parkeerder kijkt naar de route of naar de tekst. Daarvoor mag je hem spiegelen. Spiegel alleen het lijf. Het hoofd heeft de vorm van de bubbel en die spiegelt nooit: de punt blijft naar linksonder wijzen, zoals in het logo. In de figuren hieronder is dat zo gebouwd.
-- **Aantal:** één parkeerder per vlak. Een volgend vlak (de achterkant, de volgende slide, de volgende scène) mag een andere pose hebben. Wissel van pose met een harde knip tussen twee bestaande figuren, nooit met bewegende armen of benen.
+- **Richting:** een parkeerder kijkt naar de route of naar de tekst. Daarvoor mag je hem spiegelen. Spiegel het lijf, en bij de gastheer ook de pet: dan wijst de klep dezelfde kant op als zijn blik. Het hoofd heeft de vorm van de bubbel en die spiegelt nooit: de punt blijft naar linksonder wijzen, zoals in het logo. Gebruik de kant-en-klare bestanden `figure-*-navy-flip.svg` en `figure-*-white-flip.svg`; daarin is dat al zo gebouwd.
+- **Aantal:** één parkeerder per vlak. Een volgend vlak (de achterkant, de volgende dia, de volgende scène) mag een andere pose hebben. Wissel van pose met een harde knip tussen twee bestaande figuren, nooit met bewegende armen of benen.
 
 ![Maat, spiegelen en één per vlak](figures/parkeerders-maat.png)
 
@@ -71,7 +71,7 @@ Nooit zwevend, nooit gekanteld, nooit afgesneden. De springer staat op één voe
 
 Hier gaat het merk leven. Een parkeerder doet iets met wat er naast hem staat.
 
-- **Gastheer wijst naar je contactgegevens.** Zijn hand staat op de hoogte van de eerste regel, met 0,5u tussen hand en tekst. Hij staat op dezelfde lijn als het tekstblok. Spiegel het lijf als de tekst links staat.
+- **Gastheer wijst naar je contactgegevens.** Zijn hand staat op de hoogte van de eerste regel, met 0,5u tussen hand en tekst. Hij staat op dezelfde lijn als het tekstblok. Staat de tekst links, gebruik dan het gespiegelde bestand: lijf en pet gespiegeld, het hoofd niet.
 - **Wijzer naast de pijl.** Arm en pijl wijzen dezelfde kant op. De pijl staat op armhoogte, 0,5u voor de hand, en is zo hoog als de kapitaalhoogte van de tekst ernaast. De hand raakt de pijl nooit.
 - **Loper op het voetgangersbord.** Geprint bord (Dibond of folie) in aqua. De loper staat op de onderrand en loopt de kant van de pijl op. Hij is geen routepictogram: het pictogram voor lopen, lift of trap komt uit de pictogramset.
 - **Juicher in de bevestiging.** Na betalen of reserveren, op een lijn boven de kop. Nooit naast een foutmelding.
@@ -93,9 +93,9 @@ De halve boog uit het handboek, zonder de slogan. Hij opent een boodschap, zoals
 - **Lijndikte** h/25, minstens 1,5 px of 0,5 mm.
 - **Afstand** 0,3h, gemeten van de punten van de boog tot de eerste letter.
 - **De kop mag breken** na de vette kernwoorden: "**Welkom**" op de eerste regel, "in [garage]." op de tweede. Het vette deel is ExtraBold 800 in grote koppen en Bold 700 in kleinere koppen, de rest Regular.
-- **Kleur:** PY-Aqua op wit en op PY-Blauw; PY-Blauw op PY-Aqua.
+- **Kleur:** PY-Aqua op wit en op PY-Blauw; PY-Blauw op PY-Aqua; PY-Diep op oranje (alleen op betaalborden in de garage).
 - **Aantal:** één per vlak in layouts.
-- **Op borden** scheidt de stem de modules: pijl, pictogram, tekst. Even hoog als de modules, zelfde lijndikte (1/25), aan beide kanten 0,3h ruimte. Aqua op navy en PY-Blauw op aqua. Zoveel als er overgangen zijn.
+- **Op borden** scheidt de stem de modules: pijl, pictogram, tekst. Even hoog als de modules, zelfde lijndikte (1/25), aan beide kanten 0,3h ruimte. Aqua op navy, PY-Blauw op aqua en PY-Diep op oranje. Zoveel als er overgangen zijn.
 - **In beweging** tekent de stem zich van boven naar beneden; daarna komt de tekst.
 
 Nooit een tweede boog rechts om de tekst te sluiten. Nooit rechts van de tekst. Nooit dikker dan h/25. Geen cursieve slogan in de boog.
@@ -108,7 +108,7 @@ De bubbel is het silhouet van het beeldmerk. Je tekent hem nooit opnieuw en verv
 
 - **Vier maten.** 3u, 5u, 8u of 13u breed; op scherm 24, 40, 64 of 104 px. Alleen een fotobubbel in een desktopkop mag 240 px zijn.
 - **Vullingen.** Navy met witte inhoud. Aqua met PY-Blauw. Wit met PY-Blauw (op wit met een rand van 1/30 van de breedte in PY-Blauw). Oranje met PY-Diep, alleen op betaalborden en automaten in de garage. Een fotobubbel draagt geen tekst.
-- **Eén ding erin.** Een niveau (-1, 0, 2), een sectie (1A), een prijs, één pictogram of één woord van hooguit 6 tekens (Vrij, Info). De inhoud staat in een vierkant van 60 procent van de breedte, in het midden van de cirkel. Cijfers in ExtraBold 800, tabelcijfers. **Nooit een pijl in een bubbel.**
+- **Eén ding erin.** Een niveau (−1, 0, 2), een sectie (1A), een prijs (alleen het bedrag, zoals € 12,50; "per dag" staat naast de bubbel), één pictogram of één woord van hooguit 6 tekens (Vrij, Info). De inhoud staat in een vierkant van 60 procent van de breedte, in het midden van de cirkel. Cijfers in ExtraBold 800, tabelcijfers. **Nooit een pijl in een bubbel.**
 - **Altijd rechtop.** De bubbel draait en spiegelt nooit, net als het logo. De punt wijst altijd naar linksonder. Richting geef je met de hoekige pijl ernaast.
 - **Vrije ruimte.** 1u rondom. Op scherm 8 px bij 24 en 40 px, 16 px bij grotere bubbels.
 - **Aantal.** Eén bubbel per vlak. Twee mag op vlakken van 1 meter of meer, of op een bord met meerdere panelen (pyloon, overzichtsbord). Ze raken elkaar nooit. Op een kaart is de navy bubbel van 24 px de pin, één per locatie.
@@ -121,7 +121,7 @@ Nooit draaien of spiegelen, geen pijl erin, geen verloop, geen schaduw of 3D, ni
 
 ## De hoekige pijl
 
-De pijl uit het handboek is de enige pijl. Op borden, in knoppen, in links, op social.
+De pijl uit het handboek is de enige pijl. Op borden, in knoppen, in links en op sociale media.
 
 - **Richting** in stappen van 45 graden. Schuin is even lang als recht. Een externe link wijst 45 graden naar rechtsboven.
 - **Kleur** = de inhoudskleur van de grond: PY-Blauw op wit en aqua, wit op PY-Blauw, PY-Diep op oranje (alleen betalen in de garage).
@@ -134,10 +134,12 @@ De pijl uit het handboek is de enige pijl. Op borden, in knoppen, in links, op s
 
 De grond is altijd vlak: PY-Blauw of wit, en papier (`blue.50`) voor rustige delen. Er ligt niets achter de tekst: geen patroon, geen verloop, geen grote bubbel, geen decoratieve vorm. Het beeld komt van de elementen zelf.
 
-- **De stem en één parkeerder dragen het merk.** De stem opent de kop, de parkeerder staat op een korte lijn en kijkt naar de tekst. Zo werkt het op social, de abonnementspas, de nieuwsbriefkop, de achterkant van kaarten, posters, schermkoppen en lege staten.
+- **De stem en één parkeerder dragen het merk.** De stem opent de kop, de parkeerder staat op een korte lijn en kijkt naar de tekst. Zo werkt het op sociale media, de abonnementspas, de nieuwsbriefkop, de achterkant van kaarten, posters, schermkoppen en lege staten.
 - **Een prijs, sectie of niveau staat in de bubbel.** Bijvoorbeeld "1A" bij je reservering of de prijs op een poster. Telt de stem al mee en staat er een parkeerder, dan komt het niveau in de tekst, niet in een derde element.
 - **De korte lijn** heeft de kleur van de parkeerder. Op scherm is hij 2 px dik (`figure.body`) en steekt hij aan beide kanten 16 px (`space.4`) uit. In print en op u-formaten is hij 0,1u dik en loopt hij over de kolommen die de parkeerder raakt. Een lijn over de hele breedte mag ook: dat is de vloerlijn van een scène.
 - **Navy of wit wissel je per vlak af.** Over een reeks is dat ongeveer 47 procent wit en licht, 38 procent PY-Blauw en 13 procent aqua.
+
+De nieuwsbriefkop is vlak PY-Blauw, 600 x 180 px: het omgekeerde logo, de stem in aqua voor een witte kop, en de witte zwaaier van 96 px op een witte lijn van 2 px. De lege staat in de app is wit: de zwaaier op een korte navy lijn, daaronder wat hier komt, wat je kunt doen en één navy knop. De volledige maten staan in hoofdstuk 10, UI/UX en hoofdstuk 12, Toepassingen.
 
 ![Vlakke grond op pas, nieuwsbrief, ticketkop en lege staat](figures/vlakke-grond.png)
 
@@ -149,11 +151,11 @@ Elk vlak krijgt het logo en hooguit twee van de vier elementen. Het logo telt ni
 
 | Combinatie | Wanneer |
 |---|---|
-| Stem + parkeerder | welkom, campagne, social, de nieuwsbrief, de achterkant van kaarten, lege staten: de stem opent de kop, de parkeerder staat op de lijn |
+| Stem + parkeerder | welkom, campagne, sociale media, de nieuwsbrief, de achterkant van kaarten, lege staten: de stem opent de kop, de parkeerder staat op de lijn |
 | Stem + bubbel | jouw plek, je reservering, een prijs of tijd bij een kop: de stem opent de kop, de bubbel draagt de sectie, het niveau of de prijs |
 | Parkeerder + pijl | ingang, route, "kijk hier": de wijzer of gastheer wijst, de pijl leidt verder |
-| Parkeerder + bubbel | een deal of bevestiging: de juicher staat op de lijn, de prijs staat in de bubbel ernaast |
-| Pijl + bubbel of pijl + stem | borden in de garage |
+| Parkeerder + bubbel | een aanbieding of bevestiging: de juicher staat op de lijn, de prijs staat in de bubbel ernaast |
+| Pijl + bubbel of pijl + stem | borden in de garage; op een oranje betaalbord in PY-Diep |
 
 **Wat niet werkt:** alles tegelijk, twee parkeerders op één vlak, een patroon of vorm achter de tekst, een gesloten stem, een pijl in de bubbel.
 
@@ -173,10 +175,12 @@ In de garage betekent kleur iets. De elementen dragen die betekenis.
 
 - Lichtbakken en portalen blijven navy; daar draagt de bubbel de taakkleur. Een volledig aqua of oranje lichtvlak doen we niet.
 - Geprinte borden (Dibond, folie) mogen de taakkleur als hele grond hebben.
-- Op navy: witte pijl en aqua stem. Op aqua: PY-Blauw pijl, stem en loper. Op oranje: pijl en tekst in PY-Diep, geen parkeerder en geen stem.
+- Op navy zijn pijl en parkeerder wit en is de stem aqua. Op aqua zijn pijl, stem en parkeerder PY-Blauw. Op oranje: stem en pijl in PY-Diep, geen parkeerder.
 - Buiten de garage is aqua het merkaccent. Binnen de garage betekent aqua altijd lopen.
 - Veiligheids- en RVV-borden krijgen nooit merkkleur en geen element.
 - Status krijgt altijd een woord naast de kleur: Vrij, Vol, Gesloten.
+
+De borden zelf, met hun maten, staan in hoofdstuk 12, Toepassingen.
 
 ![Taakkleuren met bubbel, bord en parkeerder](figures/taakkleuren.png)
 
@@ -203,36 +207,18 @@ In de garage betekent kleur iets. De elementen dragen die betekenis.
 
 ![Oude vormen naast hun 2027-versie](figures/oude-vormen.png)
 
-## Voorgestelde waarden
-
-Nieuw voorstel:
-
-| Waarde | Voorstel | Reden |
-|---|---|---|
-| Lengte van de korte lijn in print en op u-formaten | over de volle kolommen die de parkeerder raakt | Besluit D45 geeft de schermlengte (16 px aan beide kanten). Voor u-formaten ontbreekt een lengte; op de kolommen ligt de lijn op het grid en blijft hij kort. |
-
-Al goedgekeurd (besluit D43 in de core spec):
-
-| Waarde | Voorstel | Reden |
-|---|---|---|
-| Gastheer en wijzer: afstand | 0,5u tussen hand en tekst of pijl; hand op de hoogte van de eerste regel | Dichterbij lijkt het of hij de tekst vastpakt; verder weg valt het verband weg. |
-| Gespiegelde parkeerder | alleen het lijf spiegelen, het hoofd niet; als kitbestanden `figure-*-navy-flip.svg` en `figure-*-white-flip.svg` | De core spec staat spiegelen toe, maar het hoofd heeft de vorm van de bubbel en die spiegelt nooit. In de figuren is het hoofd terug op zijn plek gezet. |
-
-## Open vragen
-
-- De korte lijn in print en op u-formaten (zie Voorgestelde waarden): akkoord met "over de kolommen die hij raakt"? In de figuren voor pas, visitekaartje en post is het zo getekend.
-- Prijzen in de figuren zijn € 12,50 (Parking Philips Stadion, dagtarief met reservering) of [prijs], geen verzonnen tarieven.
-
 ## Do's en don'ts
 
-- **Do:** kies per vlak het logo plus hooguit twee elementen. Begin met één.
-- **Do:** kies de parkeerder bij de rol: loper bij lopen, zwaaier bij welkom, juicher bij een bevestiging.
-- **Do:** zet elke parkeerder op een lijn, en laat hem naar de tekst of de route kijken.
-- **Do:** laat de stem een kop openen, links, even hoog als het tekstblok.
-- **Do:** houd de grond vlak: PY-Blauw of wit, `blue.50` voor rustige delen. Laat de stem en één parkeerder het beeld dragen.
-- **Do:** geef richting met de hoekige pijl, los naast de bubbel of de tekst.
-- **Don't:** een parkeerder draaien, laten zweven, afsnijden of twee op één vlak.
-- **Don't:** de bubbel draaien of spiegelen, of er een pijl in zetten.
-- **Don't:** een patroon, verloop, grote bubbel of andere decoratieve vorm als achtergrond.
-- **Don't:** oranje buiten de garage, en verloop nergens.
-- **Don't:** merkkleuren of elementen in of naast veiligheids- en RVV-borden.
+- **Wel:** kies per vlak het logo plus hooguit twee elementen. Begin met één.
+- **Wel:** kies de parkeerder bij de rol: loper bij lopen, zwaaier bij welkom, juicher bij een bevestiging.
+- **Wel:** zet elke parkeerder op een lijn, en laat hem naar de tekst of de route kijken. Spiegel daarvoor het lijf (bij de gastheer ook de pet), nooit het hoofd.
+- **Wel:** laat de stem een kop openen, links, even hoog als het tekstblok.
+- **Wel:** houd de grond vlak: PY-Blauw of wit, `blue.50` voor rustige delen. Laat de stem en één parkeerder het beeld dragen.
+- **Wel:** geef richting met de hoekige pijl, los naast de bubbel of achter de tekst.
+- **Wel:** zet alleen het bedrag in de bubbel ("€ 12,50"); "per dag" staat ernaast.
+- **Niet:** een parkeerder draaien, laten zweven, afsnijden of twee op één vlak.
+- **Niet:** een parkeerder op een oranje betaalvlak.
+- **Niet:** de bubbel draaien of spiegelen, of er een pijl in zetten.
+- **Niet:** een patroon, verloop, grote bubbel of andere decoratieve vorm als achtergrond.
+- **Niet:** oranje buiten de garage, en verloop nergens.
+- **Niet:** merkkleuren of elementen in of naast veiligheids- en RVV-borden.

@@ -10,7 +10,7 @@
   text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
   .col { position: absolute; width: 330px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
   .col b { font-weight: 700; }
-  .col .h { font: 700 12px/16px var(--py-font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--py-text-muted); margin-bottom: 6px; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: var(--py-text-muted); margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -19,7 +19,7 @@
   <div style="position: absolute; left: 57px; top: 72px; font: 700 15px/20px var(--py-font-sans); color: #1A3580">Voorzijde</div>
   <div style="position: absolute; left: 630px; top: 72px; font: 700 15px/20px var(--py-font-sans); color: #1A3580">Achterzijde</div>
 
-  <!-- 1 unit = 1 mm, 6 px per mm. u = 2,7 mm, marge 2u = 5,4 mm. Vlak PY-Blauw (D44): logo, de stem en de zwaaier -->
+  <!-- 1 unit = 1 mm, 6 px per mm. u = 2,7 mm, marge 2u = 5,4 mm. Vlak PY-Blauw: logo, de stem en de zwaaier. Witte lijn 0,3 mm (minimum voor wit uit navy) -->
   <!-- stem block: "Abonnement" 10/14 pt + "Evoluon" 22/26 pt = 40 pt = 14,11 mm, bottom on the bottom margin (48,6) -->
   <svg style="position: absolute; left: 57px; top: 100px" width="514" height="360" viewBox="0 0 85.6 60">
     <defs><clipPath id="card1"><rect width="85.6" height="54" rx="3.18"/></clipPath></defs>
@@ -29,15 +29,15 @@
       <svg data-p="arc" x="5.4" y="34.49" width="3.105" height="14.11" color="#32B9CD"></svg>
       <text x="12.74" y="38.02" font-size="3.528" font-weight="400" fill="#FFFFFF">Abonnement</text>
       <text x="12.74" y="46.4" font-size="7.761" font-weight="700" fill="#FFFFFF">Evoluon</text>
-      <rect x="68.49" y="48.33" width="11.71" height="0.27" fill="#FFFFFF"/>
-      <image href="../../kit/assets/figure-wave-white-flip.svg" x="71.19" y="32.13" width="9.01" height="16.2" preserveAspectRatio="xMinYMax meet"/>
+      <rect x="68.49" y="48.3" width="11.71" height="0.3" fill="#FFFFFF"/>
+      <image href="../../kit/assets/figure-wave-white-flip.svg" x="71.19" y="32.1" width="9.01" height="16.2" preserveAspectRatio="xMinYMax meet"/>
     </g>
     <g stroke="#C4281C" stroke-width="0.2" fill="none">
       <path d="M68.49 57H80.2M68.49 56V58M80.2 56V58"/>
       <path d="M2.6 34.49V48.6M1.9 34.49H3.3M1.9 48.6H3.3"/>
     </g>
   </svg>
-  <div class="measure-label" style="left: 362px; top: 456px">lijn 0,1u · zwaaier 6u = 16,2 mm</div>
+  <div class="measure-label" style="left: 362px; top: 456px">lijn 0,3 mm · zwaaier 6u = 16,2 mm</div>
   <div class="measure-label" style="left: 57px; top: 456px">stem 40 pt = 14,1 mm</div>
 
   <svg style="position: absolute; left: 630px; top: 100px" width="514" height="360" viewBox="0 0 85.6 60">
@@ -51,7 +51,7 @@
       <rect x="58.6" y="8.1" width="21.6" height="21.6" fill="none" stroke="#C2C7CF" stroke-width="0.18" stroke-dasharray="0.6 0.5"/>
       <text x="69.4" y="19.6" text-anchor="middle" font-size="2.47" fill="#5E6470">[scancode]</text>
       <rect x="0" y="35.1" width="85.6" height="0.25" fill="#DDE1E7"/>
-      <text x="5.4" y="42.5" font-size="2.82" fill="#1D1D1B">Storing? Bel <tspan font-weight="700">085 401 16 47</tspan></text>
+      <text x="5.4" y="42.5" font-size="2.82" fill="#1D1D1B">Storing? Bel <tspan font-weight="700">[storingsnummer]</tspan></text>
       <text x="5.4" y="48.6" font-size="2.82" fill="#1D1D1B"><tspan font-weight="700">parkingyou.nl</tspan></text>
       <image href="../../kit/assets/logo-beeldmerk-color.svg" x="73.57" y="40.6" height="8" width="6.63" preserveAspectRatio="xMaxYMax meet"/>
       <rect x="5.4" y="5.4" width="74.8" height="43.2" fill="none" stroke="#32B9CD" stroke-width="0.18" stroke-dasharray="0.8 0.6"/>
@@ -63,7 +63,7 @@
 
   <div class="col" style="left: 57px; top: 500px">
     <div class="h">Voorzijde</div>
-    Vlak PY-Blauw. Logo omgekeerd op de marge linksboven, beeldmerk 8,1 mm (3u). Onderaan opent <b>de stem</b> in PY-Aqua "Abonnement" (print-body 10/14 pt) en de locatienaam (print-h2 22/26 pt Bold): 14,1 mm hoog, 4,2 mm tot de eerste letter. Rechts staat <b>de zwaaier</b>, wit, 6u = 16,2 mm, op een korte lijn van 0,1u op de ondermarge, gespiegeld naar de tekst. Verder niets.
+    Vlak PY-Blauw. Logo omgekeerd op de marge linksboven, beeldmerk 8,1 mm (3u). Onderaan opent <b>de stem</b> in PY-Aqua "Abonnement" (print-body 10/14 pt) en de locatienaam (print-h2 22/26 pt Bold): 14,1 mm hoog, 4,2 mm tot de eerste letter. Rechts staat <b>de zwaaier</b>, wit, 6u = 16,2 mm, op een korte witte lijn van 0,3 mm op de ondermarge, gespiegeld naar de tekst. Verder niets. Witte lijnen die uit navy gespaard worden, zijn nooit dunner dan 0,3 mm. Lange naam: tot 15 tekens print-h2, langer print-h3 15/19 pt, en past het dan nog niet, twee regels. Nooit afgesneden.
   </div>
   <div class="col" style="left: 430px; top: 500px">
     <div class="h">Achterzijde</div>

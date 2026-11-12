@@ -17,7 +17,7 @@
 </style>
 </head>
 <body>
-<div class="fig" style="width: 1200px; height: 860px; padding: 48px 56px; display: flex; flex-direction: column; gap: 36px">
+<div class="fig" style="width: 1200px; height: 900px; padding: 48px 56px; display: flex; flex-direction: column; gap: 36px">
   <div class="eyebrow">Beschikbaarheid, prijs en de bubbel als UI-element</div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px">
@@ -52,9 +52,9 @@
           <div><div class="cap">In een kaart · numeric-m</div><span class="price"><span class="price__amt">€ 12,50</span><span class="price__unit">per dag</span></span></div>
         </div>
         <table class="t-body-m tnum" style="border-collapse: collapse; width: 100%">
-          <tr style="box-shadow: inset 0 -1px 0 var(--py-border-subtle)"><td style="padding: 8px 0">Los parkeren</td><td style="text-align: right; font-weight: 700">€ 1,50 <span class="price__unit" style="font-weight: 400">per 30 min</span></td></tr>
-          <tr style="box-shadow: inset 0 -1px 0 var(--py-border-subtle)"><td style="padding: 8px 0">Dagtarief</td><td style="text-align: right; font-weight: 700">€ 15,00</td></tr>
-          <tr><td style="padding: 8px 0">Dagtarief met reservering</td><td style="text-align: right; font-weight: 700">€ 12,50</td></tr>
+          <tr style="box-shadow: inset 0 -1px 0 var(--py-border-subtle)"><td style="padding: 8px 0">Los parkeren</td><td style="text-align: right; font-weight: 700">[prijs] <span class="price__unit" style="font-weight: 400">per 30 min</span></td></tr>
+          <tr style="box-shadow: inset 0 -1px 0 var(--py-border-subtle)"><td style="padding: 8px 0">Dagtarief</td><td style="text-align: right; font-weight: 700">[prijs] <span class="price__unit" style="font-weight: 400">per dag</span></td></tr>
+          <tr><td style="padding: 8px 0">Dagtarief met reservering</td><td style="text-align: right; font-weight: 700">€ 12,50 <span class="price__unit" style="font-weight: 400">per dag</span></td></tr>
         </table>
       </div>
       <div class="rule"><span class="do">Wel</span><span>€ 12,50 · spatie na €, komma, tabular cijfers, eenheid erbij</span></div>
@@ -65,16 +65,17 @@
   <!-- bubble sizes -->
   <div class="col">
     <div class="t-heading-s">De bubbel in UI: vier maten, altijd rechtop, voor prijs, niveau of beschikbaarheid</div>
-    <div style="display: grid; grid-template-columns: repeat(5, 150px) 1fr; gap: 16px; align-items: end">
-      <div class="size"><div class="map" role="img" aria-label="Kaart met drie pins"><span style="position: absolute; left: 58px; top: 0; width: 8px; height: 100%; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 0; top: 46px; width: 100%; height: 8px; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 20px; top: 10px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 92px; top: 18px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 76px; top: 62px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span></div><span class="cap"><b>24</b><br>kaartpin met P (D13)</span></div>
+    <div style="display: grid; grid-template-columns: repeat(4, 136px) 196px 1fr; gap: 16px; align-items: end">
+      <div class="size"><div class="map" role="img" aria-label="Kaart met drie pins"><span style="position: absolute; left: 58px; top: 0; width: 8px; height: 100%; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 0; top: 46px; width: 100%; height: 8px; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 20px; top: 10px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 92px; top: 18px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 76px; top: 62px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span></div><span class="cap"><b>24</b><br>kaartpin met P</span></div>
       <div class="size"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">0</span></span><span class="cap"><b>24</b><br>niveau in een regel</span></div>
-      <div class="size"><span style="display: grid; place-items: center; width: 132px; height: 96px; background: var(--py-surface-brand); border-radius: var(--py-radius-m)"><span class="bub" data-size="40" data-fill="aqua" role="img" aria-label="Niveau -1"><span style="font: 800 18px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">-1</span></span></span><span class="cap"><b>40</b><br>niveau op navy, aqua</span></div>
+      <div class="size"><span style="display: grid; place-items: center; width: 132px; height: 96px; background: var(--py-surface-brand); border-radius: var(--py-radius-m)"><span class="bub" data-size="40" data-fill="aqua" role="img" aria-label="Niveau −1"><span style="font: 800 18px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">−1</span></span></span><span class="cap"><b>40</b><br>niveau op navy, aqua</span></div>
       <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="navy">Vrij</span><span class="cap"><b>64</b><br>beschikbaarheid, niveau</span></div>
-      <div class="size"><span class="bub" data-size="104" data-fill="navy"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span><span class="cap"><b>104</b><br>prijs op de locatiepagina</span></div>
+      <div class="size"><span style="display: flex; align-items: center; gap: 16px"><span class="bub" data-size="104" data-fill="navy" role="img" aria-label="€ 12,50 per dag"><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span><span class="t-heading-s" style="padding-bottom: 20px">per dag</span></span><span class="cap"><b>104</b><br>prijs, alleen het bedrag</span></div>
       <div class="col" style="gap: 10px; padding-bottom: 4px">
         <div class="rule"><span class="do">Wel</span><span>één bubbel per scherm</span></div>
-        <div class="rule"><span class="do">Wel</span><span>vrije ruimte 8 px (24, 40) of 16 px (64, 104)</span></div>
-        <div class="rule"><span class="dont">Niet</span><span>als knop of avatar (kaartpin: zie D13)</span></div>
+        <div class="rule"><span class="do">Wel</span><span>alleen het bedrag, "per dag" ernaast</span></div>
+        <div class="rule"><span class="do">Wel</span><span>vrije ruimte 8 of 16 px</span></div>
+        <div class="rule"><span class="dont">Niet</span><span>als knop of avatar</span></div>
         <div class="rule"><span class="dont">Niet</span><span>in elke kaart van een lijst</span></div>
         <div class="rule"><span class="dont">Niet</span><span>gedraaid, oranje, met een pijl erin</span></div>
       </div>

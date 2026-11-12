@@ -2,9 +2,9 @@
 
 ## Onze houding
 
-We laten zien waar je echt parkeert. Onze eigen garages, ingangen en straten, en mensen die aankomen of weggaan. In daglicht of in schoon garagelicht, met natuurlijke kleur. Geen kleurlaag eroverheen, geen stockfoto's van lachende mensen in een cabrio, geen AI-beeld van onze eigen locaties. Een foto moet je helpen: je ziet de ingang, je herkent de straat. Dat is principe 5, **Echt**, in beeld.
+We laten zien waar je echt parkeert. Onze eigen garages, ingangen en straten, en mensen die aankomen of weggaan. In daglicht of in schoon garagelicht, met natuurlijke kleur. Geen kleurlaag eroverheen, geen stockfoto's van lachende mensen in een cabrio, geen AI-beeld van onze eigen locaties. Een foto moet je helpen: je ziet de ingang, je herkent de straat. Dat is principe 5, **Echt**, in beeld (hoofdstuk 1, Introductie en merkprincipes).
 
-Vandaag is dat nog niet zo. Op de website staan stockfoto's onder een blauwe kleurlaag, de nieuwsfoto's komen van iStock en één beeld in de slider op de homepage is met AI gemaakt. Alleen de locatiepagina's tonen echte garages. Dit hoofdstuk zet dat recht.
+Vandaag is dat nog niet zo. Op de website staan stockfoto's onder een blauwe kleurlaag, de nieuwsfoto's komen van iStock en één beeld in de carrousel op de homepage is met AI gemaakt. Alleen de locatiepagina's tonen echte garages. Dit hoofdstuk zet dat recht.
 
 ![Stijlbord met eigen locatiefoto's](figures/style-board.png)
 
@@ -14,7 +14,7 @@ Vandaag is dat nog niet zo. Op de website staan stockfoto's onder een blauwe kle
 
 - Buiten: daglicht. Liefst ochtend of eind middag met de zon schuin, of een heldere bewolkte dag voor zacht licht. Vermijd de middagzon recht van boven: die geeft harde schaduwen over de stoep.
 - Binnen: alle lampen aan, kapotte lampen eerst vervangen. Het licht moet schoon en gelijkmatig zijn. Een donkere, sombere garage gebruiken we niet in marketing.
-- Avond alleen buiten en alleen bij events, zoals GLOW. Kies het blauwe uur kort na zonsondergang, als de lucht nog kleur heeft en de lightbox aan is.
+- Avond alleen buiten en alleen bij events, zoals GLOW. Kies het blauwe uur kort na zonsondergang, als de lucht nog kleur heeft en de lichtbak aan is.
 
 ### Compositie
 
@@ -32,6 +32,20 @@ Vandaag is dat nog niet zo. Op de website staan stockfoto's onder een blauwe kle
 
 Neutraal en iets koel, zoals beton en daglicht echt zijn. We corrigeren witbalans, belichting en rechte lijnen, verder niets: geen filter, geen duotoon, geen extra verzadiging. Het merkblauw zit in het vlak naast de foto, niet in de foto.
 
+### Vaste waarden
+
+| Wat | Waarde |
+|---|---|
+| Brandpunt plekken | 24 tot 35 mm (kleinbeeld): breed genoeg voor een ingang, zonder vervorming |
+| Brandpunt mensen en details | 50 mm, natuurlijk perspectief |
+| Diafragma | plekken f/8, alles scherp; mensen f/2.8 tot f/4, los van de achtergrond |
+| Camerahoogte rijbaan | 1,2 m, de ooghoogte van een bestuurder |
+| Kleurtemperatuur | daglicht 5200 tot 5600 K; in de nabewerking hooguit 200 K koeler |
+| Rustig vlak voor tekst | minstens een derde van het beeld |
+| Beeldverhouding | 3:2, 16:9, 1:1, 4:5 en 9:16 |
+| Bestandsformaat en maat | JPEG in sRGB, lange zijde 3000 px voor scherm |
+| Resolutie voor druk | minstens 300 ppi op het eindformaat |
+
 ## Mensen en plekken
 
 Plekken eerst. Mensen alleen als ze iets laten zien: aankomen, uitstappen, de weg zoeken, betalen, iemand helpen.
@@ -43,7 +57,7 @@ Plekken eerst. Mensen alleen als ze iets laten zien: aankomen, uitstappen, de we
 
 ## Wat we niet doen
 
-- Stock lifestyle: lachende mensen met koffie, handen met een telefoon, een glimmende auto in een lege straat.
+- Stockfoto's: lachende mensen met koffie, handen met een telefoon, een glimmende auto in een lege straat.
 - Een kleurlaag over de foto, in blauw of welke kleur dan ook.
 - Donkere, sombere garages in marketing.
 - AI-beeld van een echte ParkingYou-locatie, of AI-mensen die doen alsof ze klant zijn.
@@ -55,10 +69,10 @@ Plekken eerst. Mensen alleen als ze iets laten zien: aankomen, uitstappen, de we
 Een foto staat op één van drie manieren in een ontwerp:
 
 1. **Volle uitsnede.** De foto loopt tot de rand. Tekst en logo staan binnen de marge van 2u, op een rustig vlak.
-2. **Rechthoek.** Rechte hoeken (`radius.none`), in het grid, met tekst ernaast of eronder op een vlak. Dit is de standaard voor locatiepagina's, kaarten en drukwerk.
+2. **Rechthoek.** Rechte hoeken (`radius.none`), in het grid, met tekst ernaast of eronder op een vlak. Dit is de standaard voor locatiepagina's, kaarten en drukwerk. Eén uitzondering: een kleine foto in een kaart op een scherm, zoals in de lijst met locaties, krijgt `radius.m` (8 px). Overal anders hebben foto's rechte hoeken.
 3. **Bubbelmasker.** Zie hieronder.
 
-Geen schuine, golvende of ronde randen, geen cirkels en geen andere vormen.
+Geen schuine, golvende of ronde randen (behalve die 8 px in een schermkaart), geen cirkels en geen andere vormen.
 
 ![Volle uitsnede, rechthoek en bubbelmasker](figures/crop-placement.png)
 
@@ -69,7 +83,7 @@ Tekst staat nooit op een druk deel van de foto. Er zijn twee manieren:
 - **Navy vlak.** Zet de tekst op een vlak in PY-Blauw naast of onder de foto. Wit op PY-Blauw haalt 11,26:1. Dit is de standaard en vervangt elke donkere laag of elk donker verloop.
 - **Rustig deel van de foto.** PY-Blauw op een lichte lucht of muur, wit op een donker en egaal vlak. Meet het contrast op de lichtste en de donkerste plek achter de tekst. Beide moeten 4,5:1 halen, of 3:1 bij grote tekst. Haalt het dat niet, dan wordt het een navy vlak.
 
-Het logo volgt de tabel in de kernspecificatie: kleurenlogo op een lichte foto met rustig vlak, reverse logo op een donkere foto.
+Het logo volgt de basisregels van deze gids (hoofdstuk 2, Logo): kleurenlogo op een lichte foto met rustig vlak, reverse logo op een donkere foto.
 
 ![Tekst op foto: wel en niet](figures/text-on-photo.png)
 
@@ -78,15 +92,15 @@ Het logo volgt de tabel in de kernspecificatie: kleurenlogo op een lichte foto m
 De bubbel met foto is een bubbel zonder inhoud. Er staat geen tekst, prijs, pijl of pictogram in.
 
 - Alleen mensen of een detail van een plek: een bord, een deur, een koepel, een hand bij de automaat. Een hele straat wordt in een kleine vorm onleesbaar; gebruik dan een rechthoek.
-- Breedte 8u of 13u (64 of 104 px op scherm). Eén bubbel per vlak, 1u vrije ruimte eromheen.
-- De punt staat zoals in het beeldmerk. Nooit uitrekken, nooit hertekenen, geen rand, geen schaduw, geen kleurlaag.
+- Breedte 8u of 13u (64 of 104 px op scherm). Op desktop mag de fotobubbel in een kop 240 px breed zijn; op 104 px herken je daar een detail niet goed. Eén bubbel per vlak, 1u vrije ruimte eromheen.
+- De punt staat zoals in het beeldmerk: naar linksonder. Nooit uitrekken, nooit hertekenen, geen rand, geen schaduw, geen kleurlaag.
 - Tekst staat naast of onder de bubbel, op het vlak.
 
 ![Foto in de bubbel: wel en niet](figures/bubble-mask.png)
 
 ## Shotlijst eerste opnamedag
 
-Eén garage, één dag, 28 shots in acht soorten plekken, plus één eventavond. Kies een garage met een duidelijke ingang en schone binnenruimte. Parking Philips Stadion of DLL Garage liggen voor de hand, omdat we daar al beeld van hebben. Neem blanco modelreleases mee en een collega die mensen aanspreekt.
+Eén garage, één dag en één eventavond: 28 shots in acht groepen. Zeven groepen (shot 1 tot 25) maak je overdag, de achtste (shot 26 tot 28) op de eventavond. Kies een garage met een duidelijke ingang en schone binnenruimte. Parking Philips Stadion of DLL Garage liggen voor de hand, omdat we daar al beeld van hebben. Neem blanco modelreleases mee en een collega die mensen aanspreekt.
 
 ![Shotlijst eerste opnamedag](figures/shot-list.png)
 
@@ -94,7 +108,7 @@ Eén garage, één dag, 28 shots in acht soorten plekken, plus één eventavond.
 |---|---|---|---|---|---|
 | 1 | Garage-ingang | Ingang frontaal vanaf de overkant, portaal, bord en gevel | ooghoogte, liggend 3:2, lucht vrij | ochtend | locatiepagina, Google-profiel |
 | 2 | Garage-ingang | Auto rijdt in, kenteken onherkenbaar | schuin, staand 4:5 | middag | social, uitleg kenteken |
-| 3 | Garage-ingang | Detail lightbox of portaal met beeldmerk | vierkant | bewolkt, lightbox aan | bubbelmasker, nieuwsbrief |
+| 3 | Garage-ingang | Detail lichtbak of portaal met beeldmerk | vierkant | bewolkt, lichtbak aan | bubbelmasker, nieuwsbrief |
 | 4 | Garage-ingang | Kentekencamera en slagboom | ooghoogte, vierkant | elk moment | FAQ, "zo werkt het" |
 | 5 | Voetgangersingang | Ingang vanaf de stoep, bord en deur in één beeld | ooghoogte, staand 4:5 | ochtend | locatiepagina, route te voet |
 | 6 | Voetgangersingang | Iemand loopt naar buiten, de straat in | rug of driekwart, staand 9:16 | middag | reels |
@@ -106,7 +120,7 @@ Eén garage, één dag, 28 shots in acht soorten plekken, plus één eventavond.
 | 12 | Betaalautomaat | Automaat frontaal, scherm en sticker leesbaar | ooghoogte, staand 4:5 | elk moment | helppagina betalen |
 | 13 | Betaalautomaat | Hand met pas of telefoon bij de automaat | close, vierkant | elk moment | bubbelmasker, social |
 | 14 | Betaalautomaat | Automaat in zijn omgeving, met looproute | liggend 3:2 | elk moment | locatiepagina |
-| 15 | Niveaumarkering | Kolom met niveaububbel | frontaal, staand 4:5 | lampen aan | wayfinding, social |
+| 15 | Niveaumarkering | Kolom met niveaububbel | frontaal, staand 4:5 | lampen aan | bewegwijzering, social |
 | 16 | Niveaumarkering | Rij kolommen met sectie | perspectief, liggend 16:9 | lampen aan | website, Zakelijk |
 | 17 | Niveaumarkering | Vloerpijl of vloermarkering | recht van boven, vierkant | lampen aan | rechthoek met tekst |
 | 18 | Straatcontext | Garage in zijn straat, veel lucht | breed, liggend 16:9 | ochtend | websiteheader, nieuwsbrief |
@@ -117,7 +131,7 @@ Eén garage, één dag, 28 shots in acht soorten plekken, plus één eventavond.
 | 23 | Mensen | Klant loopt met tas of koffer naar de uitgang | liggend 3:2 | middag | website, campagne |
 | 24 | Mensen | Medewerker helpt een klant bij de automaat | liggend 3:2 | middag | over ons, Zakelijk |
 | 25 | Mensen | Klant opent de reservering bij de ingang, echt scherm | over de schouder, staand 4:5 | middag | app, social |
-| 26 | Eventavond | Ingang met lightbox aan, bezoekers vertrekken | liggend 3:2 | blauwe uur | campagnepagina |
+| 26 | Eventavond | Ingang met lichtbak aan, bezoekers vertrekken | liggend 3:2 | blauwe uur | campagnepagina |
 | 27 | Eventavond | Looproute naar het event, licht op de achtergrond | staand 9:16 | blauwe uur | reels |
 | 28 | Eventavond | Bezoekers lopen terug naar de garage | rug, liggend 3:2 | na afloop | nieuwsbrief na het event |
 
@@ -137,16 +151,16 @@ py-ai-concrete-texture-20270312-001.jpg
 
 **Metadata** (IPTC, in het bestand zelf):
 
-| Veld | Inhoud |
-|---|---|
-| Creator | naam van de fotograaf |
-| Copyright Notice | © ParkingYou B.V. |
-| Date Created | opnamedatum |
-| City, Sublocation | stad en garage, bijvoorbeeld Eindhoven, Parking Philips Stadion |
-| Description | korte beschrijving, basis voor de alt-tekst |
-| Model Release Status | geen mensen, release aanwezig, of geen release |
-| Model Release ID | nummer van de getekende release |
-| Digital Source Type | `digitalCapture` voor foto's, `trainedAlgorithmicMedia` voor AI-beeld |
+| Veld | IPTC-veld | Inhoud |
+|---|---|---|
+| Maker | Creator | naam van de fotograaf |
+| Copyright | Copyright Notice | © ParkingYou B.V. |
+| Opnamedatum | Date Created | opnamedatum |
+| Plaats en locatie | City, Sublocation | stad en garage, bijvoorbeeld Eindhoven, Parking Philips Stadion |
+| Beschrijving | Description | korte beschrijving, basis voor de alt-tekst |
+| Status modelrelease | Model Release Status | geen mensen, release aanwezig, of geen release |
+| Nummer modelrelease | Model Release ID | nummer van de getekende release |
+| Soort bron | Digital Source Type | `digitalCapture` voor foto's, `trainedAlgorithmicMedia` voor AI-beeld |
 
 **Opslag.** Masters en bewerkte versies staan in één gedeelde beeldbank, per jaar en per locatie. De getekende releases staan apart, met beperkte toegang, omdat ze persoonsgegevens bevatten. In `kit/photos/` staan alleen uitsneden voor de figuren in deze gids.
 
@@ -233,41 +247,17 @@ sunset colours, HDR look, illustration.
 
 ## Do's en don'ts
 
-**Do**
-
-- Fotografeer onze eigen garages, ingangen en straten.
-- Werk met daglicht of schoon garagelicht, alle lampen aan.
-- Houd ooghoogte aan en zet lijnen recht.
-- Laat een rustig vlak vrij voor tekst.
-- Zet tekst op een navy vlak als de foto druk is.
-- Laat echte klanten en medewerkers zien, met een release.
-- Gebruik de bubbel voor één mens of één detail.
-
-**Don't**
-
-- Geen stock lifestyle en geen gemaakte glimlach.
-- Geen blauwe of andere kleurlaag, geen donker verloop.
-- Geen donkere, sombere garages in marketing.
-- Geen AI-beeld van onze locaties of AI-mensen als klant.
-- Geen tekst, prijs of pictogram in een fotobubbel.
-- Geen emoji of clip-art bij een foto, en geen parkeerder op de foto zelf.
-- Geen leesbare kentekens.
-
-## Voorgestelde waarden
-
-Goedgekeurd: zie besluiten D26 en D27 in de core spec. Waar de core spec iets anders zegt, geldt de core spec.
-
-
-| Waarde | Voorstel | Reden |
-|---|---|---|
-| Brandpunt plekken | 24 tot 35 mm (kleinbeeld) | breed genoeg voor een ingang, zonder vervorming |
-| Brandpunt mensen en details | 50 mm | natuurlijk perspectief, geen vertekening van gezichten |
-| Diafragma | plekken f/8, mensen f/2.8 tot f/4 | plekken scherp; mensen los van de achtergrond |
-| Camerahoogte rijbaan | 1,2 m | ooghoogte van een bestuurder |
-| Witbalans | daglicht 5200 tot 5600 K, in nabewerking hooguit 200 K koeler | neutraal en iets koel, zonder blauwe zweem |
-| Beeldverhoudingen | 3:2, 16:9 en 1:1 naast 4:5 en 9:16 | dekt website, drukwerk en social |
-| Rustig vlak bij tekst op foto | minstens een derde van het beeld | ruimte voor kop en logo binnen 2u |
-| Export | JPEG sRGB, lange zijde 3000 px voor scherm; print minimaal 300 ppi op eindformaat | één master voor web en social, scherp genoeg voor drukwerk |
-| Fotobubbel op desktop | 240 px breed in een header | 104 px is op desktop te klein om een detail te herkennen |
-| Alt-tekst | richtlijn onder 125 tekens | kort genoeg voor schermlezers |
-
+- **Wel:** fotografeer onze eigen garages, ingangen en straten.
+- **Wel:** werk met daglicht of schoon garagelicht, alle lampen aan.
+- **Wel:** houd ooghoogte aan en zet lijnen recht.
+- **Wel:** laat een rustig vlak vrij voor tekst.
+- **Wel:** zet tekst op een navy vlak als de foto druk is.
+- **Wel:** laat echte klanten en medewerkers zien, met een release.
+- **Wel:** gebruik de bubbel voor één mens of één detail.
+- **Niet:** stockfoto's of een gemaakte glimlach.
+- **Niet:** een blauwe of andere kleurlaag, of een donker verloop.
+- **Niet:** donkere, sombere garages in marketing.
+- **Niet:** AI-beeld van onze locaties of AI-mensen als klant.
+- **Niet:** tekst, prijs of pictogram in een fotobubbel.
+- **Niet:** emoji of clip-art bij een foto, of een parkeerder op de foto zelf.
+- **Niet:** leesbare kentekens.

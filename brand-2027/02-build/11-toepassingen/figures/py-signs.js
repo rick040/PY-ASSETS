@@ -10,9 +10,9 @@ const PYS = (() => {
   const arrow = (x, y, s, deg, col) => { const cx = x + s / 2, cy = y + s / 2;
     return `<g transform="rotate(${deg} ${cx} ${cy})"><svg data-p="arrow" x="${x}" y="${y}" width="${s}" height="${s}" color="${col}"></svg></g>`; };
   const picto = (n, x, y, s, col) => `<svg data-p="${n}" data-anchor="center" x="${x}" y="${y}" width="${s}" height="${s}" style="color:${col}"></svg>`;
-  // a parkeerder standing with its feet on y (baseline); one colour (D41), the whole figure takes col
-  // Mirrored (o.flip): the kit file figure-<n>-white-flip.svg or -navy-flip.svg, which mirrors the body only; the head keeps
-  // the logo orientation (D43). Other colours fall back to a plain mirror.
+  // a parkeerder standing with its feet on y (baseline); one colour, the whole figure takes col
+  // Mirrored (o.flip): the kit file figure-<n>-white-flip.svg or -navy-flip.svg, which mirrors the body (and the cap brim);
+  // the head keeps the logo orientation. Other colours fall back to a plain mirror.
   const fig = (n, x, base, h, col, o = {}) => { const w = h * aspect('fig-' + n);
     const tone = /^#f{3}(f{3})?$/i.test(col) ? 'white' : (String(col).toUpperCase() === '#1A3580' ? 'navy' : null);
     if (o.flip && tone) return `<image href="../../kit/assets/figure-${n}-${tone}-flip.svg" x="${x}" y="${base - h}" width="${w.toFixed(2)}" height="${h}" preserveAspectRatio="xMinYMax meet"/>`;
@@ -20,7 +20,7 @@ const PYS = (() => {
   const figW = (n, h) => h * aspect('fig-' + n);
   const text = (x, y, s, size, col, o = {}) => `<text x="${x}" y="${y}" font-family="Ubuntu Sans" font-weight="${o.w || 700}" font-size="${size}" letter-spacing="${(size * 0.01).toFixed(2)}" fill="${col}" ${o.anchor ? `text-anchor="${o.anchor}"` : ''} style="font-variant-numeric:tabular-nums">${s}</text>`;
 
-  // Route board: pill 200 high, u = 10, cap 70. Arrow and pictogram in a 2k box (2 x cap = 140, decision D37).
+  // Route board: pill 200 high, u = 10, cap 70. Arrow and pictogram in a 2k box (2 x cap = 140).
   // De stem is as high as that box, with 0.3 x its height of air on each side.
   // left: modules from the left end; right: modules from the right end. Module: ['picto',name] ['text',str] ['arrow',deg] ['stem'] ['fig',name,{flip}]
   function board(o) {
@@ -36,7 +36,7 @@ const PYS = (() => {
       if (m[0] === 'text') return [text(x, base, m[1], font, fg), 0];
     };
     let x = x0;
-    for (const m of (o.left || [])) { const [mk, mw] = place(m, x); s += mk; x += mw + (m[0] === 'stem' || m[0] === 'gap' ? 0 : (m[0] === 'fig' ? 2 * u : 0)); }
+    for (const m of (o.left || [])) { const [mk, mw] = place(m, x); s += mk; x += mw + (m[0] === 'fig' ? 0.3 * box : 0); } // a figure keeps 0.3 x the module height (42) of air to the text
     x = w - x0;
     for (const m of (o.right || []).slice().reverse()) {
       const wdt = m[0] === 'stem' ? stemW(box) + 0.6 * box : (m[0] === 'gap' ? m[1] : box);
@@ -46,21 +46,24 @@ const PYS = (() => {
   }
 
   // Entrance lightbox face 1000 x 1000, u = 50, margin 100. kind: 'car' or 'walk'.
+  // Vertical sum (both faces): margin 100 + logo 200 (beeldmerk 2 x cap) + clear space 100 (logo rule 0.5x = 83, rounded up to 2u)
+  // + module zone 400 to 700 + 100 air + cap 100 (baseline on the bottom margin, y 900) + margin 100 = 1000.
   function entrance(kind, name) {
     let s = `<rect width="1000" height="1000" fill="${C.navy}"/>`;
     s += `<image href="../../kit/assets/logo-horizontal-reverse.svg" x="100" y="100" height="200" width="724.4" preserveAspectRatio="xMinYMin meet"/>`;
     if (kind === 'car') {
-      // P met dak 400 (8u) | stem 200 | pijl 200 (2k) linksonder
-      s += `<svg data-p="p-roof" x="100" y="350" width="312" height="400" style="color:#FFFFFF"></svg>`;
-      // arrow 2k = 200 (cap 100, decision D37), drawn as the straight arrow rotated 135 degrees so its length stays 200;
+      // P met dak 300 (6u), y 400 to 700 | stem 200 | pijl 200 (2k) linksonder, both centred on the P (450 to 650)
+      const pw = 300 * aspect('p-roof'), sx = 100 + pw + 60;
+      s += `<svg data-p="p-roof" x="100" y="400" width="${pw.toFixed(1)}" height="300" style="color:#FFFFFF"></svg>`;
+      // arrow 2k = 200 (cap 100), drawn as the straight arrow rotated 135 degrees so its length stays 200;
       // stem as high as the arrow module (200), 0.3 x 200 = 60 air on each side
-      s += stem(472, 450, 200, C.aqua);
-      s += arrow(472 + stemW(200) + 60 + 30, 450, 200, 135, '#FFFFFF');
+      s += stem(sx, 450, 200, C.aqua);
+      s += arrow(sx + stemW(200) + 60 + 30, 450, 200, 135, '#FFFFFF');
       s += text(100, 900, name, 144.3, '#FFFFFF');
     } else {
-      // loper 540 hoog (54 procent van de face) op de basislijn van de tekst | pijl 2k = 200
-      s += fig('walk', 110, 900, 540, '#FFFFFF');
-      s += arrow(620, 430, 200, 0, '#FFFFFF');
+      // loper 500 high (50 percent of the face), feet on the baseline of the text, head on the clear space line (y 400) | pijl 2k = 200
+      s += fig('walk', 110, 900, 500, '#FFFFFF');
+      s += arrow(620, 450, 200, 0, '#FFFFFF');
       s += text(430, 900, name, 144.3, '#FFFFFF');
     }
     return s;

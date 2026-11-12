@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<div class="fig" style="width: 1200px; height: 1110px; padding: 48px 56px; display: flex; flex-direction: column; gap: 40px">
+<div class="fig" style="width: 1200px; height: 1290px; padding: 48px 56px; display: flex; flex-direction: column; gap: 40px">
   <div class="eyebrow">Formuliervelden · label boven, hulptekst onder, fout in woorden</div>
 
   <!-- text input states -->
@@ -79,19 +79,28 @@
   <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px">
     <div class="sec">
       <div class="sec-h"><div class="t-heading-s">Vinkje en keuzerondje</div><span class="tok">kader 24 · rij 44 hoog</span></div>
-      <div style="display: grid; grid-template-columns: repeat(5, auto); gap: 4px 24px; justify-content: start">
-        <div class="st">Uit</div><div class="st">Aan</div><div class="st">Focus</div><div class="st">Fout</div><div class="st">Uitgeschakeld</div>
+      <div style="display: grid; grid-template-columns: repeat(4, auto); gap: 4px 32px; justify-content: start">
+        <div class="st">Uit</div><div class="st">Aan</div><div class="st">Focus</div><div class="st">Uitgeschakeld</div>
         <label class="check"><input type="checkbox">Bewaar</label>
         <label class="check"><input type="checkbox" checked>Bewaar</label>
         <label class="check"><input type="checkbox" class="is-focus" checked>Bewaar</label>
-        <label class="check"><input type="checkbox" class="is-error">Akkoord</label>
         <label class="check is-disabled"><input type="checkbox" disabled>Bewaar</label>
         <label class="check"><input type="radio" name="r1">iDEAL</label>
         <label class="check"><input type="radio" name="r2" checked>iDEAL</label>
         <label class="check"><input type="radio" name="r3" class="is-focus" checked>iDEAL</label>
-        <label class="check"><input type="radio" name="r4" class="is-error">iDEAL</label>
         <label class="check is-disabled"><input type="radio" name="r5" disabled>iDEAL</label>
       </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 4px">
+        <div><div class="st">Fout, vinkje</div>
+          <div style="display: flex; flex-direction: column"><label class="check"><input type="checkbox" class="is-error" aria-invalid="true" aria-describedby="c4e">Ik ga akkoord met de voorwaarden</label>
+          <p class="err" id="c4e"><i data-i="alert" data-s="20"></i>Vink dit aan om door te gaan.</p></div></div>
+        <div><div class="st">Fout, groep rondjes</div>
+          <fieldset style="display: flex; flex-direction: column; border: 0; padding: 0; margin: 0" aria-describedby="r4e"><legend class="label" style="padding: 0">Betaalmethode</legend>
+          <label class="check"><input type="radio" name="r4" class="is-error" aria-invalid="true">iDEAL</label>
+          <label class="check"><input type="radio" name="r4" class="is-error" aria-invalid="true">Creditcard</label>
+          <p class="err" id="r4e"><i data-i="alert" data-s="20"></i>Kies hoe je wilt betalen.</p></fieldset></div>
+      </div>
+      <span class="tok">fout: rand feedback.error, melding met icoon eronder<br>aria-invalid="true" op het vakje · aria-describedby wijst naar de melding</span>
     </div>
     <div class="sec">
       <div class="sec-h"><div class="t-heading-s">Keuze als kaart</div></div>

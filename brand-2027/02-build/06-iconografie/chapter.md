@@ -50,20 +50,20 @@ Pictogrammen zeggen waar iets is. Ze staan op borden, op betaalautomaten en groo
 - **Kleur**: de tekstkleur van de grond. Wit op navy, PY-Blauw op aqua, PY-Diep op oranje. In een bubbel de inhoudskleur van die bubbel.
 - **In een bubbel**: het pictogram past in het inhoudsvierkant van 60 procent van de bubbelbreedte. Eén pictogram per bubbel, nooit een pijl.
 
-Voor de constructie gebruiken we hulplijnen, zodat pictogrammen even zwaar ogen: een cirkel van 40, een vierkant van 36, staand 32 x 40 en liggend 40 x 32. Een auto vult het liggende vlak, een voetganger het staande. De kleinste uitsparing is 2 eenheden, armen zijn 4,5, benen 5 en de romp 6,5 eenheden, kaders 3 eenheden. Deze waarden zijn goedgekeurd.
+Voor de constructie gebruiken we hulplijnen, zodat pictogrammen even zwaar ogen: een cirkel van 40, een vierkant van 36, staand 32 x 40 en liggend 40 x 32. Een auto vult het liggende vlak, een voetganger het staande. De kleinste uitsparing is 2 eenheden, armen zijn 4,5, benen 5 en de romp 6,5 eenheden, kaders 3 eenheden.
 
 ![Raster en constructie van pictogram en UI-icoon](figures/raster.png)
 
-### Hertekening: vier voorbeelden
+### Hertekening: de eerste vier
 
-De twaalf handboekpictogrammen zijn op verschillende formaten getekend, met wisselende lijndiktes en soms een eigen rand. We hertekenen ze op het 48-raster. Als voorstel staan er vier klaar: auto, voetganger, lift en betalen. De originelen in `kit/assets/` blijven ongewijzigd; de voorstellen staan in `06-iconografie/voorstel/`.
+De twaalf handboekpictogrammen zijn op verschillende formaten getekend, met wisselende lijndiktes en soms een eigen rand. We hertekenen ze op het 48-raster. Vier zijn klaar en zijn de standaard voor nieuw werk: auto, voetganger, lift en betalen. Je vindt ze als `picto-48-*.svg` in `06-iconografie/pictogrammen/`. De originelen in `kit/assets/` blijven ongewijzigd, als bron.
 
 - **Auto.** Vooraanzicht blijft. Ruit, lampen en grille als uitsparing.
-- **Voetganger.** Het hoofd blijft de bubbel, rechtop en uniform geschaald, in dezelfde kleur als het lijf.
+- **Voetganger.** Het hoofd is een gewone ronde stip, in dezelfde kleur als het lijf. De bubbel als hoofd hoort bij de parkeerders; zo verwissel je pictogram en parkeerder niet.
 - **Lift.** Kader 3 eenheden dik, driehoekjes erboven, figuren met lucht eromheen. De driehoekjes horen bij het liftteken; het is geen richtingpijl.
 - **Betalen.** De ring om het euroteken vervalt. In een bubbel of op een bordvlak is de ring dubbel: de bubbel of het bord is al de rand.
 
-De voetganger en de lift zijn nu nog opgebouwd uit ronde lijnen; voor productie zetten we ze om naar gesloten contouren.
+Voetganger, lift en betalen zijn opgebouwd uit lijnen met ronde uiteinden. Voor productie zet je ze om naar gesloten contouren.
 
 ![Vier hertekeningen naast het origineel](figures/hertekening.png)
 
@@ -90,10 +90,10 @@ Op een lichtbak of portaal blijft het vlak navy en draagt de bubbel de taak: aqu
 
 ## Pictogram of parkeerder
 
-De voetganger en de loper lijken op elkaar: allebei een poppetje met de bubbel als hoofd. Toch doen ze iets heel anders.
+De voetganger en de loper lijken op elkaar: allebei een lopend poppetje. Het verschil zie je aan het hoofd. Het pictogram heeft een rond hoofd. De parkeerder heeft de bubbel uit het logo als hoofd. Ze doen ook iets heel anders.
 
-- **Een pictogram zegt waar iets is.** Het hoort bij de tekst en de pijl, op het 48-raster, in één kleur. Hetzelfde teken op elk bord en in de app, zo vaak als de route vraagt. Het mag in een bubbel.
-- **Een parkeerder zegt wie wij zijn.** Het is een van de negen handboekfiguren, ongewijzigd en in één kleur: navy op licht en op aqua, wit op navy. Eén per vlak, altijd op een lijn: een tekstbasislijn, een rand van het vlak of een vloerlijn. Nooit in een bubbel, nooit als routeteken, nooit op een veiligheids-, RVV- of ISO 7010-bord.
+- **Een pictogram zegt waar iets is.** Het heeft een rond hoofd en hoort bij de tekst en de pijl, op het 48-raster, in één kleur. Hetzelfde teken op elk bord en in de app, zo vaak als de route vraagt. Het mag in een bubbel.
+- **Een parkeerder zegt wie wij zijn.** Het is een van de negen handboekfiguren, met de bubbel als hoofd, ongewijzigd en in één kleur: navy op licht en op aqua, wit op navy. Eén per vlak, altijd op een lijn: een tekstbasislijn, een rand van het vlak of een vloerlijn. Nooit in een bubbel, nooit als routeteken, nooit op een veiligheids-, RVV- of ISO 7010-bord.
 
 Op een voetgangersbord mogen ze samen staan. Het pictogram zit in de module met de naam en de pijl; de loper staat groot op de onderrand, hooguit 60 procent van de hoogte, en kijkt de route op. Het bord heeft dan twee eigen elementen: de pijl en de parkeerder. Een stem als scheiding past er dan niet meer bij.
 
@@ -143,17 +143,18 @@ Goedgekeurd: zie besluit D37 in de core spec.
 
 ## Do's en don'ts
 
-- **Do:** de hoekige pijl voor elke richting, los, in de inhoudskleur van de grond.
-- **Do:** in knoppen en links de pijl op kaphoogte van het label; op borden 2k.
-- **Do:** pictogrammen gevuld, op het 48-raster, binnen het tekenvlak van 40.
-- **Do:** UI-iconen uit Tabler, outline, lijn 2 px.
-- **Do:** de parkeerder als gezicht naast de route-informatie, op een lijn, één per vlak.
-- **Do:** merken van anderen uit het originele bestand, in hun eigen kleuren.
-- **Don't:** een pijl in een cirkel, bubbel of kader, of de punt van de bubbel als pijl.
-- **Don't:** een Tabler-pijl, chevron of caret, ook niet in een lijst of keuzelijst.
-- **Don't:** de pijl draaien in een andere hoek dan 45 graden, uitrekken of hertekenen.
-- **Don't:** een parkeerder als routepictogram, in een bubbel of met een tekstballon.
-- **Don't:** een parkeerder in twee kleuren, of zwevend zonder lijn eronder.
-- **Don't:** een pictogram met een eigen rand of bubbelvorm in een bubbel zetten.
-- **Don't:** twee sets door elkaar (Tabler en Lucide, of handboek en hertekend) op één vlak.
-- **Don't:** RVV-tekens, betaalmerken of partnerlogo's natekenen, inkleuren of in een bubbel zetten.
+- **Wel:** de hoekige pijl voor elke richting, los, in de inhoudskleur van de grond.
+- **Wel:** in knoppen en links de pijl op kaphoogte van het label; op borden 2k.
+- **Wel:** pictogrammen gevuld, op het 48-raster, binnen het tekenvlak van 40.
+- **Wel:** UI-iconen uit Tabler, outline, lijn 2 px.
+- **Wel:** de parkeerder als gezicht naast de route-informatie, op een lijn, één per vlak.
+- **Wel:** merken van anderen uit het originele bestand, in hun eigen kleuren.
+- **Niet:** een pijl in een cirkel, bubbel of kader, of de punt van de bubbel als pijl.
+- **Niet:** een Tabler-pijl, chevron of caret, ook niet in een lijst of keuzelijst.
+- **Niet:** de pijl draaien in een andere hoek dan 45 graden, uitrekken of hertekenen.
+- **Niet:** een parkeerder als routepictogram, in een bubbel of met een tekstballon.
+- **Niet:** een parkeerder in twee kleuren, of zwevend zonder lijn eronder.
+- **Niet:** een pictogram met een eigen rand of bubbelvorm in een bubbel zetten.
+- **Niet:** een pictogram met de bubbel als hoofd; dat hoofd is van de parkeerders.
+- **Niet:** twee sets door elkaar (Tabler en Lucide, of handboek en hertekend) op één vlak.
+- **Niet:** RVV-tekens, betaalmerken of partnerlogo's natekenen, inkleuren of in een bubbel zetten.

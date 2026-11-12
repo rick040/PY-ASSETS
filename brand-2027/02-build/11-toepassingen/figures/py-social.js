@@ -6,7 +6,8 @@ const PYSOC = (() => {
   const u = 54, M = 108, W = 1080;
   const C = { navy: '#1A3580', aqua: '#32B9CD', white: '#FFFFFF' };
   const T = (x, y, s, size, o = {}) => `<text x="${x}" y="${y}" font-family="Ubuntu Sans" font-size="${size}" font-weight="${o.w || 400}" fill="${o.c || C.white}" ${o.anchor ? `text-anchor="${o.anchor}"` : ''} letter-spacing="${o.ls || 0}" style="font-variant-numeric:tabular-nums">${s}</text>`;
-  const eyebrow = (x, y, s, c) => T(x, y, s.toUpperCase(), 24, { w: 700, c: c || C.aqua, ls: 1.9 });
+  // eyebrow: white on PY-Blauw (aqua is never a text colour on navy); on white grounds the caller passes aqua.700
+  const eyebrow = (x, y, s, c) => T(x, y, s.toUpperCase(), 24, { w: 700, c: c || C.white, ls: 1.9 });
   const logo = (x, y) => `<image href="../../kit/assets/logo-horizontal-reverse.svg" x="${x}" y="${y}" height="54" width="195.6"/>`;
 
   function guides(H, reel) {
@@ -23,19 +24,19 @@ const PYSOC = (() => {
       // Flat ground. Logo on the top margin, de stem opens the key line, price as plain text,
       // the gastheer zwaait (mirrored, faces the text) stands on a short 0.1u line on the bottom margin.
       const d = o.data || {}, light = d.ground === 'white';
-      const ink = light ? C.navy : C.white, accent = light ? '#127C8C' : C.aqua;
+      const ink = light ? C.navy : C.white, accent = light ? '#127C8C' : C.white;
       if (light) s = `<rect width="${W}" height="${H}" fill="#FFFFFF"/>`;
       const top = reel ? 5 * u : M, foot = reel ? 29 * u : H - M; // reel: key content between 5u and 29u (D16)
       s += light ? `<image href="../../kit/assets/logo-horizontal-color.svg" x="${M}" y="${top}" height="54" width="195.6"/>` : logo(M, top);
       const e = top + 6 * u;                       // eyebrow 6u under the logo
-      s += eyebrow(M, e, d.eyebrow || 'Parking Hofplein', accent);
+      s += eyebrow(M, e, d.eyebrow || 'Philips Stadion', accent);
       const lh = 117 * 50 / 48, b1 = e + 2.5 * u, b2 = b1 + lh, sh = 2 * lh;
       s += PYS.stem(M, b1 - lh + 12, sh, C.aqua);
       const tx = M + PYS.stemW(sh) + 0.3 * sh;
       s += T(tx, b1, d.l1 || 'Jouw plek', 117, { w: 800, c: ink }) + T(tx, b2, d.l2 || 'staat klaar.', 117, { c: ink });
       const pb = b2 + 3 * u;
-      s += T(M, pb, d.price || '€ 7,50', 78, { w: 800, c: ink }) + T(M + (d.priceW || 231), pb, d.unit || 'per dag', 31, { c: ink });
-      s += T(M, pb + 58, d.body || 'Midden in Rotterdam, de hele dag.', 31, { c: light ? '#1D1D1B' : C.white });
+      s += T(M, pb, d.price || '€ 12,50', 78, { w: 800, c: ink }) + T(M + (d.priceW || 276), pb, d.unit || 'per dag', 31, { c: ink });
+      s += T(M, pb + 58, d.body || 'Dagtarief met reservering, naast het stadion.', 31, { c: light ? '#1D1D1B' : C.white });
       // the gastheer 7u on a short line of 0.1u (figure width plus 1u on the open side), feet on the bottom margin
       const fn = d.fig || 'cap-wave', fh = 7 * u, fw = PYS.figW(fn, fh), fx = W - M - fw;
       s += `<rect x="${fx - u}" y="${foot - 0.1 * u}" width="${fw + u}" height="${0.1 * u}" fill="${ink}"/>`;
