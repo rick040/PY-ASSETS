@@ -11,7 +11,11 @@ const PYS = (() => {
     return `<g transform="rotate(${deg} ${cx} ${cy})"><svg data-p="arrow" x="${x}" y="${y}" width="${s}" height="${s}" color="${col}"></svg></g>`; };
   const picto = (n, x, y, s, col) => `<svg data-p="${n}" data-anchor="center" x="${x}" y="${y}" width="${s}" height="${s}" style="color:${col}"></svg>`;
   // a parkeerder standing with its feet on y (baseline); one colour (D41), the whole figure takes col
+  // Mirrored (o.flip): the kit file figure-<n>-white-flip.svg or -navy-flip.svg, which mirrors the body only; the head keeps
+  // the logo orientation (D43). Other colours fall back to a plain mirror.
   const fig = (n, x, base, h, col, o = {}) => { const w = h * aspect('fig-' + n);
+    const tone = /^#f{3}(f{3})?$/i.test(col) ? 'white' : (String(col).toUpperCase() === '#1A3580' ? 'navy' : null);
+    if (o.flip && tone) return `<image href="../../kit/assets/figure-${n}-${tone}-flip.svg" x="${x}" y="${base - h}" width="${w.toFixed(2)}" height="${h}" preserveAspectRatio="xMinYMax meet"/>`;
     return `<svg data-p="fig-${n}" ${o.flip ? 'data-flip="1"' : ''} x="${x}" y="${base - h}" width="${w.toFixed(2)}" height="${h}" color="${col}"></svg>`; };
   const figW = (n, h) => h * aspect('fig-' + n);
   const text = (x, y, s, size, col, o = {}) => `<text x="${x}" y="${y}" font-family="Ubuntu Sans" font-weight="${o.w || 700}" font-size="${size}" letter-spacing="${(size * 0.01).toFixed(2)}" fill="${col}" ${o.anchor ? `text-anchor="${o.anchor}"` : ''} style="font-variant-numeric:tabular-nums">${s}</text>`;

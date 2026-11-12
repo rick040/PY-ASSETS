@@ -173,6 +173,8 @@
 .voice__text { flex: 1; min-width: 0; }
 .floor { position: relative; box-shadow: inset 0 calc(-1 * var(--pyx-border-w-strong)) 0 var(--py-figure-body); } /* the line a parkeerder stands on: 2 px in the body colour */
 .parkeerder { display: block; flex: none; }                 /* <img> from kit/assets/figure-*-navy.svg or -white.svg, alt="" */
+.floor--short { display: inline-flex; align-items: flex-end; flex: none; padding: 0 var(--py-space-4); } /* short line: 16 px past the figure on both sides */
+.on-brand .floor { box-shadow: inset 0 calc(-1 * var(--pyx-border-w-strong)) 0 var(--py-text-on-brand); } /* on a PY-Blauw band the line is white, like the figure */
 
 /* Figure helpers */
 .cap { font: 600 13px/18px var(--py-font-sans); color: var(--py-text-muted); }

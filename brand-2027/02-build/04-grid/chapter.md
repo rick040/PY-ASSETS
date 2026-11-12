@@ -2,7 +2,7 @@
 
 Eén maat voor alles: van visitekaartje tot lichtbak, van post tot reel. Die maat heet u. Op schermen werken we met een vast 4 px-raster. Dit hoofdstuk legt beide uit en geeft vijf standaardpatronen waar je bijna elke uiting mee bouwt.
 
-De toon is rustig: veel wit, grote letters, één accent per vlak. Per vlak staat het logo plus hooguit twee van onze vijf elementen (parkeerder, stem, vak, bubbel, pijl). Hoe die elementen zelf werken, staat in Patronen en designelementen.
+De toon is rustig: veel wit, grote letters, één accent per vlak. Per vlak staat het logo plus hooguit twee van onze vier elementen (parkeerder, stem, bubbel, pijl). De grond is altijd vlak: PY-Blauw of wit, en `blue.50` voor rustige delen. Hoe die elementen zelf werken, staat in Patronen en designelementen.
 
 ## De formaateenheid u
 
@@ -16,7 +16,7 @@ Alles op het vlak meet je in u:
 - **Ritme**: elementen staan op veelvouden van 0,5u. Bovenkant van een kop, onderkant van een logo, een lijn onder een parkeerder: allemaal op dat ritme.
 - **Kop op posters en social**: kapitaalhoogte 1u tot 2u. Regelafstand 50/48 van de lettergrootte. Het vette kernwoord in ExtraBold 800, de rest Regular.
 - **Lopende tekst**: kapitaalhoogte 0,3u tot 0,5u.
-- **Elementen**: bubbel 3u, 5u, 8u of 13u breed; parkeerder 3u tot 8u hoog; het vak met een steek van 4u.
+- **Elementen**: bubbel 3u, 5u, 8u of 13u breed; parkeerder 3u tot 8u hoog, op een lijn van 0,1u; de stem zo hoog als het tekstblok dat hij opent.
 
 Kolombreedte reken je zo uit: breedte min 4u, min (kolommen min 1) keer u, gedeeld door het aantal kolommen.
 
@@ -34,7 +34,7 @@ Kolombreedte reken je zo uit: breedte min 4u, min (kolommen min 1) keer u, gedee
 
 A2 volgt dezelfde regel: u = 21 mm.
 
-**Visitekaartje.** Liggend, dus 12 kolommen. Het logo staat linksboven op de marge, 3u hoog; de beeldmerkhoogte is dan 8,25 mm en ligt boven het minimum van 7 mm. Op zo'n klein formaat zou de u-regel voor tekst te kleine letters geven, dus de tekst volgt de printschaal: print-h3 voor de naam, print-small voor de gegevens. Op de voorkant staat de gastheer, 5u hoog, op de basislijn van de laatste regel; zijn hand wijst naar je telefoonnummer. Op de achterkant staat het vak met de gastheer die zwaait, en het logo. De hoeken volgen ID-1: 3,18 mm.
+**Visitekaartje.** Liggend, dus 12 kolommen. Het logo staat linksboven op de marge, 3u hoog; de beeldmerkhoogte is dan 8,25 mm en ligt boven het minimum van 7 mm. Op zo'n klein formaat zou de u-regel voor tekst te kleine letters geven, dus de tekst volgt de printschaal: print-h3 voor de naam, print-small voor de gegevens. Op de voorkant staat de gastheer, 5u hoog, op de basislijn van de laatste regel; zijn hand wijst naar je telefoonnummer. De achterkant is vlak PY-Blauw. De stem opent de kop "**Parkeren** zonder gedoe." linksboven op de marge, in print-h3. Rechtsonder zwaait de gastheer, 8u hoog, op een witte lijn van 0,1u op de ondermarge; de lijn loopt over de drie kolommen die hij raakt. Het logo staat linksonder op dezelfde marge. Logo plus twee elementen: stem en parkeerder. De hoeken volgen ID-1: 3,18 mm.
 
 **A4 poster.** Wit. De stem opent de kop vanaf 4u, kapitaalhoogte 1,25u. Tekst 0,4u, 1u onder de kop. Een navy bubbel van 8u met de prijs staat rechtsonder op de kolommen, het logo linksonder op de marge. Twee elementen: stem en bubbel. Geen oranje: buiten de garage is een prijs navy.
 
@@ -58,7 +58,7 @@ Op schermen rekenen we niet in u maar in pixels, met een basis van 4 px. Ruimte 
 | Tablet | 768 tot 1199 px | 8 | 24 px | 32 px |
 | Desktop | 1200 px en breder | 12 | 24 px | minstens 32 px; inhoud max. 1200 px, gecentreerd |
 
-Raakvlakken zijn minstens 44 x 44 px. Kaarten hebben `radius.l` (16), invoervelden `radius.m` (8), knoppen en chips `radius.pill`. Het vak op scherm heeft een steek van 72 px en vaklijnen van 144 tot 192 px.
+Raakvlakken zijn minstens 44 x 44 px. Kaarten hebben `radius.l` (16), invoervelden `radius.m` (8), knoppen en chips `radius.pill`. Een parkeerder op scherm is 48 tot 160 px hoog en staat op een lijn van 2 px in `figure.body`.
 
 ![Telefoon, tablet en desktop met hun kolommen](figures/schermgrids.png)
 
@@ -67,12 +67,12 @@ Raakvlakken zijn minstens 44 x 44 px. Kaarten hebben `radius.l` (16), invoerveld
 Bijna elke uiting past in een van deze vijf. Begin daar, en wijk alleen af met een reden. De maten gelden voor een post van 1080 x 1350 px; op andere formaten reken je dezelfde u om.
 
 1. **Stem + kop.** Wit. De stem opent de kop vanaf 4u, kapitaalhoogte 1,5u; de kop mag breken na het vette kernwoord. Tekst 1u eronder, logo onderaan op de marge. Voor merk en campagne.
-2. **Vak + kop.** Navy. Het dek loopt 7u vanaf de bovenrand; in jouw vak staat een parkeerder van 5u op de stoplijn. De kop staat 4u onder het dek, nooit op de lijnen. Voor "jouw plek", reserveren en abonnementen.
+2. **Parkeerder op de rand.** Navy. De stem opent de kop vanaf 4u, kapitaalhoogte 1,5u; tekst 1u eronder. Rechtsonder staat een witte parkeerder van 8u op een lijn van 0,1u op de ondermarge, dezelfde lijn waar het logo links op staat. De lijn loopt over de kolommen die de parkeerder raakt. Laat hem naar de kop kijken. Voor "jouw plek", reserveren en abonnementen.
 3. **Foto + navy veld.** Eigen foto 10u hoog bovenin, navy veld eronder. De stem en de kop staan op navy. Nooit tekst op de foto en geen donkere laag over een foto.
 4. **Parkeerder op de lijn.** Licht vlak (`blue.50`) of wit. Kop bovenin, een lijn van 0,1u op 21u, een parkeerder van 8u op die lijn. Kies de parkeerder bij de boodschap: zwaaier of gastheer bij welkom, juicher bij een deal, loper bij een route.
 5. **Info.** Wit. Een navy bubbel van 5u met één woord (Info). Kop, dan tijden en prijzen in tabelcijfers op regels van 1,5u. Prijzen zijn navy, nooit oranje.
 
-De maten in de patronen (kop op 4u, dek 7u, lijn op 21u) zijn een startpunt, geen vaste regel. Vast is: marge, kolommen, het 0,5u-ritme, de maten van de elementen, hooguit twee elementen per vlak en de kleurverdeling. Over een reeks uitingen is dat ongeveer 47 procent wit en licht (`blue.50`), 38 procent PY-Blauw en 13 procent aqua. Oranje komt in deze patronen niet voor; dat hoort alleen bij betalen in de garage. Geen verloop, geen grote achtergrondbubbel.
+De maten in de patronen (kop op 4u, lijn op 21u of op de ondermarge) zijn een startpunt, geen vaste regel. Vast is: marge, kolommen, het 0,5u-ritme, de maten van de elementen, hooguit twee elementen per vlak en de kleurverdeling. Over een reeks uitingen is dat ongeveer 47 procent wit en licht (`blue.50`), 38 procent PY-Blauw en 13 procent aqua. Oranje komt in deze patronen niet voor; dat hoort alleen bij betalen in de garage. De grond is vlak: geen patroon, geen verloop, geen grote achtergrondbubbel.
 
 ![Vijf standaardpatronen op een post](figures/layoutpatronen.png)
 
@@ -87,5 +87,5 @@ De maten in de patronen (kop op 4u, dek 7u, lijn op 21u) zijn een startpunt, gee
 - **Don't:** marges kleiner dan 2u, ook niet "omdat het net niet past". Maak de tekst korter.
 - **Don't:** tekst op een foto of een donkere laag over een foto. Gebruik een navy veld.
 - **Don't:** oranje voor prijzen of knoppen buiten de garage, en nergens een verloop.
-- **Don't:** het vak achter tekst, of een parkeerder die zweeft.
+- **Don't:** een patroon of decoratieve vorm als achtergrond, of een parkeerder die zweeft.
 - **Don't:** losse pixelwaarden op schermen. Alleen `space`-tokens.

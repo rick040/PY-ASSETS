@@ -57,7 +57,7 @@ De stem is de halve boog uit het oude handboek, zonder de slogan die er vroeger 
 - **Op borden** is de stem geen opener maar een scheiding tussen modules, bijvoorbeeld tussen pijl en tekst of pictogram en pijl. Zelfde regels: hoogte gelijk aan het tekstblok ernaast, lijn 1/25, afstand 0,3 maal de hoogte aan beide kanten.
 - **In beweging** tekent de boog zich van boven naar beneden (`duration.slow`, `easing.enter`); daarna komt de tekst in beeld, samen 440 ms. Bij beperkte beweging komen boog en tekst samen in beeld. Details in het hoofdstuk beweging.
 
-De stem telt als een van de eigen elementen. Per vlak staan het logo en hooguit twee elementen: de stem met een parkeerder, of de stem met de hoekige pijl in de knop, maar niet ook nog het vak en een bubbel.
+De stem is een van onze vier eigen elementen, naast de parkeerders, de bubbel en de hoekige pijl. Per vlak staan het logo en hooguit twee daarvan: de stem met een parkeerder, of de stem met de hoekige pijl in de knop, maar niet ook nog een bubbel.
 
 ![De stem: opbouw, één tot drie regels, kleuren en wat niet mag](figures/de-stem.png)
 

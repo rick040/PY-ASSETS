@@ -23,17 +23,17 @@ De waarden van PY-Blauw, PY-Aqua en PY-Oranje veranderen niet. Nieuw is de naam 
 
 Op schermen, in druk, in marketing en op social is de verhouding ongeveer: wit en papier 47, PY-Blauw 38, PY-Aqua 13 procent. Oranje is daar 0. In de garage is oranje ongeveer 2 procent van een bordenset, en dan alleen bij betalen.
 
-Dat is een richtwaarde over een reeks vlakken, geen rekensom per vlak. Een poster is vooral wit met een navy voet, een post op social mag vooral navy zijn. Samen geven ze het beeld. Per vlak staat er één accent.
+Dat is een richtwaarde over een reeks vlakken, geen rekensom per vlak. Een poster is vooral wit met een navy voet, een post op social mag vooral navy zijn. Samen geven ze het beeld. Per vlak staat er één accent. De grond is altijd vlak: wit, papier of PY-Blauw, zonder patroon of versiering.
 
 ![Verhouding: wit en papier 47, navy 38, aqua 13 procent, met drie voorbeelden](figures/proportions.png)
 
 ## Aqua: ons accent, en lopen
 
-Buiten de garage is aqua het accent van het merk. Je ziet het op drie plekken, en nergens anders als vlak:
+Buiten de garage is aqua het accent van het merk. Je ziet het op drie manieren, en nergens anders als vlak:
 
 - **De stem**: de halve boog die een kop opent. Aqua op wit en op navy, navy op aqua (`voice.arc`).
-- **De randen van jouw vak**: de twee zijlijnen van het ene vak dat van jou is (`vak.mine-edge`).
-- **Een aqua bubbel** op een navy vlak, met PY-Blauw erin.
+- **Een aqua bubbel** op een navy vlak, met PY-Blauw erin (4,80:1).
+- **Kleine accenten**: de stip in het logo, en op een navy vlak de hoofdknop in aqua met PY-Diep (7,74:1) en de focusring (4,80:1).
 
 In de garage betekent aqua altijd lopen: voetgangersroutes, lift, trap, uitgang naar de straat. Daar is aqua wel een vlak, met PY-Blauw als inhoud.
 
@@ -102,21 +102,16 @@ Alle verhoudingen zijn de tekstkleur van de knop op de grond van de knop, opnieu
 
 ## Kleur voor de eigen elementen
 
-De stem, het vak en de parkeerders hebben hun eigen semantische tokens. Componenten en templates lezen deze tokens, nooit de schaalwaarden.
+De stem en de parkeerders hebben hun eigen semantische tokens. Componenten en templates lezen deze tokens, nooit de schaalwaarden.
 
 | Token | Licht | Donker | Waarvoor |
 |---|---|---|---|
 | `voice.arc` | aqua.500 | aqua.500 | de stem; op een aqua grond blue.700 |
-| `vak.line` | neutral.200 | blue.400 | lijnen van het vak op licht |
-| `vak.line-on-brand` | blue.400 | blue.400 | lijnen van het vak op navy |
-| `vak.mine` | aqua.100 | blue.600 | vulling van jouw vak op licht |
-| `vak.mine-on-brand` | blue.600 | blue.600 | vulling van jouw vak op navy |
-| `vak.mine-edge` | aqua.500 | aqua.500 | de twee zijlijnen van jouw vak, dubbele dikte |
 | `figure.body` | blue.700 | wit | lijf van een parkeerder |
 
-De stem en het vak zijn vorm, geen informatie. Ze hoeven geen 3:1 te halen en dragen nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Het vak is bewust zacht: neutral.200 op wit is 1,31:1, blue.400 op navy 3,17:1. Het is achtergrond, en er staat nooit tekst op. Op schermen: steek 72 px, lijnen 2 px en 144 tot 192 px lang, randen van jouw vak 4 px (besluit D35). De lijn onder een parkeerder is 2 px in `figure.body`.
+De stem is vorm, geen informatie. Hij hoeft geen 3:1 te halen en draagt nooit alleen betekenis. Aqua op wit is 2,34:1, aqua op navy 4,80:1, aqua op PY-Diep 7,74:1. Een parkeerder in blue.700 op wit haalt 11,26:1, wit op PY-Diep 18,16:1. Hij staat altijd op een lijn: op schermen 2 px in `figure.body` (besluit D35), in druk 0,1u. De grond eronder is vlak: wit, papier, PY-Blauw, of in donkere modus PY-Diep.
 
-![Tokens voor de stem, het vak en de parkeerders, in licht en donker](figures/identity-tokens.png)
+![Tokens voor de stem en de parkeerders, in licht en donker](figures/identity-tokens.png)
 
 ## Geen verloop meer
 
@@ -184,7 +179,7 @@ Uit het onderzoek naar de garage: NEN 2443 vraagt gemiddeld 75 lux, oudere garag
 
 ## Donkere modus
 
-In donkere modus is PY-Diep de ondergrond en is tekst wit (18,16:1). Navy werkt daar niet als tekst of rand (1,61:1); merktekst en links worden aqua.300 (11,01:1). De hoofdknop wordt aqua met PY-Diep (7,74:1), de tweede knop krijgt een rand en tekst in aqua.300. De stem blijft aqua (7,74:1 op PY-Diep). Het vak krijgt lijnen in blue.400 en jouw vak een vulling in blue.600, met aqua randen. Parkeerders worden helemaal wit, in één kleur. Alle waarden staan in `tokens.json` onder `modes.dark`; de schermen zelf komen uit het hoofdstuk digitaal.
+In donkere modus is PY-Diep de ondergrond en is tekst wit (18,16:1). Navy werkt daar niet als tekst of rand (1,61:1); merktekst en links worden aqua.300 (11,01:1). De hoofdknop wordt aqua met PY-Diep (7,74:1), de tweede knop krijgt een rand en tekst in aqua.300. De stem blijft aqua (7,74:1 op PY-Diep). Parkeerders worden helemaal wit, in één kleur. Alle waarden staan in `tokens.json` onder `modes.dark`; de schermen zelf komen uit het hoofdstuk digitaal.
 
 ## Productie
 
@@ -253,12 +248,12 @@ Translucente folie oogt doorgelicht anders dan op het staal. Kies lichtbakkleur 
 | Doen | Niet doen |
 |---|---|
 | Veel wit; navy als merkvlak; per vlak één accent | Elk vlak vol kleur omdat het kan |
-| Aqua als de stem of de randen van jouw vak; parkeerders altijd in één kleur | Aqua als tekstkleur op wit of als knop op een licht scherm |
+| Aqua als de stem, een bubbel op navy of een klein accent; parkeerders altijd in één kleur | Aqua als tekstkleur op wit of als knop op een licht scherm |
 | Oranje alleen bij betalen in de garage: automaat, tarief, storing | Oranje knoppen, prijzen, strepen of vlakken op scherm, in druk of op social |
 | De hoofdknop navy met witte tekst, op donker aqua met PY-Diep | Een oranje "Reserveer"-knop |
 | In de garage kleur kiezen op taak: rijden navy, lopen aqua, betalen oranje | Aqua of oranje gebruiken omdat het vrolijk staat |
 | Op aqua altijd PY-Blauw, op oranje altijd PY-Diep | Wit op aqua of oranje |
 | Status met een woord | Alleen een gekleurde stip |
 | Alles vlak; oude verloopborden bij vervanging vlak PY-Blauw | Een verloop, ook niet "alleen in marketing" |
-| De tokens `voice.arc`, `vak.*`, `figure.*` en `action.*` gebruiken | Kleuren uit een oud bestand pipetten |
+| De tokens `voice.arc`, `figure.*` en `action.*` gebruiken | Kleuren uit een oud bestand pipetten |
 | Mat laminaat en een proefbord in de garage | Kleur goedkeuren op een scherm |

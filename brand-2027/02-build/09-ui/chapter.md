@@ -6,16 +6,16 @@ Dit hoofdstuk zegt hoe ParkingYou eruitziet en werkt op een scherm: de website, 
 
 1. **Eén hoofdknop per scherm.** Er is altijd één ding dat je hier het liefst doet. Dat is de hoofdknop: PY-Blauw met witte tekst, op elk scherm, of het nu zoeken, reserveren, betalen of je ticket bekijken is. De tweede keus is een omlijnde knop of een link.
 2. **Geen oranje op het scherm.** Oranje betekent betalen in de garage: de automaat, het tarievenbord, de storingssticker. Op de website en in de app komt het niet voor. De enige uitzondering is tekst die waarschuwt (`feedback.warning`) en de status Vol (`status.full`), allebei oranje.700 als tekst of icoon, nooit als vlak.
-3. **Het merk helpt je verder.** Onze eigen elementen staan alleen waar ze iets doen: de stem opent een belangrijke kop, een parkeerder viert of wijst, het vak zegt "jouw plek", de bubbel toont een prijs of een geldig ticket, de hoekige pijl wijst naar de volgende stap. Per scherm het logo plus hooguit twee van de vijf.
-4. **De bubbel op een moment dat telt.** Een prijs, een niveau, beschikbaarheid of een geldig ticket. Eén bubbel per scherm, altijd rechtop, nooit als knop of avatar. De kaartpin is de uitzondering: de navy bubbel van 24 px met een witte P.
+3. **Het merk helpt je verder.** Onze eigen elementen staan alleen waar ze iets doen: de stem opent een belangrijke kop, een parkeerder viert, wijst of heet je welkom, de bubbel toont een prijs, niveau of beschikbaarheid, de hoekige pijl wijst naar de volgende stap. Per scherm het logo plus hooguit twee van de vier.
+4. **De bubbel op een moment dat telt.** Een prijs, een niveau of beschikbaarheid. Eén bubbel per scherm, altijd rechtop, nooit als knop of avatar. De kaartpin is de uitzondering: de navy bubbel van 24 px met een witte P.
 5. **Kleur nooit alleen.** Vrij, Vol en Gesloten staan altijd als woord, met kleur en een icoon erbij. Een fout staat in woorden onder het veld.
-6. **Rustig en vlak.** Veel wit, grote koppen, `surface.subtle` als tweede ondergrond, kaarten met radius 16. Schaduw alleen op kaarten en vaste balken, nooit op de bubbel, een parkeerder of het logo. Geen verloop.
+6. **Rustig en vlak.** Veel wit, grote koppen, `surface.subtle` als tweede ondergrond, kaarten met radius 16. Een kop is vlak PY-Blauw of wit, zonder patroon of vorm erachter. Schaduw alleen op kaarten en vaste balken, nooit op de bubbel, een parkeerder of het logo. Geen verloop.
 
 ## Eigen elementen op het scherm
 
-![Hoofdschermen: de stem en de zwaaier op home, bubbel en pijl op de locatiepagina, het vak op het ticket](figures/screens-key.png)
+![Hoofdschermen: de stem en de zwaaier op home, bubbel en pijl op de locatiepagina, de stem en de springer op het ticket](figures/screens-key.png)
 
-Rick vroeg om meer eigen identiteit. Op een scherm betekent dat: het product voelt als ParkingYou op de momenten die ertoe doen, en verder blijft het rustig. Deze tabel zegt welk element waar staat.
+Rick vroeg om meer eigen identiteit. Op een scherm betekent dat: het product voelt als ParkingYou op de momenten die ertoe doen, en verder blijft het rustig. We hebben vier eigen elementen: de parkeerders, de stem, de bubbel en de hoekige pijl. Elke grond is vlak: PY-Blauw of wit. Deze tabel zegt welk element waar staat.
 
 | Scherm | Logo | Elementen | Waarom |
 |---|---|---|---|
@@ -23,16 +23,16 @@ Rick vroeg om meer eigen identiteit. Op een scherm betekent dat: het product voe
 | Locatiepagina | nee | bubbel, pijl | De prijs in de navy bubbel, de pijl in "Reserveer je plek" en in de terugknop. |
 | Boekflow stap 1 tot 3 | nee | pijl | Alleen de pijl in "Ga verder" en terug. Hier wil je doorlopen, niet kijken. |
 | Bevestiging | nee | stem, springer | De stem opent "Je plek is gereserveerd.", de springer staat op de rand van de knoppenbalk. |
-| Ticket (PWA) | nee | vak, bubbel | Het vak is de kop van het ticket. Jouw vak houdt de aqua bubbel met een vinkje: dit ticket is geldig. |
-| Lege staat | nee | vak, bubbel | Jouw vak houdt de navy bubbel met P: hier komt jouw plek. |
+| Ticket (PWA) | nee | stem, springer | De kop is een vlakke PY-Blauw band. De stem opent "**Je ticket** is geldig.", de springer staat rechts op een korte witte lijn. |
+| Lege staat | nee | zwaaier | Wit scherm, de zwaaier op een korte navy lijn, daaronder de tekst en één navy knop. |
 | Foutscherm | ja | gastheer wijst | De gastheer wijst naar het contact. Hij maakt een doodlopende pagina vriendelijk. |
 | Desktop locatiepagina | ja | bubbel, pijl | Zoals op de telefoon. |
 
-**De stem.** De halve boog uit het handboek (`kit/assets/arc.svg`) staat links van een kop van één tot drie regels. Hoogte = het tekstblok, lijn = 1/25 van die hoogte (minstens 1,5 px), afstand tot de tekst = 0,3 x de hoogte. Bij een kop `heading-l` over twee regels is dat 76 px hoog, 3 px lijn, 23 px afstand. Kleur `voice.arc` (aqua.500), op wit en op navy. Alleen op home en de bevestiging; niet op elke paginakop, want dan zegt hij niets meer.
+**De stem.** De halve boog uit het handboek (`kit/assets/arc.svg`) staat links van een kop van één tot drie regels. Hoogte = het tekstblok, lijn = 1/25 van die hoogte (minstens 1,5 px), afstand tot de tekst = 0,3 x de hoogte. Bij een kop `heading-l` over twee regels is dat 76 px hoog, 3 px lijn, 23 px afstand. Kleur `voice.arc` (aqua.500), op wit en op navy. Alleen op home, de bevestiging en het ticket; niet op elke paginakop, want dan zegt hij niets meer.
 
-**De parkeerders.** Eén per scherm, 48 tot 160 px hoog, altijd staand op een lijn: de rand van een kaart, de bovenrand van de knoppenbalk, of een lijn van 2 px in de kleur van het lijf. Altijd één kleur: navy op wit, wit op navy. Rollen op het scherm: zwaaier op home, springer of juichende shopper bij een bevestiging, gastheer wijst op een foutscherm of de contactpagina. Een parkeerder is decoratie: `alt=""`, de tekst zegt alles. Nooit bij een betaalfout of een veldfout: daar is iemand geld of tijd kwijt.
+**De parkeerders.** Eén per scherm, 48 tot 160 px hoog, altijd staand op een lijn: de rand van een kaart, de bovenrand van de knoppenbalk, of een korte lijn van 2 px in de kleur van het lijf. Een korte lijn loopt aan beide kanten 16 px (`space.4`) voorbij de figuur. Altijd één kleur: navy op wit, wit op navy, en de lijn ook. Rollen op het scherm: zwaaier op home en in een lege staat, springer of juichende shopper bij een bevestiging en op het ticket, gastheer wijst op een foutscherm of de contactpagina. Een parkeerder is decoratie: `alt=""`, de tekst zegt alles. Nooit bij een betaalfout of een veldfout: daar is iemand geld of tijd kwijt.
 
-**Het vak.** Een parkeerdek van boven, als kop van het ticket of van een lege staat. Lijnen om de 72 px, 2 px dik, van de bovenrand naar beneden. Precies één vak is jouw vak: gevuld met `vak.mine`, randen 4 px in `vak.mine-edge`. Jouw vak houdt één bubbel van 40 of één parkeerder, verder niets. Op navy: lijnen `vak.line-on-brand`, jouw vak `vak.mine-on-brand`. Tekst staat altijd onder de lijnen, nooit ertussen.
+**Vlakke koppen.** Een kop met merk, zoals op home, de bevestiging en het ticket, is een vlakke band in `surface.brand` (PY-Blauw) of gewoon wit. Er staat geen patroon, geen vorm en geen grote bubbel achter. De stem en één parkeerder geven de kop zijn gezicht. De ticketkop is in licht en donker dezelfde PY-Blauw band.
 
 **De bubbel.** Zie Beschikbaarheid, prijs en de bubbel. Altijd rechtop, de punt omlaag.
 
@@ -52,7 +52,7 @@ We werken in drie lagen.
 
 Een component leest alleen semantische tokens, nooit een primitief. Daardoor werkt donkere modus vanzelf: dezelfde naam krijgt in `[data-theme="dark"]` een andere waarde. Spacing, radius, type, schaduw en motion zijn al tokens in `tokens.json` en worden direct gebruikt.
 
-De twaalf semantische groepen en hoe componenten ze lezen:
+De elf semantische groepen en hoe componenten ze lezen:
 
 | Groep | Tokens | Gelezen door |
 |---|---|---|
@@ -63,8 +63,7 @@ De twaalf semantische groepen en hoe componenten ze lezen:
 | `action` | primary-bg/-hover/-pressed/-fg, secondary-bg/-hover/-pressed/-fg | knoppen, gekozen chip, vinkje, voortgangsbalk |
 | `task` | drive, walk, pay (bg en fg) | inhoud van de bubbel |
 | `voice` | arc | de stem |
-| `vak` | line, line-on-brand, mine, mine-on-brand, mine-edge | het vak in ticketkop en lege staat |
-| `figure` | head, body | de parkeerders en de lijn waarop ze staan |
+| `figure` | body | de parkeerders en de lijn waarop ze staan |
 | `bubble` | navy, aqua, orange, white | de bubbel; orange alleen in de garage, nooit op een scherm |
 | `status` | free, full, closed | beschikbaarheid |
 | `feedback` | error, error-bg, success, warning, info | meldingen en foutteksten |
@@ -113,7 +112,7 @@ Donker: primair aqua.500, hover aqua.400, ingedrukt aqua.600, tekst blue.900; se
 - **Datum en tijd.** Twee velden naast elkaar, tabular cijfers. Op een telefoon opent de eigen kiezer van het toestel. Notatie: "za 14 nov 2026" en "10:00".
 - **Kentekenveld.** 56 hoog, `heading-m`, hoofdletters, spatiëring 0,08 em, een NL-band in `surface.brand`. Je mag typen met of zonder streepjes; we zetten ze zelf goed volgens de Nederlandse indeling (6 tekens, bijvoorbeeld XX-123-X). `autocomplete="off"`, `spellcheck="false"`. Een link "Buitenlands kenteken?" opent een vrij veld. We imiteren de gele plaat niet: geel is geen merkkleur.
 - **Keuzelijst.** Zelfde veld met de hoekige pijl omlaag rechts, op hoofdletterhoogte van de veldtekst.
-- **Vinkje en rondje.** Vak 24, rij minstens 44 hoog, het hele label is klikbaar. Gekozen in `action.primary-bg`. Betaalmethodes staan als keuze op een kaart; de gekozen kaart krijgt een rand van 2 px in `action.primary-bg`.
+- **Vinkje en rondje.** Kader 24, rij minstens 44 hoog, het hele label is klikbaar. Gekozen in `action.primary-bg`. Betaalmethodes staan als keuze op een kaart; de gekozen kaart krijgt een rand van 2 px in `action.primary-bg`.
 
 ### Locatiekaart
 
@@ -132,11 +131,11 @@ De hele kaart is één link; de naam is de linktekst. Foto 96 x 96 (`radius.m`),
 | Maat | Inhoud | Voorbeeld |
 |---|---|---|
 | 24 | P of één cijfer | kaartpin (navy, witte P), niveau "0" in een regel |
-| 40 | icoon 24 | geldig ticket, in jouw vak op navy (aqua, navy vinkje) |
+| 40 | één cijfer of icoon 24 | niveau "-1" op een vlak navy vlak (aqua, PY-Blauw cijfer) |
 | 64 | woord tot 6 tekens of niveau | Vrij, Vol (navy, wit) |
 | 104 | prijs met eenheid | "per dag € 12,50" op de locatiepagina (navy, wit) |
 
-De vulling volgt de grond: navy op wit en licht, aqua op navy en in donkere modus. Gesloten past niet in een bubbel. Vrije ruimte 8 px (24, 40) of 16 px (64, 104). De bubbel draait nooit en heeft nooit een pijl erin. De pop-in (0,9 naar 1, `easing.bubble`, `duration.expressive`, zonder draaiing) alleen als het ticket geldig wordt; bij reduced motion een fade van 120 ms.
+De vulling volgt de grond: navy op wit en licht, aqua op navy en in donkere modus. Gesloten past niet in een bubbel. Vrije ruimte 8 px (24, 40) of 16 px (64, 104). De bubbel draait nooit en heeft nooit een pijl erin. De grond om een bubbel is altijd vlak. De pop-in (0,9 naar 1, `easing.bubble`, `duration.expressive`, zonder draaiing) alleen op een merkmoment, zoals het openen van de app; bij reduced motion een fade van 120 ms.
 
 **Kaart.** Elke locatie op de kaart is een navy bubbel van 24 px met een witte P, rechtop, de punt op de locatie (besluit D13). De regel van één bubbel per scherm geldt niet voor kaartdata.
 
@@ -148,9 +147,9 @@ Meldingen: tekst in `text.default`, kleur in het icoon en een rand van 1 px rond
 
 ### Lege staat en foutscherm
 
-![Lege staat met het vak en foutscherm met de gastheer](figures/empty-error.png)
+![Lege staat met de zwaaier en foutscherm met de gastheer](figures/empty-error.png)
 
-- **Lege staat.** Het vak loopt van boven in; jouw vak houdt de navy bubbel met P. Daaronder: wat komt hier ("Je hebt nog geen tickets"), wat kun je doen, en één knop.
+- **Lege staat.** Een wit, vlak scherm. Bovenaan staat de zwaaier op een korte navy lijn. Daaronder: wat komt hier ("Je hebt nog geen tickets"), wat kun je doen, en één navy knop ("Zoek een plek").
 - **Foutscherm.** Voor een hele pagina die niet bestaat, geen verbinding of onderhoud. De gastheer wijst naar het contact (info@parkingyou.nl, [telefoonnummer]) en staat op een lijn. Daaronder één hoofdknop en een link naar home.
 - **Geen figuur bij een fout in een formulier of bij betalen.** Daar staat alleen de melding, rustig en concreet.
 
@@ -172,8 +171,8 @@ Telefoon: bovenbalk 56 met logo (beeldmerk minstens 24 hoog) en menu; in de boek
 - **Locatiepagina.** Foto, status, naam, adres, de navy prijsbubbel (dagtarief met reservering € 12,50), feiten (700 plekken, doorrijhoogte 2,00 m, 9 min naar centrum, 24 uur open), vaste knop "Reserveer je plek" met de pijl. Op desktop staat de boekkaart rechts in 5 van de 12 kolommen.
 - **Boekflow.** Drie stappen: wanneer, kenteken en gegevens, betalen. Totaal en hoofdknop staan vast onderaan. "Ga verder" heeft de pijl, "Betaal € 12,50" een slotje.
 - **Bevestiging.** De stem voor "**Je plek** is gereserveerd.", een korte samenvatting, de springer op de rand van de knoppenbalk, hoofdknop "Bekijk je ticket". In beweging: een harde knip van de loper naar de springer, geen bewegende armen; bij reduced motion staat de springer er meteen.
-- **Ticket (PWA).** Een tab, dus zonder terugknop. Het vak als kop met de aqua bubbel in jouw vak, dan locatie en datum, kenteken groot, geldig van 10:00 tot 18:00, hoe je binnenkomt, een QR-code als reserve, doorrijhoogte en adres, navy knop "Plan je route". Het ticket moet zonder bereik werken: in de garage is vaak geen signaal.
-- **Donkere modus.** Dezelfde schermen, alleen de semantische waarden wisselen. De prijsbubbel wordt aqua, de hoofdknop aqua. De ticketkop blijft PY-Blauw met het vak. De QR-code blijft donker op wit.
+- **Ticket (PWA).** Een tab, dus zonder terugknop. De kop is een vlakke PY-Blauw band: de stem opent "**Je ticket** is geldig." en de springer staat rechts op een korte witte lijn. Daaronder de ticketkaart met locatie en datum, kenteken groot, geldig van 10:00 tot 18:00, hoe je binnenkomt, een QR-code als reserve, doorrijhoogte en adres, navy knop "Plan je route". Het ticket moet zonder bereik werken: in de garage is vaak geen signaal.
+- **Donkere modus.** Dezelfde schermen, alleen de semantische waarden wisselen. De prijsbubbel wordt aqua, de hoofdknop aqua. De ticketkop blijft een vlakke PY-Blauw band met de stem en de witte springer. De QR-code blijft donker op wit.
 
 ## Toegankelijkheid
 
@@ -182,8 +181,8 @@ Doel: WCAG 2.2 AA op elk scherm. Alle verhoudingen zijn doorgerekend met de WCAG
 | Criterium | Wat wij doen |
 |---|---|
 | 1.4.3 Contrast tekst | Alle semantische tekstparen halen 4,5:1 (`tokens/contrast.md`). Hoofdknop wit op blue.700 11,26:1, hover 8,15, ingedrukt 14,73; donker blue.900 op aqua.500 7,74, hover 9,17, ingedrukt 5,43. Tweede knop blue.700 op wit 11,26, hover 10,41, ingedrukt 9,52; donker aqua.300 op blue.900 11,01, hover 8,93, ingedrukt 10,01. Prijsbubbel wit op navy 11,26; donker blue.700 op aqua 4,80. Waarschuwing en Vol oranje.700 op wit 4,80. Status alleen op `surface.default` of `raised`: `status.full` op `surface.subtle` is 4,44:1 en faalt. |
-| 1.4.11 Contrast UI | Veldrand `border.strong` 4,24:1 (licht) en 5,12:1 (donker). Rand van de tweede knop 11,26 (licht) en 11,01 (donker). Gekozen vinkje en voortgangsbalk navy op wit 11,26. Aqua bubbel in jouw vak op navy 3,48 tegen blue.600 en 4,80 tegen blue.700. Kaartpin navy 9,86 tegen een lichte kaartgrond (neutral.100), 11,26 tegen wit. `border.subtle` (1,31:1) en de lijnen van het vak (1,31:1 op wit) zijn decoratie, nooit de enige rand van iets dat je moet zien. |
-| 1.1.1 Niet-tekstuele inhoud | De stem, de parkeerders en het vak zijn decoratie: `alt=""` of `aria-hidden`. De bubbel met een vinkje of prijs heeft een label ("Geldig", "per dag € 12,50"). De pijl in een knop is `aria-hidden`; de knop met alleen een pijl heeft `aria-label="Terug"`. |
+| 1.4.11 Contrast UI | Veldrand `border.strong` 4,24:1 (licht) en 5,12:1 (donker). Rand van de tweede knop 11,26 (licht) en 11,01 (donker). Gekozen vinkje en voortgangsbalk navy op wit 11,26. Aqua bubbel op navy 4,80. De lijn onder een parkeerder: navy op wit en wit op navy, allebei 11,26. Kaartpin navy 9,86 tegen een lichte kaartgrond (neutral.100), 11,26 tegen wit. `border.subtle` (1,31:1) is decoratie, nooit de enige rand van iets dat je moet zien. |
+| 1.1.1 Niet-tekstuele inhoud | De stem en de parkeerders zijn decoratie: `alt=""` of `aria-hidden`. Dat het ticket geldig is, staat in de kop als woord. De bubbel met een prijs of niveau heeft een label ("per dag € 12,50", "Niveau -1"). De pijl in een knop is `aria-hidden`; de knop met alleen een pijl heeft `aria-label="Terug"`. |
 | 2.4.7 Focus zichtbaar | Ring 3 px `focus.ring`, 2 px los; op navy en donker aqua. Nooit `outline: none` zonder vervanging. |
 | 2.4.11 Focus niet bedekt | De vaste balk onderaan en een cookiebalk bedekken nooit het veld met focus: `scroll-padding-bottom` gelijk aan de balkhoogte. |
 | 2.5.8 Doelgrootte | Wij gebruiken 44 x 44, ook voor icoonknoppen, de terugpijl, tabs en chips (chip 36 zichtbaar, raakvlak 44). Alleen een link in lopende tekst is uitgezonderd. |
@@ -217,16 +216,17 @@ Prijzen als "€ 12,50", tijden als "10:00 tot 18:00", datums als "za 14 nov 202
 - Adres van Parking Philips Stadion, live beschikbaarheid, servicekosten en het algemene telefoonnummer zijn nog onbekend en staan als [placeholder].
 - `status.full` is oranje.700, dezelfde waarde als `feedback.warning`. Wij houden het als tekst en icoon, zoals een waarschuwing. Als oranje op het scherm helemaal weg moet, kan Vol `text.default` met het streep-icoon worden (16,88:1); dat is een keuze voor de core spec.
 - Welke schermen van Aeroparker kunnen we stylen, en ondersteunt de PWA een ticket zonder bereik?
+- Het ticket heeft geen bubbel meer: de kop draagt de stem en de springer, "geldig" staat als woord. Daarmee heeft de bubbel van 40 geen vast scherm. Voorstel: houden voor het niveau van je plek, als de PWA dat later toont. Graag een besluit.
+- De pop-in van de bubbel had op het scherm alleen "het ticket wordt geldig" als moment. Nu is dat het openen van de app, zoals de core spec noemt. Klopt dat met het hoofdstuk Beweging?
 - De terugpijl op hoofdletterhoogte van de titel is 11 px. Dat volgt de regel, maar is klein naast iconen van 24. Testen met gebruikers; zie Voorgestelde waarden.
 
 ## Voorgestelde waarden
 
-Goedgekeurd: zie besluiten D4 tot en met D14 en D35 in de core spec. De tabel blijft als uitleg.
+Goedgekeurd: zie besluiten D4 tot en met D14, D35 en D44 in de core spec. De tabel blijft als uitleg.
 
 | Waarde | Voorstel | Reden |
 |---|---|---|
-| Het vak op scherm | u = 48 px (de steek van 72 px is 1,5u); lijnen 144 tot 192 px lang (3u tot 4u); jouw vak randen 4 px (dubbele lijn); streep van de rijbaan 14 px, tussenruimte 12 px | De core spec geeft voor scherm alleen de steek en de lijndikte. Zonder u is de lengte van de lijnen niet te bepalen. |
-| Lijn onder een parkeerder op scherm | 2 px (`size.border-width-strong`) in `figure.body` | "Een lijn van 0,1u" geeft op scherm 4,8 px; dat wordt een balk. 2 px past bij de randen van de UI en volgt de kleur van het lijf, licht en donker. |
+| Lijn onder een parkeerder op scherm | 2 px (`size.border-width-strong`) in `figure.body`; een korte lijn loopt aan beide kanten `space.4` (16 px) voorbij de figuur | "Een lijn van 0,1u" geeft op scherm 4,8 px; dat wordt een balk. 2 px past bij de randen van de UI en volgt de kleur van het lijf, licht en donker. De lengte volgt uit een bestaand spacing-token, dus geen nieuwe waarde. |
 | `action.secondary-border` | Nieuw semantisch token, gelijk aan `action.secondary-fg` (licht blue.700, donker aqua.300) | De tweede knop is nu een omlijning. Een eigen naam voorkomt dat code de tekstkleur als rand leest en houdt de rand los aanpasbaar. |
 | Terugpijl in een icoonknop | 16 px (icoonmaat uit de core spec) in plaats van 11 px | Een pijl zonder label heeft geen hoofdletter naast zich. 16 px weegt even zwaar als de iconen van 24 met hun veilige zone. |
 
@@ -237,11 +237,11 @@ Goedgekeurd: zie besluiten D4 tot en met D14 en D35 in de core spec. De tabel bl
 | Eén navy hoofdknop per scherm, met witte tekst | Twee hoofdknoppen, of een oranje knop, prijs of bubbel op een scherm |
 | Tweede knop omlijnd: wit, rand en tekst 2 px PY-Blauw | Een navy knop op een navy vlak; gebruik daar de donkere action-waarden |
 | De hoekige pijl op hoofdletterhoogte bij een volgende stap of richting | Een chevron, een pijl uit de iconenset, een pijl in een cirkel of bubbel |
-| De stem voor de kop van home en de bevestiging | De stem voor elke kop, of rechts van de tekst |
+| De stem voor de kop van home, de bevestiging en het ticket | De stem voor elke kop, of rechts van de tekst |
 | Eén parkeerder per scherm, staand op een lijn, bij welkom, bevestiging of een foutscherm | Een parkeerder bij een betaalfout, zwevend, gedraaid of met een spreekballon |
-| Het vak als kop van ticket of lege staat, één jouw vak met één bubbel of figuur | Het vak achter tekst, of meer dan één jouw vak |
-| Per scherm het logo plus hooguit twee eigen elementen | Alle vijf elementen op één scherm |
-| Eén bubbel per scherm, rechtop, voor prijs, niveau, beschikbaarheid of een geldig ticket | De bubbel als knop, avatar of in elke kaart (de kaartpin is de enige uitzondering) |
+| Een vlakke kop in PY-Blauw of wit, met de stem en één parkeerder | Een patroon, vorm of grote bubbel achter een kop of lege staat |
+| Per scherm het logo plus hooguit twee eigen elementen | Drie of vier eigen elementen op één scherm |
+| Eén bubbel per scherm, rechtop, voor prijs, niveau of beschikbaarheid | De bubbel als knop, avatar of in elke kaart (de kaartpin is de enige uitzondering) |
 | Status als woord, kleur en icoon | Een gekleurde stip zonder woord |
 | Label boven het veld, fout eronder in woorden | Alleen een rode rand, of een placeholder als label |
 | Componenten lezen semantische tokens | Hexwaarden of primitieven in een component |

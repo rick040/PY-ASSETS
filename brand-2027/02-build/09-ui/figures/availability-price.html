@@ -64,11 +64,11 @@
 
   <!-- bubble sizes -->
   <div class="col">
-    <div class="t-heading-s">De bubbel in UI: vier maten, altijd rechtop, voor prijs, niveau, beschikbaarheid of een geldig ticket</div>
+    <div class="t-heading-s">De bubbel in UI: vier maten, altijd rechtop, voor prijs, niveau of beschikbaarheid</div>
     <div style="display: grid; grid-template-columns: repeat(5, 150px) 1fr; gap: 16px; align-items: end">
       <div class="size"><div class="map" role="img" aria-label="Kaart met drie pins"><span style="position: absolute; left: 58px; top: 0; width: 8px; height: 100%; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 0; top: 46px; width: 100%; height: 8px; background: var(--py-color-neutral-0)"></span><span style="position: absolute; left: 20px; top: 10px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 92px; top: 18px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span><span style="position: absolute; left: 76px; top: 62px"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans)">P</span></span></span></div><span class="cap"><b>24</b><br>kaartpin met P (D13)</span></div>
       <div class="size"><span class="bub" data-size="24" data-fill="navy"><span style="font: 800 12px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">0</span></span><span class="cap"><b>24</b><br>niveau in een regel</span></div>
-      <div class="size"><span style="display: flex; justify-content: center; width: 132px; height: 96px; background: var(--py-surface-brand); border-radius: var(--py-radius-m); overflow: hidden"><span style="display: grid; place-items: center; width: 72px; height: 96px; background: var(--py-vak-mine-on-brand); box-shadow: inset 4px 0 0 var(--py-vak-mine-edge), inset -4px 0 0 var(--py-vak-mine-edge)"><span class="bub" data-size="40" data-fill="aqua"><i data-i="check" data-s="24"></i></span></span></span><span class="cap"><b>40</b><br>geldig, in jouw vak op navy</span></div>
+      <div class="size"><span style="display: grid; place-items: center; width: 132px; height: 96px; background: var(--py-surface-brand); border-radius: var(--py-radius-m)"><span class="bub" data-size="40" data-fill="aqua" role="img" aria-label="Niveau -1"><span style="font: 800 18px/1 var(--py-font-sans); font-variant-numeric: tabular-nums">-1</span></span></span><span class="cap"><b>40</b><br>niveau op navy, aqua</span></div>
       <div class="size"><span class="bub t-heading-s" data-size="64" data-fill="navy">Vrij</span><span class="cap"><b>64</b><br>beschikbaarheid, niveau</span></div>
       <div class="size"><span class="bub" data-size="104" data-fill="navy"><span class="t-label-s">per dag</span><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span><span class="cap"><b>104</b><br>prijs op de locatiepagina</span></div>
       <div class="col" style="gap: 10px; padding-bottom: 4px">
@@ -79,7 +79,7 @@
         <div class="rule"><span class="dont">Niet</span><span>gedraaid, oranje, met een pijl erin</span></div>
       </div>
     </div>
-    <div class="cap">Vulling volgt de grond: navy op wit en licht, aqua op navy en in donkere modus. Oranje bestaat alleen op de betaalautomaat in de garage, niet op een scherm. De punt wijst altijd omlaag. Pop-in als het ticket geldig wordt: 0,9 naar 1, easing.bubble, duration.expressive, geen draaiing; bij reduced motion een fade van 120 ms.</div>
+    <div class="cap">Vulling volgt de grond: navy op wit en licht, aqua op navy en in donkere modus. Oranje bestaat alleen op de betaalautomaat in de garage, niet op een scherm. De punt wijst altijd omlaag. Pop-in alleen op een merkmoment, zoals het openen van de app: 0,9 naar 1, easing.bubble, duration.expressive, geen draaiing; bij reduced motion een fade van 120 ms. De grond om een bubbel is altijd vlak.</div>
   </div>
 </div>
 <script src="ui.js"></script>

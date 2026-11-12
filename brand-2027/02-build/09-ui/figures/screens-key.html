@@ -67,17 +67,18 @@
   </div>
   <div class="footer"><button class="btn btn--primary btn--lg btn--block">Reserveer je plek <i data-pijl="right"></i></button></div><div class="home-ind"></div></div></div>
 
-  <!-- 4 Ticket -->
-  <div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">4 Ticket in de PWA</div><div class="elems">vak · bubbel</div></div><div class="phone">
-  <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
-  <div class="topbar"><h1 class="topbar__title" style="text-align: left; margin: 0">Je ticket</h1></div>
-  <div class="scroll pad" style="padding-top: 4px; display: flex; flex-direction: column; gap: 12px">
-    <article class="card" style="box-shadow: var(--py-shadow-2), inset 0 0 0 1px var(--py-border-subtle)">
-      <div class="on-brand" style="background: var(--py-surface-brand); color: var(--py-text-on-brand)">
-        <div class="vak" data-ground="brand" data-h="144" data-shift="1"><span class="bub" data-size="40" data-fill="aqua" role="img" aria-label="Geldig"><i data-i="check" data-s="24"></i></span></div>
-        <div style="padding: 12px 16px 16px"><div class="t-heading-s">Parking Philips Stadion</div><div class="t-body-s tnum">za 14 nov 2026 · geldig</div></div>
-      </div>
-      <div style="padding: 16px; display: flex; flex-direction: column; gap: 12px">
+  <!-- 3 Ticket -->
+  <div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">3 Ticket in de PWA</div><div class="elems">stem · springer</div></div><div class="phone">
+  <div class="on-brand" style="flex: none; background: var(--py-surface-brand); color: var(--py-text-on-brand)">
+    <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
+    <div class="pad" style="display: flex; align-items: flex-end; gap: 8px; padding-top: 28px; padding-bottom: 24px">
+      <div class="voice" style="flex: 1; padding-bottom: 6px"><h1 class="voice__text t-heading-l" style="margin: 0"><b>Je ticket</b><br><span style="font-weight: 400">is geldig.</span></h1></div>
+      <div class="floor floor--short"><img class="parkeerder" src="../../kit/assets/figure-jump-white.svg" alt="" style="height: 112px"></div>
+    </div>
+  </div>
+  <div class="scroll pad" style="padding-top: 16px; display: flex; flex-direction: column; gap: 12px">
+    <article class="card" style="padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--py-shadow-2), inset 0 0 0 1px var(--py-border-subtle)">
+      <div><div class="t-heading-s">Parking Philips Stadion</div><div class="t-body-s tnum" style="color: var(--py-text-muted)">za 14 nov 2026</div></div>
         <div style="display: flex; gap: 16px; align-items: center; justify-content: space-between">
           <div class="plate plate--display" style="flex: none"><span class="plate__nl">NL</span><span class="plate__val">XX-123-X</span></div>
           <div style="text-align: right"><div class="t-numeric-m">10:00</div><div class="t-body-s tnum" style="color: var(--py-text-muted)">tot 18:00</div></div>
@@ -88,14 +89,13 @@
           <div style="background: var(--py-surface-code); color: var(--py-text-on-code); padding: 4px; border-radius: var(--py-radius-m); flex: none"><div class="qr" data-size="88"></div></div>
           <div class="t-body-s" style="display: flex; flex-direction: column; gap: 4px"><b class="t-label-m">Slagboom dicht?</b><span style="color: var(--py-text-muted)">Scan deze code bij de zuil naast de slagboom.</span></div>
         </div>
-      </div>
     </article>
     <span class="fact"><i data-i="height" data-s="20"></i>Doorrijhoogte 2,00 m · [adres], Eindhoven</span>
     <button class="btn btn--primary btn--block"><i data-i="map" data-s="20"></i>Plan je route</button>
   </div>
   <nav class="bottombar" aria-label="Hoofdmenu"><button class="tab"><span class="tab__pill"><i data-i="search"></i></span>Zoeken</button><button class="tab is-active" aria-current="page"><span class="tab__pill"><i data-i="ticket"></i></span>Tickets</button><button class="tab"><span class="tab__pill"><i data-i="user"></i></span>Account</button></nav><div class="home-ind"></div></div></div>
   </div>
-  <div class="cap">Per scherm het logo en hooguit twee eigen elementen. Home: de stem opent de kop, de zwaaier staat op de zoekkaart. Locatie: de prijsbubbel en de pijl naar de volgende stap. Ticket: het vak als kop, jouw vak houdt de bubbel met het vinkje. Eén navy hoofdknop per scherm, nergens oranje.</div>
+  <div class="cap">Per scherm het logo en hooguit twee eigen elementen. Home: de stem opent de kop, de zwaaier staat op de zoekkaart. Locatie: de prijsbubbel en de pijl naar de volgende stap. Ticket: een vlakke PY-Blauw kop, de stem opent "Je ticket is geldig." en de springer staat op een korte witte lijn. Eén navy hoofdknop per scherm, nergens oranje.</div>
 </div>
 <script src="ui.js"></script>
 </body>

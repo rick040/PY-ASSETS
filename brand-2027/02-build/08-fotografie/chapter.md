@@ -18,7 +18,7 @@ Vandaag is dat nog niet zo. Op de website staan stockfoto's onder een blauwe kle
 
 ### Compositie
 
-- Meestal op ooghoogte: zoals je de plek zelf ziet, lopend of vanuit de auto. Af en toe recht van boven, voor vakken, pijlen en vloermarkering.
+- Meestal op ooghoogte: zoals je de plek zelf ziet, lopend of vanuit de auto. Af en toe recht van boven, voor belijning, pijlen en vloermarkering.
 - Verticale lijnen recht, horizon recht. Geen schuine camera voor effect.
 - Eén onderwerp per foto. Afvalbakken, pallets en tijdelijke borden gaan uit beeld.
 - Laat een rustig vlak vrij als er tekst bij komt: lucht, een lege muur of schoon asfalt.
@@ -100,7 +100,7 @@ Eén garage, één dag, 28 shots in acht soorten plekken, plus één eventavond.
 | 6 | Voetgangersingang | Iemand loopt naar buiten, de straat in | rug of driekwart, staand 9:16 | middag | reels |
 | 7 | Voetgangersingang | Liftknop, deur of aqua looproutebord | detail, vierkant | elk moment | bubbelmasker |
 | 8 | Rijbaan binnen | Rijbaan in centraal perspectief | 1,2 m hoog, liggend 16:9 | lampen aan | website, uitleg |
-| 9 | Rijbaan binnen | Leeg vak met lijnen | recht van boven, vierkant | lampen aan | social, rechthoek met tekst |
+| 9 | Rijbaan binnen | Lege parkeerplek met belijning | recht van boven, vierkant | lampen aan | social, rechthoek met tekst |
 | 10 | Rijbaan binnen | Hoogtebalk bij de inrit | ooghoogte, liggend 3:2 | elk moment | locatiepagina, max. hoogte |
 | 11 | Rijbaan binnen | Laadpaal of gehandicaptenplek, als de garage die heeft | staand 4:5 | elk moment | locatiepagina, voorzieningen |
 | 12 | Betaalautomaat | Automaat frontaal, scherm en sticker leesbaar | ooghoogte, staand 4:5 | elk moment | helppagina betalen |
@@ -108,7 +108,7 @@ Eén garage, één dag, 28 shots in acht soorten plekken, plus één eventavond.
 | 14 | Betaalautomaat | Automaat in zijn omgeving, met looproute | liggend 3:2 | elk moment | locatiepagina |
 | 15 | Niveaumarkering | Kolom met niveaububbel | frontaal, staand 4:5 | lampen aan | wayfinding, social |
 | 16 | Niveaumarkering | Rij kolommen met sectie | perspectief, liggend 16:9 | lampen aan | website, Zakelijk |
-| 17 | Niveaumarkering | Vloerpijl of vakmarkering | recht van boven, vierkant | lampen aan | rechthoek met tekst |
+| 17 | Niveaumarkering | Vloerpijl of vloermarkering | recht van boven, vierkant | lampen aan | rechthoek met tekst |
 | 18 | Straatcontext | Garage in zijn straat, veel lucht | breed, liggend 16:9 | ochtend | websiteheader, nieuwsbrief |
 | 19 | Straatcontext | Bestemming en garage in één beeld (stadion, centrum) | liggend 3:2 | ochtend | locatie- en eventpagina |
 | 20 | Straatcontext | Looproute van garage naar bestemming | voetganger, staand 9:16 | eind middag | reels |

@@ -138,7 +138,7 @@ Goedgekeurd: zie besluit D37 in de core spec.
 |---|---|---|
 | Pijl op borden | hoogte 2 x de kaphoogte van de naam (2k); tekenvlak van een pictogram op hetzelfde bord ook 2k | De core spec geeft de pijl alleen een maat in knoppen. 2k is dezelfde regel als het beeldmerk op borden, past binnen de marge van 2u op een routebord (kaphoogte 70 mm, pijl 140 mm, bord 200 mm) en houdt pijl en pictogram even zwaar. |
 | Afstand pijl en label | 8 px (`space.2`) in een knop, 4 px (`space.1`) in een link | Bestaande tokens; zonder vaste afstand plakt de pijl in een link aan het woord of zweeft hij in een knop. |
-| Schuine pijl | `arrow-downleft`, gedraaid per 90 graden, geschaald tot dezelfde pijllengte als de rechte pijl (vak 0,875 h) | Het handboekbestand is op 199 mm getekend tegen 250 mm voor de rechte pijl, waardoor hij op hetzelfde vak 9 procent kleiner oogt. Zo is elke richting even zwaar. |
+| Schuine pijl | `arrow-downleft`, gedraaid per 90 graden, geschaald tot dezelfde pijllengte als de rechte pijl (tekenvlak 0,875 h) | Het handboekbestand is op 199 mm getekend tegen 250 mm voor de rechte pijl, waardoor hij op hetzelfde tekenvlak 9 procent kleiner oogt. Zo is elke richting even zwaar. |
 | Pijl naar buiten | schuin rechtsomhoog (45 graden) na de linktekst | Geeft "opent een andere site of app" zonder extra icoon, binnen de stappen van 45 graden. |
 
 ## Do's en don'ts
@@ -153,7 +153,7 @@ Goedgekeurd: zie besluit D37 in de core spec.
 - **Don't:** een Tabler-pijl, chevron of caret, ook niet in een lijst of keuzelijst.
 - **Don't:** de pijl draaien in een andere hoek dan 45 graden, uitrekken of hertekenen.
 - **Don't:** een parkeerder als routepictogram, in een bubbel of met een tekstballon.
-- **Don't:** een parkeerder als routepictogram, of een parkeerder in twee kleuren.
+- **Don't:** een parkeerder in twee kleuren, of zwevend zonder lijn eronder.
 - **Don't:** een pictogram met een eigen rand of bubbelvorm in een bubbel zetten.
 - **Don't:** twee sets door elkaar (Tabler en Lucide, of handboek en hertekend) op één vlak.
 - **Don't:** RVV-tekens, betaalmerken of partnerlogo's natekenen, inkleuren of in een bubbel zetten.

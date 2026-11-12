@@ -5,8 +5,6 @@
 <title>Nieuwsbrief 600 px</title>
 <link rel="stylesheet" href="../../kit/kit.css">
 <script src="py-fig.js"></script>
-<script src="py-signs.js"></script>
-<script src="py-social.js"></script>
 <style>
   .mail { position: absolute; left: 60px; top: 80px; width: 600px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(13,20,46,0.08); }
   .mail * { font-family: 'Ubuntu Sans', Arial, sans-serif; }
@@ -17,15 +15,17 @@
 </style>
 </head>
 <body>
-<div class="fig fig--subtle" style="width: 1200px; height: 1480px">
+<div class="fig fig--subtle" style="width: 1200px; height: 1388px">
   <div class="eyebrow" style="position: absolute; left: 60px; top: 36px">Nieuwsbrief · 600 px breed · één kolom, blokken van 600</div>
   <div class="mail">
     <div style="height: 36px; background: #F4F6FB; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; font-size: 12px; color: #5E6470">
       <span>[Preheader: één zin over de inhoud]</span><span style="text-decoration: underline">Bekijk online</span></div>
-    <div style="height: 272px; background: #1A3580; position: relative">
-      <svg id="vak" width="600" height="272" viewBox="0 0 600 272" style="position: absolute; left: 0; top: 0"></svg>
-      <img src="../../kit/assets/logo-horizontal-reverse.svg" style="position: absolute; left: 32px; top: 212px; height: 32px" alt="parkingyou">
-      <div style="position: absolute; right: 32px; top: 222px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #32B9CD">NIEUWSBRIEF [MAAND]</div>
+    <div style="height: 180px; background: #1A3580; position: relative">
+      <img src="../../kit/assets/logo-horizontal-reverse.svg" style="position: absolute; left: 32px; top: 32px; height: 32px" alt="parkingyou">
+      <i data-p="arc" style="position: absolute; left: 32px; top: 88px; height: 60px; color: #32B9CD"></i>
+      <div style="position: absolute; left: 63px; top: 88px; font-size: 24px; line-height: 30px; color: #FFFFFF"><b>Nieuwsbrief</b><br>[maand] [jaar]</div>
+      <div style="position: absolute; left: 498px; top: 146px; width: 70px; height: 2px; background: #FFFFFF"></div>
+      <img src="../../kit/assets/figure-wave-white-flip.svg" style="position: absolute; left: 514.6px; top: 50px; height: 96px" alt="">
     </div>
     <div style="height: 280px; background: url('../../kit/photos/py-photo-dll-garage.jpg') center / cover"></div>
     <div style="padding: 32px 32px 40px">
@@ -62,19 +62,13 @@
   </div>
 
   <div class="ann" style="top: 96px"><b>Preheader</b> 36 px, body-s 12 px op blue.50. Altijd een link naar de webversie.</div>
-  <div class="ann" style="top: 150px"><b>Kop met het vak</b> 272 px, PY-Blauw. Vakken van 72 px met lijnen van 2 px in blue.400, die 168 px vanaf de bovenrand inlopen; rijstrook gestippeld 14/12. Jouw vak (blue.600, zijlijnen en stoplijn aqua 4 px) staat boven het logo; de zwaaier van 96 px staat op de stoplijn. Logo omgekeerd 32 px eronder. Logo plus het vak plus één parkeerder: verder geen elementen in deze mail.</div>
-  <div class="ann" style="top: 400px"><b>Hero-foto</b> 600 x 280, eigen garage of straat. Geen tekst in de foto, geen kleurfilter.</div>
-  <div class="ann" style="top: 590px"><b>Hero-tekst</b> op wit. Kop heading-l 32/38 PY-Blauw, key phrase Bold. Tekst body-m 16/24. Hoofdknop PY-Blauw met witte tekst, 48 px hoog, pil. Eén hoofdknop per mail.</div>
-  <div class="ann" style="top: 790px"><b>Blokken</b> wit, twee kolommen van 256 px met 24 px tussenruimte; op mobiel onder elkaar. Kop heading-m 24/30 PY-Blauw, link PY-Blauw onderstreept.</div>
-  <div class="ann" style="top: 960px"><b>Uitgelicht</b> op blue.50 met een foto als rechthoek van 104 px. Geen bubbel: de mail heeft zijn twee elementen al in de kop.</div>
-  <div class="ann" style="top: 1120px"><b>Voet</b> PY-Blauw, logo omgekeerd 24 px, bedrijfsgegevens en afmeldlink (verplicht) in body-s 14/20 wit.</div>
-  <div class="ann" style="top: 1260px; border-left-color: #32B9CD"><b>Techniek</b> Tabellen, inline stijl, max 600 px. Font: "Ubuntu Sans" als webfont waar het werkt, anders Arial. Achtergrondkleur ook als bgcolor, zodat Outlook navy toont. De kop met het vak gaat als één PNG op 2x (1200 x 544) met alt-tekst. Mailchimp-template: <i style="font-style: normal; font-weight: 700">py-newsletter-600.html</i>.</div>
+  <div class="ann" style="top: 150px"><b>Kop</b> 180 px, vlak PY-Blauw. Logo omgekeerd 32 px op 32 px van boven. <b>De stem</b> (PY-Aqua, 60 px, lijn 2,4 px) opent "Nieuwsbrief" en de maand in heading-m 24/30 wit, 18 px tot de eerste letter. Rechts staat <b>de zwaaier</b>, wit, 96 px, op een korte lijn van 2 px, gespiegeld naar de tekst. Logo plus de stem plus één parkeerder: verder geen elementen in deze mail.</div>
+  <div class="ann" style="top: 308px"><b>Hero-foto</b> 600 x 280, eigen garage of straat. Geen tekst in de foto, geen kleurfilter.</div>
+  <div class="ann" style="top: 498px"><b>Hero-tekst</b> op wit. Kop heading-l 32/38 PY-Blauw, key phrase Bold. Tekst body-m 16/24. Hoofdknop PY-Blauw met witte tekst, 48 px hoog, pil. Eén hoofdknop per mail.</div>
+  <div class="ann" style="top: 698px"><b>Blokken</b> wit, twee kolommen van 256 px met 24 px tussenruimte; op mobiel onder elkaar. Kop heading-m 24/30 PY-Blauw, link PY-Blauw onderstreept.</div>
+  <div class="ann" style="top: 868px"><b>Uitgelicht</b> op blue.50 met een foto als rechthoek van 104 px. Geen bubbel: de mail heeft zijn twee elementen al in de kop.</div>
+  <div class="ann" style="top: 1028px"><b>Voet</b> PY-Blauw, logo omgekeerd 24 px, bedrijfsgegevens en afmeldlink (verplicht) in body-s 14/20 wit.</div>
+  <div class="ann" style="top: 1168px; border-left-color: #32B9CD"><b>Techniek</b> Tabellen, inline stijl, max 600 px. Font: "Ubuntu Sans" als webfont waar het werkt, anders Arial. Achtergrondkleur ook als bgcolor, zodat Outlook navy toont. De kop gaat als één PNG op 2x (1200 x 360) met alt-tekst "ParkingYou nieuwsbrief [maand]". Mailchimp-template: <i style="font-style: normal; font-weight: 700">py-newsletter-600.html</i>.</div>
 </div>
-<script>
-  // het vak, screen (D35, D40): pitch 72, lines 2 px, bays 168 px from the top edge, lane dash 14 gap 12;
-  // jouw vak under the logo column (x 32 to 104), aqua edges and stop line 4 px, zwaaier 96 px on the stop line
-  let v = PYSOC.vak(168, 0, { u: 48, W: 600, x0: 32, pitch: 72, lw: 2, dash: [14, 12], gap: 24, fig: 'wave', figH: 96 });
-  PYS.mount('vak', v);
-</script>
 </body>
 </html>
