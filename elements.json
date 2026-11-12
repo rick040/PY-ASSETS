@@ -1,6 +1,6 @@
 {
  "source": "parkingyou Huisstijlhandboek, Wayfinding & inrichting parkeervoorziening, v1.0, 09-2025 (All Jobs)",
- "count": 272,
+ "count": 274,
  "elements": [
   {
    "id": "py-tok-color-aqua",
@@ -10461,6 +10461,110 @@
    ],
    "notes": "NEW DESIGN (not in the handbook): cheaper alternative to the 2000 mm column, a flat panel 400 x 1000 mm (the format of the info pylon panel) for a sign post. Same copy and order as py-prod-zuil-abonnees-*, compacted: P header, warning triangle, NL and EN headline with sub lines, fault number, divider, small logo with location name, thin PY-Aqua edge. Panel only; the post (about 60 to 76 mm round) is not drawn. Proposal.",
    "svg": "svg/prod/py-prod-bord-abonnees-wit.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-bord-abonnees-790x1510-blauw",
+   "name_nl": "Bord Alleen voor abonnees 790 x 1510, PY-Blauw met aqua header",
+   "level": "prod",
+   "category": "bord",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 790.0,
+    "height": 1510.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": null,
+     "hex": "#097BAE"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "subline-nl",
+    "subline-en",
+    "phone-number",
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-icon-warning-triangle",
+    "py-atom-logo-stacked-white"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). The 400 x 1000 layout of py-prod-bord-abonnees-* scaled by 1.51 and centred, header and edges full width. Same copy and order. Proposal.",
+   "svg": "svg/prod/py-prod-bord-abonnees-790x1510-blauw.svg",
+   "origin": "design"
+  },
+  {
+   "id": "py-prod-bord-abonnees-790x1510-wit",
+   "name_nl": "Bord Alleen voor abonnees 790 x 1510, wit met blauwe header",
+   "level": "prod",
+   "category": "bord",
+   "source_page": null,
+   "status": "rebuilt",
+   "dimensions_mm": {
+    "width": 790.0,
+    "height": 1510.0,
+    "stated": null,
+    "basis": "proposal"
+   },
+   "colors": [
+    {
+     "token": "py-tok-color-blauw",
+     "hex": "#1A3580"
+    },
+    {
+     "token": "py-tok-color-aqua",
+     "hex": "#32B9CD"
+    },
+    {
+     "token": "py-tok-color-wit",
+     "hex": "#FFFFFF"
+    },
+    {
+     "token": "py-tok-gradient-verloop",
+     "hex": null
+    }
+   ],
+   "variables": [
+    "headline",
+    "subline-nl",
+    "subline-en",
+    "phone-number",
+    "location name"
+   ],
+   "built_from": [
+    "py-atom-symbol-p-roof",
+    "py-atom-icon-warning-triangle",
+    "py-atom-logo-stacked-color"
+   ],
+   "tags": [
+    "new-design"
+   ],
+   "notes": "NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). The 400 x 1000 layout of py-prod-bord-abonnees-* scaled by 1.51 and centred, header and edges full width. Same copy and order. Proposal.",
+   "svg": "svg/prod/py-prod-bord-abonnees-790x1510-wit.svg",
    "origin": "design"
   }
  ],

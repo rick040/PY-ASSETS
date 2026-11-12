@@ -320,12 +320,96 @@ def bord(style, s=43.0):
     return d
 
 
+def bord_k(style, k, Wd, Hd):
+    """Subscribers panel at its own size (Wd x Hd mm), the 400 x 1000 layout of bord() scaled by k and centred, with a full-width header."""
+    wit = style == "wit"
+    main = NAVY if wit else WHITE
+    cx = Wd / 2
+    pid = f"py-prod-bord-abonnees-{int(Wd)}x{int(Hd)}-{style}"
+    d = Doc(pid, f"Bord Alleen voor abonnees {int(Wd)} x {int(Hd)}, {'wit' if wit else 'blauw'}", tight=True)
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-gradient-verloop", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
+    HB, BAND = 230.0 * k, 100.0 * k
+    if wit:
+        d.defs["py-zuil-edge"] = (
+            '<linearGradient id="py-zuil-edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="%g" y2="0">'
+            '<stop offset="0" stop-color="#1A3580"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % (830 * Wd / 400))
+    else:
+        d.defs["py-zuil-verloop"] = (
+            '<linearGradient id="py-zuil-verloop" gradientUnits="userSpaceOnUse" x1="0" y1="%g" x2="0" y2="%g">'
+            '<stop offset="0" stop-color="#1A3580"/><stop offset="0.18" stop-color="#1A3580"/>'
+            '<stop offset="0.62" stop-color="#097BAE"/><stop offset="1" stop-color="#32B9CD"/></linearGradient>' % (HB, HB - BAND))
+
+    def hp(pts):   # header curve of bord(), x stretched to the width, y scaled by k
+        x = lambda v: v * Wd / 400
+        y = lambda v: v * k
+        (a, b), (c1, c2, c3, c4, c5, c6), (e1, e2, e3, e4, e5, e6) = pts
+        return (f"M0 0H{Wd:g}V{y(a):.1f}C{x(c1):.1f} {y(c2):.1f} {x(c3):.1f} {y(c4):.1f} {x(c5):.1f} {y(c6):.1f}"
+                f"S{x(e1):.1f} {y(e2):.1f} 0 {y(e4):.1f}Z")
+
+    with d.group("body"):
+        d.rect(0, 0, Wd, Hd, fill=WHITE if wit else NAVY, gid="panel")
+    with d.group("header"):
+        if wit:
+            d.path(hp(((218, 0), (340, 222, 220, 224, 140, 224), (30, 223, 0, 223, 0, 0))), (0, 0, Wd, 224 * k), fill="url(#py-zuil-edge)", gid="header-edge")
+            d.path(hp(((206, 0), (340, 210, 220, 212, 140, 212), (30, 211, 0, 210, 0, 0))), (0, 0, Wd, 212 * k), fill=NAVY, gid="header-navy")
+        else:
+            d.rect(0, 0, Wd, HB, fill=AQUA, gid="header-aqua")
+            d.rect(0, HB - BAND, Wd, HB, fill="url(#py-zuil-verloop)", gid="header-verloop")
+        d.place("py-atom-symbol-p-roof", cx, 22 * k, w=130 * k, anchor="tc")
+    s = 43.0 * k
+    nl, en = ("Alleen voor", "abonnees!"), ("Subscribers", "only!")
+    subs = (("Geen abonnement =", "Geen toegang."), ("No subscription =", "No access."))
+    ssz = 0.62 * s
+    y = 262.0 * k
+    with d.group("warning"):
+        d.place("py-atom-icon-warning-triangle", cx, y, w=66 * k, anchor="tc", gid="warning-triangle", recolor={"#71CBDF": NAVY if wit else AQUA})
+    y += 66 * k * 302.706 / 346.786 + 12 * k + s * 0.75
+    with d.group("headline", data_variable="headline"):
+        for t in nl:
+            d.text(cx - text_width(t, s, 700) / 2, y, t, size=s, fill=main, weight=700)
+            y += s * 1.2
+    y += ssz * 0.2
+    with d.group("subline-nl", data_variable="subline-nl"):
+        for t in subs[0]:
+            d.text(cx - text_width(t, ssz, 500) / 2, y, t, size=ssz, fill=main, weight=500)
+            y += ssz * 1.3
+    y += s * 0.2
+    d.rect(cx - 50 * k, y, cx + 50 * k, y + 2.5 * k, fill=AQUA, gid="language-divider")
+    y += 2.5 * k + s * 0.2 + s * 0.75
+    with d.group("headline-en"):
+        for t in en:
+            d.text(cx - text_width(t, s, 700) / 2, y, t, size=s, fill=main, weight=700)
+            y += s * 1.2
+    y += ssz * 0.2
+    with d.group("subline-en", data_variable="subline-en"):
+        for t in subs[1]:
+            d.text(cx - text_width(t, ssz, 500) / 2, y, t, size=ssz, fill=main, weight=500)
+            y += ssz * 1.3
+    d.variables["headline"] = "Alleen voor abonnees! / Subscribers only!"
+    d.variables["subline-nl"] = "Geen abonnement = Geen toegang."
+    d.variables["subline-en"] = "No subscription = No access."
+    num = "085 21 30 422"
+    nsz = 34.0 * k
+    y += s * 0.55
+    d.text(cx - text_width(num, nsz, 700) / 2, y, num, size=nsz, fill=main, weight=700, gid="phone-number", variable="phone-number")
+    assert y < 850 * k, (y, 850 * k)
+    d.rect(0, 862 * k, Wd, 862 * k + 3.5 * k, fill=AQUA, gid="divider")
+    with d.group("lockup"):
+        d.place("py-atom-logo-stacked-color" if wit else "py-atom-logo-stacked-white", cx, 880 * k, w=100 * k, anchor="tc")
+        ls = 140.0 * k / text_width("Locatienaam", 1.0, 700)
+        d.text(cx - 70.0 * k, 972 * k, "Locatienaam", size=ls, fill=main, weight=700, gid="location-name", variable="location name")
+    with d.group("plinth"):
+        d.rect(0, 985 * k, Wd, Hd, fill=AQUA, gid="plinth-plate")
+    return d
+
+
 def main():
     no_json = "--no-json" in sys.argv
     built = {}
     jobs = [("comp", comp_counter()), ("prod", zuil(True)), ("prod", zuil(False))]
     jobs += [("prod", zuil2(st, m)) for m in ("public", "abonnee") for st in ("blauw", "wit")]
     jobs += [("prod", bord(st)) for st in ("blauw", "wit")]
+    jobs += [("prod", bord_k(st, 1.51, 790.0, 1510.0)) for st in ("blauw", "wit")]
     for lvl, d in jobs:
         p = os.path.join(ROOT, "svg", lvl, d.id + ".svg")
         open(p, "w", encoding="utf8").write(d.svg())
@@ -377,6 +461,12 @@ def main():
             notes="NEW DESIGN (not in the handbook): cheaper alternative to the 2000 mm column, a flat panel 400 x 1000 mm (the format of the info pylon panel) "
                   "for a sign post. Same copy and order as py-prod-zuil-abonnees-*, compacted: P header, warning triangle, NL and EN headline with sub lines, "
                   "fault number, divider, small logo with location name, thin PY-Aqua edge. Panel only; the post (about 60 to 76 mm round) is not drawn. Proposal.")
+    for st in ("blauw", "wit"):
+        meta[f"py-prod-bord-abonnees-790x1510-{st}"] = dict(
+            name_nl=f"Bord Alleen voor abonnees 790 x 1510, {'wit met blauwe header' if st == 'wit' else 'PY-Blauw met aqua header'}",
+            category="bord", variables=["headline", "subline-nl", "subline-en", "phone-number", "location name"],
+            notes="NEW DESIGN (not in the handbook): panel for a found sign of 79 x 151 cm (face size as given by the client, to be checked on the real sign). "
+                  "The 400 x 1000 layout of py-prod-bord-abonnees-* scaled by 1.51 and centred, header and edges full width. Same copy and order. Proposal.")
     rows = {e["id"]: i for i, e in enumerate(man["elements"])}
     for eid, (lvl, d) in built.items():
         svg = open(os.path.join(ROOT, "svg", lvl, eid + ".svg"), encoding="utf8").read()
