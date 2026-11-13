@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Entreelichtbak 1000 x 1000</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<style>
+  .lab { position: absolute; font: 700 15px/20px var(--py-font-sans); color: #FFFFFF; }
+  .lab span { font-weight: 400; color: #C2C7CF; }
+  .col { position: absolute; top: 700px; width: 340px; font: 400 14px/20px var(--py-font-sans); color: #FFFFFF; }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: #C2C7CF; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width: 1200px; height: 960px">
+  <div class="eyebrow" style="position: absolute; left: 60px; top: 36px; color: #C2C7CF">Entreelichtbak · 1000 x 1000 mm · u = 50 mm · twee fronten, één familie</div>
+  <div class="lab" style="left: 60px; top: 70px">Inrit <span>de stem tussen P en pijl</span></div>
+  <div class="lab" style="left: 650px; top: 70px">Ingang voetgangers <span>de loper als merkmoment</span></div>
+
+  <!-- 1 user unit = 1 mm, 0.5 px per mm -->
+  <svg id="car" style="position: absolute; left: 40px; top: 100px" width="560" height="560" viewBox="-40 -40 1120 1120"></svg>
+  <svg id="walk" style="position: absolute; left: 630px; top: 100px" width="560" height="560" viewBox="-40 -40 1120 1120"></svg>
+
+  <div class="measure-label" style="left: 36px; top: 192px">200</div>
+  <div class="measure-label" style="left: 22px; top: 286px">vrij 100</div>
+  <div class="measure-label" style="left: 30px; top: 385px">P 300 = 6u</div>
+  <div class="measure-label" style="left: 250px; top: 452px">stem 200 · pijl 2k = 200</div>
+  <div class="measure-label" style="left: 478px; top: 586px">kap 100</div>
+  <div class="measure-label" style="left: 640px; top: 420px">loper 500</div>
+  <div class="measure-label" style="left: 612px; top: 286px">vrij 100</div>
+
+  <div class="col" style="left: 60px">
+    <div class="h">Inrit</div>
+    Navy front, omgekeerd logo met een beeldmerk van 200 mm (2 x de kap). Onder het logo blijft 100 mm vrij, meer dan de 0,5x die het logo vraagt. Daaronder drie modules op één lijn: <b>P met dak</b> 300 mm (6u), <b>de stem</b> in PY-Aqua en <b>de hoekige pijl</b>, allebei 200 mm: 2 x de kaphoogte. De stem krijgt 0,3 x 200 = 60 mm lucht aan elke kant, lijn 8 mm. De schuine pijl is de rechte pijl gedraaid, even lang. Hij is wit en wijst naar de inrit, in stappen van 45°. Onder de locatienaam, Bold, kap 100 mm (font 144 mm), leesbaar tot 10 m.
+  </div>
+  <div class="col" style="left: 430px">
+    <div class="h">Ingang voetgangers</div>
+    Zelfde front en logo. Hier staat <b>de loper</b>, helemaal wit, 500 mm hoog (50 procent van het front), op de basislijn van "Ingang". Zijn hoofd blijft onder de vrije ruimte van het logo. De pijl (200 mm, 2k) staat los ernaast. Geen stem op dit front: logo plus loper plus pijl is het maximum. Moet er een pictogram komen (bijvoorbeeld lift of trap), dan vervalt de loper.
+  </div>
+  <div class="col" style="left: 800px">
+    <div class="h">Licht en materiaal</div>
+    Opaal beeldplaat met blockoutfolie: alleen wit en aqua lichten op, navy blijft dicht. Profiel poedercoat RAL 5002, mat, interne LED. Lange naam: Condensed Bold met dezelfde kap. Haaks op de gevel, onderkant minimaal 2500 mm. Geen verloop, geen bubbel met pijl.
+  </div>
+</div>
+<script>
+  const frame = '<rect x="-40" y="-40" width="1080" height="1080" fill="#12245A"/>';
+  PYS.mount('car', frame + PYS.entrance('car', 'Fellenoord') +
+    '<g stroke="#C4281C" stroke-width="6" fill="none"><path d="M60 100V300M45 100H75M45 300H75"/><path d="M60 310V390M45 310H75M45 390H75"/><path d="M60 400V700M45 400H75M45 700H75"/><path d="M950 800V900M935 800H965M935 900H965"/></g>' +
+    '<rect x="100" y="100" width="800" height="800" fill="none" stroke="#32B9CD" stroke-width="4" stroke-dasharray="18 14" opacity="0.7"/>');
+  PYS.mount('walk', frame + PYS.entrance('walk', 'Ingang') +
+    '<g stroke="#C4281C" stroke-width="6" fill="none"><path d="M60 310V390M45 310H75M45 390H75"/></g>' +
+    '<rect x="100" y="100" width="800" height="800" fill="none" stroke="#32B9CD" stroke-width="4" stroke-dasharray="18 14" opacity="0.7"/>');
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Bordenfamilie in de garage</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<style>
+  text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width: 1200px; height: 1260px">
+  <div class="eyebrow" style="position: absolute; left: 56px; top: 34px; color: #C2C7CF">Bordenfamilie · alles op één schaal · navy rijden · aqua lopen · oranje alleen betalen</div>
+  <svg id="s" style="position: absolute; left: 54px; top: 70px" width="1092" height="1180" viewBox="0 -300 7200 7780"></svg>
+</div>
+<script>
+  const C = PYS.C;
+  let m = '';
+  // ===== SCENE A: buiten =====
+  m += `<text x="0" y="-150" font-size="110" font-weight="700" fill="#C2C7CF" letter-spacing="1">Buiten · aanrijden en inrit</text>`;
+  m += `<rect x="1100" y="-100" width="6100" height="3700" fill="#2B2F36"/><rect x="1500" y="1200" width="3500" height="2400" fill="#1D1D1B"/>`;
+  // portal
+  m += `<rect x="1400" y="600" width="100" height="3000" fill="#AEAEAE"/><rect x="5000" y="600" width="100" height="3000" fill="#AEAEAE"/>`;
+  m += `<rect x="1500" y="600" width="3500" height="600" fill="#12245A"/><rect x="1500" y="640" width="3500" height="520" fill="${C.navy}"/>`;
+  m += `<g transform="translate(1500 600)">
+          <svg data-p="p-roof" x="52" y="105" width="304.2" height="390" style="color:#FFFFFF"></svg>
+          ${PYS.stem(431.2, 175, 250, C.aqua)}
+          <image href="../../kit/assets/logo-beeldmerk-reverse.svg" x="561.2" y="175" height="250" width="207.3"/>
+          ${PYS.text(845.9, 362.5, 'Philips Stadion', 180.4, '#FFFFFF')}
+          <rect x="2370" y="200" width="400" height="200" fill="#1D1D1B"/><rect x="3010" y="92" width="440" height="416" fill="#FFFFFF"/>
+        </g>`;
+  // height bar
+  m += `<g stroke="#AEAEAE" stroke-width="30"><path d="M2000 1200V1510M3500 1200V1510"/></g><rect x="1750" y="1510" width="2500" height="90" fill="#FFFFFF"/>`;
+  m += `<g fill="#C4281C"><rect x="1750" y="1510" width="250" height="90"/><rect x="2250" y="1510" width="250" height="90"/><rect x="3500" y="1510" width="250" height="90"/><rect x="4000" y="1510" width="250" height="90"/></g>${PYS.text(3000, 1574, 'maximale doorrijhoogte 2,00 m', 58, '#1D1D1B', { anchor: 'middle' })}`;
+  // entrance lightbox, car face
+  m += `<rect x="5560" y="150" width="40" height="70" fill="#AEAEAE"/><rect x="5560" y="780" width="40" height="70" fill="#AEAEAE"/>`;
+  m += `<g transform="translate(5600 0)">${PYS.entrance('car', 'Fellenoord')}</g>`;
+  // pylon with orange tariff strip
+  m += `<rect x="300" y="3200" width="20" height="400" fill="#AEAEAE"/><rect x="680" y="3200" width="20" height="400" fill="#AEAEAE"/>`;
+  m += `<rect x="300" y="2200" width="400" height="1000" fill="#FFFFFF"/><rect x="300" y="2200" width="400" height="200" fill="${C.navy}"/>`;
+  m += `<svg data-p="p-roof" x="340" y="2240" width="93.6" height="120" style="color:#FFFFFF"></svg>`;
+  m += `<g fill="${C.navy}"><rect x="300" y="2420" width="400" height="30"/><rect x="300" y="2550" width="400" height="30"/><rect x="300" y="2710" width="400" height="30"/><rect x="300" y="2820" width="400" height="30"/><rect x="300" y="2905" width="400" height="30"/></g>`;
+  m += `<rect x="300" y="2580" width="400" height="110" fill="${C.orange}"/>`;
+  m += `<rect x="0" y="3600" width="7200" height="40" fill="#434852"/>`;
+
+  // ===== SCENE B: binnen =====
+  m += `<text x="0" y="4120" font-size="110" font-weight="700" fill="#C2C7CF" letter-spacing="1">Binnen · rijden, lopen, betalen, welkom</text>`;
+  m += `<rect x="0" y="4250" width="7200" height="300" fill="#434852"/><rect x="0" y="4550" width="7200" height="2500" fill="#2B2F36"/><rect x="0" y="7050" width="7200" height="40" fill="#434852"/>`;
+  // column with section band, bubble upright
+  m += `<rect x="400" y="4550" width="600" height="2500" fill="#434852"/><rect x="400" y="4950" width="600" height="300" fill="${C.navy}"/>`;
+  m += `<path data-b="195" data-x="602.5" data-y="4982.5" fill="#FFFFFF"/>${PYS.text(700, 5111.2, '1A', 90, C.navy, { w: 800, anchor: 'middle' })}`;
+  // route board rijden, hanging
+  m += `<g stroke="#AEAEAE" stroke-width="12"><path d="M1400 4550V4650M2200 4550V4650"/></g>`;
+  m += `<g transform="translate(1300 4650)">${PYS.board({ w: 1000, fill: C.navy, fg: C.white, stem: C.aqua, left: [['picto','car'],['stem'],['text','Uitrit']], right: [['stem'],['arrow',0]] })}</g>`;
+  // level marker
+  m += `<g transform="translate(1300 5350)"><rect width="420" height="350" fill="${C.navy}"/><path data-b="227.5" data-x="96.25" data-y="37.8" fill="#FFFFFF"/>${PYS.text(210, 191, '&#8722;1', 112, C.navy, { w: 800, anchor: 'middle' })}</g>`;
+  // route board lopen, hanging
+  m += `<g stroke="#AEAEAE" stroke-width="12"><path d="M4100 4550V4650M4900 4550V4650"/></g>`;
+  m += `<g transform="translate(4000 4650)">${PYS.board({ w: 1000, fill: C.aqua, fg: C.navy, stem: C.navy, left: [['arrow',-135],['stem'],['picto','pedestrian'],['stem'],['text','Uitgang']] })}</g>`;
+  // welcome wall banner 3000 x 1000, u = 50: logo, de stem, de zwaaier on a 0.1u rule
+  m += `<g transform="translate(2300 5550)">
+          <rect width="3000" height="1000" fill="${C.navy}"/>
+          <image href="../../kit/assets/logo-horizontal-reverse.svg" x="100" y="100" height="200" width="724.4"/>
+          ${PYS.stem(100, 520, 300, C.aqua)}
+          ${PYS.text(256, 640, 'Welkom bij', 144.3, '#FFFFFF', { w: 400 })}
+          ${PYS.text(256, 790, 'Parking Philips Stadion', 144.3, '#FFFFFF')}
+          <rect x="100" y="895" width="2800" height="5" fill="#FFFFFF"/>
+          ${PYS.fig('wave', 2420, 895, 600, '#FFFFFF', { flip: true })}
+        </g>`;
+  // payment: orange board above the machine, stickers on the machine
+  m += `<g transform="translate(6000 5150)">${PYS.board({ w: 800, fill: C.orange, fg: C.diep, stem: C.diep, left: [['picto','euro'],['stem'],['text','Betalen']] })}</g>`;
+  m += `<rect x="6150" y="5600" width="500" height="1450" fill="#5E6470"/><rect x="6200" y="5700" width="400" height="260" fill="#1D1D1B"/>`;
+  m += `<rect x="6200" y="6040" width="182" height="92" rx="10" fill="${C.orange}"/><rect x="6200" y="6160" width="218" height="68" rx="10" fill="${C.orange}"/><rect x="6200" y="6260" width="118" height="26" rx="6" fill="${C.navy}"/>`;
+  // measures and labels
+  m += `<g stroke="#C4281C" stroke-width="14" fill="none"><path d="M1100 7050V5250M1060 5250H1140M1060 7050H1140"/><path d="M4400 3600V1600M4360 1600H4440M4360 3600H4440"/><path d="M5450 3600V1000M5410 1000H5490M5410 3600H5490"/></g>`;
+  m += `<g font-size="85" font-weight="700" fill="#FDECEA"><text x="1150" y="6900">1800</text><text x="4480" y="2650">2000</text><text x="5530" y="2350">2600</text></g>`;
+  m += `<g font-size="85" fill="#C2C7CF" font-weight="600">
+      <text x="1650" y="1800"><tspan font-weight="700" fill="#FFFFFF">Portaal</tspan> 3300 x 520 · kap 125 · stem tussen P en naam</text>
+      <text x="1650" y="1920"><tspan font-weight="700" fill="#FFFFFF">Hoogtebalk</tspan> 2500 x 90 · rood en wit</text>
+      <text x="5560" y="1250"><tspan font-weight="700" fill="#FFFFFF">Entreelichtbak</tspan></text>
+      <text x="5560" y="1360">1000 x 1000 · kap 100 · P, stem, pijl</text>
+      <text x="0" y="1950"><tspan font-weight="700" fill="#FFFFFF">Pyloon</tspan></text>
+      <text x="0" y="2060">400 x 1000 · kap 12 en 25</text>
+      <text x="0" y="2170">tariefstrook oranje</text>
+      <text x="1300" y="4990"><tspan font-weight="700" fill="#FFFFFF">Routebord rijden</tspan> · kap 70</text>
+      <text x="4000" y="4990"><tspan font-weight="700" fill="#FFFFFF">Routebord lopen</tspan> · kap 70</text>
+      <text x="1300" y="5830"><tspan font-weight="700" fill="#FFFFFF">Niveau</tspan> 420 x 350</text>
+      <text x="1300" y="5940">bubbel rechtop</text>
+      <text x="400" y="5370"><tspan font-weight="700" fill="#FFFFFF">Kolomband</tspan></text>
+      <text x="2300" y="6680"><tspan font-weight="700" fill="#FFFFFF">Welkomstwand</tspan> 3000 x 1000 · kap 100 · de stem en de zwaaier</text>
+      <text x="6000" y="5050"><tspan font-weight="700" fill="#FFFFFF">Betalen</tspan> 800 x 200</text>
+      <text x="6700" y="6080">stickers</text>
+    </g>`;
+  PYS.mount('s', m);
+</script>
+</body>
+</html>

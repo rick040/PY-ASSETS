@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Briefpapier en envelop</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<style>
+  text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
+  .lab { position: absolute; font: 700 15px/20px var(--py-font-sans); color: #1A3580; }
+  .lab span { font-weight: 400; color: var(--py-text-muted); }
+  .col { position: absolute; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: var(--py-text-muted); margin-bottom: 6px; }
+  .sheet { position: absolute; box-shadow: 0 1px 2px rgba(13,20,46,0.10), 0 8px 24px rgba(13,20,46,0.08); }
+</style>
+</head>
+<body>
+<div class="fig fig--subtle" style="width: 1200px; height: 1010px">
+  <div class="eyebrow" style="position: absolute; left: 60px; top: 34px">Briefpapier A4 en envelop 220 x 156 · ware verhouding</div>
+  <div class="lab" style="left: 60px; top: 66px">Briefpapier A4 <span>u = 10,5 mm · marge 21 mm · 6 kolommen</span></div>
+  <svg class="sheet" style="left: 60px; top: 96px" width="594" height="840" viewBox="0 0 210 297">
+    <rect width="210" height="297" fill="#FFFFFF"/>
+    <image href="../../kit/assets/logo-horizontal-color.svg" x="21" y="21" height="15.75" width="57.05"/>
+    <g font-size="3.53" fill="#1D1D1B">
+      <text x="21" y="56">[Naam ontvanger]</text><text x="21" y="60.94">[Bedrijf]</text><text x="21" y="65.88">[Straat en huisnummer]</text><text x="21" y="70.82">[Postcode en plaats]</text>
+    </g>
+    <g font-size="2.82">
+      <text x="21" y="105" font-weight="600" fill="#1A3580">Datum</text><text x="40" y="105" fill="#1D1D1B">[datum]</text>
+      <text x="80.5" y="105" font-weight="600" fill="#1A3580">Kenmerk</text><text x="99.5" y="105" fill="#1D1D1B">[kenmerk]</text>
+    </g>
+    <!-- de stem opent het onderwerp: hoogte = regel 26 pt = 9,2 mm, lijn 0,5 mm, afstand 0,3 x 9,2 = 2,75 mm -->
+    <svg data-p="arc" data-sw="2.47" x="16.23" y="117.4" width="2.02" height="9.2" color="#32B9CD"></svg>
+    <text x="21" y="124.4" font-size="7.76" font-weight="700" fill="#1A3580">[Onderwerp in één regel]</text>
+    <text x="21" y="140" font-size="3.53" fill="#1D1D1B">Beste [naam],</text>
+    <g fill="#DDE1E7">
+      <rect x="21" y="144.5" width="168" height="1.6"/><rect x="21" y="149.4" width="160" height="1.6"/><rect x="21" y="154.3" width="166" height="1.6"/><rect x="21" y="159.2" width="120" height="1.6"/>
+      <rect x="21" y="169" width="168" height="1.6"/><rect x="21" y="173.9" width="150" height="1.6"/><rect x="21" y="178.8" width="164" height="1.6"/><rect x="21" y="183.7" width="90" height="1.6"/>
+    </g>
+    <g font-size="3.53" fill="#1D1D1B"><text x="21" y="199">Met vriendelijke groet,</text><text x="21" y="220" font-weight="700">[Naam]</text><text x="21" y="224.94">[Functie]</text></g>
+    <path d="M0 148.5H5" stroke="#AEAEAE" stroke-width="0.25"/>
+    <!-- voet: de gastheer staat op de voetlijn en wijst naar de gegevens -->
+    <svg data-p="fig-cap-point" x="21" y="244.5" width="17.8" height="31.5" color="#1A3580"></svg>
+    <rect x="21" y="275.5" width="168" height="1.05" fill="#1A3580"/>
+    <g font-size="2.82" fill="#1A3580">
+      <text x="50.75" y="264.4" font-weight="700">ParkingYou B.V.</text><text x="50.75" y="268.28">Victoriapark 4</text><text x="50.75" y="272.16">5611 BM Eindhoven</text>
+      <text x="100" y="264.4">info@parkingyou.nl</text><text x="100" y="268.28">parkingyou.nl</text><text x="100" y="272.16">[telefoonnummer]</text>
+      <text x="140" y="264.4">KvK [nummer]</text><text x="140" y="268.28">btw [nummer]</text><text x="140" y="272.16">IBAN [nummer]</text>
+    </g>
+  </svg>
+  <div class="measure-label" style="left: 8px; top: 506px">vouw</div>
+
+  <div class="lab" style="left: 700px; top: 66px">Envelop voorzijde <span>220 x 156 · u = 7,8 mm</span></div>
+  <svg class="sheet" style="left: 700px; top: 96px" width="440" height="312" viewBox="0 0 220 156">
+    <rect width="220" height="156" fill="#FFFFFF"/>
+    <image href="../../kit/assets/logo-horizontal-color.svg" x="15.6" y="15.6" height="15.6" width="56.5"/>
+    <text x="15.6" y="42.9" font-size="2.82" fill="#1A3580">ParkingYou B.V. · Victoriapark 4 · 5611 BM Eindhoven</text>
+    <rect x="171.6" y="15.6" width="32.8" height="23.4" fill="none" stroke="#AEAEAE" stroke-width="0.35" stroke-dasharray="1.5 1"/>
+    <text x="188" y="29" text-anchor="middle" font-size="3" fill="#767B86">[port]</text>
+    <text x="101.4" y="88" font-size="3.53" fill="#767B86">[adres ontvanger of etiket]</text>
+  </svg>
+
+  <div class="lab" style="left: 700px; top: 432px">Envelop achterzijde <span>de loper op de klep</span></div>
+  <svg class="sheet" style="left: 700px; top: 462px" width="440" height="312" viewBox="0 0 220 156">
+    <rect width="220" height="156" fill="#FFFFFF"/>
+    <path d="M0 46.8H220" stroke="#C2C7CF" stroke-width="0.5" stroke-dasharray="2 1.2"/>
+    <text x="214" y="42" text-anchor="end" font-size="3" fill="#767B86">[klep]</text>
+    <svg data-p="fig-walk" x="15.6" y="23.4" width="12.16" height="23.4" color="#1A3580"></svg>
+    <text x="34" y="44.6" font-size="3.53" font-weight="700" fill="#1A3580">parkingyou.nl</text>
+  </svg>
+
+  <div class="col" style="left: 700px; top: 800px; width: 440px">
+    <div class="h">Wat er op staat</div>
+    <b>Briefpapier:</b> logo, de stem voor het onderwerp en, als je wilt, de gastheer in de voet (3u = 31,5 mm, de kleinste maat) op een lijn van 0,1u. <b>Envelop:</b> voor alleen logo en afzender. Achter staat de loper (3u = 23,4 mm) op de rand van de klep, naast parkingyou.nl.
+  </div>
+</div>
+</body>
+</html>

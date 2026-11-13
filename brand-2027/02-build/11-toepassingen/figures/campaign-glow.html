@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Campagne GLOW Eindhoven</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<script src="py-social.js"></script>
+<style>
+  text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
+  .lab { position: absolute; font: 700 14px/18px var(--py-font-sans); color: #1A3580; }
+  .lab span { font-weight: 400; color: var(--py-text-muted); }
+  .col { position: absolute; width: 350px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: var(--py-text-muted); margin-bottom: 6px; }
+  .sh { position: absolute; display: block; box-shadow: 0 1px 2px rgba(13,20,46,0.10), 0 8px 24px rgba(13,20,46,0.08); }
+</style>
+</head>
+<body>
+<div class="fig fig--subtle" style="width: 1200px; height: 860px">
+  <div class="eyebrow" style="position: absolute; left: 50px; top: 30px">Campagne · GLOW Eindhoven · de campagne leent het systeem, het systeem blijft staan</div>
+  <div class="lab" style="left: 50px; top: 60px">Post 4:5 <span>1080 x 1350</span></div>
+  <div class="lab" style="left: 490px; top: 60px">Reel 9:16 <span>eindkaart</span></div>
+  <div class="lab" style="left: 810px; top: 60px">Routebord A3 <span>297 x 420 · straat</span></div>
+  <svg class="sh" id="post" style="left: 50px; top: 86px" width="410" height="512.5" viewBox="0 0 1080 1350"></svg>
+  <svg class="sh" id="reel" style="left: 490px; top: 86px" width="288" height="512" viewBox="0 0 1080 1920"></svg>
+  <svg class="sh" id="board" style="left: 810px; top: 86px" width="362" height="512" viewBox="0 0 297 420"></svg>
+  <div class="note" style="position: absolute; left: 50px; top: 612px; width: 1100px">Grijs = de plek van de campagnekleur, die de organisatie aanlevert. Hier draagt hij alleen de lijn waar de shopper op loopt, de lijn onder de kop van het bord en het kader om het partnerlogo.</div>
+
+  <div class="col" style="left: 50px; top: 670px">
+    <div class="h">Wat blijft</div>
+    PY-Blauw als grond, Ubuntu Sans, het logo op zijn eigen plek. Onze elementen blijven de dragers: <b>de stem</b> opent de kop, <b>de shopper</b> (de parkeerder voor stad en evenement) loopt naar het feest. Geen oranje, geen knop in campagnekleur.
+  </div>
+  <div class="col" style="left: 430px; top: 670px">
+    <div class="h">Wat de campagne mag</div>
+    Eén campagnekleur, als lijn of kader, hooguit 5 procent van het vlak: de lijn waar de parkeerder op staat, een lijn onder een kop, een kader om het partnerlogo. Nooit als grond, nooit voor tekst, nooit in een bubbel, nooit in de garage. Partnerlogo even hoog als ons beeldmerk, 1x ertussen.
+  </div>
+  <div class="col" style="left: 810px; top: 670px; width: 340px">
+    <div class="h">Data en copy</div>
+    "Waar parkeren tijdens GLOW?" komt van de huidige GLOW-pagina, de prijs staat als [prijs] tot het tarief vaststaat; bestemmingen van het bestaande GLOW-bord. Op het bord staan de pijlen los (2 x de kaphoogte), met de stem tussen pijl en naam. Geen cirkels.
+  </div>
+</div>
+<script>
+  const A = '#C2C7CF'; // placeholder for [campagnekleur]
+  const T = PYSOC.T;
+  const glowLogo = (x, y, h) => `<rect x="${x}" y="${y}" width="${h * 2.6}" height="${h}" fill="none" stroke="${A}" stroke-width="${h / 18}"/><text x="${x + h * 1.3}" y="${y + h * 0.62}" text-anchor="middle" font-family="Ubuntu Sans" font-size="${h * 0.36}" fill="#C2C7CF">[GLOW-logo]</text>`;
+  function card(H, reel) {
+    const top = reel ? 270 : 108, rule = reel ? 1566 : 1242;
+    let s = `<rect width="1080" height="${H}" fill="#1A3580"/>`;
+    s += PYSOC.logo(108, top) + glowLogo(108 + 195.6 + 54, top, 54);
+    s += PYSOC.eyebrow(108, top + 243, 'GLOW Eindhoven');
+    const b1 = top + 378, lh = 90 * 50 / 48;
+    s += PYS.stem(108, b1 - lh + 12, 2 * lh, '#32B9CD');
+    const tx = 108 + PYS.stemW(2 * lh) + 0.6 * lh;
+    s += T(tx, b1, 'Waar parkeren', 90) + T(tx, b1 + lh, 'tijdens <tspan font-weight="800">GLOW</tspan>?', 90);
+    s += T(108, b1 + 2 * lh + 70, 'Avond parkeren vanaf [prijs] per dag.', 31) + T(108, b1 + 2 * lh + 116, 'DLL Garage en Philips Stadion.', 31);
+    s += T(108, b1 + 2 * lh + 190, 'Reserveer je plek op parkingyou.nl', 31, { w: 700 });
+    s += `<rect x="108" y="${rule}" width="864" height="5.4" fill="${A}"/>`;
+    s += PYS.fig('bags-walk', 972 - PYS.figW('bags-walk', 216), rule, 216, '#FFFFFF');
+    return s;
+  }
+  PYS.mount('post', card(1350, false));
+  PYS.mount('reel', card(1920, true) + '<rect x="0" y="0" width="1080" height="250" fill="#C4281C" opacity="0.28"/><rect x="0" y="1580" width="1080" height="340" fill="#C4281C" opacity="0.28"/>');
+  // A3 route board, u = 14.85, margin 29.7; header P + name; rows: arrow 2k | stem | name, cap 15 (font 21.6), arrow 30
+  let b = `<rect width="297" height="420" fill="#1A3580"/>`;
+  b += `<svg data-p="p-roof" x="29.7" y="29.7" width="62.4" height="80" style="color:#FFFFFF"></svg>`;
+  b += PYS.text(110, 64, 'Parkeren', 30.3, '#FFFFFF') + PYS.text(110, 100, 'GLOW', 30.3, '#FFFFFF', { w: 400 });
+  b += `<rect x="29.7" y="128" width="237.6" height="1.5" fill="${A}"/>`;
+  const rows = [['Philips Stadion', 180], ['DLL Garage', -90], ['TD-gebouw', -90]];
+  rows.forEach((r, i) => {
+    // cap 15 (font 21.6), arrow 2k = 30, stem 30 with 9 air on each side
+    const y = 165 + i * 58;
+    b += PYS.arrow(29.7, y, 30, r[1], '#FFFFFF') + PYS.stem(29.7 + 30 + 9, y, 30, '#32B9CD') + PYS.text(29.7 + 30 + 18 + PYS.stemW(30), y + 22.5, r[0], 21.6, '#FFFFFF');
+  });
+  b += `<image href="../../kit/assets/logo-horizontal-reverse.svg" x="29.7" y="375.6" height="14.85" width="53.8"/>`;
+  PYS.mount('board', b);
+</script>
+</body>
+</html>

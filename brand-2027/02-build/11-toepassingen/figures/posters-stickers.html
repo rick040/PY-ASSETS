@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Posters en stickers</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<style>
+  text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
+  .lab { position: absolute; font: 700 14px/18px var(--py-font-sans); color: #1A3580; }
+  .lab span { font-weight: 400; color: var(--py-text-muted); }
+  .col { position: absolute; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: var(--py-text-muted); margin-bottom: 6px; }
+  .sh { position: absolute; box-shadow: 0 1px 2px rgba(13,20,46,0.10), 0 8px 24px rgba(13,20,46,0.08); }
+</style>
+</head>
+<body>
+<div class="fig fig--subtle" style="width: 1200px; height: 920px">
+  <div class="eyebrow" style="position: absolute; left: 50px; top: 30px">Posters en stickers · alles op dezelfde schaal · geen oranje</div>
+
+  <!-- A2 poster 420 x 594, u = 21: foto, de stem, de wijzer bij de QR -->
+  <div class="lab" style="left: 50px; top: 60px">Poster A2 <span>420 x 594 · u = 21 mm · de stem en de wijzer</span></div>
+  <svg class="sh" id="a2" style="left: 50px; top: 86px" width="420" height="594" viewBox="0 0 420 594">
+    <defs><clipPath id="a2c"><rect width="420" height="594"/></clipPath></defs>
+    <g clip-path="url(#a2c)">
+      <rect width="420" height="594" fill="#FFFFFF"/>
+      <image href="../../kit/photos/py-photo-city-tower.jpg" x="0" y="0" width="420" height="252" preserveAspectRatio="xMidYMid slice"/>
+      <image href="../../kit/assets/logo-horizontal-color.svg" x="42" y="283.5" height="21" width="76" preserveAspectRatio="xMinYMin meet"/>
+      <g id="a2el"></g>
+      <text x="104.4" y="352" font-size="36" font-weight="800" fill="#1A3580">Parkeren</text>
+      <text x="104.4" y="389.5" font-size="36" fill="#1A3580">vanuit je</text>
+      <text x="104.4" y="427" font-size="36" fill="#1A3580">broekzak.</text>
+      <text x="42" y="490" font-size="12.6" fill="#1D1D1B">Download de app of boek</text>
+      <text x="42" y="507" font-size="12.6" font-weight="700" fill="#1A3580">op parkingyou.nl</text>
+      <rect x="42" y="549.9" width="336" height="2.1" fill="#1A3580"/>
+      <rect x="294" y="455" width="84" height="84" fill="#FFFFFF" stroke="#C2C7CF" stroke-width="0.5"/>
+      <text x="336" y="501" text-anchor="middle" font-size="8" fill="#5E6470">[QR]</text>
+    </g>
+  </svg>
+
+  <!-- A3 poster 297 x 420, u = 14.85: melding, wit -->
+  <div class="lab" style="left: 510px; top: 60px">Poster A3 <span>297 x 420 · u = 14,85 mm · melding</span></div>
+  <svg class="sh" id="a3" style="left: 510px; top: 86px" width="297" height="420" viewBox="0 0 297 420">
+    <rect width="297" height="420" fill="#FFFFFF"/>
+    <image href="../../kit/assets/logo-horizontal-color.svg" x="29.7" y="29.7" height="14.85" width="53.8" preserveAspectRatio="xMinYMin meet"/>
+    <g id="a3el"></g>
+    <text x="53.1" y="148" font-size="42.9" font-weight="800" fill="#1A3580">Let op.</text>
+    <text x="29.7" y="190" font-size="21.4" fill="#1A3580">Op <tspan font-weight="700">[locatie]</tspan> kun je</text>
+    <text x="29.7" y="215" font-size="21.4" fill="#1A3580">tijdelijk niet parkeren.</text>
+    <text x="29.7" y="245" font-size="10.7" fill="#1D1D1B">[Datum en tijd]</text>
+    <rect x="29.7" y="300" width="237.6" height="0.5" fill="#1A3580"/>
+    <text x="29.7" y="322" font-size="10.7" font-weight="700" fill="#1A3580">Vragen? Bel</text>
+    <text x="29.7" y="347" font-size="21.4" font-weight="800" fill="#1A3580">[storingsnummer]</text>
+    <text x="29.7" y="368" font-size="10.7" fill="#1D1D1B">We helpen je zo snel mogelijk verder.</text>
+    <text x="29.7" y="388" font-size="10.7" font-weight="700" fill="#1A3580">parkingyou.nl</text>
+  </svg>
+
+  <!-- stickers -->
+  <div class="lab" style="left: 850px; top: 60px">Raamsticker <span>136 x 46</span></div>
+  <svg id="rs" style="position: absolute; left: 850px; top: 86px" width="136" height="46" viewBox="0 0 136 46">
+    <rect width="136" height="46" rx="3.18" fill="#1A3580"/>
+    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="4.6" y="4.6" height="9.2" width="33.3" preserveAspectRatio="xMinYMin meet"/>
+    <text x="12.9" y="30" font-size="5.29" fill="#FFFFFF">Parkeer slim bij</text>
+    <text x="12.9" y="39.4" font-size="7.76" font-weight="700" fill="#FFFFFF">Hofplein</text>
+  </svg>
+  <div class="lab" style="left: 1010px; top: 60px">NFC <span>rond 70</span></div>
+  <svg style="position: absolute; left: 1010px; top: 86px" width="70" height="70" viewBox="0 0 70 70">
+    <circle cx="35" cy="35" r="35" fill="#1A3580"/>
+    <image href="../../kit/assets/logo-beeldmerk-reverse.svg" x="30" y="8" height="12" width="9.95"/>
+    <text x="35" y="35" text-anchor="middle" font-size="5.29" font-weight="700" fill="#FFFFFF">Reserveer je</text>
+    <text x="35" y="42" text-anchor="middle" font-size="5.29" fill="#FFFFFF">parkeerplek</text>
+    <text x="35" y="55" text-anchor="middle" font-size="3.53" fill="#C2C7CF">[NFC-symbool]</text>
+  </svg>
+  <div class="lab" style="left: 850px; top: 196px">Instructie laadpaal <span>250 x 300</span></div>
+  <svg style="position: absolute; left: 850px; top: 222px" width="250" height="300" viewBox="0 0 250 300">
+    <rect width="250" height="300" rx="3.18" fill="#1A3580"/>
+    <svg data-p="ev" x="25" y="22" width="36" height="36" style="color:#FFFFFF"></svg>
+    <text x="25" y="100" font-size="26" font-weight="700" fill="#FFFFFF">Kabel</text>
+    <text x="25" y="126" font-size="26" font-weight="700" fill="#FFFFFF">terughangen</text>
+    <text x="25" y="152" font-size="26" fill="#FFFFFF">na gebruik.</text>
+    <text x="25" y="199" font-size="26" font-weight="700" fill="#FFFFFF">Return cable</text>
+    <text x="25" y="225" font-size="26" fill="#FFFFFF">to hook</text>
+    <text x="25" y="251" font-size="26" fill="#FFFFFF">after use.</text>
+  </svg>
+
+  <div class="col" style="left: 50px; top: 710px; width: 420px">
+    <div class="h">Posters</div>
+    Marge 2u, 6 kolommen, kop kap 1u tot 2u, tekst 0,3u tot 0,5u. <b>A2</b>: eigen foto als rechthoek, wit vlak eronder. Kop font 36 mm (kap 25 mm, 1,2u). Regelafstand 37,5 mm (x 50/48), kernwoord ExtraBold. De stem opent de kop (drie regels, 112,5 mm hoog, lijn 4,5 mm). <b>De wijzer</b> (4u = 84 mm) staat op een lijn van 0,1u en wijst naar de QR. QR donker op wit. <b>A3</b>: melding op wit met de stem voor "Let op.", geen figuur.
+  </div>
+  <div class="col" style="left: 510px; top: 710px; width: 290px">
+    <div class="h">Papier en kleur</div>
+    Binnen: 170 g/m² silk, FOGRA39. Buiten of in de garage: blueback 115 g/m² of polyester met matte laminaat. CMYK met 3 mm afloop. Vlakke kleur, geen verloop. Oranje alleen op een storingsmelding bij de automaat.
+  </div>
+  <div class="col" style="left: 850px; top: 560px; width: 300px">
+    <div class="h">Stickers</div>
+    Raam en NFC volgen de printschaal (22 en 15 pt) en zijn navy. Op de raamsticker opent de stem de tekst. De laadpaalsticker lees je van 1,8 m: kap 18 mm (font 26 mm), Nederlands boven, Engels eronder even groot, 0,5u ertussen. Polymeer vinyl, <b>mat</b> gelamineerd, hoek 3,18 mm, ThruCut-contour.
+  </div>
+</div>
+<script>
+  // A2: stem 112,5 hoog (drie regels van 36 x 50/48 = 37,5), afstand 0,3 x 112,5 = 34; wijzer 4u = 84 op de lijn
+  PYS.mount('a2el', PYS.stem(42, 324, 112.5, '#32B9CD') + PYS.fig('point', 226, 549.9, 84, '#1A3580'));
+  // A3: stem 45 hoog voor "Let op.", lijn 1,8, afstand 13,5 -> tekst op 29,7 + 9,9 + 13,5 = 53,1
+  PYS.mount('a3el', PYS.stem(29.7, 112, 45, '#32B9CD'));
+  // raamsticker: stem opent de twee regels (16 hoog)
+  PYS.mount('rs', PYS.stem(4.6, 25, 16, '#32B9CD'));
+</script>
+</body>
+</html>

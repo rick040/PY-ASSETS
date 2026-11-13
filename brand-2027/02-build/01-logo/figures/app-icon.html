@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: app-icoon en favicon</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .abs { position: absolute; }
+  .ml { transform: translate(-50%, -50%); white-space: nowrap; }
+  .cap b { display: block; font: 700 14px/18px var(--py-font-sans); color: var(--py-text-default); }
+  .ico { background: #1A3580; position: relative; overflow: hidden; }
+  .ico img { position: absolute; left: 27.33%; top: 22.67%; width: 45.33%; }
+</style>
+</head>
+<body>
+<!-- Icon canvas = 2.206x square (beeldmerk height 1.206x + 0.5x above and below). Beeldmerk width 45.3 % of the canvas, centred on its bounding box.
+     Here the canvas is 360 px, so x = 163.2 px, beeldmerk 163.2 x 196.8 px at (98.4, 81.6). -->
+<div class="fig" style="width: 1200px; height: 600px">
+  <div class="eyebrow abs" style="left: 56px; top: 56px">App-icoon en favicon · omgekeerd beeldmerk op PY-Blauw</div>
+
+  <div class="abs" style="left: 56px; top: 104px; width: 360px; height: 360px; background: #1A3580">
+    <img class="abs" src="../../kit/assets/logo-beeldmerk-reverse.svg" alt="" style="left: 98.4px; top: 81.6px; width: 163.2px">
+    <svg class="abs" width="360" height="360" style="left: 0; top: 0" aria-hidden="true">
+      <g fill="none" stroke-width="1.5">
+        <rect x="98.4" y="81.6" width="163.2" height="196.8" stroke="#FFFFFF" stroke-dasharray="3 4" opacity="0.7"/>
+        <circle cx="180" cy="180" r="110" stroke="#32B9CD" stroke-dasharray="6 5"/>
+        <line x1="180" y1="0" x2="180" y2="81.6" stroke="#FFFFFF"/>
+        <line x1="180" y1="278.4" x2="180" y2="360" stroke="#FFFFFF"/>
+        <line x1="98.4" y1="300" x2="261.6" y2="300" stroke="#FFFFFF"/>
+        <line x1="98.4" y1="294" x2="98.4" y2="306" stroke="#FFFFFF"/><line x1="261.6" y1="294" x2="261.6" y2="306" stroke="#FFFFFF"/>
+      </g>
+    </svg>
+    <div class="measure-label ml" style="left: 210px; top: 40px">0,5x</div>
+    <div class="measure-label ml" style="left: 210px; top: 330px">0,5x</div>
+    <div class="measure-label ml" style="left: 180px; top: 318px; display: none">x</div>
+    <div class="measure-label ml" style="left: 290px; top: 300px">x</div>
+  </div>
+  <div class="cap note abs" style="left: 56px; top: 480px; width: 360px"><b>Opbouw</b>Vlak = 2,2x in het vierkant: 0,5x boven en onder het beeldmerk, horizontaal gecentreerd. Aqua cirkel: veilige zone van Android (66 van 108); het beeldmerk valt er binnen.</div>
+
+  <div class="abs" style="left: 472px; top: 104px">
+    <div class="ico" style="width: 180px; height: 180px; border-radius: 22.37%"><img src="../../kit/assets/logo-beeldmerk-reverse.svg" alt=""></div>
+    <div class="cap note" style="margin-top: 12px; width: 180px"><b>iOS</b>Lever vierkant aan, 1024 px, zonder afronding. iOS rondt zelf af.</div>
+  </div>
+  <div class="abs" style="left: 676px; top: 104px">
+    <div class="ico" style="width: 180px; height: 180px; border-radius: 50%"><img src="../../kit/assets/logo-beeldmerk-reverse.svg" alt=""></div>
+    <div class="cap note" style="margin-top: 12px; width: 180px"><b>Android</b>Adaptief icoon: blauwe achterlaag, beeldmerk als voorlaag.</div>
+  </div>
+
+  <div class="abs" style="left: 900px; top: 104px; width: 244px">
+    <div style="display: flex; align-items: flex-end; gap: 24px">
+      <div class="ico" style="width: 128px; height: 128px; image-rendering: pixelated"><img src="../../kit/assets/logo-beeldmerk-reverse.svg" alt=""></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+        <div class="ico" style="width: 32px; height: 32px"><img src="../../kit/assets/logo-beeldmerk-reverse.svg" alt=""></div>
+        <div class="ico" style="width: 16px; height: 16px"><img src="../../kit/assets/logo-beeldmerk-reverse.svg" alt=""></div>
+      </div>
+    </div>
+    <div class="cap note" style="margin-top: 12px"><b>Favicon</b>SVG en 32 px (links 4x vergroot). Het beeldmerk is daarin 17,5 px hoog, boven het minimum van 16 px. Op 16 px zakt het eronder: zie voorgestelde waarden.</div>
+  </div>
+</div>
+</body>
+</html>

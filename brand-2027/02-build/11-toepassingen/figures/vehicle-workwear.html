@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Servicebus en kleding</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<style>
+  text { font-family: 'Ubuntu Sans'; font-variant-numeric: tabular-nums; }
+  .lab { position: absolute; font: 700 14px/18px var(--py-font-sans); color: #1A3580; }
+  .lab span { font-weight: 400; color: var(--py-text-muted); }
+  .col { position: absolute; width: 350px; font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: var(--py-text-muted); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="fig fig--subtle" style="width: 1200px; height: 1010px">
+  <div class="eyebrow" style="position: absolute; left: 50px; top: 30px">Servicebus · zijkant en achterkant · bestelbus middenklasse, circa 5000 x 2300 mm</div>
+  <svg width="0" height="0" style="position:absolute"><defs>
+    <pattern id="hv" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="24" height="24" fill="#FFFFFF"/><rect width="12" height="24" fill="#DDE1E7"/></pattern>
+    <clipPath id="vanclip"><path d="M0 2000L0 250Q0 0 250 0L3850 0Q4050 0 4150 180L4650 860Q4950 940 5000 1150L5000 2000Z"/></clipPath>
+  </defs></svg>
+
+  <!-- van side, 1 unit = 1 mm, 0.15 px/mm -->
+  <div class="lab" style="left: 50px; top: 60px">Zijkant <span>rechterzijde; links dezelfde opbouw, de gastheer kijkt altijd naar de tekst</span></div>
+  <svg style="position: absolute; left: 50px; top: 86px" width="765" height="352" viewBox="0 0 5100 2350">
+    <g clip-path="url(#vanclip)">
+      <rect width="5100" height="2100" fill="#1A3580"/>
+    </g>
+    <path d="M3950 250L4150 250L4600 880L3950 880Z" fill="#434852"/>
+    <path d="M3880 200V2000" stroke="#12245A" stroke-width="14"/>
+    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="1250" y="400" height="400" width="1449"/>
+    <text x="1427" y="1220" font-size="144" font-weight="700" fill="#FFFFFF">parkingyou.nl</text>
+    <text x="1427" y="1400" font-size="101" fill="#FFFFFF">Storing? Bel <tspan font-weight="700">[storingsnummer]</tspan></text>
+    <g id="vanel"></g>
+    <rect x="1250" y="1560" width="2300" height="11.5" fill="#FFFFFF"/>
+    <rect x="4850" y="1700" width="200" height="300" fill="#2B2F36"/>
+    <rect x="-50" y="1850" width="250" height="150" fill="#2B2F36"/>
+    <circle cx="900" cy="1960" r="340" fill="#1D1D1B"/><circle cx="900" cy="1960" r="170" fill="#AEAEAE"/>
+    <circle cx="4150" cy="1960" r="340" fill="#1D1D1B"/><circle cx="4150" cy="1960" r="170" fill="#AEAEAE"/>
+    <rect x="-50" y="2300" width="5150" height="20" fill="#C2C7CF"/>
+    <g stroke="#C4281C" stroke-width="12" fill="none"><path d="M2427 1120V1220M2397 1120H2457M2397 1220H2457"/></g>
+  </svg>
+  <div class="measure-label" style="left: 360px; top: 330px">url kap 100 · 10 m</div>
+  <div class="measure-label" style="left: 470px; top: 160px">gastheer 800 = 7u</div>
+
+  <!-- van rear -->
+  <div class="lab" style="left: 860px; top: 60px">Achterkant <span>alles op de linkerdeur</span></div>
+  <svg style="position: absolute; left: 860px; top: 86px" width="300" height="352" viewBox="0 0 2000 2350">
+    <path d="M50 2000V250Q50 0 300 0H1700Q1950 0 1950 250V2000Z" fill="#1A3580"/>
+    <rect x="200" y="200" width="700" height="650" rx="40" fill="#434852"/><rect x="1100" y="200" width="700" height="650" rx="40" fill="#434852"/>
+    <path d="M1000 120V2000" stroke="#12245A" stroke-width="14"/>
+    <image href="../../kit/assets/logo-horizontal-reverse.svg" x="200" y="1000" height="165" width="597.6"/>
+    <text x="200" y="1380" font-size="72" font-weight="700" fill="#FFFFFF">parkingyou.nl</text>
+    <text x="200" y="1500" font-size="58" fill="#FFFFFF">Storing?</text>
+    <text x="200" y="1580" font-size="58" font-weight="700" fill="#FFFFFF">[storingsnummer]</text>
+    <rect x="0" y="1880" width="2000" height="200" fill="#2B2F36"/>
+    <rect x="150" y="1940" width="320" height="90" fill="#C4281C" opacity="0.8"/><rect x="1530" y="1940" width="320" height="90" fill="#C4281C" opacity="0.8"/>
+    <rect x="740" y="1920" width="520" height="120" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="8"/>
+    <text x="1000" y="2000" text-anchor="middle" font-size="60" fill="#767B86">[kenteken]</text>
+    <rect x="200" y="2080" width="250" height="230" fill="#1D1D1B"/><rect x="1550" y="2080" width="250" height="230" fill="#1D1D1B"/>
+    <rect x="0" y="2300" width="2000" height="20" fill="#C2C7CF"/>
+  </svg>
+
+  <!-- workwear: 1 unit = 1 mm, 0.32 px/mm -->
+  <div class="eyebrow" style="position: absolute; left: 50px; top: 470px">Kleding · polo en jas, voor en achter</div>
+  <div class="lab" style="left: 50px; top: 500px">Polo navy <span>voor en achter</span></div>
+  <svg style="position: absolute; left: 50px; top: 526px" width="420" height="240" viewBox="0 0 1300 740">
+    <g>
+      <path d="M170 40L60 90L0 260L90 290L110 230V720H490V230L510 290L600 260L540 90L430 40Q300 110 170 40Z" fill="#1A3580"/>
+      <path d="M170 40L230 0L300 75L370 0L430 40L300 115Z" fill="#12245A"/>
+      <rect x="290" y="80" width="20" height="160" fill="#12245A"/>
+      <image href="../../kit/assets/logo-horizontal-reverse.svg" x="350" y="170" height="22" width="80"/>
+      <g stroke="#C4281C" stroke-width="3" fill="none"><path d="M350 210H430M350 202V218M430 202V218"/></g>
+    </g>
+    <g transform="translate(700 0)">
+      <path d="M170 40L60 90L0 260L90 290L110 230V720H490V230L510 290L600 260L540 90L430 40Q300 70 170 40Z" fill="#1A3580"/>
+      <path d="M170 40Q300 70 430 40L400 20Q300 45 200 20Z" fill="#12245A"/>
+      <image href="../../kit/assets/logo-horizontal-reverse.svg" x="175" y="160" height="69" width="250"/>
+      <g stroke="#C4281C" stroke-width="3" fill="none"><path d="M175 255H425M175 247V263M425 247V263"/></g>
+    </g>
+  </svg>
+  <div class="measure-label" style="left: 150px; top: 612px">80</div>
+  <div class="measure-label" style="left: 330px; top: 612px">250</div>
+
+  <div class="lab" style="left: 560px; top: 500px">Jas hoge zichtbaarheid <span>EN ISO 20471 klasse 2 of 3</span></div>
+  <svg style="position: absolute; left: 560px; top: 526px" width="420" height="240" viewBox="0 0 1300 740">
+    <g>
+      <path d="M170 30L50 90L0 700H100L120 260V720H480V260L500 700H600L550 90L430 30Q300 60 170 30Z" fill="url(#hv)" stroke="#AEAEAE" stroke-width="2"/>
+      <path d="M170 30L50 90L40 200H560L550 90L430 30Q300 60 170 30Z" fill="#1A3580"/>
+      <g fill="#AEAEAE"><rect x="120" y="440" width="360" height="50"/><rect x="120" y="560" width="360" height="50"/><rect x="20" y="440" width="88" height="50"/><rect x="492" y="440" width="88" height="50"/></g>
+      <rect x="296" y="60" width="8" height="660" fill="#434852"/>
+      <image href="../../kit/assets/logo-horizontal-reverse.svg" x="350" y="120" height="22" width="80"/>
+    </g>
+    <g transform="translate(700 0)">
+      <path d="M170 30L50 90L0 700H100L120 260V720H480V260L500 700H600L550 90L430 30Q300 60 170 30Z" fill="url(#hv)" stroke="#AEAEAE" stroke-width="2"/>
+      <path d="M170 30L50 90L40 330H560L550 90L430 30Q300 60 170 30Z" fill="#1A3580"/>
+      <g fill="#AEAEAE"><rect x="120" y="440" width="360" height="50"/><rect x="120" y="560" width="360" height="50"/><rect x="20" y="440" width="88" height="50"/><rect x="492" y="440" width="88" height="50"/></g>
+      <image href="../../kit/assets/logo-horizontal-reverse.svg" x="175" y="160" height="69" width="250"/>
+    </g>
+  </svg>
+  <div class="note" style="position: absolute; left: 1000px; top: 560px; width: 170px">Gestreept: fluorescerend achtergrondmateriaal (oranje of geel, normkleur, geen PY-Oranje).<br><br>Grijs: retroreflecterende banden 50 mm. Nooit bedrukken.</div>
+
+  <div class="col" style="left: 50px; top: 800px; width: 360px">
+    <div class="h">Bus</div>
+    Navy wrap (gegoten folie, mat) of af fabriek zo dicht mogelijk bij RAL 5002. Logo omgekeerd, beeldmerk 400 mm. <b>De stem</b> opent url en storingsnummer (340 mm hoog). <b>De gastheer wijst</b> (800 mm, 7u) staat op een witte lijn van 0,1u en wijst naar het nummer. Nooit over ramen, naden of wielkasten. url Bold kap 100 mm (10 m), nummer kap 70 mm. Achterdeur: alleen logo en tekst, url kap 50 mm.
+  </div>
+  <div class="col" style="left: 440px; top: 800px; width: 340px">
+    <div class="h">Polo</div>
+    Navy polo, logo omgekeerd geborduurd in wit en aqua op de linkerborst, 80 mm breed. Rug: logo 250 mm breed, 100 mm onder de kraag. Geen tekst op de mouwen. Vraag de leverancier vóór de productie om een proefborduursel en keur het naast de pas.
+  </div>
+  <div class="col" style="left: 810px; top: 800px; width: 340px">
+    <div class="h">Jas hoge zichtbaarheid</div>
+    Achtergrondmateriaal fluor oranje of geel volgens EN ISO 20471, schouderstuk navy. Logo alleen op het navy deel, nooit op of over de reflectiebanden en niet zo groot dat het fluorvlak onder het minimum van de klasse komt.
+  </div>
+</div>
+<script>
+  // van side: u = 2300 / 20 = 115. Stem 340 high opens url + number; gastheer wijst 800 on the 0.1u rule, mirrored to face the text
+  PYS.mount('vanel', PYS.stem(1250, 1090, 340, '#32B9CD') + PYS.fig('cap-point', 2950, 1560, 800, '#FFFFFF', { flip: true }));
+</script>
+</body>
+</html>
