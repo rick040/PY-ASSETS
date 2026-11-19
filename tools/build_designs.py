@@ -71,8 +71,8 @@ def figure_and_arrow(d, cx, cy, fig_h, arrow_w, gap, direction, recolor=None):
         production={"format": "400 x 600 mm, as handbook 4.7 and 4.8 (rijstvlies bord)",
                     "material": "Rijstvlies board 8 mm (wall or column) or 16 mm (pole), full colour foil plus laminate (handbook 4.7). "
                                 "Alternative: the same file as a column sticker (wall foil plus laminate) to cover the existing plates.",
-                    "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0; verloop as py-tok-gradient-verloop"},
-        notes="New design for the walking route to the exit, in the 400 x 600 column format of handbook 4.7 and 4.8: gradient face, white bubble "
+                    "colour": "Solid PY-Blauw CMYK 100/83/0/17 (no verloop, at Rick's request), white bubble and caption"},
+        notes="New design for the walking route to the exit, in the 400 x 600 column format of handbook 4.7 and 4.8, with a solid PY-Blauw face instead of the verloop (requested): white bubble "
               "(py-atom-shape-bubble-solid at the bubble position of py-comp-bord-picto-bubble-face), navy walking figure and navy route arrow, "
               "caption in two lines at the caption position and size of 4.7. The figure always walks towards the arrow (mirrored for links). "
               "Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088).")
@@ -81,9 +81,8 @@ def _(variant):
     d = Doc(vid, "Kolombord looproute uitgang", trim=(400, 600), bleed=3)
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", *TOKENS_TYPE[:1], "py-comp-bord-picto-bubble-face",
            "py-prod-bord-mindervaliden")
-    # same gradient axis as the measured face of py-comp-bord-picto-bubble-face
-    fill = verloop(d, f"{vid}-verloop", 16.366, -17.755, 325.005, 516.307)
-    d.rect(-3, -3, 403, 603, fill=fill, gid="bleed-background")
+    # solid PY-Blauw face: the handbook 4.7 and 4.8 boards use the verloop, these looproute boards are solid on request
+    d.rect(-3, -3, 403, 603, fill=BLAUW, gid="bleed-background", variable="background-colour", example=BLAUW)
     with d.group("py-atom-shape-bubble-solid"):
         d.place("py-atom-shape-bubble-solid", 50, 50, w=300, recolor={"#F08300": WIT})
     figure_and_arrow(d, 200, 196, fig_h=176, arrow_w=112, gap=26, direction=variant)
