@@ -164,7 +164,7 @@ def _(variant):
 
 
 # --------------------------------------------------------------------------------------------- build
-BAD = re.compile(r"[–—]|<image|clipPath|<mask|<filter")
+BAD = re.compile("[\\u2013\\u2014]|<image|clipPath|<mask|<filter")  # en and em dash written as escapes
 
 
 def print_svg(svg):
