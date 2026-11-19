@@ -410,7 +410,7 @@ def bord_wide(style, Wd=790.0, Hd=1510.0):
     return d
 
 
-def bord_zuil(style, Wd=790.0, Hd=1510.0):
+def bord_zuil(style, Wd=790.0, Hd=1510.0, druk=False):
     """Free-standing info column in the style of the ParkingYou info column (header with pin and location name, section bars per topic, foot plate),
     with the subscribers copy. Face 790 x 1400 mm on a foot plate of 110 mm (found sign 79 x 151 cm, assumed to include the foot)."""
     wit = style == "wit"
@@ -418,15 +418,20 @@ def bord_zuil(style, Wd=790.0, Hd=1510.0):
     barfill = NAVY if wit else AQUA
     bartxt = WHITE if wit else NAVY
     pid = f"py-prod-zuil-abonnees-balken-{int(Wd)}x{int(Hd)}-{style}"
-    d = Doc(pid, f"Zuil Alleen voor abonnees met sectiebalken {int(Wd)} x {int(Hd)}, {'wit' if wit else 'blauw'}", tight=True)
-    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
     FOOT = 110.0
     FH = Hd - FOOT                   # face height
+    BL = 3.0 if druk else 0.0        # bleed in print mode
+    if druk:
+        pid = f"zuil-abonnees-{int(Wd)}x{int(FH)}-{style}-druk"
+        d = Doc(pid, f"Zuil Alleen voor abonnees, drukbestand {int(Wd)} x {int(FH)} + 3 mm afloop, {'wit' if wit else 'blauw'}", trim=(Wd, FH), bleed=3.0)
+    else:
+        d = Doc(pid, f"Zuil Alleen voor abonnees met sectiebalken {int(Wd)} x {int(Hd)}, {'wit' if wit else 'blauw'}", tight=True)
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", "py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium")
     M = 60.0
     with d.group("face"):
-        d.rect(0, 0, Wd, FH, fill=WHITE if wit else NAVY, gid="panel")
+        d.rect(-BL, -BL, Wd + BL, FH + BL, fill=WHITE if wit else NAVY, gid="panel")
     with d.group("header"):
-        d.rect(0, 0, Wd, 230, fill=NAVY if wit else AQUA, gid="header-bar")
+        d.rect(-BL, -BL, Wd + BL, 230, fill=NAVY if wit else AQUA, gid="header-bar")
         d.place("py-atom-logo-beeldmerk-white", M, 66, h=100, anchor="tl")
         name = "Locatienaam"
         d.text(M + 100 * 24 / 28.949 + 40, 66 + 100 * 0.78, name, size=84, fill=WHITE, weight=700, gid="location-name", variable="location name")
@@ -436,7 +441,7 @@ def bord_zuil(style, Wd=790.0, Hd=1510.0):
             d.rect(24, y, Wd - 24, y + 110, fill=barfill, gid="bar")
             d.text(M, y + 55 + 0.35 * 62, title, size=62, fill=bartxt, weight=700, variable=gid)
 
-    rsz = min(60.0, 490.0 / max(text_width(t, 1.0, 500) for t in ("Geen abonnement =", "No subscription =")))
+    rsz = min(68.0, 490.0 / max(text_width(t, 1.0, 500) for t in ("Geen abonnement", "= Geen toegang.", "No subscription", "= No access.")))
 
     def row(y, lines, gid):
         with d.group(gid):
@@ -445,18 +450,19 @@ def bord_zuil(style, Wd=790.0, Hd=1510.0):
                 d.text(250, y + 100 + i * rsz * 1.3, t, size=rsz, fill=main, weight=500)
 
     bar(275, "Alleen voor abonnees!", "title-nl")
-    row(385, ("Geen abonnement =", "Geen toegang."), "row-nl")
+    row(385, ("Geen abonnement", "= Geen toegang."), "row-nl")
     bar(655, "Subscribers only!", "title-en")
-    row(765, ("No subscription =", "No access."), "row-en")
+    row(765, ("No subscription", "= No access."), "row-en")
     bar(1035, "Bij storingen / Faults", "title-fault")
     num = "085 21 30 422"
     nsz = 640.0 / text_width(num, 1.0, 700)
     d.text(Wd / 2 - text_width(num, nsz, 700) / 2, 1145 + 0.693 * nsz + 50, num, size=nsz, fill=main, weight=700, gid="phone-number", variable="phone-number")
     with d.group("edge"):
-        d.rect(0, FH - 34, Wd, FH, fill=AQUA, gid="edge-band")
-    with d.group("foot"):
-        d.rect(8, FH, Wd - 8, Hd, fill=NAVY, rx=14, gid="foot-plate")
-        d.rect(8, FH, Wd - 8, FH + 8, fill=AQUA, gid="foot-line")
+        d.rect(-BL, FH - 34, Wd + BL, FH + BL, fill=AQUA, gid="edge-band")
+    if not druk:
+        with d.group("foot"):
+            d.rect(8, FH, Wd - 8, Hd, fill=NAVY, rx=14, gid="foot-plate")
+            d.rect(8, FH, Wd - 8, FH + 8, fill=AQUA, gid="foot-line")
     d.variables["title-nl"] = "Alleen voor abonnees!"
     return d
 
@@ -474,6 +480,12 @@ def main():
         open(p, "w", encoding="utf8").write(d.svg())
         built[d.id] = (lvl, d)
         print("wrote", os.path.relpath(p, ROOT), "%.1f x %.1f mm" % d.size())
+    pdir = os.path.join(ROOT, "print")
+    os.makedirs(pdir, exist_ok=True)
+    for st in ("wit", "blauw"):
+        d = bord_zuil(st, druk=True)
+        open(os.path.join(pdir, d.id + ".svg"), "w", encoding="utf8").write(d.svg())
+        print("wrote", f"print/{d.id}.svg", "%.1f x %.1f mm" % d.size())
     if no_json:
         return
     mp = os.path.join(ROOT, "elements.json")
