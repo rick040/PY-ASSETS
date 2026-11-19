@@ -14,6 +14,8 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 | `tokens.json` | Colours (HEX, RGB, CMYK, RAL), gradients, typography, and the colour deviations that were normalised. |
 | `applications/<id>/` | Print applications (level `app`, PM-137): `reference.svg` (faithful vector copy of the print file, or of one sticker cut out of a sheet, source colours, original copy), `template.svg` (official token colours, trim plus 3 mm bleed, variables as live Ubuntu text or placeholder groups, `cut-contour` group for stickers and signs) and `spec.json` (type, trim and bleed in mm, colour space, variables with example values, `built_from`, source file, status). Applications with variants have `reference-<variant>.svg` and `template-<variant>.svg`. |
 | `applications.json` | Manifest of the applications: one row per application with its variants, source files, template size, variables, `built_from`, status and copy corrections. |
+| `designs/<id>/` | New designs composed from the library for a location (no earlier print file, so no `reference.svg`): `template[-<variant>].svg` (master with `cut-contour` group), `print[-<variant>].pdf` (vector print file 1:1 with bleed, artwork only) and `spec.json` (trim, bleed, production notes, variables, `built_from`). |
+| `designs.json` | Manifest of the new designs, same row format as `applications.json` plus `production`, `origin: "new"`. |
 | `overview/parkingyou-toepassingen-overzicht.pdf` | A3 landscape vector overview of the applications: original, template and exploded view with the IDs it is built from, followed by the new atoms, components and products. Same group and label rules as the element overview. |
 | `docs/print-rules.md` | Decisions, colour drift, layout and copy drift, production findings and the rules observed in print (observed in print, not official handbook rules). |
 | `docs/print-phase1-inventory.md` | The PM-137 inventory the print build is based on. |
@@ -41,6 +43,20 @@ Cards, forms, stickers (including the 15 terminal stickers of `TerminalStickers_
 Library elements found in print (new atoms, components and the product `py-prod-pyloon-laag-front-qr`) are in `svg/` and in `elements.json` with `origin: "print"`, `source_file` and `source_page`.
 Third-party marks (payment brands, partner badges, GLOW) are reference only (`third-party` tag): source the official files.
 Rules seen in practice are written down in `docs/print-rules.md` and labelled "observed in print". Colours sampled from print that differ from the brand values are in the `observed` section of `tokens.json`; they never overwrite the official tokens.
+
+## New designs
+
+New signs and stickers that have no earlier print file are built with `tools/build_designs.py` from library atoms and tokens, with the same template rules as the applications (token colours, trim plus bleed, live Ubuntu text with `data-variable`, `cut-contour` group, hidden guides).
+Status is `proposal` until approved.
+
+| ID | What | Size | Variants |
+|---|---|---|---|
+| `py-app-sign-kolom-looproute` | Column sign for the walking route to the exit, in the 400 x 600 format of handbook 4.7 and 4.8 (gradient face, white bubble with walking figure and route arrow, two line caption). Also usable as a column sticker. | 400 x 600 mm, corners 25 mm | `rechtdoor`, `links`, `rechts` |
+| `py-app-sticker-deur-gesloten` | Door sticker for pedestrian doors that are closed at set times ("Deur gesloten", time window, follow the walking route, English line). | A3 297 x 420 mm (scales to A4) | `links`, `rechts` |
+| `py-app-sticker-vloer-looproute` | Round floor sticker along the walking route (route arrow, walking figure, "Uitgang"); rotate it so the arrow follows the route. Anti-slip laminate. | diameter 400 mm | none |
+
+These are wayfinding signs. They do not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088).
+The print PDFs are RGB vector files (cairo); the CMYK values of the tokens are in `tokens.json`. Set the `cut-contour` group of the SVG master to the ThruCut spot colour when the printer needs the cut line in the file.
 
 ## Colours
 
@@ -75,6 +91,7 @@ python3 -I tools/validate.py                                     # PDF labels, S
 python3 -I tools/build_print.py                                  # PM-137: new print elements, applications/, applications.json, observed tokens (needs source/print/*.pdf)
 python3 -I tools/build_toepassingen.py                           # overview/parkingyou-toepassingen-overzicht.pdf
 python3 -I tools/validate_print.py                               # print additions: IDs, trim plus bleed, cut contour, variables, colours, QR, PDF labels
+python3 -I tools/build_designs.py                                # new designs: designs/, designs.json, preview PNGs in build/designs/
 ```
 Requires Python 3 with `pymupdf`, `cairosvg`, `fonttools`, `numpy`, `Pillow`, `skia-pathops`, and the Ubuntu fonts from `fonts/` installed (copy to `~/.fonts` and run `fc-cache`).
 The source PDF is not stored in the repo (copy it to `source/handbook.pdf`).

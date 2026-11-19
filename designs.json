@@ -1,0 +1,289 @@
+{
+ "source": "new designs composed from the library (tools/build_designs.py)",
+ "count": 3,
+ "designs": [
+  {
+   "id": "py-app-sign-kolom-looproute",
+   "name_nl": "Kolombord looproute uitgang",
+   "type": "sign",
+   "origin": "new",
+   "status": "proposal",
+   "variants": [
+    {
+     "id": "py-app-sign-kolom-looproute-rechtdoor",
+     "variant": "rechtdoor",
+     "template": "template-rechtdoor.svg",
+     "print_pdf": "print-rechtdoor.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-comp-bord-picto-bubble-face",
+      "py-prod-bord-mindervaliden",
+      "py-tok-gradient-verloop",
+      "py-atom-shape-bubble-solid",
+      "py-atom-figure-walk",
+      "py-atom-arrow-up-plain"
+     ]
+    },
+    {
+     "id": "py-app-sign-kolom-looproute-links",
+     "variant": "links",
+     "template": "template-links.svg",
+     "print_pdf": "print-links.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-comp-bord-picto-bubble-face",
+      "py-prod-bord-mindervaliden",
+      "py-tok-gradient-verloop",
+      "py-atom-shape-bubble-solid",
+      "py-atom-figure-walk",
+      "py-atom-arrow-up-plain"
+     ]
+    },
+    {
+     "id": "py-app-sign-kolom-looproute-rechts",
+     "variant": "rechts",
+     "template": "template-rechts.svg",
+     "print_pdf": "print-rechts.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-comp-bord-picto-bubble-face",
+      "py-prod-bord-mindervaliden",
+      "py-tok-gradient-verloop",
+      "py-atom-shape-bubble-solid",
+      "py-atom-figure-walk",
+      "py-atom-arrow-up-plain"
+     ]
+    }
+   ],
+   "template": {
+    "trim_mm": [
+     400,
+     600
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     406.0,
+     606.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 25,
+     "note": "Board outline with the 25 mm corners of handbook 4.7 and 4.8. As a sticker the same line is the kiss cut."
+    }
+   },
+   "production": {
+    "format": "400 x 600 mm, as handbook 4.7 and 4.8 (rijstvlies bord)",
+    "material": "Rijstvlies board 8 mm (wall or column) or 16 mm (pole), full colour foil plus laminate (handbook 4.7). Alternative: the same file as a column sticker (wall foil plus laminate) to cover the existing plates.",
+    "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0; verloop as py-tok-gradient-verloop"
+   },
+   "variables": {
+    "rechtdoor": {
+     "arrow-direction": "omhoog (rechtdoor)",
+     "caption-1": "Uitgang",
+     "caption-2": "Voetgangers"
+    },
+    "links": {
+     "arrow-direction": "links",
+     "caption-1": "Uitgang",
+     "caption-2": "Voetgangers"
+    },
+    "rechts": {
+     "arrow-direction": "rechts",
+     "caption-1": "Uitgang",
+     "caption-2": "Voetgangers"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-bord-picto-bubble-face",
+    "py-prod-bord-mindervaliden",
+    "py-tok-gradient-verloop",
+    "py-atom-shape-bubble-solid",
+    "py-atom-figure-walk",
+    "py-atom-arrow-up-plain"
+   ],
+   "notes": "New design for the walking route to the exit, in the 400 x 600 column format of handbook 4.7 and 4.8: gradient face, white bubble (py-atom-shape-bubble-solid at the bubble position of py-comp-bord-picto-bubble-face), navy walking figure and navy route arrow, caption in two lines at the caption position and size of 4.7. The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
+  },
+  {
+   "id": "py-app-sticker-deur-gesloten",
+   "name_nl": "Deursticker deur gesloten, volg de looproute",
+   "type": "sticker",
+   "origin": "new",
+   "status": "proposal",
+   "variants": [
+    {
+     "id": "py-app-sticker-deur-gesloten-links",
+     "variant": "links",
+     "template": "template-links.svg",
+     "print_pdf": "print-links.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
+      "py-tok-type-ubuntu-regular",
+      "py-atom-logo-horizontal-white",
+      "py-atom-figure-walk",
+      "py-atom-arrow-up-plain"
+     ]
+    },
+    {
+     "id": "py-app-sticker-deur-gesloten-rechts",
+     "variant": "rechts",
+     "template": "template-rechts.svg",
+     "print_pdf": "print-rechts.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
+      "py-tok-type-ubuntu-regular",
+      "py-atom-logo-horizontal-white",
+      "py-atom-figure-walk",
+      "py-atom-arrow-up-plain"
+     ]
+    }
+   ],
+   "template": {
+    "trim_mm": [
+     297,
+     420
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     303.0,
+     426.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 4.2,
+     "note": "Sticker corner radius is the library proposal (4.2 mm, as on the diefstal footer)."
+    }
+   },
+   "production": {
+    "format": "A3 portrait 297 x 420 mm; scales 1:1.414 to A4 without changes (same A ratio)",
+    "material": "Self adhesive foil plus laminate, for the outside of the closed pedestrian doors",
+    "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"
+   },
+   "variables": {
+    "links": {
+     "heading": "Deur gesloten",
+     "when-1": "Op werkdagen",
+     "when-2": "van 7:00 tot 10:00 uur",
+     "reason": "Voor je veiligheid is deze deur dan dicht.",
+     "arrow-direction": "links",
+     "instruction-1": "Volg de looproute",
+     "instruction-2": "naar de uitgang",
+     "en-1": "Closed on working days from 7:00 to 10:00.",
+     "en-2": "Please follow the walking route to the exit."
+    },
+    "rechts": {
+     "heading": "Deur gesloten",
+     "when-1": "Op werkdagen",
+     "when-2": "van 7:00 tot 10:00 uur",
+     "reason": "Voor je veiligheid is deze deur dan dicht.",
+     "arrow-direction": "rechts",
+     "instruction-1": "Volg de looproute",
+     "instruction-2": "naar de uitgang",
+     "en-1": "Closed on working days from 7:00 to 10:00.",
+     "en-2": "Please follow the walking route to the exit."
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-regular",
+    "py-atom-logo-horizontal-white",
+    "py-atom-figure-walk",
+    "py-atom-arrow-up-plain"
+   ],
+   "notes": "New design for the pedestrian doors that are closed on working days. PY-Blauw face, white logo, heading and time window, white panel with the walking figure and the route arrow (direction per door: links or rechts), English line at the bottom. Copy in the je form as on the terminal stickers. Time window and texts are variables."
+  },
+  {
+   "id": "py-app-sticker-vloer-looproute",
+   "name_nl": "Vloersticker looproute uitgang",
+   "type": "sticker",
+   "origin": "new",
+   "status": "proposal",
+   "variants": [
+    {
+     "id": "py-app-sticker-vloer-looproute",
+     "variant": null,
+     "template": "template.svg",
+     "print_pdf": "print.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-comp-route-module-arrow",
+      "py-atom-arrow-up-circle",
+      "py-atom-figure-walk"
+     ]
+    }
+   ],
+   "template": {
+    "trim_mm": [
+     400,
+     400
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     406.0,
+     406.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 200,
+     "note": "Round, diameter 400 mm."
+    }
+   },
+   "production": {
+    "format": "Round, diameter 400 mm",
+    "material": "Floor graphic foil with anti-slip laminate (slip resistance R10 or better), suitable for car park floors. One design for every direction: rotate the sticker so the arrow points along the route.",
+    "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"
+   },
+   "variables": {
+    "default": {
+     "caption": "Uitgang"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-route-module-arrow",
+    "py-atom-arrow-up-circle",
+    "py-atom-figure-walk"
+   ],
+   "notes": "New design for floor markers along the walking route. PY-Blauw disc, thin aqua ring, route arrow as in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption."
+  }
+ ]
+}

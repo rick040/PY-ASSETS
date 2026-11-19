@@ -1,0 +1,63 @@
+{
+ "id": "py-app-sticker-vloer-looproute",
+ "name_nl": "Vloersticker looproute uitgang",
+ "type": "sticker",
+ "origin": "new",
+ "status": "proposal",
+ "variants": [
+  {
+   "id": "py-app-sticker-vloer-looproute",
+   "variant": null,
+   "template": "template.svg",
+   "print_pdf": "print.pdf",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-comp-route-module-arrow",
+    "py-atom-arrow-up-circle",
+    "py-atom-figure-walk"
+   ]
+  }
+ ],
+ "template": {
+  "trim_mm": [
+   400,
+   400
+  ],
+  "bleed_mm": 3.0,
+  "size_with_bleed_mm": [
+   406.0,
+   406.0
+  ],
+  "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+  "cut_contour": {
+   "spot": "ThruCut",
+   "stroke_pt": 1,
+   "inset_mm": 0.2,
+   "corner_radius_mm": 200,
+   "note": "Round, diameter 400 mm."
+  }
+ },
+ "production": {
+  "format": "Round, diameter 400 mm",
+  "material": "Floor graphic foil with anti-slip laminate (slip resistance R10 or better), suitable for car park floors. One design for every direction: rotate the sticker so the arrow points along the route.",
+  "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"
+ },
+ "variables": {
+  "default": {
+   "caption": "Uitgang"
+  }
+ },
+ "built_from": [
+  "py-tok-color-blauw",
+  "py-tok-color-aqua",
+  "py-tok-color-wit",
+  "py-tok-type-ubuntu-bold",
+  "py-comp-route-module-arrow",
+  "py-atom-arrow-up-circle",
+  "py-atom-figure-walk"
+ ],
+ "notes": "New design for floor markers along the walking route. PY-Blauw disc, thin aqua ring, route arrow as in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption."
+}
