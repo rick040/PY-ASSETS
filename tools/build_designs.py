@@ -179,7 +179,8 @@ def _(variant):
 
 
 # --------------------------------------------------------------------------------------------- sticker druk op de knop
-DW, DH = 140, 280  # proposal (20-11-2026): portrait, as wide as fits on the door post, placed directly above the exit button
+KD = 200  # diameter in mm (20-11-2026): round, larger than the current 'Push' sticker (estimated at about 15 cm); change here
+KS = KD / 200  # the layout is drawn at 200 mm
 
 
 def button_icon(d, cx, cy, u, fill=BLAUW):
@@ -192,41 +193,35 @@ def button_icon(d, cx, cy, u, fill=BLAUW):
         d.rect(cx - 14 * u, cy + 17 * u, cx + 14 * u, cy + 32 * u, fill=fill)
         d.rect(cx - 44 * u, cy + 35 * u, cx + 44 * u, cy + 58 * u, fill=fill, rx=5 * u)
     with d.group("py-atom-arrow-up-plain"):
-        d.place("py-atom-arrow-up-plain", cx, cy - 45 * u, w=42 * u, anchor="cc", rotate=180)
+        d.place("py-atom-arrow-up-plain", cx, cy - 45 * u, w=42 * u, anchor="cc", rotate=180, recolor={BLAUW: fill})
 
 
-@design("py-app-sticker-druk-op-de-knop", "Sticker druk op de knop (loopdeur)", "sticker", (DW, DH),
-        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": 8,
-                     "note": "Proposal. The print PDF has no cut line: choose straight or rounded corners at the printer."},
-        production={"format": f"{DW} x {DH} mm (width x height), 3 mm bleed; PDF {DW + 6} x {DH + 6} mm. Width to be checked against the "
-                              "front face of the door post (the current round sticker is about as wide as the post).",
+@design("py-app-sticker-druk-op-de-knop", "Ronde sticker druk op de knop (loopdeur)", "sticker", (KD, KD),
+        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": KD / 2, "note": f"Round, diameter {KD} mm."},
+        production={"format": f"Round, diameter {KD} mm, 3 mm bleed; PDF {KD + 6} x {KD + 6} mm",
                     "material": "Self adhesive foil, laminated (outdoor), on the door post directly above the exit button",
                     "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"},
-        notes="New design asked by the parking host for a pedestrian door that opens with a push button: replaces a third party 'Push' sticker. "
-              "PY-Blauw face, white bubble (py-atom-shape-bubble-solid) with a drawn mushroom button pictogram and press arrow, heading "
-              "'Druk op de knop', aqua line 'om de deur te openen', English in medium italic as on the terminal stickers ('Druk 3 seconden'), "
-              "and the route arrow (py-atom-arrow-up-circle, turned down) pointing at the button below the sticker.")
+        notes="New design asked by the parking host for a pedestrian door that opens with a push button: replaces a round third party "
+              "'Push' sticker with a larger round one. PY-Blauw face over the whole page, white mushroom button pictogram with press arrow "
+              "(drawn, the library has none), 'Druk op de knop', aqua line 'om de deur te openen', English in medium italic as on the "
+              "terminal stickers ('Druk 3 seconden'), route arrow (py-atom-arrow-up-circle, turned down) pointing at the button below.")
 def _(variant):
     vid = "py-app-sticker-druk-op-de-knop"
-    d = Doc(vid, "Sticker druk op de knop", trim=(DW, DH), bleed=3)
+    d = Doc(vid, "Ronde sticker druk op de knop", trim=(KD, KD), bleed=3)
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", *TOKENS_TYPE, "py-app-sticker-terminal-druk-3-seconden")
-    d.rect(-3, -3, DW + 3, DH + 3, fill=BLAUW, gid="bleed-background")
-    bw = 96
-    bx, by = (DW - bw) / 2, 14
-    with d.group("py-atom-shape-bubble-solid"):
-        d.place("py-atom-shape-bubble-solid", bx, by, w=bw, recolor={"#F08300": WIT})
-    button_icon(d, bx + bw / 2, by + bw / 2, u=0.6)
-    x = bx + 7.778 * bw / 300  # left edge as the kolombord caption
+    d.rect(-3, -3, KD + 3, KD + 3, fill=BLAUW, gid="bleed-background")
+    c, k = KD / 2, KS
+    button_icon(d, c, 47 * k, u=0.42 * k, fill=WIT)
     with d.group("variables"):
-        d.text(x, 160, "Druk op", size=24, fill=WIT, weight=700, variable="heading-1")
-        d.text(x, 186, "de knop", size=24, fill=WIT, weight=700, variable="heading-2")
-        d.text(x, 205, "om de deur te openen", size=10.4, fill=AQUA, weight=500, variable="sub")
-        d.text(x, 221, "Press the button", size=8, fill=WIT, weight=500, italic=True, variable="en-1")
-        d.text(x, 231, "to open the door", size=8, fill=WIT, weight=500, italic=True, variable="en-2")
+        d.text(c, 106 * k, "Druk op", size=25 * k, fill=WIT, weight=700, anchor="middle", variable="heading-1")
+        d.text(c, 131 * k, "de knop", size=25 * k, fill=WIT, weight=700, anchor="middle", variable="heading-2")
+        d.text(c, 148 * k, "om de deur te openen", size=10 * k, fill=AQUA, weight=500, anchor="middle", variable="sub")
+        d.text(c, 160 * k, "Press the button to open the door", size=6.6 * k, fill=WIT, weight=500, italic=True, anchor="middle",
+               variable="en")
     with d.group("py-atom-arrow-up-circle"):
-        d.place("py-atom-arrow-up-circle", DW / 2, DH - 10 - 15, w=30, anchor="cc", rotate=180)  # points down at the button
-    d.cut_contour(0, 0, DW, DH, rx=8)
-    d.guides(DW, DH)
+        d.place("py-atom-arrow-up-circle", c, 177 * k, w=22 * k, anchor="cc", rotate=180)  # points down at the button
+    d.cut_contour(0, 0, KD, KD, rx=KD / 2)
+    d.guides(KD, KD)
     return d
 
 
