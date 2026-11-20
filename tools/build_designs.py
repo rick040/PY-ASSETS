@@ -178,8 +178,60 @@ def _(variant):
     return d
 
 
+# --------------------------------------------------------------------------------------------- sticker druk op de knop
+DW, DH = 140, 280  # proposal (20-11-2026): portrait, as wide as fits on the door post, placed directly above the exit button
+
+
+def button_icon(d, cx, cy, u, fill=BLAUW):
+    """Pictogram 'press the button': mushroom push button (side view) with a press arrow above it. Drawn for this sticker
+    (the library has no button pictogram); u = 1/100 of the drawing scale, the icon is 88u wide and 124u high, centred on (cx, cy)."""
+    cy += 4 * u  # optical centre: the icon runs from -66u (arrow tail) to +58u (base)
+    with d.group("icon-button"):
+        dome = (f"M{cx - 36 * u:.3f} {cy + 14 * u:.3f} A{36 * u:.3f} {32 * u:.3f} 0 0 1 {cx + 36 * u:.3f} {cy + 14 * u:.3f} Z")
+        d.path(dome, (cx - 36 * u, cy - 18 * u, cx + 36 * u, cy + 14 * u), fill=fill)
+        d.rect(cx - 14 * u, cy + 17 * u, cx + 14 * u, cy + 32 * u, fill=fill)
+        d.rect(cx - 44 * u, cy + 35 * u, cx + 44 * u, cy + 58 * u, fill=fill, rx=5 * u)
+    with d.group("py-atom-arrow-up-plain"):
+        d.place("py-atom-arrow-up-plain", cx, cy - 45 * u, w=42 * u, anchor="cc", rotate=180)
+
+
+@design("py-app-sticker-druk-op-de-knop", "Sticker druk op de knop (loopdeur)", "sticker", (DW, DH),
+        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": 8,
+                     "note": "Proposal. The print PDF has no cut line: choose straight or rounded corners at the printer."},
+        production={"format": f"{DW} x {DH} mm (width x height), 3 mm bleed; PDF {DW + 6} x {DH + 6} mm. Width to be checked against the "
+                              "front face of the door post (the current round sticker is about as wide as the post).",
+                    "material": "Self adhesive foil, laminated (outdoor), on the door post directly above the exit button",
+                    "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"},
+        notes="New design asked by the parking host for a pedestrian door that opens with a push button: replaces a third party 'Push' sticker. "
+              "PY-Blauw face, white bubble (py-atom-shape-bubble-solid) with a drawn mushroom button pictogram and press arrow, heading "
+              "'Druk op de knop', aqua line 'om de deur te openen', English in medium italic as on the terminal stickers ('Druk 3 seconden'), "
+              "and the route arrow (py-atom-arrow-up-circle, turned down) pointing at the button below the sticker.")
+def _(variant):
+    vid = "py-app-sticker-druk-op-de-knop"
+    d = Doc(vid, "Sticker druk op de knop", trim=(DW, DH), bleed=3)
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", *TOKENS_TYPE, "py-app-sticker-terminal-druk-3-seconden")
+    d.rect(-3, -3, DW + 3, DH + 3, fill=BLAUW, gid="bleed-background")
+    bw = 96
+    bx, by = (DW - bw) / 2, 14
+    with d.group("py-atom-shape-bubble-solid"):
+        d.place("py-atom-shape-bubble-solid", bx, by, w=bw, recolor={"#F08300": WIT})
+    button_icon(d, bx + bw / 2, by + bw / 2, u=0.6)
+    x = bx + 7.778 * bw / 300  # left edge as the kolombord caption
+    with d.group("variables"):
+        d.text(x, 160, "Druk op", size=24, fill=WIT, weight=700, variable="heading-1")
+        d.text(x, 186, "de knop", size=24, fill=WIT, weight=700, variable="heading-2")
+        d.text(x, 205, "om de deur te openen", size=10.4, fill=AQUA, weight=500, variable="sub")
+        d.text(x, 221, "Press the button", size=8, fill=WIT, weight=500, italic=True, variable="en-1")
+        d.text(x, 231, "to open the door", size=8, fill=WIT, weight=500, italic=True, variable="en-2")
+    with d.group("py-atom-arrow-up-circle"):
+        d.place("py-atom-arrow-up-circle", DW / 2, DH - 10 - 15, w=30, anchor="cc", rotate=180)  # points down at the button
+    d.cut_contour(0, 0, DW, DH, rx=8)
+    d.guides(DW, DH)
+    return d
+
+
 # --------------------------------------------------------------------------------------------- build
-BAD = re.compile("[\\u2013\\u2014]|<image|clipPath|<mask|<filter")  # en and em dash written as escapes
+BAD =re.compile("[\\u2013\\u2014]|<image|clipPath|<mask|<filter")  # en and em dash written as escapes
 
 
 def print_svg(svg):

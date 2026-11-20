@@ -1,6 +1,6 @@
 {
  "source": "new designs composed from the library (tools/build_designs.py)",
- "count": 3,
+ "count": 4,
  "designs": [
   {
    "id": "py-app-sign-kolom-looproute",
@@ -230,6 +230,79 @@
     "py-atom-arrow-up-plain"
    ],
    "notes": "New design for the pedestrian doors that are closed on working days. PY-Blauw face, white logo, heading and time window, white panel with the walking figure and the route arrow (direction per door: links or rechts), English line at the bottom. Copy in the je form as on the terminal stickers. Time window and texts are variables."
+  },
+  {
+   "id": "py-app-sticker-druk-op-de-knop",
+   "name_nl": "Sticker druk op de knop (loopdeur)",
+   "type": "sticker",
+   "origin": "new",
+   "status": "proposal",
+   "variants": [
+    {
+     "id": "py-app-sticker-druk-op-de-knop",
+     "variant": null,
+     "template": "template.svg",
+     "print_pdf": "print.pdf",
+     "built_from": [
+      "py-tok-color-blauw",
+      "py-tok-color-aqua",
+      "py-tok-color-wit",
+      "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
+      "py-tok-type-ubuntu-regular",
+      "py-app-sticker-terminal-druk-3-seconden",
+      "py-atom-shape-bubble-solid",
+      "py-atom-arrow-up-plain",
+      "py-atom-arrow-up-circle"
+     ]
+    }
+   ],
+   "template": {
+    "trim_mm": [
+     140,
+     280
+    ],
+    "bleed_mm": 3.0,
+    "size_with_bleed_mm": [
+     146.0,
+     286.0
+    ],
+    "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
+    "cut_contour": {
+     "spot": "ThruCut",
+     "stroke_pt": 1,
+     "inset_mm": 0.2,
+     "corner_radius_mm": 8,
+     "note": "Proposal. The print PDF has no cut line: choose straight or rounded corners at the printer."
+    }
+   },
+   "production": {
+    "format": "140 x 280 mm (width x height), 3 mm bleed; PDF 146 x 286 mm. Width to be checked against the front face of the door post (the current round sticker is about as wide as the post).",
+    "material": "Self adhesive foil, laminated (outdoor), on the door post directly above the exit button",
+    "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"
+   },
+   "variables": {
+    "default": {
+     "heading-1": "Druk op",
+     "heading-2": "de knop",
+     "sub": "om de deur te openen",
+     "en-1": "Press the button",
+     "en-2": "to open the door"
+    }
+   },
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-regular",
+    "py-app-sticker-terminal-druk-3-seconden",
+    "py-atom-shape-bubble-solid",
+    "py-atom-arrow-up-plain",
+    "py-atom-arrow-up-circle"
+   ],
+   "notes": "New design asked by the parking host for a pedestrian door that opens with a push button: replaces a third party 'Push' sticker. PY-Blauw face, white bubble (py-atom-shape-bubble-solid) with a drawn mushroom button pictogram and press arrow, heading 'Druk op de knop', aqua line 'om de deur te openen', English in medium italic as on the terminal stickers ('Druk 3 seconden'), and the route arrow (py-atom-arrow-up-circle, turned down) pointing at the button below the sticker."
   },
   {
    "id": "py-app-sticker-looproute-rond",
