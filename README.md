@@ -51,7 +51,7 @@ Status is `proposal` until approved.
 
 | ID | What | Size | Variants |
 |---|---|---|---|
-| `py-app-sign-kolom-looproute` | Column sign for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (solid PY-Blauw face, white bubble with walking figure and route arrow, caption "Uitgang Voetgangers", time window "Op werkdagen van 7:00 tot 10:00 uur" in aqua). Also usable as a column sticker. | 155 x 235 mm (w x h) | `rechtdoor`, `links`, `rechts` |
+| `py-app-sign-kolom-looproute` | Column sign for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (solid PY-Blauw face, white bubble with walking figure and route arrow, caption "Uitgang Voetgangers", time window "Op werkdagen van 7:00 tot 10:00 uur" in aqua). Also usable as a column sticker. | 160 x 240 mm (w x h) | `rechtdoor`, `links`, `rechts` |
 | `py-app-sticker-deur-gesloten` | Door sticker for pedestrian doors that are closed at set times ("Deur gesloten", time window, follow the walking route, English line). | A3 297 x 420 mm (scales to A4) | `links`, `rechts` |
 | `py-app-sticker-vloer-looproute` | Round floor sticker along the walking route (PY-Blauw disc without ring, route arrow, walking figure, "Uitgang"); rotate it so the arrow follows the route. Anti-slip laminate. | diameter 400 mm | none |
 

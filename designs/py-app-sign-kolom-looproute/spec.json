@@ -62,13 +62,13 @@
  ],
  "template": {
   "trim_mm": [
-   155,
-   235
+   160,
+   240
   ],
   "bleed_mm": 3.0,
   "size_with_bleed_mm": [
-   161.0,
-   241.0
+   166.0,
+   246.0
   ],
   "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
   "cut_contour": {
@@ -80,7 +80,7 @@
   }
  },
  "production": {
-  "format": "155 x 235 mm (width x height), 3 mm bleed; PDF 161 x 241 mm",
+  "format": "160 x 240 mm (width x height), 3 mm bleed; PDF 166 x 246 mm",
   "material": "Sign board (for example dibond or forex) or self adhesive foil for the columns",
   "colour": "Solid PY-Blauw (no verloop, at Rick's request), white bubble and caption, aqua time window. Print PDF in DeviceCMYK with the token values: PY-Blauw 100/83/0/17 (200 percent ink), PY-Aqua 69/0/21/0, white 0/0/0/0"
  },
@@ -122,5 +122,5 @@
   "py-atom-figure-walk",
   "py-atom-arrow-up-plain"
  ],
- "notes": "New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption below, caption left aligned to the bubble) at 155 x 235 mm, with a solid PY-Blauw face instead of the verloop (requested): white bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
+ "notes": "New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption below, caption left aligned to the bubble) at 160 x 240 mm, with a solid PY-Blauw face instead of the verloop (requested): white bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
 }

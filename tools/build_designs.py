@@ -65,7 +65,7 @@ def figure_and_arrow(d, cx, cy, fig_h, arrow_w, gap, direction, recolor=None):
 
 
 # --------------------------------------------------------------------------------------------- kolombord looproute
-KW, KH = 155, 235  # board size asked for this garage (Rick, 20-11-2026): 15.5 cm wide, 23.5 cm high
+KW, KH = 160, 240  # board size asked for this garage (Rick, 20-11-2026): 16 cm wide, 24 cm high (whole cm for Drukwerkdeal)
 KK = 110 / 300  # bubble 110 mm wide; scale of the 4.7 layout (bubble 300 mm on the 400 mm board)
 
 
@@ -73,12 +73,12 @@ KK = 110 / 300  # bubble 110 mm wide; scale of the 4.7 layout (bubble 300 mm on 
         cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": 10,
                      "note": "Proposal only (the 25 mm corners of handbook 4.7 scaled down). The print PDF has no cut line: choose straight or "
                              "rounded corners at the printer; the background runs into the bleed, so either works."},
-        production={"format": "155 x 235 mm (width x height), 3 mm bleed; PDF 161 x 241 mm",
+        production={"format": "160 x 240 mm (width x height), 3 mm bleed; PDF 166 x 246 mm",
                     "material": "Sign board (for example dibond or forex) or self adhesive foil for the columns",
                     "colour": "Solid PY-Blauw (no verloop, at Rick's request), white bubble and caption, aqua time window. "
                               "Print PDF in DeviceCMYK with the token values: PY-Blauw 100/83/0/17 (200 percent ink), PY-Aqua 69/0/21/0, white 0/0/0/0"},
         notes="New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption "
-              "below, caption left aligned to the bubble) at 155 x 235 mm, with a solid PY-Blauw face instead of the verloop (requested): white "
+              "below, caption left aligned to the bubble) at 160 x 240 mm, with a solid PY-Blauw face instead of the verloop (requested): white "
               "bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window "
               "in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). "
               "Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088).")
@@ -89,7 +89,7 @@ def _(variant):
            "py-comp-bord-picto-bubble-face", "py-prod-bord-mindervaliden")
     # solid PY-Blauw face: the handbook 4.7 and 4.8 boards use the verloop, these looproute boards are solid on request
     d.rect(-3, -3, KW + 3, KH + 3, fill=BLAUW, gid="bleed-background", variable="background-colour", example=BLAUW)
-    bx, by, bw = (KW - 300 * KK) / 2, 12, 300 * KK
+    bx, by, bw = (KW - 300 * KK) / 2, 13, 300 * KK
     with d.group("py-atom-shape-bubble-solid"):
         d.place("py-atom-shape-bubble-solid", bx, by, w=bw, recolor={"#F08300": WIT})
     # pictograms at the 4.7 position inside the bubble (centre 146 mm below the bubble top on the 400 board)
@@ -97,11 +97,11 @@ def _(variant):
     x = bx + 7.778 * KK  # caption left edge as on 4.7 (7.8 mm right of the bubble)
     cap = 41.967 * KK
     with d.group("variables"):
-        d.text(x, 166, "Uitgang", size=cap, fill=WIT, weight=700, variable="caption-1")
-        d.text(x, 166 + 50.361 * KK, "Voetgangers", size=cap, fill=WIT, weight=700, variable="caption-2")
-        # last line ends at y 216 and x 138: clear of corner drill holes up to 15 mm from the edges (dibond option)
-        d.text(x, 203, "Op werkdagen", size=11.2, fill=AQUA, weight=500, variable="when-1")
-        d.text(x, 216, "van 7:00 tot 10:00 uur", size=11.2, fill=AQUA, weight=500, variable="when-2")
+        d.text(x, 168, "Uitgang", size=cap, fill=WIT, weight=700, variable="caption-1")
+        d.text(x, 168 + 50.361 * KK, "Voetgangers", size=cap, fill=WIT, weight=700, variable="caption-2")
+        # last line ends at y 218 and x 141: clear of corner drill holes up to 15 mm from the edges (dibond option)
+        d.text(x, 205, "Op werkdagen", size=11.2, fill=AQUA, weight=500, variable="when-1")
+        d.text(x, 218, "van 7:00 tot 10:00 uur", size=11.2, fill=AQUA, weight=500, variable="when-2")
     d.cut_contour(0, 0, KW, KH, rx=10)
     d.guides(KW, KH)
     return d
