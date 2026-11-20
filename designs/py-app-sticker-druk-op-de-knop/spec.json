@@ -6,10 +6,27 @@
  "status": "proposal",
  "variants": [
   {
-   "id": "py-app-sticker-druk-op-de-knop",
-   "variant": null,
-   "template": "template.svg",
-   "print_pdf": "print.pdf",
+   "id": "py-app-sticker-druk-op-de-knop-200mm",
+   "variant": "200mm",
+   "template": "template-200mm.svg",
+   "print_pdf": "print-200mm.pdf",
+   "built_from": [
+    "py-tok-color-blauw",
+    "py-tok-color-aqua",
+    "py-tok-color-wit",
+    "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
+    "py-tok-type-ubuntu-regular",
+    "py-app-sticker-terminal-druk-3-seconden",
+    "py-atom-arrow-up-plain",
+    "py-atom-arrow-up-circle"
+   ]
+  },
+  {
+   "id": "py-app-sticker-druk-op-de-knop-250mm",
+   "variant": "250mm",
+   "template": "template-250mm.svg",
+   "print_pdf": "print-250mm.pdf",
    "built_from": [
     "py-tok-color-blauw",
     "py-tok-color-aqua",
@@ -24,31 +41,49 @@
   }
  ],
  "template": {
-  "trim_mm": [
-   200,
-   200
-  ],
+  "trim_mm_per_variant": {
+   "200mm": [
+    200,
+    200
+   ],
+   "250mm": [
+    250,
+    250
+   ]
+  },
+  "size_with_bleed_mm_per_variant": {
+   "200mm": [
+    206.0,
+    206.0
+   ],
+   "250mm": [
+    256.0,
+    256.0
+   ]
+  },
   "bleed_mm": 3.0,
-  "size_with_bleed_mm": [
-   206.0,
-   206.0
-  ],
   "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
   "cut_contour": {
    "spot": "ThruCut",
    "stroke_pt": 1,
    "inset_mm": 0.2,
-   "corner_radius_mm": 100.0,
-   "note": "Round, diameter 200 mm."
+   "corner_radius_mm": "half the diameter",
+   "note": "Round."
   }
  },
  "production": {
-  "format": "Round, diameter 200 mm, 3 mm bleed; PDF 206 x 206 mm",
+  "format": "Round, diameter 200 mm (flat on the door post) or 250 mm (larger than the current sticker, wraps around the post edges), 3 mm bleed; PDF 206 or 256 mm square",
   "material": "Self adhesive foil, laminated (outdoor), on the door post directly above the exit button",
   "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"
  },
  "variables": {
-  "default": {
+  "200mm": {
+   "heading-1": "Druk op",
+   "heading-2": "de knop",
+   "sub": "om de deur te openen",
+   "en": "Press the button to open the door"
+  },
+  "250mm": {
    "heading-1": "Druk op",
    "heading-2": "de knop",
    "sub": "om de deur te openen",

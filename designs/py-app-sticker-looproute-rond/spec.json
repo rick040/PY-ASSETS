@@ -26,11 +26,11 @@
    100,
    100
   ],
-  "bleed_mm": 3.0,
   "size_with_bleed_mm": [
    106.0,
    106.0
   ],
+  "bleed_mm": 3.0,
   "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
   "cut_contour": {
    "spot": "ThruCut",

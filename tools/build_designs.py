@@ -25,9 +25,10 @@ TOKENS_TYPE = ("py-tok-type-ubuntu-bold", "py-tok-type-ubuntu-medium", "py-tok-t
 DESIGNS = {}
 
 
-def design(id, name_nl, type, trim_mm, variants=("",), bleed_mm=3.0, cut_contour=None, production=None, notes=""):
+def design(id, name_nl, type, trim_mm, variants=("",), bleed_mm=3.0, cut_contour=None, production=None, notes="", trims=None):
+    """trims: optional {variant: (w, h)} for designs whose variants are sizes; trim_mm is then the first size."""
     def deco(fn):
-        DESIGNS[id] = dict(fn=fn, id=id, name_nl=name_nl, type=type, trim_mm=list(trim_mm), variants=list(variants),
+        DESIGNS[id] = dict(fn=fn, id=id, name_nl=name_nl, type=type, trim_mm=list(trim_mm), variants=list(variants), trims=trims or {},
                            bleed_mm=bleed_mm, cut_contour=cut_contour, production=production or {}, notes=notes)
         return fn
     return deco
@@ -179,8 +180,10 @@ def _(variant):
 
 
 # --------------------------------------------------------------------------------------------- sticker druk op de knop
-KD = 200  # diameter in mm (20-11-2026): round, larger than the current 'Push' sticker (estimated at about 15 cm); change here
-KS = KD / 200  # the layout is drawn at 200 mm
+# diameters in mm (20-11-2026). Measured on the host's photo with the PDZ push button as scale (dome 94 mm, box 85 x 85 mm):
+# the current 'Push' sticker is about 22 to 24 cm and the front of the door post about 21 to 22 cm wide.
+# 200 mm lies flat on the post; 250 mm is larger than the current sticker but wraps around the post edges.
+KDS = {"200mm": 200, "250mm": 250}
 
 
 def button_icon(d, cx, cy, u, fill=BLAUW):
@@ -196,9 +199,11 @@ def button_icon(d, cx, cy, u, fill=BLAUW):
         d.place("py-atom-arrow-up-plain", cx, cy - 45 * u, w=42 * u, anchor="cc", rotate=180, recolor={BLAUW: fill})
 
 
-@design("py-app-sticker-druk-op-de-knop", "Ronde sticker druk op de knop (loopdeur)", "sticker", (KD, KD),
-        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": KD / 2, "note": f"Round, diameter {KD} mm."},
-        production={"format": f"Round, diameter {KD} mm, 3 mm bleed; PDF {KD + 6} x {KD + 6} mm",
+@design("py-app-sticker-druk-op-de-knop", "Ronde sticker druk op de knop (loopdeur)", "sticker", (200, 200), variants=tuple(KDS),
+        trims={v: (x, x) for v, x in KDS.items()},
+        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": "half the diameter", "note": "Round."},
+        production={"format": "Round, diameter 200 mm (flat on the door post) or 250 mm (larger than the current sticker, wraps around "
+                              "the post edges), 3 mm bleed; PDF 206 or 256 mm square",
                     "material": "Self adhesive foil, laminated (outdoor), on the door post directly above the exit button",
                     "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"},
         notes="New design asked by the parking host for a pedestrian door that opens with a push button: replaces a round third party "
@@ -206,11 +211,12 @@ def button_icon(d, cx, cy, u, fill=BLAUW):
               "(drawn, the library has none), 'Druk op de knop', aqua line 'om de deur te openen', English in medium italic as on the "
               "terminal stickers ('Druk 3 seconden'), route arrow (py-atom-arrow-up-circle, turned down) pointing at the button below.")
 def _(variant):
-    vid = "py-app-sticker-druk-op-de-knop"
+    KD = KDS[variant]
+    vid = f"py-app-sticker-druk-op-de-knop-{variant}"
     d = Doc(vid, "Ronde sticker druk op de knop", trim=(KD, KD), bleed=3)
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", *TOKENS_TYPE, "py-app-sticker-terminal-druk-3-seconden")
     d.rect(-3, -3, KD + 3, KD + 3, fill=BLAUW, gid="bleed-background")
-    c, k = KD / 2, KS
+    c, k = KD / 2, KD / 200  # the layout is drawn at 200 mm
     button_icon(d, c, 47 * k, u=0.42 * k, fill=WIT)
     with d.group("variables"):
         d.text(c, 106 * k, "Druk op", size=25 * k, fill=WIT, weight=700, anchor="middle", variable="heading-1")
@@ -303,7 +309,10 @@ def main():
         variants, built, variables = [], [], {}
         tw, th = m["trim_mm"]
         bl = m["bleed_mm"]
+        sizes = {}
         for v in m["variants"]:
+            tw, th = m["trims"].get(v, m["trim_mm"])
+            sizes[v or "default"] = [tw, th]
             d = m["fn"](v)
             sfx = f"-{v}" if v else ""
             vid = id_ + sfx
@@ -332,7 +341,9 @@ def main():
         spec = {
             "id": id_, "name_nl": m["name_nl"], "type": m["type"], "origin": "new", "status": "proposal",
             "variants": variants,
-            "template": {"trim_mm": [tw, th], "bleed_mm": bl, "size_with_bleed_mm": [tw + 2 * bl, th + 2 * bl],
+            "template": {**({"trim_mm": [tw, th], "size_with_bleed_mm": [tw + 2 * bl, th + 2 * bl]} if not m["trims"] else
+                            {"trim_mm_per_variant": sizes, "size_with_bleed_mm_per_variant": {k: [x + 2 * bl, y + 2 * bl] for k, (x, y) in sizes.items()}}),
+                         "bleed_mm": bl,
                          "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
                          "cut_contour": m["cut_contour"]},
             "production": m["production"],
@@ -342,7 +353,7 @@ def main():
         }
         json.dump(spec, open(os.path.join(out, "spec.json"), "w", encoding="utf8"), indent=1, ensure_ascii=False)
         rows.append(spec)
-        print(f"{id_:45s} {len(variants)} variant(s), {tw:g} x {th:g} mm, built_from {len(built)}")
+        print(f"{id_:45s} {len(variants)} variant(s), {', '.join(f'{x:g} x {y:g}' for x, y in sizes.values())} mm, built_from {len(built)}")
     if a.only == ".*":
         json.dump({"source": "new designs composed from the library (tools/build_designs.py)", "count": len(rows), "designs": rows},
                   open(os.path.join(ROOT, "designs.json"), "w", encoding="utf8"), indent=1, ensure_ascii=False)
