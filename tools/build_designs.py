@@ -144,33 +144,37 @@ def _(variant):
     return d
 
 
-# --------------------------------------------------------------------------------------------- vloersticker looproute
-@design("py-app-sticker-vloer-looproute", "Vloersticker looproute uitgang", "sticker", (400, 400),
-        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": 200, "note": "Round, diameter 400 mm."},
-        production={"format": "Round, diameter 400 mm",
-                    "material": "Floor graphic foil with anti-slip laminate (slip resistance R10 or better), suitable for car park floors. "
-                                "One design for every direction: rotate the sticker so the arrow points along the route.",
+# --------------------------------------------------------------------------------------------- ronde sticker looproute
+RD = 100  # diameter in mm (Rick, 20-11-2026: a 10 cm sticker, not a floor sticker)
+RS = RD / 400  # the layout was drawn at 400 mm
+
+
+@design("py-app-sticker-looproute-rond", "Ronde sticker looproute uitgang", "sticker", (RD, RD),
+        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": RD / 2, "note": f"Round, diameter {RD} mm."},
+        production={"format": f"Round, diameter {RD} mm (10 cm), 3 mm bleed; PDF {RD + 6} x {RD + 6} mm",
+                    "material": "Self adhesive foil, laminated. One design for every direction: rotate the sticker so the arrow points along the route.",
                     "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"},
-        notes="New design for floor markers along the walking route. PY-Blauw disc (no aqua ring, removed at Rick's request), route arrow as "
-              "in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption.")
+        notes="New design: round route marker along the walking route. PY-Blauw face (no aqua ring, removed at Rick's request), route arrow as "
+              "in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption. "
+              "The background fills the whole page (square bleed), so a cut that shifts never shows white.")
 def _(variant):
-    vid = "py-app-sticker-vloer-looproute"
-    d = Doc(vid, "Vloersticker looproute uitgang", trim=(400, 400), bleed=3)
+    vid = "py-app-sticker-looproute-rond"
+    d = Doc(vid, "Ronde sticker looproute uitgang", trim=(RD, RD), bleed=3)
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", TOKENS_TYPE[0], "py-comp-route-module-arrow")
-    d.circle(200, 200, 203, fill=BLAUW, gid="bleed-background")
+    d.rect(-3, -3, RD + 3, RD + 3, fill=BLAUW, gid="bleed-background")
     with d.group("py-atom-arrow-up-circle"):
-        d.place("py-atom-arrow-up-circle", 200, 62, w=158, anchor="tc")
-    cap, size, fig_h, gap = "Uitgang", 46, 96, 16
+        d.place("py-atom-arrow-up-circle", RD / 2, 62 * RS, w=158 * RS, anchor="tc")
+    cap, size, fig_h, gap = "Uitgang", 46 * RS, 96 * RS, 16 * RS
     fw = 26.518 / 51.038 * fig_h
     tw = text_width(cap, size, 700)
-    x0 = 200 - (fw + gap + tw) / 2
-    base = 324
+    x0 = RD / 2 - (fw + gap + tw) / 2
+    base = 324 * RS
     with d.group("py-atom-figure-walk"):
-        d.place("py-atom-figure-walk", x0, base + 2, h=fig_h, anchor="bl", recolor={BLAUW: WIT})
+        d.place("py-atom-figure-walk", x0, base + 2 * RS, h=fig_h, anchor="bl", recolor={BLAUW: WIT})
     with d.group("variables"):
-        d.text(x0 + fw + gap, base - 14, cap, size=size, fill=WIT, weight=700, variable="caption")
-    d.cut_contour(0, 0, 400, 400, rx=200)
-    d.guides(400, 400)
+        d.text(x0 + fw + gap, base - 14 * RS, cap, size=size, fill=WIT, weight=700, variable="caption")
+    d.cut_contour(0, 0, RD, RD, rx=RD / 2)
+    d.guides(RD, RD)
     return d
 
 
