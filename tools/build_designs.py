@@ -99,8 +99,9 @@ def _(variant):
     with d.group("variables"):
         d.text(x, 166, "Uitgang", size=cap, fill=WIT, weight=700, variable="caption-1")
         d.text(x, 166 + 50.361 * KK, "Voetgangers", size=cap, fill=WIT, weight=700, variable="caption-2")
-        d.text(x, 205, "Op werkdagen", size=11.2, fill=AQUA, weight=500, variable="when-1")
-        d.text(x, 219, "van 7:00 tot 10:00 uur", size=11.2, fill=AQUA, weight=500, variable="when-2")
+        # last line ends at y 216 and x 138: clear of corner drill holes up to 15 mm from the edges (dibond option)
+        d.text(x, 203, "Op werkdagen", size=11.2, fill=AQUA, weight=500, variable="when-1")
+        d.text(x, 216, "van 7:00 tot 10:00 uur", size=11.2, fill=AQUA, weight=500, variable="when-2")
     d.cut_contour(0, 0, KW, KH, rx=10)
     d.guides(KW, KH)
     return d
