@@ -19,6 +19,7 @@
       "py-tok-color-aqua",
       "py-tok-color-wit",
       "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
       "py-comp-bord-picto-bubble-face",
       "py-prod-bord-mindervaliden",
       "py-atom-shape-bubble-solid",
@@ -36,6 +37,7 @@
       "py-tok-color-aqua",
       "py-tok-color-wit",
       "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
       "py-comp-bord-picto-bubble-face",
       "py-prod-bord-mindervaliden",
       "py-atom-shape-bubble-solid",
@@ -53,6 +55,7 @@
       "py-tok-color-aqua",
       "py-tok-color-wit",
       "py-tok-type-ubuntu-bold",
+      "py-tok-type-ubuntu-medium",
       "py-comp-bord-picto-bubble-face",
       "py-prod-bord-mindervaliden",
       "py-atom-shape-bubble-solid",
@@ -63,46 +66,52 @@
    ],
    "template": {
     "trim_mm": [
-     400,
-     600
+     155,
+     235
     ],
     "bleed_mm": 3.0,
     "size_with_bleed_mm": [
-     406.0,
-     606.0
+     161.0,
+     241.0
     ],
     "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
     "cut_contour": {
      "spot": "ThruCut",
      "stroke_pt": 1,
      "inset_mm": 0.2,
-     "corner_radius_mm": 25,
-     "note": "Board outline with the 25 mm corners of handbook 4.7 and 4.8. As a sticker the same line is the kiss cut."
+     "corner_radius_mm": 10,
+     "note": "Proposal only (the 25 mm corners of handbook 4.7 scaled down). The print PDF has no cut line: choose straight or rounded corners at the printer; the background runs into the bleed, so either works."
     }
    },
    "production": {
-    "format": "400 x 600 mm, as handbook 4.7 and 4.8 (rijstvlies bord)",
-    "material": "Rijstvlies board 8 mm (wall or column) or 16 mm (pole), full colour foil plus laminate (handbook 4.7). Alternative: the same file as a column sticker (wall foil plus laminate) to cover the existing plates.",
-    "colour": "Solid PY-Blauw CMYK 100/83/0/17 (no verloop, at Rick's request), white bubble and caption"
+    "format": "155 x 235 mm (width x height), 3 mm bleed; PDF 161 x 241 mm",
+    "material": "Sign board (for example dibond or forex) or self adhesive foil for the columns",
+    "colour": "Solid PY-Blauw (no verloop, at Rick's request), white bubble and caption, aqua time window. Print PDF in DeviceCMYK with the token values: PY-Blauw 100/83/0/17 (200 percent ink), PY-Aqua 69/0/21/0, white 0/0/0/0"
    },
    "variables": {
     "rechtdoor": {
      "background-colour": "#1A3580",
      "arrow-direction": "omhoog (rechtdoor)",
      "caption-1": "Uitgang",
-     "caption-2": "Voetgangers"
+     "caption-2": "Voetgangers",
+     "when-1": "Op werkdagen",
+     "when-2": "van 7:00 tot 10:00 uur"
     },
     "links": {
      "background-colour": "#1A3580",
      "arrow-direction": "links",
      "caption-1": "Uitgang",
-     "caption-2": "Voetgangers"
+     "caption-2": "Voetgangers",
+     "when-1": "Op werkdagen",
+     "when-2": "van 7:00 tot 10:00 uur"
     },
     "rechts": {
      "background-colour": "#1A3580",
      "arrow-direction": "rechts",
      "caption-1": "Uitgang",
-     "caption-2": "Voetgangers"
+     "caption-2": "Voetgangers",
+     "when-1": "Op werkdagen",
+     "when-2": "van 7:00 tot 10:00 uur"
     }
    },
    "built_from": [
@@ -110,13 +119,14 @@
     "py-tok-color-aqua",
     "py-tok-color-wit",
     "py-tok-type-ubuntu-bold",
+    "py-tok-type-ubuntu-medium",
     "py-comp-bord-picto-bubble-face",
     "py-prod-bord-mindervaliden",
     "py-atom-shape-bubble-solid",
     "py-atom-figure-walk",
     "py-atom-arrow-up-plain"
    ],
-   "notes": "New design for the walking route to the exit, in the 400 x 600 column format of handbook 4.7 and 4.8, with a solid PY-Blauw face instead of the verloop (requested): white bubble (py-atom-shape-bubble-solid at the bubble position of py-comp-bord-picto-bubble-face), navy walking figure and navy route arrow, caption in two lines at the caption position and size of 4.7. The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
+   "notes": "New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption below, caption left aligned to the bubble) at 155 x 235 mm, with a solid PY-Blauw face instead of the verloop (requested): white bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
   },
   {
    "id": "py-app-sticker-deur-gesloten",
@@ -282,7 +292,7 @@
     "py-atom-arrow-up-circle",
     "py-atom-figure-walk"
    ],
-   "notes": "New design for floor markers along the walking route. PY-Blauw disc, thin aqua ring, route arrow as in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption."
+   "notes": "New design for floor markers along the walking route. PY-Blauw disc (no aqua ring, removed at Rick's request), route arrow as in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption."
   }
  ]
 }

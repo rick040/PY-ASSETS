@@ -65,32 +65,44 @@ def figure_and_arrow(d, cx, cy, fig_h, arrow_w, gap, direction, recolor=None):
 
 
 # --------------------------------------------------------------------------------------------- kolombord looproute
-@design("py-app-sign-kolom-looproute", "Kolombord looproute uitgang", "sign", (400, 600), variants=("rechtdoor", "links", "rechts"),
-        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": 25,
-                     "note": "Board outline with the 25 mm corners of handbook 4.7 and 4.8. As a sticker the same line is the kiss cut."},
-        production={"format": "400 x 600 mm, as handbook 4.7 and 4.8 (rijstvlies bord)",
-                    "material": "Rijstvlies board 8 mm (wall or column) or 16 mm (pole), full colour foil plus laminate (handbook 4.7). "
-                                "Alternative: the same file as a column sticker (wall foil plus laminate) to cover the existing plates.",
-                    "colour": "Solid PY-Blauw CMYK 100/83/0/17 (no verloop, at Rick's request), white bubble and caption"},
-        notes="New design for the walking route to the exit, in the 400 x 600 column format of handbook 4.7 and 4.8, with a solid PY-Blauw face instead of the verloop (requested): white bubble "
-              "(py-atom-shape-bubble-solid at the bubble position of py-comp-bord-picto-bubble-face), navy walking figure and navy route arrow, "
-              "caption in two lines at the caption position and size of 4.7. The figure always walks towards the arrow (mirrored for links). "
+KW, KH = 155, 235  # board size asked for this garage (Rick, 20-11-2026): 15.5 cm wide, 23.5 cm high
+KK = 110 / 300  # bubble 110 mm wide; scale of the 4.7 layout (bubble 300 mm on the 400 mm board)
+
+
+@design("py-app-sign-kolom-looproute", "Kolombord looproute uitgang", "sign", (KW, KH), variants=("rechtdoor", "links", "rechts"),
+        cut_contour={"spot": "ThruCut", "stroke_pt": 1, "inset_mm": 0.2, "corner_radius_mm": 10,
+                     "note": "Proposal only (the 25 mm corners of handbook 4.7 scaled down). The print PDF has no cut line: choose straight or "
+                             "rounded corners at the printer; the background runs into the bleed, so either works."},
+        production={"format": "155 x 235 mm (width x height), 3 mm bleed; PDF 161 x 241 mm",
+                    "material": "Sign board (for example dibond or forex) or self adhesive foil for the columns",
+                    "colour": "Solid PY-Blauw (no verloop, at Rick's request), white bubble and caption, aqua time window. "
+                              "Print PDF in DeviceCMYK with the token values: PY-Blauw 100/83/0/17 (200 percent ink), PY-Aqua 69/0/21/0, white 0/0/0/0"},
+        notes="New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption "
+              "below, caption left aligned to the bubble) at 155 x 235 mm, with a solid PY-Blauw face instead of the verloop (requested): white "
+              "bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window "
+              "in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). "
               "Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088).")
 def _(variant):
     vid = f"py-app-sign-kolom-looproute-{variant}"
-    d = Doc(vid, "Kolombord looproute uitgang", trim=(400, 600), bleed=3)
-    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", *TOKENS_TYPE[:1], "py-comp-bord-picto-bubble-face",
-           "py-prod-bord-mindervaliden")
+    d = Doc(vid, "Kolombord looproute uitgang", trim=(KW, KH), bleed=3)
+    d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", TOKENS_TYPE[0], TOKENS_TYPE[1],
+           "py-comp-bord-picto-bubble-face", "py-prod-bord-mindervaliden")
     # solid PY-Blauw face: the handbook 4.7 and 4.8 boards use the verloop, these looproute boards are solid on request
-    d.rect(-3, -3, 403, 603, fill=BLAUW, gid="bleed-background", variable="background-colour", example=BLAUW)
+    d.rect(-3, -3, KW + 3, KH + 3, fill=BLAUW, gid="bleed-background", variable="background-colour", example=BLAUW)
+    bx, by, bw = (KW - 300 * KK) / 2, 12, 300 * KK
     with d.group("py-atom-shape-bubble-solid"):
-        d.place("py-atom-shape-bubble-solid", 50, 50, w=300, recolor={"#F08300": WIT})
-    figure_and_arrow(d, 200, 196, fig_h=176, arrow_w=112, gap=26, direction=variant)
+        d.place("py-atom-shape-bubble-solid", bx, by, w=bw, recolor={"#F08300": WIT})
+    # pictograms at the 4.7 position inside the bubble (centre 146 mm below the bubble top on the 400 board)
+    figure_and_arrow(d, KW / 2, by + 146 * KK, fig_h=176 * KK, arrow_w=112 * KK, gap=26 * KK, direction=variant)
+    x = bx + 7.778 * KK  # caption left edge as on 4.7 (7.8 mm right of the bubble)
+    cap = 41.967 * KK
     with d.group("variables"):
-        d.text(57.778, 488.504, "Uitgang", size=41.967, fill=WIT, weight=700, variable="caption-1")
-        d.text(57.778, 538.865, "Voetgangers", size=41.967, fill=WIT, weight=700, variable="caption-2")
-    d.cut_contour(0, 0, 400, 600, rx=25)
-    d.guides(400, 600)
+        d.text(x, 166, "Uitgang", size=cap, fill=WIT, weight=700, variable="caption-1")
+        d.text(x, 166 + 50.361 * KK, "Voetgangers", size=cap, fill=WIT, weight=700, variable="caption-2")
+        d.text(x, 205, "Op werkdagen", size=11.2, fill=AQUA, weight=500, variable="when-1")
+        d.text(x, 219, "van 7:00 tot 10:00 uur", size=11.2, fill=AQUA, weight=500, variable="when-2")
+    d.cut_contour(0, 0, KW, KH, rx=10)
+    d.guides(KW, KH)
     return d
 
 
@@ -138,14 +150,13 @@ def _(variant):
                     "material": "Floor graphic foil with anti-slip laminate (slip resistance R10 or better), suitable for car park floors. "
                                 "One design for every direction: rotate the sticker so the arrow points along the route.",
                     "colour": "PY-Blauw CMYK 100/83/0/17, PY-Aqua CMYK 69/0/21/0"},
-        notes="New design for floor markers along the walking route. PY-Blauw disc, thin aqua ring, route arrow as in the route boards "
-              "(py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption.")
+        notes="New design for floor markers along the walking route. PY-Blauw disc (no aqua ring, removed at Rick's request), route arrow as "
+              "in the route boards (py-atom-arrow-up-circle: aqua arrow in a white circle), white walking figure and caption.")
 def _(variant):
     vid = "py-app-sticker-vloer-looproute"
     d = Doc(vid, "Vloersticker looproute uitgang", trim=(400, 400), bleed=3)
     d.uses("py-tok-color-blauw", "py-tok-color-aqua", "py-tok-color-wit", TOKENS_TYPE[0], "py-comp-route-module-arrow")
     d.circle(200, 200, 203, fill=BLAUW, gid="bleed-background")
-    d.circle(200, 200, 184, fill=None, stroke=AQUA, sw=5, gid="ring")
     with d.group("py-atom-arrow-up-circle"):
         d.place("py-atom-arrow-up-circle", 200, 62, w=158, anchor="tc")
     cap, size, fig_h, gap = "Uitgang", 46, 96, 16
@@ -170,6 +181,57 @@ def print_svg(svg):
     """Artwork only: drop the cut contour and the hidden guides."""
     svg = re.sub(r'<g id="cut-contour"[^>]*>.*?</g>', "", svg, flags=re.S)
     return re.sub(r'<g id="guides"[^>]*>.*?</g>', "", svg, flags=re.S)
+
+
+# token RGB (as cairo writes it, 6 decimals) to the official CMYK of tokens.json; white is no ink
+CMYK = {"#1A3580": (1.00, 0.83, 0.00, 0.17), "#32B9CD": (0.69, 0.00, 0.21, 0.00), "#FFFFFF": (0, 0, 0, 0)}
+_RGB_OP = re.compile(rb"(?<![\w.])([\d.]+) ([\d.]+) ([\d.]+) (rg|RG)\b")
+_GRAY_OP = re.compile(rb"(?<![\w.])([\d.]+) (g|G)\b")
+
+
+def to_cmyk(pdf_path, bleed_mm):
+    """Rewrite the cairo PDF to DeviceCMYK with the exact token values (no ICC conversion, so PY-Blauw stays 100/83/0/17)
+    and set TrimBox and BleedBox. Raises on any colour that is not a token: nothing may be converted by guesswork."""
+    import pymupdf
+
+    lut = {tuple(round(int(h[i:i + 2], 16) / 255, 3) for i in (1, 3, 5)): c for h, c in CMYK.items()}
+
+    def rgb(m):
+        key = tuple(round(float(m.group(i)), 3) for i in (1, 2, 3))
+        if key not in lut:
+            raise ValueError(f"{pdf_path}: colour {key} is not a token")
+        c = " ".join(f"{v:g}" for v in lut[key]).encode()
+        return c + (b" k" if m.group(4) == b"rg" else b" K")
+
+    def gray(m):
+        v = float(m.group(1))
+        if v not in (0.0, 1.0):
+            raise ValueError(f"{pdf_path}: grey {v} is not a token")
+        return (b"0 0 0 1" if v == 0 else b"0 0 0 0") + (b" k" if m.group(2) == b"g" else b" K")
+
+    doc = pymupdf.open(pdf_path)
+    streams = set()
+    for pg in doc:
+        streams.update(pg.get_contents())
+    for x in range(1, doc.xref_length()):
+        if doc.xref_is_stream(x) and doc.xref_get_key(x, "Subtype")[1] == "/Form":
+            streams.add(x)
+    for x in streams:
+        s = _GRAY_OP.sub(gray, _RGB_OP.sub(rgb, doc.xref_stream(x)))
+        if re.search(rb"\b(rg|RG|scn|SCN|sc|SC)\b", s):
+            raise ValueError(f"{pdf_path}: colour operator left after conversion")
+        doc.update_stream(x, s)
+    b = bleed_mm * 72 / 25.4
+    for pg in doc:
+        r = pg.mediabox
+        pg.set_bleedbox(r)
+        pg.set_trimbox(pymupdf.Rect(r.x0 + b, r.y0 + b, r.x1 - b, r.y1 - b))
+    doc.set_metadata({"title": os.path.basename(os.path.dirname(pdf_path)), "producer": "PY-ASSETS tools/build_designs.py",
+                      "creator": "cairosvg plus pymupdf", "creationDate": "", "modDate": ""})
+    tmp = pdf_path + ".tmp"
+    doc.save(tmp, garbage=4, deflate=True, no_new_id=True)
+    doc.close()
+    os.replace(tmp, pdf_path)
 
 
 def main():
@@ -204,6 +266,10 @@ def main():
             fn_t, fn_p = f"template{sfx}.svg", f"print{sfx}.pdf"
             open(os.path.join(out, fn_t), "w", encoding="utf8").write(svg)
             cairosvg.svg2pdf(bytestring=print_svg(svg).encode(), write_to=os.path.join(out, fn_p))
+            try:
+                to_cmyk(os.path.join(out, fn_p), bl)
+            except ValueError as e:
+                errs.append(str(e))
             cairosvg.svg2png(bytestring=svg.replace('visibility="hidden"', ""), write_to=os.path.join(a.png, f"{vid}.png"),
                              output_width=1200 if tw >= th else int(1200 * tw / th) + 1, background_color="#FFFFFF")
             variants.append({"id": vid, "variant": v or None, "template": fn_t, "print_pdf": fn_p, "built_from": list(d.built_from)})

@@ -14,7 +14,7 @@ Elements can be combined into new signage, price stickers (deelfolie), info pylo
 | `tokens.json` | Colours (HEX, RGB, CMYK, RAL), gradients, typography, and the colour deviations that were normalised. |
 | `applications/<id>/` | Print applications (level `app`, PM-137): `reference.svg` (faithful vector copy of the print file, or of one sticker cut out of a sheet, source colours, original copy), `template.svg` (official token colours, trim plus 3 mm bleed, variables as live Ubuntu text or placeholder groups, `cut-contour` group for stickers and signs) and `spec.json` (type, trim and bleed in mm, colour space, variables with example values, `built_from`, source file, status). Applications with variants have `reference-<variant>.svg` and `template-<variant>.svg`. |
 | `applications.json` | Manifest of the applications: one row per application with its variants, source files, template size, variables, `built_from`, status and copy corrections. |
-| `designs/<id>/` | New designs composed from the library for a location (no earlier print file, so no `reference.svg`): `template[-<variant>].svg` (master with `cut-contour` group), `print[-<variant>].pdf` (vector print file 1:1 with bleed, artwork only) and `spec.json` (trim, bleed, production notes, variables, `built_from`). |
+| `designs/<id>/` | New designs composed from the library for a location (no earlier print file, so no `reference.svg`): `template[-<variant>].svg` (master with `cut-contour` group), `print[-<variant>].pdf` (vector print file 1:1 with bleed, DeviceCMYK with the token values, TrimBox and BleedBox set, artwork only) and `spec.json` (trim, bleed, production notes, variables, `built_from`). |
 | `designs.json` | Manifest of the new designs, same row format as `applications.json` plus `production`, `origin: "new"`. |
 | `overview/parkingyou-toepassingen-overzicht.pdf` | A3 landscape vector overview of the applications: original, template and exploded view with the IDs it is built from, followed by the new atoms, components and products. Same group and label rules as the element overview. |
 | `docs/print-rules.md` | Decisions, colour drift, layout and copy drift, production findings and the rules observed in print (observed in print, not official handbook rules). |
@@ -51,12 +51,12 @@ Status is `proposal` until approved.
 
 | ID | What | Size | Variants |
 |---|---|---|---|
-| `py-app-sign-kolom-looproute` | Column sign for the walking route to the exit, in the 400 x 600 format of handbook 4.7 and 4.8 (solid PY-Blauw face, white bubble with walking figure and route arrow, two line caption). Also usable as a column sticker. | 400 x 600 mm, corners 25 mm | `rechtdoor`, `links`, `rechts` |
+| `py-app-sign-kolom-looproute` | Column sign for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (solid PY-Blauw face, white bubble with walking figure and route arrow, caption "Uitgang Voetgangers", time window "Op werkdagen van 7:00 tot 10:00 uur" in aqua). Also usable as a column sticker. | 155 x 235 mm (w x h) | `rechtdoor`, `links`, `rechts` |
 | `py-app-sticker-deur-gesloten` | Door sticker for pedestrian doors that are closed at set times ("Deur gesloten", time window, follow the walking route, English line). | A3 297 x 420 mm (scales to A4) | `links`, `rechts` |
-| `py-app-sticker-vloer-looproute` | Round floor sticker along the walking route (route arrow, walking figure, "Uitgang"); rotate it so the arrow follows the route. Anti-slip laminate. | diameter 400 mm | none |
+| `py-app-sticker-vloer-looproute` | Round floor sticker along the walking route (PY-Blauw disc without ring, route arrow, walking figure, "Uitgang"); rotate it so the arrow follows the route. Anti-slip laminate. | diameter 400 mm | none |
 
 These are wayfinding signs. They do not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088).
-The print PDFs are RGB vector files (cairo); the CMYK values of the tokens are in `tokens.json`. Set the `cut-contour` group of the SVG master to the ThruCut spot colour when the printer needs the cut line in the file.
+The print PDFs are vector files in DeviceCMYK: cairo writes them, `to_cmyk()` replaces every colour with the exact token CMYK (PY-Blauw 100/83/0/17, 200 percent ink; PY-Aqua 69/0/21/0; white no ink) and stops the build on any other colour. 3 mm bleed is in the file, no crop marks, fonts embedded (as Drukwerkdeal asks). They are not formally PDF/X. Set the `cut-contour` group of the SVG master to the ThruCut spot colour when the printer needs the cut line in the file.
 
 ## Colours
 
