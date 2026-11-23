@@ -1,0 +1,44 @@
+# Machine-readable copy rules for scripts/check_copy.py (ParkingYou social, 2026-11-23).
+# Format: <python regex> || <reason>. Case-insensitive unless the regex says (?-i:...). Lines starting with # are ignored.
+# A reason that starts with "WARN:" is a warning (review it); every other match blocks the post.
+# Location-aware checks (reserve wording at non-reservable locations, facility claims) are in check_facts, not here.
+# Keep in sync with brand-voice.md, product-truth.md and decisions.md.
+
+# --- Punctuation and form (decisions S7, S8, S9)
+—|\s–\s || No em dashes or spaced en dashes (S9); use a comma, period or colon
+\b[Uu]w\b|\bu\s+(kunt|kan|wilt|wil|parkeert|betaalt|reserveert|ontvangt|vindt|krijgt|bent|heeft)\b|\b(kunt|kan|wilt|wil|bent|heeft|parkeert|betaalt|reserveert)\s+u\b || Address the reader with "je", never "u" (S7)
+€\s?\d+,-|\d+,-(?=\s|$) || Write prices as €12,50 or €12, never ",-"
+!{2,}|\?!|!\? || One punctuation mark at a time
+(?-i:\b[A-Z]{2,}(\s+[A-Z]{2,}){3,}\b) || No all-caps lines of 4 words or more (eyebrows of at most 3 words are fine)
+
+# --- Brand name, URL and phone (S1, S2)
+voordeligparkeren\.nl || The URL is parkingyou.nl (S1)
+www\.parkingyou\.nl || Write parkingyou.nl without www (S1)
+085[\s-]?21[\s-]?30[\s-]?422|0900[\s-]?8844 || Use the social phone number 085 401 16 47 (S2)
+(?-i:\bParking\s+You\b|\bParkingyou\b|\bparkingYou\b|\bPARKINGYOU\b) || Spell the brand "ParkingYou" in running text
+
+# --- Claims that are never allowed
+\b\d[\d.]*\s*(klanten|parkeerders|gebruikers|reviews|beoordelingen)\b || No customer or review counts
+★|⭐|\b\d([,.]\d)?\s*(sterren|/\s*5)\b || No ratings
+\b(goedkoopste|beste|nummer\s*1|nr\.?\s*1|#1)\b || No superlatives without a source
+gegarandeerd|\bgarantie\b|altijd\s+(een\s+)?plek || Reservation guarantee is not confirmed (IG-051)
+\d+\s*(laadpalen|laadpunten|laadplekken)\b|\d+\s*kw\b || Number of charging points or power is not in the kennisbank (laadvoorziening is empty)
+
+# --- Template and AI-sounding phrases (brand-voice.md §3)
+\bagree\?|say goodbye|zeg\s+(maar\s+)?(dag|vaarwel)\s+tegen|game\s?changer|next\s+level || Template phrase; write it plainly
+naadlo(os|ze)|zorgeloos genieten|ontdek het zelf|mis het niet|wees er snel bij|klik hier || Pushy or empty phrase
+\bdé\b || No "dé" emphasis; let the fact carry it
+
+# --- Warnings: allowed only after a check
+\bgratis\b|kosteloos|zonder kosten || WARN: "gratis" only with valid action terms; confirm with Rick
+€\s?\d || WARN: price in the post; set price_check and check kennisbank.tarief on the posting day
+(in|ex)clusief\s+(\S+\s+)?(btw|servicekosten) || WARN: VAT and service costs on subscriptions are an open point (decisions.md)
+eerste\s+(\d|twee|drie)\s+uur\s+gratis || WARN: free first hours confirmed for P1 Belgiëlaan only (IG-014)
+artis-?lid|pathé-?tarief|night\s*card|\bpathé\b || WARN: partner tariff or promotion; needs partner approval (S10)
+easypark|parkbee|mobian|myway || WARN: third-party brand; needs approval (S10)
+24/7\s+open|altijd\s+open|dag\s+en\s+nacht\s+open|nacht\s+open || WARN: opening hours must match kennisbank.openingstijd
+reserveer|reserveren|zeker\s+van\s+je\s+plek || WARN: reserve wording; check_facts confirms the location is reservable
+laadpa(al|len)|opladen|\bladen\b || WARN: charging claim; check locatie_specificatie.elektrisch_laden = true
+camera(bewaking|toezicht)? || WARN: camera claim; check locatie_specificatie.camerabewaking = true
+\boverdekt\b|droog\s+(geparkeerd|uitstappen|uit) || WARN: covered claim; check locatie_specificatie.overdekt = true
+doorrijhoogte|\d,\d{2}\s*m(eter)?\b || WARN: height claim; check locatie_specificatie.doorrijhoogte_m
