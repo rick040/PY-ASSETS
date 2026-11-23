@@ -1,0 +1,51 @@
+{
+  "itemId": "IG-021",
+  "hook": {
+    "headline": "Rondjes\nrijden is ook\n*betalen.*",
+    "visual": "orbit",
+    "counterLabel": "Rondje"
+  },
+  "lines": {
+    "title": "Je betaalt\n*met:*",
+    "items": [
+      {
+        "icon": "fuel",
+        "text": "*Benzine*"
+      },
+      {
+        "icon": "clock",
+        "text": "*Tijd*"
+      },
+      {
+        "icon": "mood",
+        "text": "Je *goede humeur*"
+      }
+    ]
+  },
+  "end": {
+    "headline": "Reserveer vooraf.\nRijd *direct*\nnaar je plek.",
+    "visual": "arrive"
+  },
+  "cta": {
+    "headline": "Reserveer\n*je plek*",
+    "url": "voordeligparkeren.nl",
+    "tagline": "The other way of parking",
+    "button": "Reserveer online"
+  },
+  "colors": {
+    "bgTop": "#1A3580",
+    "bgBottom": "#097BAE",
+    "text": "#FFFFFF",
+    "accent": "#32B9CD",
+    "ctaBgFrom": "#1A3580",
+    "ctaBgTo": "#32B9CD"
+  },
+  "timing": {
+    "hook": 3.2,
+    "lines": 3.4,
+    "end": 3,
+    "cta": 3.4,
+    "transition": 0.5
+  },
+  "showSafeZones": false
+}
