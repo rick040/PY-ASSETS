@@ -1,6 +1,6 @@
-# Architecture (proposal, phase 2)
+# Architecture
 
-Status: proposal, waiting for Rick's approval. Nothing below is built yet except `references/`.
+Status: approved 2026-11-24. Built in phase 2: plugin manifest, marketplace, schemas, skills, the PY-Post composition with QA measuring, render-spec.mjs, render.py, check_copy.py, facts.sql and the archetype `typografisch` (theme `feed`).
 
 ## 1. Principles
 

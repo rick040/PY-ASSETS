@@ -1,0 +1,188 @@
+{
+  "$comment": "Single source for archetypes: slots, limits, grounds and formats. Read by scripts/render.py, scripts/check_brand.py and the Remotion compositions (social/remotion/src/social). Character limits count visible characters (the * markers of a key phrase do not count).",
+  "formats": {
+    "feed": { "width": 1080, "height": 1350, "safe": { "top": 60, "right": 70, "bottom": 60, "left": 70 }, "grid_crop": { "width": 1012, "height": 1350 } },
+    "story": { "width": 1080, "height": 1920, "safe": { "top": 250, "right": 120, "bottom": 340, "left": 70 }, "grid_crop": { "width": 1080, "height": 1440 } },
+    "square": { "width": 1200, "height": 1200, "safe": { "top": 60, "right": 60, "bottom": 60, "left": 60 } },
+    "landscape": { "width": 1200, "height": 627, "safe": { "top": 60, "right": 60, "bottom": 60, "left": 60 } }
+  },
+  "grounds": {
+    "feed": ["navy", "glow", "light", "photo"],
+    "2027": ["navy", "white", "photo"]
+  },
+  "slot_types": {
+    "headline": "Rich text, \\n for a line break, *key phrase* in bold",
+    "subline": "Rich text, one or two short lines",
+    "body": "Rich text, at most two lines",
+    "eyebrow": "Plain text, at most 3 words",
+    "price": "{ amount: number, unit: string, from?: boolean }",
+    "prices": "[{ label, amount, unit?, struck?: boolean }]",
+    "location": "{ code: kennisbank locatie.code, label?: display name }",
+    "locations": "[{ code, label?, note? }]",
+    "facts": "[{ icon: element ID or glyph, text: rich text }]",
+    "steps": "[{ illustration: element ID, title: rich text, text?: rich text }]",
+    "rows": "[{ label: rich text, value: string }]",
+    "date": "{ day: number, month: string, label?: string }",
+    "number": "string, at most 3 characters",
+    "contact": "{ phone: string, note?: string }",
+    "media": "{ type: 'image'|'illustration', src: public/media path or element ID, alt: string }",
+    "figure": "element ID py-atom-figure-*",
+    "cta": "'reserve' | 'info' | 'url' | 'contact' | 'subscribe' | 'none'",
+    "slides": "[{ archetype: carrousel-cover|carrousel-punt|carrousel-cta, slots }]"
+  },
+  "archetypes": {
+    "typografisch": {
+      "status": "built",
+      "from": "S4, IG-040, IG-065",
+      "description": "Text only: a big headline and an optional subline on a brand ground, beeldmerk as watermark.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 60, "max_lines": 3 },
+        "subline": { "type": "subline", "required": false, "max_chars": 140 },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow"], "2027": ["navy", "white"] },
+      "formats": ["feed", "story", "square", "landscape"]
+    },
+    "prijs": {
+      "status": "planned",
+      "from": "S1, IG-013, IG-015, IG-022, IG-027, IG-043",
+      "description": "One price for one location, with up to three facts.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 60, "max_lines": 3 },
+        "price": { "type": "price", "required": true },
+        "location": { "type": "location", "required": true },
+        "facts": { "type": "facts", "required": false, "max_items": 3, "max_chars": 34 },
+        "body": { "type": "body", "required": false, "max_chars": 90 },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow"], "2027": ["navy"] },
+      "formats": ["feed", "story", "square"]
+    },
+    "locatie": {
+      "status": "planned",
+      "from": "S2, IG-004, IG-011, IG-049",
+      "description": "One location with a photo or illustration in the bubble and three facts.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 50, "max_lines": 2 },
+        "media": { "type": "media", "required": false },
+        "location": { "type": "location", "required": true },
+        "facts": { "type": "facts", "required": true, "max_items": 3, "max_chars": 34 },
+        "price": { "type": "price", "required": false },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow", "photo"], "2027": ["white", "photo"] },
+      "formats": ["feed", "story", "square"]
+    },
+    "prijsvergelijk": {
+      "status": "planned",
+      "from": "IG-019, R2 as a still",
+      "description": "Two or three prices for the same spot, the cheaper one wins.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 50, "max_lines": 2 },
+        "location": { "type": "location", "required": true },
+        "prices": { "type": "prices", "required": true, "min_items": 2, "max_items": 3, "max_chars": 22 },
+        "body": { "type": "body", "required": false, "max_chars": 80 },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow"], "2027": ["navy", "white"] },
+      "formats": ["feed", "story", "square"]
+    },
+    "stappen": {
+      "status": "planned",
+      "from": "R4 as a still, GLOW post E",
+      "description": "How it works in three steps.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 45, "max_lines": 2 },
+        "steps": { "type": "steps", "required": true, "min_items": 3, "max_items": 3, "max_chars": 32 },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "light"], "2027": ["white", "navy"] },
+      "formats": ["feed", "story"]
+    },
+    "abonnement": {
+      "status": "planned",
+      "from": "IG-055, IG-058",
+      "description": "One to three subscription rows with a note and a CTA.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 60, "max_lines": 3 },
+        "rows": { "type": "rows", "required": true, "min_items": 1, "max_items": 3, "max_chars": 36 },
+        "body": { "type": "body", "required": false, "max_chars": 110 },
+        "figure": { "type": "figure", "required": false },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow"], "2027": ["navy"] },
+      "formats": ["feed", "story", "square", "landscape"]
+    },
+    "evenement": {
+      "status": "planned",
+      "from": "GLOW post B and D, 2027 event template",
+      "description": "An event with its date, the nearby locations and an optional price.",
+      "slots": {
+        "eyebrow": { "type": "eyebrow", "required": false, "max_chars": 28 },
+        "headline": { "type": "headline", "required": true, "max_chars": 55, "max_lines": 3 },
+        "date": { "type": "date", "required": false },
+        "locations": { "type": "locations", "required": false, "max_items": 5, "max_chars": 24 },
+        "price": { "type": "price", "required": false },
+        "figure": { "type": "figure", "required": false },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow", "photo"], "2027": ["navy"] },
+      "formats": ["feed", "story"]
+    },
+    "aftellen": {
+      "status": "planned",
+      "from": "GLOW post F, R6 as a still",
+      "description": "Countdown: a big number of days to an event.",
+      "slots": {
+        "number": { "type": "number", "required": true, "max_chars": 3 },
+        "headline": { "type": "headline", "required": true, "max_chars": 40, "max_lines": 2 },
+        "eyebrow": { "type": "eyebrow", "required": false, "max_chars": 28 },
+        "body": { "type": "body", "required": false, "max_chars": 50 },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["navy", "glow"], "2027": ["navy"] },
+      "formats": ["feed", "story"]
+    },
+    "service": {
+      "status": "planned",
+      "from": "IG-036",
+      "description": "Help at the machine: a headline, the phone number and one instruction.",
+      "slots": {
+        "headline": { "type": "headline", "required": true, "max_chars": 50, "max_lines": 3 },
+        "contact": { "type": "contact", "required": true },
+        "body": { "type": "body", "required": false, "max_chars": 110 },
+        "media": { "type": "media", "required": false }
+      },
+      "grounds": { "feed": ["navy"], "2027": ["navy", "white"] },
+      "formats": ["feed", "story"]
+    },
+    "foto-kop": {
+      "status": "planned",
+      "from": "S5, IG-058, IG-063",
+      "description": "An own photo with a short headline on a field.",
+      "slots": {
+        "media": { "type": "media", "required": true },
+        "headline": { "type": "headline", "required": true, "max_chars": 50, "max_lines": 2 },
+        "body": { "type": "body", "required": false, "max_chars": 110 },
+        "cta": { "type": "cta", "required": false }
+      },
+      "grounds": { "feed": ["photo"], "2027": ["photo"] },
+      "formats": ["feed", "story", "square", "landscape"]
+    },
+    "carrousel": {
+      "status": "planned",
+      "from": "S3, IG-005, IG-006, IG-020, IG-026, IG-030",
+      "description": "2 to 10 slides: a cover with the hook, one point per slide, a CTA slide.",
+      "slots": {
+        "slides": { "type": "slides", "required": true, "min_items": 2, "max_items": 10 }
+      },
+      "slide_archetypes": {
+        "carrousel-cover": { "headline": { "max_chars": 60, "max_lines": 3 }, "subline": { "max_chars": 80 } },
+        "carrousel-punt": { "icon": {}, "headline": { "max_chars": 40, "max_lines": 2 }, "body": { "max_chars": 140 } },
+        "carrousel-cta": { "headline": { "max_chars": 50, "max_lines": 2 }, "body": { "max_chars": 110 }, "cta": {} }
+      },
+      "grounds": { "feed": ["navy", "light"], "2027": ["navy", "white"] },
+      "formats": ["feed"]
+    }
+  }
+}

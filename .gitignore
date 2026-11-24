@@ -6,3 +6,6 @@ source/*.pdf
 remotion/node_modules/
 remotion/public/svg/
 remotion/public/fonts/
+
+# social plugin: QA intermediates (text-hidden renders) are rebuilt on every render
+social/posts/*/qa/*-bg.png

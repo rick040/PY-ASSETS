@@ -1,0 +1,12 @@
+{
+  "name": "py-assets",
+  "owner": { "name": "ParkingYou" },
+  "metadata": { "description": "Plugins that work on the ParkingYou brand library in this repository." },
+  "plugins": [
+    {
+      "name": "parkingyou-social",
+      "source": "./plugins/parkingyou-social",
+      "description": "On-brand ParkingYou social posts: feed posts, carousels, stories, reel covers and campaigns from the brand library, with facts from the kennisbank and automatic copy, facts and brand checks."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://parkingyou.nl/schema/post-spec.json",
+  "title": "ParkingYou social post spec",
+  "description": "One post. Slot content per archetype is checked against schema/archetypes.json by scripts/render.py.",
+  "type": "object",
+  "required": ["id", "archetype", "theme", "formats", "ground", "slots", "caption", "alt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9-]{1,30}$", "description": "Library item ID (IG-013) or a campaign ID (GLOW26-A)" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]{3,60}$" },
+    "item": { "type": "string", "pattern": "^IG-[0-9]{3}$", "description": "content-library.json item this post comes from" },
+    "campaign": { "type": "string" },
+    "archetype": { "type": "string" },
+    "theme": { "enum": ["feed", "2027"] },
+    "formats": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["feed", "story", "square", "landscape"] } },
+    "ground": { "enum": ["navy", "glow", "light", "photo", "white"] },
+    "slots": { "type": "object" },
+    "caption": { "type": "string", "minLength": 20, "maxLength": 2200 },
+    "alt": { "type": "string", "minLength": 20, "maxLength": 250 },
+    "hashtags": { "type": "array", "maxItems": 5, "items": { "type": "string", "pattern": "^#[A-Za-z0-9]+$" } },
+    "linkedin_caption": { "type": "string", "maxLength": 3000 },
+    "price_check": { "type": "boolean" },
+    "approvals": {
+      "type": "array",
+      "description": "Confirmed approvals, for example a partner that agreed to a tariff or logo. Each entry silences the matching warning.",
+      "items": { "type": "object", "required": ["what", "by", "date"], "properties": { "what": { "type": "string" }, "by": { "type": "string" }, "date": { "type": "string" } } }
+    },
+    "notes": { "type": "string" }
+  }
+}
