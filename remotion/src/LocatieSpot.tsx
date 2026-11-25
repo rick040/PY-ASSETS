@@ -73,15 +73,15 @@ const STAAND: Geo = {
 };
 
 export const GEO: Record<Formaat, Geo> = {liggend: LIGGEND, staand: STAAND};
-const ease = (a: number, b: number, c: number, d: number) => Easing.bezier(a, b, c, d);
-const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+export const ease = (a: number, b: number, c: number, d: number) => Easing.bezier(a, b, c, d);
+export const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 /** 0 to 1 between two frames with an easing. */
-const tween = (frame: number, from: number, to: number, easing = (t: number) => t) =>
+export const tween = (frame: number, from: number, to: number, easing = (t: number) => t) =>
   interpolate(frame, [from, to], [0, 1], {...clamp, easing});
 
 /** Greedy line wrap with real Ubuntu metrics. */
-const wrap = (text: string, fontSize: number, fontWeight: string, maxWidth: number) => {
+export const wrap = (text: string, fontSize: number, fontWeight: string, maxWidth: number) => {
   const lines: string[] = [];
   let line = '';
   for (const word of text.split(' ')) {
@@ -95,7 +95,7 @@ const wrap = (text: string, fontSize: number, fontWeight: string, maxWidth: numb
   return lines;
 };
 
-const width = (text: string, fontSize: number, fontWeight: string) =>
+export const width = (text: string, fontSize: number, fontWeight: string) =>
   measureText({text, fontFamily: 'Ubuntu', fontSize, fontWeight}).width;
 
 // ---------------------------------------------------------------- hook screen
@@ -378,7 +378,7 @@ const Logo: React.FC<{g: Geo}> = ({g}) => {
 // ---------------------------------------------------------------- composition
 
 /** Text is measured for wrapping and fitting, so Ubuntu has to be loaded before the first frame. */
-const useUbuntu = () => {
+export const useUbuntu = () => {
   const [handle] = useState(() => delayRender('Ubuntu laden'));
   const [ready, setReady] = useState(false);
   useEffect(() => {

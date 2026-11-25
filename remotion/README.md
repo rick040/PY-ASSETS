@@ -51,3 +51,18 @@ node scripts/stills.mjs /tmp/stills all 0 330 # stills for checking
 * Title: one size (88 px) for every location. When the name does not fit next to "Parking", "Parking" stays on line 1 and the name goes to line 2 (and wraps at a space to line 3 if needed; the check rows then move down a little).
 * Colours from `tokens.json` (PY-Blauw background, PY-Aqua check circles); the Jitter file used slightly different values. Logo is the library beeldmerk plus wordmark.
 * Entries with a `check` field have an open point from the Instagram strategy (IG-013, IG-014, IG-024) or data that is not on the site; confirm before posting. Overview: `out/locaties/OVERZICHT.md`.
+
+## Search spots (ZoekSpot)
+
+`src/ZoekSpot.tsx`, after the Jitter work in progress "IOS Stack": a question is typed in a search bar ("Avondje **PSV**?"),
+the bar moves up, the matching locations come in as a photo-card carousel (name, price pill, walking-time pill, page dots),
+and a CTA closes it. 60 fps, 7 to 15 s depending on the question and the number of cards; the first card is in view within 3 s (YouTube skip at 5 s).
+`src/zoekopdrachten.ts` holds the questions; every location is in at least one. Compositions `Zoek-<slug>` (9:16) and `ZoekYT-<slug>` (16:9).
+
+* CTA "Reserveer online, en sta zeker van je plek" only when every location in the question has online booking (`RESERVEERBAAR` in `locaties.ts`, the 15 locations with a "met reservering" rate); otherwise "Bekijk alle locaties".
+* "Avondje PSV?" leaves out Philips Stadion and Philips Bedrijfsschool: the site says they are not available during matches and big events.
+
+```bash
+node scripts/render-locaties.mjs --zoek               # all, to out/zoek/ and out/zoek-youtube/
+node scripts/render-locaties.mjs --zoek avondje-psv   # one question
+```

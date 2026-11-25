@@ -36,6 +36,9 @@ export type Locatie = {
   check?: string;
 };
 
+/** Locations with an online booking rate on parkingyou.nl ("met reservering"). Only these may say "reserveer". */
+export const RESERVEERBAAR = new Set([1, 5, 7, 9, 11, 17, 21, 27, 31, 35, 45, 53, 101, 103, 129]);
+
 const pagina = (pad: string) => `https://parkingyou.nl/nl/locaties/${pad}`;
 
 export const locaties: Locatie[] = [

@@ -5,6 +5,8 @@ import {Story2Shoppen} from './Story2Shoppen';
 import {Story3Tagline} from './Story3Tagline';
 import {LocatieSpot, REEL, SPOT} from './LocatieSpot';
 import {locaties} from './locaties';
+import {ZOEK_SIZE, ZoekSpot, timeline} from './ZoekSpot';
+import {zoekopdrachten} from './zoekopdrachten';
 import {DURATION, FPS, HEIGHT, WIDTH} from './theme';
 
 const common = {durationInFrames: DURATION, fps: FPS, width: WIDTH, height: HEIGHT};
@@ -38,5 +40,18 @@ export const Root: React.FC = () => (
         defaultProps={{locatie: l, formaat: 'staand' as const}}
       />
     ))}
+    {zoekopdrachten.flatMap((z) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`${formaat}-${z.slug}`}
+          id={`${formaat === 'staand' ? 'Zoek' : 'ZoekYT'}-${z.slug}`}
+          component={ZoekSpot}
+          durationInFrames={timeline(z).duration}
+          fps={60}
+          {...ZOEK_SIZE[formaat]}
+          defaultProps={{zoekopdracht: z, formaat}}
+        />
+      )),
+    )}
   </>
 );
