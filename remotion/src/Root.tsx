@@ -7,6 +7,8 @@ import {LocatieSpot, REEL, SPOT} from './LocatieSpot';
 import {locaties} from './locaties';
 import {ZOEK_SIZE, ZoekSpot, timeline} from './ZoekSpot';
 import {zoekopdrachten} from './zoekopdrachten';
+import {CHAT_SIZE, ChatSpot, chatTimeline} from './ChatSpot';
+import {chatgesprekken} from './chatgesprekken';
 import {DURATION, FPS, HEIGHT, WIDTH} from './theme';
 
 const common = {durationInFrames: DURATION, fps: FPS, width: WIDTH, height: HEIGHT};
@@ -50,6 +52,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...ZOEK_SIZE[formaat]}
           defaultProps={{zoekopdracht: z, formaat}}
+        />
+      )),
+    )}
+    {chatgesprekken.flatMap((c) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`chat-${formaat}-${c.slug}`}
+          id={`${formaat === 'staand' ? 'Chat' : 'ChatYT'}-${c.slug}`}
+          component={ChatSpot}
+          durationInFrames={chatTimeline().duration}
+          fps={60}
+          {...CHAT_SIZE[formaat]}
+          defaultProps={{gesprek: c, formaat}}
         />
       )),
     )}

@@ -66,3 +66,15 @@ and a CTA closes it. 60 fps, 7 to 15 s depending on the question and the number 
 node scripts/render-locaties.mjs --zoek               # all, to out/zoek/ and out/zoek-youtube/
 node scripts/render-locaties.mjs --zoek avondje-psv   # one question
 ```
+
+## Chat spots (ChatSpot, "Het appje")
+
+`src/ChatSpot.tsx`: a chat in the house style (plain bubbles, no messenger branding). A question comes in after typing dots
+(the hook, from frame 0), the answer is a location card plus a short tip, a reply closes it, then the same end screen as the
+search spots (`EindCta` in `ZoekSpot.tsx`). One location per chat, 11.4 s, 9:16 (`Chat-<slug>`) and 16:9 (`ChatYT-<slug>`).
+`src/chatgesprekken.ts` holds the chats; every fact in a tip must be on the location page (`bron` field).
+Older messages scroll up and fade out before they reach the logo.
+
+```bash
+node scripts/render-locaties.mjs --chat               # to out/chat/ and out/chat-youtube/
+```

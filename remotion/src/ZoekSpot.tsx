@@ -252,11 +252,17 @@ const Carousel: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
 
 // ---------------------------------------------------------------- CTA
 
-const Cta: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
+const Cta: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => (
+  <EindCta start={timeline(z).cta} reserveer={z.locaties.every((s) => RESERVEERBAAR.has(vind(s).id))} k={g.cta} />
+);
+
+export type CtaGeo = Geo['cta'];
+export const CTA_GEO: Record<ZoekFormaat, CtaGeo> = {staand: GEO.staand.cta, liggend: GEO.liggend.cta};
+
+/** Shared end screen: logo, "Reserveer online" (only when every location can be booked) or "Bekijk alle locaties", parkingyou.nl button. */
+export const EindCta: React.FC<{start: number; reserveer: boolean; k: CtaGeo}> = ({start, reserveer, k}) => {
   const frame = useCurrentFrame();
-  const t = timeline(z);
-  const reserveer = z.locaties.every((s) => RESERVEERBAAR.has(vind(s).id));
-  const k = g.cta;
+  const t = {cta: start};
   const logo = tween(frame, t.cta + 8, t.cta + 38, ease(0.2, 0.9, 0.3, 1.15));
   const title = tween(frame, t.cta + 18, t.cta + 44, ease(0.2, 0.9, 0.3, 1));
   const sub = tween(frame, t.cta + 26, t.cta + 52, ease(0.2, 0.9, 0.3, 1));
