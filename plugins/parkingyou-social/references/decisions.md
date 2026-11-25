@@ -33,3 +33,4 @@ Newest at the bottom. Change a decision by adding a new row that supersedes the 
 | Easter action | Terms of "gratis bij je volgende reservering" | IG-063 if reposted |
 | Verloop in theme `feed` | The measured handbook verloop (`#1A3580` to `#097BAE` to `#32B9CD`) is kept as an optional ground; its mid stop is not a named brand colour. Keep it, or flat colours only? | Ground `verloop` (S15) |
 | Existing posts and reels | The 15 posts and 8 reels in `social/remotion/renders/` use the GLOW gradient, drifting light and the chevron with voordeligparkeren.nl. Re-render them with the S13 rules? | Reuse of the v2 kit for reels |
+| Library icons in light aqua | `py-atom-icon-car-lock`, `py-atom-icon-plug-ring` and `py-atom-icon-warning-triangle` are drawn in the observed light aqua (`#68CBDA` to `#71CBDF`), not PY-Aqua. Use them as they are (handbook artwork), or only in a token-coloured version? | Facts with a charging or warning icon |

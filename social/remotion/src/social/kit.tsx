@@ -9,7 +9,11 @@ import elements from "../../../../elements.json";
 /** Library artwork drawn in white only (elements.json colours): it needs a navy ground, never a white disc. */
 const WHITE_ART = new Set(
   (elements as any).elements
-    .filter((e: any) => e.colors?.length && e.colors.every((c: any) => String(c?.hex ?? c).toUpperCase() === "#FFFFFF"))
+    // all-white artwork, and icons drawn white on a navy disc (py-atom-icon-* with white in them)
+    .filter((e: any) => {
+      const cs = (e.colors ?? []).map((c: any) => String(c?.hex ?? c).toUpperCase());
+      return cs.length && (cs.every((c: string) => c === "#FFFFFF") || (e.id.startsWith("py-atom-icon-") && cs.includes("#FFFFFF")));
+    })
     .map((e: any) => e.id as string),
 );
 export const isWhiteArt = (id: string) => WHITE_ART.has(id);
