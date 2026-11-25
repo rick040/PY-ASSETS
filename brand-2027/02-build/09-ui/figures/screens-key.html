@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Hoofdschermen telefoon</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<link rel="stylesheet" href="ui.css">
+<style>
+  .elems { font: var(--py-type-label-s); color: var(--py-text-muted); letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+<!-- phone screens 390 x 844; edit this HTML directly -->
+<div class="fig fig--subtle" style="width: 1362px; height: 1100px; padding: 48px 56px; display: flex; flex-direction: column; gap: 24px">
+  <div class="eyebrow">Telefoon 390 x 844 · home, locatie, ticket (PWA)</div>
+  <div style="display: flex; gap: 40px; align-items: flex-start">
+
+  <!-- 1 Home -->
+  <div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">1 Home en zoeken</div><div class="elems">logo · stem · zwaaier</div></div><div class="phone">
+  <div class="on-brand" style="position: relative; overflow: hidden; background: var(--py-surface-brand); color: var(--py-text-on-brand); padding-bottom: 88px">
+    <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
+    <div class="topbar"><img class="topbar__logo" src="../../kit/assets/logo-horizontal-reverse.svg" alt="ParkingYou"><span style="flex:1"></span><button class="btn btn--icon" aria-label="Menu" style="color: var(--py-text-on-brand)"><i data-i="menu"></i></button></div>
+    <div class="pad" style="position: relative; padding-top: 16px; padding-right: 120px">
+      <div class="voice"><h1 class="voice__text t-heading-l" style="margin: 0"><b>Parkeren</b><br><span style="font-weight: 400">zonder gedoe.</span></h1></div>
+      <p class="t-body-m" style="margin: 12px 0 0">Reserveer je plek in 40+ garages. Je kenteken is je ticket.</p>
+    </div>
+    <img class="parkeerder" src="../../kit/assets/figure-wave-white.svg" alt="" style="position: absolute; right: 28px; bottom: 64px; height: 120px">
+  </div>
+  <form class="card" style="margin: -64px 16px 0; padding: 16px; display: flex; flex-direction: column; gap: 16px; position: relative; box-shadow: var(--py-shadow-2), inset 0 0 0 1px var(--py-border-subtle)">
+    <div class="field"><label for="h1">Waar wil je parkeren?</label><div class="control"><i data-i="pin" data-s="20"></i><input id="h1" value="Eindhoven"></div></div>
+    <div class="field"><label for="h2">Wanneer?</label><div class="control"><i data-i="calendar" data-s="20"></i><input id="h2" class="tnum" value="za 14 nov, 10:00 tot 18:00"></div></div>
+    <button class="btn btn--primary btn--lg btn--block" type="submit"><i data-i="search" data-s="20"></i>Zoek een plek</button>
+  </form>
+  <div class="scroll pad" style="padding-top: 24px">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px"><h2 class="t-heading-s" style="margin: 0">Populair in Eindhoven</h2><a class="btn btn--tertiary" href="#" style="padding: 0 4px">Bekijk alles</a></div>
+    <a class="card loc" href="#" style="text-decoration: none; color: inherit">
+      <div class="loc__img photo" style="background-image: url('../../kit/photos/py-photo-philips-stadion.jpg'); background-position: 52% 50%"></div>
+      <div class="loc__body"><h3 class="loc__name">Parking Philips Stadion</h3><div class="loc__meta">9 min lopen naar centrum</div>
+        <div class="loc__foot"><span class="status status--free"><i data-i="check-circle" data-s="16"></i>Vrij</span><span class="price"><span class="price__amt">€ 12,50</span><span class="price__unit">per dag</span></span></div></div>
+    </a>
+  </div>
+  <nav class="bottombar" aria-label="Hoofdmenu"><button class="tab is-active" aria-current="page"><span class="tab__pill"><i data-i="search"></i></span>Zoeken</button><button class="tab"><span class="tab__pill"><i data-i="ticket"></i></span>Tickets</button><button class="tab"><span class="tab__pill"><i data-i="user"></i></span>Account</button></nav><div class="home-ind"></div></div></div>
+
+  <!-- 2 Location -->
+  <div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">2 Locatiepagina</div><div class="elems">bubbel · pijl</div></div><div class="phone">
+  <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
+  <div class="topbar topbar--flow"><button class="btn btn--icon" aria-label="Terug" style="color: var(--py-text-brand)"><i data-pijl="left" data-s="16"></i></button><span class="topbar__title">Eindhoven</span><button class="btn btn--icon" aria-label="Deel" style="color: var(--py-text-brand)"><i data-i="share"></i></button></div>
+  <div class="photo" style="height: 260px; flex: none; background-image: url('../../kit/photos/py-photo-philips-stadion.jpg'); background-position: 50% 45%" role="img" aria-label="Ingang van Parking Philips Stadion"></div>
+  <div class="scroll pad" style="padding-top: 16px; display: flex; flex-direction: column; gap: 4px">
+    <span class="status status--free"><i data-i="check-circle" data-s="16"></i>Vrij</span>
+    <h1 class="t-heading-l" style="margin: 0">Parking Philips Stadion</h1>
+    <div class="t-body-s" style="color: var(--py-text-muted)">[adres], Eindhoven</div>
+    <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px">
+      <span class="bub" data-size="104" data-fill="navy" role="img" aria-label="€ 12,50 per dag"><span style="font: 800 20px/26px var(--py-font-sans); font-variant-numeric: tabular-nums">€ 12,50</span></span>
+      <div class="t-body-s" style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 20px">
+        <span class="t-heading-s">per dag</span>
+        <b class="t-label-m">Dagtarief met reservering</b>
+        <span style="color: var(--py-text-muted)">Zonder reservering [prijs] per dag.</span>
+        <span style="color: var(--py-text-muted)">Los parkeren [prijs] per 30 min.</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-top: 16px">
+      <span class="fact"><i data-i="car" data-s="20"></i>700 plekken</span>
+      <span class="fact"><i data-i="height" data-s="20"></i>Doorrijhoogte 2,00 m</span>
+      <span class="fact"><i data-i="walk" data-s="20"></i>9 min naar centrum</span>
+      <span class="fact"><i data-i="clock" data-s="20"></i>24 uur open</span>
+    </div>
+  </div>
+  <div class="footer"><button class="btn btn--primary btn--lg btn--block">Reserveer je plek <i data-pijl="right"></i></button></div><div class="home-ind"></div></div></div>
+
+  <!-- 3 Ticket -->
+  <div style="display:flex; flex-direction:column; gap:16px"><div><div class="t-label-m" style="color: var(--py-text-default)">3 Ticket in de PWA</div><div class="elems">stem · springer</div></div><div class="phone">
+  <div class="on-brand" style="flex: none; background: var(--py-surface-brand); color: var(--py-text-on-brand)">
+    <div class="sb"><span class="tnum">9:41</span><span class="sb__icons"><span class="sb__sig"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:12px"></i></span><span class="sb__bat"></span></span></div>
+    <div class="pad" style="display: flex; align-items: flex-end; gap: 8px; padding-top: 28px; padding-bottom: 24px">
+      <div class="voice" style="flex: 1; padding-bottom: 6px"><h1 class="voice__text t-heading-l" style="margin: 0"><b>Je ticket</b><br><span style="font-weight: 400">is geldig.</span></h1></div>
+      <div class="floor floor--short"><img class="parkeerder" src="../../kit/assets/figure-jump-white.svg" alt="" style="height: 112px"></div>
+    </div>
+  </div>
+  <div class="scroll pad" style="padding-top: 16px; display: flex; flex-direction: column; gap: 12px">
+    <article class="card" style="padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--py-shadow-2), inset 0 0 0 1px var(--py-border-subtle)">
+      <div><div class="t-heading-s">Parking Philips Stadion</div><div class="t-body-s tnum" style="color: var(--py-text-muted)">za 14 nov 2026</div></div>
+        <div style="display: flex; gap: 16px; align-items: center; justify-content: space-between">
+          <div class="plate plate--display" style="flex: none"><span class="plate__nl">NL</span><span class="plate__val">XX-123-X</span></div>
+          <div style="text-align: right"><div class="t-numeric-m">10:00</div><div class="t-body-s tnum" style="color: var(--py-text-muted)">tot 18:00</div></div>
+        </div>
+        <div class="fact" style="align-items: flex-start"><i data-i="car" data-s="20"></i><span>Rij naar de slagboom. De camera leest je kenteken en de slagboom gaat open.</span></div>
+        <div style="border-top: 2px dashed var(--py-border-subtle)"></div>
+        <div style="display: flex; gap: 16px; align-items: center">
+          <div style="background: var(--py-surface-code); color: var(--py-text-on-code); padding: 4px; border-radius: var(--py-radius-m); flex: none"><div class="qr" data-size="88"></div></div>
+          <div class="t-body-s" style="display: flex; flex-direction: column; gap: 4px"><b class="t-label-m">Slagboom dicht?</b><span style="color: var(--py-text-muted)">Scan deze code bij de zuil naast de slagboom.</span></div>
+        </div>
+    </article>
+    <span class="fact"><i data-i="height" data-s="20"></i>Doorrijhoogte 2,00 m · [adres], Eindhoven</span>
+    <button class="btn btn--primary btn--block"><i data-i="map" data-s="20"></i>Plan je route</button>
+  </div>
+  <nav class="bottombar" aria-label="Hoofdmenu"><button class="tab"><span class="tab__pill"><i data-i="search"></i></span>Zoeken</button><button class="tab is-active" aria-current="page"><span class="tab__pill"><i data-i="ticket"></i></span>Tickets</button><button class="tab"><span class="tab__pill"><i data-i="user"></i></span>Account</button></nav><div class="home-ind"></div></div></div>
+  </div>
+  <div class="cap">Per scherm het logo en hooguit twee eigen elementen. Home: de stem opent de kop, de zwaaier staat op de zoekkaart. Locatie: de prijsbubbel en de pijl naar de volgende stap. Ticket: een vlakke PY-Blauw kop, de stem opent "Je ticket is geldig." en de springer staat op een korte witte lijn. Eén navy hoofdknop per scherm, nergens oranje.</div>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>

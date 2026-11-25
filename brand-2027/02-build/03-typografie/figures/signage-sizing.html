@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Typografie: letter op borden</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="../../11-toepassingen/figures/py-fig.js"></script>
+<script src="../../11-toepassingen/figures/py-signs.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width:1200px;height:820px;padding:48px 56px;display:flex;flex-direction:column;gap:18px">
+<div class="eyebrow" style="color:#C2C7CF">Borden · kapitaalhoogte 10 mm per meter leesafstand, korps = kap / 0,693</div>
+<div style="display:flex;gap:20px;align-items:baseline;margin-top:20px"><div style="width:112px;font:700 6.93px/1 var(--py-font-sans);letter-spacing:0.01em;color:#FFFFFF;white-space:nowrap">Lift</div><div style="width:112px;font:700 14.43px/1 var(--py-font-sans);letter-spacing:0.01em;color:#FFFFFF;white-space:nowrap">Lift</div><div style="width:112px;font:700 28.86px/1 var(--py-font-sans);letter-spacing:0.01em;color:#FFFFFF;white-space:nowrap">Lift</div><div style="width:112px;font:700 57.72px/1 var(--py-font-sans);letter-spacing:0.01em;color:#FFFFFF;white-space:nowrap">Lift</div><div style="width:202px;font:700 115.44px/1 var(--py-font-sans);letter-spacing:0.01em;color:#FFFFFF;white-space:nowrap">Lift</div><div style="width:303px;font:700 173.16px/1 var(--py-font-sans);letter-spacing:0.01em;color:#FFFFFF;white-space:nowrap">Lift</div></div>
+<div style="display:flex;gap:20px"><div style="width:112px"><div class="tnum" style="font:600 13px/1.45 var(--py-font-sans);color:#C2C7CF;white-space:nowrap"><b style="color:#FFFFFF;font-size:15px">1 m</b><br>kap 12 mm<br>korps 17 mm</div></div><div style="width:112px"><div class="tnum" style="font:600 13px/1.45 var(--py-font-sans);color:#C2C7CF;white-space:nowrap"><b style="color:#FFFFFF;font-size:15px">2,5 m</b><br>kap 25 mm<br>korps 36 mm</div></div><div style="width:112px"><div class="tnum" style="font:600 13px/1.45 var(--py-font-sans);color:#C2C7CF;white-space:nowrap"><b style="color:#FFFFFF;font-size:15px">5 m</b><br>kap 50 mm<br>korps 72 mm</div></div><div style="width:112px"><div class="tnum" style="font:600 13px/1.45 var(--py-font-sans);color:#C2C7CF;white-space:nowrap"><b style="color:#FFFFFF;font-size:15px">10 m</b><br>kap 100 mm<br>korps 144 mm</div></div><div style="width:202px"><div class="tnum" style="font:600 13px/1.45 var(--py-font-sans);color:#C2C7CF;white-space:nowrap"><b style="color:#FFFFFF;font-size:15px">20 m</b><br>kap 200 mm<br>korps 289 mm</div></div><div style="width:303px"><div class="tnum" style="font:600 13px/1.45 var(--py-font-sans);color:#C2C7CF;white-space:nowrap"><b style="color:#FFFFFF;font-size:15px">30 m</b><br>kap 300 mm<br>korps 433 mm</div></div></div>
+<div class="note note--on-dark">Schaal van deze ladder: 1 px = 2,5 mm. Bold 700 voor woorden, ExtraBold 800 voor cijfers, letterafstand 0,01 em, links uitgelijnd. Nooit kleiner dan 12 mm kap.</div>
+<div style="height:1px;background:#43484F;margin:8px 0 40px"></div>
+<div style="display:flex;gap:150px;align-items:flex-start">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <!-- 1 user unit = 1 mm, 0,8 px per mm -->
+    <svg id="route" width="640" height="200" viewBox="0 -20 800 250" style="display:block;overflow:visible"></svg>
+    <div class="note note--on-dark" style="width:640px;margin-top:4px">Voorbeeld: routebord rijden, een pil van 800 x 200 mm. Kap 70 mm, korps 101 mm, leesbaar op 7 m, alleen Nederlands. De hoekige pijl is 2 x de kap: 140 mm. De stem scheidt pijl en tekst en is even hoog als de pijl: 140 mm, lijn 5,6 mm, 42 mm lucht aan elke kant. Schaal 1 px = 1,25 mm. De borden zelf staan in hoofdstuk 12, Toepassingen.</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px"><svg width="260" height="140" viewBox="0 0 300 140" aria-hidden="true">
+<line x1="10" y1="120" x2="290" y2="120" stroke="#5E6470" stroke-width="2"/>
+<line x1="10" y1="18" x2="290" y2="18" stroke="#5E6470" stroke-width="2"/>
+<circle cx="30" cy="78" r="7" fill="#FFFFFF"/>
+<rect x="272" y="22" width="14" height="36" fill="#1A3580" stroke="#FFFFFF" stroke-width="1.5"/>
+<line x1="38" y1="76" x2="268" y2="42" stroke="#FAAE52" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="150" y="104" fill="#FFFFFF" font-family="Ubuntu Sans" font-weight="700" font-size="15" text-anchor="middle">7 m leesafstand</text>
+</svg><div class="note note--on-dark" style="width:180px">Rijden met 20 km/u: een bord dat op 20 m leesbaar is, zie je ongeveer 3,6 seconden.</div></div>
+</div>
+</div>
+<script>
+  // Route board as in chapter 12 (py-signs.js): pill 800 x 200 mm, u = 10, cap 70 (font 101), read at 7 m, Dutch only.
+  // Arrow box 2 x cap = 140; de stem as high as the arrow (140), stroke 5,6, 42 mm air on both sides.
+  PYS.mount('route', PYS.board({ w: 800, fill: PYS.C.navy, fg: '#FFFFFF', stem: PYS.C.aqua, left: [['arrow', 180], ['stem'], ['text', 'Uitrit']] }) + '<g stroke="#FAAE52" stroke-width="2.5" fill="none" stroke-dasharray="8 6"><path d="M820 65V135"/></g>' + '<text x="832" y="108" font-family="Ubuntu Sans" font-weight="700" font-size="15" fill="#FAAE52">kap 70 mm</text>' + '<text x="190" y="228" font-family="Ubuntu Sans" font-weight="700" font-size="15" fill="#86D6E2">de stem = pijl = 140 mm, lijn 5,6 mm</text>');
+</script>
+</body>
+</html>

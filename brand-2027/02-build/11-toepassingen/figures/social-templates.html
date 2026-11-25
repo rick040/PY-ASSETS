@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Social templates</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<script src="py-social.js"></script>
+<style>
+  .lab { position: absolute; font: 700 15px/20px var(--py-font-sans); color: #1A3580; }
+  .lab span { font-weight: 400; color: var(--py-text-muted); }
+  .frame { position: absolute; display: block; box-shadow: 0 1px 2px rgba(13,20,46,0.10), 0 8px 24px rgba(13,20,46,0.08); }
+</style>
+</head>
+<body>
+<div class="fig fig--subtle" style="width: 1200px; height: 1230px">
+  <div class="eyebrow" style="position:absolute;left:48px;top:30px">Social · drie templates · post 4:5 (1080 x 1350) en reel 9:16 (1080 x 1920) · u = 54 px</div>
+  <div class="lab" style="left:48px;top:62px">Aanbod <span>de stem en de gastheer</span></div>
+  <div class="lab" style="left:432px;top:62px">Locatie <span>de stem en de loper</span></div>
+  <div class="lab" style="left:816px;top:62px">Evenement <span>de stem en de danser</span></div>
+  <svg class="frame" id="a1" style="left:48px;top:90px" width="324" height="405" viewBox="0 0 1080 1350"></svg>
+  <svg class="frame" id="b1" style="left:432px;top:90px" width="324" height="405" viewBox="0 0 1080 1350"></svg>
+  <svg class="frame" id="c1" style="left:816px;top:90px" width="324" height="405" viewBox="0 0 1080 1350"></svg>
+  <svg class="frame" id="a2" style="left:48px;top:520px" width="324" height="576" viewBox="0 0 1080 1920"></svg>
+  <svg class="frame" id="b2" style="left:432px;top:520px" width="324" height="576" viewBox="0 0 1080 1920"></svg>
+  <svg class="frame" id="c2" style="left:816px;top:520px" width="324" height="576" viewBox="0 0 1080 1920"></svg>
+  <div class="note" style="position:absolute;left:48px;top:1118px;width:1100px">Stippellijn: marge 2u = 108 px. Rood vlak: de bovenste 250 px en onderste 340 px van een reel blijven vrij van tekst en logo; sleutelinhoud staat tussen 5u en 29u. De grond is vlak PY-Blauw of wit. Per beeld het logo plus twee elementen: de stem en één parkeerder. In het aanbod opent de stem "Jouw plek staat klaar." en staat de gastheer zwaait (7u) op een korte lijn van 0,1u op de ondermarge, gespiegeld naar de tekst. Kop font 117 (kap 1,5u), 90 of 78, regelafstand x 50/48, kernwoord 800; tekst 31 px (kap 0,4u). Geen oranje, geen prijsbubbel: de prijs is gewone tekst.</div>
+</div>
+<script>
+  PYS.mount('a1', PYSOC.post('aanbod', 'post', { guides: true }));
+  PYS.mount('b1', PYSOC.post('locatie', 'post', { guides: true }));
+  PYS.mount('c1', PYSOC.post('evenement', 'post', { guides: true }));
+  PYS.mount('a2', PYSOC.post('aanbod', 'reel', { guides: true }));
+  PYS.mount('b2', PYSOC.post('locatie', 'reel', { guides: true }));
+  PYS.mount('c2', PYSOC.post('evenement', 'reel', { guides: true }));
+</script>
+</body>
+</html>

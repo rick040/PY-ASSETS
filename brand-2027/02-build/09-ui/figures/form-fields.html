@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Formuliervelden en staten</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<link rel="stylesheet" href="ui.css">
+<style>
+  .states { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: start; }
+  .st { font: var(--py-type-label-s); color: var(--py-text-muted); margin-bottom: 8px; letter-spacing: 0.02em; }
+  .fig div { min-width: 0; }
+  .sec { display: flex; flex-direction: column; gap: 14px; }
+  .sec-h { display: flex; align-items: baseline; gap: 16px; }
+  .sec-h .t-heading-s { margin: 0; }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 1290px; padding: 48px 56px; display: flex; flex-direction: column; gap: 40px">
+  <div class="eyebrow">Formuliervelden · label boven, hulptekst onder, fout in woorden</div>
+
+  <!-- text input states -->
+  <div class="sec">
+    <div class="sec-h"><div class="t-heading-s">Tekstveld</div><span class="tok">hoogte 48 · radius.m · rand 1 px border.strong, 2 px bij hover, focus en fout</span></div>
+    <div class="states">
+      <div><div class="st">Leeg</div><div class="field"><label for="e1">E-mailadres</label><div class="control"><input id="e1" placeholder="naam@mail.nl"></div></div></div>
+      <div><div class="st">Hover</div><div class="field"><label for="e2">E-mailadres</label><div class="control is-hover"><input id="e2" placeholder="naam@mail.nl"></div></div></div>
+      <div><div class="st">Focus</div><div class="field"><label for="e3">E-mailadres</label><div class="control is-focus"><input id="e3" value="naam@"></div></div></div>
+      <div><div class="st">Ingevuld</div><div class="field"><label for="e4">E-mailadres</label><div class="control"><input id="e4" value="naam@mail.nl"></div></div></div>
+      <div><div class="st">Fout</div><div class="field"><label for="e5">E-mailadres</label><div class="control is-error"><input id="e5" value="naam@mail" aria-invalid="true" aria-describedby="e5e"><i data-i="alert" data-s="20"></i></div><p class="err" id="e5e">Er mist iets na de @. Bijvoorbeeld: naam@mail.nl</p></div></div>
+      <div><div class="st">Uitgeschakeld</div><div class="field"><label for="e6" style="color: var(--py-text-muted)">E-mailadres</label><div class="control is-disabled"><input id="e6" value="naam@mail.nl" disabled></div></div></div>
+    </div>
+  </div>
+
+  <!-- date time and select -->
+  <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px">
+    <div class="sec">
+      <div class="sec-h"><div class="t-heading-s">Datum en tijd</div><span class="tok">tabular cijfers · native kiezer op telefoon</span></div>
+      <div class="field">
+        <label id="arr">Aankomst</label>
+        <div class="row" style="gap: 12px">
+          <div class="control" style="flex: 1.6"><i data-i="calendar" data-s="20"></i><input class="tnum" aria-labelledby="arr" value="za 14 nov 2026"></div>
+          <div class="control is-focus" style="flex: 1"><i data-i="clock" data-s="20"></i><input class="tnum" aria-label="Aankomsttijd" value="10:00"></div>
+        </div>
+      </div>
+      <div class="field">
+        <label id="dep">Vertrek</label>
+        <div class="row" style="gap: 12px">
+          <div class="control is-error" style="flex: 1.6"><i data-i="calendar" data-s="20"></i><input class="tnum" aria-labelledby="dep" value="za 14 nov 2026" aria-invalid="true"></div>
+          <div class="control is-error" style="flex: 1"><i data-i="clock" data-s="20"></i><input class="tnum" aria-label="Vertrektijd" value="09:00" aria-invalid="true"></div>
+        </div>
+        <p class="err"><i data-i="alert" data-s="20"></i>Je vertrektijd ligt voor je aankomst. Kies een tijd na 10:00.</p>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sec-h"><div class="t-heading-s">Keuzelijst</div><span class="tok">zelfde veld, hoekige pijl omlaag rechts</span></div>
+      <div class="field">
+        <label for="s1">Stad</label>
+        <div class="control"><i data-i="pin" data-s="20"></i><select id="s1"><option>Eindhoven</option></select><span style="color: var(--py-text-default); font: var(--py-type-body-m)"><i data-pijl="down"></i></span></div>
+      </div>
+      <div class="field">
+        <label for="s2" style="color: var(--py-text-muted)">Abonnement</label>
+        <div class="control is-disabled"><select id="s2" disabled><option>Kies eerst een locatie</option></select><span style="font: var(--py-type-body-m)"><i data-pijl="down"></i></span></div>
+        <p class="hint">Uitgeschakeld tot de vorige keuze klaar is. Zeg erbij waarom.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- licence plate -->
+  <div class="sec">
+    <div class="sec-h"><div class="t-heading-s">Kentekenveld</div><span class="tok">hoogte 56 · heading-m · hoofdletters, spatiëring 0,08 em · NL-band in surface.brand</span></div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; align-items: start">
+      <div><div class="st">Leeg</div><div class="field"><label for="k1">Kenteken</label><div class="plate"><span class="plate__nl">NL</span><input id="k1" aria-describedby="k1h" autocomplete="off" spellcheck="false"></div><p class="hint" id="k1h">Zoals op je kentekenplaat, bijvoorbeeld XX-123-X. Streepjes typen hoeft niet.</p></div></div>
+      <div><div class="st">Focus, ingevuld</div><div class="field"><label for="k2">Kenteken</label><div class="plate is-focus"><span class="plate__nl">NL</span><input id="k2" value="XX-123-X"></div><button class="btn btn--tertiary" style="align-self: flex-start; padding: 0; min-height: 44px">Buitenlands kenteken?</button></div></div>
+      <div><div class="st">Fout</div><div class="field"><label for="k3">Kenteken</label><div class="plate is-error"><span class="plate__nl">NL</span><input id="k3" value="XX-12" aria-invalid="true"></div><p class="err"><i data-i="alert" data-s="20"></i>Dit kenteken is te kort. Een Nederlands kenteken heeft 6 letters en cijfers.</p></div></div>
+    </div>
+  </div>
+
+  <!-- checkbox radio -->
+  <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px">
+    <div class="sec">
+      <div class="sec-h"><div class="t-heading-s">Vinkje en keuzerondje</div><span class="tok">kader 24 · rij 44 hoog</span></div>
+      <div style="display: grid; grid-template-columns: repeat(4, auto); gap: 4px 32px; justify-content: start">
+        <div class="st">Uit</div><div class="st">Aan</div><div class="st">Focus</div><div class="st">Uitgeschakeld</div>
+        <label class="check"><input type="checkbox">Bewaar</label>
+        <label class="check"><input type="checkbox" checked>Bewaar</label>
+        <label class="check"><input type="checkbox" class="is-focus" checked>Bewaar</label>
+        <label class="check is-disabled"><input type="checkbox" disabled>Bewaar</label>
+        <label class="check"><input type="radio" name="r1">iDEAL</label>
+        <label class="check"><input type="radio" name="r2" checked>iDEAL</label>
+        <label class="check"><input type="radio" name="r3" class="is-focus" checked>iDEAL</label>
+        <label class="check is-disabled"><input type="radio" name="r5" disabled>iDEAL</label>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 4px">
+        <div><div class="st">Fout, vinkje</div>
+          <div style="display: flex; flex-direction: column"><label class="check"><input type="checkbox" class="is-error" aria-invalid="true" aria-describedby="c4e">Ik ga akkoord met de voorwaarden</label>
+          <p class="err" id="c4e"><i data-i="alert" data-s="20"></i>Vink dit aan om door te gaan.</p></div></div>
+        <div><div class="st">Fout, groep rondjes</div>
+          <fieldset style="display: flex; flex-direction: column; border: 0; padding: 0; margin: 0" aria-describedby="r4e"><legend class="label" style="padding: 0">Betaalmethode</legend>
+          <label class="check"><input type="radio" name="r4" class="is-error" aria-invalid="true">iDEAL</label>
+          <label class="check"><input type="radio" name="r4" class="is-error" aria-invalid="true">Creditcard</label>
+          <p class="err" id="r4e"><i data-i="alert" data-s="20"></i>Kies hoe je wilt betalen.</p></fieldset></div>
+      </div>
+      <span class="tok">fout: rand feedback.error, melding met icoon eronder<br>aria-invalid="true" op het vakje · aria-describedby wijst naar de melding</span>
+    </div>
+    <div class="sec">
+      <div class="sec-h"><div class="t-heading-s">Keuze als kaart</div></div>
+      <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px">
+        <legend class="label" style="margin-bottom: 8px">Betaalmethode</legend>
+        <label class="check option is-selected" style="min-height: 56px"><input type="radio" name="pm" checked>iDEAL</label>
+        <label class="check option" style="min-height: 56px"><input type="radio" name="pm">Creditcard</label>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: zo niet</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 16px; }
+  .tile { height: 150px; border-radius: var(--py-radius-m); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: #FFFFFF; border: 1px solid var(--py-border-subtle); }
+  .tile .x { position: absolute; right: 10px; top: 10px; width: 22px; height: 22px; border-radius: 50%; background: var(--py-color-red-600); }
+  .tile .x::before, .tile .x::after { content: ""; position: absolute; left: 5px; top: 10px; width: 12px; height: 2px; background: #FFFFFF; transform: rotate(45deg); }
+  .tile .x::after { transform: rotate(-45deg); }
+  .lab { margin-top: 8px; }
+  .lab .note { margin-top: 2px; }
+  .logo { width: 170px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <filter id="recolour" color-interpolation-filters="sRGB"><feFlood flood-color="#F08300"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+  <filter id="outline" color-interpolation-filters="sRGB" x="-5%" y="-5%" width="110%" height="110%">
+    <feMorphology in="SourceAlpha" operator="dilate" radius="1.3" result="d"/>
+    <feComposite in="d" in2="SourceAlpha" operator="out" result="o"/>
+    <feFlood flood-color="#1A3580"/><feComposite in2="o" operator="in"/>
+  </filter>
+</svg>
+<div class="fig" style="width: 1200px; height: 800px; padding: 56px; display: flex; flex-direction: column; gap: 24px">
+  <div class="eyebrow">Logo · zo niet (gebruik altijd het originele bestand, ongewijzigd)</div>
+  <div class="grid">
+    <div><div class="tile"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="transform: scaleX(1.35)"><span class="x"></span></div>
+      <div class="lab"><span class="dont">Niet uitrekken of indrukken</span></div></div>
+    <div><div class="tile"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="filter: url(#recolour)"><span class="x"></span></div>
+      <div class="lab"><span class="dont">Geen andere kleuren</span></div></div>
+    <div><div class="tile"><div style="display: flex; align-items: center; gap: 10px"><img src="../../kit/assets/logo-beeldmerk-color.svg" alt="" style="width: 39px"><span style="font: 700 34px/1 var(--py-font-sans); color: #1A3580">ParkingYou</span></div><span class="x"></span></div>
+      <div class="lab"><span class="dont">Niet opnieuw zetten</span><div class="note">Het woordmerk is een tekening, geen tekst.</div></div></div>
+    <div><div class="tile"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="filter: drop-shadow(4px 6px 5px rgba(13, 20, 46, 0.45))"><span class="x"></span></div>
+      <div class="lab"><span class="dont">Geen schaduw, gloed of 3D</span></div></div>
+
+    <div><div class="tile"><div style="position: relative; width: 104px; height: 125.4px"><svg viewBox="0 0 36 43.423" width="104" height="125.4" aria-hidden="true"><path d="M18 0C8.059 0 0 8.058 0 17.999C0 34.701 16.691 43.074 16.691 43.074C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.999C36 8.058 27.941 0 18 0Z" fill="#32B9CD"/></svg><img src="../../kit/assets/logo-beeldmerk-navy.svg" alt="" style="position: absolute; left: 34px; top: 26px; width: 36px"></div><span class="x"></span></div>
+      <div class="lab"><span class="dont">Niet in een bubbel</span></div></div>
+    <div><div class="tile"><div style="position: relative; width: 104px; height: 125.4px"><img src="../../kit/assets/logo-beeldmerk-color.svg" alt="" style="width: 104px"><div class="tnum" style="position: absolute; left: 0; top: 0; width: 104px; height: 104px; display: flex; align-items: center; justify-content: center; font: 800 17px/1 var(--py-font-sans); color: #1A3580">€ 12,50</div></div><span class="x"></span></div>
+      <div class="lab"><span class="dont">Niet als bubbel gebruiken</span><div class="note">Geen prijs, niveau of foto in het beeldmerk.</div></div></div>
+    <div><div class="tile" style="background: #1A3580; border: 0"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt=""><span class="x"></span></div>
+      <div class="lab"><span class="dont">Geen kleurlogo op PY-Blauw</span><div class="note">Gebruik daar de omgekeerde versie.</div></div></div>
+    <div><div class="tile" style="background: #32B9CD; border: 0"><img class="logo" src="../../kit/assets/logo-horizontal-white.svg" alt=""><span class="x"></span></div>
+      <div class="lab"><span class="dont">Geen wit op aqua of oranje</span><div class="note">2,34:1 en 2,64:1. Gebruik navy.</div></div></div>
+
+    <div><div class="tile"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="transform: rotate(-12deg)"><span class="x"></span></div>
+      <div class="lab"><span class="dont">Niet draaien</span></div></div>
+    <div><div class="tile"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="filter: url(#outline)"><span class="x"></span></div>
+      <div class="lab"><span class="dont">Geen omlijning</span></div></div>
+    <div><div class="tile"><div style="display: flex; align-items: flex-end; gap: 6px"><img src="../../kit/assets/logo-beeldmerk-color.svg" alt="" style="width: 54px"><img src="../../kit/assets/logo-wordmark-color.svg" alt="" style="width: 120px; margin-bottom: 8px"></div><span class="x"></span></div>
+      <div class="lab"><span class="dont">Verhoudingen niet wijzigen</span><div class="note">Beeldmerk en woordmerk staan vast.</div></div></div>
+    <div><div class="tile" style="background: url('../../kit/photos/py-photo-evoluon.jpg') 40% 52% / 520px auto; border: 0"><img class="logo" src="../../kit/assets/logo-horizontal-color.svg" alt=""><span class="x"></span></div>
+      <div class="lab"><span class="dont">Niet op een drukke foto</span></div></div>
+  </div>
+</div>
+</body>
+</html>

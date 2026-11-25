@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Fotografie: foto in de bubbel</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .tile { width: 344px; display: flex; flex-direction: column; gap: 10px; }
+  .ground { position: relative; height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .ground.white { background: #FFFFFF; box-shadow: inset 0 0 0 1px var(--py-color-neutral-200); }
+  .ground.navy { background: #1A3580; }
+  .bp { position: relative; width: 160px; height: 193px; clip-path: url(#bubble); overflow: hidden; }
+  .bp img { position: absolute; display: block; max-width: none; }
+  .bp img.cover { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .why { font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs><clipPath id="bubble" clipPathUnits="objectBoundingBox"><path transform="scale(0.0277778 0.0230293)" d="M18 0C8.059 0 0 8.058 0 17.999C0 34.701 16.691 43.074 16.691 43.074C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.999C36 8.058 27.941 0 18 0Z"/></clipPath></defs></svg>
+<div class="fig fig--subtle" style="width: 1200px; height: 900px; padding: 44px 56px; display: flex; flex-direction: column; gap: 24px">
+  <div>
+    <div class="eyebrow">Fotografie · foto in de bubbel</div>
+    <div class="t-heading-m" style="color: var(--py-text-brand); margin-top: 6px">Eén detail of één mens. Geen tekst, geen filter, altijd dezelfde vorm.</div>
+  </div>
+
+  <div style="display: flex; gap: 28px">
+    <div class="tile">
+      <div class="ground white">
+        <div class="bp"><img src="../../kit/photos/py-photo-city-tower.jpg" alt="" style="left: -53px; top: -204px; width: 467px; height: 622px"></div>
+      </div>
+      <span class="do">Detail van een plek</span>
+      <div class="why">Het P1-bord bij City Tower. Eén ding, groot genoeg om te herkennen.</div>
+    </div>
+    <div class="tile">
+      <div class="ground navy">
+        <div class="bp"><img src="../../kit/photos/py-photo-evoluon.jpg" alt="" style="left: -206px; top: -30px; width: 589px; height: 442px"></div>
+      </div>
+      <span class="do">Herkenningspunt op navy</span>
+      <div class="why">De koepel van het Evoluon. Tekst staat naast de bubbel, op het navy vlak.</div>
+    </div>
+    <div class="tile">
+      <div class="ground white">
+        <div class="bp">
+          <img src="../../kit/photos/py-photo-philips-stadion.jpg" alt="" style="left: -240px; top: -118px; width: 589px; height: 393px">
+          <div style="position: absolute; left: 0; top: 40px; width: 160px; text-align: center; color: #FFFFFF; font: 800 22px/26px var(--py-font-sans)">Parkeer<br>hier</div>
+        </div>
+      </div>
+      <span class="dont">Tekst in de fotobubbel</span>
+      <div class="why">Een fotobubbel draagt nooit tekst, prijs of pictogram. Zet tekst ernaast.</div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 28px">
+    <div class="tile">
+      <div class="ground navy">
+        <div class="bp"><img class="cover" src="../../kit/photos/py-photo-dll-garage.jpg" alt="" style="object-position: 30% 50%"></div>
+      </div>
+      <span class="dont">Hele straat in een kleine vorm</span>
+      <div class="why">Te veel details. Op 8u of 13u zie je niets meer. Gebruik dan een rechthoek.</div>
+    </div>
+    <div class="tile">
+      <div class="ground white">
+        <div class="bp" style="width: 240px; height: 160px"><img class="cover" src="../../kit/photos/py-photo-evoluon.jpg" alt="" style="object-position: 50% 30%"></div>
+      </div>
+      <span class="dont">Uitgerekt of platgedrukt</span>
+      <div class="why">De bubbel schaalt alleen gelijkmatig. Nooit rekken, nooit hertekenen.</div>
+    </div>
+    <div class="tile">
+      <div class="ground white">
+        <div class="bp">
+          <img src="../../kit/photos/py-photo-city-tower.jpg" alt="" style="left: -53px; top: -204px; width: 467px; height: 622px">
+          <div style="position: absolute; inset: 0; background: #1A3580; opacity: 0.6"></div>
+        </div>
+      </div>
+      <span class="dont">Kleurlaag of filter</span>
+      <div class="why">Geen blauwe laag, geen duotoon, geen verloop over de foto. Natuurlijke kleur.</div>
+    </div>
+  </div>
+  <div class="note" style="margin-top: auto">Mensen in de bubbel: alleen echte klanten of medewerkers met een getekende modelrelease. Voorbeelden volgen na de eerste opnamedag.</div>
+</div>
+</body>
+</html>

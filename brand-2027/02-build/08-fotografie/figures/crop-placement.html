@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Fotografie: uitsnede en plaatsing</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .col { width: 340px; display: flex; flex-direction: column; gap: 14px; }
+  .stage { height: 440px; display: flex; align-items: flex-start; justify-content: center; }
+  .fmt { position: relative; overflow: hidden; }
+  .fmt img.photo { position: absolute; object-fit: cover; display: block; }
+  .bubble-photo { position: absolute; clip-path: url(#bubble); overflow: hidden; }
+  .bubble-photo img { display: block; max-width: none; }
+  .margin { position: absolute; border: 1px dashed #C4281C; pointer-events: none; }
+  .head { font: 700 18px/24px var(--py-font-sans); color: var(--py-text-brand); }
+  ul { margin: 0; padding-left: 18px; }
+  li { font: 400 14px/20px var(--py-font-sans); color: var(--py-text-default); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs><clipPath id="bubble" clipPathUnits="objectBoundingBox"><path transform="scale(0.0277778 0.0230293)" d="M18 0C8.059 0 0 8.058 0 17.999C0 34.701 16.691 43.074 16.691 43.074C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.999C36 8.058 27.941 0 18 0Z"/></clipPath></defs></svg>
+<div class="fig fig--subtle" style="width: 1200px; height: 900px; padding: 44px 56px; display: flex; flex-direction: column; gap: 24px">
+  <div>
+    <div class="eyebrow">Fotografie · drie manieren om een foto te plaatsen</div>
+    <div class="t-heading-m" style="color: var(--py-text-brand); margin-top: 6px">Volle uitsnede, rechthoek of bubbelmasker. Verder niets.</div>
+  </div>
+
+  <div style="display: flex; gap: 34px">
+    <!-- 1. Full bleed: post 4:5 (1080 x 1350, u = 54 px; here 340 x 425, u = 17 px) -->
+    <div class="col">
+      <div class="stage">
+        <div class="fmt" style="width: 340px; height: 425px; background: #FFFFFF">
+          <img class="photo" src="../../kit/photos/py-photo-dll-garage.jpg" alt="" style="left: -352px; top: 0; width: 770px; height: 513px; object-fit: fill; max-width: none">
+          <div class="margin" style="left: 34px; top: 34px; width: 272px; height: 357px"></div>
+          <div style="position: absolute; left: 34px; top: 34px; width: 200px; color: #1A3580; font: 400 27px/31px var(--py-font-sans)"><b style="font-weight: 800">Parkeren</b> naast de kerk.</div>
+          <img src="../../kit/assets/logo-horizontal-color.svg" alt="" style="position: absolute; left: 34px; top: 132px; height: 22px">
+        </div>
+      </div>
+      <div class="head">1. Volle uitsnede</div>
+      <ul>
+        <li>Foto loopt tot alle randen. Tekst en logo binnen de marge van 2u.</li>
+        <li>Tekst alleen op een rustig vlak, hier de lucht. PY-Blauw op licht, wit op donker, en meten.</li>
+        <li>Nooit een kleurlaag of donker verloop.</li>
+      </ul>
+    </div>
+
+    <!-- 2. Rectangle: A-format poster (u = 15 px at 300 x 424) -->
+    <div class="col">
+      <div class="stage">
+        <div class="fmt" style="width: 300px; height: 424px; background: #FFFFFF; box-shadow: 0 0 0 1px var(--py-color-neutral-200)">
+          <img class="photo" src="../../kit/photos/py-photo-philips-stadion.jpg" alt="" style="left: 30px; top: 30px; width: 240px; height: 210px; object-position: 62% 60%" data-blur="1000,562,1046,578">
+          <div style="position: absolute; left: 30px; top: 262px; width: 240px; color: #1A3580">
+            <div style="font: 400 22px/26px var(--py-font-sans)"><b style="font-weight: 800">Parking</b> Philips Stadion</div>
+            <div class="tnum" style="font: 400 13px/18px var(--py-font-sans); margin-top: 8px">700 plekken · max. 2,00 m<br>9 minuten lopen naar het centrum</div>
+          </div>
+          <img src="../../kit/assets/logo-horizontal-color.svg" alt="" style="position: absolute; left: 30px; bottom: 30px; height: 20px">
+          <div class="margin" style="left: 30px; top: 30px; width: 240px; height: 364px"></div>
+        </div>
+      </div>
+      <div class="head">2. Rechthoek</div>
+      <ul>
+        <li>Rechte hoeken (radius 0), in het grid, met tekst ernaast of eronder op een vlak.</li>
+        <li>Dit is de standaard voor locatiepagina's, kaarten en drukwerk.</li>
+        <li>Geen schuine, ronde of golvende randen. Alleen een kleine foto in een kaart op een scherm krijgt radius.m (8 px).</li>
+      </ul>
+    </div>
+
+    <!-- 3. Bubble mask on navy: post 4:5, bubble 13u = 221 px -->
+    <div class="col">
+      <div class="stage">
+        <div class="fmt" style="width: 340px; height: 425px; background: #1A3580">
+          <div class="bubble-photo" style="left: 34px; top: 34px; width: 221px; height: 266.5px">
+            <img src="../../kit/photos/py-photo-philips-stadion.jpg" alt="" style="position: absolute; left: -331px; top: -163px; width: 812px; height: 541px; object-fit: fill">
+          </div>
+          <div style="position: absolute; left: 34px; top: 318px; width: 272px; color: #FFFFFF; font: 400 23px/27px var(--py-font-sans)"><b style="font-weight: 800">Rijd in</b> op je kenteken.</div>
+          <img src="../../kit/assets/logo-horizontal-reverse.svg" alt="" style="position: absolute; left: 34px; bottom: 34px; height: 20px">
+        </div>
+      </div>
+      <div class="head">3. Bubbelmasker</div>
+      <ul>
+        <li>Alleen mensen of een detail van een plek. Nooit tekst in de bubbel.</li>
+        <li>Breedte 8u of 13u, één bubbel per vlak, 1u vrije ruimte.</li>
+        <li>Tekst staat naast of onder de bubbel, op het vlak.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note" style="margin-top: auto">Rode stippellijn = marge 2u (u = korte zijde / 20). Voorbeelden: post 4:5 en A-poster, verkleind.</div>
+</div>
+<script>
+window.addEventListener('load', () => {
+  document.querySelectorAll('img[data-blur]').forEach(img => {
+    const [x0, y0, x1, y1] = img.dataset.blur.split(',').map(Number);
+    const W = img.clientWidth, H = img.clientHeight, nw = img.naturalWidth, nh = img.naturalHeight;
+    const s = Math.max(W / nw, H / nh);
+    const pos = getComputedStyle(img).objectPosition.split(' ').map(v => parseFloat(v) / 100);
+    const ox = (W - nw * s) * pos[0], oy = (H - nh * s) * pos[1];
+    const d = document.createElement('div'), pad = 1;
+    d.style.cssText = `position:absolute;left:${img.offsetLeft + ox + x0 * s - pad}px;top:${img.offsetTop + oy + y0 * s - pad}px;width:${(x1 - x0) * s + 2 * pad}px;height:${(y1 - y0) * s + 2 * pad}px;backdrop-filter:blur(4px);`;
+    img.parentElement.appendChild(d);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Locatiekaart</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<link rel="stylesheet" href="ui.css">
+<style>
+  .lab { position: absolute; font: 700 12px/14px var(--py-font-sans); color: #C4281C; white-space: nowrap; }
+  .lab::before { content: ""; position: absolute; top: 6px; height: 1px; background: #C4281C; width: var(--l, 40px); }
+  .lab.r::before { right: calc(100% + 6px); }
+  .lab.l::before { left: calc(100% + 6px); }
+  .big .photo { height: 239px; }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 860px; padding: 48px 56px; display: flex; flex-direction: column; gap: 32px">
+  <div class="eyebrow">Locatiekaart · één kaart, één link, status in woord en kleur</div>
+  <div style="display: flex; gap: 48px">
+    <!-- anatomy -->
+    <div style="width: 560px; display: flex; flex-direction: column; gap: 28px">
+      <div style="position: relative; height: 200px">
+        <a class="card loc" href="#" style="position: absolute; left: 100px; top: 40px; width: 358px; text-decoration: none; color: inherit">
+          <div class="loc__img photo" style="background-image: url('../../kit/photos/py-photo-philips-stadion.jpg'); background-position: 52% 50%"></div>
+          <div class="loc__body">
+            <h3 class="loc__name">Parking Philips Stadion</h3>
+            <div class="loc__meta">9 min lopen naar centrum</div>
+            <div class="loc__foot">
+              <span class="status status--free"><i data-i="check-circle" data-s="16"></i>Vrij</span>
+              <span class="price"><span class="price__amt">€ 12,50</span><span class="price__unit">per dag</span></span>
+            </div>
+          </div>
+        </a>
+        <div class="lab r" style="left: 0; top: 0; --l: 0px">surface.raised · radius.l · shadow.1</div>
+        <div class="lab l" style="left: 0; top: 80px; --l: 100px">foto 96 · radius.m</div>
+        <div class="lab r" style="left: 476px; top: 50px; --l: 40px">heading-s</div>
+        <div class="lab r" style="left: 476px; top: 84px; --l: 40px">body-s · text.muted</div>
+        <div class="lab l" style="left: 0; top: 150px; --l: 196px">status.free + icoon</div>
+        <div class="lab r" style="left: 476px; top: 156px; --l: 18px">numeric-m</div>
+        <div class="lab" style="left: 100px; top: 172px; --l: 0px">padding space.3 · gap space.3</div>
+      </div>
+      <div class="t-body-s" style="color: var(--py-text-muted)">De hele kaart is één link naar de locatiepagina; de naam is de linktekst. Geen tweede knop in de kaart. De prijs is een echte prijs met eenheid (per 30 min of per dag), nooit een los bedrag of "vanaf" zonder eenheid. In een lijst staat de prijs als tekst, niet in een bubbel: één bubbel per scherm.</div>
+
+      <!-- large card -->
+      <div style="display: flex; gap: 24px; align-items: flex-start">
+        <a class="card big" href="#" style="width: 358px; display: block; text-decoration: none; color: inherit">
+          <div class="photo" style="background-image: url('../../kit/photos/py-photo-philips-stadion.jpg'); background-position: 50% 50%"></div>
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 4px">
+            <span class="status status--free"><i data-i="check-circle" data-s="16"></i>Vrij</span>
+            <h3 class="loc__name">Parking Philips Stadion</h3>
+            <div class="loc__meta">700 plekken · 24 uur open · doorrijhoogte 2,00 m</div>
+            <div class="loc__foot" style="margin-top: 8px"><span class="price"><span class="price__amt">[prijs]</span><span class="price__unit">per 30 min</span></span><span style="color: var(--py-text-brand); font: var(--py-type-numeric-m)"><i data-pijl="right"></i></span></div>
+          </div>
+        </a>
+        <div class="cap" style="width: 150px">Groot: desktop-raster, 3 of 4 per rij. Foto 3:2, radius.l boven, rand en schaduw als de kleine kaart. De hoekige pijl rechtsonder zegt: hier ga je verder.</div>
+      </div>
+    </div>
+
+    <!-- variants -->
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 16px">
+      <div class="t-heading-s">Drie staten</div>
+      <div class="card loc">
+        <div class="loc__img photo" style="background-image: url('../../kit/photos/py-photo-philips-stadion.jpg'); background-position: 52% 50%"></div>
+        <div class="loc__body">
+          <h3 class="loc__name">Parking Philips Stadion</h3>
+          <div class="loc__meta">9 min lopen naar centrum</div>
+          <div class="loc__foot"><span class="status status--free"><i data-i="check-circle" data-s="16"></i>Vrij</span><span class="price"><span class="price__amt">€ 12,50</span><span class="price__unit">per dag</span></span></div>
+        </div>
+      </div>
+      <div class="card loc">
+        <div class="loc__img photo" style="background-image: url('../../kit/photos/py-photo-evoluon.jpg'); background-position: 50% 40%"></div>
+        <div class="loc__body">
+          <h3 class="loc__name">Evoluon</h3>
+          <div class="loc__meta">[afstand] lopen naar [bestemming]</div>
+          <div class="loc__foot"><span class="status status--full"><i data-i="minus-circle" data-s="16"></i>Vol</span><span class="price"><span class="price__amt">[prijs]</span><span class="price__unit">per dag</span></span></div>
+        </div>
+      </div>
+      <div class="card loc">
+        <div class="loc__img photo" style="background-image: url('../../kit/photos/py-photo-city-tower.jpg'); background-position: 50% 60%"></div>
+        <div class="loc__body">
+          <h3 class="loc__name">City Tower</h3>
+          <div class="loc__meta">Weer open [dag] om [tijd]</div>
+          <div class="loc__foot"><span class="status status--closed"><i data-i="lock" data-s="16"></i>Gesloten</span><span class="price__unit">Geen reservering mogelijk</span></div>
+        </div>
+      </div>
+      <table class="t-body-s" style="border-collapse: collapse; margin-top: 8px">
+        <tr style="text-align: left; color: var(--py-text-muted)"><th class="t-label-s" style="padding: 6px 0">Status</th><th class="t-label-s">Token</th><th class="t-label-s">Icoon</th><th class="t-label-s">Contrast licht / donker</th></tr>
+        <tr style="border-top: 1px solid var(--py-border-subtle)"><td style="padding: 6px 0"><b>Vrij</b></td><td class="tok">status.free</td><td>vinkje in cirkel</td><td class="tnum">4,90 / 11,01</td></tr>
+        <tr style="border-top: 1px solid var(--py-border-subtle)"><td style="padding: 6px 0"><b>Vol</b></td><td class="tok">status.full</td><td>streep in cirkel</td><td class="tnum">4,80 / 9,72</td></tr>
+        <tr style="border-top: 1px solid var(--py-border-subtle)"><td style="padding: 6px 0"><b>Gesloten</b></td><td class="tok">status.closed</td><td>slot</td><td class="tnum">5,94 / 10,69</td></tr>
+      </table>
+      <div class="cap">Status staat op surface.default of surface.raised. Op surface.subtle haalt status.full maar 4,44:1. Vol is oranje.700 als tekst, net als een waarschuwing; nooit als vlak of bubbel.</div>
+    </div>
+  </div>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>

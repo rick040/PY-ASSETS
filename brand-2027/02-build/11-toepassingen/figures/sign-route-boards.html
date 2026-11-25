@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Routeborden met taakkleur</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<script src="py-fig.js"></script>
+<script src="py-signs.js"></script>
+<style>
+  .lab { position: absolute; font: 700 15px/20px var(--py-font-sans); color: #FFFFFF; }
+  .lab span { font-weight: 400; color: #C2C7CF; }
+  .col { position: absolute; top: 1000px; width: 340px; font: 400 14px/20px var(--py-font-sans); color: #FFFFFF; }
+  .col b { font-weight: 700; }
+  .col .h { font: 700 14px/18px var(--py-font-sans); letter-spacing: 0.01em; color: #C2C7CF; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="fig fig--garage" style="width: 1200px; height: 1210px">
+  <div class="eyebrow" style="position: absolute; left: 60px; top: 36px; color: #C2C7CF">Routeborden · pil 200 mm hoog · de stem scheidt de modules · de pijl staat los</div>
+
+  <!-- 1 user unit = 1 mm, 0.8 px per mm -->
+  <svg id="b" style="position: absolute; left: 60px; top: 90px" width="1080" height="904" viewBox="0 0 1350 1130"></svg>
+
+  <div class="lab" style="left: 900px; top: 100px">Rijden · navy<br><span>1000 x 200, wit op PY-Blauw,<br>stem PY-Aqua</span></div>
+  <div class="lab" style="left: 720px; top: 280px">Rijden · navy <span>800 x 200</span></div>
+  <div class="lab" style="left: 900px; top: 460px">Lopen · aqua<br><span>1000 x 200, PY-Blauw op PY-Aqua,<br>stem PY-Blauw</span></div>
+  <div class="lab" style="left: 900px; top: 640px">Lopen · merkmoment<br><span>de loper, waar geen pictogram<br>verplicht is (bestemming buiten),<br>42 mm lucht tot de tekst</span></div>
+  <div class="lab" style="left: 900px; top: 820px">Betalen · oranje<br><span>1000 x 200, PY-Diep op PY-Oranje,<br>stem PY-Diep, euroteken<br>zonder ring</span></div>
+  <div class="measure-label" style="left: 200px; top: 72px">stem 140 · lijn 5,6</div>
+  <div class="measure-label" style="left: 420px; top: 72px">kap 70 · 7 m</div>
+  <div class="measure-label" style="left: 700px; top: 72px">pijl 2k = 140</div>
+
+  <div class="col" style="left: 60px">
+    <div class="h">Maat en grid</div>
+    Pil 200 hoog, radius 100, breedte 600, 800 of 1000. u = 10 mm, marge 2u. Pijl en pictogram krijgen een tekenvlak van 2 x de kaphoogte: 140 x 140 mm. Tussen twee modules staat de stem, 140 hoog, lijn 5,6 mm, met 0,3 x 140 = 42 mm lucht aan elke kant (dezelfde regel als naast een kop). Hooguit vijf modules; meer is een tweede bord.
+  </div>
+  <div class="col" style="left: 430px">
+    <div class="h">Pijl en letter</div>
+    <b>Pijl</b> de hoekige pijl, 2 x de kaphoogte = 140 mm, los op de grond in de inhoudskleur, in stappen van 45°. Schuin is dezelfde pijl gedraaid, dus even lang. Nooit in een bubbel of cirkel. Wijst hij naar links, omhoog of schuin omhoog, dan staat hij vooraan; naar rechts achteraan. <b>Tekst</b> Bold, kap 70 mm (font 101 mm), leesbaar tot 7 m, alleen Nederlands.
+  </div>
+  <div class="col" style="left: 800px">
+    <div class="h">De loper en materiaal</div>
+    De loper (eenkleurig PY-Blauw op aqua, 115 mm, onder de 60 procent van de hoogte) staat op de basislijn van de tekst, met 0,3 x 140 = 42 mm lucht tussen zijn hand en de tekst. Alleen bij bestemmingen buiten de garage; uitgang, lift en trap houden het pictogram. Pictogrammen zonder eigen ring: het bord is al de rand. Sandwichpaneel, folie in vierkleurendruk, <b>matte</b> laminaat.
+  </div>
+</div>
+<script>
+  const C = PYS.C;
+  let m = '';
+  m += `<g transform="translate(0 0)">${PYS.board({ w: 1000, fill: C.navy, fg: C.white, stem: C.aqua, left: [['picto','car'],['stem'],['text','Uitrit']], right: [['stem'],['arrow',0]] })}</g>`;
+  m += `<g transform="translate(0 225)">${PYS.board({ w: 800, fill: C.navy, fg: C.white, stem: C.aqua, left: [['arrow',-90],['stem'],['picto','accessible']] })}</g>`;
+  m += `<g transform="translate(0 450)">${PYS.board({ w: 1000, fill: C.aqua, fg: C.navy, stem: C.navy, left: [['arrow',-135],['stem'],['picto','pedestrian'],['stem'],['text','Uitgang']] })}</g>`;
+  m += `<g transform="translate(0 675)">${PYS.board({ w: 1000, fill: C.aqua, fg: C.navy, left: [['fig','walk'],['text','Centrum']], right: [['arrow',0]] })}</g>`;
+  m += `<g transform="translate(0 900)">${PYS.board({ w: 1000, fill: C.orange, fg: C.diep, stem: C.diep, left: [['picto','euro'],['stem'],['text','Betalen']], right: [['stem'],['arrow',0]] })}</g>`;
+  // measures
+  m += `<g stroke="#C4281C" stroke-width="3" fill="none"><path d="M1030 0V200M1018 0H1042M1018 200H1042"/><path d="M0 1125H1000M0 1113V1137M1000 1113V1137"/></g>`;
+  PYS.mount('b', m);
+</script>
+</body>
+</html>

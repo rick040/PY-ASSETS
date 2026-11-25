@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Fotografie: stijlbord</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .ph { position: relative; overflow: hidden; background: var(--py-color-neutral-100); }
+  .ph img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cap { margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
+  .cap b { font: 700 14px/18px var(--py-font-sans); color: var(--py-text-brand); }
+  .calm { position: absolute; border: 2px dashed #FFFFFF; }
+  .calm span { position: absolute; left: 8px; top: 8px; font: 700 12px/14px var(--py-font-sans); color: var(--py-text-brand); background: #FFFFFF; padding: 2px 6px; border-radius: 3px; }
+  .rule { flex: 1; border-top: 3px solid var(--py-color-blue-700); padding-top: 10px; }
+  .rule .t-label-m { color: var(--py-text-brand); }
+  .rule .t-body-s { color: var(--py-text-default); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="fig" style="width: 1200px; height: 900px; padding: 44px 56px; display: flex; flex-direction: column; gap: 20px">
+  <div>
+    <div class="eyebrow">Fotografie · stijlbord</div>
+    <div class="t-heading-m" style="color: var(--py-text-brand); margin-top: 6px">Eigen plekken, daglicht, natuurlijke kleur.</div>
+  </div>
+
+  <div style="display: flex; gap: 24px">
+    <div style="width: 640px">
+      <div class="ph" style="height: 330px">
+        <img src="../../kit/photos/py-photo-dll-garage.jpg" alt="" style="object-position: 50% 30%">
+        <div class="calm" style="left: 380px; top: 18px; width: 230px; height: 120px"><span>rustig vlak</span></div>
+      </div>
+      <div class="cap"><b>Straatcontext · DLL Garage, Eindhoven</b><span class="note">Ooghoogte, horizon recht, veel lucht. De garage staat in zijn straat.</span></div>
+    </div>
+    <div style="width: 424px">
+      <div class="ph" style="height: 330px">
+        <img src="../../kit/photos/py-photo-city-tower.jpg" alt="" style="object-position: 30% 52%">
+      </div>
+      <div class="cap"><b>Voetgangersingang · City Tower, Eindhoven</b><span class="note">Bord en deur in één beeld. Echte plek, echte bewegwijzering.</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 24px">
+    <div style="width: 532px">
+      <div class="ph" style="height: 200px">
+        <img src="../../kit/photos/py-photo-philips-stadion.jpg" alt="" style="object-position: 70% 62%" data-blur="1000,562,1046,578">
+      </div>
+      <div class="cap"><b>Garage-ingang · Parking Philips Stadion</b><span class="note">Een auto rijdt in. Kenteken altijd onherkenbaar maken.</span></div>
+    </div>
+    <div style="width: 532px">
+      <div class="ph" style="height: 200px">
+        <img src="../../kit/photos/py-photo-evoluon.jpg" alt="" style="object-position: 50% 42%">
+      </div>
+      <div class="cap"><b>Terrein · Evoluon, Eindhoven</b><span class="note">Bestemming en parkeerplek samen. Neutrale kleur, geen filter.</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 24px; margin-top: 4px">
+    <div class="rule"><div class="t-label-m">Licht</div><div class="t-body-s">Daglicht of schoon garagelicht, alle lampen aan.</div></div>
+    <div class="rule"><div class="t-label-m">Kader</div><div class="t-body-s">Ooghoogte, soms recht van boven. Lijnen recht.</div></div>
+    <div class="rule"><div class="t-label-m">Lens</div><div class="t-body-s">Normaal tot licht groothoek. Plekken scherp.</div></div>
+    <div class="rule"><div class="t-label-m">Kleur</div><div class="t-body-s">Neutraal, iets koel. Geen kleurlaag, geen filter.</div></div>
+  </div>
+</div>
+<script>
+// Blur licence plates: data-blur="x0,y0,x1,y1" in source pixels; mapped through object-fit: cover and object-position (percent).
+window.addEventListener('load', () => {
+  document.querySelectorAll('img[data-blur]').forEach(img => {
+    const [x0, y0, x1, y1] = img.dataset.blur.split(',').map(Number);
+    const W = img.clientWidth, H = img.clientHeight, nw = img.naturalWidth, nh = img.naturalHeight;
+    const s = Math.max(W / nw, H / nh);
+    const pos = getComputedStyle(img).objectPosition.split(' ').map(v => parseFloat(v) / 100);
+    const ox = (W - nw * s) * pos[0], oy = (H - nh * s) * pos[1];
+    const d = document.createElement('div');
+    const pad = 3;
+    d.style.cssText = `position:absolute;left:${img.offsetLeft + ox + x0 * s - pad}px;top:${img.offsetTop + oy + y0 * s - pad}px;width:${(x1 - x0) * s + 2 * pad}px;height:${(y1 - y0) * s + 2 * pad}px;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);`;
+    img.parentElement.appendChild(d);
+  });
+});
+</script>
+</body>
+</html>

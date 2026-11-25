@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Logo: locatielockup, opbouw</title>
+<link rel="stylesheet" href="../../kit/kit.css">
+<style>
+  .abs { position: absolute; }
+  svg.ov { position: absolute; left: 0; top: 0; }
+  .ml { transform: translate(-50%, -50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<!-- Construction in x (x = beeldmerk width). Horizontal logo 4.369x by 1.206x; wordmark ink starts at 1.296x, ends at 4.369x;
+     wordmark baseline 0.667x; beeldmerk tip 1.200x. Name: Ubuntu Sans Bold, font size 0.4x (PROPOSED, cap height 0.28x), tracking 0.01 em.
+     Ubuntu Sans Bold capitals start 0.08 em right of the text origin, so the text origin sits 0.08 em left of the target edge. -->
+<div class="fig" style="width: 1200px; height: 780px">
+  <div class="eyebrow abs" style="left: 56px; top: 56px">Locatielockup · opbouw in x, naam in Ubuntu Sans Bold</div>
+
+  <!-- A: name under the wordmark. x = 150, origin (120, 200) -->
+  <div class="t-heading-s abs" style="left: 56px; top: 92px">A · Naam onder het woordmerk (standaard)</div>
+  <div class="abs" style="left: 45px; top: 125px; width: 805.35px; height: 341.4px; background: var(--py-color-blue-50); outline: 1.5px dashed #C4281C"></div>
+  <img class="abs" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="left: 120px; top: 200px; width: 655.35px">
+
+  <!-- B: name on one line. x = 80, origin (120, 620) -->
+  <div class="t-heading-s abs" style="left: 56px; top: 540px">B · Naam op één regel (brede, lage vlakken)</div>
+  <img class="abs" src="../../kit/assets/logo-horizontal-color.svg" alt="" style="left: 120px; top: 620px; width: 349.5px">
+
+  <svg class="ov" width="1200" height="780" aria-hidden="true">
+    <text x="309.6" y="380" font-family="Ubuntu Sans" font-weight="700" font-size="60" letter-spacing="0.6" fill="#1A3580">Philips Stadion</text>
+    <text x="506.9" y="673.35" font-family="Ubuntu Sans" font-weight="700" font-size="32" letter-spacing="0.32" fill="#1A3580">Philips Stadion</text>
+    <g stroke="#C4281C" stroke-width="1.5" fill="none">
+      <!-- A: x -->
+      <line x1="120" y1="182" x2="270" y2="182"/><line x1="120" y1="176" x2="120" y2="188"/><line x1="270" y1="176" x2="270" y2="188"/>
+      <!-- A: left alignment on the p -->
+      <line x1="314.4" y1="190" x2="314.4" y2="400" stroke-dasharray="4 4"/>
+      <!-- A: baseline on the tip -->
+      <line x1="60" y1="380" x2="850" y2="380" stroke-dasharray="4 4"/>
+      <!-- A: wordmark baseline -->
+      <line x1="300" y1="300" x2="850" y2="300" stroke-dasharray="1 4"/>
+      <!-- A: cap height -->
+      <line x1="820" y1="338.4" x2="820" y2="380"/><line x1="814" y1="338.4" x2="826" y2="338.4"/>
+      <!-- A: clear space -->
+      <line x1="45" y1="290" x2="120" y2="290"/>
+      <!-- B: x -->
+      <line x1="120" y1="608" x2="200" y2="608"/><line x1="120" y1="603" x2="120" y2="613"/><line x1="200" y1="603" x2="200" y2="613"/>
+      <!-- B: gap 0.5x -->
+      <line x1="469.5" y1="608" x2="509.5" y2="608"/><line x1="469.5" y1="603" x2="469.5" y2="613"/><line x1="509.5" y1="603" x2="509.5" y2="613"/>
+      <!-- B: shared baseline -->
+      <line x1="100" y1="673.35" x2="770" y2="673.35" stroke-dasharray="4 4"/>
+    </g>
+  </svg>
+  <div class="measure-label ml" style="left: 195px; top: 166px">x</div>
+  <div class="measure-label ml" style="left: 82px; top: 308px">0,5x</div>
+  <div class="measure-label ml" style="left: 790px; top: 359px; background: var(--py-color-blue-50)">0,28x</div>
+  <div class="measure-label abs" style="left: 866px; top: 292px">basislijn woordmerk</div>
+  <div class="measure-label abs" style="left: 866px; top: 372px">basislijn naam = punt beeldmerk</div>
+  <div class="measure-label abs" style="left: 866px; top: 452px">vrije ruimte 0,5x</div>
+  <div class="note abs" style="left: 56px; top: 482px; width: 1000px">Naam in Ubuntu Sans Bold, lettergrootte 0,4x (kapitaalhoogte 0,28x). Links gelijk met de stok van de p, basislijn op de punt van het beeldmerk.</div>
+  <div class="measure-label ml" style="left: 160px; top: 593px">x</div>
+  <div class="measure-label ml" style="left: 489.5px; top: 593px">0,5x</div>
+  <div class="measure-label abs" style="left: 782px; top: 665px">één basislijn met het woordmerk</div>
+  <div class="note abs" style="left: 56px; top: 720px; width: 1000px">Zelfde lettergrootte (0,4x), basislijn van het woordmerk, 0,5x tussenruimte. Alleen voor portalen, gevelbanden en schermkoppen waar geen hoogte is voor A.</div>
+</div>
+</body>
+</html>
