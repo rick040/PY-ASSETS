@@ -8,6 +8,8 @@ import type {Zoekopdracht} from './zoekopdrachten';
 
 // Search spot, after the Jitter work in progress "IOS Stack": the question is typed in a search bar,
 // the matching locations come in as a card carousel, and a CTA closes it. 60 fps, 9:16 and 16:9.
+// No CSS blur filters: with them Chrome sometimes dropped layers in a frame (cards flickered away).
+// 9:16 keeps logo, search and cards inside the 4:5 feed preview (y 285 to 1635).
 
 export type ZoekFormaat = 'staand' | 'liggend';
 
@@ -26,20 +28,20 @@ const GEO: Record<ZoekFormaat, Geo> = {
   staand: {
     w: 1080,
     h: 1920,
-    logo: {y: 270, w: 300},
-    pill: {w: 960, h: 150, y: 900, yUp: 420, scaleUp: 0.86, text: 54},
-    card: {w: 820, h: 972, y: 545, gap: 860, name: 74, pill: 40, pad: 52},
-    dotsY: 1560,
+    logo: {y: 320, w: 300},
+    pill: {w: 960, h: 150, y: 900, yUp: 460, scaleUp: 0.86, text: 54},
+    card: {w: 820, h: 972, y: 578, gap: 860, name: 74, pill: 40, pad: 52},
+    dotsY: 1588,
     cta: {logoY: 520, logoW: 380, titleY: 1010, title: 104, sub: 60, buttonY: 1250, button: 58},
   },
   // YouTube: centred, neighbouring cards visible left and right.
   liggend: {
     w: 1920,
     h: 1080,
-    logo: {y: 55, w: 250},
-    pill: {w: 1100, h: 124, y: 500, yUp: 175, scaleUp: 0.8, text: 50},
-    card: {w: 540, h: 640, y: 270, gap: 600, name: 52, pill: 30, pad: 36},
-    dotsY: 948,
+    logo: {y: 70, w: 250},
+    pill: {w: 1100, h: 124, y: 500, yUp: 190, scaleUp: 0.8, text: 50},
+    card: {w: 540, h: 640, y: 285, gap: 600, name: 52, pill: 30, pad: 36},
+    dotsY: 958,
     cta: {logoY: 150, logoW: 300, titleY: 560, title: 96, sub: 52, buttonY: 790, button: 52},
   },
 };
@@ -147,8 +149,8 @@ const Card: React.FC<{l: Locatie; g: Geo; active: number}> = ({l, g, active}) =>
   const c = g.card;
   // Text and pills come in each time the card becomes the active one.
   const name = tween(frame, active + 4, active + 30, ease(0.2, 0.9, 0.3, 1));
-  const pill1 = tween(frame, active + 16, active + 40, ease(0.2, 1.4, 0.4, 1));
-  const pill2 = tween(frame, active + 24, active + 48, ease(0.2, 1.4, 0.4, 1));
+  const pill1 = tween(frame, active + 16, active + 40, ease(0.2, 0.9, 0.3, 1));
+  const pill2 = tween(frame, active + 24, active + 48, ease(0.2, 0.9, 0.3, 1));
   const lines = wrap(l.naam, c.name, '700', c.w - c.pad * 2);
   const pill = (text: string, t: number, bg: string, color: string) => (
     <div
@@ -162,9 +164,8 @@ const Card: React.FC<{l: Locatie; g: Geo; active: number}> = ({l, g, active}) =>
         color,
         fontWeight: 700,
         fontSize: c.pill,
-        transform: `scale(${t})`,
-        transformOrigin: 'left center',
-        opacity: Math.min(1, t * 2),
+        transform: `translateY(${(1 - t) * 24}px)`,
+        opacity: t,
         whiteSpace: 'nowrap',
       }}
     >
@@ -220,8 +221,7 @@ const Carousel: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
         const ad = Math.min(Math.abs(d), 1.5);
         const x = g.w / 2 - c.w / 2 + d * c.gap;
         const scale = (1 - 0.14 * Math.min(ad, 1)) * (0.88 + 0.12 * enter);
-        const blur = 7 * Math.min(ad, 1) + 18 * (1 - enter);
-        const opacity = (1 - 0.45 * Math.min(ad, 1)) * enter;
+        const opacity = (1 - 0.5 * Math.min(ad, 1)) * enter;
         return (
           <div
             key={l.slug}
@@ -232,7 +232,6 @@ const Carousel: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
               width: c.w,
               height: c.h,
               transform: `scale(${scale})`,
-              filter: `blur(${blur}px)`,
               opacity,
               zIndex: 10 - Math.round(ad * 2),
             }}
