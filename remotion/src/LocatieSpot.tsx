@@ -104,38 +104,44 @@ const Photo: React.FC<{src: string}> = ({src}) => {
 
 // ---------------------------------------------------------------- title
 
-const TITLE_SIZE = 100;
-const TITLE_MAX = 820;
+// One size for every title. A name that does not fit next to "Parking" goes to its own line,
+// and a name that is too wide for one line wraps at a space (for example "Bos en" / "Lommerplantsoen").
+const TITLE_SIZE = 88;
+const TITLE_LINE = 101;
+const TITLE_MAX = 1010 - 115 - 25;
+
+/** Title lines: the first is always "Parking" (with the name after it when it fits). */
+const titleLines = (naam: string): {text: string; bold: boolean}[][] => {
+  const one = width('Parking ', TITLE_SIZE, '400') + width(naam, TITLE_SIZE, '700');
+  if (one <= TITLE_MAX) return [[{text: 'Parking ', bold: false}, {text: naam, bold: true}]];
+  return [[{text: 'Parking', bold: false}], ...wrap(naam, TITLE_SIZE, '700', TITLE_MAX).map((l) => [{text: l, bold: true}])];
+};
+
+/** Where the title starts and where the check rows go, by number of title lines. */
+const layout = (lines: number) =>
+  lines === 1 ? {top: 130, rowTop: 423, rowStep: 138} : lines === 2 ? {top: 85, rowTop: 423, rowStep: 138} : {top: 62, rowTop: 504, rowStep: 126};
 
 const Title: React.FC<{naam: string}> = ({naam}) => {
   const frame = useCurrentFrame();
-  const full = width('Parking ', TITLE_SIZE, '400') + width(naam, TITLE_SIZE, '700');
-  const size = Math.min(TITLE_SIZE, (TITLE_SIZE * TITLE_MAX) / (full + TITLE_SIZE * 0.25));
-  // Words come up out of a mask: "Parking" first, the name a frame later and slower.
-  const word = (text: string, weight: number, from: number, to: number) => {
-    const t = tween(frame, from, to, ease(0.2, 0.9, 0.3, 1));
-    return (
-      <span style={{display: 'inline-block', overflow: 'hidden', verticalAlign: 'top', paddingBottom: size * 0.12}}>
-        <span style={{display: 'inline-block', fontWeight: weight, transform: `translateY(${(1 - t) * 110}%)`}}>{text}</span>
-      </span>
-    );
-  };
+  const lines = titleLines(naam);
+  const {top} = layout(lines.length);
+  // Words come up out of a mask: "Parking" first, the name a frame later and slower (Jitter timing).
+  const timing = (bold: boolean, line: number) => (bold ? [93 + (line - 1) * 4, 130.8 + (line - 1) * 4] : [91.8, 104.5]);
   return (
-    <div
-      style={{
-        position: 'absolute',
-        left: 115,
-        top: 120 + (TITLE_SIZE - size) * 0.5,
-        fontFamily: font,
-        fontSize: size,
-        lineHeight: 1.2,
-        color: colors.wit,
-        whiteSpace: 'nowrap',
-      }}
-    >
-      {word('Parking', 400, 91.8, 104.5)}
-      <span style={{display: 'inline-block', width: size * 0.25}} />
-      {word(naam, 700, 93, 130.8)}
+    <div style={{position: 'absolute', left: 115, top, fontFamily: font, fontSize: TITLE_SIZE, color: colors.wit, whiteSpace: 'nowrap'}}>
+      {lines.map((parts, li) => (
+        <div key={li} style={{height: TITLE_LINE, lineHeight: `${TITLE_LINE}px`, overflow: 'hidden'}}>
+          {parts.map((part, pi) => {
+            const [from, to] = timing(part.bold, li);
+            const t = tween(frame, from, to, ease(0.2, 0.9, 0.3, 1));
+            return (
+              <span key={pi} style={{display: 'inline-block', whiteSpace: 'pre', fontWeight: part.bold ? 700 : 400, transform: `translateY(${(1 - t) * 110}%)`}}>
+                {part.text}
+              </span>
+            );
+          })}
+        </div>
+      ))}
     </div>
   );
 };
@@ -167,7 +173,8 @@ const Check: React.FC<{size: number}> = ({size}) => (
   </svg>
 );
 
-const Rows: React.FC<{kenmerken: Locatie['kenmerken']}> = ({kenmerken}) => {
+const Rows: React.FC<{kenmerken: Locatie['kenmerken']; naam: string}> = ({kenmerken, naam}) => {
+  const {rowTop, rowStep} = layout(titleLines(naam).length);
   const frame = useCurrentFrame();
   return (
     <>
@@ -180,7 +187,7 @@ const Rows: React.FC<{kenmerken: Locatie['kenmerken']}> = ({kenmerken}) => {
         const check = bounce(frame, r.check) * out;
         const text = licht ? `${licht} ${vet}` : vet;
         const size = Math.min(ROW_SIZE, (ROW_SIZE * ROW_MAX) / width(text, ROW_SIZE, '700'));
-        const cy = 423 + i * 138;
+        const cy = rowTop + i * rowStep;
         return (
           <div key={i} style={{position: 'absolute', left: 113, top: cy - 41, height: 82, opacity, transform: `translateX(${-41 * (1 - t)}px)`}}>
             <div
@@ -362,7 +369,7 @@ export const LocatieSpot: React.FC<{locatie: Locatie}> = ({locatie}) => {
       />
       {frame < 78 ? <Hook hook={locatie.hook} subhook={locatie.subhook} /> : null}
       <Title naam={locatie.naam} />
-      <Rows kenmerken={locatie.kenmerken} />
+      <Rows kenmerken={locatie.kenmerken} naam={locatie.naam} />
       <Logo />
       <Bubble prijs={locatie.prijs} />
     </AbsoluteFill>
