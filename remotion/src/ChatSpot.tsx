@@ -134,7 +134,10 @@ export const ChatSpot: React.FC<{gesprek: Chatgesprek; formaat?: ZoekFormaat}> =
 
   const k = g.card;
   const nameLines = wrap(l.naam, k.name, '700', k.w - g.pad * 2);
-  const cardH = k.photoH + g.pad * 0.8 + k.name * 0.75 + nameLines.length * k.name * 1.12 + k.pill * 1.9 + g.pad;
+  // Two pills side by side when they fit, else the second goes to its own row (and the card grows).
+  const pillW = (text: string) => width(text, k.pill, '700') + k.pill * 1.2 + 12;
+  const pillRows = pillW(prijsTekst(l)) + pillW(c.kenmerk ?? kenmerkTekst(l)) > k.w - g.pad * 2 ? 2 : 1;
+  const cardH = k.photoH + g.pad * 0.8 + k.name * 0.75 + nameLines.length * k.name * 1.12 + pillRows * k.pill * 1.9 + g.pad;
   const pill = (text: string, bg: string, color: string) => (
     <div style={{display: 'inline-block', marginRight: 12, marginTop: 12, padding: `${k.pill * 0.3}px ${k.pill * 0.6}px`, borderRadius: 999, background: bg, color, fontWeight: 700, fontSize: k.pill, whiteSpace: 'nowrap'}}>
       {text}
