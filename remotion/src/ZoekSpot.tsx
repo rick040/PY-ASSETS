@@ -9,7 +9,7 @@ import type {Zoekopdracht} from './zoekopdrachten';
 // Search spot, after the Jitter work in progress "IOS Stack": the question is typed in a search bar,
 // the matching locations come in as a card carousel, and a CTA closes it. 60 fps, 9:16 and 16:9.
 // No CSS blur filters and no box-shadows: with them Chrome sometimes dropped layers in a frame (cards flickered away).
-// 9:16 keeps logo, search and cards inside the 4:5 feed preview (y 285 to 1635).
+// 9:16: logo above the search bar with room to spare once the bar moves up.
 
 export type ZoekFormaat = 'staand' | 'liggend';
 
@@ -28,7 +28,7 @@ const GEO: Record<ZoekFormaat, Geo> = {
   staand: {
     w: 1080,
     h: 1920,
-    logo: {y: 320, w: 300},
+    logo: {y: 250, w: 300},
     pill: {w: 960, h: 150, y: 900, yUp: 460, scaleUp: 0.86, text: 54},
     card: {w: 820, h: 972, y: 578, gap: 860, name: 74, pill: 40, pad: 52},
     dotsY: 1588,
@@ -38,8 +38,8 @@ const GEO: Record<ZoekFormaat, Geo> = {
   liggend: {
     w: 1920,
     h: 1080,
-    logo: {y: 70, w: 250},
-    pill: {w: 1100, h: 124, y: 500, yUp: 190, scaleUp: 0.8, text: 50},
+    logo: {y: 40, w: 250},
+    pill: {w: 1100, h: 124, y: 500, yUp: 200, scaleUp: 0.8, text: 50},
     card: {w: 540, h: 640, y: 285, gap: 600, name: 52, pill: 30, pad: 36},
     dotsY: 958,
     cta: {logoY: 150, logoW: 300, titleY: 560, title: 96, sub: 52, buttonY: 790, button: 52},
@@ -143,7 +143,7 @@ const Search: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
 
 // ---------------------------------------------------------------- cards
 
-const Card: React.FC<{l: Locatie; g: Geo; active: number}> = ({l, g, active}) => {
+const Card: React.FC<{l: Locatie; g: Geo; active: number; kenmerk?: string}> = ({l, g, active, kenmerk}) => {
   const frame = useCurrentFrame();
   const c = g.card;
   // Text and pills come in each time the card becomes the active one.
@@ -195,7 +195,7 @@ const Card: React.FC<{l: Locatie; g: Geo; active: number}> = ({l, g, active}) =>
         ))}
         <div>
           {pill(prijsTekst(l), pill1, colors.aqua, colors.wit)}
-          {pill(kenmerkTekst(l), pill2, 'rgba(255,255,255,0.92)', colors.blauw)}
+          {pill(kenmerk ?? kenmerkTekst(l), pill2, 'rgba(255,255,255,0.92)', colors.blauw)}
         </div>
       </div>
     </div>
@@ -234,7 +234,7 @@ const Carousel: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
               zIndex: 10 - Math.round(ad * 2),
             }}
           >
-            <Card l={l} g={g} active={t.cards[i]} />
+            <Card l={l} g={g} active={t.cards[i]} kenmerk={z.kenmerk?.[l.slug]} />
           </div>
         );
       })}

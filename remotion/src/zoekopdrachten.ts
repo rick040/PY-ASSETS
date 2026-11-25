@@ -9,6 +9,8 @@ export type Zoekopdracht = {
   locaties: string[];
   /** Why these locations, or what to check before posting. */
   noot?: string;
+  /** Replaces the second pill on a card for this search (location slug to text), for example the distance to a venue. */
+  kenmerk?: Record<string, string>;
 };
 
 export const zoekopdrachten: Zoekopdracht[] = [
@@ -16,8 +18,10 @@ export const zoekopdrachten: Zoekopdracht[] = [
     slug: 'avondje-psv',
     zoek: 'Avondje [PSV]?',
     locaties: ['td-gebouw', 'dll-garage', 'dll-parkeerdek'],
+    kenmerk: {'td-gebouw': '1,4 km naar het stadion', 'dll-garage': '1,8 km naar het stadion', 'dll-parkeerdek': '1,8 km naar het stadion'},
     noot:
-      'Philips Stadion en Philips Bedrijfsschool zijn volgens de site niet beschikbaar tijdens wedstrijden en grote evenementen, daarom niet in deze zoekopdracht. DLL is ma-vr open vanaf 17:00.',
+      'Philips Stadion en Philips Bedrijfsschool zijn volgens de site niet beschikbaar tijdens wedstrijden en grote evenementen, daarom niet in deze zoekopdracht. DLL is ma-vr open vanaf 17:00. ' +
+      'Afstanden: looproute via OpenStreetMap (25-11-2026) van Frederik van Eedenplein 1 (1379 m) en Kanaalstraat 2 (1841 m) naar het Philips Stadion.',
   },
   {slug: 'amsterdam', zoek: 'Voordelig parkeren in [Amsterdam]?', locaties: ['plantage', 'cruquius', 'zeeburgerkade', 'bos-en-lommerplantsoen']},
   {slug: 'amsterdam-west', zoek: 'Parkeren in Amsterdam [West]?', locaties: ['b-amsterdam-b1', 'bos-en-lommerplantsoen']},
