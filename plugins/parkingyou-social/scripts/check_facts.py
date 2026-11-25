@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import Finding, load_json, texts_of  # noqa: E402
+from common import Finding, load_json, plain, texts_of  # noqa: E402
 
 RESERVE = re.compile(r"reserveer|reserveren|zeker\s+van\s+je\s+plek", re.I)
 FACILITIES = [
@@ -56,7 +56,7 @@ def codes_of(spec: dict) -> list[str]:
 def amounts_of(spec: dict) -> list[tuple[str, float]]:
     found = []
     for where, text in texts_of(spec):
-        for m in EURO.finditer(text):
+        for m in EURO.finditer(plain(text)):
             found.append((where, float(m.group(1).replace(".", "").replace(",", ".") if "," in m.group(1) else m.group(1))))
 
     def walk(v, where):
@@ -92,7 +92,7 @@ def check(spec: dict, facts: dict | None, today: dt.date | None = None) -> list[
     out: list[Finding] = []
     codes = codes_of(spec)
     amounts = amounts_of(spec)
-    texts = " \n".join(t for _, t in texts_of(spec))
+    texts = " \n".join(plain(t) for _, t in texts_of(spec))
     if not codes and not amounts and not uses_reserve(spec):
         return [Finding("facts", "info", "-", "no locations or prices in this post")]
     if amounts and not spec.get("price_check"):

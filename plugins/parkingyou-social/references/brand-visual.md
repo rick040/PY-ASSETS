@@ -33,15 +33,16 @@ Text needs 4.5:1; large text (24 px regular or 19 px bold and up at 1080 px wide
 | white on PY-Blauw | 11.26 | Default for both themes |
 | PY-Aqua on PY-Blauw | 4.80 | `feed` only, for key words and badges. `2027`: never (AP Social) |
 | PY-Blauw on PY-Aqua | 4.80 | Both |
-| PY-Blauw on white or pale blue | 11.26 / 9.9 | Both |
+| PY-Blauw on white | 11.26 | Both |
 | PY-Grijs on PY-Blauw | 5.08 | Struck-through prices (`feed`) |
 | white on the verloop mid stop `#097BAE` | 4.71 | Just passes; keep text in the navy part of the verloop |
+| PY-Blauw on PY-Aqua (button, badge) | 4.80 | Both (D S16) |
 | white on PY-Aqua | 2.34 | **Never** |
 | white on PY-Oranje | 2.64 | **Never** |
 | PY-Aqua or PY-Grijs on white | 2.34 / 2.22 | **Never** as text |
 | PY-Blauw on PY-Oranje | 4.26 | Large text only |
 
-On gradients, photos and drifting light the check is done on the rendered pixels behind each text box, not on the nominal colour (QA `check_brand.py`).
+Contrast is measured on the rendered pixels behind the glyphs, not on the nominal colour (QA `check_brand.py`).
 
 ## 3. Theme `feed` (current look)
 
@@ -49,36 +50,32 @@ Source of truth for the look: the 15 posts in `social/remotion/renders/posts/` a
 
 ### 3.1 Colour roles
 
+Only exact token colours (decision S13). No lighting effects, glows, grain, vignettes, shadows or extra gradients.
+
 | Role | Value | Source |
 |---|---|---|
-| Main ground | Flat PY-Blauw with slowly drifting light, film grain and vignette (`Backdrop navy`) | RR, BP |
-| Second ground | The cyan-to-blue GLOW gradient (`Backdrop glow`) | RR |
-| Light ground | Pale blue (`Backdrop light`), navy text, colour logo | RR |
-| Photo ground | Own photo with a slow move and a dark gradient for legible text (`Backdrop photo`) | RR |
-| Verloop | 135° from `#1A3580` (0 to 18 %) via `#097BAE` (62 %) to `#32B9CD` (100 %); text stays in the navy area | T `py-tok-gradient-verloop`, BP |
-| Accent | PY-Aqua for key words in captions-on-image, price badges, lines, the arrow button | BP, ST 8 |
-| Orange | Rare accent only: "Nieuw" and carnaval confetti. Never a button, never a ground | BP, ST 8 |
-| Never | Flat white as a full ground | BP |
-
-The drifting light uses tints (`#9FF3FF`, `#4E7BFF`, `#3B5BD0`, `#E4EEF4`) that live only inside `Backdrop`. They are lighting, not fills; no template may use them for shapes or text.
+| Main ground | Flat PY-Blauw (`navy`, the default) | T, D S15 |
+| Second ground | The verloop from `tokens.json` (`verloop`, 135°): text stays in the navy part. Open point in `decisions.md` | T `py-tok-gradient-verloop` |
+| Light ground | Flat white (`white`), navy text, colour logo | T, D S15 |
+| Photo | Own photo with text on a PY-Blauw field next to or below it, never on the photo and never under a darkening overlay | CS 9, D S15 |
+| Accent | PY-Aqua for badges, the CTA button, numbers and lines | BP, ST 8 |
+| Orange | Rare accent only ("Nieuw", carnaval). Never a button, never a ground | BP, ST 8 |
+| Never | Any colour that is not a token: the GLOW gradient, drifting light (`#9FF3FF`, `#4E7BFF`, `#3B5BD0`), pale blue `#E4EEF4`, darkened navy, shadows | D S13 |
 
 ### 3.2 Logo
 
-The logo is picked by the ground, never by hand (`TopLogo`, RR "Logo and button rules"):
-
 | Ground | Logo | File |
 |---|---|---|
-| Navy, photo | White with the aqua dot. **Never the navy ring fill** of the `-reverse` files (Rick, 5 November 2026) | `py-atom-logo-horizontal-reverse-open` (derived by `sync-assets.mjs`) |
-| GLOW gradient, end card | All white with a white dot | `py-atom-logo-horizontal-reverse-whitedot` (derived) |
-| Pale blue | Colour logo | `py-atom-logo-horizontal-color` |
+| Navy, verloop, navy field next to a photo | White with the aqua dot. **Never the navy ring fill** of the `-reverse` files (Rick, 5 November 2026) | `py-atom-logo-horizontal-reverse-open` (derived by `sync-assets.mjs`) |
+| White | Colour logo | `py-atom-logo-horizontal-color` |
 
-Placement: small, centred at the top of a post; centred on the end card of a reel. Tagline "The other way of parking" only in the lockup `py-comp-tagline-lockup-reverse` (Ubuntu Regular, tracking +60/1000 em, left aligned with the wordmark; PR 6).
+Placement: small, centred at the top of a post. Tagline "The other way of parking" only in the lockup `py-comp-tagline-lockup-reverse` (Ubuntu Regular, tracking +60/1000 em, left aligned with the wordmark; PR 6).
 
 ### 3.3 Type
 
 | Element | Rule | Source |
 |---|---|---|
-| Headline | Very large, white (navy on pale blue), sentence case, short lines; key words Bold in the same colour, rest Regular. Fitted to the widest line | BP, RR `Title` |
+| Headline | Very large, white (navy on white), sentence case, short lines; key words Bold in the same colour, rest Regular. Fitted to the widest line | BP |
 | Body | Ubuntu Regular, white, max about 2 lines | posts |
 | Price numerals | Bold italic, cents small and raised; "per dag" upright Regular | BP, PR 15, PR 25 |
 | Italic | Only for price numerals | PR 1 |
@@ -87,13 +84,12 @@ Placement: small, centred at the top of a post; centred on the end card of a ree
 
 | Element | Use | ID / component |
 |---|---|---|
-| Price badge | Round, white with navy numerals or aqua with white numerals, slightly rotated, optional sunburst of short white rays. **Max one per post**, and not in two posts in a row (the current feed uses it in 6 of 15) | `PriceBadge`, `py-comp-price-badge-circle` |
-| Fact card | White pill with a navy icon disc; 2 or 3 per post | `Card` |
-| Place pill | White pill, navy pin, navy name | `PlacePill`, `py-comp-pill-location` |
-| CTA button | "Reserveer online": aqua pill with the white arrow circle on the left. Only for the 14 reservable locations (`product-truth.md`) | `CtaPill`, `py-atom-arrow-right-circle` |
-| URL line | "**parkingyou**.nl" with the aqua chevron (D S1) | `UrlLine`, `py-comp-url-chevron` |
-| Figures | White on navy. Groups and skylines allowed for celebrations | `Fx Skyline`, `py-atom-figure-*` |
-| Confetti | Orange, aqua and white; celebrations only | `Fx Confetti` |
+| Price badge | Round, white or aqua with **navy** numerals (D S16), slightly rotated, optional sunburst of short white rays, no shadow. **Max one per post**, and not in two posts in a row (the current feed uses it in 6 of 15) | kit `PriceBadge`, `py-comp-price-badge-circle` |
+| Fact pill | White pill with a navy icon disc; 2 or 3 per post. White library artwork (`py-atom-symbol-p-*`, location pins) never on a white disc | kit `Pill`, `ArtDisc` |
+| Place pill | White pill, navy pin, navy name | kit `Pill`, `py-comp-pill-location` |
+| CTA button | "Reserveer online": aqua pill with **navy** text (D S16) and the library arrow circle on the left. Only for the 14 reservable locations (`product-truth.md`) | kit `CtaButton`, `py-atom-arrow-right-circle` |
+| URL | "parkingyou.nl" as plain text (D S1). **No chevron**: the chevron is part of the voordeligparkeren sub-brand logo (D S14) | kit `Url` |
+| Figures | White on navy, navy on white | kit `Figure`, `py-atom-figure-*` |
 | Bubble image mask | Photo or video inside the beeldmerk bubble shape | `py-atom-shape-bubble-image-mask`, PR 23 |
 
 ### 3.5 Layout
@@ -108,8 +104,10 @@ Placement: small, centred at the top of a post; centred on the end card of a ree
 
 | Do | Don't | Why |
 |---|---|---|
+| Flat token colours | Glows, lights, grain, shadows, purple-blue tints | D S13 |
+| "parkingyou.nl" as text | The chevron next to parkingyou.nl | D S14 |
 | One price, one location, one reason per post | Two prices fighting for attention | Concrete and local posts perform best (ST 1) |
-| Let the ground choose the logo | Use a `-reverse` file with its navy ring | Rick's rule; the ring reads as a stain on gradients |
+| Let the ground choose the logo | Use a `-reverse` file with its navy ring | Rick's rule |
 | Keep white text in the navy part of the verloop | Put white text on the aqua corner | 2.34:1 |
 | Vary the hero: photo, figure, number, badge | A price badge with rays on every post | The feed starts to look like one post |
 | Orange as a spark (carnaval, "Nieuw") | Orange buttons or grounds | BP, ST 8 |
@@ -186,6 +184,6 @@ A post spec names slots, not looks. Each archetype renders the same slots in bot
 | facts | `Card` pills with icons | plain lines, at most 2 |
 | figure | white figures, groups allowed | exactly one parkeerder on a line |
 | cta | `CtaPill` + `UrlLine` | "Reserveer je plek op parkingyou.nl" text line |
-| ground | navy, glow, light, photo | navy, white, photo + field |
+| ground | navy, verloop, white, photo + field | navy, white, photo + field |
 
 Where a slot has no 2027 equivalent (confetti, rays, second figure), the 2027 renderer drops it and QA reports it as info.

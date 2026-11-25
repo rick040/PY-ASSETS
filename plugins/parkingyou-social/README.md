@@ -1,7 +1,7 @@
 # parkingyou-social
 
 On-brand ParkingYou social posts from the PY-ASSETS brand library: feed posts, carousels, stories, reel covers and campaigns,
-with facts from the kennisbank and automatic copy, facts and brand checks. Status: phase 2 (structure and pipeline; one archetype built).
+with facts from the kennisbank and automatic copy, facts and brand checks. Status: phase 3 (all archetypes, both themes, all checks).
 
 ## Install
 

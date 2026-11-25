@@ -17,6 +17,10 @@ Newest at the bottom. Change a decision by adding a new row that supersedes the 
 | S10 | 2026-11-23 | Names of third parties | A venue name may appear as plain text when it names or locates our location (Plantage (Artis), Diergaarde Blijdorp, Philips Stadion, Pathé Ede are location names in the kennisbank). A partner-specific tariff or promotion (Artis-lid, Pathé-tarief, Glow Night Card) and any partner logo need the partner's approval and are flagged by QA until confirmed. | `strategy.md` §7, README "Third-party marks" |
 | S11 | 2026-11-23 | Plugin location | `plugins/parkingyou-social/` in py-assets, reading the library directly, installed as a local plugin through a marketplace file in the repo. A claude.ai skill export is a later, optional step. | |
 | S12 | 2026-11-23 | Base branch | `claude/parkingyou-social-plugin`, from `main` with `claude/zealous-cray-arlagn` merged in. `brand-2027/` comes in from `claude/parkingyou-brand-refresh-hz67bb` when the 2027 theme is built. | |
+| S13 | 2026-11-25 | Exact brand colours | Only the token colours of the theme (`tokens.json`, or `brand-2027/tokens/tokens.json` for 2027) and, in theme `feed`, the measured verloop from `tokens.json`. No lighting effects, glows, grain, vignettes, shadows, darkened overlays or other gradients; no non-token tints such as the GLOW gradient or the pale blue `#E4EEF4`. `check_brand.py` blocks a post when its background has colours outside this set. | Rick, 25 November 2026: "er zit paars in, deze kleur gebruiken we niet, houd je aan de exacte huisstijl". The v2 kit `Backdrop` (reels) still uses the old effects |
+| S14 | 2026-11-25 | Chevron | The chevron (`py-comp-url-chevron`, `py-comp-url-tag-chevron`) is part of the logo of the sub-brand voordeligparkeren and is used only when the post is about that brand. `parkingyou.nl` is written as plain text. | Rick, 25 November 2026 |
+| S15 | 2026-11-25 | Grounds in theme `feed` | `navy` (flat PY-Blauw, the default), `verloop` (token verloop, text in the navy part), `white` and `photo` (own photo with text on a navy field, never on the photo). `glow` and `light` are gone. | S13 |
+| S16 | 2026-11-25 | Text on aqua | Navy text on aqua (4.8:1), never white on aqua (2.3:1). Applies to the CTA button and aqua price badges. | Contrast measurement in phase 2; the existing "Reserveer online" button in the 15 posts fails |
 
 ## Open (needs Rick or the kennisbank)
 
@@ -27,3 +31,5 @@ Newest at the bottom. Change a decision by adding a new row that supersedes the 
 | Reservation guarantee | Is a reservation a guaranteed spot when the display shows "vol"? | IG-051 and any "gegarandeerd" wording |
 | Free first 2 hours in Zoetermeer | Confirmed for P1 Belgiëlaan only | IG-014 |
 | Easter action | Terms of "gratis bij je volgende reservering" | IG-063 if reposted |
+| Verloop in theme `feed` | The measured handbook verloop (`#1A3580` to `#097BAE` to `#32B9CD`) is kept as an optional ground; its mid stop is not a named brand colour. Keep it, or flat colours only? | Ground `verloop` (S15) |
+| Existing posts and reels | The 15 posts and 8 reels in `social/remotion/renders/` use the GLOW gradient, drifting light and the chevron with voordeligparkeren.nl. Re-render them with the S13 rules? | Reuse of the v2 kit for reels |

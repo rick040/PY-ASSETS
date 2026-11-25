@@ -1,6 +1,6 @@
 # Architecture
 
-Status: approved 2026-11-24. Built in phase 2: plugin manifest, marketplace, schemas, skills, the PY-Post composition with QA measuring, render-spec.mjs, render.py, check_copy.py, facts.sql and the archetype `typografisch` (theme `feed`).
+Status: approved 2026-11-24. Phase 3 (2026-11-25): all 11 archetypes in themes `feed` and `2027`, exact brand colours (S13), check_facts, check_brand, contact_sheet and selftest.
 
 ## 1. Principles
 

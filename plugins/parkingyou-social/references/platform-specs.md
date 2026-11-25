@@ -40,7 +40,7 @@ All renders are made at the listed size and exported at 2x for review (2160 px w
 | Slides | 2 to 10 (Instagram allows up to 20; we stay at 10 or fewer) |
 | Size | All slides `feed` 1080 x 1350 |
 | Arc | Slide 1 hook, slides 2 to n-1 one point each, last slide summary and CTA |
-| Continuity | A swipe cue on slide 1 only; alternate grounds per slide in theme `feed` (navy and pale blue) |
+| Continuity | A swipe cue on slide 1 only; alternate navy and white grounds per slide (both themes) |
 
 ## 5. Video (reels, via the Remotion kit)
 

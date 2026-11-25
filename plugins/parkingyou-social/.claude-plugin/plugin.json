@@ -1,6 +1,6 @@
 {
   "name": "parkingyou-social",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Maakt on-brand social posts voor ParkingYou (feed, carrousel, story, reelcover, campagne) uit de PY-ASSETS library, met feiten uit de kennisbank en automatische copy-, feiten- en merkchecks.",
   "author": { "name": "Rick" },
   "keywords": ["parkingyou", "social", "instagram", "linkedin", "brand", "remotion"]

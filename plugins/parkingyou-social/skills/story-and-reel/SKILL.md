@@ -13,6 +13,7 @@ description: Maakt ParkingYou stories (9:16, een of meer frames) en reels met co
 
 ## Reels (motion)
 
+0. **Colour check first.** The reel kit's backgrounds (`social/remotion/src/v2/Backdrop.tsx`) still use drifting light, grain and the GLOW gradient, which decision S13 forbids. Until the kit is brought in line (open point in `references/decisions.md`), say so and ask before rendering a reel.
 1. Reels use the seven templates in `social/remotion/` (R1 Locatiekaart, R2 Prijsrol, R3 Looproute, R4 Drie stappen, R5 Figuursketch, R6 Aftelkalender, R7 Kinetische tekst). Read `social/remotion/README.md` first.
 2. An item becomes `social/remotion/src/items/IG-0NN.json` (copy the closest existing item and fill it from the library). Fetch every price and fact as in `skills/social-post/SKILL.md` step 4.
 3. Run `python3 plugins/parkingyou-social/scripts/check_copy.py` on a spec that holds the reel texts and the caption, so reel copy passes the same rules.
