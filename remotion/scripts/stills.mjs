@@ -1,5 +1,5 @@
 // Renders stills: node scripts/stills.mjs <outDir> <compositionId[,id...]|all> <frame> [<frame> ...]
-// "all" renders every Spot-* composition.
+// "all" renders every Spot-* composition, "reels" every Reel-* composition.
 import {bundle} from '@remotion/bundler';
 import {getCompositions, renderStill, selectComposition} from '@remotion/renderer';
 import {existsSync, mkdirSync, readdirSync} from 'node:fs';
@@ -16,8 +16,9 @@ if (!browserExecutable && existsSync('/opt/pw-browsers')) {
 }
 mkdirSync(outDir, {recursive: true});
 const serveUrl = await bundle({entryPoint: join(root, 'src', 'index.ts'), publicDir: join(root, 'public')});
-const ids = id === 'all' ? null : id.split(',');
-const list = ids ?? (await getCompositions(serveUrl, {browserExecutable})).map((c) => c.id).filter((c) => c.startsWith('Spot-'));
+
+const prefix = id === 'reels' ? 'Reel-' : 'Spot-';
+const list = id === 'all' || id === 'reels' ? (await getCompositions(serveUrl, {browserExecutable})).map((c) => c.id).filter((c) => c.startsWith(prefix)) : id.split(',');
 for (const cid of list) {
   const composition = await selectComposition({serveUrl, id: cid, browserExecutable});
   for (const f of frames) {

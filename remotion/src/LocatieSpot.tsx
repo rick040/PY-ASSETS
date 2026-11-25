@@ -5,12 +5,74 @@ import {Fonts} from './components';
 import {colors, font} from './theme';
 import type {Locatie} from './locaties';
 
-// Rebuild of the Jitter animation "Plantage" (1920x1080, 60 fps, 395 frames).
+// Rebuild of the Jitter animation "Plantage" (1920x1080, 60 fps, 395 frames), plus a 9:16 reel version.
 // Frame numbers below are the keyframes of the Jitter export, so the timing matches the original.
 
 export const SPOT = {width: 1920, height: 1080, fps: 60, duration: 395};
+// 9:16 reel: same timing, plus an end card (logo and parkingyou.nl) from frame 372.
+export const REEL = {width: 1080, height: 1920, fps: 60, duration: 500};
 
-const PANEL_W = 1010; // blue panel on the left, photo on the right
+export type Formaat = 'liggend' | 'staand';
+
+type Rect = {x: number; y: number; w: number; h: number};
+type Geo = {
+  w: number;
+  h: number;
+  panel: Rect & {ox: number; oy: number};
+  photo: Rect & {ox: number; oy: number};
+  hook: {size: number; maxW: number; subMax: number; step: number; top: (lines: number) => number; subY: (lines: number) => number};
+  title: {left: number; size: number; line: number; max: number};
+  layout: (lines: number) => {top: number; rowTop: number; rowStep: number};
+  rows: {left: number; max: number};
+  logo: {right: number; bottom: number};
+  bubble: {ax: number; ay: number};
+  endCard: boolean;
+};
+
+// Landscape: the Jitter file. Blue panel on the left (1010 px), photo on the right.
+const LIGGEND: Geo = {
+  w: 1920,
+  h: 1080,
+  panel: {x: 0, y: 0, w: 1010, h: 1080, ox: 505, oy: 566},
+  photo: {x: 1010, y: 0, w: 910, h: 1080, ox: 1396 - 1010, oy: 679.5},
+  hook: {size: 150, maxW: 1500, subMax: 1600, step: 180, top: (n) => (n === 1 ? 320 : 230), subY: () => 770},
+  title: {left: 115, size: 88, line: 101, max: 1010 - 115 - 25},
+  layout: (n) =>
+    n === 1 ? {top: 130, rowTop: 423, rowStep: 138} : n === 2 ? {top: 85, rowTop: 423, rowStep: 138} : {top: 62, rowTop: 504, rowStep: 126},
+  rows: {left: 113, max: 1010 - 218 - 50},
+  logo: {right: 1920 - 1863, bottom: 1080 - 1016},
+  bubble: {ax: 1752, ay: 218},
+  endCard: false,
+};
+
+// Portrait reel: photo on top (760 px), blue panel below. Key content stays out of the
+// Instagram and TikTok UI (top 250 px, bottom 330 px).
+const STAAND: Geo = {
+  w: 1080,
+  h: 1920,
+  panel: {x: 0, y: 760, w: 1080, h: 1160, ox: 540, oy: 1340},
+  photo: {x: 0, y: 0, w: 1080, h: 760, ox: 540, oy: 380},
+  hook: {
+    size: 108,
+    maxW: 960,
+    subMax: 960,
+    step: 130,
+    top: (n) => 920 - (n * 130 + 80 + 110) / 2,
+    subY: (n) => 920 - (n * 130 + 80 + 110) / 2 + n * 130 + 80,
+  },
+  title: {left: 90, size: 92, line: 106, max: 1080 - 90 - 60},
+  layout: (n) => {
+    const top = n >= 3 ? 805 : 830;
+    const rowTop = top + n * 106 + (n >= 3 ? 80 : 95);
+    return {top, rowTop, rowStep: Math.min(128, (1540 - rowTop) / 3)};
+  },
+  rows: {left: 88, max: 1080 - 88 - 105 - 60},
+  logo: {right: 40, bottom: 1920 - 730},
+  bubble: {ax: 907, ay: 440},
+  endCard: true,
+};
+
+export const GEO: Record<Formaat, Geo> = {liggend: LIGGEND, staand: STAAND};
 const ease = (a: number, b: number, c: number, d: number) => Easing.bezier(a, b, c, d);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
@@ -38,22 +100,21 @@ const width = (text: string, fontSize: number, fontWeight: string) =>
 
 // ---------------------------------------------------------------- hook screen
 
-const HOOK_SIZE = 150;
-
-const Hook: React.FC<{hook: string; subhook: string}> = ({hook, subhook}) => {
+const Hook: React.FC<{hook: string; subhook: string; g: Geo}> = ({hook, subhook, g}) => {
   const frame = useCurrentFrame();
-  const lines = wrap(hook, HOOK_SIZE, '700', 1500);
-  const subSize = Math.min(HOOK_SIZE, (HOOK_SIZE * 1600) / width(subhook, HOOK_SIZE, '400'));
+  const HOOK_SIZE = g.hook.size;
+  const lines = wrap(hook, HOOK_SIZE, '700', g.hook.maxW);
+  const subSize = Math.min(HOOK_SIZE, (HOOK_SIZE * g.hook.subMax) / width(subhook, HOOK_SIZE, '400'));
   // Each line slides 84 px to the left (strong ease-in) and is gone at the end, top line first.
   const rows = [...lines.map((l) => ({text: l, weight: 700, size: HOOK_SIZE})), {text: subhook, weight: 400, size: subSize}];
-  const top = lines.length === 1 ? 320 : 230;
+  const top = g.hook.top(lines.length);
   return (
     <AbsoluteFill>
       {rows.map((r, i) => {
         const start = 67.8 + i * 1.25;
         const t = tween(frame, start, start + 7.1, ease(1, 0, 1, 1));
         const gone = frame >= start + 7.1;
-        const y = i < lines.length ? top + i * 180 : 770;
+        const y = i < lines.length ? top + i * g.hook.step : g.hook.subY(lines.length);
         return (
           <div
             key={i}
@@ -83,11 +144,12 @@ const Hook: React.FC<{hook: string; subhook: string}> = ({hook, subhook}) => {
 
 // ---------------------------------------------------------------- photo panel
 
-const Photo: React.FC<{src: string}> = ({src}) => {
+const Photo: React.FC<{src: string; g: Geo}> = ({src, g}) => {
   const frame = useCurrentFrame();
   const s = interpolate(frame, [91.8, 394.8], [1, 1.1], clamp);
+  const p = g.photo;
   return (
-    <div style={{position: 'absolute', left: PANEL_W, top: 0, width: 1920 - PANEL_W, height: 1080, overflow: 'hidden'}}>
+    <div style={{position: 'absolute', left: p.x, top: p.y, width: p.w, height: p.h, overflow: 'hidden'}}>
       <Img
         src={staticFile(src)}
         style={{
@@ -95,7 +157,7 @@ const Photo: React.FC<{src: string}> = ({src}) => {
           height: '100%',
           objectFit: 'cover',
           transform: `scale(${s})`,
-          transformOrigin: `${1396 - PANEL_W}px 679.5px`,
+          transformOrigin: `${p.ox}px ${p.oy}px`,
         }}
       />
     </div>
@@ -106,31 +168,26 @@ const Photo: React.FC<{src: string}> = ({src}) => {
 
 // One size for every title. A name that does not fit next to "Parking" goes to its own line,
 // and a name that is too wide for one line wraps at a space (for example "Bos en" / "Lommerplantsoen").
-const TITLE_SIZE = 88;
-const TITLE_LINE = 101;
-const TITLE_MAX = 1010 - 115 - 25;
 
 /** Title lines: the first is always "Parking" (with the name after it when it fits). */
-const titleLines = (naam: string): {text: string; bold: boolean}[][] => {
-  const one = width('Parking ', TITLE_SIZE, '400') + width(naam, TITLE_SIZE, '700');
-  if (one <= TITLE_MAX) return [[{text: 'Parking ', bold: false}, {text: naam, bold: true}]];
-  return [[{text: 'Parking', bold: false}], ...wrap(naam, TITLE_SIZE, '700', TITLE_MAX).map((l) => [{text: l, bold: true}])];
+const titleLines = (naam: string, g: Geo): {text: string; bold: boolean}[][] => {
+  const {size, max} = g.title;
+  const one = width('Parking ', size, '400') + width(naam, size, '700');
+  if (one <= max) return [[{text: 'Parking ', bold: false}, {text: naam, bold: true}]];
+  return [[{text: 'Parking', bold: false}], ...wrap(naam, size, '700', max).map((l) => [{text: l, bold: true}])];
 };
 
-/** Where the title starts and where the check rows go, by number of title lines. */
-const layout = (lines: number) =>
-  lines === 1 ? {top: 130, rowTop: 423, rowStep: 138} : lines === 2 ? {top: 85, rowTop: 423, rowStep: 138} : {top: 62, rowTop: 504, rowStep: 126};
-
-const Title: React.FC<{naam: string}> = ({naam}) => {
+const Title: React.FC<{naam: string; g: Geo}> = ({naam, g}) => {
   const frame = useCurrentFrame();
-  const lines = titleLines(naam);
-  const {top} = layout(lines.length);
+  const lines = titleLines(naam, g);
+  const {top} = g.layout(lines.length);
+  const {left, size, line} = g.title;
   // Words come up out of a mask: "Parking" first, the name a frame later and slower (Jitter timing).
-  const timing = (bold: boolean, line: number) => (bold ? [93 + (line - 1) * 4, 130.8 + (line - 1) * 4] : [91.8, 104.5]);
+  const timing = (bold: boolean, li: number) => (bold ? [93 + (li - 1) * 4, 130.8 + (li - 1) * 4] : [91.8, 104.5]);
   return (
-    <div style={{position: 'absolute', left: 115, top, fontFamily: font, fontSize: TITLE_SIZE, color: colors.wit, whiteSpace: 'nowrap'}}>
+    <div style={{position: 'absolute', left, top, fontFamily: font, fontSize: size, color: colors.wit, whiteSpace: 'nowrap'}}>
       {lines.map((parts, li) => (
-        <div key={li} style={{height: TITLE_LINE, lineHeight: `${TITLE_LINE}px`, overflow: 'hidden'}}>
+        <div key={li} style={{height: line, lineHeight: `${line}px`, overflow: 'hidden'}}>
           {parts.map((part, pi) => {
             const [from, to] = timing(part.bold, li);
             const t = tween(frame, from, to, ease(0.2, 0.9, 0.3, 1));
@@ -165,7 +222,6 @@ const ROWS = [
   {slide: [197.4, 248.8], circle: 210.8, check: 218.5, out: 349.4},
 ];
 const ROW_SIZE = 64;
-const ROW_MAX = 1010 - 218 - 50;
 
 const Check: React.FC<{size: number}> = ({size}) => (
   <svg width={size} height={size} viewBox="0 0 24 24">
@@ -173,8 +229,8 @@ const Check: React.FC<{size: number}> = ({size}) => (
   </svg>
 );
 
-const Rows: React.FC<{kenmerken: Locatie['kenmerken']; naam: string}> = ({kenmerken, naam}) => {
-  const {rowTop, rowStep} = layout(titleLines(naam).length);
+const Rows: React.FC<{kenmerken: Locatie['kenmerken']; naam: string; g: Geo}> = ({kenmerken, naam, g}) => {
+  const {rowTop, rowStep} = g.layout(titleLines(naam, g).length);
   const frame = useCurrentFrame();
   return (
     <>
@@ -186,10 +242,10 @@ const Rows: React.FC<{kenmerken: Locatie['kenmerken']; naam: string}> = ({kenmer
         const circle = bounce(frame, r.circle) * out;
         const check = bounce(frame, r.check) * out;
         const text = licht ? `${licht} ${vet}` : vet;
-        const size = Math.min(ROW_SIZE, (ROW_SIZE * ROW_MAX) / width(text, ROW_SIZE, '700'));
+        const size = Math.min(ROW_SIZE, (ROW_SIZE * g.rows.max) / width(text, ROW_SIZE, '700'));
         const cy = rowTop + i * rowStep;
         return (
-          <div key={i} style={{position: 'absolute', left: 113, top: cy - 41, height: 82, opacity, transform: `translateX(${-41 * (1 - t)}px)`}}>
+          <div key={i} style={{position: 'absolute', left: g.rows.left, top: cy - 41, height: 82, opacity, transform: `translateX(${-41 * (1 - t)}px)`}}>
             <div
               style={{
                 position: 'absolute',
@@ -233,7 +289,7 @@ const Rows: React.FC<{kenmerken: Locatie['kenmerken']; naam: string}> = ({kenmer
 const BUBBLE_PATH =
   'M18 0C8.059 0 0 8.058 0 17.998C0 34.701 16.691 43.073 16.691 43.073C17.264 43.423 18 43.006 18 42.335L18 35.997C27.941 35.997 36 27.939 36 17.998C36 8.058 27.941 0 18 0';
 
-const Bubble: React.FC<{prijs: Locatie['prijs']}> = ({prijs}) => {
+const Bubble: React.FC<{prijs: Locatie['prijs']; g: Geo}> = ({prijs, g}) => {
   const frame = useCurrentFrame();
   const t = tween(frame, 224.3, 314.3, ease(0.5, 0, 0, 1));
   const R = 133; // circle radius in px
@@ -246,8 +302,8 @@ const Bubble: React.FC<{prijs: Locatie['prijs']}> = ({prijs}) => {
     <div
       style={{
         position: 'absolute',
-        left: 1752 - R,
-        top: 218 - 160,
+        left: g.bubble.ax - R,
+        top: g.bubble.ay - 160,
         width: 36 * k,
         height: 43.423 * k,
         transform: `scale(${t}) rotate(${-45 * (1 - t)}deg)`,
@@ -286,7 +342,7 @@ const Bubble: React.FC<{prijs: Locatie['prijs']}> = ({prijs}) => {
 
 // ---------------------------------------------------------------- logo
 
-const Logo: React.FC = () => {
+const Logo: React.FC<{g: Geo}> = ({g}) => {
   const frame = useCurrentFrame();
   const pop = tween(frame, 97.8, 115.8, ease(0.25, 0.25, 0.25, 1));
   const slide = tween(frame, 110.4, 146.4, ease(0.25, 0, 0.25, 1));
@@ -294,13 +350,12 @@ const Logo: React.FC = () => {
   const pinH = 50;
   const pinW = (24 / 28.949) * pinH;
   const markW = 246;
-  const right = 1920 - 1863;
   const total = pinW + 14 + markW;
   // The pin starts in the middle of the logo and moves to its place while the wordmark appears behind it.
   const pinX = (1 - slide) * (total / 2 - pinW / 2);
   const edge = reveal * 120;
   return (
-    <div style={{position: 'absolute', right, bottom: 1080 - 1016, width: total, height: pinH}}>
+    <div style={{position: 'absolute', right: g.logo.right, bottom: g.logo.bottom, width: total, height: pinH}}>
       <div
         style={{
           position: 'absolute',
@@ -345,33 +400,85 @@ const useUbuntu = () => {
   return ready;
 };
 
-export const LocatieSpot: React.FC<{locatie: Locatie}> = ({locatie}) => {
+/** Reel end card: the blue panel grows back over everything, then the stacked logo and the web address. */
+const EndCard: React.FC<{g: Geo}> = ({g}) => {
   const frame = useCurrentFrame();
-  const ready = useUbuntu();
-  if (!ready) return <AbsoluteFill style={{background: colors.blauw}} />;
-  // The blue panel starts at 300 percent (covers the frame) and settles to the left 1010 px.
-  const panel = interpolate(frame, [67.8, 115.8], [3, 1], {...clamp, easing: ease(0.5, 0, 0, 1)});
+  const cover = interpolate(frame, [372, 410], [1, 3], {...clamp, easing: ease(0.5, 0, 0, 1)});
+  const logo = tween(frame, 400, 430, ease(0.2, 0.9, 0.3, 1.2));
+  const url = tween(frame, 415, 445, ease(0.2, 0.9, 0.3, 1));
+  if (frame < 372) return null;
+  const p = g.panel;
   return (
-    <AbsoluteFill style={{background: colors.blauw}}>
-      <Fonts />
-      <Photo src={locatie.foto} />
+    <>
+      <div
+        style={{
+          position: 'absolute',
+          left: p.x,
+          top: p.y,
+          width: p.w,
+          height: p.h,
+          background: colors.blauw,
+          transform: `scale(${cover})`,
+          transformOrigin: `${p.ox}px ${p.oy - p.y}px`,
+        }}
+      />
+      <div style={{position: 'absolute', left: 0, top: 700, width: g.w, display: 'flex', justifyContent: 'center'}}>
+        <div style={{transform: `scale(${logo})`, opacity: Math.min(1, logo * 2)}}>
+          <Img src={staticFile('svg/atom/py-atom-logo-stacked-white.svg')} style={{width: 460, display: 'block'}} />
+        </div>
+      </div>
       <div
         style={{
           position: 'absolute',
           left: 0,
-          top: 0,
-          width: PANEL_W,
-          height: 1080,
+          top: 1150,
+          width: g.w,
+          textAlign: 'center',
+          fontFamily: font,
+          fontWeight: 700,
+          fontSize: 76,
+          color: colors.wit,
+          opacity: url,
+          transform: `translateY(${(1 - url) * 40}px)`,
+        }}
+      >
+        parkingyou.nl
+      </div>
+    </>
+  );
+};
+
+export const LocatieSpot: React.FC<{locatie: Locatie; formaat?: Formaat}> = ({locatie, formaat = 'liggend'}) => {
+  const frame = useCurrentFrame();
+  const ready = useUbuntu();
+  if (!ready) return <AbsoluteFill style={{background: colors.blauw}} />;
+  const g = GEO[formaat];
+  const p = g.panel;
+  // The blue panel starts at 300 percent (covers the frame) and settles to its place.
+  const panel = interpolate(frame, [67.8, 115.8], [3, 1], {...clamp, easing: ease(0.5, 0, 0, 1)});
+  const foto = formaat === 'staand' ? `locaties/staand/${locatie.id}.jpg` : locatie.foto;
+  return (
+    <AbsoluteFill style={{background: colors.blauw}}>
+      <Fonts />
+      <Photo src={foto} g={g} />
+      <div
+        style={{
+          position: 'absolute',
+          left: p.x,
+          top: p.y,
+          width: p.w,
+          height: p.h,
           background: colors.blauw,
           transform: `scale(${panel})`,
-          transformOrigin: '505px 566px',
+          transformOrigin: `${p.ox}px ${p.oy - p.y}px`,
         }}
       />
-      {frame < 78 ? <Hook hook={locatie.hook} subhook={locatie.subhook} /> : null}
-      <Title naam={locatie.naam} />
-      <Rows kenmerken={locatie.kenmerken} naam={locatie.naam} />
-      <Logo />
-      <Bubble prijs={locatie.prijs} />
+      {frame < 78 ? <Hook hook={locatie.hook} subhook={locatie.subhook} g={g} /> : null}
+      <Title naam={locatie.naam} g={g} />
+      <Rows kenmerken={locatie.kenmerken} naam={locatie.naam} g={g} />
+      <Logo g={g} />
+      <Bubble prijs={locatie.prijs} g={g} />
+      {g.endCard ? <EndCard g={g} /> : null}
     </AbsoluteFill>
   );
 };

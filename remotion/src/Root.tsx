@@ -3,7 +3,7 @@ import {Composition} from 'remotion';
 import {Story1App} from './Story1App';
 import {Story2Shoppen} from './Story2Shoppen';
 import {Story3Tagline} from './Story3Tagline';
-import {LocatieSpot, SPOT} from './LocatieSpot';
+import {LocatieSpot, REEL, SPOT} from './LocatieSpot';
 import {locaties} from './locaties';
 import {DURATION, FPS, HEIGHT, WIDTH} from './theme';
 
@@ -23,7 +23,19 @@ export const Root: React.FC = () => (
         fps={SPOT.fps}
         width={SPOT.width}
         height={SPOT.height}
-        defaultProps={{locatie: l}}
+        defaultProps={{locatie: l, formaat: 'liggend' as const}}
+      />
+    ))}
+    {locaties.map((l) => (
+      <Composition
+        key={`reel-${l.slug}`}
+        id={`Reel-${l.slug}`}
+        component={LocatieSpot}
+        durationInFrames={REEL.duration}
+        fps={REEL.fps}
+        width={REEL.width}
+        height={REEL.height}
+        defaultProps={{locatie: l, formaat: 'staand' as const}}
       />
     ))}
   </>

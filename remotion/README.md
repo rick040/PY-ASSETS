@@ -40,12 +40,14 @@ hook screen, blue panel zooms out to the left, title, four check rows, logo, pri
 ```bash
 node scripts/render-locaties.mjs              # all locations to out/locaties/<slug>.mp4
 node scripts/render-locaties.mjs plantage     # one or more slugs
+node scripts/render-locaties.mjs --reels      # 9:16 reels to out/reels/<slug>.mp4
 node scripts/stills.mjs /tmp/stills all 0 330 # stills for checking
 ```
 
 * Data from the public location pages on parkingyou.nl (25-11-2026). Hourly prices are worked out from the published rate (for example €1,25 per 20 min = €3,75 per uur); "vanaf" only for the lowest of several rates.
 * Only locations with a public visitor rate are in (34). Left out: B2 Amsterdam (subscription only) and the 14 locations without a rate on the site (Eindhoven The Beech, Mauritsstraat, BD7, Cornelis Paradise, City Tower, Lichttoren, Hoog Bergen, Hoog Stratum, Paradijslaan; Utrecht Vliegend Hert; Tilburg Pakhuis; Dordrecht De Holland).
 * Photos: the location photo from the site, cropped to the right panel (`public/locaties/<id>.jpg`); Plantage uses the aerial from the Jitter file.
+* Reels (`Reel-<slug>`, 1080x1920, 60 fps, 8.3 s): same timing, photo on top (760 px), blue panel below, key content inside the safe zones (top 250 px, bottom 330 px), and an end card with the stacked logo and parkingyou.nl from frame 372. Photos in `public/locaties/staand/`.
 * Title: one size (88 px) for every location. When the name does not fit next to "Parking", "Parking" stays on line 1 and the name goes to line 2 (and wraps at a space to line 3 if needed; the check rows then move down a little).
 * Colours from `tokens.json` (PY-Blauw background, PY-Aqua check circles); the Jitter file used slightly different values. Logo is the library beeldmerk plus wordmark.
 * Entries with a `check` field have an open point from the Instagram strategy (IG-013, IG-014, IG-024) or data that is not on the site; confirm before posting. Overview: `out/locaties/OVERZICHT.md`.
