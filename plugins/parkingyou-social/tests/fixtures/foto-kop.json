@@ -1,0 +1,22 @@
+{
+ "id": "TEST-FOTOKOP",
+ "slug": "selftest-foto-kop",
+ "archetype": "foto-kop",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "photo",
+ "slots": {
+  "media": {
+   "type": "image",
+   "src": "py/photos/py-photo-philips-stadion.jpg",
+   "alt": "Inrit van de garage onder het Philips Stadion"
+  },
+  "headline": "700 plekken.\n*Onder het stadion.*",
+  "body": "Philips Stadion, Eindhoven.",
+  "cta": "url"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

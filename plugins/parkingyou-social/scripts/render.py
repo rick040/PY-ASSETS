@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import check_copy  # noqa: E402
 from common import REMOTION, SCHEMA, Finding, archetypes, load_json, plain, post_dir_for, write_json  # noqa: E402
 
-BUILT_THEMES = {"feed"}  # phase 3 adds "2027"
+BUILT_THEMES = {"feed", "2027"}
 
 
 def validate(spec: dict) -> list[Finding]:

@@ -1,0 +1,19 @@
+{
+ "id": "TEST-SERVICE",
+ "slug": "selftest-service",
+ "archetype": "service",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "headline": "Gaat de slagboom\nniet open?\n*Bel ons.*",
+  "contact": {
+   "phone": "085 401 16 47"
+  },
+  "body": "Noem het *automaatnummer* op de sticker. Dan weten we meteen waar je staat."
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

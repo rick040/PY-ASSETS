@@ -1,0 +1,17 @@
+{
+ "id": "TEST-TYPOGRAFISCH",
+ "slug": "selftest-typografisch",
+ "archetype": "typografisch",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "headline": "The other way\nof *parking.*",
+  "subline": "Parkeren in Amsterdam, Rotterdam, Eindhoven en meer. *Vooraf geregeld*, zonder gedoe.",
+  "cta": "url"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

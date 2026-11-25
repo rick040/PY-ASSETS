@@ -1,0 +1,36 @@
+{
+ "id": "TEST-EVENEMENT",
+ "slug": "selftest-evenement",
+ "archetype": "evenement",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "eyebrow": "Glow · 7 t/m 14 november",
+  "headline": "Waar parkeer je\ntijdens *Glow?*",
+  "date": {
+   "day": 7,
+   "month": "nov",
+   "label": "7 t/m 14 november"
+  },
+  "locations": [
+   {
+    "code": "DLLG",
+    "label": "DLL garage"
+   },
+   {
+    "code": "EVO",
+    "label": "Evoluon"
+   },
+   {
+    "code": "TDG",
+    "label": "TD Gebouw"
+   }
+  ],
+  "cta": "reserve"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

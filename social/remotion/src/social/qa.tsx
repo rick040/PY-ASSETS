@@ -52,7 +52,7 @@ export const Measure: React.FC<{ hideText?: boolean; children: React.ReactNode }
       if (done) return;
       done = true;
       // The page is rendered at composition size; the scale of the output image does not change these numbers.
-      console.log("PY_QA_LAYOUT " + JSON.stringify(collect()));
+      console.debug("PY_QA_LAYOUT " + JSON.stringify(collect()));
       continueRender(handle);
     };
     const imgs = Array.from(document.images).filter((i) => !i.complete);

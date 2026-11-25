@@ -3,12 +3,7 @@ import { CalculateMetadataFunction } from "remotion";
 import "../theme";
 import { FORMATS, PostProps } from "./spec";
 import { Measure } from "./qa";
-import { Typografisch } from "./archetypes/typografisch";
-
-/** Archetype name (schema/archetypes.json) -> component. Phase 3 adds the rest. */
-export const ARCHETYPES: Record<string, React.FC<PostProps>> = {
-  typografisch: Typografisch,
-};
+import { ARCHETYPES } from "./archetypes";
 
 export const PostComposition: React.FC<PostProps> = (props) => {
   const C = ARCHETYPES[props.spec.archetype];

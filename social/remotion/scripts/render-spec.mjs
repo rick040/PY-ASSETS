@@ -53,8 +53,11 @@ for (const dir of dirs.map((d) => resolve(d))) {
         await renderStill({ ...common, inputProps, output: resolve(dir, `${tag}.png`), scale: 1 });
         if (!layout) throw new Error("no QA layout logged");
         writeFileSync(resolve(dir, "qa", `layout-${tag}.json`), JSON.stringify({ format, slide: slide ?? null, width: composition.width, height: composition.height, elements: layout }, null, 1));
-        await renderStill({ ...common, inputProps, output: resolve(dir, `${tag}@2x.png`), scale: 2 });
-        await renderStill({ ...common, inputProps: { ...inputProps, hideText: true }, output: resolve(dir, "qa", `${tag}-bg.png`), scale: 1 });
+        if (!process.env.PY_NO_2X) await renderStill({ ...common, inputProps, output: resolve(dir, `${tag}@2x.png`), scale: 2 });
+        // Remotion renders the props of the selected composition, so the text-hidden pass needs its own selection.
+        const qaProps = { ...inputProps, hideText: true };
+        const qaComposition = await selectComposition({ serveUrl, id: "PY-Post", inputProps: qaProps, browserExecutable, logLevel: "error" });
+        await renderStill({ ...common, composition: qaComposition, inputProps: qaProps, output: resolve(dir, "qa", `${tag}-bg.png`), scale: 1 });
         console.log(`rendered ${spec.id} ${tag}`);
       } catch (e) {
         failed++;

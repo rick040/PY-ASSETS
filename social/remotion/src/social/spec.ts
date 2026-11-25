@@ -41,7 +41,7 @@ export const defaultSpec: PostSpec = {
   archetype: "typografisch",
   theme: "feed",
   formats: ["feed"],
-  ground: "glow",
+  ground: "navy",
   slots: {
     headline: "The other way\nof *parking.*",
     subline: "Parkeren in Amsterdam, Rotterdam, Eindhoven en meer. *Vooraf geregeld*, zonder gedoe.",

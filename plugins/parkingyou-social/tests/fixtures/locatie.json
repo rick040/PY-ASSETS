@@ -1,0 +1,35 @@
+{
+ "id": "TEST-LOCATIE",
+ "slug": "selftest-locatie",
+ "archetype": "locatie",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "headline": "2,70 meter.\n*Ook je busje past.*",
+  "media": {
+   "type": "illustration",
+   "src": "py-atom-symbol-p-roof",
+   "alt": "P-symbool"
+  },
+  "location": {
+   "code": "CRU",
+   "label": "Cruquius, Amsterdam"
+  },
+  "facts": [
+   {
+    "icon": "py-atom-symbol-p-garage-outline",
+    "text": "Doorrijhoogte *2,70 m*"
+   },
+   {
+    "icon": "py-atom-icon-calendar",
+    "text": "Vooraf te *reserveren*"
+   }
+  ],
+  "cta": "reserve"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

@@ -1,0 +1,39 @@
+{
+ "id": "TEST-CARROUSEL",
+ "slug": "selftest-carrousel",
+ "archetype": "carrousel",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "slides": [
+   {
+    "archetype": "carrousel-cover",
+    "slots": {
+     "headline": "Je hebt een\nreservering.\n*En nu?*",
+     "subline": "In 4 stappen van thuis naar je plek."
+    }
+   },
+   {
+    "archetype": "carrousel-punt",
+    "slots": {
+     "icon": "py-atom-icon-calendar",
+     "headline": "Check je *bevestiging*",
+     "body": "Daarin staat je code en het adres van de inrit."
+    }
+   },
+   {
+    "archetype": "carrousel-cta",
+    "slots": {
+     "headline": "Zo *geregeld.*",
+     "body": "Nog geen plek? Reserveer vooraf.",
+     "cta": "reserve"
+    }
+   }
+  ]
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

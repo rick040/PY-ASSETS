@@ -1,6 +1,6 @@
 // Copies the brand library (svg/, fonts/, tokens.json) from the repo root into public/py,
 // so compositions load the same files the print templates use. public/py is git-ignored.
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,4 +25,14 @@ for (const id of ["py-atom-logo-horizontal-reverse", "py-atom-logo-stacked-rever
   if (whiteDot === open) throw new Error(`${id}: no aqua dot found, check the source`);
   writeFileSync(resolve(out, "derived", `${id}-whitedot.svg`), whiteDot);
 }
-console.log("synced svg/, fonts/ and tokens.json to public/py (+ open reverse logos in public/py/derived)");
+// The 2027 identity (brand-2027/): kit assets (logos incl. the navy one-colour version, de stem, de bubbel,
+// de parkeerders with the beeldmerk head, angular arrows) and the Ubuntu Sans variable font, for the social theme "2027".
+const b27 = resolve(repo, "brand-2027");
+if (existsSync(b27)) {
+  cpSync(resolve(b27, "02-build/kit/assets"), resolve(out, "2027/assets"), { recursive: true });
+  cpSync(resolve(b27, "fonts"), resolve(out, "2027/fonts"), { recursive: true });
+  // Own location photos from the 2027 kit (Philips Stadion, DLL garage, Evoluon, City Tower).
+  cpSync(resolve(b27, "02-build/kit/photos"), resolve(out, "photos"), { recursive: true });
+  cpSync(resolve(b27, "tokens/tokens.json"), resolve(out, "2027/tokens.json"));
+}
+console.log("synced svg/, fonts/, tokens.json and brand-2027 assets to public/py (+ open reverse logos in public/py/derived)");

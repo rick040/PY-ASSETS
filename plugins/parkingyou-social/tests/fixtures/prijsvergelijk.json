@@ -1,0 +1,37 @@
+{
+ "id": "TEST-PRIJSVERGELIJK",
+ "slug": "selftest-prijsvergelijk",
+ "archetype": "prijsvergelijk",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "headline": "Zelfde plek.\n*Drie prijzen.*",
+  "location": {
+   "code": "PLA",
+   "label": "Plantage, Amsterdam"
+  },
+  "prices": [
+   {
+    "label": "Ter plaatse",
+    "amount": 45,
+    "struck": true
+   },
+   {
+    "label": "Online reserveren",
+    "amount": 42,
+    "struck": true
+   },
+   {
+    "label": "Vroegboeken",
+    "amount": 30
+   }
+  ],
+  "body": "Zelfde plek, zelfde dag. Alleen *eerder* geboekt.",
+  "cta": "reserve"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

@@ -1,0 +1,27 @@
+{
+ "id": "TEST-ABONNEMENT",
+ "slug": "selftest-abonnement",
+ "archetype": "abonnement",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "headline": "Overdag weg?\n's Avonds en in het weekend\n*je vaste plek.*",
+  "rows": [
+   {
+    "label": "Heerhugowaard",
+    "value": "€39,42 p/m"
+   },
+   {
+    "label": "Bos en Lommer",
+    "value": "€205 p/m"
+   }
+  ],
+  "body": "Avond- en weekendabonnement.",
+  "cta": "subscribe"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

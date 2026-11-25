@@ -7,7 +7,7 @@
     "landscape": { "width": 1200, "height": 627, "safe": { "top": 60, "right": 60, "bottom": 60, "left": 60 } }
   },
   "grounds": {
-    "feed": ["navy", "glow", "light", "photo"],
+    "feed": ["navy", "verloop", "white", "photo"],
     "2027": ["navy", "white", "photo"]
   },
   "slot_types": {
@@ -40,11 +40,11 @@
         "subline": { "type": "subline", "required": false, "max_chars": 140 },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow"], "2027": ["navy", "white"] },
+      "grounds": { "feed": ["navy", "verloop"], "2027": ["navy", "white"] },
       "formats": ["feed", "story", "square", "landscape"]
     },
     "prijs": {
-      "status": "planned",
+      "status": "built",
       "from": "S1, IG-013, IG-015, IG-022, IG-027, IG-043",
       "description": "One price for one location, with up to three facts.",
       "slots": {
@@ -55,11 +55,11 @@
         "body": { "type": "body", "required": false, "max_chars": 90 },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow"], "2027": ["navy"] },
+      "grounds": { "feed": ["navy", "verloop"], "2027": ["navy"] },
       "formats": ["feed", "story", "square"]
     },
     "locatie": {
-      "status": "planned",
+      "status": "built",
       "from": "S2, IG-004, IG-011, IG-049",
       "description": "One location with a photo or illustration in the bubble and three facts.",
       "slots": {
@@ -70,11 +70,11 @@
         "price": { "type": "price", "required": false },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow", "photo"], "2027": ["white", "photo"] },
+      "grounds": { "feed": ["navy", "verloop", "photo"], "2027": ["white", "photo"] },
       "formats": ["feed", "story", "square"]
     },
     "prijsvergelijk": {
-      "status": "planned",
+      "status": "built",
       "from": "IG-019, R2 as a still",
       "description": "Two or three prices for the same spot, the cheaper one wins.",
       "slots": {
@@ -84,11 +84,11 @@
         "body": { "type": "body", "required": false, "max_chars": 80 },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow"], "2027": ["navy", "white"] },
+      "grounds": { "feed": ["navy", "verloop"], "2027": ["navy", "white"] },
       "formats": ["feed", "story", "square"]
     },
     "stappen": {
-      "status": "planned",
+      "status": "built",
       "from": "R4 as a still, GLOW post E",
       "description": "How it works in three steps.",
       "slots": {
@@ -96,11 +96,11 @@
         "steps": { "type": "steps", "required": true, "min_items": 3, "max_items": 3, "max_chars": 32 },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "light"], "2027": ["white", "navy"] },
+      "grounds": { "feed": ["navy", "white"], "2027": ["white", "navy"] },
       "formats": ["feed", "story"]
     },
     "abonnement": {
-      "status": "planned",
+      "status": "built",
       "from": "IG-055, IG-058",
       "description": "One to three subscription rows with a note and a CTA.",
       "slots": {
@@ -110,11 +110,11 @@
         "figure": { "type": "figure", "required": false },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow"], "2027": ["navy"] },
+      "grounds": { "feed": ["navy", "verloop"], "2027": ["navy"] },
       "formats": ["feed", "story", "square", "landscape"]
     },
     "evenement": {
-      "status": "planned",
+      "status": "built",
       "from": "GLOW post B and D, 2027 event template",
       "description": "An event with its date, the nearby locations and an optional price.",
       "slots": {
@@ -126,11 +126,11 @@
         "figure": { "type": "figure", "required": false },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow", "photo"], "2027": ["navy"] },
+      "grounds": { "feed": ["navy", "verloop", "photo"], "2027": ["navy"] },
       "formats": ["feed", "story"]
     },
     "aftellen": {
-      "status": "planned",
+      "status": "built",
       "from": "GLOW post F, R6 as a still",
       "description": "Countdown: a big number of days to an event.",
       "slots": {
@@ -140,11 +140,11 @@
         "body": { "type": "body", "required": false, "max_chars": 50 },
         "cta": { "type": "cta", "required": false }
       },
-      "grounds": { "feed": ["navy", "glow"], "2027": ["navy"] },
+      "grounds": { "feed": ["navy", "verloop"], "2027": ["navy"] },
       "formats": ["feed", "story"]
     },
     "service": {
-      "status": "planned",
+      "status": "built",
       "from": "IG-036",
       "description": "Help at the machine: a headline, the phone number and one instruction.",
       "slots": {
@@ -157,7 +157,7 @@
       "formats": ["feed", "story"]
     },
     "foto-kop": {
-      "status": "planned",
+      "status": "built",
       "from": "S5, IG-058, IG-063",
       "description": "An own photo with a short headline on a field.",
       "slots": {
@@ -170,7 +170,7 @@
       "formats": ["feed", "story", "square", "landscape"]
     },
     "carrousel": {
-      "status": "planned",
+      "status": "built",
       "from": "S3, IG-005, IG-006, IG-020, IG-026, IG-030",
       "description": "2 to 10 slides: a cover with the hook, one point per slide, a CTA slide.",
       "slots": {
@@ -181,7 +181,7 @@
         "carrousel-punt": { "icon": {}, "headline": { "max_chars": 40, "max_lines": 2 }, "body": { "max_chars": 140 } },
         "carrousel-cta": { "headline": { "max_chars": 50, "max_lines": 2 }, "body": { "max_chars": 110 }, "cta": {} }
       },
-      "grounds": { "feed": ["navy", "light"], "2027": ["navy", "white"] },
+      "grounds": { "feed": ["navy", "white"], "2027": ["navy", "white"] },
       "formats": ["feed"]
     }
   }

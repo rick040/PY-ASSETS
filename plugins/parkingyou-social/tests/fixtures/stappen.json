@@ -1,0 +1,30 @@
+{
+ "id": "TEST-STAPPEN",
+ "slug": "selftest-stappen",
+ "archetype": "stappen",
+ "theme": "feed",
+ "formats": [
+  "feed"
+ ],
+ "ground": "navy",
+ "slots": {
+  "headline": "Je plek geregeld\nin *3 stappen.*",
+  "steps": [
+   {
+    "illustration": "py-atom-illustration-phone-qr",
+    "title": "*Reserveer* online"
+   },
+   {
+    "illustration": "py-atom-illustration-reader-qr",
+    "title": "*Scan* je code"
+   },
+   {
+    "illustration": "py-atom-symbol-p-roof",
+    "title": "*Parkeer*, klaar"
+   }
+  ],
+  "cta": "reserve"
+ },
+ "caption": "Testcaption voor de selftest van de plugin, niet om te posten. Meer info via de link in bio.",
+ "alt": "Testafbeelding voor de selftest van de ParkingYou social plugin."
+}

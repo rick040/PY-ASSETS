@@ -14,7 +14,7 @@
     "archetype": { "type": "string" },
     "theme": { "enum": ["feed", "2027"] },
     "formats": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["feed", "story", "square", "landscape"] } },
-    "ground": { "enum": ["navy", "glow", "light", "photo", "white"] },
+    "ground": { "enum": ["navy", "verloop", "white", "photo"] },
     "slots": { "type": "object" },
     "caption": { "type": "string", "minLength": 20, "maxLength": 2200 },
     "alt": { "type": "string", "minLength": 20, "maxLength": 250 },
