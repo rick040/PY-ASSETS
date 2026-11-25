@@ -41,6 +41,8 @@ for (const composition of comps) {
     serveUrl,
     codec: 'h264',
     crf: 20,
+    // Search spots render in one tab: with several tabs Chrome sometimes dropped the CTA button or a card in a frame.
+    concurrency: zoek ? 1 : null,
     outputLocation,
     browserExecutable,
     chromiumOptions: {gl: 'swangle'},

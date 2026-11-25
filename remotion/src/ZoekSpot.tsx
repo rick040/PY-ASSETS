@@ -8,7 +8,7 @@ import type {Zoekopdracht} from './zoekopdrachten';
 
 // Search spot, after the Jitter work in progress "IOS Stack": the question is typed in a search bar,
 // the matching locations come in as a card carousel, and a CTA closes it. 60 fps, 9:16 and 16:9.
-// No CSS blur filters: with them Chrome sometimes dropped layers in a frame (cards flickered away).
+// No CSS blur filters and no box-shadows: with them Chrome sometimes dropped layers in a frame (cards flickered away).
 // 9:16 keeps logo, search and cards inside the 4:5 feed preview (y 285 to 1635).
 
 export type ZoekFormaat = 'staand' | 'liggend';
@@ -120,7 +120,6 @@ const Search: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
         opacity: Math.min(1, open * 3),
         borderRadius: p.h / 2,
         background: colors.wit,
-        boxShadow: '0 18px 50px rgba(0,0,0,0.25)',
         display: 'flex',
         alignItems: 'center',
         paddingLeft: p.h * 0.36,
@@ -180,11 +179,10 @@ const Card: React.FC<{l: Locatie; g: Geo; active: number}> = ({l, g, active}) =>
         borderRadius: c.w * 0.06,
         overflow: 'hidden',
         border: `${Math.round(c.w * 0.01)}px solid ${colors.wit}`,
-        boxShadow: '0 30px 70px rgba(0,0,0,0.35)',
         background: colors.blauw,
       }}
     >
-      <Img src={staticFile(l.foto)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'}} />
+      <Img src={staticFile(l.foto)} decoding="sync" style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'}} />
       <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(26,53,128,0) 38%, rgba(26,53,128,0.92) 82%)'}} />
       <div style={{position: 'absolute', left: c.pad, right: c.pad, bottom: c.pad * 0.8, fontFamily: font, color: colors.wit}}>
         <div style={{overflow: 'hidden', fontSize: c.name * 0.7, lineHeight: 1.15}}>
@@ -283,6 +281,7 @@ const Cta: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
       <div style={{position: 'absolute', top: k.buttonY, width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div
           style={{
+            position: 'relative',
             padding: `${k.button * 0.45}px ${k.button * 1.1}px`,
             borderRadius: 999,
             background: colors.wit,
@@ -291,9 +290,18 @@ const Cta: React.FC<{z: Zoekopdracht; g: Geo}> = ({z, g}) => {
             fontWeight: 700,
             transform: `scale(${button * tap})`,
             opacity: Math.min(1, button * 2),
-            boxShadow: `0 0 0 ${glow * 26}px rgba(50,185,205,${0.5 * (1 - glow)})`,
           }}
         >
+          {/* Tap ring: a plain border, no box-shadow (shadows made Chrome drop the button in some frames). */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: -glow * 26,
+              borderRadius: 999,
+              border: `${Math.max(0, 6 * (1 - glow))}px solid ${colors.aqua}`,
+              opacity: glow > 0 && glow < 1 ? 1 - glow : 0,
+            }}
+          />
           parkingyou.nl
         </div>
       </div>
