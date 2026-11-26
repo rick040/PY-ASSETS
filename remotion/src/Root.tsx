@@ -10,6 +10,8 @@ import {zoekopdrachten} from './zoekopdrachten';
 import {CHAT_SIZE, ChatSpot, chatTimeline} from './ChatSpot';
 import {chatgesprekken} from './chatgesprekken';
 import {LIJST_SIZE, LijstSpot, lijstTimeline} from './LijstSpot';
+import {BORD_SIZE, BordSpot, bordTimeline} from './BordSpot';
+import {bordjes} from './borden';
 import {lijstjes} from './lijstjes';
 import {DURATION, FPS, HEIGHT, WIDTH} from './theme';
 
@@ -80,6 +82,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...LIJST_SIZE[formaat]}
           defaultProps={{lijstje: s, formaat}}
+        />
+      )),
+    )}
+    {bordjes.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`bord-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Bord' : 'BordYT'}-${s.slug}`}
+          component={BordSpot}
+          durationInFrames={bordTimeline().duration}
+          fps={60}
+          {...BORD_SIZE[formaat]}
+          defaultProps={{bordje: s, formaat}}
         />
       )),
     )}

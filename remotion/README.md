@@ -90,3 +90,16 @@ the location page (`bron` field). Each point fits on one line at both sizes.
 ```bash
 node scripts/render-locaties.mjs --lijst              # to out/lijstje/ and out/lijstje-youtube/
 ```
+
+## Signpost spots (BordSpot, "Het bordje")
+
+`src/BordSpot.tsx`: a question (from frame 0), then a street sign builds up on two posts: the parking on an aqua plank
+(with a price circle), four nearby places on white planks with an arrow and the walking time, each plank flipping down
+in turn, then the shared end screen (`EindCta`). One location per video, 10.7 s, 9:16 (`Bord-<slug>`) and 16:9 (`BordYT-<slug>`).
+`src/borden.ts` holds the places per location. Walking times are foot routes from the parking address via OpenStreetMap
+(routing.openstreetmap.de), rounded to whole minutes; the arrow is the compass direction (up = north, 8 directions), not the route.
+Partner names as text only.
+
+```bash
+node scripts/render-locaties.mjs --bord               # to out/bordje/ and out/bordje-youtube/
+```

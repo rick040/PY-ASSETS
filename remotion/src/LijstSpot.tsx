@@ -103,7 +103,8 @@ const Vinkje: React.FC<{at: number; size: number}> = ({at, size}) => {
   );
 };
 
-const PrijsRondje: React.FC<{l: Locatie; d: number; at: number}> = ({l, d, at}) => {
+/** Price circle, by default in the top-right corner of its parent. Also used by BordSpot. */
+export const PrijsRondje: React.FC<{l: Locatie; d: number; at: number; pos?: React.CSSProperties; licht?: boolean}> = ({l, d, at, pos, licht}) => {
   const frame = useCurrentFrame();
   const p = tween(frame, at, at + 30, ease(0.2, 1.4, 0.4, 1));
   if (frame < at) return null;
@@ -114,13 +115,14 @@ const PrijsRondje: React.FC<{l: Locatie; d: number; at: number}> = ({l, d, at}) 
     <div
       style={{
         position: 'absolute',
-        right: d * 0.12,
-        top: d * 0.12,
+        ...(pos ?? {right: d * 0.12, top: d * 0.12}),
         width: d,
         height: d,
         borderRadius: '50%',
-        background: colors.aqua,
-        color: colors.wit,
+        background: licht ? colors.wit : colors.aqua,
+        color: licht ? colors.blauw : colors.wit,
+        border: licht ? `${d * 0.035}px solid ${colors.blauw}` : 'none',
+        boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
