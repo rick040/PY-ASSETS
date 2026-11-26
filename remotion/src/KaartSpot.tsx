@@ -4,7 +4,7 @@ import {Fonts} from './components';
 import {colors, font} from './theme';
 import {clamp, ease, tween, useUbuntu, width, wrap} from './LocatieSpot';
 import {CTA_GEO, EindCta, type ZoekFormaat} from './ZoekSpot';
-import {RESERVEERBAAR, locaties, type Locatie} from './locaties';
+import {RESERVEERBAAR, locaties, type Locatie, type Prijs} from './locaties';
 import type {Kaartje} from './kaartjes';
 
 // "Het kaartje": a question about a well-known place, a real map (OpenStreetMap data in the house colours) with an aqua pin
@@ -70,8 +70,7 @@ const vind = (slug: string): Locatie => {
 
 const pop = (frame: number, at: number, len = 18) => tween(frame, at, at + len, ease(0.3, 1.5, 0.5, 1));
 
-const prijsTekst = (l: Locatie) =>
-  l.prijs.bedrag === 'Gratis' ? `Gratis ${l.prijs.eenheid}` : `${l.prijs.vanaf ? 'vanaf ' : ''}${l.prijs.bedrag} ${l.prijs.eenheid}`;
+const prijsTekst = (pr: Prijs) => (pr.bedrag === 'Gratis' ? `Gratis ${pr.eenheid}` : `${pr.vanaf ? 'vanaf ' : ''}${pr.bedrag} ${pr.eenheid}`);
 
 /** The first part of a polyline, up to fraction p of its length. */
 const deel = (pts: {x: number; y: number}[], p: number) => {
@@ -324,7 +323,7 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
               </div>
               <div style={{position: 'absolute', right: r.pad * 0.8, top: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', gap: 10}}>
                 <Pill bg={colors.aqua} color={colors.wit} size={r.pill}>
-                  {prijsTekst(p.l)}
+                  {prijsTekst(p.prijs ?? p.l.prijs)}
                 </Pill>
                 <Pill bg="rgba(255,255,255,0.94)" color={colors.blauw} size={r.pill}>
                   <Img src={staticFile('svg/atom/py-atom-figure-walk.svg')} style={{height: r.pill * 1.05, display: 'block'}} />

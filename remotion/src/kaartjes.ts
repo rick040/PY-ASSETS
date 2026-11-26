@@ -4,6 +4,8 @@
 // place, rounded to whole minutes. Positions on the map: the real offset in metres from the place (east = right, north = up),
 // scaled to fit. The map image is drawn from OpenStreetMap data (© OpenStreetMap contributors, ODbL) in the house colours.
 
+import type {Prijs} from './locaties';
+
 export type KaartParking = {
   /** Location slug from locaties.ts. */
   locatie: string;
@@ -14,6 +16,8 @@ export type KaartParking = {
   dy: number;
   /** Walking route from the parking to the place, in metres [east, north], simplified. */
   route: [number, number][];
+  /** Price to show when the location's default (for example an evening rate) does not fit this place. */
+  prijs?: Prijs;
 };
 
 /** The map image (public/kaarten) and the area it covers, in metres from the place: west edge x0, north edge y0. */
