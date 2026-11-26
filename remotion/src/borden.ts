@@ -63,12 +63,12 @@ export const bordjes: Bordje[] = [
     vraag: 'Dagje Amsterdam Oost?',
     sub: 'Vanaf hier loop je zo naar:',
     borden: [
-      {naar: 'The Harbour Club', tijd: '2 min.', richting: 228},
       {naar: 'Museum Perron Oost', tijd: '10 min.', richting: 268},
       {naar: 'Javaplein', tijd: '15 min.', richting: 222},
       {naar: 'Flevopark', tijd: '16 min.', richting: 173},
+      {naar: 'Lloyd Hotel', tijd: '20 min.', richting: 303},
     ],
-    bron: 'Looproutes OpenStreetMap (26-11-2026) vanaf het adres van de parking. The Harbour Club 146 m (2,0 min); Museum Perron Oost 763 m (10,2 min); Javaplein 1109 m (14,8 min); Flevopark 1166 m (15,6 min).',
+    bron: 'Looproutes OpenStreetMap (26-11-2026) vanaf het adres van de parking. Museum Perron Oost 763 m (10,2 min); Javaplein 1109 m (14,8 min); Flevopark 1166 m (15,6 min); Lloyd Hotel 1478 m (19,7 min). The Harbour Club eruit: failliet (Rick, 26-11-2026).',
   },
   {
     slug: 'bos-en-lommerplantsoen',
@@ -177,12 +177,12 @@ export const bordjes: Bordje[] = [
     vraag: 'Eindhoven ontdekken?',
     sub: 'Vanaf hier loop je zo naar:',
     borden: [
-      {naar: 'Philips Stadion', tijd: '4 min.', richting: 122},
+      {naar: 'Philips Stadion', tijd: 'naast de deur', richting: 122},
       {naar: 'Strijp-S', tijd: '13 min.', richting: 322},
       {naar: 'Philips Museum', tijd: '14 min.', richting: 118},
       {naar: 'Markt', tijd: '17 min.', richting: 112},
     ],
-    bron: 'Looproutes OpenStreetMap (26-11-2026) vanaf het adres van de parking. Philips Stadion 317 m (4,2 min); Strijp-S 993 m (13,4 min); Philips Museum 1072 m (14,4 min); Markt 1278 m (17,3 min).',
+    bron: 'Looproutes OpenStreetMap (26-11-2026) vanaf het adres van de parking. Philips Stadion: de looputgang ligt tegen het stadion (Rick, 26-11-2026); Strijp-S 993 m (13,4 min); Philips Museum 1072 m (14,4 min); Markt 1278 m (17,3 min).',
   },
   {
     slug: 'philips-bedrijfsschool',
