@@ -108,10 +108,13 @@ node scripts/render-locaties.mjs --bord               # to out/bordje/ and out/b
 
 `src/KaartSpot.tsx`: a question about a well-known place ("Naar het Muziekgebouw?"), a drawn map with an aqua pin on the
 place, our nearest parkings drop in around it with a dotted line, name and walking time, then a row per parking with its
-price (nearest marked) and the shared end screen. 10.4 s, 9:16 (`Kaart-<slug>`) and 16:9 (`KaartYT-<slug>`).
-`src/kaartjes.ts` holds the places. Only places where none of our parkings is right next door. Walking times are foot routes
-via OpenStreetMap; the parkings sit at their real offset from the place (north up, same scale both ways). The streets are
-decoration, not a real map.
+price (nearest marked) and the shared end screen. 10.6 s, 9:16 (`Kaart-<slug>`) and 16:9 (`KaartYT-<slug>`).
+`src/kaartjes.ts` holds the places. Only places where none of our parkings is right next door. Walking times and the drawn
+routes are foot routes via OpenStreetMap; the parkings sit at their real offset from the place (north up, same scale both ways).
+The map is real: `scripts/kaartdata.py` fetches the routes (routing.openstreetmap.de) and the streets, water, parks, buildings
+and railways around the place (Overpass), draws them in the house colours as SVG, and `scripts/raster-svg.cjs` turns that into
+`public/kaarten/<slug>.jpg`. Map data © OpenStreetMap contributors (ODbL), credited on the map. The parking cards follow the
+search-spot cards (photo, "Parking" + name, aqua price pill, white walking-time pill).
 
 ```bash
 node scripts/render-locaties.mjs --kaart              # to out/kaartje/ and out/kaartje-youtube/

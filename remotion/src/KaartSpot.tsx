@@ -2,24 +2,25 @@ import React from 'react';
 import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {Fonts} from './components';
 import {colors, font} from './theme';
-import {clamp, ease, tween, useUbuntu, wrap} from './LocatieSpot';
+import {clamp, ease, tween, useUbuntu, width, wrap} from './LocatieSpot';
 import {CTA_GEO, EindCta, type ZoekFormaat} from './ZoekSpot';
 import {RESERVEERBAAR, locaties, type Locatie} from './locaties';
 import type {Kaartje} from './kaartjes';
 
-// "Het kaartje": a question, a drawn map with a pin on a well-known place, our parkings drop in around it with a dotted
-// line and the walking time, then a row per parking with its price (nearest marked) and the shared end screen.
-// 60 fps, 9:16 and 16:9. No box-shadows or blur, render in one tab (see LijstSpot).
+// "Het kaartje": a question about a well-known place, a real map (OpenStreetMap data in the house colours) with an aqua pin
+// on the place; our nearest parkings drop in and the real walking route draws from the pin to each one. Then a card per
+// parking in the style of the search-spot cards (photo, "Parking" + name, price pill, walking-time pill), nearest marked,
+// and the shared end screen. 60 fps, 9:16 and 16:9. No box-shadows or blur, render in one tab (see LijstSpot).
 
 type Geo = {
   w: number;
   h: number;
   logo: {y: number; w: number};
   vraag: {x: number; y: number; w: number; size: number; sub: number; align: 'center' | 'left'};
-  /** Map card; y is the top (staand: placed under the question when null). */
-  kaart: {x: number; y: number | null; w: number; h: number};
-  /** Rows with the parkings and prices; y null = under the map. */
-  rij: {x: number; y: number | null; w: number; h: number; gap: number; naam: number};
+  /** Map card. staand: from under the question to above the cards. */
+  kaart: {x: number; y: number | null; w: number; h: number | null};
+  /** Parking cards. staand: bottom edge at `bodem`; liggend: under the question. */
+  rij: {x: number; w: number; h: number; gap: number; naam: number; pill: number; pad: number; bodem: number | null};
   marker: number;
   pin: number;
   label: number;
@@ -30,23 +31,23 @@ const GEO: Record<ZoekFormaat, Geo> = {
     w: 1080,
     h: 1920,
     logo: {y: 250, w: 300},
-    vraag: {x: 60, y: 390, w: 960, size: 92, sub: 50, align: 'center'},
-    kaart: {x: 60, y: null, w: 960, h: 570},
-    rij: {x: 60, y: null, w: 960, h: 86, gap: 10, naam: 42},
-    marker: 70,
+    vraag: {x: 60, y: 360, w: 960, size: 80, sub: 46, align: 'center'},
+    kaart: {x: 60, y: null, w: 960, h: null},
+    rij: {x: 60, w: 960, h: 124, gap: 14, naam: 44, pill: 27, pad: 30, bodem: 1586},
+    marker: 66,
     pin: 74,
-    label: 34,
+    label: 30,
   },
   liggend: {
     w: 1920,
     h: 1080,
     logo: {y: 40, w: 250},
-    vraag: {x: 110, y: 200, w: 760, size: 88, sub: 46, align: 'left'},
+    vraag: {x: 110, y: 170, w: 760, size: 84, sub: 46, align: 'left'},
     kaart: {x: 960, y: 150, w: 850, h: 860},
-    rij: {x: 110, y: null, w: 760, h: 100, gap: 14, naam: 42},
-    marker: 74,
-    pin: 80,
-    label: 34,
+    rij: {x: 110, w: 760, h: 136, gap: 16, naam: 42, pill: 26, pad: 28, bodem: null},
+    marker: 66,
+    pin: 78,
+    label: 30,
   },
 };
 
@@ -57,7 +58,7 @@ export const kaartTimeline = (n = 3) => {
   const markers = Array.from({length: n}, (_, i) => MARKER_START + i * MARKER_GAP);
   const rijen = Array.from({length: n}, (_, i) => markers[n - 1] + 60 + i * 22);
   const dichtst = rijen[n - 1] + 40;
-  const cta = dichtst + 120;
+  const cta = dichtst + 130;
   return {markers, rijen, dichtst, cta, duration: cta + 170};
 };
 
@@ -69,27 +70,47 @@ const vind = (slug: string): Locatie => {
 
 const pop = (frame: number, at: number, len = 18) => tween(frame, at, at + len, ease(0.3, 1.5, 0.5, 1));
 
-/** Decorative streets: a slightly turned grid with a few wide roads, the same on every map. */
-const Straten: React.FC<{w: number; h: number}> = ({w, h}) => {
-  const lijnen: React.ReactNode[] = [];
-  const stap = 150;
-  for (let i = -6; i <= 12; i++) {
-    const breed = i % 3 === 0;
-    lijnen.push(<line key={`a${i}`} x1={-200 + i * stap} y1={-200} x2={-200 + i * stap + 260} y2={h + 200} stroke="#FFFFFF" strokeWidth={breed ? 18 : 9} />);
-    lijnen.push(<line key={`b${i}`} x1={-200} y1={-120 + i * stap} x2={w + 200} y2={-120 + i * stap - 200} stroke="#FFFFFF" strokeWidth={breed ? 18 : 9} />);
+const prijsTekst = (l: Locatie) =>
+  l.prijs.bedrag === 'Gratis' ? `Gratis ${l.prijs.eenheid}` : `${l.prijs.vanaf ? 'vanaf ' : ''}${l.prijs.bedrag} ${l.prijs.eenheid}`;
+
+/** The first part of a polyline, up to fraction p of its length. */
+const deel = (pts: {x: number; y: number}[], p: number) => {
+  if (p >= 1) return pts;
+  const seg = pts.slice(1).map((q, i) => Math.hypot(q.x - pts[i].x, q.y - pts[i].y));
+  let rest = seg.reduce((a, b) => a + b, 0) * Math.max(0, p);
+  const out = [pts[0]];
+  for (let i = 0; i < seg.length; i++) {
+    if (rest >= seg[i]) {
+      out.push(pts[i + 1]);
+      rest -= seg[i];
+    } else {
+      const f = seg[i] ? rest / seg[i] : 0;
+      out.push({x: pts[i].x + (pts[i + 1].x - pts[i].x) * f, y: pts[i].y + (pts[i + 1].y - pts[i].y) * f});
+      break;
+    }
   }
-  return (
-    <svg width={w} height={h} style={{position: 'absolute', left: 0, top: 0}}>
-      <rect width={w} height={h} fill="#E4E9F4" />
-      {/* a park block for some colour */}
-      <rect x={w * 0.62} y={h * 0.12} width={w * 0.2} height={h * 0.16} rx={24} fill="#D3EFE3" transform={`rotate(-8 ${w * 0.72} ${h * 0.2})`} />
-      {lijnen}
-    </svg>
-  );
+  return out;
 };
 
-const prijsDelen = (l: Locatie) =>
-  l.prijs.bedrag === 'Gratis' ? {groot: 'Gratis', klein: l.prijs.eenheid} : {groot: `${l.prijs.vanaf ? 'vanaf ' : ''}${l.prijs.bedrag}`, klein: l.prijs.eenheid};
+const Pill: React.FC<{bg: string; color: string; size: number; children: React.ReactNode}> = ({bg, color, size, children}) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: size * 0.3,
+      padding: `${size * 0.32}px ${size * 0.62}px`,
+      borderRadius: 999,
+      background: bg,
+      color,
+      fontWeight: 700,
+      fontSize: size,
+      lineHeight: 1.1,
+      whiteSpace: 'nowrap',
+    }}
+  >
+    {children}
+  </div>
+);
 
 export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({kaartje: k, formaat = 'staand'}) => {
   const frame = useCurrentFrame();
@@ -100,31 +121,37 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
   const n = k.parkings.length;
   const t = kaartTimeline(n);
   const ps = k.parkings.map((p) => ({...p, l: vind(p.locatie)}));
+  const r = g.rij;
 
   const vraagIn = interpolate(frame, [0, 22], [0.5, 1], {...clamp, easing: ease(0.2, 0.9, 0.3, 1)});
   const subIn = tween(frame, 12, 36, ease(0.2, 0.9, 0.3, 1));
   const kaartIn = tween(frame, 20, 50, ease(0.2, 0.9, 0.3, 1));
+  const zoom = tween(frame, 20, t.rijen[0], ease(0.4, 0, 0.2, 1));
   const pinIn = pop(frame, 44, 20);
   const out = tween(frame, t.cta - 6, t.cta + 14);
+  const dichtstIn = tween(frame, t.dichtst, t.dichtst + 16);
 
-  const vraagLines = wrap(k.vraag, g.vraag.size, '700', g.vraag.w);
+  const breedsteWoord = Math.max(...k.vraag.split(' ').map((x) => width(x, g.vraag.size, '700')));
+  const vraagSize = Math.min(g.vraag.size, (g.vraag.size * g.vraag.w) / breedsteWoord);
+  const vraagLines = wrap(k.vraag, vraagSize, '700', g.vraag.w);
   const subLines = wrap(k.sub ?? 'Parkeer op loopafstand:', g.vraag.sub, '400', g.vraag.w);
-  const vraagH = vraagLines.length * g.vraag.size * 1.1 + 10 + subLines.length * g.vraag.sub * 1.25;
+  const vraagH = vraagLines.length * vraagSize * 1.1 + 10 + subLines.length * g.vraag.sub * 1.25;
 
-  const kaartY = g.kaart.y ?? g.vraag.y + vraagH + 40;
-  const rijY = g.rij.y ?? (staand ? kaartY + g.kaart.h + 24 : g.vraag.y + vraagH + 50);
+  // Cards: 9:16 stacked above the bottom safe zone, 16:9 under the question.
+  const rijenH = n * r.h + (n - 1) * r.gap;
+  const rijY = r.bodem !== null ? r.bodem - rijenH : g.vraag.y + vraagH + 56;
+  const kaartY = g.kaart.y ?? g.vraag.y + vraagH + 34;
   const W = g.kaart.w;
-  const H = g.kaart.h;
+  const H = g.kaart.h ?? rijY - 26 - kaartY;
 
-  // Map scale: the pin and all parkings together fill the card, with room for the labels (pin label above,
-  // parking labels below). Same scale in both directions, so the directions stay true.
-  const padX = 190;
-  const padTop = 150;
-  const padBot = 110;
+  // Map scale: the pin and all parkings fill the card, with room for the labels; same scale both ways (north up).
+  const padX = 200;
+  const padTop = 130;
+  const padBot = 90;
   const xs = [0, ...ps.map((p) => p.dx)];
   const ys = [0, ...ps.map((p) => p.dy)];
   const [minX, maxX, minY, maxY] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
-  const s = Math.min((W - 2 * padX) / Math.max(1, maxX - minX), (H - padTop - padBot) / Math.max(1, maxY - minY), 1.2);
+  const s = Math.min((W - 2 * padX) / Math.max(1, maxX - minX), (H - padTop - padBot) / Math.max(1, maxY - minY), 1.4);
   const offX = (W - (maxX - minX) * s) / 2;
   const offY = padTop + (H - padTop - padBot - (maxY - minY) * s) / 2;
   const toX = (dx: number) => offX + (dx - minX) * s;
@@ -132,7 +159,8 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
   const cx = toX(0);
   const cy = toY(0);
   const pos = ps.map((p) => ({x: toX(p.dx), y: toY(p.dy)}));
-  const dichtstIn = tween(frame, t.dichtst, t.dichtst + 16);
+  // A slow push-in on the map while the parkings come in (around the pin, so nothing jumps).
+  const z = 1.06 - 0.06 * zoom;
 
   return (
     <AbsoluteFill style={{background: colors.blauw, fontFamily: font}}>
@@ -144,7 +172,7 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
       <AbsoluteFill style={{opacity: 1 - out, transform: `translateY(${-80 * out}px)`}}>
         {/* Question */}
         <div style={{position: 'absolute', left: g.vraag.x, top: g.vraag.y, width: g.vraag.w, color: colors.wit, textAlign: g.vraag.align}}>
-          <div style={{fontSize: g.vraag.size, fontWeight: 700, lineHeight: 1.1, opacity: vraagIn, transform: `scale(${0.8 + 0.2 * vraagIn})`, transformOrigin: staand ? '50% 50%' : '0% 50%'}}>
+          <div style={{fontSize: vraagSize, fontWeight: 700, lineHeight: 1.1, opacity: vraagIn, transform: `scale(${0.8 + 0.2 * vraagIn})`, transformOrigin: staand ? '50% 50%' : '0% 50%'}}>
             {vraagLines.map((x, i) => (
               <div key={i}>{x}</div>
             ))}
@@ -156,7 +184,7 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
           </div>
         </div>
 
-        {/* Map */}
+        {/* Map card */}
         <div
           style={{
             position: 'absolute',
@@ -166,113 +194,105 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
             height: H,
             borderRadius: 40,
             overflow: 'hidden',
+            border: `5px solid ${colors.wit}`,
+            boxSizing: 'border-box',
+            background: '#E7EBF3',
             opacity: kaartIn,
-            transform: `scale(${0.92 + 0.08 * kaartIn})`,
+            transform: `scale(${0.94 + 0.06 * kaartIn})`,
           }}
         >
-          <Straten w={W} h={H} />
-          {/* Dotted walking lines, drawn from the pin to each parking */}
-          <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
+          <div style={{position: 'absolute', inset: 0, transform: `scale(${z})`, transformOrigin: `${cx}px ${cy}px`}}>
+            <Img
+              src={staticFile(k.kaart.src)}
+              decoding="sync"
+              style={{position: 'absolute', left: toX(k.kaart.x0), top: toY(k.kaart.y0), width: k.kaart.w * s, height: k.kaart.h * s, maxWidth: 'none'}}
+            />
+            {/* Walking routes, drawn from the pin out to each parking */}
+            <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
+              {ps.map((p, i) => {
+                const d = tween(frame, t.markers[i] - 4, t.markers[i] + 26, ease(0.3, 0, 0.2, 1));
+                if (d <= 0) return null;
+                const pts = deel(
+                  [...p.route].reverse().map(([x, y]) => ({x: toX(x), y: toY(y)})),
+                  d,
+                );
+                return (
+                  <polyline
+                    key={i}
+                    points={pts.map((q) => `${q.x.toFixed(1)},${q.y.toFixed(1)}`).join(' ')}
+                    fill="none"
+                    stroke={colors.blauw}
+                    strokeWidth={9}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeDasharray="0.1 19"
+                  />
+                );
+              })}
+            </svg>
+
+            {/* Parking markers with name and walking time */}
             {pos.map((q, i) => {
-              const d = tween(frame, t.markers[i] + 8, t.markers[i] + 30, ease(0.3, 0, 0.2, 1));
-              if (d <= 0) return null;
+              const at = t.markers[i] + 22;
+              if (frame < at) return null;
+              const v = pop(frame, at);
+              const m = g.marker;
+              const onder = q.y < H - m - 70;
+              const eerste = i === 0;
               return (
-                <line
-                  key={i}
-                  x1={cx}
-                  y1={cy}
-                  x2={cx + (q.x - cx) * d}
-                  y2={cy + (q.y - cy) * d}
-                  stroke={colors.blauw}
-                  strokeWidth={9}
-                  strokeLinecap="round"
-                  strokeDasharray="0.1 20"
-                />
+                <div key={`m${i}`} style={{position: 'absolute', left: q.x, top: q.y, transform: `translate(-50%, -50%) scale(${v})`}}>
+                  <div
+                    style={{
+                      width: m,
+                      height: m,
+                      borderRadius: m * 0.24,
+                      background: eerste && dichtstIn > 0 ? colors.aqua : colors.blauw,
+                      border: `5px solid ${colors.wit}`,
+                      boxSizing: 'border-box',
+                      color: colors.wit,
+                      fontSize: m * 0.6,
+                      fontWeight: 700,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      lineHeight: 1,
+                    }}
+                  >
+                    P
+                  </div>
+                  <div style={{position: 'absolute', left: '50%', top: onder ? m + 8 : -g.label * 1.75 - 8, transform: 'translateX(-50%)'}}>
+                    <Pill bg={colors.blauw} color={colors.wit} size={g.label * 0.82}>
+                      {ps[i].l.naam}
+                      <span style={{fontWeight: 400}}>· {ps[i].tijd}</span>
+                    </Pill>
+                  </div>
+                </div>
               );
             })}
-          </svg>
 
-          {/* Parking markers with their name */}
-          {pos.map((q, i) => {
-            const v = pop(frame, t.markers[i]);
-            if (frame < t.markers[i]) return null;
-            const m = g.marker;
-            const onder = q.y < H - m - 60;
-            return (
-              <div key={`m${i}`} style={{position: 'absolute', left: q.x, top: q.y, transform: `translate(-50%, -50%) scale(${v})`}}>
-                <div
-                  style={{
-                    width: m,
-                    height: m,
-                    borderRadius: m * 0.22,
-                    background: colors.blauw,
-                    border: `5px solid ${colors.wit}`,
-                    boxSizing: 'border-box',
-                    color: colors.wit,
-                    fontSize: m * 0.62,
-                    fontWeight: 700,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    lineHeight: 1,
-                  }}
-                >
-                  P
-                </div>
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: '50%',
-                    top: onder ? m + 6 : -g.label * 1.6 - 6,
-                    transform: 'translateX(-50%)',
-                    padding: '4px 14px',
-                    borderRadius: 12,
-                    background: colors.blauw,
-                    color: colors.wit,
-                    fontSize: g.label * 0.85,
-                    fontWeight: 700,
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  {ps[i].l.naam}
-                  <span style={{fontWeight: 400}}> · {ps[i].tijd}</span>
-                </div>
+            {/* The place: aqua pin with its name */}
+            <div style={{position: 'absolute', left: cx, top: cy, transform: `translate(-50%, -100%) scale(${pinIn})`, transformOrigin: '50% 100%', opacity: frame < 44 ? 0 : 1}}>
+              <div style={{position: 'absolute', left: '50%', bottom: g.pin * 1.32 + 10, transform: 'translateX(-50%)'}}>
+                <Pill bg={colors.aqua} color={colors.wit} size={g.label * 1.12}>
+                  {k.plek}
+                </Pill>
               </div>
-            );
-          })}
-
-          {/* The place: aqua pin with its name */}
-          <div style={{position: 'absolute', left: cx, top: cy, transform: `translate(-50%, -100%) scale(${pinIn})`, transformOrigin: '50% 100%', opacity: frame < 44 ? 0 : 1}}>
-            <div
-              style={{
-                position: 'absolute',
-                left: '50%',
-                bottom: g.pin * 1.32 + 10,
-                transform: 'translateX(-50%)',
-                padding: '10px 22px',
-                borderRadius: 16,
-                background: colors.aqua,
-                color: colors.wit,
-                fontSize: g.label * 1.15,
-                fontWeight: 700,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {k.plek}
+              <svg width={g.pin} height={g.pin * 1.32} viewBox="0 0 60 80" style={{display: 'block'}}>
+                <path d="M30 78 C30 78 4 46 4 28 A26 26 0 1 1 56 28 C56 46 30 78 30 78 Z" fill={colors.aqua} stroke={colors.wit} strokeWidth={4} />
+                <circle cx={30} cy={28} r={10} fill={colors.wit} />
+              </svg>
             </div>
-            <svg width={g.pin} height={g.pin * 1.32} viewBox="0 0 60 80" style={{display: 'block'}}>
-              <path d="M30 78 C30 78 4 46 4 28 A26 26 0 1 1 56 28 C56 46 30 78 30 78 Z" fill={colors.aqua} stroke={colors.wit} strokeWidth={4} />
-              <circle cx={30} cy={28} r={10} fill={colors.wit} />
-            </svg>
           </div>
+          {/* Map data credit (ODbL) */}
+          <div style={{position: 'absolute', right: 22, bottom: 16, fontSize: 18, color: colors.blauw, opacity: 0.7}}>© OpenStreetMap</div>
         </div>
 
-        {/* Rows: parking, walking time, price; nearest one marked */}
+        {/* Parking cards in the style of the search-spot cards */}
         {ps.map((p, i) => {
-          const v = tween(frame, t.rijen[i], t.rijen[i] + 18, ease(0.2, 0.9, 0.3, 1));
-          const r = g.rij;
+          const v = tween(frame, t.rijen[i], t.rijen[i] + 20, ease(0.2, 0.9, 0.3, 1));
           const eerste = i === 0;
-          const pr = prijsDelen(p.l);
+          const naamMax = r.w - r.pad * 2 - 330;
+          const naamSize = Math.min(r.naam, (r.naam * naamMax) / width(p.l.naam, r.naam, '700'));
           return (
             <div
               key={`r${i}`}
@@ -282,45 +302,34 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
                 top: rijY + i * (r.h + r.gap),
                 width: r.w,
                 height: r.h,
-                borderRadius: 24,
-                background: colors.wit,
-                color: colors.blauw,
+                borderRadius: 30,
+                overflow: 'hidden',
                 border: `5px solid ${eerste && dichtstIn > 0 ? colors.aqua : colors.wit}`,
                 boxSizing: 'border-box',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 18,
-                padding: '0 24px',
+                background: colors.blauw,
                 opacity: v,
                 transform: `translateY(${(1 - v) * 40}px)`,
               }}
             >
-              <div
-                style={{
-                  flex: 'none',
-                  width: r.h * 0.56,
-                  height: r.h * 0.56,
-                  borderRadius: 12,
-                  background: colors.blauw,
-                  color: colors.wit,
-                  fontSize: r.h * 0.36,
-                  fontWeight: 700,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                P
-              </div>
-              <div style={{flex: 1, minWidth: 0, lineHeight: 1.05}}>
-                <div style={{fontSize: r.naam * 0.62, opacity: 0.8}}>
-                  {p.tijd} lopen{eerste ? <span style={{opacity: dichtstIn, fontWeight: 700, color: colors.aqua}}> · dichtstbij</span> : null}
+              <Img src={staticFile(p.l.foto)} decoding="sync" style={{position: 'absolute', right: 0, top: 0, width: '62%', height: '100%', objectFit: 'cover'}} />
+              <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(26,53,128,1) 38%, rgba(26,53,128,0.82) 62%, rgba(26,53,128,0.25) 100%)'}} />
+              <div style={{position: 'absolute', left: r.pad, top: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', color: colors.wit}}>
+                <div style={{display: 'flex', alignItems: 'center', gap: 12, fontSize: r.naam * 0.62, lineHeight: 1.2}}>
+                  Parking
+                  {eerste ? (
+                    <span style={{opacity: dichtstIn, fontSize: r.pill * 0.8, fontWeight: 700, padding: '3px 12px', borderRadius: 999, background: colors.aqua}}>dichtstbij</span>
+                  ) : null}
                 </div>
-                <div style={{fontSize: r.naam, fontWeight: 700, whiteSpace: 'nowrap'}}>{p.l.naam}</div>
+                <div style={{fontSize: naamSize, fontWeight: 700, lineHeight: 1.1, whiteSpace: 'nowrap'}}>{p.l.naam}</div>
               </div>
-              <div style={{flex: 'none', textAlign: 'right', lineHeight: 1.05}}>
-                <div style={{fontSize: r.naam, fontWeight: 700}}>{pr.groot}</div>
-                <div style={{fontSize: r.naam * 0.55}}>{pr.klein}</div>
+              <div style={{position: 'absolute', right: r.pad * 0.8, top: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', gap: 10}}>
+                <Pill bg={colors.aqua} color={colors.wit} size={r.pill}>
+                  {prijsTekst(p.l)}
+                </Pill>
+                <Pill bg="rgba(255,255,255,0.94)" color={colors.blauw} size={r.pill}>
+                  <Img src={staticFile('svg/atom/py-atom-figure-walk.svg')} style={{height: r.pill * 1.05, display: 'block'}} />
+                  {p.tijd} lopen
+                </Pill>
               </div>
             </div>
           );
