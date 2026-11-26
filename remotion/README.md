@@ -119,3 +119,25 @@ search-spot cards (photo, "Parking" + name, aqua price pill, white walking-time 
 ```bash
 node scripts/render-locaties.mjs --kaart              # to out/kaartje/ and out/kaartje-youtube/
 ```
+
+## Amsterdam Light campaign (Instagram ads, 9:16)
+
+`src/AmsterdamLight.tsx`: six concepts for Parking Plantage during the light festival, 60 fps, 1080x1920, 8 to 11 s,
+all with the shared end screen ("Reserveer online"). Shared kit: canal houses whose windows switch on, water with
+reflections and ripples, light-art arches and rings, strings of bulbs, neon lines made of stacked strokes (no blur).
+
+| Composition | Concept |
+|---|---|
+| `Light-1-lichten-aan` | A clock ticks to 16:30, the canal houses light up window by window, "Je plek staat al klaar." Usable every day. |
+| `Light-2-een-lichtlijn` | One neon line from the barrier, out of the garage, along the water, ending as the logo mark; loops seamlessly (frame 480 = frame 0). Awareness. |
+| `Light-3-kies-je-rondje` | Split screen: a car circles past full car parks while a stress meter rises, someone walks along lit canals. "Rondje zoeken of rondje kijken?" |
+| `Light-4-light-night-<datum>` | Three dated versions (26 nov, 12 dec, 19 dec) with a countdown to that evening; run only in the days before. |
+| `Light-5-reserveren-3-tikken` | A phone shows the booking: pick a date, spot confirmed, the ticket glows. |
+| `Light-6-dagje-artis-avondje-licht` | Families: animals by day, the screen turns to light art at dusk. "Eén keer parkeren, de hele dag Amsterdam." |
+
+```bash
+node scripts/render-locaties.mjs --light              # to out/amsterdam-light/
+```
+
+* The phone in concept 5 is an illustration of the booking steps, not a screenshot of the real booking site.
+* Partner names (Artis) as text only, no logos. The festival name itself is not used.
