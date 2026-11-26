@@ -14,6 +14,22 @@ import {BORD_SIZE, BordSpot, bordTimeline} from './BordSpot';
 import {bordjes} from './borden';
 import {KAART_SIZE, KaartSpot, kaartTimeline} from './KaartSpot';
 import {kaartjes} from './kaartjes';
+import {
+  ARTIS_DUUR,
+  ArtisLicht,
+  DrieTikken,
+  KiesRondje,
+  LICHTEN_DUUR,
+  LIGHT_NIGHTS,
+  LIGHT_SIZE,
+  LIJN_DUUR,
+  LichtLijn,
+  LichtenAan,
+  LightNightSpot,
+  NACHT_DUUR,
+  RONDJE_DUUR,
+  TIKKEN_DUUR,
+} from './AmsterdamLight';
 import {lijstjes} from './lijstjes';
 import {DURATION, FPS, HEIGHT, WIDTH} from './theme';
 
@@ -113,5 +129,13 @@ export const Root: React.FC = () => (
         />
       )),
     )}
+    <Composition id="Light-1-lichten-aan" component={LichtenAan} durationInFrames={LICHTEN_DUUR} fps={60} {...LIGHT_SIZE} />
+    <Composition id="Light-2-een-lichtlijn" component={LichtLijn} durationInFrames={LIJN_DUUR} fps={60} {...LIGHT_SIZE} />
+    <Composition id="Light-3-kies-je-rondje" component={KiesRondje} durationInFrames={RONDJE_DUUR} fps={60} {...LIGHT_SIZE} />
+    {LIGHT_NIGHTS.map((n) => (
+      <Composition key={n.slug} id={`Light-4-light-night-${n.slug}`} component={LightNightSpot} durationInFrames={NACHT_DUUR} fps={60} {...LIGHT_SIZE} defaultProps={{nacht: n}} />
+    ))}
+    <Composition id="Light-5-reserveren-3-tikken" component={DrieTikken} durationInFrames={TIKKEN_DUUR} fps={60} {...LIGHT_SIZE} />
+    <Composition id="Light-6-dagje-artis-avondje-licht" component={ArtisLicht} durationInFrames={ARTIS_DUUR} fps={60} {...LIGHT_SIZE} />
   </>
 );

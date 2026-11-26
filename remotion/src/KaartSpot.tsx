@@ -145,8 +145,8 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
 
   // Map scale: the pin and all parkings fill the card, with room for the labels; same scale both ways (north up).
   const padX = 200;
-  const padTop = 130;
-  const padBot = 90;
+  const padTop = 170;
+  const padBot = 100;
   const xs = [0, ...ps.map((p) => p.dx)];
   const ys = [0, ...ps.map((p) => p.dy)];
   const [minX, maxX, minY, maxY] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
@@ -158,6 +158,36 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
   const cx = toX(0);
   const cy = toY(0);
   const pos = ps.map((p) => ({x: toX(p.dx), y: toY(p.dy)}));
+
+  // Label placement: every label above or below its point, whichever is free, and kept inside the card.
+  type Box = {x1: number; y1: number; x2: number; y2: number};
+  const raakt = (a: Box, b: Box) => a.x1 < b.x2 && b.x1 < a.x2 && a.y1 < b.y2 && b.y1 < a.y2;
+  const binnen = (x: number, w: number) => Math.min(Math.max(x - w / 2, 14), W - 14 - w) - (x - w / 2);
+  const m = g.marker;
+  const pinH = g.pin * 1.32;
+  const pinSize = g.label * 1.12;
+  const pinW = width(k.plek, pinSize, '700') + pinSize * 1.24;
+  const pinLH = pinSize * 1.1 + pinSize * 0.64;
+  const markerBoxes: Box[] = pos.map((q) => ({x1: q.x - m / 2 - 6, y1: q.y - m / 2 - 6, x2: q.x + m / 2 + 6, y2: q.y + m / 2 + 6}));
+  const pinBody: Box = {x1: cx - g.pin / 2, y1: cy - pinH, x2: cx + g.pin / 2, y2: cy};
+  const pinShift = binnen(cx, pinW);
+  const pinBoven: Box = {x1: cx - pinW / 2 + pinShift, y1: cy - pinH - 10 - pinLH, x2: cx + pinW / 2 + pinShift, y2: cy - pinH - 10};
+  const pinOnderBox: Box = {x1: pinBoven.x1, y1: cy + 12, x2: pinBoven.x2, y2: cy + 12 + pinLH};
+  const pinOnder = pinBoven.y1 < 8 || markerBoxes.some((b) => raakt(b, pinBoven));
+  const bezet: Box[] = [pinOnder ? pinOnderBox : pinBoven, pinBody, ...markerBoxes];
+  const mSize = g.label * 0.82;
+  const labels = pos.map((q, i) => {
+    const lw = width(`${ps[i].l.naam} · ${ps[i].tijd}`, mSize, '700') + mSize * 1.6;
+    const lh = mSize * 1.1 + mSize * 0.64;
+    const shift = binnen(q.x, lw);
+    const onderBox: Box = {x1: q.x - lw / 2 + shift, y1: q.y + m / 2 + 8, x2: q.x + lw / 2 + shift, y2: q.y + m / 2 + 8 + lh};
+    const bovenBox: Box = {x1: onderBox.x1, y1: q.y - m / 2 - 8 - lh, x2: onderBox.x2, y2: q.y - m / 2 - 8};
+    const eigen = markerBoxes.filter((_, j) => j !== i);
+    const vrij = (b: Box) => b.y1 > 6 && b.y2 < H - 6 && !bezet.filter((x) => !eigen.includes(x) || true).some((x) => x !== markerBoxes[i] && raakt(x, b));
+    const onder = vrij(onderBox) || !vrij(bovenBox);
+    bezet.push(onder ? onderBox : bovenBox);
+    return {onder, shift};
+  });
   // A slow push-in on the map while the parkings come in (around the pin, so nothing jumps).
   const z = 1.06 - 0.06 * zoom;
 
@@ -236,7 +266,7 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
               if (frame < at) return null;
               const v = pop(frame, at);
               const m = g.marker;
-              const onder = q.y < H - m - 70;
+              const {onder, shift} = labels[i];
               const eerste = i === 0;
               return (
                 <div key={`m${i}`} style={{position: 'absolute', left: q.x, top: q.y, transform: `translate(-50%, -50%) scale(${v})`}}>
@@ -259,7 +289,7 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
                   >
                     P
                   </div>
-                  <div style={{position: 'absolute', left: '50%', top: onder ? m + 8 : -g.label * 1.75 - 8, transform: 'translateX(-50%)'}}>
+                  <div style={{position: 'absolute', left: '50%', top: onder ? m + 8 : -(mSize * 1.74) - 8, transform: `translateX(calc(-50% + ${shift}px))`}}>
                     <Pill bg={colors.blauw} color={colors.wit} size={g.label * 0.82}>
                       {ps[i].l.naam}
                       <span style={{fontWeight: 400}}>· {ps[i].tijd}</span>
@@ -271,7 +301,7 @@ export const KaartSpot: React.FC<{kaartje: Kaartje; formaat?: ZoekFormaat}> = ({
 
             {/* The place: aqua pin with its name */}
             <div style={{position: 'absolute', left: cx, top: cy, transform: `translate(-50%, -100%) scale(${pinIn})`, transformOrigin: '50% 100%', opacity: frame < 44 ? 0 : 1}}>
-              <div style={{position: 'absolute', left: '50%', bottom: g.pin * 1.32 + 10, transform: 'translateX(-50%)'}}>
+              <div style={{position: 'absolute', left: '50%', ...(pinOnder ? {top: pinH + 12} : {bottom: pinH + 10}), transform: `translateX(calc(-50% + ${pinShift}px))`}}>
                 <Pill bg={colors.aqua} color={colors.wit} size={g.label * 1.12}>
                   {k.plek}
                 </Pill>
