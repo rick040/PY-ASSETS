@@ -157,7 +157,7 @@ export const LijstSpot: React.FC<{lijstje: Lijstje; formaat?: ZoekFormaat}> = ({
   const out = tween(frame, t.cta - 6, t.cta + 14);
 
   const vraagLines = wrap(s.vraag, g.vraag, '700', g.w - 160);
-  const subLines = wrap(s.sub, g.sub, '400', g.w - 160);
+  const subLines = wrap(s.sub ?? 'Hier parkeer je zonder zorgen:', g.sub, '400', g.w - 160);
   const vraagH = vraagLines.length * g.vraag * 1.1 + subLines.length * g.sub * 1.25 + (kolom ? 70 : 40);
 
   const naamLines = wrap(l.naam, k.naam, '700', k.w - k.pad * 2);

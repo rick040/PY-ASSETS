@@ -78,3 +78,15 @@ Older messages scroll up and fade out before they reach the logo.
 ```bash
 node scripts/render-locaties.mjs --chat               # to out/chat/ and out/chat-youtube/
 ```
+
+## Checklist spots (LijstSpot, "Het lijstje")
+
+`src/LijstSpot.tsx`: a question (from frame 0), a white card with four points that get a tick one by one, then the card
+opens to show the location photo, name and a price circle, then the shared end screen (`EindCta`). One location per video,
+10.8 s, 9:16 (`Lijst-<slug>`, photo above the list) and 16:9 (`LijstYT-<slug>`, photo left of the list).
+`src/lijstjes.ts` holds the question and the four points per location (text between [ ] is bold); every point must be on
+the location page (`bron` field). Each point fits on one line at both sizes.
+
+```bash
+node scripts/render-locaties.mjs --lijst              # to out/lijstje/ and out/lijstje-youtube/
+```
