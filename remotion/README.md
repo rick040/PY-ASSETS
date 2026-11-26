@@ -96,7 +96,7 @@ node scripts/render-locaties.mjs --lijst              # to out/lijstje/ and out/
 `src/BordSpot.tsx`: a question (from frame 0), then a street sign builds up on two posts: the parking on an aqua plank
 (with a price circle), four nearby places on white planks with an arrow and the walking time, each plank flipping down
 in turn, then the shared end screen (`EindCta`). One location per video, 10.7 s, 9:16 (`Bord-<slug>`) and 16:9 (`BordYT-<slug>`).
-`src/borden.ts` holds the places per location. Walking times are foot routes from the parking address via OpenStreetMap
+`src/borden.ts` holds three or four places per location (32 locations; Lentse plas and Pathé Ede are left out because only the cinema itself is within about 20 minutes' walk). Where the location page gives a walking time, that time is used. Walking times are foot routes from the parking address via OpenStreetMap
 (routing.openstreetmap.de), rounded to whole minutes; the arrow is the compass direction (up = north, 8 directions), not the route.
 Partner names as text only.
 

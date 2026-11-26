@@ -91,7 +91,7 @@ export const Root: React.FC = () => (
           key={`bord-${formaat}-${s.slug}`}
           id={`${formaat === 'staand' ? 'Bord' : 'BordYT'}-${s.slug}`}
           component={BordSpot}
-          durationInFrames={bordTimeline().duration}
+          durationInFrames={bordTimeline(s.borden.length).duration}
           fps={60}
           {...BORD_SIZE[formaat]}
           defaultProps={{bordje: s, formaat}}

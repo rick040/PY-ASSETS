@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {Fonts} from './components';
 import {colors, font} from './theme';
-import {clamp, ease, tween, useUbuntu, wrap} from './LocatieSpot';
+import {clamp, ease, tween, useUbuntu, width, wrap} from './LocatieSpot';
 import {CTA_GEO, EindCta, type ZoekFormaat} from './ZoekSpot';
 import {PrijsRondje} from './LijstSpot';
 import {RESERVEERBAAR, locaties, type Locatie} from './locaties';
@@ -45,10 +45,11 @@ const GEO: Record<ZoekFormaat, Geo> = {
 const PLANK_START = 85;
 const PLANK_GAP = 55;
 
-export const bordTimeline = () => {
+/** Timing for a sign with n planks (3 or 4). */
+export const bordTimeline = (n = 4) => {
   const header = 38;
-  const planken = [0, 1, 2, 3].map((i) => PLANK_START + i * PLANK_GAP);
-  const prijs = planken[3] + 70;
+  const planken = Array.from({length: n}, (_, i) => PLANK_START + i * PLANK_GAP);
+  const prijs = planken[n - 1] + 70;
   const cta = prijs + 150;
   return {header, planken, prijs, cta, duration: cta + 170};
 };
@@ -78,7 +79,8 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
   if (!ready) return <AbsoluteFill style={{background: colors.blauw}} />;
   const g = GEO[formaat];
   const b = g.bord;
-  const t = bordTimeline();
+  const n = s.borden.length;
+  const t = bordTimeline(n);
   const l = vind(s.locatie);
   const staand = formaat === 'staand';
 
@@ -87,9 +89,12 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
   const paal = tween(frame, 18, 50, ease(0.3, 0, 0.2, 1));
   const out = tween(frame, t.cta - 6, t.cta + 14);
 
-  const vraagLines = wrap(s.vraag, g.vraag.size, '700', g.vraag.w);
+  // A single long word (for example "Heerhugowaard?") makes the question smaller instead of running into the sign.
+  const breedsteWoord = Math.max(...s.vraag.split(' ').map((w) => width(w, g.vraag.size, '700')));
+  const vraagSize = Math.min(g.vraag.size, (g.vraag.size * g.vraag.w) / breedsteWoord);
+  const vraagLines = wrap(s.vraag, vraagSize, '700', g.vraag.w);
   const subLines = wrap(s.sub ?? 'Alles op loopafstand:', g.vraag.sub, '400', g.vraag.w);
-  const vraagH = vraagLines.length * g.vraag.size * 1.1 + 12 + subLines.length * g.vraag.sub * 1.25;
+  const vraagH = vraagLines.length * vraagSize * 1.1 + 12 + subLines.length * g.vraag.sub * 1.25;
   const vraagTop = g.vraag.top ?? (g.vraag.mid ?? 0) - vraagH / 2;
 
   // Header: "Parking" plus the name, wrapped next to the P and left of the price circle.
@@ -98,8 +103,13 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
   const naamW = b.w - b.pad * 2 - pMaat - b.pad * 0.6 - b.prijs * 0.62;
   const naamLines = wrap(l.naam, naamMaat, '700', naamW);
   const headerH = Math.max(b.header, b.pad * 1.2 + naamMaat * 0.55 * 1.2 + naamLines.length * naamMaat * 1.08);
-  const bordH = headerH + 4 * (b.row + b.gap);
-  const bordTop = b.top ?? (staand ? vraagTop + vraagH + 56 : (g.h - bordH) / 2 + 40);
+  // 9:16: the sign sits under the question and must end above the bottom safe zone (1590), so rows get lower if needed.
+  const bordTop0 = staand ? vraagTop + vraagH + 56 : 0;
+  const row = staand ? Math.min(b.row, (1585 - bordTop0 - headerH) / n - b.gap) : b.row;
+  const bordH = headerH + n * (row + b.gap);
+  const bordTop = b.top ?? (staand ? bordTop0 : (g.h - bordH) / 2 + 40);
+  const naamMax = b.w - b.pad * 2 - b.pijl - b.pad * 0.7;
+  const naamFit = (x: string) => Math.min(b.naam, (b.naam * naamMax) / width(x, b.naam, '700'));
 
   const paalX = [b.x + b.w * 0.2, b.x + b.w * 0.8];
   const paalW = staand ? 26 : 22;
@@ -114,7 +124,7 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
       <AbsoluteFill style={{opacity: 1 - out, transform: `translateY(${-80 * out}px)`}}>
         {/* Question */}
         <div style={{position: 'absolute', left: g.vraag.x, top: vraagTop, width: g.vraag.w, color: colors.wit, textAlign: g.vraag.align}}>
-          <div style={{fontSize: g.vraag.size, fontWeight: 700, lineHeight: 1.1, opacity: vraagIn, transform: `scale(${0.8 + 0.2 * vraagIn})`, transformOrigin: staand ? '50% 50%' : '0% 50%'}}>
+          <div style={{fontSize: vraagSize, fontWeight: 700, lineHeight: 1.1, opacity: vraagIn, transform: `scale(${0.8 + 0.2 * vraagIn})`, transformOrigin: staand ? '50% 50%' : '0% 50%'}}>
             {vraagLines.map((x, i) => (
               <div key={i}>{x}</div>
             ))}
@@ -194,7 +204,7 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
 
         {/* Destination planks */}
         {s.borden.map((d, i) => {
-          const top = bordTop + headerH + b.gap + i * (b.row + b.gap);
+          const top = bordTop + headerH + b.gap + i * (row + b.gap);
           return (
             <div
               key={i}
@@ -203,7 +213,7 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
                 left: b.x,
                 top,
                 width: b.w,
-                height: b.row,
+                height: row,
                 borderRadius: 22,
                 background: colors.wit,
                 color: colors.blauw,
@@ -234,7 +244,7 @@ export const BordSpot: React.FC<{bordje: Bordje; formaat?: ZoekFormaat}> = ({bor
                 />
               </div>
               <div style={{lineHeight: 1.1}}>
-                <div style={{fontSize: b.naam, fontWeight: 700, whiteSpace: 'nowrap'}}>{d.naar}</div>
+                <div style={{fontSize: naamFit(d.naar), fontWeight: 700, whiteSpace: 'nowrap'}}>{d.naar}</div>
                 <div style={{display: 'flex', alignItems: 'center', gap: b.tijd * 0.3, marginTop: b.tijd * 0.15, fontSize: b.tijd}}>
                   <Img src={staticFile('svg/atom/py-atom-figure-walk.svg')} style={{height: b.tijd * 1.05, display: 'block'}} />
                   <span>{d.tijd}</span>
