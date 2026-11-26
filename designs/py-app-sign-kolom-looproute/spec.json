@@ -62,12 +62,12 @@
  ],
  "template": {
   "trim_mm": [
-   160,
-   240
+   400,
+   600
   ],
   "size_with_bleed_mm": [
-   166.0,
-   246.0
+   406.0,
+   606.0
   ],
   "bleed_mm": 3.0,
   "colour": "RGB hex from tokens.json (official tokens); print values (CMYK) are in tokens.json",
@@ -75,12 +75,12 @@
    "spot": "ThruCut",
    "stroke_pt": 1,
    "inset_mm": 0.2,
-   "corner_radius_mm": 10,
-   "note": "Proposal only (the 25 mm corners of handbook 4.7 scaled down). The print PDF has no cut line: choose straight or rounded corners at the printer; the background runs into the bleed, so either works."
+   "corner_radius_mm": 25,
+   "note": "Proposal only (the 25 mm corners of handbook 4.7). The print PDF has no cut line: choose straight or rounded corners at the printer; the background runs into the bleed, so either works."
   }
  },
  "production": {
-  "format": "160 x 240 mm (width x height), 3 mm bleed; PDF 166 x 246 mm",
+  "format": "400 x 600 mm (width x height), 3 mm bleed; PDF 406 x 606 mm. Dibond without drill holes, mounted over the existing 40 x 60 column plates with mounting tape",
   "material": "Sign board (for example dibond or forex) or self adhesive foil for the columns",
   "colour": "Solid PY-Blauw (no verloop, at Rick's request), white bubble and caption, aqua time window. Print PDF in DeviceCMYK with the token values: PY-Blauw 100/83/0/17 (200 percent ink), PY-Aqua 69/0/21/0, white 0/0/0/0"
  },
@@ -122,5 +122,5 @@
   "py-atom-figure-walk",
   "py-atom-arrow-up-plain"
  ],
- "notes": "New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption below, caption left aligned to the bubble) at 160 x 240 mm, with a solid PY-Blauw face instead of the verloop (requested): white bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
+ "notes": "New design for the walking route to the exit, laid out like the column boards of handbook 4.7 and 4.8 (bubble on top, caption below, caption left aligned to the bubble) at 400 x 600 mm, with a solid PY-Blauw face instead of the verloop (requested): white bubble (py-atom-shape-bubble-solid), navy walking figure and navy route arrow, caption 'Uitgang Voetgangers' and the time window in aqua (as on the door sticker). The figure always walks towards the arrow (mirrored for links). Wayfinding only: it does not replace the green escape route signs (NEN-EN-ISO 7010, NEN 6088)."
 }
