@@ -103,3 +103,16 @@ Partner names as text only.
 ```bash
 node scripts/render-locaties.mjs --bord               # to out/bordje/ and out/bordje-youtube/
 ```
+
+## Map spots (KaartSpot, "Het kaartje")
+
+`src/KaartSpot.tsx`: a question about a well-known place ("Naar het Muziekgebouw?"), a drawn map with an aqua pin on the
+place, our nearest parkings drop in around it with a dotted line, name and walking time, then a row per parking with its
+price (nearest marked) and the shared end screen. 10.4 s, 9:16 (`Kaart-<slug>`) and 16:9 (`KaartYT-<slug>`).
+`src/kaartjes.ts` holds the places. Only places where none of our parkings is right next door. Walking times are foot routes
+via OpenStreetMap; the parkings sit at their real offset from the place (north up, same scale both ways). The streets are
+decoration, not a real map.
+
+```bash
+node scripts/render-locaties.mjs --kaart              # to out/kaartje/ and out/kaartje-youtube/
+```

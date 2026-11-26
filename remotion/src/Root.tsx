@@ -12,6 +12,8 @@ import {chatgesprekken} from './chatgesprekken';
 import {LIJST_SIZE, LijstSpot, lijstTimeline} from './LijstSpot';
 import {BORD_SIZE, BordSpot, bordTimeline} from './BordSpot';
 import {bordjes} from './borden';
+import {KAART_SIZE, KaartSpot, kaartTimeline} from './KaartSpot';
+import {kaartjes} from './kaartjes';
 import {lijstjes} from './lijstjes';
 import {DURATION, FPS, HEIGHT, WIDTH} from './theme';
 
@@ -95,6 +97,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...BORD_SIZE[formaat]}
           defaultProps={{bordje: s, formaat}}
+        />
+      )),
+    )}
+    {kaartjes.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`kaart-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Kaart' : 'KaartYT'}-${s.slug}`}
+          component={KaartSpot}
+          durationInFrames={kaartTimeline(s.parkings.length).duration}
+          fps={60}
+          {...KAART_SIZE[formaat]}
+          defaultProps={{kaartje: s, formaat}}
         />
       )),
     )}

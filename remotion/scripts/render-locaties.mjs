@@ -5,6 +5,7 @@
 // node scripts/render-locaties.mjs --chat [slugs]     chat spots, 9:16 to out/chat/ and 16:9 to out/chat-youtube/
 // node scripts/render-locaties.mjs --lijst [slugs]    checklist spots, 9:16 to out/lijstje/ and 16:9 to out/lijstje-youtube/
 // node scripts/render-locaties.mjs --bord [slugs]     signpost spots, 9:16 to out/bordje/ and 16:9 to out/bordje-youtube/
+// node scripts/render-locaties.mjs --kaart [slugs]    map spots, 9:16 to out/kaartje/ and 16:9 to out/kaartje-youtube/
 // node scripts/render-locaties.mjs --zoek [slugs]     search spots, 9:16 to out/zoek/<slug>.mp4 and 16:9 to out/zoek-youtube/<slug>.mp4
 import {bundle} from '@remotion/bundler';
 import {getCompositions, renderMedia} from '@remotion/renderer';
@@ -20,9 +21,10 @@ const zoek = args.includes('--zoek');
 const chat = args.includes('--chat');
 const lijst = args.includes('--lijst');
 const bord = args.includes('--bord');
+const kaart = args.includes('--kaart');
 const wanted = args.filter((a) => !a.startsWith('--'));
-const prefixes = bord ? ['Bord-', 'BordYT-'] : lijst ? ['Lijst-', 'LijstYT-'] : chat ? ['Chat-', 'ChatYT-'] : zoek ? ['Zoek-', 'ZoekYT-'] : [reels ? 'Reel-' : 'Spot-'];
-const dirFor = (p) => ({'Spot-': 'locaties', 'Reel-': 'reels', 'Zoek-': 'zoek', 'ZoekYT-': 'zoek-youtube', 'Chat-': 'chat', 'ChatYT-': 'chat-youtube', 'Lijst-': 'lijstje', 'LijstYT-': 'lijstje-youtube', 'Bord-': 'bordje', 'BordYT-': 'bordje-youtube'})[p];
+const prefixes = kaart ? ['Kaart-', 'KaartYT-'] : bord ? ['Bord-', 'BordYT-'] : lijst ? ['Lijst-', 'LijstYT-'] : chat ? ['Chat-', 'ChatYT-'] : zoek ? ['Zoek-', 'ZoekYT-'] : [reels ? 'Reel-' : 'Spot-'];
+const dirFor = (p) => ({'Spot-': 'locaties', 'Reel-': 'reels', 'Zoek-': 'zoek', 'ZoekYT-': 'zoek-youtube', 'Chat-': 'chat', 'ChatYT-': 'chat-youtube', 'Lijst-': 'lijstje', 'LijstYT-': 'lijstje-youtube', 'Bord-': 'bordje', 'BordYT-': 'bordje-youtube', 'Kaart-': 'kaartje', 'KaartYT-': 'kaartje-youtube'})[p];
 
 let browserExecutable = process.env.BROWSER_EXECUTABLE ?? null;
 if (!browserExecutable && existsSync('/opt/pw-browsers')) {
@@ -48,7 +50,7 @@ for (const composition of comps) {
     codec: 'h264',
     crf: 20,
     // Search spots render in one tab: with several tabs Chrome sometimes dropped the CTA button or a card in a frame.
-    concurrency: zoek || chat || lijst || bord ? 1 : null,
+    concurrency: zoek || chat || lijst || bord || kaart ? 1 : null,
     outputLocation,
     browserExecutable,
     chromiumOptions: {gl: 'swangle'},
