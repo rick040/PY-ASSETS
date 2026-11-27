@@ -260,7 +260,8 @@ export type CtaGeo = Geo['cta'];
 export const CTA_GEO: Record<ZoekFormaat, CtaGeo> = {staand: GEO.staand.cta, liggend: GEO.liggend.cta};
 
 /** Shared end screen: logo, "Reserveer online" (only when every location can be booked) or "Bekijk alle locaties", parkingyou.nl button. */
-export const EindCta: React.FC<{start: number; reserveer: boolean; k: CtaGeo}> = ({start, reserveer, k}) => {
+/** `titel` and `sub` replace the default lines (for example "Bestel je ParkingPass"). */
+export const EindCta: React.FC<{start: number; reserveer: boolean; k: CtaGeo; titel?: string; sub?: string}> = ({start, reserveer, k, titel, sub: subTekst}) => {
   const frame = useCurrentFrame();
   const t = {cta: start};
   const logo = tween(frame, t.cta + 8, t.cta + 38, ease(0.2, 0.9, 0.3, 1.15));
@@ -279,10 +280,10 @@ export const EindCta: React.FC<{start: number; reserveer: boolean; k: CtaGeo}> =
         </div>
       </div>
       <div style={{position: 'absolute', top: k.titleY, width: '100%', textAlign: 'center', fontSize: k.title, fontWeight: 700, lineHeight: 1.05, ...rise(title)}}>
-        {reserveer ? 'Reserveer online' : 'Bekijk alle locaties'}
+        {titel ?? (reserveer ? 'Reserveer online' : 'Bekijk alle locaties')}
       </div>
       <div style={{position: 'absolute', top: k.titleY + k.title * 1.2, width: '100%', textAlign: 'center', fontSize: k.sub, lineHeight: 1.2, ...rise(sub)}}>
-        {reserveer ? 'en sta zeker van je plek' : 'met tarieven en openingstijden'}
+        {subTekst ?? (reserveer ? 'en sta zeker van je plek' : 'met tarieven en openingstijden')}
       </div>
       <div style={{position: 'absolute', top: k.buttonY, width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div

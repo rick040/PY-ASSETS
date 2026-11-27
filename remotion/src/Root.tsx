@@ -16,6 +16,8 @@ import {KAART_SIZE, KaartSpot, kaartTimeline} from './KaartSpot';
 import {kaartjes} from './kaartjes';
 import {VROEG_SIZE, VroegSpot, vroegTimeline} from './VroegSpot';
 import {vroegboeken} from './vroegboeken';
+import {STRIP_SIZE, StripSpot, stripTimeline} from './StripSpot';
+import {strippenkaarten} from './strippenkaarten';
 import {
   ARTIS_DUUR,
   ArtisLicht,
@@ -141,6 +143,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...VROEG_SIZE[formaat]}
           defaultProps={{vroeg: s, formaat}}
+        />
+      )),
+    )}
+    {strippenkaarten.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`strip-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Strip' : 'StripYT'}-${s.slug}`}
+          component={StripSpot}
+          durationInFrames={stripTimeline().duration}
+          fps={60}
+          {...STRIP_SIZE[formaat]}
+          defaultProps={{strip: s, formaat}}
         />
       )),
     )}

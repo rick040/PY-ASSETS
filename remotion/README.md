@@ -152,3 +152,15 @@ page lists all three (DLL garage and deck are left out: closed on weekdays durin
 ```bash
 node scripts/render-locaties.mjs --vroeg              # to out/vroegboeken/ and out/vroegboeken-youtube/
 ```
+
+## ParkingPass spots (StripSpot, "De strippenkaart")
+
+`src/StripSpot.tsx`: a question ("Vaak in Rotterdam?"), a ParkingPass with 25 strips that get punched one by one while a
+day counter runs, then the price per day of the 25-strip pass next to a loose day ticket (struck through) and the total
+saving over 25 days; end screen "Bestel je ParkingPass". 10.4 s, 9:16 (`Strip-<slug>`) and 16:9 (`StripYT-<slug>`).
+`src/strippenkaarten.ts` holds the 11 locations with a 10- and 25-strip pass (one strip is one day, as the pages say).
+DLL garage and deck are left out (closed on weekdays during office hours).
+
+```bash
+node scripts/render-locaties.mjs --strip              # to out/strippenkaart/ and out/strippenkaart-youtube/
+```
