@@ -1,0 +1,280 @@
+{
+ "versie": 1,
+ "datum": "2026-11-27",
+ "status": "advies, geen accountwijziging",
+ "cold_start": {
+  "account": "unknown",
+  "pixel": "unknown",
+  "conversie": "unknown"
+ },
+ "budget": {
+  "per_locatie_per_dag": 5,
+  "totaal_per_dag": 170
+ },
+ "campagnes": [
+  {
+   "naam": "PY | Reserveren | NL",
+   "doel": "Verkoop (reserveringsevent) na validatie, tot die tijd Verkeer"
+  },
+  {
+   "naam": "PY | Bezoek | NL",
+   "doel": "Verkeer (weergaven van landingspagina)"
+  }
+ ],
+ "advertentiesets": [
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Amsterdam Plantage",
+   "locaties": [
+    "plantage"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Amsterdam Oostelijk Havengebied",
+   "locaties": [
+    "cruquius",
+    "zeeburgerkade"
+   ],
+   "budget_per_dag": 10,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Amsterdam Bos en Lommerplantsoen",
+   "locaties": [
+    "bos-en-lommerplantsoen"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Amsterdam B. Amsterdam (B1)",
+   "locaties": [
+    "b-amsterdam-b1"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Rotterdam Hofplein",
+   "locaties": [
+    "hofplein"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Rotterdam Shopping Center",
+   "locaties": [
+    "shopping-center"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Rotterdam Europoint",
+   "locaties": [
+    "europoint"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Rotterdam Diergaarde Blijdorp",
+   "locaties": [
+    "diergaarde-blijdorp"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Rotterdam Maashaven",
+   "locaties": [
+    "maashaven"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Eindhoven TD-gebouw",
+   "locaties": [
+    "td-gebouw"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Eindhoven Philips",
+   "locaties": [
+    "philips-stadion",
+    "philips-bedrijfsschool"
+   ],
+   "budget_per_dag": 10,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Eindhoven Victoriapark",
+   "locaties": [
+    "victoriapark"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Eindhoven DLL",
+   "locaties": [
+    "dll-garage",
+    "dll-parkeerdek"
+   ],
+   "budget_per_dag": 10,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Eindhoven Evoluon",
+   "locaties": [
+    "evoluon"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Reserveren | NL",
+   "advertentieset": "Rijswijk At the Park",
+   "locaties": [
+    "at-the-park"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Den Haag Stationsweg Ypenburg",
+   "locaties": [
+    "stationsweg-ypenburg"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 25,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Schiedam P+R Schiedam Centrum",
+   "locaties": [
+    "pr-schiedam-centrum"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Nijmegen Lentse plas",
+   "locaties": [
+    "lentse-plas"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Ede Pathé Ede",
+   "locaties": [
+    "pathe-ede"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Heerhugowaard Middenwaard",
+   "locaties": [
+    "heerhugowaard-p1-zuidtangent",
+    "p2-middenwaard"
+   ],
+   "budget_per_dag": 10,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Almere WTC",
+   "locaties": [
+    "p1-carlton-wtc",
+    "p2-mandela-wtc"
+   ],
+   "budget_per_dag": 10,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Zaandam Houthavenkade",
+   "locaties": [
+    "houthavenkade"
+   ],
+   "budget_per_dag": 5,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  },
+  {
+   "campagne": "PY | Bezoek | NL",
+   "advertentieset": "Zoetermeer Stadshart",
+   "locaties": [
+    "p1-belgielaan",
+    "p2-bovenlangs",
+    "p2-onderlangs",
+    "p4-luxemburglaan",
+    "p5-amsterdamstraat",
+    "p8-nederlandlaan",
+    "p9-duitslandlaan"
+   ],
+   "budget_per_dag": 35,
+   "straal_km": 15,
+   "leeftijd": "40-65+"
+  }
+ ],
+ "fasen": [
+  "0 meting (week 1)",
+  "1 pilot 8 sets, €45 per dag (week 2-4)",
+  "2 uitrol 23 sets, €170 per dag (week 5-8)",
+  "3 bijsturen (vanaf week 9)"
+ ],
+ "ontbrekend": [
+  "accountgeschiedenis",
+  "Pixel en CAPI-status",
+  "reserveringsevent met waarde",
+  "opbrengst en marge per reservering",
+  "lijst abonnementhouders"
+ ]
+}
