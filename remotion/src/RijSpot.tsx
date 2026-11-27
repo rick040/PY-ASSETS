@@ -128,6 +128,9 @@ export const RijSpot: React.FC<{route: Rijroute; formaat?: ZoekFormaat}> = ({rou
   const gereden = [...pts.slice(0, ci + 1), car];
   const stapAt = (i: number) => t.start + Math.round(RIJDEN * (i === n - 1 ? 1 : Math.min(0.98, (stapD[i] / total) ** 0.95)));
   const pIn = tween(frame, t.aankomst, t.aankomst + 20, ease(0.3, 1.5, 0.5, 1));
+  // Keep the entrance label inside the card.
+  const inritW = width(`Inrit · Parking ${l.naam}`, g.label, '700') + g.label * 1.3;
+  const inritShift = Math.min(Math.max(toX(0) - inritW / 2, 14), W - 14 - inritW) - (toX(0) - inritW / 2);
 
   return (
     <AbsoluteFill style={{background: colors.blauw, fontFamily: font}}>
@@ -184,7 +187,7 @@ export const RijSpot: React.FC<{route: Rijroute; formaat?: ZoekFormaat}> = ({rou
           {frame >= t.aankomst ? (
             <div style={{position: 'absolute', left: toX(0), top: toY(0), transform: `translate(-50%, -50%) scale(${pIn})`}}>
               <div style={{width: g.auto * 1.15, height: g.auto * 1.15, borderRadius: g.auto * 0.28, background: colors.aqua, border: `5px solid ${colors.wit}`, boxSizing: 'border-box', color: colors.wit, fontSize: g.auto * 0.7, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>P</div>
-              <div style={{position: 'absolute', left: '50%', top: g.auto * 1.15 + 8, transform: 'translateX(-50%)', padding: `${g.label * 0.3}px ${g.label * 0.65}px`, borderRadius: 999, background: colors.aqua, color: colors.wit, fontSize: g.label, fontWeight: 700, whiteSpace: 'nowrap'}}>
+              <div style={{position: 'absolute', left: '50%', top: g.auto * 1.15 + 8, transform: `translateX(calc(-50% + ${inritShift}px))`, padding: `${g.label * 0.3}px ${g.label * 0.65}px`, borderRadius: 999, background: colors.aqua, color: colors.wit, fontSize: g.label, fontWeight: 700, whiteSpace: 'nowrap'}}>
                 Inrit · Parking {l.naam}
               </div>
             </div>
