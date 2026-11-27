@@ -176,3 +176,15 @@ the map. The stretch shown is the part that routes from several directions share
 ```bash
 node scripts/render-locaties.mjs --rij                # to out/rijroute/ and out/rijroute-youtube/
 ```
+
+## Park-and-ride spots (OverstapSpot, "Parkeer en stap over")
+
+`src/OverstapSpot.tsx`: a question ("Met de trein naar Den Haag?"), then a line map like a metro map: a car pulls into the
+parking stop (with the price pill), a walker follows the line to the station with the walking time, a train pulls in and a
+departure board fills with the places the location page names; the train leaves and the shared end screen follows.
+10.7 s, 9:16 (vertical line, `Overstap-<slug>`) and 16:9 (horizontal line, `OverstapYT-<slug>`). `src/overstappen.ts` holds
+the data; every fact (walking time, station, destinations, price, conditions such as a P+R rate) comes from the location page.
+
+```bash
+node scripts/render-locaties.mjs --overstap           # to out/overstap/ and out/overstap-youtube/
+```

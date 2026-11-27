@@ -20,6 +20,8 @@ import {STRIP_SIZE, StripSpot, stripTimeline} from './StripSpot';
 import {strippenkaarten} from './strippenkaarten';
 import {RIJ_SIZE, RijSpot, rijTimeline} from './RijSpot';
 import {rijroutes} from './rijroutes';
+import {OVERSTAP_SIZE, OverstapSpot, overstapTimeline} from './OverstapSpot';
+import {overstappen} from './overstappen';
 import {
   ARTIS_DUUR,
   ArtisLicht,
@@ -171,6 +173,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...RIJ_SIZE[formaat]}
           defaultProps={{route: s, formaat}}
+        />
+      )),
+    )}
+    {overstappen.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`overstap-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Overstap' : 'OverstapYT'}-${s.slug}`}
+          component={OverstapSpot}
+          durationInFrames={overstapTimeline().duration}
+          fps={60}
+          {...OVERSTAP_SIZE[formaat]}
+          defaultProps={{overstap: s, formaat}}
         />
       )),
     )}
