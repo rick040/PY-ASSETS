@@ -14,6 +14,8 @@ import {BORD_SIZE, BordSpot, bordTimeline} from './BordSpot';
 import {bordjes} from './borden';
 import {KAART_SIZE, KaartSpot, kaartTimeline} from './KaartSpot';
 import {kaartjes} from './kaartjes';
+import {VROEG_SIZE, VroegSpot, vroegTimeline} from './VroegSpot';
+import {vroegboeken} from './vroegboeken';
 import {
   ARTIS_DUUR,
   ArtisLicht,
@@ -126,6 +128,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...KAART_SIZE[formaat]}
           defaultProps={{kaartje: s, formaat}}
+        />
+      )),
+    )}
+    {vroegboeken.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`vroeg-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Vroeg' : 'VroegYT'}-${s.slug}`}
+          component={VroegSpot}
+          durationInFrames={vroegTimeline().duration}
+          fps={60}
+          {...VROEG_SIZE[formaat]}
+          defaultProps={{vroeg: s, formaat}}
         />
       )),
     )}

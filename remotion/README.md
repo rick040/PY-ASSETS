@@ -141,3 +141,14 @@ node scripts/render-locaties.mjs --light              # to out/amsterdam-light/
 
 * The phone in concept 5 is an illustration of the booking steps, not a screenshot of the real booking site.
 * Partner names (Artis) as text only, no logos. The festival name itself is not used.
+
+## Early-booking spots (VroegSpot, "Vroeg boeken loont")
+
+`src/VroegSpot.tsx`: a question, three parking tickets with the day rates of the location (without booking, with booking,
+booked early) drop in, the first two are struck through and the early one wins with the saving, then the shared end screen.
+10.2 s, 9:16 (`Vroeg-<slug>`) and 16:9 (`VroegYT-<slug>`). `src/vroegboeken.ts` holds the rates of the 10 locations whose
+page lists all three (DLL garage and deck are left out: closed on weekdays during office hours).
+
+```bash
+node scripts/render-locaties.mjs --vroeg              # to out/vroegboeken/ and out/vroegboeken-youtube/
+```
