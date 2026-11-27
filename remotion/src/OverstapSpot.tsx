@@ -75,7 +75,20 @@ const vind = (slug: string): Locatie => {
   return l;
 };
 
-const Trein: React.FC<{breed: number; vervoer: 'trein' | 'metro'}> = ({breed, vervoer}) => (
+const Bus: React.FC<{breed: number}> = ({breed}) => (
+  <svg width={breed} height={breed * 0.42} viewBox="0 0 170 72" style={{display: 'block'}}>
+    <rect x={4} y={4} width={162} height={56} rx={12} fill={colors.wit} stroke={colors.blauw} strokeWidth={4} />
+    <rect x={4} y={40} width={162} height={8} fill={colors.aqua} />
+    {[16, 48, 80, 112].map((x) => (
+      <rect key={x} x={x} y={14} width={26} height={20} rx={4} fill={colors.blauw} />
+    ))}
+    <rect x={144} y={14} width={16} height={34} rx={4} fill={colors.blauw} />
+    <circle cx={38} cy={62} r={9} fill={colors.blauw} stroke={colors.wit} strokeWidth={3} />
+    <circle cx={132} cy={62} r={9} fill={colors.blauw} stroke={colors.wit} strokeWidth={3} />
+  </svg>
+);
+
+const Trein: React.FC<{breed: number; vervoer: 'trein' | 'metro' | 'bus'}> = ({breed, vervoer}) => (
   <svg width={breed} height={breed * 0.36} viewBox="0 0 200 72" style={{display: 'block'}}>
     <path d="M6 10 Q6 4 12 4 L168 4 Q194 4 196 40 L196 56 Q196 64 188 64 L12 64 Q6 64 6 58 Z" fill={colors.wit} stroke={colors.blauw} strokeWidth={4} />
     <rect x={6} y={44} width={190} height={8} fill={vervoer === 'metro' ? colors.blauw : colors.aqua} />
@@ -181,7 +194,7 @@ export const OverstapSpot: React.FC<{overstap: Overstap; formaat?: ZoekFormaat}>
         ) : null}
         <div style={{...labelStyle, ...(v ? {left: B[0] + stip * 0.8, top: B[1] - g.label * 0.6} : {left: B[0] - 160, top: B[1] + stip * 0.6, width: 320, textAlign: 'center'}), display: 'flex', alignItems: 'center', justifyContent: v ? 'flex-start' : 'center', gap: 14, fontSize: g.label * 0.85, opacity: inn(t.lopen + 50)}}>
           <Img src={staticFile('svg/atom/py-atom-figure-walk.svg')} style={{height: g.label * 0.95, display: 'block', filter: 'brightness(0) invert(1)'}} />
-          {o.lopen === 'naast de deur' ? 'Station naast de deur' : `${o.lopen} lopen`}
+          {o.lopen.startsWith('naast') ? `${o.vervoer === 'bus' ? 'Bushalte' : 'Station'} ${o.lopen}` : `${o.lopen} lopen`}
         </div>
 
         {/* Stop 3: station */}
@@ -195,14 +208,14 @@ export const OverstapSpot: React.FC<{overstap: Overstap; formaat?: ZoekFormaat}>
         {/* Train pulls in beside the station stop and leaves */}
         {frame >= t.trein ? (
           <div style={{position: 'absolute', left: (v ? 620 : C[0] - tb / 2) - 700 * (1 - treinIn) + 1100 * treinUit, top: v ? C[1] - 160 : C[1] - 170, opacity: treinIn}}>
-            <Trein breed={tb} vervoer={o.vervoer} />
+            {o.vervoer === 'bus' ? <Bus breed={tb * 0.8} /> : <Trein breed={tb} vervoer={o.vervoer} />}
           </div>
         ) : null}
 
         {/* Departure board */}
         <div style={{position: 'absolute', left: g.bord.x, top: g.bord.y, width: g.bord.w, borderRadius: 26, overflow: 'hidden', background: colors.wit, color: colors.blauw, opacity: inn(t.bord - 10), transform: `translateY(${(1 - inn(t.bord - 10)) * 30}px)`}}>
-          <div style={{padding: '14px 26px', background: colors.aqua, color: colors.wit, fontSize: g.bord.tekst * 0.7, fontWeight: 700}}>Met de {o.vervoer} naar</div>
-          {o.naar.map((n, i) => {
+          <div style={{padding: '14px 26px', background: colors.aqua, color: colors.wit, fontSize: g.bord.tekst * 0.7, fontWeight: 700}}>{o.naar.length ? `Met de ${o.vervoer} naar` : `Met de ${o.vervoer} verder vanaf`}</div>
+          {(o.naar.length ? o.naar : [o.station]).map((n, i) => {
             const at = t.bord + i * 22;
             const k = tween(frame, at, at + 14, ease(0.3, 0, 0.2, 1));
             return (
