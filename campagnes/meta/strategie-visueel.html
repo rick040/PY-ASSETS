@@ -1,0 +1,243 @@
+<title>ParkingYou Meta-campagne</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono&display=swap">
+<style>
+/* Layout: brand band on top, then stacked sections in one 1100px column; diagrams in SVG drawn from the plan data. */
+:root {
+  --bg: #F2F5FB; --surface: #FFFFFF; --fg: #13285F; --muted: #5B6C95; --line: #D7DEEC;
+  --blauw: #1A3580; --aqua: #32B9CD; --aqua-soft: #DDF3F7; --blauw-soft: #E3E8F5; --on-band: #FFFFFF;
+  --font: 'Ubuntu', 'Segoe UI', system-ui, sans-serif; --mono: 'Ubuntu Mono', ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0C1838; --surface: #13234F; --fg: #E8EEFA; --muted: #A3B2D6; --line: #27396B;
+  --blauw: #1A3580; --aqua: #4CC7D9; --aqua-soft: #123F55; --blauw-soft: #1B2D62; --on-band: #FFFFFF; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0C1838; --surface: #13234F; --fg: #E8EEFA; --muted: #A3B2D6; --line: #27396B;
+  --blauw: #1A3580; --aqua: #4CC7D9; --aqua-soft: #123F55; --blauw-soft: #1B2D62; --on-band: #FFFFFF; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 1100px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band { background: #1A3580; color: var(--on-band); margin-top: calc(-1 * env(safe-area-inset-top, 0px)); padding-top: calc(env(safe-area-inset-top, 0px) + 40px); padding-bottom: 36px; }
+.band h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.08; margin: 6px 0 8px; text-wrap: balance; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #9FE3EE; }
+.band p { margin: 0; max-width: 62ch; color: #DCE4F7; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 28px; }
+.kpi { border: 1px solid rgba(255,255,255,.22); border-radius: 18px; padding: 14px 16px; }
+.kpi b { display: block; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: 14px; color: #DCE4F7; }
+section { padding-block: 40px 8px; }
+h2 { font-size: 26px; margin: 0 0 6px; text-wrap: balance; }
+.lead { color: var(--muted); margin: 0 0 20px; max-width: 70ch; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+.camp { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 18px; min-width: 0; }
+.camp h3 { margin: 0; font-size: 18px; }
+.camp .sub { color: var(--muted); font-size: 14px; margin: 2px 0 14px; }
+.camp.res { border-top: 6px solid var(--aqua); }
+.camp.bez { border-top: 6px solid var(--blauw); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font-size: 14px; background: var(--blauw-soft); color: var(--fg); }
+.res .chip { background: var(--aqua-soft); }
+.chip b { font-variant-numeric: tabular-nums; }
+.chip .n { font-size: 12px; color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 18px; }
+.svgbox { overflow-x: auto; }
+svg text { font-family: var(--font); }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--muted); margin-top: 10px; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+@media (max-width: 860px) { .flow { grid-template-columns: 1fr; } }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 14px; position: relative; min-width: 0; }
+.step .k { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.step b { display: block; font-size: 17px; margin: 2px 0 6px; }
+.step code { font-family: var(--mono); font-size: 13px; background: var(--blauw-soft); padding: 1px 6px; border-radius: 6px; }
+.step p { margin: 0; font-size: 14px; color: var(--muted); }
+.roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.role { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.role h4 { margin: 0 0 4px; font-size: 16px; }
+.role p { margin: 0 0 10px; font-size: 14px; color: var(--muted); }
+.pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 13px; background: var(--aqua); color: #fff; margin: 0 6px 6px 0; }
+.pill.alt { background: var(--blauw); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.filters button { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--blauw); color: #fff; border-color: var(--blauw); }
+.filters button:focus-visible { outline: 3px solid var(--aqua); outline-offset: 2px; }
+.tablebox { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.num { font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+.tag.res { background: var(--aqua-soft); color: var(--fg); }
+.tag.bez { background: var(--blauw-soft); color: var(--fg); }
+.vids { color: var(--muted); font-size: 13px; }
+.ask { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.ask div { background: var(--surface); border: 1px dashed var(--aqua); border-radius: 18px; padding: 14px 16px; }
+.ask b { display: block; margin-bottom: 4px; }
+.ask span { color: var(--muted); font-size: 14px; }
+footer { color: var(--muted); font-size: 13px; padding-block: 36px 48px; }
+</style>
+
+<div class="band"><div class="wrap">
+  <div class="eyebrow">Advies · versie 1 · 27 november 2026</div>
+  <h1>Meta-campagne per locatie</h1>
+  <p>Facebook en Instagram met de eigen videoseries. Iedere locatie €5 per dag, eerst meten en een pilot, daarna uitrollen en bijsturen op resultaat.</p>
+  <div class="kpis">
+    <div class="kpi"><b>34</b><span>locaties</span></div>
+    <div class="kpi"><b>23</b><span>advertentiesets</span></div>
+    <div class="kpi"><b>15</b><span>boekbaar, doel reserveringen</span></div>
+    <div class="kpi"><b>€170</b><span>per dag bij volledige uitrol</span></div>
+    <div class="kpi"><b>±€5.100</b><span>per maand</span></div>
+  </div>
+</div></div>
+
+<main class="wrap">
+<section>
+  <h2>Opbouw</h2>
+  <p class="lead">Twee campagnes, per locatie een eigen advertentieset en budget. Locaties die vlak bij elkaar liggen delen één set, zodat ze niet tegen elkaar opbieden; het budget blijft €5 per locatie.</p>
+  <div class="grid2">
+    <div class="camp res"><h3>PY | Reserveren | NL</h3><div class="sub">Verkeer naar de locatiepagina, daarna Verkoop op het reserveringsevent · <b id="sumRes"></b></div><div class="chips" id="chipsRes"></div></div>
+    <div class="camp bez"><h3>PY | Bezoek | NL</h3><div class="sub">Verkeer naar de locatiepagina · <b id="sumBez"></b></div><div class="chips" id="chipsBez"></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Waar we adverteren</h2>
+  <p class="lead">Elke advertentieset richt zich op een straal rond de parking: 25 km rond de grote steden, 15 km rond de kleinere. Leeftijd 40 tot 65+. Cirkels op schaal.</p>
+  <div class="panel"><div class="svgbox"><svg id="kaart" viewBox="0 0 720 620" width="100%" role="img" aria-label="Schematische kaart met de locaties en hun advertentiestraal"></svg></div>
+  <div class="legend"><span><i class="dot" style="background:var(--aqua)"></i>Reserveringen</span><span><i class="dot" style="background:var(--blauw)"></i>Bezoek</span><span>Cirkelgrootte = straal van de doelgroep</span></div></div>
+</section>
+
+<section>
+  <h2>Fasering en budget</h2>
+  <p class="lead">Eerst de meting controleren, dan een pilot met 8 sets, daarna alle 23. Vanaf week 9 gaat het budget naar de locaties die het meeste opleveren.</p>
+  <div class="panel"><div class="svgbox"><svg id="fasen" viewBox="0 0 900 300" width="100%" role="img" aria-label="Budget per dag per fase over twaalf weken"></svg></div></div>
+</section>
+
+<section>
+  <h2>Welke video waarvoor</h2>
+  <p class="lead">Per advertentieset draaien 3 tot 5 video's tegelijk; Meta schuift het budget naar wat het best werkt. Na de pilot staan de 2 sterkste series per stad voorop.</p>
+  <div class="roles">
+    <div class="role"><h4>Stoppen met scrollen</h4><p>Herkenbare vraag in beeld vanaf het eerste frame.</p><span class="pill">Het lijstje</span><span class="pill">Het appje</span></div>
+    <div class="role"><h4>Op weg naar een bestemming</h4><p>Voor wie naar een plek of evenement gaat.</p><span class="pill">Het kaartje</span><span class="pill">Het bordje</span><span class="pill">Zoekvideo</span></div>
+    <div class="role"><h4>Overtuigen op prijs</h4><p>Alleen bij de 10 locaties met drie dagtarieven.</p><span class="pill">Vroeg boeken loont</span></div>
+    <div class="role"><h4>Locatie leren kennen</h4><p>Feiten, foto en prijs van de parking zelf.</p><span class="pill alt">Locatiespot reel</span></div>
+    <div class="role"><h4>Seizoen</h4><p>Alleen Plantage, tot het einde van het lichtfestival.</p><span class="pill alt">Amsterdam Light (8)</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Meting</h2>
+  <p class="lead">Zonder meting geen bijsturing per locatie. Dit moet in week 1 werken, met een testreservering als bewijs.</p>
+  <div class="flow">
+    <div class="step"><span class="k">Advertentie</span><b>Video per locatie</b><p>UTM met campagne, locatie en video, klaar in de CSV.</p></div>
+    <div class="step"><span class="k">Locatiepagina</span><b><code>ViewContent</code></b><p>Pixel en Conversions API op parkingyou.nl.</p></div>
+    <div class="step"><span class="k">Klik op reserveer</span><b><code>InitiateCheckout</code></b><p>Laat zien wie wil boeken.</p></div>
+    <div class="step"><span class="k">Reservering</span><b><code>Purchase</code></b><p>Met waarde en locatie. Hierop optimaliseren zodra er genoeg zijn.</p></div>
+    <div class="step"><span class="k">Elke maandag</span><b>Weekoverzicht</b><p>Kosten, klikken, reserveringen en kosten per reservering per locatie.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Per locatie</h2>
+  <p class="lead">De volledige lijst met landingspagina en UTM staat in <code>campagnes/meta/campagneplan-per-locatie.csv</code>.</p>
+  <div class="filters" role="group" aria-label="Filter op doel">
+    <button id="f-alle" aria-pressed="true" data-f="">Alle 34</button>
+    <button id="f-res" aria-pressed="false" data-f="Reserveringen">Reserveringen</button>
+    <button id="f-bez" aria-pressed="false" data-f="Bezoek">Bezoek</button>
+  </div>
+  <div class="tablebox"><table><thead><tr><th>Locatie</th><th>Stad</th><th>Advertentieset</th><th>Doel</th><th>Straal</th><th>Video's</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+
+<section>
+  <h2>Nog nodig om het plan definitief te maken</h2>
+  <div class="ask">
+    <div><b>Meta-account</b><span>Is er al eerder geadverteerd, en met welk resultaat?</span></div>
+    <div><b>Pixel</b><span>Staat de Pixel op parkingyou.nl en op de reserveringsstap?</span></div>
+    <div><b>Opbrengst</b><span>Wat levert een gemiddelde reservering op, en wat is de marge?</span></div>
+    <div><b>Uitsluiten</b><span>Is er een lijst met abonnementhouders?</span></div>
+  </div>
+</section>
+<footer>Bron: campagnes/meta/PLAN.md en campagneplan-per-locatie.csv in PY-ASSETS. Prijzen en open checks (IG-013, IG-014, IG-024, IG-051) volgens de Instagram-strategie; na 1 februari alle prijsvideo's opnieuw controleren.</footer>
+</main>
+
+<script>
+const DATA = [{"loc": "Parking Plantage", "slug": "plantage", "stad": "Amsterdam", "set": "Amsterdam Plantage", "doel": "Reserveringen", "km": 25, "n": 11, "video": "Locatiespot reel | Zoekvideo \"Voordelig parkeren in Amsterdam?\" | Zoekvideo \"Naar de dierentuin?\" | Het lijstje | Het bordje | Het kaartje carre | Het kaartje nemo | Het kaartje scheepvaartmuseum | Het kaartje opera-ballet | Vroeg boeken loont | Amsterdam Light (8)", "lon": 4.9126, "lat": 52.367}, {"loc": "Parking Cruquius", "slug": "cruquius", "stad": "Amsterdam", "set": "Amsterdam Oostelijk Havengebied", "doel": "Reserveringen", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Voordelig parkeren in Amsterdam?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 4.9458, "lat": 52.369}, {"loc": "Parking Zeeburgerkade", "slug": "zeeburgerkade", "stad": "Amsterdam", "set": "Amsterdam Oostelijk Havengebied", "doel": "Reserveringen", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Voordelig parkeren in Amsterdam?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 4.9481, "lat": 52.3689}, {"loc": "Parking Bos en Lommerplantsoen", "slug": "bos-en-lommerplantsoen", "stad": "Amsterdam", "set": "Amsterdam Bos en Lommerplantsoen", "doel": "Reserveringen", "km": 25, "n": 7, "video": "Locatiespot reel | Zoekvideo \"Voordelig parkeren in Amsterdam?\" | Zoekvideo \"Parkeren in Amsterdam West?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 4.8446, "lat": 52.3771}, {"loc": "Parking B. Amsterdam (B1)", "slug": "b-amsterdam-b1", "stad": "Amsterdam", "set": "Amsterdam B. Amsterdam (B1)", "doel": "Bezoek", "km": 25, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Parkeren in Amsterdam West?\" | Het appje | Het lijstje | Het bordje", "lon": 4.8292, "lat": 52.3433}, {"loc": "Parking Hofplein", "slug": "hofplein", "stad": "Rotterdam", "set": "Rotterdam Hofplein", "doel": "Reserveringen", "km": 25, "n": 11, "video": "Locatiespot reel | Zoekvideo \"Dagje Rotterdam?\" | Het appje | Het lijstje | Het bordje | Het kaartje markthal | Het kaartje kubuswoningen | Het kaartje de-doelen | Het kaartje maritiem-museum | Het kaartje pathe-schouwburgplein | Vroeg boeken loont", "lon": 4.4784, "lat": 51.9251}, {"loc": "Parking Shopping Center", "slug": "shopping-center", "stad": "Rotterdam", "set": "Rotterdam Shopping Center", "doel": "Reserveringen", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Dagje Rotterdam?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 4.5559, "lat": 51.9509}, {"loc": "Parking Europoint", "slug": "europoint", "stad": "Rotterdam", "set": "Rotterdam Europoint", "doel": "Reserveringen", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Dagje Rotterdam?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 4.4296, "lat": 51.9123}, {"loc": "Parking Diergaarde Blijdorp", "slug": "diergaarde-blijdorp", "stad": "Rotterdam", "set": "Rotterdam Diergaarde Blijdorp", "doel": "Bezoek", "km": 25, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Naar de dierentuin?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4416, "lat": 51.9282}, {"loc": "Parking Maashaven", "slug": "maashaven", "stad": "Rotterdam", "set": "Rotterdam Maashaven", "doel": "Reserveringen", "km": 25, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Dagje Rotterdam?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4892, "lat": 51.8964}, {"loc": "Parking TD-gebouw", "slug": "td-gebouw", "stad": "Eindhoven", "set": "Eindhoven TD-gebouw", "doel": "Reserveringen", "km": 25, "n": 14, "video": "Locatiespot reel | Zoekvideo \"Avondje PSV?\" | Het appje | Het lijstje | Het bordje | Het kaartje muziekgebouw-eindhoven | Het kaartje effenaar | Het kaartje van-abbemuseum | Het kaartje philips-museum | Het kaartje stratumseind | Het kaartje markt-eindhoven | Het kaartje pathe-eindhoven | Het kaartje parktheater | Vroeg boeken loont", "lon": 5.4772, "lat": 51.4334}, {"loc": "Parking Philips Stadion", "slug": "philips-stadion", "stad": "Eindhoven", "set": "Eindhoven Philips", "doel": "Reserveringen", "km": 25, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Dagje Eindhoven?\" | Het appje | Het lijstje | Het bordje", "lon": 5.4647, "lat": 51.4428}, {"loc": "Parking Philips Bedrijfsschool", "slug": "philips-bedrijfsschool", "stad": "Eindhoven", "set": "Eindhoven Philips", "doel": "Reserveringen", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Dagje Eindhoven?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 5.4615, "lat": 51.443}, {"loc": "Parking Victoriapark", "slug": "victoriapark", "stad": "Eindhoven", "set": "Eindhoven Victoriapark", "doel": "Bezoek", "km": 25, "n": 12, "video": "Locatiespot reel | Zoekvideo \"Dagje Eindhoven?\" | Het appje | Het lijstje | Het bordje | Het kaartje muziekgebouw-eindhoven | Het kaartje effenaar | Het kaartje van-abbemuseum | Het kaartje philips-museum | Het kaartje stratumseind | Het kaartje markt-eindhoven | Het kaartje pathe-eindhoven", "lon": 5.4727, "lat": 51.4399}, {"loc": "Parking DLL (Garage)", "slug": "dll-garage", "stad": "Eindhoven", "set": "Eindhoven DLL", "doel": "Reserveringen", "km": 25, "n": 10, "video": "Locatiespot reel | Zoekvideo \"Avondje PSV?\" | Het appje | Het lijstje | Het bordje | Het kaartje muziekgebouw-eindhoven | Het kaartje effenaar | Het kaartje stratumseind | Het kaartje pathe-eindhoven | Het kaartje parktheater", "lon": 5.4844, "lat": 51.4382}, {"loc": "Parking DLL parkeerdek", "slug": "dll-parkeerdek", "stad": "Eindhoven", "set": "Eindhoven DLL", "doel": "Reserveringen", "km": 25, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Avondje PSV?\" | Het appje | Het lijstje | Het bordje", "lon": 5.4844, "lat": 51.4382}, {"loc": "Parking Evoluon", "slug": "evoluon", "stad": "Eindhoven", "set": "Eindhoven Evoluon", "doel": "Reserveringen", "km": 25, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Dagje Eindhoven?\" | Het appje | Het lijstje | Het bordje", "lon": 5.4468, "lat": 51.4436}, {"loc": "Parking At the Park", "slug": "at-the-park", "stad": "Rijswijk", "set": "Rijswijk At the Park", "doel": "Reserveringen", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Parkeren bij Den Haag?\" | Het appje | Het lijstje | Het bordje | Vroeg boeken loont", "lon": 4.3266, "lat": 52.0372}, {"loc": "Parking Stationsweg Ypenburg", "slug": "stationsweg-ypenburg", "stad": "Den Haag", "set": "Den Haag Stationsweg Ypenburg", "doel": "Bezoek", "km": 25, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Avondje naar de film?\" | Zoekvideo \"Parkeren bij Den Haag?\" | Het appje | Het lijstje | Het bordje", "lon": 4.3881, "lat": 52.0563}, {"loc": "Parking P+R Schiedam Centrum", "slug": "pr-schiedam-centrum", "stad": "Schiedam", "set": "Schiedam P+R Schiedam Centrum", "doel": "Bezoek", "km": 15, "n": 6, "video": "Locatiespot reel | Zoekvideo \"Avondje naar de film?\" | Het appje | Het lijstje | Het bordje | Het kaartje theater-aan-de-schie", "lon": 4.4051, "lat": 51.9244}, {"loc": "Parking Lentse plas", "slug": "lentse-plas", "stad": "Nijmegen", "set": "Nijmegen Lentse plas", "doel": "Bezoek", "km": 15, "n": 4, "video": "Locatiespot reel | Zoekvideo \"Avondje naar de film?\" | Het appje | Het lijstje", "lon": 5.8615, "lat": 51.8798}, {"loc": "Parking Pathé Ede", "slug": "pathe-ede", "stad": "Ede", "set": "Ede Pathé Ede", "doel": "Bezoek", "km": 15, "n": 4, "video": "Locatiespot reel | Zoekvideo \"Avondje naar de film?\" | Het appje | Het lijstje", "lon": 5.6481, "lat": 52.0157}, {"loc": "Parking P1 Zuidtangent", "slug": "heerhugowaard-p1-zuidtangent", "stad": "Heerhugowaard", "set": "Heerhugowaard Middenwaard", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Shoppen in Heerhugowaard?\" | Het appje | Het lijstje | Het bordje", "lon": 4.8244, "lat": 52.6667}, {"loc": "Parking P2 Middenwaard", "slug": "p2-middenwaard", "stad": "Heerhugowaard", "set": "Heerhugowaard Middenwaard", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Shoppen in Heerhugowaard?\" | Het appje | Het lijstje | Het bordje", "lon": 4.8292, "lat": 52.6623}, {"loc": "Parking P1 Carlton WTC", "slug": "p1-carlton-wtc", "stad": "Almere", "set": "Almere WTC", "doel": "Bezoek", "km": 15, "n": 7, "video": "Locatiespot reel | Zoekvideo \"Dagje Almere?\" | Het appje | Het lijstje | Het bordje | Het kaartje kunstlinie | Het kaartje flevoziekenhuis", "lon": 5.2164, "lat": 52.3762}, {"loc": "Parking P2 Mandela WTC", "slug": "p2-mandela-wtc", "stad": "Almere", "set": "Almere WTC", "doel": "Bezoek", "km": 15, "n": 7, "video": "Locatiespot reel | Zoekvideo \"Dagje Almere?\" | Het appje | Het lijstje | Het bordje | Het kaartje kunstlinie | Het kaartje flevoziekenhuis", "lon": 5.2201, "lat": 52.3765}, {"loc": "Parking Houthavenkade", "slug": "houthavenkade", "stad": "Zaandam", "set": "Zaandam Houthavenkade", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Dagje Zaandam?\" | Het appje | Het lijstje | Het bordje", "lon": 4.8217, "lat": 52.4361}, {"loc": "Parking P1 Belgielaan", "slug": "p1-belgielaan", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Shoppen in Zoetermeer?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4872, "lat": 52.0617}, {"loc": "Parking P2 Bovenlangs", "slug": "p2-bovenlangs", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Shoppen in Zoetermeer?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4877, "lat": 52.0609}, {"loc": "Parking P2 Onderlangs", "slug": "p2-onderlangs", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Even naar het Stadshart?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4875, "lat": 52.0605}, {"loc": "Parking P4 Luxemburglaan", "slug": "p4-luxemburglaan", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Shoppen in Zoetermeer?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4913, "lat": 52.0629}, {"loc": "Parking P5 Amsterdamstraat", "slug": "p5-amsterdamstraat", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Shoppen in Zoetermeer?\" | Het appje | Het lijstje | Het bordje", "lon": 4.4902, "lat": 52.0608}, {"loc": "Parking P8 Nederlandlaan", "slug": "p8-nederlandlaan", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Even naar het Stadshart?\" | Het appje | Het lijstje | Het bordje", "lon": 4.484, "lat": 52.0608}, {"loc": "Parking P9 Duitslandlaan", "slug": "p9-duitslandlaan", "stad": "Zoetermeer", "set": "Zoetermeer Stadshart", "doel": "Bezoek", "km": 15, "n": 5, "video": "Locatiespot reel | Zoekvideo \"Even naar het Stadshart?\" | Het appje | Het lijstje | Het bordje", "lon": 4.494, "lat": 52.0626}];
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs, parent, text) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text !== undefined) e.textContent = text; parent.appendChild(e); return e; };
+
+// Ad sets with budget (5 per location)
+const sets = {};
+for (const d of DATA) { const s = sets[d.set] || (sets[d.set] = {naam: d.set, doel: d.doel, n: 0, km: d.km, lat: 0, lon: 0}); s.n++; s.lat += d.lat; s.lon += d.lon; }
+Object.values(sets).forEach((s) => { s.lat /= s.n; s.lon /= s.n; });
+const chip = (s) => `<span class="chip">${s.naam}<b>€${s.n * 5}</b>${s.n > 1 ? `<span class="n">${s.n} locaties</span>` : ''}</span>`;
+const res = Object.values(sets).filter((s) => s.doel === 'Reserveringen');
+const bez = Object.values(sets).filter((s) => s.doel === 'Bezoek');
+document.getElementById('chipsRes').innerHTML = res.map(chip).join('');
+document.getElementById('chipsBez').innerHTML = bez.map(chip).join('');
+document.getElementById('sumRes').textContent = `${res.length} sets, €${res.reduce((a, s) => a + s.n * 5, 0)} per dag`;
+document.getElementById('sumBez').textContent = `${bez.length} sets, €${bez.reduce((a, s) => a + s.n * 5, 0)} per dag`;
+
+function tekenKaart() {
+  const svg = document.getElementById('kaart'); svg.innerHTML = '';
+  const W = 720, H = 620, lon0 = 3.9, lon1 = 6.25, lat0 = 51.25, lat1 = 52.85;
+  const kx = W / ((lon1 - lon0) * Math.cos(52 * Math.PI / 180)), ky = H / (lat1 - lat0), k = Math.min(kx, ky);
+  const X = (lon) => (lon - lon0) * Math.cos(52 * Math.PI / 180) * k + 10, Y = (lat) => (lat1 - lat) * k + 10;
+  const kmPx = k / 111;
+  // light grid of degree lines
+  for (let lo = 4; lo <= 6; lo += 0.5) el('line', {x1: X(lo), y1: 0, x2: X(lo), y2: H, stroke: css('--line'), 'stroke-width': 1}, svg);
+  for (let la = 51.5; la <= 52.75; la += 0.25) el('line', {x1: 0, y1: Y(la), x2: W, y2: Y(la), stroke: css('--line'), 'stroke-width': 1}, svg);
+  const sorted = Object.values(sets).sort((a, b) => b.km - a.km);
+  for (const s of sorted) {
+    const c = s.doel === 'Reserveringen' ? css('--aqua') : css('--blauw');
+    el('circle', {cx: X(s.lon), cy: Y(s.lat), r: s.km * kmPx, fill: c, 'fill-opacity': 0.08, stroke: c, 'stroke-opacity': 0.45, 'stroke-width': 1.5}, svg);
+  }
+  for (const d of DATA) {
+    el('circle', {cx: X(d.lon), cy: Y(d.lat), r: 5, fill: d.doel === 'Reserveringen' ? css('--aqua') : css('--blauw'), stroke: css('--surface'), 'stroke-width': 1.5}, svg);
+  }
+  const steden = {};
+  for (const d of DATA) { const s = steden[d.stad] || (steden[d.stad] = {n: 0, lat: 0, lon: 0, c: 0}); s.n++; s.lat += d.lat; s.lon += d.lon; }
+  const off = {Rijswijk: [-70, -6], 'Den Haag': [-80, 18], Schiedam: [-78, 14], Rotterdam: [14, 22], Zoetermeer: [14, -10], Zaandam: [-70, -8], Amsterdam: [14, 4], Almere: [14, 4], Heerhugowaard: [14, 4], Eindhoven: [14, 4], Ede: [14, 4], Nijmegen: [14, 4]};
+  for (const [naam, s] of Object.entries(steden)) {
+    const o = off[naam] || [12, 4];
+    el('text', {x: X(s.lon / s.n) + o[0], y: Y(s.lat / s.n) + o[1], 'font-size': 15, 'font-weight': 500, fill: css('--fg')}, svg, `${naam} · ${s.n}`);
+  }
+}
+
+function tekenFasen() {
+  const svg = document.getElementById('fasen'); svg.innerHTML = '';
+  const L = 70, R = 880, T = 30, B = 230, weken = 12, max = 200;
+  const x = (w) => L + (w / weken) * (R - L), y = (v) => B - (v / max) * (B - T);
+  for (const v of [0, 50, 100, 150, 200]) {
+    el('line', {x1: L, y1: y(v), x2: R, y2: y(v), stroke: css('--line'), 'stroke-width': 1}, svg);
+    el('text', {x: L - 10, y: y(v) + 5, 'text-anchor': 'end', 'font-size': 13, fill: css('--muted')}, svg, `€${v}`);
+  }
+  const fasen = [
+    {van: 0, tot: 1, bedrag: 0, naam: 'Meting', sub: 'Pixel, events, UTM', c: css('--muted')},
+    {van: 1, tot: 4, bedrag: 45, naam: 'Pilot', sub: '8 sets · €45 per dag', c: css('--aqua')},
+    {van: 4, tot: 8, bedrag: 170, naam: 'Uitrol', sub: '23 sets · €170 per dag', c: css('--blauw')},
+    {van: 8, tot: 12, bedrag: 170, naam: 'Bijsturen', sub: 'budget naar winnaars', c: css('--aqua')},
+  ];
+  for (const f of fasen) {
+    const h = Math.max(4, B - y(f.bedrag));
+    el('rect', {x: x(f.van) + 3, y: B - h, width: x(f.tot) - x(f.van) - 6, height: h, rx: 8, fill: f.c, 'fill-opacity': f.naam === 'Bijsturen' ? 0.35 : 0.9}, svg);
+    el('text', {x: (x(f.van) + x(f.tot)) / 2, y: B - h - 26, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 700, fill: css('--fg')}, svg, f.naam);
+    el('text', {x: (x(f.van) + x(f.tot)) / 2, y: B - h - 9, 'text-anchor': 'middle', 'font-size': 12, fill: css('--muted')}, svg, f.sub);
+  }
+  for (let w = 1; w <= weken; w++) el('text', {x: (x(w - 1) + x(w)) / 2, y: B + 22, 'text-anchor': 'middle', 'font-size': 12, fill: css('--muted')}, svg, `wk ${w}`);
+  el('text', {x: L, y: B + 52, 'font-size': 13, fill: css('--muted')}, svg, 'Budget per dag. Pilot ongeveer €945 totaal; uitrol ongeveer €5.100 per maand.');
+}
+
+function tabel(f) {
+  const rows = DATA.filter((d) => !f || d.doel === f);
+  document.getElementById('rows').innerHTML = rows.map((d) => `<tr><td><b>${d.loc}</b></td><td>${d.stad}</td><td>${d.set}</td><td><span class="tag ${d.doel === 'Reserveringen' ? 'res' : 'bez'}">${d.doel}</span></td><td class="num">${d.km} km</td><td><b class="num">${d.n}</b> <span class="vids">${d.video.split(' | ').join(' · ')}</span></td></tr>`).join('');
+}
+document.querySelectorAll('.filters button').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('.filters button').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  tabel(b.dataset.f);
+}));
+function alles() { tekenKaart(); tekenFasen(); }
+tabel(''); alles();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', alles);
+new MutationObserver(alles).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
+</script>
