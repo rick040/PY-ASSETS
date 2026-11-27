@@ -443,4 +443,17 @@ export const bordjes: Bordje[] = [
     ],
     bron: 'Looproutes OpenStreetMap (26-11-2026) vanaf het adres van de parking. Czaar Peterhuisje 216 m (2,9 min); Gedempte Gracht 458 m (6,1 min); Zaantheater 525 m (7,0 min); Station Zaandam 843 m (11,2 min).',
   },
+  {
+    slug: 'maashaven-uitjes',
+    locatie: 'maashaven',
+    vraag: 'Uitje in Rotterdam-Zuid?',
+    sub: 'Vanaf hier loop je zo naar:',
+    borden: [
+      {naar: 'Maassilo', tijd: '7 min.', richting: 69},
+      {naar: 'Art Hotel Rotterdam', tijd: '8 min.', richting: 89},
+      {naar: 'Afrikaanderplein', tijd: '14 min.', richting: 59},
+      {naar: 'Spelen bij Beelen', tijd: '16 min.', richting: 254},
+    ],
+    bron: 'Maassilo: "Zeven minuten van de Maassilo" (locatiepagina). Looproutes OpenStreetMap (27-11-2026) vanaf Maashaven Zuidzijde 100: Art Hotel Rotterdam 569 m (7,6 min); Afrikaanderplein 1068 m (14,4 min); Spelen bij Beelen 1222 m (16,4 min).',
+  },
 ];

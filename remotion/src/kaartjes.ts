@@ -255,4 +255,34 @@ export const kaartjes: Kaartje[] = [
     kaart: {src: 'kaarten/theater-aan-de-schie.jpg', x0: -1289, y0: 1534, w: 2600, h: 2435},
     bron: 'Looproutes OpenStreetMap (26-11-2026) naar Theater aan de Schie: P+R Schiedam Centrum 747 m (10,2 min).',
   },
+  {
+    slug: 'maassilo',
+    plek: 'Maassilo',
+    vraag: 'Naar de Maassilo?',
+    parkings: [
+      {locatie: 'maashaven', tijd: '7 min.', dx: -372, dy: -139, prijs: {bedrag: '€25', eenheid: 'per dag gereserveerd'}, route: [[-386,-143],[-394,-119],[-425,-130],[-428,-122],[-7,20],[0,0]]},
+    ],
+    kaart: {src: 'kaarten/maassilo.jpg', x0: -1528, y0: 1038, w: 2628, h: 2200},
+    bron: 'Looproute OpenStreetMap (27-11-2026) van Maashaven Zuidzijde 100 naar Maassilo: 513 m (6,8 min). Looptijd 7 min. volgens de locatiepagina; dagtarief met reservering €25. Maashaven open ma-vr 07-23, za 09-18, zo 09-17. Niet voor late evenementen.',
+  },
+  {
+    slug: 'art-hotel-rotterdam',
+    plek: 'Art Hotel Rotterdam',
+    vraag: 'Naar Art Hotel Rotterdam?',
+    parkings: [
+      {locatie: 'maashaven', tijd: '8 min.', dx: -301, dy: -3, prijs: {bedrag: 'Gratis', eenheid: 'eerste 2 uur'}, route: [[-315,-7],[-323,17],[-354,7],[-357,14],[-227,57],[-209,4],[-195,8],[-190,-5],[-172,2],[-169,-6],[-130,6],[-124,-7],[-114,-10],[-103,-19],[-37,-75],[7,-5],[0,0]]},
+    ],
+    kaart: {src: 'kaarten/art-hotel-rotterdam.jpg', x0: -1475, y0: 1091, w: 2600, h: 2200},
+    bron: 'Looproute OpenStreetMap (27-11-2026) van Maashaven Zuidzijde 100 naar Art Hotel Rotterdam: 569 m (7,6 min). Eerste twee uur gratis. Maashaven open ma-vr 07-23, za 09-18, zo 09-17. Overnachten met de auto in de garage: niet bevestigd.',
+  },
+  {
+    slug: 'spelen-bij-beelen',
+    plek: 'Spelen bij Beelen',
+    vraag: 'Dagje Spelen bij Beelen?',
+    parkings: [
+      {locatie: 'maashaven', tijd: '16 min.', dx: 1063, dy: 221, prijs: {bedrag: 'Gratis', eenheid: 'eerste 2 uur'}, route: [[1049,217],[1041,241],[1010,231],[1007,238],[967,224],[965,222],[954,222],[906,205],[886,162],[778,103],[693,70],[144,-114],[125,-124],[93,-122],[35,-107],[5,-92],[-40,-62],[0,0]]},
+    ],
+    kaart: {src: 'kaarten/spelen-bij-beelen.jpg', x0: -1140, y0: 1158, w: 3303, h: 2200},
+    bron: 'Looproute OpenStreetMap (27-11-2026) van Maashaven Zuidzijde 100 naar Spelen bij Beelen: 1222 m (16,4 min). Eerste twee uur gratis. Maashaven open ma-vr 07-23, za 09-18, zo 09-17.',
+  },
 ];

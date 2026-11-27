@@ -114,8 +114,9 @@ export const ChatSpot: React.FC<{gesprek: Chatgesprek; formaat?: ZoekFormaat}> =
 
   // Text bubbles are measured so the chat can scroll like a real one.
   const textMsg = (kant: Msg['kant'], at: number, text: string): Msg => {
-    const lines = wrap(text, g.text, '400', g.maxW - g.pad * 2);
-    const w = Math.min(g.maxW, Math.max(...lines.map((x) => width(x, g.text, '400'))) + g.pad * 2 + 4);
+    // Wrap a little narrower than the bubble and add slack: the measured width can come out a few % under the render.
+    const lines = wrap(text, g.text, '400', g.maxW - g.pad * 2 - 48);
+    const w = Math.min(g.maxW, Math.max(...lines.map((x) => width(x, g.text, '400'))) * 1.05 + g.pad * 2 + 4);
     const h = lines.length * lineH + g.pad * 1.3;
     return {
       kant,

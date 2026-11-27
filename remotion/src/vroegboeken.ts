@@ -11,8 +11,10 @@ export type Vroegboek = {
   vraag: string;
   /** Which ticket this is, under the question. */
   wat: string;
-  /** Exactly three: the usual rate, with booking, booked early. */
-  tarieven: [Tarief, Tarief, Tarief];
+  /** Two or three: the usual rate, with booking, and booked early when there is one. The last one wins. */
+  tarieven: Tarief[];
+  /** Closing line; {prijs} becomes the winning price. Default "Boek ruim vooraf en betaal {prijs}." */
+  slot?: string;
   bron: string;
 };
 
@@ -33,4 +35,5 @@ export const vroegboeken: Vroegboek[] = [
   {slug: 'td-gebouw', locatie: 'td-gebouw', vraag: 'Dagje Eindhoven?', wat: 'Dagtarief', tarieven: drie(15, 14, 12), bron: 'Dagtarief zonder reservering €15, met reservering €14, vroegboekkorting €12.'},
   {slug: 'philips-bedrijfsschool', locatie: 'philips-bedrijfsschool', vraag: 'Hele dag in Eindhoven?', wat: 'Dagtarief', tarieven: drie(15, 14, 12), bron: 'Dagtarief zonder reservering €15, met reservering €14, vroegboekkorting €12. Niet tijdens wedstrijden en grote evenementen.'},
   {slug: 'at-the-park', locatie: 'at-the-park', vraag: 'Werkdag in Rijswijk?', wat: 'Dagtarief', tarieven: drie(12, 9, 7), bron: 'Dagtarief zonder reservering €12, met reservering €9, vroegboekkorting €7.'},
+  {slug: 'maashaven', locatie: 'maashaven', vraag: 'Hele dag in Rotterdam-Zuid?', wat: 'Dagtarief · eerste 2 uur gratis', tarieven: [{label: 'Zonder reservering', bedrag: 50}, {label: 'Met reservering', bedrag: 25}], slot: 'Reserveer online en betaal {prijs}.', bron: 'Dagtarief zonder reservering €50, met reservering €25; eerste twee uur gratis. Open ma-vr 07-23, za 09-18, zo 09-17.'},
 ];

@@ -292,4 +292,22 @@ export const chatgesprekken: Chatgesprek[] = [
     reactie: 'Perfect, dan weet ik het!',
     bron: 'Houthavenkade: 18-09u €1,00 per 60 min, 6 min tot centrum.',
   },
+  {
+    slug: 'maashaven-spelen-bij-beelen',
+    locatie: 'maashaven',
+    vraag: 'Waar parkeren we bij Spelen bij Beelen?',
+    kenmerk: '16 min. naar Spelen bij Beelen',
+    tip: 'De eerste twee uur parkeer je bij Maashaven gratis.',
+    reactie: 'Top, dan gaan we daar staan!',
+    bron: 'Maashaven: eerste twee uur gratis. Looproute OpenStreetMap naar Spelen bij Beelen 1222 m (16,4 min).',
+  },
+  {
+    slug: 'maashaven-art-hotel',
+    locatie: 'maashaven',
+    vraag: 'Waar parkeer ik bij Art Hotel Rotterdam?',
+    kenmerk: '8 min. naar Art Hotel',
+    tip: 'Eerste twee uur gratis, met reservering €25 voor de hele dag.',
+    reactie: 'Top, dan reserveer ik die!',
+    bron: 'Maashaven: eerste twee uur gratis, dagtarief met reservering €25. Looproute OpenStreetMap naar Art Hotel Rotterdam 569 m (7,6 min).',
+  },
 ];

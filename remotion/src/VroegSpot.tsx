@@ -64,15 +64,17 @@ const Ticket: React.FC<{
   bedrag: number;
   besparing?: number;
   top: number;
-}> = ({g, i, label, bedrag, besparing, top}) => {
+  /** Number of tickets (2 or 3); the last one wins. */
+  n: number;
+}> = ({g, i, label, bedrag, besparing, top, n}) => {
   const frame = useCurrentFrame();
   const t = vroegTimeline();
   const k = g.ticket;
   const at = t.tickets[i];
   const inv = tween(frame, at, at + 26, ease(0.3, 1.35, 0.5, 1));
-  const streep = i < 2 ? tween(frame, t.streep[i], t.streep[i] + 16, ease(0.4, 0, 0.2, 1)) : 0;
-  const win = i === 2 ? tween(frame, t.winnaar, t.winnaar + 24, ease(0.3, 1.5, 0.5, 1)) : 0;
-  const badge = i === 2 ? tween(frame, t.winnaar + 18, t.winnaar + 40, ease(0.3, 1.6, 0.5, 1)) : 0;
+  const streep = i < n - 1 ? tween(frame, t.streep[i], t.streep[i] + 16, ease(0.4, 0, 0.2, 1)) : 0;
+  const win = i === n - 1 ? tween(frame, t.winnaar, t.winnaar + 24, ease(0.3, 1.5, 0.5, 1)) : 0;
+  const badge = i === n - 1 ? tween(frame, t.winnaar + 18, t.winnaar + 40, ease(0.3, 1.6, 0.5, 1)) : 0;
   const stub = k.h * 0.82;
   const prijsW = width(euro(bedrag), k.prijs, '700');
   if (frame < at) return null;
@@ -161,14 +163,15 @@ export const VroegSpot: React.FC<{vroeg: Vroegboek; formaat?: ZoekFormaat}> = ({
   const vraagLines = wrap(v.vraag, g.vraag.size, '700', g.vraag.w);
   const subLines = wrap(`Parking ${l.naam} · ${v.wat}`, g.vraag.sub, '400', g.vraag.w);
   const vraagH = vraagLines.length * g.vraag.size * 1.1 + 12 + subLines.length * g.vraag.sub * 1.25;
-  const vroeg = v.tarieven[2].bedrag;
+  const n = v.tarieven.length;
+  const vroeg = v.tarieven[n - 1].bedrag;
   const besparing = Math.round((v.tarieven[0].bedrag - vroeg) * 100) / 100;
-  const slotTekst = `Boek ruim vooraf en betaal ${euro(vroeg)}.`;
+  const slotTekst = v.slot ? v.slot.replace('{prijs}', euro(vroeg)) : `Boek ruim vooraf en betaal ${euro(vroeg)}.`;
   const slotLines = wrap(slotTekst, g.slot.size, '700', g.slot.w);
   const slotY = g.slot.y ?? g.vraag.y + vraagH + 60;
   // 9:16: the tickets sit under the question, with room for the badge on the last one.
   const ticketY = staand ? Math.max(g.ticket.y, g.vraag.y + vraagH + 50) : g.ticket.y;
-  const slotYStaand = ticketY + 3 * g.ticket.h + 2 * g.ticket.gap + 60;
+  const slotYStaand = ticketY + n * g.ticket.h + (n - 1) * g.ticket.gap + 60;
 
   return (
     <AbsoluteFill style={{background: colors.blauw, fontFamily: font}}>
@@ -190,7 +193,7 @@ export const VroegSpot: React.FC<{vroeg: Vroegboek; formaat?: ZoekFormaat}> = ({
           </div>
         </div>
         {v.tarieven.map((tr, i) => (
-          <Ticket key={i} g={g} i={i} label={tr.label} bedrag={tr.bedrag} besparing={i === 2 ? besparing : undefined} top={ticketY} />
+          <Ticket key={i} g={g} i={i} label={tr.label} bedrag={tr.bedrag} besparing={i === n - 1 ? besparing : undefined} top={ticketY} n={n} />
         ))}
         <div style={{position: 'absolute', left: g.slot.x, top: staand ? slotYStaand : slotY, width: g.slot.w, textAlign: g.slot.align, color: colors.wit, fontSize: g.slot.size, fontWeight: 700, lineHeight: 1.12, opacity: slotIn, transform: `translateY(${(1 - slotIn) * 40}px)`}}>
           {slotLines.map((x, i) => (
