@@ -164,3 +164,15 @@ DLL garage and deck are left out (closed on weekdays during office hours).
 ```bash
 node scripts/render-locaties.mjs --strip              # to out/strippenkaart/ and out/strippenkaart-youtube/
 ```
+
+## Entrance-route spots (RijSpot, "Zo rijd je erin")
+
+`src/RijSpot.tsx`: a question ("Waar is de inrit van het TD-gebouw?"), a real map (OpenStreetMap data in the house colours)
+with the last stretch by car to the entrance. A car drives it, the route fills in behind it, each step (street, turn, entrance)
+appears on the map and as a row under it, then the P at the entrance and the shared end screen. 10.6 s, 9:16 (`Rij-<slug>`)
+and 16:9 (`RijYT-<slug>`). `src/rijroutes.ts` holds the routes; `scripts/rijdata.py` builds the route (OSRM car profile) and
+the map. The stretch shown is the part that routes from several directions share, so it is right for most drivers.
+
+```bash
+node scripts/render-locaties.mjs --rij                # to out/rijroute/ and out/rijroute-youtube/
+```

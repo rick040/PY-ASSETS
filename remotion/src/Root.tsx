@@ -18,6 +18,8 @@ import {VROEG_SIZE, VroegSpot, vroegTimeline} from './VroegSpot';
 import {vroegboeken} from './vroegboeken';
 import {STRIP_SIZE, StripSpot, stripTimeline} from './StripSpot';
 import {strippenkaarten} from './strippenkaarten';
+import {RIJ_SIZE, RijSpot, rijTimeline} from './RijSpot';
+import {rijroutes} from './rijroutes';
 import {
   ARTIS_DUUR,
   ArtisLicht,
@@ -156,6 +158,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...STRIP_SIZE[formaat]}
           defaultProps={{strip: s, formaat}}
+        />
+      )),
+    )}
+    {rijroutes.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`rij-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Rij' : 'RijYT'}-${s.slug}`}
+          component={RijSpot}
+          durationInFrames={rijTimeline().duration}
+          fps={60}
+          {...RIJ_SIZE[formaat]}
+          defaultProps={{route: s, formaat}}
         />
       )),
     )}

@@ -9,6 +9,7 @@
 // node scripts/render-locaties.mjs --light [ids]     Amsterdam Light campaign, 9:16 to out/amsterdam-light/
 // node scripts/render-locaties.mjs --vroeg [slugs]    early-booking spots, 9:16 to out/vroegboeken/ and 16:9 to out/vroegboeken-youtube/
 // node scripts/render-locaties.mjs --strip [slugs]    ParkingPass spots, 9:16 to out/strippenkaart/ and 16:9 to out/strippenkaart-youtube/
+// node scripts/render-locaties.mjs --rij [slugs]      entrance-route spots, 9:16 to out/rijroute/ and 16:9 to out/rijroute-youtube/
 // node scripts/render-locaties.mjs --zoek [slugs]     search spots, 9:16 to out/zoek/<slug>.mp4 and 16:9 to out/zoek-youtube/<slug>.mp4
 import {bundle} from '@remotion/bundler';
 import {getCompositions, renderMedia} from '@remotion/renderer';
@@ -28,9 +29,10 @@ const kaart = args.includes('--kaart');
 const light = args.includes('--light');
 const vroeg = args.includes('--vroeg');
 const strip = args.includes('--strip');
+const rij = args.includes('--rij');
 const wanted = args.filter((a) => !a.startsWith('--'));
-const prefixes = strip ? ['Strip-', 'StripYT-'] : vroeg ? ['Vroeg-', 'VroegYT-'] : light ? ['Light-'] : kaart ? ['Kaart-', 'KaartYT-'] : bord ? ['Bord-', 'BordYT-'] : lijst ? ['Lijst-', 'LijstYT-'] : chat ? ['Chat-', 'ChatYT-'] : zoek ? ['Zoek-', 'ZoekYT-'] : [reels ? 'Reel-' : 'Spot-'];
-const dirFor = (p) => ({'Spot-': 'locaties', 'Reel-': 'reels', 'Zoek-': 'zoek', 'ZoekYT-': 'zoek-youtube', 'Chat-': 'chat', 'ChatYT-': 'chat-youtube', 'Lijst-': 'lijstje', 'LijstYT-': 'lijstje-youtube', 'Bord-': 'bordje', 'BordYT-': 'bordje-youtube', 'Kaart-': 'kaartje', 'KaartYT-': 'kaartje-youtube', 'Light-': 'amsterdam-light', 'Vroeg-': 'vroegboeken', 'VroegYT-': 'vroegboeken-youtube', 'Strip-': 'strippenkaart', 'StripYT-': 'strippenkaart-youtube'})[p];
+const prefixes = rij ? ['Rij-', 'RijYT-'] : strip ? ['Strip-', 'StripYT-'] : vroeg ? ['Vroeg-', 'VroegYT-'] : light ? ['Light-'] : kaart ? ['Kaart-', 'KaartYT-'] : bord ? ['Bord-', 'BordYT-'] : lijst ? ['Lijst-', 'LijstYT-'] : chat ? ['Chat-', 'ChatYT-'] : zoek ? ['Zoek-', 'ZoekYT-'] : [reels ? 'Reel-' : 'Spot-'];
+const dirFor = (p) => ({'Spot-': 'locaties', 'Reel-': 'reels', 'Zoek-': 'zoek', 'ZoekYT-': 'zoek-youtube', 'Chat-': 'chat', 'ChatYT-': 'chat-youtube', 'Lijst-': 'lijstje', 'LijstYT-': 'lijstje-youtube', 'Bord-': 'bordje', 'BordYT-': 'bordje-youtube', 'Kaart-': 'kaartje', 'KaartYT-': 'kaartje-youtube', 'Light-': 'amsterdam-light', 'Vroeg-': 'vroegboeken', 'VroegYT-': 'vroegboeken-youtube', 'Strip-': 'strippenkaart', 'StripYT-': 'strippenkaart-youtube', 'Rij-': 'rijroute', 'RijYT-': 'rijroute-youtube'})[p];
 
 let browserExecutable = process.env.BROWSER_EXECUTABLE ?? null;
 if (!browserExecutable && existsSync('/opt/pw-browsers')) {
@@ -56,7 +58,7 @@ for (const composition of comps) {
     codec: 'h264',
     crf: 20,
     // Search spots render in one tab: with several tabs Chrome sometimes dropped the CTA button or a card in a frame.
-    concurrency: zoek || chat || lijst || bord || kaart || light || vroeg || strip ? 1 : null,
+    concurrency: zoek || chat || lijst || bord || kaart || light || vroeg || strip || rij ? 1 : null,
     outputLocation,
     browserExecutable,
     chromiumOptions: {gl: 'swangle'},
