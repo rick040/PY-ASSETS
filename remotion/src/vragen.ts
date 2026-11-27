@@ -16,6 +16,8 @@ export type VraagSet = {
   locatie: string;
   /** Three questions from the page. */
   vragen: [Vraag, Vraag, Vraag];
+  /** CSS object-position for the location photo (it is portrait, the card is wide); default '50% 80%'. */
+  fotoPositie?: string;
   bron: string;
 };
 
@@ -23,6 +25,7 @@ export const vraagsets: VraagSet[] = [
   {
     slug: 'hofplein',
     locatie: 'hofplein',
+    fotoPositie: '50% 100%',
     vragen: [
       {vraag: 'Wat kost parkeren in het weekend?', kern: '€15', antwoord: 'voor een hele dag, op zaterdag en zondag.'},
       {vraag: 'Hoeveel scheelt online reserveren?', kern: '€20 in plaats van €30', antwoord: 'voor een dagkaart op werkdagen als je vroeg boekt. Met reservering €25.'},
