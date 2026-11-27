@@ -115,7 +115,7 @@ export const RondjeSpot: React.FC<{rondje: Rondje; formaat?: ZoekFormaat}> = ({r
   const aan = frame >= 300;
 
   const kopStyle: React.CSSProperties = {position: 'absolute', top: g.kop.y, width: '100%', textAlign: 'center', color: colors.wit};
-  const antwoord = `Parkeer bij ${l.naam} en loop in ${p.tijd} naar ${r.naar}.`;
+  const antwoord = `Zet je auto ${r.wanneer ? r.wanneer + ' ' : ''}in ${r.bij ?? `Parking ${l.naam}`} en loop in ${p.tijd.replace(" ", "\u00a0")} naar ${r.naar}.`;
   const antwoordLines = wrap(antwoord, g.vraag.size * 0.9, '700', g.w - 220);
 
   return (
