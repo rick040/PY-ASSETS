@@ -188,3 +188,26 @@ the data; every fact (walking time, station, destinations, price, conditions suc
 ```bash
 node scripts/render-locaties.mjs --overstap           # to out/overstap/ and out/overstap-youtube/
 ```
+
+## Search-or-walk spots (RondjeSpot, "Rondje zoeken per locatie")
+
+`src/RondjeSpot.tsx`: the split screen from the Amsterdam Light campaign in bulk form. On the left a car circles past full car
+parks while a stress meter rises; on the right a walker goes from our parking to a well-known place over the real walking
+route on the real map from Het kaartje. Then "Rondje zoeken of rondje lopen?", the answer with the walking time, and the
+shared end screen. 11.2 s, 9:16 (`Rondje-<slug>`) and 16:9 (`RondjeYT-<slug>`). `src/rondjes.ts` names the kaartje (place,
+map, route, nearest parking all come from `kaartjes.ts`), so every kaartje can become a rondje with one line.
+
+```bash
+node scripts/render-locaties.mjs --rondje             # to out/rondje/ and out/rondje-youtube/
+```
+
+## FAQ spots (VraagSpot, "Vraag het maar")
+
+`src/VraagSpot.tsx`: the "Veelgestelde vragen" block of the location page as an accordion. Three questions are visible from
+the first frame; one by one a tap opens a question, the fact folds out big in aqua with the rest of the answer under it, and
+the previous one closes. Location name and photo stay in view, then the shared end screen. 15.5 s, 9:16 (`Vraag-<slug>`) and
+16:9 (`VraagYT-<slug>`). `src/vragen.ts` holds three questions per location, taken from the page (27 pages have a FAQ).
+
+```bash
+node scripts/render-locaties.mjs --vraag              # to out/vraag/ and out/vraag-youtube/
+```

@@ -350,7 +350,7 @@ export const LichtLijn: React.FC = () => {
 export const RONDJE_DUUR = 660;
 
 /** Point and heading on a rounded rectangle loop, t in 0..1. */
-const lus = (t: number, cx: number, cy: number, hw: number, hh: number, rad: number) => {
+export const lus = (t: number, cx: number, cy: number, hw: number, hh: number, rad: number) => {
   const segs: {len: number; at: (u: number) => [number, number, number]}[] = [];
   const line = (x1: number, y1: number, x2: number, y2: number) =>
     segs.push({len: Math.hypot(x2 - x1, y2 - y1), at: (u) => [x1 + (x2 - x1) * u, y1 + (y2 - y1) * u, Math.atan2(y2 - y1, x2 - x1)]});

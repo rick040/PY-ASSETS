@@ -16,12 +16,16 @@ parkingyou.nl of gemeten via OpenStreetMap; aantallen locaties geteld op de pagi
 | Vroeg boeken loont | 10 + Maashaven | `vroegboeken` |
 | De strippenkaart (ParkingPass) | 11 | `strippenkaart` |
 | Amsterdam Light (Plantage) | 8 video's | `amsterdam-light` |
+| Zo rijd je erin | 6 | `rijroute` |
+| Parkeer en stap over | 6 | `overstap` |
+| Rondje zoeken per locatie | 1 voorbeeld (Markthal) | `rondje` |
+| Vraag het maar | 1 voorbeeld (Hofplein) | `vraag` |
 
 ## Ronde 1, nog te maken
 
 | # | Serie | Data | Locaties |
 |---|---|---|---|
-| 1 | Past mijn auto? (doorrijhoogte) | doorrijhoogte | 24 |
+| 1 | ~~Past mijn auto? (doorrijhoogte)~~ afgewezen | doorrijhoogte | 24 |
 | 2 | Droog naar binnen (overdekt, inzetten met regentrigger) | overdekte garage | 21 |
 | 3 | Stekker erin (elektrisch laden) | laadpunten | 19 |
 | 4 | De klok rond (dag- en avondtarief, openingstijden) | avond- of nachttarief | 22 |

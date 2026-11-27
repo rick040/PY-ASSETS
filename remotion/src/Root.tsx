@@ -22,6 +22,10 @@ import {RIJ_SIZE, RijSpot, rijTimeline} from './RijSpot';
 import {rijroutes} from './rijroutes';
 import {OVERSTAP_SIZE, OverstapSpot, overstapTimeline} from './OverstapSpot';
 import {overstappen} from './overstappen';
+import {RONDJE_SIZE, RondjeSpot, rondjeTimeline} from './RondjeSpot';
+import {rondjes} from './rondjes';
+import {VRAAG_SIZE, VraagSpot, vraagTimeline} from './VraagSpot';
+import {vraagsets} from './vragen';
 import {
   ARTIS_DUUR,
   ArtisLicht,
@@ -186,6 +190,32 @@ export const Root: React.FC = () => (
           fps={60}
           {...OVERSTAP_SIZE[formaat]}
           defaultProps={{overstap: s, formaat}}
+        />
+      )),
+    )}
+    {rondjes.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`rondje-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Rondje' : 'RondjeYT'}-${s.slug}`}
+          component={RondjeSpot}
+          durationInFrames={rondjeTimeline().duration}
+          fps={60}
+          {...RONDJE_SIZE[formaat]}
+          defaultProps={{rondje: s, formaat}}
+        />
+      )),
+    )}
+    {vraagsets.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`vraag-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Vraag' : 'VraagYT'}-${s.slug}`}
+          component={VraagSpot}
+          durationInFrames={vraagTimeline().duration}
+          fps={60}
+          {...VRAAG_SIZE[formaat]}
+          defaultProps={{set: s, formaat}}
         />
       )),
     )}
