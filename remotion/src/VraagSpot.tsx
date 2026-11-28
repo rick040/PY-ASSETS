@@ -57,9 +57,9 @@ export const VraagSpot: React.FC<{set: VraagSet; formaat?: ZoekFormaat}> = ({set
     const open = tween(frame, OPEN[i], OPEN[i] + 30, zacht) * (i < 2 ? 1 - tween(frame, OPEN[i + 1], OPEN[i + 1] + 30, zacht) : 1);
     const qLines = wrap(v.vraag, L.q, '700', tekstW);
     const kernLines = wrap(v.kern, L.kern, '700', L.w - 2 * L.pad);
-    const aLines = wrap(v.antwoord, L.a, '400', L.w - 2 * L.pad);
+    const aLines = v.antwoord ? wrap(v.antwoord, L.a, '400', L.w - 2 * L.pad) : [];
     const dicht = 2 * L.pad + qLines.length * L.q * 1.18;
-    const extra = 26 + kernLines.length * L.kern * 1.08 + 8 + aLines.length * L.a * 1.3;
+    const extra = 26 + kernLines.length * L.kern * 1.08 + (aLines.length ? 8 + aLines.length * L.a * 1.3 : 14);
     return {v, i, open, qLines, kernLines, aLines, dicht, extra, hoogte: dicht + extra * open};
   });
   // Tallest the list gets (with the longest answer open): the photo lines up with that.

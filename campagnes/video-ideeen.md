@@ -18,8 +18,8 @@ parkingyou.nl of gemeten via OpenStreetMap; aantallen locaties geteld op de pagi
 | Amsterdam Light (Plantage) | 8 video's | `amsterdam-light` |
 | Zo rijd je erin | 6 | `rijroute` |
 | Parkeer en stap over | 6 | `overstap` |
-| Rondje zoeken per locatie | 1 voorbeeld (Markthal) | `rondje` |
-| Vraag het maar | 1 voorbeeld (Hofplein) | `vraag` |
+| Rondje zoeken per locatie | 23 | `rondje` |
+| Vraag het maar | 27 | `vraag` |
 
 ## Ronde 1, nog te maken
 
