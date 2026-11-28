@@ -25,6 +25,8 @@ import {overstappen} from './overstappen';
 import {RONDJE_SIZE, RondjeSpot, rondjeTimeline} from './RondjeSpot';
 import {rondjes} from './rondjes';
 import {VRAAG_SIZE, VraagSpot, vraagTimeline} from './VraagSpot';
+import {DROOG_SIZE, DroogSpot, droogTimeline} from './DroogSpot';
+import {droog} from './droog';
 import {vraagsets} from './vragen';
 import {
   ARTIS_DUUR,
@@ -216,6 +218,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...VRAAG_SIZE[formaat]}
           defaultProps={{set: s, formaat}}
+        />
+      )),
+    )}
+    {droog.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`droog-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Droog' : 'DroogYT'}-${s.slug}`}
+          component={DroogSpot}
+          durationInFrames={droogTimeline().duration}
+          fps={60}
+          {...DROOG_SIZE[formaat]}
+          defaultProps={{droog: s, formaat}}
         />
       )),
     )}

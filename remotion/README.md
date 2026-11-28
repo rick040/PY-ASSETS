@@ -211,3 +211,15 @@ the previous one closes. Location name and photo stay in view, then the shared e
 ```bash
 node scripts/render-locaties.mjs --vraag              # to out/vraag/ and out/vraag-youtube/
 ```
+
+## Rain spots (DroogSpot, "Droog naar binnen")
+
+`src/DroogSpot.tsx`: full-screen rain with the hook "Regent het?", then the camera pulls back and the rain turns out to be
+seen through the entrance of a garage. A car (the `picto-car` path, inlined in `src/autoPad.ts`) comes in out of the rain with
+its wipers going; inside they stop, "Droog naar binnen." Then three facts from the location page and the shared end screen.
+14.5 s, 9:16 (`Droog-<slug>`) and 16:9 (`DroogYT-<slug>`). Meant to run with a rain trigger. `src/droog.ts` holds the 21
+covered garages ("Overdekte garage" on the page) with three facts each; Heerhugowaard P1 is left out (mostly an open lot).
+
+```bash
+node scripts/render-locaties.mjs --droog              # to out/droog/ and out/droog-youtube/
+```

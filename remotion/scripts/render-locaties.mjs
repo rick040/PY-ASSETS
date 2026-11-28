@@ -12,6 +12,7 @@
 // node scripts/render-locaties.mjs --rij [slugs]      entrance-route spots, 9:16 to out/rijroute/ and 16:9 to out/rijroute-youtube/
 // node scripts/render-locaties.mjs --overstap [slugs] park-and-ride spots, 9:16 to out/overstap/ and 16:9 to out/overstap-youtube/
 // node scripts/render-locaties.mjs --vraag [slugs]    FAQ accordions, 9:16 to out/vraag/ and 16:9 to out/vraag-youtube/
+// node scripts/render-locaties.mjs --droog [slugs]    covered-garage rain spots, 9:16 to out/droog/ and 16:9 to out/droog-youtube/
 // node scripts/render-locaties.mjs --rondje [slugs]   search-or-walk split screens, 9:16 to out/rondje/ and 16:9 to out/rondje-youtube/
 // node scripts/render-locaties.mjs --zoek [slugs]     search spots, 9:16 to out/zoek/<slug>.mp4 and 16:9 to out/zoek-youtube/<slug>.mp4
 import {bundle} from '@remotion/bundler';
@@ -36,9 +37,10 @@ const rij = args.includes('--rij');
 const overstap = args.includes('--overstap');
 const rondje = args.includes('--rondje');
 const vraag = args.includes('--vraag');
+const droog = args.includes('--droog');
 const wanted = args.filter((a) => !a.startsWith('--'));
-const prefixes = vraag ? ['Vraag-', 'VraagYT-'] : rondje ? ['Rondje-', 'RondjeYT-'] : overstap ? ['Overstap-', 'OverstapYT-'] : rij ? ['Rij-', 'RijYT-'] : strip ? ['Strip-', 'StripYT-'] : vroeg ? ['Vroeg-', 'VroegYT-'] : light ? ['Light-'] : kaart ? ['Kaart-', 'KaartYT-'] : bord ? ['Bord-', 'BordYT-'] : lijst ? ['Lijst-', 'LijstYT-'] : chat ? ['Chat-', 'ChatYT-'] : zoek ? ['Zoek-', 'ZoekYT-'] : [reels ? 'Reel-' : 'Spot-'];
-const dirFor = (p) => ({'Spot-': 'locaties', 'Reel-': 'reels', 'Zoek-': 'zoek', 'ZoekYT-': 'zoek-youtube', 'Chat-': 'chat', 'ChatYT-': 'chat-youtube', 'Lijst-': 'lijstje', 'LijstYT-': 'lijstje-youtube', 'Bord-': 'bordje', 'BordYT-': 'bordje-youtube', 'Kaart-': 'kaartje', 'KaartYT-': 'kaartje-youtube', 'Light-': 'amsterdam-light', 'Vroeg-': 'vroegboeken', 'VroegYT-': 'vroegboeken-youtube', 'Strip-': 'strippenkaart', 'StripYT-': 'strippenkaart-youtube', 'Rij-': 'rijroute', 'RijYT-': 'rijroute-youtube', 'Overstap-': 'overstap', 'OverstapYT-': 'overstap-youtube', 'Rondje-': 'rondje', 'RondjeYT-': 'rondje-youtube', 'Vraag-': 'vraag', 'VraagYT-': 'vraag-youtube'})[p];
+const prefixes = droog ? ['Droog-', 'DroogYT-'] : vraag ? ['Vraag-', 'VraagYT-'] : rondje ? ['Rondje-', 'RondjeYT-'] : overstap ? ['Overstap-', 'OverstapYT-'] : rij ? ['Rij-', 'RijYT-'] : strip ? ['Strip-', 'StripYT-'] : vroeg ? ['Vroeg-', 'VroegYT-'] : light ? ['Light-'] : kaart ? ['Kaart-', 'KaartYT-'] : bord ? ['Bord-', 'BordYT-'] : lijst ? ['Lijst-', 'LijstYT-'] : chat ? ['Chat-', 'ChatYT-'] : zoek ? ['Zoek-', 'ZoekYT-'] : [reels ? 'Reel-' : 'Spot-'];
+const dirFor = (p) => ({'Spot-': 'locaties', 'Reel-': 'reels', 'Zoek-': 'zoek', 'ZoekYT-': 'zoek-youtube', 'Chat-': 'chat', 'ChatYT-': 'chat-youtube', 'Lijst-': 'lijstje', 'LijstYT-': 'lijstje-youtube', 'Bord-': 'bordje', 'BordYT-': 'bordje-youtube', 'Kaart-': 'kaartje', 'KaartYT-': 'kaartje-youtube', 'Light-': 'amsterdam-light', 'Vroeg-': 'vroegboeken', 'VroegYT-': 'vroegboeken-youtube', 'Strip-': 'strippenkaart', 'StripYT-': 'strippenkaart-youtube', 'Rij-': 'rijroute', 'RijYT-': 'rijroute-youtube', 'Overstap-': 'overstap', 'OverstapYT-': 'overstap-youtube', 'Rondje-': 'rondje', 'RondjeYT-': 'rondje-youtube', 'Vraag-': 'vraag', 'VraagYT-': 'vraag-youtube', 'Droog-': 'droog', 'DroogYT-': 'droog-youtube'})[p];
 
 let browserExecutable = process.env.BROWSER_EXECUTABLE ?? null;
 if (!browserExecutable && existsSync('/opt/pw-browsers')) {

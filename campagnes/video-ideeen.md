@@ -20,16 +20,17 @@ parkingyou.nl of gemeten via OpenStreetMap; aantallen locaties geteld op de pagi
 | Parkeer en stap over | 6 | `overstap` |
 | Rondje zoeken per locatie | 23 | `rondje` |
 | Vraag het maar | 27 | `vraag` |
+| Droog naar binnen | 21 | `droog` |
 
 ## Ronde 1, nog te maken
 
 | # | Serie | Data | Locaties |
 |---|---|---|---|
 | 1 | ~~Past mijn auto? (doorrijhoogte)~~ afgewezen | doorrijhoogte | 24 |
-| 2 | Droog naar binnen (overdekt, inzetten met regentrigger) | overdekte garage | 21 |
+| 2 | ~~Droog naar binnen~~ gemaakt | overdekte garage | 21 |
 | 3 | Stekker erin (elektrisch laden) | laadpunten | 19 |
 | 4 | De klok rond (dag- en avondtarief, openingstijden) | avond- of nachttarief | 22 |
-| 5 | Vraag het maar (veelgestelde vragen) | FAQ op de pagina | 27 |
+| 5 | ~~Vraag het maar~~ gemaakt | FAQ op de pagina | 27 |
 | 6 | De plekkenteller | aantal plaatsen | 32 |
 | 7 | Slagboom gaat vanzelf open (kenteken) | kentekenherkenning | 17 |
 | 8 | Het momentje (koopzondag, kerst, feestdagen) | kalender + tarief | winkellocaties |
