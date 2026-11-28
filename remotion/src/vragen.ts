@@ -16,8 +16,8 @@ export type VraagSet = {
   locatie: string;
   /** Three questions from the page. */
   vragen: [Vraag, Vraag, Vraag];
-  /** CSS object-position for the location photo (it is portrait, the card is wide); default '50% 80%'. */
-  fotoPositie?: string;
+  /** Leave the location photo out (TD-gebouw: the only photo shows an old price board). */
+  zonderFoto?: boolean;
   bron: string;
 };
 
@@ -25,7 +25,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: 'hofplein',
     locatie: 'hofplein',
-    fotoPositie: '50% 100%',
     vragen: [
       {vraag: 'Wat kost parkeren in het weekend?', kern: '€15', antwoord: 'voor een hele dag, op zaterdag en zondag.'},
       {vraag: 'Hoeveel scheelt online reserveren?', kern: '€20 in plaats van €30', antwoord: 'voor een dagkaart op werkdagen als je vroeg boekt. Met reservering €25.'},
@@ -97,7 +96,7 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "td-gebouw",
     locatie: "td-gebouw",
-    fotoPositie: '50% 100%',
+    zonderFoto: true,
     vragen: [
       {vraag: "Hoe ver is het lopen naar het Van Abbemuseum?", kern: "Ongeveer 6 minuten", antwoord: "het museum ligt aan de andere kant van het Anne Frankplantsoen."},
       {vraag: "Wat kost een uur parkeren?", kern: "€3 per uur", antwoord: "voor een hele dag is de dagkaart voordeliger: vanaf €12 bij vroeg boeken."},
@@ -118,7 +117,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "dll-garage",
     locatie: "dll-garage",
-    fotoPositie: '50% 70%',
     vragen: [
       {vraag: "Wanneer is de DLL-garage open?", kern: "Ma-vr vanaf 17.00 uur", antwoord: "tot 06.00 uur. Overdag is de garage voor medewerkers van het gebouw."},
       {vraag: "Wat kost een dag parkeren?", kern: "Vanaf €12", antwoord: "als je ruim vooraf boekt. Met reservering €14, zonder €15."},
@@ -129,7 +127,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "dll-parkeerdek",
     locatie: "dll-parkeerdek",
-    fotoPositie: '50% 45%',
     vragen: [
       {vraag: "Kan ik hier met een bestelbus parkeren?", kern: "Ja, tot 2,50 meter", antwoord: "de meeste bestelbussen, hoge SUV's en auto's met dakkoffer passen."},
       {vraag: "Vanaf welk tijdstip kan ik inrijden?", kern: "Ma-vr vanaf 17.00 uur", antwoord: "tot 06.00 uur. Overdag parkeren hier medewerkers van het gebouw."},
@@ -140,7 +137,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "evoluon",
     locatie: "evoluon",
-    fotoPositie: '50% 15%',
     vragen: [
       {vraag: "Hoe ver is het lopen naar de ingang van het Evoluon?", kern: "Ongeveer 2 minuten", antwoord: "de parking ligt op het terrein van het Evoluon zelf."},
       {vraag: "Wat kost een dag parkeren bij het Evoluon?", kern: "€9", antwoord: "als je online vooraf reserveert. Zonder reservering €10."},
@@ -151,7 +147,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "at-the-park",
     locatie: "at-the-park",
-    fotoPositie: '50% 62%',
     vragen: [
       {vraag: "Wat is de goedkoopste manier om hier te parkeren?", kern: "Vanaf €7 per dag", antwoord: "met een dagkaart bij vroeg boeken. Of een ParkingPass: 10 dagen voor €80."},
       {vraag: "Hoe ver is het lopen naar het station?", kern: "Ongeveer 7 minuten", antwoord: "het centrum van Rijswijk ligt ook op loopafstand."},
@@ -162,7 +157,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "stationsweg-ypenburg",
     locatie: "stationsweg-ypenburg",
-    fotoPositie: '50% 65%',
     vragen: [
       {vraag: "Wat kost parkeren als ik naar de bioscoop ga?", kern: "€4,75", antwoord: "voor de eerste vier uur."},
       {vraag: "Hoe ver is het lopen naar het station?", kern: "Naast de deur", antwoord: "de parking ligt direct naast station Ypenburg."},
@@ -183,7 +177,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "lentse-plas",
     locatie: "lentse-plas",
-    fotoPositie: '50% 45%',
     vragen: [
       {vraag: "Wat kost parkeren bij Pathé Nijmegen?", kern: "€3,75", antwoord: "voor de eerste vier uur. Je kaart waardeer je af in de bioscoop."},
       {vraag: "Wat is het dagtarief?", kern: "Maximaal €21,50", antwoord: "per dag. Je betaalt €1,10 per 20 minuten."},
@@ -194,7 +187,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "heerhugowaard-p1-zuidtangent",
     locatie: "heerhugowaard-p1-zuidtangent",
-    fotoPositie: '50% 30%',
     vragen: [
       {vraag: "Wat kost parkeren bij Middenwaard?", kern: "€1 per uur", antwoord: "met een maximum van €9 per dag."},
       {vraag: "Hoeveel parkeerplaatsen zijn er?", kern: "794 plaatsen", antwoord: "verdeeld over het terrein en de parkeerkelder."},
@@ -225,7 +217,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "p2-mandela-wtc",
     locatie: "p2-mandela-wtc",
-    fotoPositie: '50% 45%',
     vragen: [
       {vraag: "Wat kost een dag parkeren in het centrum van Almere?", kern: "Maximaal €6", antwoord: "per dag. Tot dan betaal je €1 per 20 minuten."},
       {vraag: "Hoe ver is het lopen naar het centrum?", kern: "Ongeveer 4 minuten"},
@@ -286,7 +277,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "p8-nederlandlaan",
     locatie: "p8-nederlandlaan",
-    fotoPositie: '50% 18%',
     vragen: [
       {vraag: "Hoeveel plaatsen heeft P8?", kern: "659 overdekte plaatsen", antwoord: "de grootste garage van Stadshart Zoetermeer."},
       {vraag: "Tot hoe laat kan ik inrijden?", kern: "Tot 22.30 uur", antwoord: "inrijden kan vanaf 07.00 uur. Uitrijden kan 24 uur per dag."},
@@ -297,7 +287,6 @@ export const vraagsets: VraagSet[] = [
   {
     slug: "p9-duitslandlaan",
     locatie: "p9-duitslandlaan",
-    fotoPositie: '50% 8%',
     vragen: [
       {vraag: "Is P9 dag en nacht open?", kern: "Ja, 24 uur per dag", antwoord: "dat geldt niet voor alle garages in het Stadshart."},
       {vraag: "Is er een lift?", kern: "Ja, er is een lift", antwoord: "handig met boodschappen, een kinderwagen of een rollator."},

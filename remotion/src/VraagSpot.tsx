@@ -16,24 +16,24 @@ type Geo = {
   h: number;
   titel: {x: number; y: number; w: number; size: number; align: 'center' | 'left'};
   lijst: {x: number; y: number; w: number; pad: number; gap: number; q: number; a: number; kern: number; knop: number};
-  /** Photo column: x and width; top and height follow the list so the edges line up. */
-  foto: {x: number; w: number};
+  /** The whole location photo (all photos are 1001 x 1188, the card has the same shape). */
+  foto: {x: number; y: number; w: number; h: number};
 };
 
 const GEO: Record<ZoekFormaat, Geo> = {
   staand: {
     w: 1080,
     h: 1920,
-    titel: {x: 70, y: 270, w: 940, size: 80, align: 'center'},
-    lijst: {x: 70, y: 480, w: 940, pad: 38, gap: 22, q: 46, a: 38, kern: 84, knop: 66},
-    foto: {x: 70, w: 940},
+    titel: {x: 70, y: 300, w: 540, size: 80, align: 'left'},
+    lijst: {x: 70, y: 740, w: 940, pad: 38, gap: 22, q: 46, a: 38, kern: 84, knop: 66},
+    foto: {x: 639, y: 260, w: 371, h: 440},
   },
   liggend: {
     w: 1920,
     h: 1080,
-    titel: {x: 100, y: 150, w: 660, size: 84, align: 'left'},
-    lijst: {x: 860, y: 110, w: 960, pad: 32, gap: 20, q: 40, a: 34, kern: 72, knop: 58},
-    foto: {x: 100, w: 660},
+    titel: {x: 100, y: 70, w: 1720, size: 84, align: 'left'},
+    lijst: {x: 733, y: 260, w: 1087, pad: 32, gap: 20, q: 40, a: 34, kern: 72, knop: 58},
+    foto: {x: 100, y: 260, w: 573, h: 680},
   },
 };
 
@@ -44,7 +44,13 @@ export const VraagSpot: React.FC<{set: VraagSet; formaat?: ZoekFormaat}> = ({set
   const frame = useCurrentFrame();
   const ready = useUbuntu();
   if (!ready) return <AbsoluteFill style={{background: colors.blauw}} />;
-  const g = GEO[formaat];
+  // Without a photo the title and list take the full width.
+  const g0 = GEO[formaat];
+  const g: Geo = set.zonderFoto
+    ? formaat === 'staand'
+      ? {...g0, titel: {...g0.titel, y: 380, w: 940, align: 'center'}, lijst: {...g0.lijst, y: 660}}
+      : {...g0, titel: {...g0.titel, y: 170}, lijst: {...g0.lijst, x: 100, y: 360, w: 1720}}
+    : g0;
   const L = g.lijst;
   const t = vraagTimeline();
   const l = locaties.find((x) => x.slug === set.locatie);
@@ -62,13 +68,8 @@ export const VraagSpot: React.FC<{set: VraagSet; formaat?: ZoekFormaat}> = ({set
     const extra = 26 + kernLines.length * L.kern * 1.08 + (aLines.length ? 8 + aLines.length * L.a * 1.3 : 14);
     return {v, i, open, qLines, kernLines, aLines, dicht, extra, hoogte: dicht + extra * open};
   });
-  // Tallest the list gets (with the longest answer open): the photo lines up with that.
-  const maxH = rijen.reduce((a, r) => a + r.dicht, 0) + 2 * L.gap + Math.max(...rijen.map((r) => r.extra));
-  const lijstY = formaat === 'liggend' ? Math.max(90, Math.round((g.h - maxH) / 2)) : L.y;
-  const foto =
-    formaat === 'liggend'
-      ? {x: g.foto.x, w: g.foto.w, y: lijstY + 250, h: maxH - 250}
-      : {x: g.foto.x, w: g.foto.w, y: lijstY + maxH + 40, h: 1580 - (lijstY + maxH + 40)};
+  const lijstY = L.y;
+  const foto = g.foto;
   let y = lijstY;
   const posities = rijen.map((r) => {
     const top = y;
@@ -82,7 +83,7 @@ export const VraagSpot: React.FC<{set: VraagSet; formaat?: ZoekFormaat}> = ({set
   return (
     <AbsoluteFill style={{background: colors.blauw, fontFamily: font, overflow: 'hidden'}}>
       <Fonts />
-      <div style={{position: 'absolute', left: T.x, top: formaat === 'liggend' ? lijstY - 8 : T.y, width: T.w, textAlign: T.align, color: colors.wit, opacity: binnen(0)}}>
+      <div style={{position: 'absolute', left: T.x, top: T.y, width: T.w, textAlign: T.align, color: colors.wit, opacity: binnen(0)}}>
         <div style={{fontSize: T.size, fontWeight: 700, lineHeight: 1.05}}>Vraag het maar</div>
         <div style={{fontSize: T.size * 0.5, marginTop: 14, lineHeight: 1.25}}>
           <span style={{fontWeight: 300}}>Parking </span>
@@ -91,9 +92,9 @@ export const VraagSpot: React.FC<{set: VraagSet; formaat?: ZoekFormaat}> = ({set
         </div>
       </div>
 
-      <div style={{position: 'absolute', left: foto.x, top: foto.y, width: foto.w, height: foto.h, borderRadius: 32, overflow: 'hidden', border: `5px solid ${colors.wit}`, boxSizing: 'border-box', opacity: binnen(4)}}>
-        <Img src={staticFile(l.foto)} decoding="sync" style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: set.fotoPositie ?? '50% 80%', display: 'block'}} />
-      </div>
+      {set.zonderFoto ? null : <div style={{position: 'absolute', left: foto.x, top: foto.y, width: foto.w, height: foto.h, borderRadius: 32, overflow: 'hidden', border: `5px solid ${colors.wit}`, boxSizing: 'border-box', opacity: binnen(4)}}>
+        <Img src={staticFile(l.foto)} decoding="sync" style={{width: '100%', height: '100%', objectFit: 'cover', display: 'block'}} />
+      </div>}
 
       {rijen.map((r, n) => {
         const tik = frame - OPEN[r.i];
