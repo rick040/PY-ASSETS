@@ -1,12 +1,13 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {Fonts} from './components';
 import {colors, font} from './theme';
-import {ease, tween, useUbuntu, wrap} from './LocatieSpot';
+import {ease, tween, useUbuntu} from './LocatieSpot';
 import {CTA_GEO, EindCta, type ZoekFormaat} from './ZoekSpot';
 import {RESERVEERBAAR, locaties} from './locaties';
 import {AUTO_PAD, AUTO_VB} from './autoPad';
-import type {Droog, DroogIcoon} from './droog';
+import type {Droog} from './droog';
+import {Feiten, type FeitenGeo} from './Feiten';
 
 // "Droog naar binnen": it pours outside (full screen, hook "Regent het?"), the camera pulls back and the rain turns out to be
 // seen through the entrance of a garage. A car comes in out of the rain with its wipers going; inside they stop. Then three
@@ -24,7 +25,7 @@ type Geo = {
   hook: {y: number; size: number};
   /** Car: centre x, start y and width (far away), end y and width (inside). */
   auto: {x: number; y0: number; w0: number; y1: number; w1: number};
-  feiten: {titelX: number; titelY: number; titelW: number; titel: number; align: 'center' | 'left'; x: number; y: number; w: number; h: number; gap: number; tekst: number; icoon: number};
+  feiten: FeitenGeo;
   regen: number;
   /** Depth (0 = frame edge, 1 = opening) of the ceiling lights, kept clear of the text. */
   lampen: number[];
@@ -176,26 +177,6 @@ const Auto: React.FC<{cx: number; cy: number; w: number; frame: number; wissen: 
   );
 };
 
-const ICOON: Record<Exclude<DroogIcoon, 'klok'>, string> = {
-  plekken: 'svg/atom/py-atom-symbol-p-garage-outline.svg',
-  loop: 'svg/atom/py-atom-figure-walk.svg',
-  lift: 'svg/atom/py-atom-picto-lift.svg',
-  camera: 'svg/atom/py-atom-sign-camera.svg',
-};
-
-const Icoon: React.FC<{soort: DroogIcoon; size: number}> = ({soort, size}) =>
-  soort === 'klok' ? (
-    <svg width={size} height={size} viewBox="0 0 100 100">
-      <circle cx={50} cy={50} r={42} fill="none" stroke={colors.blauw} strokeWidth={9} />
-      <line x1={50} y1={50} x2={50} y2={22} stroke={colors.blauw} strokeWidth={9} strokeLinecap="round" />
-      <line x1={50} y1={50} x2={70} y2={60} stroke={colors.blauw} strokeWidth={9} strokeLinecap="round" />
-    </svg>
-  ) : (
-    <Img src={staticFile(ICOON[soort])} style={{width: size, height: size, objectFit: 'contain', display: 'block'}} />
-  );
-
-const delen = (s: string) => s.split(/(\[[^\]]*\])/).filter(Boolean).map((x) => (x.startsWith('[') ? {t: x.slice(1, -1), vet: true} : {t: x, vet: false}));
-
 export const DroogSpot: React.FC<{droog: Droog; formaat?: ZoekFormaat}> = ({droog: d, formaat = 'staand'}) => {
   const frame = useCurrentFrame();
   const ready = useUbuntu();
@@ -256,37 +237,7 @@ export const DroogSpot: React.FC<{droog: Droog; formaat?: ZoekFormaat}> = ({droo
 
       {/* Facts */}
       <AbsoluteFill style={{background: colors.blauw, opacity: 0.96 * dim}} />
-      {frame >= T.feiten - 20 ? (
-        <>
-          <div style={{position: 'absolute', left: F.titelX, top: F.titelY, width: F.titelW, textAlign: F.align, color: colors.wit, opacity: tween(frame, T.feiten - 10, T.feiten + 16)}}>
-            <div style={{fontSize: F.titel * 0.5, fontWeight: 400, marginBottom: 10}}>Overdekt parkeren</div>
-            <div style={{fontSize: F.titel, fontWeight: 300, lineHeight: 1.05}}>Parking</div>
-            <div style={{fontSize: F.titel, fontWeight: 700, lineHeight: 1.05}}>{l.naam}</div>
-            <div style={{fontSize: F.titel * 0.5, fontWeight: 400, marginTop: 14, color: colors.aqua}}>{l.stad}</div>
-          </div>
-          {d.feiten.map(([soort, tekst], i) => {
-            const v = tween(frame, T.feiten + 20 + i * 22, T.feiten + 46 + i * 22, ease(0.2, 0.9, 0.3, 1.1));
-            const tekstW = F.w - F.icoon - 3 * 36;
-            const regels = wrap(tekst.replace(/[[\]]/g, ''), F.tekst, '700', tekstW);
-            return (
-              <div key={i} style={{position: 'absolute', left: F.x, top: F.y + i * (F.h + F.gap), width: F.w, height: F.h, borderRadius: 32, background: colors.wit, opacity: Math.min(1, v * 1.5), transform: `translateX(${(1 - v) * 60}px)`}}>
-                <div style={{position: 'absolute', left: 36, top: (F.h - F.icoon) / 2, width: F.icoon, height: F.icoon, borderRadius: 26, background: '#E3F5F8', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                  <Icoon soort={soort} size={F.icoon * 0.62} />
-                </div>
-                <div style={{position: 'absolute', left: F.icoon + 72, top: 0, height: F.h, width: tekstW, display: 'flex', alignItems: 'center', color: colors.blauw, fontSize: regels.length > 1 ? F.tekst * 0.88 : F.tekst, lineHeight: 1.15}}>
-                  <div>
-                    {delen(tekst).map((x, j) => (
-                      <span key={j} style={{fontWeight: x.vet ? 700 : 400, color: x.vet ? colors.blauw : colors.blauw}}>
-                        {x.t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </>
-      ) : null}
+      <Feiten frame={frame} start={T.feiten} F={F} kicker="Overdekt parkeren" naam={l.naam} stad={l.stad} feiten={d.feiten} />
 
       <AbsoluteFill style={{background: colors.blauw, opacity: 0.94 * tween(frame, T.cta - 10, T.cta + 16)}} />
       <EindCta start={T.cta} reserveer={RESERVEERBAAR.has(l.id)} k={CTA_GEO[formaat]} />

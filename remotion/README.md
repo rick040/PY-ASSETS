@@ -223,3 +223,15 @@ covered garages ("Overdekte garage" on the page) with three facts each; Heerhugo
 ```bash
 node scripts/render-locaties.mjs --droog              # to out/droog/ and out/droog-youtube/
 ```
+
+## EV-charging spots (LaadSpot, "Stekker erin")
+
+`src/LaadSpot.tsx`: an almost empty battery blinks ("Elektrisch rijden?"), a car drives up to a charging post, the cable is
+drawn and clicks in, energy runs along it and the battery fills while the text says "Je auto laadt, terwijl jij in Artis
+bent." Then three facts (shared `src/Feiten.tsx`, also used by DroogSpot) and the end screen. 16.7 s, 9:16 (`Laad-<slug>`)
+and 16:9 (`LaadYT-<slug>`). `src/laden.ts` holds the 19 locations with "Elektrisch laden" on the page. The pages give no
+number of charging points or price per kWh, so the video shows neither (no percentages or charging times either).
+
+```bash
+node scripts/render-locaties.mjs --laad               # to out/laden/ and out/laden-youtube/
+```

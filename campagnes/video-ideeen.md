@@ -21,6 +21,7 @@ parkingyou.nl of gemeten via OpenStreetMap; aantallen locaties geteld op de pagi
 | Rondje zoeken per locatie | 23 | `rondje` |
 | Vraag het maar | 27 | `vraag` |
 | Droog naar binnen | 21 | `droog` |
+| Stekker erin | 19 | `laden` |
 
 ## Ronde 1, nog te maken
 
@@ -28,7 +29,7 @@ parkingyou.nl of gemeten via OpenStreetMap; aantallen locaties geteld op de pagi
 |---|---|---|---|
 | 1 | ~~Past mijn auto? (doorrijhoogte)~~ afgewezen | doorrijhoogte | 24 |
 | 2 | ~~Droog naar binnen~~ gemaakt | overdekte garage | 21 |
-| 3 | Stekker erin (elektrisch laden) | laadpunten | 19 |
+| 3 | ~~Stekker erin~~ gemaakt | laadpunten | 19 |
 | 4 | De klok rond (dag- en avondtarief, openingstijden) | avond- of nachttarief | 22 |
 | 5 | ~~Vraag het maar~~ gemaakt | FAQ op de pagina | 27 |
 | 6 | De plekkenteller | aantal plaatsen | 32 |

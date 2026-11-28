@@ -27,6 +27,8 @@ import {rondjes} from './rondjes';
 import {VRAAG_SIZE, VraagSpot, vraagTimeline} from './VraagSpot';
 import {DROOG_SIZE, DroogSpot, droogTimeline} from './DroogSpot';
 import {droog} from './droog';
+import {LAAD_SIZE, LaadSpot, laadTimeline} from './LaadSpot';
+import {laden} from './laden';
 import {vraagsets} from './vragen';
 import {
   ARTIS_DUUR,
@@ -231,6 +233,19 @@ export const Root: React.FC = () => (
           fps={60}
           {...DROOG_SIZE[formaat]}
           defaultProps={{droog: s, formaat}}
+        />
+      )),
+    )}
+    {laden.flatMap((s) =>
+      (['staand', 'liggend'] as const).map((formaat) => (
+        <Composition
+          key={`laad-${formaat}-${s.slug}`}
+          id={`${formaat === 'staand' ? 'Laad' : 'LaadYT'}-${s.slug}`}
+          component={LaadSpot}
+          durationInFrames={laadTimeline().duration}
+          fps={60}
+          {...LAAD_SIZE[formaat]}
+          defaultProps={{laden: s, formaat}}
         />
       )),
     )}

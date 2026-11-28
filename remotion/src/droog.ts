@@ -2,7 +2,9 @@
 // the page text for B. Amsterdam). Heerhugowaard P1 is left out: it is mostly an open lot with a covered basement that has
 // shorter opening hours. Facts from the location pages, opened 27-11-2026. Bold parts in [brackets].
 
-export type DroogIcoon = 'plekken' | 'loop' | 'lift' | 'klok' | 'camera';
+import type {FeitIcoon} from './Feiten';
+
+export type DroogIcoon = FeitIcoon;
 
 export type Droog = {
   slug: string;
